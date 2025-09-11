@@ -7,6 +7,8 @@
       <class name="com.Sales.SalesOrderToSalesInvoiceTest">
         <methods>
           <include name="ProductPage"/>
+          <include name="UomPage"/>
+          <include name="SystemSettings"/>
           <include name="Environment"/>
           <include name="ExpectedProduct"/>
           <include name="ProductMovementPage"/>

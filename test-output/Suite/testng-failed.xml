@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="methods" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="1" parallel="methods" name="Test(failed)">
+    <parameter name="env" value="Dev"/>
+    <classes>
+      <class name="com.Sales.SalesOrderToSalesInvoiceTest">
+        <methods>
+          <include name="ProductPage"/>
+          <include name="Environment"/>
+          <include name="ExpectedProduct"/>
+          <include name="ProductMovementPage"/>
+          <include name="ERPLoginPage"/>
+          <include name="SalesToInvoice"/>
+        </methods>
+      </class> <!-- com.Sales.SalesOrderToSalesInvoiceTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

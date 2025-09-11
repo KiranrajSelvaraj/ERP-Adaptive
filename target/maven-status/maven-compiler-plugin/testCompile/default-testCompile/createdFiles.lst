@@ -1,0 +1,13 @@
+com\Vendors\VendorTest.class
+com\Purchase\PurchaseOrderTest$Product.class
+com\Sales\SalesTest.class
+com\Purchase\PurchaseOrderTest$ProductUOM.class
+com\Purchase\UtilPOTest$ExcelData.class
+com\Purchase\PurchaseOrderTest$Vendor.class
+com\Purchase\CustomersTest.class
+com\Purchase\PurchaseOrderTest$ExcelData.class
+com\Vendors\VendorTest$ExcelData.class
+com\Purchase\PurchaseOrderTest$UOM.class
+com\Purchase\CustomersTest$ExcelData.class
+com\Purchase\PurchaseOrderTest.class
+com\Purchase\UtilPOTest.class

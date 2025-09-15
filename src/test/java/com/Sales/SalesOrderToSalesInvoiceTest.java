@@ -1108,7 +1108,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-		
+
 		SalesOrder so = new SalesOrder(driver);
 
 		driver.navigate().to(url + "SalesPurchases/SalesOrderIndex");
@@ -1258,7 +1258,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 			System.out.println("*** Grand Total Calculation With QOH ***");
 
 			String qohStock1 = driver.findElement(By.id("QOH")).getAttribute("value");
-			
+
 			for (product productDetails : ProductDetailsList) {
 
 				if (productDetails.productName.equalsIgnoreCase(excelData.ProductName)) {

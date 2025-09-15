@@ -21,6 +21,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.BaseClass.BaseClass;
 import com.PomClass.CreditNotes;
+import com.PomClass.Login;
 import com.PomClass.PurchaseOrder;
 import com.PomClass.SalesInvoice;
 import com.PomClass.SalesOrder;
@@ -140,12 +141,12 @@ public class StockCheckTest extends BaseClass{
 		String ActURL = driver.getCurrentUrl();
 		boolean equals = url.equalsIgnoreCase(ActURL);
 
-		PurchaseOrder po = new PurchaseOrder(driver);
+		Login lo = new Login(driver);
 
-		Sendkeys(po.CompanyCode, "UITDEMO1");
-		Sendkeys(po.UserName, "Kiran01");
-		Sendkeys(po.Password, "Adaptive*123");
-		click(po.LoginButton);
+		Sendkeys(lo.CompanyCode, "UITDEMO1");
+		Sendkeys(lo.UserName, "Kiran01");
+		Sendkeys(lo.Password, "Adaptive*123");
+		click(lo.LoginButton);
 		Thread.sleep(2000);
 
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
@@ -369,12 +370,11 @@ public class StockCheckTest extends BaseClass{
 		String ActURL = driver.getCurrentUrl();
 		boolean equals = url.equalsIgnoreCase(ActURL);
 
-		PurchaseOrder po = new PurchaseOrder(driver);
-
-		Sendkeys(po.CompanyCode, "UITDEMO1");
-		Sendkeys(po.UserName, "Kiran02");
-		Sendkeys(po.Password, "Adaptive*123");
-		click(po.LoginButton);
+		Login lo = new Login(driver);
+		Sendkeys(lo.CompanyCode, "UITDEMO1");
+		Sendkeys(lo.UserName, "Kiran02");
+		Sendkeys(lo.Password, "Adaptive*123");
+		click(lo.LoginButton);
 		Thread.sleep(2000);
 
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);

@@ -32,7 +32,7 @@ public class Vendors {
 	@FindBy(id="Create")
 	public WebElement Save;
 	
-	@FindBy(xpath="//input[@onclick='btnBack()']")
+	@FindBy(xpath="//input[@value='Back']")
 	public WebElement Back;
 	
 	@FindBy(id="popup_cancel")

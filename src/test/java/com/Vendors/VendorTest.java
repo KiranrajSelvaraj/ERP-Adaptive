@@ -15,6 +15,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.BaseClass.BaseClass;
+import com.PomClass.Login;
 import com.PomClass.PurchaseOrder;
 import com.PomClass.Vendors;
 import com.Utility.Util1;
@@ -37,12 +38,12 @@ public class VendorTest extends BaseClass {
 		driver.get("https://erp.dev1.adaptivegroups.asia/ERP/Account/Login");
 		url = "https://erp.dev1.adaptivegroups.asia/ERP/";
 
-		PurchaseOrder po = new PurchaseOrder(driver);
+		Login lo = new Login(driver);
 
-		Sendkeys(po.CompanyCode, "smm01");
-		Sendkeys(po.UserName, "Kiran01");
-		Sendkeys(po.Password, "Adaptive*123");
-		click(po.LoginButton);
+		Sendkeys(lo.CompanyCode, "smm01");
+		Sendkeys(lo.UserName, "Kiran01");
+		Sendkeys(lo.Password, "Adaptive*123");
+		click(lo.LoginButton);
 		Thread.sleep(2000);
 
 		String ActURL = driver.getCurrentUrl();
@@ -51,11 +52,11 @@ public class VendorTest extends BaseClass {
 		if (equals == false) {
 
 			Navigate_to(ActURL);
-			Sendkeys(po.CompanyCode, "smm01");
-			Sendkeys(po.UserName, "kiran02");
-			Sendkeys(po.Password, "Adaptive*123");
+			Sendkeys(lo.CompanyCode, "smm01");
+			Sendkeys(lo.UserName, "kiran02");
+			Sendkeys(lo.Password, "Adaptive*123");
 			Thread.sleep(1000);
-			click(po.LoginButton);
+			click(lo.LoginButton);
 
 		}
 		String ActURL1 = driver.getCurrentUrl();
@@ -64,11 +65,11 @@ public class VendorTest extends BaseClass {
 		if (equals1 == false) {
 
 			Navigate_to(ActURL1);
-			Sendkeys(po.CompanyCode, "smm01");
-			Sendkeys(po.UserName, "kiran");
-			Sendkeys(po.Password, "Adaptive*123");
+			Sendkeys(lo.CompanyCode, "smm01");
+			Sendkeys(lo.UserName, "kiran");
+			Sendkeys(lo.Password, "Adaptive*123");
 			Thread.sleep(1000);
-			click(po.LoginButton);
+			click(lo.LoginButton);
 
 		}
 

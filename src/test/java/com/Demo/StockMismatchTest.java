@@ -18,6 +18,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.BaseClass.BaseClass;
+import com.PomClass.Login;
 import com.PomClass.PurchaseOrder;
 import com.PomClass.SalesInvoice;
 import com.PomClass.SalesOrder;
@@ -56,12 +57,12 @@ public class StockMismatchTest extends BaseClass{
 	@Test(priority = 1)
 	private void ERPLoginPage() throws InterruptedException {
 
-		PurchaseOrder po = new PurchaseOrder(driver);
+		Login lo = new Login(driver);
 
-		Sendkeys(po.CompanyCode, "UITDEMO1");
-		Sendkeys(po.UserName, Username);
-		Sendkeys(po.Password, "Adaptive*123");
-		click(po.LoginButton);
+		Sendkeys(lo.CompanyCode, "UITDEMO1");
+		Sendkeys(lo.UserName, Username);
+		Sendkeys(lo.Password, "Adaptive*123");
+		click(lo.LoginButton);
 		Thread.sleep(2000);
 
 		System.out.println("*ERP Login Page*");

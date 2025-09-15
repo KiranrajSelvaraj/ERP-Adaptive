@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -23,6 +24,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.BaseClass.BaseClass;
 import com.PomClass.Login;
+import com.PomClass.Product;
 import com.PomClass.PurchaseOrder;
 import com.PomClass.SalesOrder;
 import com.PomClass.SystemSettings;
@@ -506,6 +508,10 @@ public class SalesOrderCustomizedInvoice extends BaseClass{
 
 		}
 
+		public Product(WebDriver driver) {
+			// TODO Auto-generated constructor stub
+		}
+
 	}
 	@SuppressWarnings("unused")
 	class ProductUOM {
@@ -560,7 +566,7 @@ public class SalesOrderCustomizedInvoice extends BaseClass{
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
-		PurchaseOrder po = new PurchaseOrder(driver);
+		Product po = new Product(driver);
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -706,8 +712,9 @@ public class SalesOrderCustomizedInvoice extends BaseClass{
 			if (ProductUOMtablesize == 0) {
 
 				Thread.sleep(1000);
-				click(po.InfoTab);
-				Thread.sleep(1000);
+				WebElement InfoTab1 = driver.findElement(By.xpath("//a[text()='Info']"));
+				InfoTab1.click();
+				Thread.sleep(2000);
 
 				SellingPrice = driver
 						.findElement(By.xpath("//dt[normalize-space()='Selling Price']//following-sibling::dd[1]"))

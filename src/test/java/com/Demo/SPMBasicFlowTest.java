@@ -15,6 +15,7 @@ import org.testng.annotations.Test;
 import com.BaseClass.BaseClass;
 import com.PomClass.CreditNotes;
 import com.PomClass.Customer;
+import com.PomClass.Login;
 import com.PomClass.Product;
 import com.PomClass.PurchaseOrder;
 import com.PomClass.SalesOrder;
@@ -36,12 +37,12 @@ public class SPMBasicFlowTest extends BaseClass{
 		driver.get("https://erp.dev1.adaptivegroups.asia/");
 		url = "https://erp.dev1.adaptivegroups.asia/ERP/";
 
-		PurchaseOrder po = new PurchaseOrder(driver);
+		Login lo = new Login(driver);
 
-		Sendkeys(po.CompanyCode, "MMS");
-		Sendkeys(po.UserName, "admin");
-		Sendkeys(po.Password, "Admin*123");
-		click(po.LoginButton);
+		Sendkeys(lo.CompanyCode, "MMS");
+		Sendkeys(lo.UserName, "admin");
+		Sendkeys(lo.Password, "Admin*123");
+		click(lo.LoginButton);
 		Thread.sleep(2000);
 
 	}

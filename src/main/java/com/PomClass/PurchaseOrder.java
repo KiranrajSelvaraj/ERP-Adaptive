@@ -10,32 +10,6 @@ public class PurchaseOrder {
 	
 	public static WebDriver driver;
 	
-	//ERP LOGIN
-	
-	@FindBy(id="CompanyName")
-	public WebElement CompanyCode;
-	
-	@FindBy(id="UserName")
-	public WebElement UserName;
-	
-	@FindBy(id="Password")
-	public WebElement Password;
-	
-	@FindBy(id="login")
-	public WebElement LoginButton;
-	
-	//SYSTEM SETTINGS
-	
-	@FindBy(id="SearchString")
-	public WebElement SystemsSettingsParamCodeSearchField;
-	
-	@FindBy(id="searchstring")
-	public WebElement FetchButton;
-	
-	
-	
-	//PURCHASE ORDER
-	
 	@FindBy(id="Create")
 	public WebElement AddPurchaseOrder;
 	
@@ -54,6 +28,18 @@ public class PurchaseOrder {
 	@FindBy(xpath="//span[@id='select2-GSTTypeId-container']//following::input[@type='search']")
 	public WebElement GSTTypeSearch;
 	
+	@FindBy(id = "ProductCheck")
+	public WebElement ProductCheckBox;
+	
+	@FindBy(id = "ServiceCheck")
+	public WebElement ServiceCheckBox;
+	
+	@FindBy(id = "OpenCheck")
+	public WebElement OpenCheckBox;
+	
+	@FindBy(id = "OpenItem")
+	public WebElement OpenProduct;
+	
 	@FindBy(id="select2-ProductId-container")
 	public WebElement ChooseproductName;
 	
@@ -66,17 +52,26 @@ public class PurchaseOrder {
 	@FindBy(xpath="(//span[@id='select2-UOMId-container']//following::input[@type='search'])[1]")
 	public WebElement UOMSearch;
 	
-	@FindBy(xpath="Qty")
+	@FindBy(id ="Qty")
 	public WebElement Quantity;
+	
+	@FindBy(id = "IsLooseFOC")
+	public WebElement IsFoc;
+	
+	@FindBy(id = "FOCQty")
+	public WebElement Foc;
 	
 	@FindBy(id="Price")
 	public WebElement SGD;
 	
 	@FindBy(id="DetailDiscountPercentage")
-	public WebElement Discount;
+	public WebElement DiscountPercentage;
 	
 	@FindBy(id="DiscountAmt")
 	public WebElement DiscountAmount;
+	
+	@FindBy(id = "IsUnitDisc")
+	public WebElement IsUnitDisc;
 	
 	@FindBy(id="PurchaseOrderDetailTotal")
 	public WebElement TotalPrice;
@@ -132,23 +127,9 @@ public class PurchaseOrder {
 	@FindBy(id = "Create")
 	public WebElement Save;
 	
-
-	//PRODUCT MOVEMENT
-	@FindBy(xpath ="//a[text()='Info']")
-	public WebElement InfoTab;
-	
-	@FindBy(xpath="//input[@value='Back']")
+	@FindBy(xpath = "//input[@value='Back']")
 	public WebElement Back;
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 	
 	public PurchaseOrder(WebDriver driver) {
 		this.driver = driver;

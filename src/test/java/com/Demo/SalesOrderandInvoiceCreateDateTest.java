@@ -13,6 +13,7 @@ import org.testng.annotations.Ignore;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.BaseClass.BaseClass;
+import com.PomClass.Login;
 import com.PomClass.PurchaseOrder;
 import com.PomClass.SalesOrder;
 
@@ -155,18 +156,18 @@ public class SalesOrderandInvoiceCreateDateTest extends BaseClass{
 	@Test(priority = 1)
 	public void ERPLoginPage() throws InterruptedException {
 
-		PurchaseOrder po = new PurchaseOrder(driver);
+		Login lo = new Login(driver);
 
-		Sendkeys(po.CompanyCode, companyName);
-		Sendkeys(po.UserName, "support");	
+		Sendkeys(lo.CompanyCode, companyName);
+		Sendkeys(lo.UserName, "support");	
 		Thread.sleep(1000);
 		if (companyName.equalsIgnoreCase("hwc")) {
-			Sendkeys(po.Password, "Adaptive*123");
+			Sendkeys(lo.Password, "Adaptive*123");
 		}else {
-			Sendkeys(po.Password, "#Apr^l6$up51Y22k5");
+			Sendkeys(lo.Password, "#Apr^l6$up51Y22k5");
 		}	
 		Thread.sleep(1000);
-		click(po.LoginButton);
+		click(lo.LoginButton);
 		Thread.sleep(2000);
 		
 		WebElement Skipelement = driver.findElement(By.xpath("(//input[@name='SkipValidateCode'])[1]"));

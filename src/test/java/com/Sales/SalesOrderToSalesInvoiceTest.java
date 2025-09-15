@@ -263,7 +263,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 	private String BulkQtyMeasurement;
 	private String LooseQtyMeasurement;
 	private boolean IsAllowToEditSpecialPrice;
-	private Float DecimalCalculationForSales;
+	private float DecimalCalculationForSales;
 	private boolean IsOpenItemManagementInsales;
 	private boolean IsHeaderManagementInSO;
 	private boolean IsReturnManagementInSI;
@@ -1108,10 +1108,11 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, 20);
+		
+		SalesOrder so = new SalesOrder(driver);
 
 		driver.navigate().to(url + "SalesPurchases/SalesOrderIndex");
-		Thread.sleep(5000);
-		SalesOrder so = new SalesOrder(driver);
+		Thread.sleep(5000);		
 		System.out.println("*** Sales To Invoice Page ***");
 
 		click(so.AddOrder);
@@ -1144,7 +1145,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 				searchInput.sendKeys(excelData.Customer + Keys.ENTER);
 				Thread.sleep(2000);
 
-			}
+			}	
 
 			click(so.Gst);
 			WebElement GstSearchInput = driver.findElement(
@@ -1257,13 +1258,10 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 			System.out.println("*** Grand Total Calculation With QOH ***");
 
 			String qohStock1 = driver.findElement(By.id("QOH")).getAttribute("value");
-			System.out.println("Qoh: " + qohStock1);
-
+			
 			for (product productDetails : ProductDetailsList) {
 
 				if (productDetails.productName.equalsIgnoreCase(excelData.ProductName)) {
-
-					System.out.println("productDetails.IsCartonSelected: " + productDetails.IsCartonSelected);
 
 					if (productDetails.IsCartonSelected.equalsIgnoreCase("true")) {
 						System.out.println("carton Product");
@@ -1768,7 +1766,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 			}
 
-
 		}
 
 		System.out.println();
@@ -1881,7 +1878,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 	// @Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
-	public void QtyCalculation1() throws InterruptedException {
+	public void QtyCalculation() throws InterruptedException {
 
 		System.out.println("*** Expected Qty Calculation ***");
 
@@ -1946,7 +1943,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 	// @Ignore
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
-	public void QtyCalculation() {
+	public void QtyCalculation1() {
 
 		System.out.println("*** Qty Calculation ***");
 

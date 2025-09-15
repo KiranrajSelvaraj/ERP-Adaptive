@@ -15,6 +15,7 @@ import org.testng.annotations.Test;
 
 import com.BaseClass.BaseClass;
 import com.Demo.SalesInvoiceCreateTest.ExcelData;
+import com.PomClass.Login;
 import com.PomClass.PurchaseOrder;
 import com.PomClass.SalesInvoice;
 import com.Utility.Util1;
@@ -35,12 +36,12 @@ public class SalesInvoiceCreateTest extends BaseClass{
 		driver.get("https://erp.dev1.adaptivegroups.asia/ERP/Account/Login");
 		url = "https://erp.dev1.adaptivegroups.asia/ERP/";
 
-		PurchaseOrder po = new PurchaseOrder(driver);
+		Login lo = new Login(driver);
 
-		Sendkeys(po.CompanyCode, "UITDEMO1");
-		Sendkeys(po.UserName, "Kiran01");
-		Sendkeys(po.Password, "Adaptive*123");
-		click(po.LoginButton);
+		Sendkeys(lo.CompanyCode, "UITDEMO1");
+		Sendkeys(lo.UserName, "Kiran01");
+		Sendkeys(lo.Password, "Adaptive*123");
+		click(lo.LoginButton);
 		Thread.sleep(2000);
 
 		String ActURL = driver.getCurrentUrl();
@@ -49,11 +50,11 @@ public class SalesInvoiceCreateTest extends BaseClass{
 		if (equals == false) {
 
 			Navigate_to(ActURL);
-			Sendkeys(po.CompanyCode, "UITDEMO1");
-			Sendkeys(po.UserName, "Kiran02");
-			Sendkeys(po.Password, "Adaptive*123");
+			Sendkeys(lo.CompanyCode, "UITDEMO1");
+			Sendkeys(lo.UserName, "Kiran02");
+			Sendkeys(lo.Password, "Adaptive*123");
 			Thread.sleep(1000);
-			click(po.LoginButton);
+			click(lo.LoginButton);
 
 		}
 
@@ -63,11 +64,11 @@ public class SalesInvoiceCreateTest extends BaseClass{
 		if (equals1 == false) {
 
 			Navigate_to(ActURL1);
-			Sendkeys(po.CompanyCode, "UITDEMO1");
-			Sendkeys(po.UserName, "Kiran03");
-			Sendkeys(po.Password, "Adaptive*123");
+			Sendkeys(lo.CompanyCode, "UITDEMO1");
+			Sendkeys(lo.UserName, "Kiran03");
+			Sendkeys(lo.Password, "Adaptive*123");
 			Thread.sleep(1000);
-			click(po.LoginButton);
+			click(lo.LoginButton);
 
 		}
 

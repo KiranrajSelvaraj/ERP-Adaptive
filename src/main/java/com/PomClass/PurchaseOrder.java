@@ -76,6 +76,12 @@ public class PurchaseOrder {
 	@FindBy(id="PurchaseOrderDetailTotal")
 	public WebElement TotalPrice;
 	
+	@FindBy(id = "DiscountType")
+	public WebElement OverAllDiscountType;
+	
+	@FindBy(id = "Discount")
+	public WebElement OverAllDiscount;
+	
 	@FindBy(id="btn_add")
 	public WebElement AddButton;
 	

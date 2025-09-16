@@ -105,6 +105,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 	}
 
+
 	@SuppressWarnings("unused")
 	class ExcelData {
 		private String Customer;
@@ -127,21 +128,21 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		private String SpecialPrice;
 		private String OverAllDiscountType;
 		private String OverAllDiscountAmount;
-		private String OverAllDiscPercentage;
+		private String OverAllDiscountPercentage;
 		private String GstPercentage;
 		private String ZeroGst;
 		private String BatchProduct;
 
-		public ExcelData(String Customer, String CurrencyCode, String CurrancyRate, String GstType, String Type,
+		public ExcelData(String Customer, String CurrencyCode, String CurrencyRate, String GstType, String Type,
 				String ProductCode, String ProductName, String Uom, String Qty, String Foc, String DiscountPercentage,
 				String DiscountAmount, String UnitDiscCheckbox, String UnitDiscPercentage, String UnitDiscAmount,
 				String Price, String IsSpecialPriceCheckbox, String SpecialPrice, String OverAllDiscountType,
-				String OverAllDiscountAmount, String OverAllDiscPercentage, String GstPercentage, String ZeroGst, String BatchProduct) {
+				String OverAllDiscountAmount, String OverAllDiscountPercentage, String GstPercentage, String ZeroGst, String BatchProduct) {
 			super();
 
 			this.Customer = Customer;
 			this.CurrencyCode = CurrencyCode;
-			this.CurrencyRate = CurrancyRate;
+			this.CurrencyRate = CurrencyRate;
 			this.GstType = GstType;
 			this.Type = Type;
 			this.ProductCode = ProductCode;
@@ -159,7 +160,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 			this.SpecialPrice = SpecialPrice;
 			this.OverAllDiscountType = OverAllDiscountType;
 			this.OverAllDiscountAmount = OverAllDiscountAmount;
-			this.OverAllDiscPercentage = OverAllDiscPercentage;
+			this.OverAllDiscountPercentage = OverAllDiscountPercentage;
 			this.GstPercentage = GstPercentage;
 			this.ZeroGst = ZeroGst;
 			this.BatchProduct = BatchProduct;
@@ -177,16 +178,16 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 	Set<String> ServiceSet = new LinkedHashSet<>();
 
 	@Test(priority = 4, dataProvider = "Util1", dependsOnMethods = "ERPLoginPage")
-	public void GetData(String Customer, String CurrencyCode, String CurrancyRate, String GstType, String Type,
+	public void GetData(String Customer, String CurrencyCode, String CurrencyRate, String GstType, String Type,
 			String ProductCode, String ProductName, String Uom, String Qty, String Foc, String DiscountPercentage,
 			String DiscountAmount, String UnitDiscCheckbox, String UnitDiscPercentage, String UnitDiscAmount,
 			String Price, String IsSpecialPriceCheckbox, String SpecialPrice, String OverAllDiscountType,
-			String OverAllDiscountAmount, String OverAllDiscPercentage, String GstPercentage, String ZeroGst, String BatchProduct) {
+			String OverAllDiscountAmount, String OverAllDiscountPercentage, String GstPercentage, String ZeroGst, String BatchProduct) {
 
-		ExcelData data = new ExcelData(Customer, CurrencyCode, CurrancyRate, GstType, Type, ProductCode, ProductName,
+		ExcelData data = new ExcelData(Customer, CurrencyCode, CurrencyRate, GstType, Type, ProductCode, ProductName,
 				Uom, Qty, Foc, DiscountPercentage, DiscountAmount, UnitDiscCheckbox, UnitDiscPercentage, UnitDiscAmount,
 				Price, IsSpecialPriceCheckbox, SpecialPrice, OverAllDiscountType, OverAllDiscountAmount,
-				OverAllDiscPercentage, GstPercentage, ZeroGst, BatchProduct);
+				OverAllDiscountPercentage, GstPercentage, ZeroGst, BatchProduct);
 
 		excelDataList.add(data);
 		ExcelUniqueProductDataSet.add(ProductCode);
@@ -1155,7 +1156,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 			if (i == 0) {
 				getExcelGstType = excelData.GstType;
 				getexcelOverAllDiscountType = excelData.OverAllDiscountType;
-				getExcelOverAllDiscountPercentage = excelData.OverAllDiscPercentage;
+				getExcelOverAllDiscountPercentage = excelData.OverAllDiscountPercentage;
 				getExcelOverAllDiscountAmount = excelData.OverAllDiscountAmount;
 				getExcelGstPercentage = excelData.GstPercentage;
 				getExcelCurrencyRate = excelData.CurrencyRate;
@@ -1264,12 +1265,37 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 				if (productDetails.productName.equalsIgnoreCase(excelData.ProductName)) {
 
 					if (productDetails.IsCartonSelected.equalsIgnoreCase("true")) {
-						System.out.println("carton Product");
-						System.out.println("Product Name: " + productDetails.productName);
-						System.out.println("Qoh Stock: " + qohStock1);
-						System.out.println("current Stock: " + productDetails.currentStockValue);
-						soft.assertEquals(qohStock1, productDetails.currentStockValue,
-								"Actual and Expected QOH Mismatched for Product: " + productDetails.productName);
+
+						if (excelData.Uom.equalsIgnoreCase("1KG")) {
+
+							String[] split = productDetails.currentStockValue.split("[ B/L]+");
+							int boxStock = Integer.parseInt(split[0]);
+							int looseStock = Integer.parseInt(split[1]);
+
+							int multipleBoxStock = (boxStock * 10);
+							int addLooseStock = (multipleBoxStock + looseStock);
+							//	System.out.println("Lower Uom Stock: "+addLooseStock);
+
+							String stock = "0 B/" + addLooseStock + " L";
+							//	System.out.println("Lower Uom Current Stock: "+stock);
+
+							System.out.println("carton Product");
+							System.out.println("Product Name: " + productDetails.productName);
+							System.out.println("Qoh Stock: " + qohStock1);
+							System.out.println("current Stock: " + stock);
+							soft.assertEquals(qohStock1, stock,
+									"Actual and Expected QOH Mismatched for Product: " + productDetails.productName);
+
+						} else {
+
+							System.out.println("carton Product");
+							System.out.println("Product Name: " + productDetails.productName);
+							System.out.println("Qoh Stock: " + qohStock1);
+							System.out.println("current Stock: " + productDetails.currentStockValue);
+							soft.assertEquals(qohStock1, productDetails.currentStockValue,
+									"Actual and Expected QOH Mismatched for Product: " + productDetails.productName);
+
+						}				
 
 					}
 
@@ -1296,15 +1322,18 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 							}
 						}
 
+						String totalCalculatedStockString = String.valueOf(totalCalculatedStock);
+						String replacetotalCalculatedStock = totalCalculatedStockString.replaceAll("\\.0$", "");
+
 						if (isNonCartonWithUOM) {
 
 							System.out.println("Non Carton Product");
 							System.out.println("Product Name: " + productDetails.productName);
-							System.out.println("Calculated QOH: " +(int)totalCalculatedStock);
-							System.out.println("Current Stock from List: " + productDetails.currentStockValue);
+							System.out.println("Calculated QOH: " +replacetotalCalculatedStock);
+							System.out.println("Current Stock from List: " +productDetails.currentStockValue);
 							System.out.println();
 
-							soft.assertEquals((int)totalCalculatedStock, productDetails.currentStockValue.trim(),
+							soft.assertEquals(replacetotalCalculatedStock, productDetails.currentStockValue.trim(),
 									"Actual and Expected QOH Mismatched for Product: " + productDetails.productName);
 
 						} else {
@@ -1531,7 +1560,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 			ExpDiscountProductPriceFormat = String.format("%.2f", ExpDiscountProductPrice);
 			System.out.println("Expected Discount Product Price is: " + ExpDiscountProductPriceFormat);
 
-			soft.assertEquals(ActDiscountProductPriceFormat, ActDiscountProductPriceFormat,
+			soft.assertEquals(ActDiscountProductPriceFormat, ExpDiscountProductPriceFormat,
 					"Actual and Expected Special Price Discount Mismatched for Product " + excelData.ProductName);
 		}
 
@@ -2141,13 +2170,29 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 				if (productStock.ProductName.equalsIgnoreCase(trimProductName)) {
 
-					System.out.println("Product Movement Name               : " + trimProductName);
-					System.out.println("After Invoice Product Stock         : " + productStock.ProductStock);
-					System.out.println("After Invoice Product Movement Stock: " + balanceQty);
+					if (productStock.ProductStock.contains("/0 L")) {
 
-					soft.assertEquals(balanceQty, productStock.ProductStock,
-							"Actual and Expected Product Stock and Movement Stock Mismatched for Product "
-									+ trimProductName);
+						String replaceProductStock = productStock.ProductStock.replaceAll("/0 L", "");
+
+						System.out.println("Product Movement Name               : " + trimProductName);
+						System.out.println("After Invoice Product Stock         : " + replaceProductStock);
+						System.out.println("After Invoice Product Movement Stock: " + balanceQty);
+
+						soft.assertEquals(balanceQty, replaceProductStock,
+								"Actual and Expected Product Stock and Movement Stock Mismatched for Product "
+										+ trimProductName);
+
+					} else {
+
+						System.out.println("Product Movement Name               : " + trimProductName);
+						System.out.println("After Invoice Product Stock         : " + productStock.ProductStock);
+						System.out.println("After Invoice Product Movement Stock: " + balanceQty);
+
+						soft.assertEquals(balanceQty, productStock.ProductStock,
+								"Actual and Expected Product Stock and Movement Stock Mismatched for Product "
+										+ trimProductName);
+
+					}
 					break;
 				}
 

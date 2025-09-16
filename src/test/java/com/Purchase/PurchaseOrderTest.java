@@ -873,7 +873,8 @@ public class PurchaseOrderTest extends BaseClass {
 				System.out.println("A/P Account: " + APAccount);
 
 				WebElement InfoTab = driver.findElement(By.xpath("//a[text()='Info']"));
-				InfoTab.click();
+				js.executeScript("arguments[0].click();", InfoTab);
+			//	InfoTab.click();
 				Thread.sleep(2000);
 
 				String GSTType = driver.findElement(By.xpath("//dt[normalize-space()='GST Type']//following-sibling::dd[1]"))
@@ -984,13 +985,28 @@ public class PurchaseOrderTest extends BaseClass {
 		driver.navigate().to(url + "Purchases/PurchaseOrderIndex");
 		Thread.sleep(4000);
 		System.out.println("*Purchase Form Page*");
+		System.out.println();
+		
+		click(po.AddPurchaseOrder);
+		Thread.sleep(3000);		
+	
+		String getExcelGstType = "";
+		String getexcelOverAllDiscountType = "";
+		String getExcelOverAllDiscountPercentage = "";
+		String getExcelOverAllDiscountAmount = "";
+		String getExcelGstPercentage = "";
+		String getExcelCurrencyRate = "";
+		String productPrice = "";
+		String ExpDiscountProductPriceFormat = "";
+
+		// double ZeroGstProductTotalAmount = 0;
+		double ActDiscountProductPriceDouble = 0;
+		double ExpSubTotal = 0;
+		double ExpZeroGstProductamount = 0;
 
 		int excelDataListSize = excelDataList.size();
 		for (int i = 0; i < excelDataListSize; i++) {
 			ExcelData excelData = excelDataList.get(i);
-
-			click(po.AddPurchaseOrder);
-			Thread.sleep(3000);
 
 			if (excelData.Vendor.isEmpty() == false) {
 				Thread.sleep(2000);
@@ -1000,11 +1016,21 @@ public class PurchaseOrderTest extends BaseClass {
 				Thread.sleep(2000);
 
 			}
+			
+			if (i == 0) {
+				
+				getExcelGstType = excelData.GstType;
+				getexcelOverAllDiscountType = excelData.OverAllDiscountType;
+				getExcelOverAllDiscountPercentage = excelData.OverAllDiscPercentage;
+				getExcelOverAllDiscountAmount = excelData.OverAllDiscountAmount;
+				getExcelGstPercentage = excelData.GstPercentage;
+				getExcelCurrencyRate = excelData.CurrencyRate;
+			}
+
 
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
 				String productCheckbox = driver.findElement(By.id("ProductCheck")).getAttribute("checked");
-				System.out.println("Product Check Box is: " + productCheckbox);
 				if (!productCheckbox.equalsIgnoreCase("true")) {
 					click(po.ProductCheckBox);
 
@@ -1184,10 +1210,11 @@ public class PurchaseOrderTest extends BaseClass {
 			}*/
 
 			
-
+			//Item Level Discount:-
 			if (IsEnableItemLevelDiscountInPurchase == true) {
 
 				click(po.DiscountAmount);
+				Sendkeys(po.DiscountAmount, Keys.CONTROL + "a" + Keys.DELETE);
 				Sendkeys(po.DiscountAmount, excelData.DiscountAmount);
 
 			} else {
@@ -1211,13 +1238,13 @@ public class PurchaseOrderTest extends BaseClass {
 					double discAmountforPercent = discountAmountRound / 100;
 
 					Total = (priceDouble - discAmountforPercent) * excelQtyDouble;
-					System.out.println("Discount Percent Total: " + Total);
+					System.out.println("Item Level Discount Percentage Total: " + Total);
 
 				} else if (excelData.DiscountAmount.isBlank() == false) {
 					double discAmtDouble = Double.parseDouble(excelData.DiscountAmount);
 
 					Total = (priceDouble - discAmtDouble) * excelQtyDouble;
-					System.out.println("Discount Amount Total: " + Total);
+					System.out.println("Item Level Discount Amount Total: " + Total);
 				}
 
 			} else {
@@ -1230,22 +1257,71 @@ public class PurchaseOrderTest extends BaseClass {
 					double discAmtforPer = discPerAmtRound / 100;
 
 					Total = Total - discAmtforPer;
+					System.out.println("Discount Percentage Amount Total: "+Total);
 
 				} else if (excelData.DiscountAmount.isBlank() == false) {
 
 					double discAmtDouble1 = Double.parseDouble(excelData.DiscountAmount);
+					double excelPriceDouble = Double.parseDouble(excelData.Price);
+					
+					double expectedDiscountAmount = (excelPriceDouble - discAmtDouble1);
 
 					Total = Total - discAmtDouble1;
+					System.out.println("Discount Amount Total: "+expectedDiscountAmount);
 
 				}
 
 			}
-
-
+			
+			//Add Button:-
+			click(po.AddButton);
+			Thread.sleep(2000);
+			click(po.Quantity);
+			System.out.println();
+			
+			String amount = driver.findElement(By.xpath("//table[@id='PurchaseOrderTable']//tbody//tr//td[2]"
+					+ "//div//textarea[contains(text(),'"+excelData.ProductName+"')]//following::td[@class='orderTotal']")).getText();
+			System.out.println("Actual Discount Amount: "+amount);
+			System.out.println("Expected Discount Amount: "+Total);
+			
+			
 
 
 
 		}
+		
+		//Sub Total:-
+		String subTotalString = driver.findElement(By.id("Subtotal")).getText();
+		double subTotalDouble = Double.parseDouble(subTotalString);
+		System.out.println("Actual Sub Total: "+subTotalDouble);
+		System.out.println("Expected Sub Total: ");
+				
+		//Over All Discount:-
+		click(po.OverAllDiscountType);
+		Select overAllDiscTypeSelect = new Select(po.OverAllDiscountType);
+		overAllDiscTypeSelect.selectByVisibleText(getexcelOverAllDiscountType);
+		
+		WebElement overAllDiscountType = driver.findElement(By.id("DiscountType"));
+		Select overAllDiscountTypeSelect = new Select(overAllDiscountType);
+		String getOverAllDiscountType = overAllDiscountTypeSelect.getFirstSelectedOption().getText();
+		System.out.println("Over all Discount Type is: " + getOverAllDiscountType);
+		
+		Thread.sleep(1000);
+		click(po.OverAllDiscount);
+		if (getOverAllDiscountType.equals("$")) {
+			po.OverAllDiscount.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+			Sendkeys(po.OverAllDiscount, getExcelOverAllDiscountAmount + Keys.ENTER);
+
+		} else if (getOverAllDiscountType.equals("%")) {
+			po.OverAllDiscount.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+			Sendkeys(po.OverAllDiscount, getExcelOverAllDiscountPercentage + Keys.ENTER);
+
+		} else {
+			System.out.println("No Over All Discount Amounr and Percentage");
+		}
+		System.out.println();
+		
+		
 
 
 	}

@@ -28,6 +28,9 @@ public class PurchaseOrder {
 	@FindBy(xpath="//span[@id='select2-GSTTypeId-container']//following::input[@type='search']")
 	public WebElement GSTTypeSearch;
 	
+	@FindBy(id = "select2-CurrencyId-container")
+	public WebElement CurrencyCode;
+	
 	@FindBy(id = "ProductCheck")
 	public WebElement ProductCheckBox;
 	
@@ -95,7 +98,7 @@ public class PurchaseOrder {
 	public WebElement InvoiceNo;
 	
 	@FindBy(id="popup_ok")
-	public WebElement PopupAlert;
+	public WebElement PopupAlertOk;
 	
 	@FindBy(xpath = "//a[text()='Copy Order']")
 	public WebElement CopyOrder;

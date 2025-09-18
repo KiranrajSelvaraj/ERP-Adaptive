@@ -119,7 +119,7 @@ public class PurchaseOrderTest extends BaseClass {
 		private String SpecialPrice;
 		private String OverAllDiscountType;
 		private String OverAllDiscountAmount;
-		private String OverAllDiscPercentage;
+		private String OverAllDiscountPercentage;
 		private String GstPercentage;
 		private String ZeroGst;
 		private String BatchProduct;
@@ -128,7 +128,7 @@ public class PurchaseOrderTest extends BaseClass {
 				String ProductCode, String ProductName, String Uom, String Qty, String Foc, String DiscountPercentage,
 				String DiscountAmount, String UnitDiscCheckbox, String UnitDiscPercentage, String UnitDiscAmount,
 				String Price, String IsSpecialPriceCheckbox, String SpecialPrice, String OverAllDiscountType,
-				String OverAllDiscountAmount, String OverAllDiscPercentage, String GstPercentage, String ZeroGst, String BatchProduct) {
+				String OverAllDiscountAmount, String OverAllDiscountPercentage, String GstPercentage, String ZeroGst, String BatchProduct) {
 			super();
 
 			this.Vendor = Vendor;
@@ -151,7 +151,7 @@ public class PurchaseOrderTest extends BaseClass {
 			this.SpecialPrice = SpecialPrice;
 			this.OverAllDiscountType = OverAllDiscountType;
 			this.OverAllDiscountAmount = OverAllDiscountAmount;
-			this.OverAllDiscPercentage = OverAllDiscPercentage;
+			this.OverAllDiscountPercentage = OverAllDiscountPercentage;
 			this.GstPercentage = GstPercentage;
 			this.ZeroGst = ZeroGst;
 			this.BatchProduct = BatchProduct;
@@ -173,12 +173,12 @@ public class PurchaseOrderTest extends BaseClass {
 			String ProductCode, String ProductName, String Uom, String Qty, String Foc, String DiscountPercentage,
 			String DiscountAmount, String UnitDiscCheckbox, String UnitDiscPercentage, String UnitDiscAmount,
 			String Price, String IsSpecialPriceCheckbox, String SpecialPrice, String OverAllDiscountType,
-			String OverAllDiscountAmount, String OverAllDiscPercentage, String GstPercentage, String ZeroGst, String BatchProduct) {
+			String OverAllDiscountAmount, String OverAllDiscountPercentage, String GstPercentage, String ZeroGst, String BatchProduct) {
 
 		ExcelData data = new ExcelData(Vendor, CurrencyCode, CurrancyRate, GstType, Type, ProductCode, ProductName,
 				Uom, Qty, Foc, DiscountPercentage, DiscountAmount, UnitDiscCheckbox, UnitDiscPercentage, UnitDiscAmount,
 				Price, IsSpecialPriceCheckbox, SpecialPrice, OverAllDiscountType, OverAllDiscountAmount,
-				OverAllDiscPercentage, GstPercentage, ZeroGst, BatchProduct);
+				OverAllDiscountPercentage, GstPercentage, ZeroGst, BatchProduct);
 
 		excelDataList.add(data);
 		ProductSet.add(ProductCode);
@@ -262,7 +262,7 @@ public class PurchaseOrderTest extends BaseClass {
 		driver.navigate().to(url + "SystemSetting");
 		Thread.sleep(4000);
 		System.out.println("*System Settings Page*");
-		
+
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsZeroQtyPurchase" + Keys.ENTER);
 		Thread.sleep(1000);
@@ -275,7 +275,7 @@ public class PurchaseOrderTest extends BaseClass {
 		IsZeroQtyPurchase = Boolean.parseBoolean(IsZeroQtyPurchaseString);
 		System.out.println("IsZeroQtyPurchase: "+IsZeroQtyPurchase);
 		click(ss.Back);
-		
+
 		Thread.sleep(2000);
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsZeroGSTManagement" + Keys.ENTER);
@@ -289,7 +289,7 @@ public class PurchaseOrderTest extends BaseClass {
 		IsZeroGSTManagement = Boolean.parseBoolean(IsZeroGSTManagementString);
 		System.out.println("IsZeroGSTManagement: "+IsZeroGSTManagement);
 		click(ss.Back);
-		
+
 		Thread.sleep(2000);
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsMultipleProductForPurchase" + Keys.ENTER);
@@ -303,7 +303,7 @@ public class PurchaseOrderTest extends BaseClass {
 		IsMultipleProductForPurchase = Boolean.parseBoolean(IsMultipleProductForPurchaseString);
 		System.out.println("IsMultipleProductForPurchase : "+IsMultipleProductForPurchase);
 		click(ss.Back);
-		
+
 		Thread.sleep(2000);
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsGSTManagement" + Keys.ENTER);
@@ -317,7 +317,7 @@ public class PurchaseOrderTest extends BaseClass {
 		IsGSTManagement = Boolean.parseBoolean(IsGSTManagementString);
 		System.out.println("IsGSTManagement: "+IsGSTManagement);
 		click(ss.Back);
-		
+
 		Thread.sleep(2000);
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsMultipleServiceForPurchase" + Keys.ENTER);
@@ -331,7 +331,7 @@ public class PurchaseOrderTest extends BaseClass {
 		IsGSTManagement = Boolean.parseBoolean(IsMultipleServiceForPurchaseString);
 		System.out.println("IsMultipleServiceForPurchase: "+IsMultipleServiceForPurchase);
 		click(ss.Back);
-		
+
 		Thread.sleep(2000);
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsCurrencyEnabled" + Keys.ENTER);
@@ -345,7 +345,7 @@ public class PurchaseOrderTest extends BaseClass {
 		IsCurrencyEnabled = Boolean.parseBoolean(IsCurrencyEnabledString);
 		System.out.println("IsCurrencyEnabled: "+IsCurrencyEnabled);
 		click(ss.Back);
-		
+
 		Thread.sleep(2000);
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsWarehouseManagement" + Keys.ENTER);
@@ -359,7 +359,7 @@ public class PurchaseOrderTest extends BaseClass {
 		IsWarehouseManagement = Boolean.parseBoolean(IsWarehouseManagementString);
 		System.out.println("IsWarehouseManagement: "+IsWarehouseManagement);
 		click(ss.Back);
-		
+
 		Thread.sleep(2000);
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsBarcodeManagementInPurchase" + Keys.ENTER);
@@ -373,7 +373,7 @@ public class PurchaseOrderTest extends BaseClass {
 		IsBarcodeManagementInPurchase = Boolean.parseBoolean(IsBarcodeManagementInPurchaseString);
 		System.out.println("IsBarcodeManagementInPurchase: "+IsBarcodeManagementInPurchase);
 		click(ss.Back);
-		
+
 		Thread.sleep(2000);
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsOpenItemManagementInPurchase" + Keys.ENTER);
@@ -387,7 +387,7 @@ public class PurchaseOrderTest extends BaseClass {
 		IsOpenItemManagementInPurchase = Boolean.parseBoolean(IsOpenItemManagementInPurchaseString);
 		System.out.println("IsOpenItemManagementInPurchase: "+IsOpenItemManagementInPurchase);
 		click(ss.Back);
-		
+
 		Thread.sleep(2000);
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "DecimalCalculationForPurchase" + Keys.ENTER);
@@ -401,7 +401,7 @@ public class PurchaseOrderTest extends BaseClass {
 		DecimalCalculationForPurchase = Float.parseFloat(DecimalCalculationForPurchaseString);
 		System.out.println("DecimalCalculationForPurchase: "+DecimalCalculationForPurchase);
 		click(ss.Back);
-		
+
 		Thread.sleep(2000);
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsEnableDirectPOtoGRN" + Keys.ENTER);
@@ -415,7 +415,7 @@ public class PurchaseOrderTest extends BaseClass {
 		IsEnableDirectPOtoGRN = Boolean.parseBoolean(IsEnableDirectPOtoGRNString);
 		System.out.println("IsEnableDirectPOtoGRN: "+IsEnableDirectPOtoGRN);
 		click(ss.Back);
-		
+
 		Thread.sleep(2000);
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsEnableDirectPOtoSO" + Keys.ENTER);
@@ -443,7 +443,7 @@ public class PurchaseOrderTest extends BaseClass {
 		IsEnableItemLevelDiscountInPurchase = Boolean.parseBoolean(IsEnableItemLevelDiscountInPurchaseString);
 		System.out.println("IsEnableItemLevelDiscountInPurchase:" +IsEnableItemLevelDiscountInPurchase);
 		click(ss.Back);
-		
+
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].click();", ss.Clear);
 		js.executeScript("arguments[0].click();", ss.SystemsSettingsParamCodeSearchField);
@@ -459,7 +459,7 @@ public class PurchaseOrderTest extends BaseClass {
 		IsMultiWordSearchInProduct = Boolean.parseBoolean(IsMultiWordSearchInProductString);
 		System.out.println("IsMultiWordSearchInProduct :" + IsMultiWordSearchInProduct);
 		click(ss.Back);
-		
+
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].click();", ss.Clear);
 		js.executeScript("arguments[0].click();", ss.SystemsSettingsParamCodeSearchField);
@@ -874,7 +874,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 				WebElement InfoTab = driver.findElement(By.xpath("//a[text()='Info']"));
 				js.executeScript("arguments[0].click();", InfoTab);
-			//	InfoTab.click();
+				//	InfoTab.click();
 				Thread.sleep(2000);
 
 				String GSTType = driver.findElement(By.xpath("//dt[normalize-space()='GST Type']//following-sibling::dd[1]"))
@@ -979,6 +979,11 @@ public class PurchaseOrderTest extends BaseClass {
 
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		LocalDateTime TimeStamp = LocalDateTime.now();
+		DateTimeFormatter DateTimeFormate = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		String formatedTimestamp = TimeStamp.format(DateTimeFormate);
 
 		PurchaseOrder po = new PurchaseOrder(driver);
 
@@ -986,10 +991,10 @@ public class PurchaseOrderTest extends BaseClass {
 		Thread.sleep(4000);
 		System.out.println("*Purchase Form Page*");
 		System.out.println();
-		
+
 		click(po.AddPurchaseOrder);
 		Thread.sleep(3000);		
-	
+
 		String getExcelGstType = "";
 		String getexcelOverAllDiscountType = "";
 		String getExcelOverAllDiscountPercentage = "";
@@ -1003,6 +1008,7 @@ public class PurchaseOrderTest extends BaseClass {
 		double ActDiscountProductPriceDouble = 0;
 		double ExpSubTotal = 0;
 		double ExpZeroGstProductamount = 0;
+		double expectedDiscountAmount = 0;
 
 		int excelDataListSize = excelDataList.size();
 		for (int i = 0; i < excelDataListSize; i++) {
@@ -1016,12 +1022,12 @@ public class PurchaseOrderTest extends BaseClass {
 				Thread.sleep(2000);
 
 			}
-			
+
 			if (i == 0) {
-				
+
 				getExcelGstType = excelData.GstType;
 				getexcelOverAllDiscountType = excelData.OverAllDiscountType;
-				getExcelOverAllDiscountPercentage = excelData.OverAllDiscPercentage;
+				getExcelOverAllDiscountPercentage = excelData.OverAllDiscountPercentage;
 				getExcelOverAllDiscountAmount = excelData.OverAllDiscountAmount;
 				getExcelGstPercentage = excelData.GstPercentage;
 				getExcelCurrencyRate = excelData.CurrencyRate;
@@ -1120,12 +1126,37 @@ public class PurchaseOrderTest extends BaseClass {
 				if (productDetails.productName.equalsIgnoreCase(excelData.ProductName)) {
 
 					if (productDetails.IsCartonSelected.equalsIgnoreCase("true")) {
-						System.out.println("carton Product");
-						System.out.println("Product Name: " + productDetails.productName);
-						System.out.println("Qoh Stock: " + qohStock1);
-						System.out.println("current Stock: " + productDetails.currentStockValue);
-						soft.assertEquals(qohStock1, productDetails.currentStockValue,
-								"Actual and Expected QOH Mismatched for Product: " + productDetails.productName);
+
+						if (excelData.Uom.equalsIgnoreCase("1KG")) {
+
+							String[] split = productDetails.currentStockValue.split("[ B/L]+");
+							int boxStock = Integer.parseInt(split[0]);
+							int looseStock = Integer.parseInt(split[1]);
+
+							int multipleBoxStock = (boxStock * 10);
+							int addLooseStock = (multipleBoxStock + looseStock);
+							//	System.out.println("Lower Uom Stock: "+addLooseStock);
+
+							String stock = "0 B/" + addLooseStock + " L";
+							//	System.out.println("Lower Uom Current Stock: "+stock);
+
+							System.out.println("carton Product");
+							System.out.println("Product Name: " + productDetails.productName);
+							System.out.println("Qoh Stock: " + qohStock1);
+							System.out.println("current Stock: " + stock);
+							soft.assertEquals(qohStock1, stock,
+									"Actual and Expected QOH Mismatched for Product: " + productDetails.productName);
+
+						} else {
+
+							System.out.println("carton Product");
+							System.out.println("Product Name: " + productDetails.productName);
+							System.out.println("Qoh Stock: " + qohStock1);
+							System.out.println("current Stock: " + productDetails.currentStockValue);
+							soft.assertEquals(qohStock1, productDetails.currentStockValue,
+									"Actual and Expected QOH Mismatched for Product: " + productDetails.productName);
+
+						}				
 
 					}
 
@@ -1152,15 +1183,18 @@ public class PurchaseOrderTest extends BaseClass {
 							}
 						}
 
+						String totalCalculatedStockString = String.valueOf(totalCalculatedStock);
+						String replacetotalCalculatedStock = totalCalculatedStockString.replaceAll("\\.0$", "");
+
 						if (isNonCartonWithUOM) {
 
 							System.out.println("Non Carton Product");
 							System.out.println("Product Name: " + productDetails.productName);
-							System.out.println("Calculated QOH: " +(int)totalCalculatedStock);
-							System.out.println("Current Stock from List: " + productDetails.currentStockValue);
+							System.out.println("Calculated QOH: " +replacetotalCalculatedStock);
+							System.out.println("Current Stock from List: " +productDetails.currentStockValue);
 							System.out.println();
 
-							soft.assertEquals((int)totalCalculatedStock, productDetails.currentStockValue.trim(),
+							soft.assertEquals(replacetotalCalculatedStock, productDetails.currentStockValue.trim(),
 									"Actual and Expected QOH Mismatched for Product: " + productDetails.productName);
 
 						} else {
@@ -1177,12 +1211,11 @@ public class PurchaseOrderTest extends BaseClass {
 					break;
 				}
 			}
-
 			System.out.println();
 
 			//Qty:-
 			Sendkeys(po.Quantity, excelData.Qty);
-			
+
 			//Price:-
 			click(po.SGD);
 			po.SGD.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
@@ -1190,7 +1223,7 @@ public class PurchaseOrderTest extends BaseClass {
 			Thread.sleep(1000);
 
 			// Foc:-
-	/*		if (excelData.Type.equalsIgnoreCase("Product")) {
+			/*		if (excelData.Type.equalsIgnoreCase("Product")) {
 
 				if (IsFOCManagementInPI == true) {
 					System.out.println("IsFOCManagementInSO: " + IsFOCManagementInPI);
@@ -1209,7 +1242,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 			}*/
 
-			
+
 			//Item Level Discount:-
 			if (IsEnableItemLevelDiscountInPurchase == true) {
 
@@ -1263,8 +1296,8 @@ public class PurchaseOrderTest extends BaseClass {
 
 					double discAmtDouble1 = Double.parseDouble(excelData.DiscountAmount);
 					double excelPriceDouble = Double.parseDouble(excelData.Price);
-					
-					double expectedDiscountAmount = (excelPriceDouble - discAmtDouble1);
+
+					expectedDiscountAmount = (excelPriceDouble - discAmtDouble1);
 
 					Total = Total - discAmtDouble1;
 					System.out.println("Discount Amount Total: "+expectedDiscountAmount);
@@ -1272,40 +1305,34 @@ public class PurchaseOrderTest extends BaseClass {
 				}
 
 			}
-			
+
 			//Add Button:-
 			click(po.AddButton);
 			Thread.sleep(2000);
 			click(po.Quantity);
 			System.out.println();
-			
+
 			String amount = driver.findElement(By.xpath("//table[@id='PurchaseOrderTable']//tbody//tr//td[2]"
 					+ "//div//textarea[contains(text(),'"+excelData.ProductName+"')]//following::td[@class='orderTotal']")).getText();
-			System.out.println("Actual Discount Amount: "+amount);
-			System.out.println("Expected Discount Amount: "+Total);
-			
-			
+			double amountDouble = Double.parseDouble(amount);
+			System.out.println("Actual Discount Amount: "+amountDouble);
+			System.out.println("Expected Discount Amount: "+expectedDiscountAmount);
+			System.out.println();	
 
-
+			ExpSubTotal = ExpSubTotal + amountDouble;
 
 		}
-		
-		//Sub Total:-
-		String subTotalString = driver.findElement(By.id("Subtotal")).getText();
-		double subTotalDouble = Double.parseDouble(subTotalString);
-		System.out.println("Actual Sub Total: "+subTotalDouble);
-		System.out.println("Expected Sub Total: ");
-				
+
 		//Over All Discount:-
 		click(po.OverAllDiscountType);
 		Select overAllDiscTypeSelect = new Select(po.OverAllDiscountType);
 		overAllDiscTypeSelect.selectByVisibleText(getexcelOverAllDiscountType);
-		
+
 		WebElement overAllDiscountType = driver.findElement(By.id("DiscountType"));
 		Select overAllDiscountTypeSelect = new Select(overAllDiscountType);
 		String getOverAllDiscountType = overAllDiscountTypeSelect.getFirstSelectedOption().getText();
 		System.out.println("Over all Discount Type is: " + getOverAllDiscountType);
-		
+
 		Thread.sleep(1000);
 		click(po.OverAllDiscount);
 		if (getOverAllDiscountType.equals("$")) {
@@ -1320,8 +1347,208 @@ public class PurchaseOrderTest extends BaseClass {
 			System.out.println("No Over All Discount Amounr and Percentage");
 		}
 		System.out.println();
-		
-		
+
+		// Sub Total Calculation:-
+		System.out.println("*** Sub Total Calculation ***");
+		String subTotalAmountString = driver.findElement(By.id("Subtotal")).getText();
+		double subTotalAmountDouble = Double.parseDouble(subTotalAmountString);
+		System.out.println("Actual Sub Total Amount: " + subTotalAmountDouble);
+		System.out.println("Expected Sub Total Amount: " + ExpSubTotal);
+		System.out.println();
+
+		//Over All Discount Calculation:-
+		System.out.println("*** Grand Total Calculation With Over All Discount and Percentage ***");
+
+		double discountAmountDouble = Double.parseDouble(getExcelOverAllDiscountAmount);
+		double discountPercentageDouble = Double.parseDouble(getExcelOverAllDiscountPercentage);
+		double gstPercentage = Double.parseDouble(getExcelGstPercentage);
+		double discountPercentageAmount = 0;
+		double discountTotalAmount = 0;
+		// double finalSubTotalAmount = 0;
+
+		if (getOverAllDiscountType.equalsIgnoreCase("$")) {
+			System.out.println("Current Discount Type is: $");
+
+			discountTotalAmount = subTotalAmountDouble - discountAmountDouble;
+			System.out.println("Over All Discount Amount is: " + discountTotalAmount);
+
+		} else if (getOverAllDiscountType.equalsIgnoreCase("%")) {
+			System.out.println("Current Discount Type is: %");
+
+			discountTotalAmount = (subTotalAmountDouble * discountPercentageDouble / 100);
+			discountPercentageAmount = (subTotalAmountDouble - discountTotalAmount);
+
+			System.out.println("Discount Percentage Amount is: " + discountTotalAmount);
+			System.out.println("Over All Discount Percentage Amount is: " + discountPercentageAmount);
+		}
+
+		double zeroGstProductDiscountAmount = (ExpZeroGstProductamount * discountPercentageDouble / 100);
+		double subrationZerGstAmount = (ExpZeroGstProductamount - zeroGstProductDiscountAmount);
+		System.out.println("After Discount Zero Gst Product Amount is: " + subrationZerGstAmount);
+		double withoutZeroGstAmount = (discountPercentageAmount - subrationZerGstAmount);
+		System.out.println();
+
+		// GST CALCULATION
+		System.out.println("*** Grand Total Calculation With GST ***");
+
+		// double ExpectedGstAmount = 0;
+		// double afterExpectedGstAmount = 0;
+		double finalExpectedGstAmount = 0;
+
+		System.out.println("Gst Type is: " + getExcelGstType);
+		if (getExcelGstType.equalsIgnoreCase("Inclusive")) {
+
+			finalExpectedGstAmount = (withoutZeroGstAmount * gstPercentage) / 109;
+			System.out.println("Inclusive Gst Amount is: " + finalExpectedGstAmount);
+
+		} else if (getExcelGstType.equalsIgnoreCase("Exclusive")) {
+
+			finalExpectedGstAmount = (withoutZeroGstAmount * gstPercentage) / 100;
+			System.out.println("Exclusive Gst Amount is: " + finalExpectedGstAmount);
+
+		} else if (getExcelGstType.equalsIgnoreCase("Zero") || getExcelGstType.equalsIgnoreCase("Overseas")) {
+
+			finalExpectedGstAmount = (withoutZeroGstAmount * gstPercentage) / 100;
+			System.out.println("Zero and Overseas Gst Amount is: " + finalExpectedGstAmount);
+
+		}
+
+		String ExpectedGstAmountFormat = String.format("%.2f", finalExpectedGstAmount);
+		System.out.println("Expected Gst Amount is: " + ExpectedGstAmountFormat);
+
+		String ActualGstAmount = driver.findElement(By.id("GST")).getAttribute("value");
+		System.out.println("Actual Gst Amount is: " + ActualGstAmount);
+
+		soft.assertEquals(ActualGstAmount, ExpectedGstAmountFormat, "Actual and Expected Gst Amount Mismatched");
+		System.out.println();
+
+		if (getExcelGstType.equalsIgnoreCase("Inclusive")) {
+
+			finalExpectedGstAmount = 0;
+			System.out.println("After Inclusive Gst Amount: " + finalExpectedGstAmount);
+
+		}
+
+		// GRAND TOTAL AMOUNT
+		System.out.println("*** Grand Total Amount ***");
+		double ExpectedGrandTotalAmount = (discountPercentageAmount + finalExpectedGstAmount);
+		String ExpectedGrandTotalAmountFormat = String.format("%.2f", ExpectedGrandTotalAmount);
+		System.out.println("Expected Grand Total Amount is: " + ExpectedGrandTotalAmountFormat);
+
+		String finalTotalAmount = driver.findElement(By.xpath("//input[@id='Amount']")).getAttribute("value");
+		double finalTotalAmountDouble = Double.parseDouble(finalTotalAmount);
+		String finalTotalAmountFormat = String.format("%.2f", finalTotalAmountDouble);
+		System.out.println("Actual Grand Total Amount is: " + finalTotalAmountFormat);
+		System.out.println();
+
+		// CURRENCY CALCULATION
+		System.out.println("*** Grand Total Calculation With Currency ***");
+		System.out.println("Sub Total in Double: " + finalTotalAmountDouble);
+
+		String currencyName = po.CurrencyCode.getText().trim();
+		System.out.println("Currency Name is: " + currencyName);
+
+		if (currencyName.equalsIgnoreCase("INR")) {
+			double currencyRate = Double.parseDouble(getExcelCurrencyRate);
+			double total = (finalTotalAmountDouble * currencyRate);
+			System.out.println("Total Amount in INR ₹:" + total);
+
+		} else if (currencyName.equalsIgnoreCase("SGD")) {
+			double currencyRate = Double.parseDouble(getExcelCurrencyRate);
+			double total = (finalTotalAmountDouble * currencyRate);
+			System.out.println("Total Amount in SGD S$:" + total);
+
+		} else if (currencyName.equalsIgnoreCase("USD")) {
+			double currencyRate = Double.parseDouble(getExcelCurrencyRate);
+			double total = (finalTotalAmountDouble * currencyRate);
+			System.out.println("Total Amount in USD $:" + total);
+
+		} else {
+			System.out.println("Invalid or unsupported currency: " + currencyName);
+		}
+		System.out.println();
+
+		// DECIMAL PLACE (2 or 4)
+		System.out.println("*** Decimal Place ***");
+
+		if (DecimalCalculationForPurchase == 2) {
+			System.out.println("2 Decimal Place Amount is: " + finalTotalAmount);
+
+		} else if (DecimalCalculationForPurchase == 4) {
+			System.out.println("4 Decimal Place Amount is: " + finalTotalAmount);
+
+		} else {
+			System.out.println("Invalid Decimal Format");
+		}
+		System.out.println();
+
+		//Convert Invoice Button:-
+		click(po.ConvertInvoice);
+		click(po.PopupAlertOk);
+		Thread.sleep(3000);
+
+		//Invoice No:-
+		Thread.sleep(1000);
+		click(po.InvoiceNo);
+		Sendkeys(po.InvoiceNo, formatedTimestamp);
+		Thread.sleep(3000);
+		System.out.println("InvoiceNo :" + formatedTimestamp);
+		System.out.println("Convert invoice Successfull");
+
+		for (ExcelData excelData : excelDataList) {
+			if (excelData.BatchProduct.equalsIgnoreCase("true")) {
+				System.out.println("batch product: "+excelData.ProductName);
+
+				int tableSize = driver.findElements(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']")).size();
+				for (int i = 1; i <= tableSize; i++) {
+					
+					String getBatchProductName = driver.findElement(By.xpath("(//a[@id='BatchFolder'])["+i+"]//preceding::td[7]"))
+							.getAttribute("data-value");
+					if (getBatchProductName.equalsIgnoreCase(excelData.BatchProduct)) {
+						
+						WebElement batchFiles = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr["+i+"]//td[2]"
+								+ "//div//textarea[contains(text(),'"+getBatchProductName+"')]//following::td[7]//a[@id='BatchFolder']"));
+						js.executeScript("arguments[0].click();", batchFiles);
+						
+					}
+
+				}
+			}
+		}
+
+		//Purchase Order Data Equals to Invoice:-
+
+		String getActualProductName = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr//td[2]"))
+				.getAttribute("data-value");
+		System.out.println("Actual Product Name: "+getActualProductName);
+
+		String getActualQty = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr//td[3]//input[@id='detailQty']"))
+				.getAttribute("value");
+		System.out.println("Actual Qty: "+getActualQty);
+
+		String getActualPrice = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr//td[4]"))
+				.getAttribute("data-value");
+		System.out.println("Actual Price: "+getActualPrice);
+
+		String getActualUom = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr//td[5]//p[@id='uomText']")).getText();
+		System.out.println("Actual Uom: "+getActualUom);
+
+		String getActualDiscount = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr//td[7]")).getAttribute("data-value");
+		System.out.println("Actual Discount: "+getActualDiscount);
+
+		String getActualAmount = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr//td[8]//p[@id='DetailPurchaseDetailTotal']")).getText();
+		System.out.println("Actual Amount: "+getActualAmount);	
+
+		//Save:-
+		click(po.SaveButton);
+		Thread.sleep(5000);
+		System.out.println("Purchase Order Save Successfull");
+
+		System.out.println("***");
+
+
+
+
 
 
 	}
@@ -1417,8 +1644,8 @@ public class PurchaseOrderTest extends BaseClass {
 					Thread.sleep(4000);
 					click(po.ConvertInvoice);
 					Thread.sleep(2000);
-					if (po.PopupAlert.isDisplayed() == true) {
-						click(po.PopupAlert);
+					if (po.PopupAlertOk.isDisplayed() == true) {
+						click(po.PopupAlertOk);
 					}
 
 					Thread.sleep(1000);
@@ -1660,8 +1887,8 @@ public class PurchaseOrderTest extends BaseClass {
 			Thread.sleep(4000);
 			click(po.ConvertInvoice);
 			Thread.sleep(2000);
-			if (po.PopupAlert.isDisplayed() == true) {
-				click(po.PopupAlert);
+			if (po.PopupAlertOk.isDisplayed() == true) {
+				click(po.PopupAlertOk);
 			}
 
 			Thread.sleep(1000);
@@ -1669,11 +1896,11 @@ public class PurchaseOrderTest extends BaseClass {
 			Sendkeys(po.InvoiceNo, formatedTimestamp);
 			Thread.sleep(3000);
 			System.out.println("InvoiceNo :" + formatedTimestamp);
-			System.out.println("Convert invoice Successfull 1");
+			System.out.println("Convert invoice Successfull");
 
 			click(po.SaveButton);
 			Thread.sleep(5000);
-			System.out.println("Purchase Order Save Successfull 1");
+			System.out.println("Purchase Order Save Successfull");
 
 			System.out.println("***");
 		}

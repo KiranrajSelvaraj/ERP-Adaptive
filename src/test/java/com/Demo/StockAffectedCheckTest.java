@@ -204,7 +204,7 @@ public class StockAffectedCheckTest extends BaseClass{
 		Thread.sleep(3000);
 
 		click(po.ConvertGRN);
-		click(po.PopupAlert);
+		click(po.PopupAlertOk);
 		Thread.sleep(3000);
 
 		//Good Receiving Note

@@ -134,7 +134,7 @@ public class ConcurrencyConvertTest extends BaseClass {
 		Thread.sleep(2000);
 
 		click(po.ConvertInvoice);
-		click(po.PopupAlert);
+		click(po.PopupAlertOk);
 		Thread.sleep(2000);
 
 		LocalDateTime TimeStamp = LocalDateTime.now();
@@ -257,9 +257,11 @@ public class ConcurrencyConvertTest extends BaseClass {
 		js.executeScript("arguments[0].click();", salesDetailsIcon);
 		Thread.sleep(2000);
 
-		click(po.CopyOrder); Thread.sleep(1000); 
+		click(po.CopyOrder); 
+		Thread.sleep(1000); 
 		click(po.ConvertInvoice);
-		click(po.PopupAlert); Thread.sleep(2000);
+		click(po.PopupAlertOk); 
+		Thread.sleep(2000);
 
 		int batchFileSize1 =
 				driver.findElements(By.xpath("//a[@class='fa fa-folder-open Popup']")).size(); 

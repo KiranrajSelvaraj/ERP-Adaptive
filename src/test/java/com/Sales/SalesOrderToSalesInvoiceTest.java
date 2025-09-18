@@ -1116,7 +1116,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(5000);		
 		System.out.println("*** Sales To Invoice Page ***");
 
-		click(so.AddOrder);
+		js.executeScript("arguments[0].click();", so.AddOrder);
 		Thread.sleep(3000);
 
 		String getExcelGstType = "";
@@ -2098,7 +2098,8 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 		for (String product : ProductSet) {
 
-			WebElement productcode = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("SearchString")));
+			WebElement productcode = wait.until(ExpectedConditions.visibilityOfElementLocated
+					(By.xpath("//input[@value='Fetch']//preceding::input[@placeholder='Find a product or code ']")));
 			Thread.sleep(1000);
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			productcode.sendKeys(product);

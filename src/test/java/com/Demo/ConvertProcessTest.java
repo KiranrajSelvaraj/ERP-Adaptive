@@ -88,7 +88,7 @@ public class ConvertProcessTest extends BaseClass {
 		Thread.sleep(2000);
 
 		click(po.ConvertInvoice);
-		click(po.PopupAlert);
+		click(po.PopupAlertOk);
 		Thread.sleep(2000);
 
 		LocalDateTime TimeStamp = LocalDateTime.now();
@@ -260,7 +260,7 @@ public class ConvertProcessTest extends BaseClass {
 		click(po.CopyOrder);
 		Thread.sleep(1000);
 		click(po.ConvertInvoice);
-		click(po.PopupAlert);
+		click(po.PopupAlertOk);
 		Thread.sleep(2000);
 
 		List<WebElement> tableRow = driver.findElements(By.xpath("//table[@id='SalesTable']//tbody//tr//td[13]"));

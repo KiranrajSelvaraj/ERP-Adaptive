@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>21/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>7/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Sep 24 17:28:40 IST 2025</td>
+<td>Started on:</td><td>Thu Oct 09 11:33:13 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>841 seconds (841969 ms)</td>
+<tr><td>Total time:</td><td>199 seconds (199299 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,92 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.Sales.CreditNotesTest.SystemSettings()'><b>SystemSettings</b><br>Test class: com.Sales.CreditNotesTest</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#btnback&quot;}
+  (Session info: chrome=141.0.7390.55)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.29.93&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.55, chrome: {chromedriverVersion: 141.0.7390.65 (b2ec783d2b51..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51969}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2d3a5e01df5ebe658052fcf68826c7ea
+*** Element info: {Using=id, value=btnback}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
+	at com.BaseClass.BaseClass.click(BaseClass.java:103)
+	at com.Sales.CreditNotesTest.SystemSettings(CreditNotesTest.java:235)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1128580589", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1128580589'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#btnback&quot;}
+  (Session info: chrome=141.0.7390.55)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.29.93&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.55, chrome: {chromedriverVersion: 141.0.7390.65 (b2ec783d2b51..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51969}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2d3a5e01df5ebe658052fcf68826c7ea
+*** Element info: {Using=id, value=btnback}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
+	at com.BaseClass.BaseClass.click(BaseClass.java:103)
+	at com.Sales.CreditNotesTest.SystemSettings(CreditNotesTest.java:235)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>39</td>
+<td>com.Sales.CreditNotesTest@1a6d8329</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,110 +162,40 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.QtyCalculation1()'><b>QtyCalculation1</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
+<td title='com.Sales.CreditNotesTest.ProductPage()'><b>ProductPage</b><br>Test class: com.Sales.CreditNotesTest</td>
+<td></td>
+<td>84</td>
+<td>com.Sales.CreditNotesTest@1a6d8329</td></tr>
+<tr>
+<td title='com.Sales.CreditNotesTest.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.Sales.CreditNotesTest</td>
+<td></td>
+<td>7</td>
+<td>com.Sales.CreditNotesTest@1a6d8329</td></tr>
+<tr>
+<td title='com.Sales.CreditNotesTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesTest<br>Parameters: C0001, SGD, 1, Exclusive, Product, P0137, FIGJUICE-W.N, 2X1GM, 1, , , 10, , , , 67, TRUE, 100, $, 50, 20, 9, , </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
+<td>com.Sales.CreditNotesTest@1a6d8329</td></tr>
 <tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.ExpectedProduct()'><b>ExpectedProduct</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
-<td></td>
-<td>132</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0156, SandalwoodBliss, Packet, 1, , , , , , , 100, TRUE, 100, , , , , TRUE, </td>
+<td title='com.Sales.CreditNotesTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesTest<br>Parameters: , , , , Product, P0146, CUSTARDAPPLEJUICE-B.W.C, 1KG, 1, , , 10, , , , 90, , , , , , , TRUE, TRUE</td>
 <td></td>
 <td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
+<td>com.Sales.CreditNotesTest@1a6d8329</td></tr>
 <tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0155, AloeVeraPureTouch, 2X1GM, 1, , , , , , , 98, TRUE, 100, , , , , , </td>
+<td title='com.Sales.CreditNotesTest.UomPage()'><b>UomPage</b><br>Test class: com.Sales.CreditNotesTest</td>
+<td></td>
+<td>18</td>
+<td>com.Sales.CreditNotesTest@1a6d8329</td></tr>
+<tr>
+<td title='com.Sales.CreditNotesTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesTest<br>Parameters: , , , , Product, P0141, TRIPLECHOCOMILKSHAKE-B.W.C, 1X1KG, 1, , , 10, , , , 99, , , , , , , , TRUE</td>
 <td></td>
 <td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
+<td>com.Sales.CreditNotesTest@1a6d8329</td></tr>
 <tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.ProductPage()'><b>ProductPage</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
+<td title='com.Sales.CreditNotesTest.DirecteCreditNote()'><b>DirecteCreditNote</b><br>Test class: com.Sales.CreditNotesTest</td>
 <td></td>
-<td>352</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.SalesToInvoice()'><b>SalesToInvoice</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
-<td></td>
-<td>111</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0152, Rose Petal Silk, 1X1KG, 1, , , , , , , 78, TRUE, 100, , , , , , </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0150, Lavender Calm, 10X1GM, 1, , , , , , , 60, TRUE, 100, , , , , TRUE, TRUE</td>
-<td></td>
-<td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.UomPage()'><b>UomPage</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
-<td></td>
-<td>33</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.ProductMovementPage()'><b>ProductMovementPage</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
-<td></td>
-<td>70</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.SystemSettings()'><b>SystemSettings</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
-<td></td>
-<td>129</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.Exception()'><b>Exception</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
-<td></td>
-<td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.ProductUOMData()'><b>ProductUOMData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
-<td></td>
-<td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0153, Citrus Zest Refresh, 1KG, 1, 1, , , , , , 46, TRUE, 100, , , , , , </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
-<td></td>
-<td>4</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: C0002, SGD, 1, Inclusive, Product, P0147, FreshMint Glow, 1X1KG, 1, 1, , , TRUE, 5, 25, 60, TRUE, 100, %, 10, 10, 9, , TRUE</td>
-<td></td>
-<td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.QtyCalculation()'><b>QtyCalculation</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
-<td></td>
-<td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0154, Charcoal Detox Bar, 5X1GM, 1, 1, , , , , , 67, TRUE, 100, , , , , , </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0151, Neem & Tulsi Guard, PCS, 1, , , , , , , 57, TRUE, 100, , , , , , TRUE</td>
-<td></td>
-<td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0149, Ocean Breeze Soap, 6X1GM, 1, 1, , , , , , 30, TRUE, 100, , , , , , TRUE</td>
-<td></td>
-<td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0148, Herbal Essence Bar, 1KG, 1, , , , , , , 50, TRUE, 100, , , , , TRUE, TRUE</td>
-<td></td>
-<td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@5f049ea1</td></tr>
+<td>47</td>
+<td>com.Sales.CreditNotesTest@1a6d8329</td></tr>
 </table><p>
 </body>
 </html>

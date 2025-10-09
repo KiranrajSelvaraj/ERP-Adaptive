@@ -3,6 +3,7 @@ package com.Purchase;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -27,10 +28,10 @@ import com.BaseClass.BaseClass;
 import com.PomClass.Login;
 import com.PomClass.Product;
 import com.PomClass.ProductMovement;
+import com.PomClass.PurchaseInvoice;
 import com.PomClass.PurchaseOrder;
 import com.PomClass.SystemSettings;
 import com.PomClass.Vendors;
-
 import com.Utility.Util1;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -91,7 +92,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 	@DataProvider
 	public Object[][] Util2() {
-		Object[][] data = Util1.getTestData("C:\\Adaptive\\ERP\\PurchaseOrder7.xlsx", "Sheet1");
+		Object[][] data = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\PurchaseOrder.xlsx", "Sheet1");
 		return data;
 
 	}
@@ -123,12 +124,14 @@ public class PurchaseOrderTest extends BaseClass {
 		private String GstPercentage;
 		private String ZeroGst;
 		private String BatchProduct;
+		private String ReturnQty;
 
 		public ExcelData(String Vendor, String CurrencyCode, String CurrancyRate, String GstType, String Type,
 				String ProductCode, String ProductName, String Uom, String Qty, String Foc, String DiscountPercentage,
 				String DiscountAmount, String UnitDiscCheckbox, String UnitDiscPercentage, String UnitDiscAmount,
 				String Price, String IsSpecialPriceCheckbox, String SpecialPrice, String OverAllDiscountType,
-				String OverAllDiscountAmount, String OverAllDiscountPercentage, String GstPercentage, String ZeroGst, String BatchProduct) {
+				String OverAllDiscountAmount, String OverAllDiscountPercentage, String GstPercentage,
+				String ZeroGst, String BatchProduct, String ReturnQty) {
 			super();
 
 			this.Vendor = Vendor;
@@ -155,6 +158,7 @@ public class PurchaseOrderTest extends BaseClass {
 			this.GstPercentage = GstPercentage;
 			this.ZeroGst = ZeroGst;
 			this.BatchProduct = BatchProduct;
+			this.ReturnQty = ReturnQty;
 
 		}
 
@@ -173,12 +177,13 @@ public class PurchaseOrderTest extends BaseClass {
 			String ProductCode, String ProductName, String Uom, String Qty, String Foc, String DiscountPercentage,
 			String DiscountAmount, String UnitDiscCheckbox, String UnitDiscPercentage, String UnitDiscAmount,
 			String Price, String IsSpecialPriceCheckbox, String SpecialPrice, String OverAllDiscountType,
-			String OverAllDiscountAmount, String OverAllDiscountPercentage, String GstPercentage, String ZeroGst, String BatchProduct) {
+			String OverAllDiscountAmount, String OverAllDiscountPercentage, String GstPercentage, 
+			String ZeroGst, String BatchProduct, String ReturnQty) {
 
 		ExcelData data = new ExcelData(Vendor, CurrencyCode, CurrancyRate, GstType, Type, ProductCode, ProductName,
 				Uom, Qty, Foc, DiscountPercentage, DiscountAmount, UnitDiscCheckbox, UnitDiscPercentage, UnitDiscAmount,
 				Price, IsSpecialPriceCheckbox, SpecialPrice, OverAllDiscountType, OverAllDiscountAmount,
-				OverAllDiscountPercentage, GstPercentage, ZeroGst, BatchProduct);
+				OverAllDiscountPercentage, GstPercentage, ZeroGst, BatchProduct, ReturnQty);
 
 		excelDataList.add(data);
 		ProductSet.add(ProductCode);
@@ -1005,19 +1010,21 @@ public class PurchaseOrderTest extends BaseClass {
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
+		//	WebDriverWait wait = new WebDriverWait(driver, 20);
 
 		LocalDateTime TimeStamp = LocalDateTime.now();
 		DateTimeFormatter DateTimeFormate = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 		String formatedTimestamp = TimeStamp.format(DateTimeFormate);
 
 		PurchaseOrder po = new PurchaseOrder(driver);
+		PurchaseInvoice pi = new PurchaseInvoice(driver);
 
 		driver.navigate().to(url + "Purchases/PurchaseOrderIndex");
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 		System.out.println("*Purchase Form Page*");
 		System.out.println();
 
-		click(po.AddPurchaseOrder);
+		js.executeScript("arguments[0].click();", po.AddPurchaseOrder);
 		Thread.sleep(3000);		
 
 		String getExcelGstType = "";
@@ -1027,10 +1034,7 @@ public class PurchaseOrderTest extends BaseClass {
 		String getExcelGstPercentage = "";
 		String getExcelCurrencyRate = "";
 		String productPrice = "";
-		String ExpDiscountProductPriceFormat = "";
 
-		// double ZeroGstProductTotalAmount = 0;
-		//double ActDiscountProductPriceDouble = 0;
 		double ExpSubTotal = 0;
 		double ExpZeroGstProductamount = 0;
 		double expectedDiscountAmount = 0;
@@ -1047,6 +1051,11 @@ public class PurchaseOrderTest extends BaseClass {
 				Thread.sleep(2000);
 
 			}
+
+			click(po.GSTType);
+			WebElement GstSearchInput = driver.findElement(
+					By.xpath("//span[@id='select2-GSTTypeId-container']//following::input[@type='search']"));
+			GstSearchInput.sendKeys(excelData.GstType + Keys.ENTER);
 
 			if (i == 0) {
 
@@ -1086,7 +1095,7 @@ public class PurchaseOrderTest extends BaseClass {
 				click(po.ChooseproductName);
 				driver.findElement(
 						By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"))
-				.sendKeys(excelData.ProductName + Keys.ENTER);
+				.sendKeys(excelData.ProductCode + Keys.ENTER);
 
 			} else if (excelData.Type.equalsIgnoreCase("Service")) {
 
@@ -1172,6 +1181,16 @@ public class PurchaseOrderTest extends BaseClass {
 							soft.assertEquals(qohStock1, stock,
 									"Actual and Expected QOH Mismatched for Product: " + productDetails.productName);
 
+						} else {
+
+							System.out.println("carton Product");
+							System.out.println("Product Name: " + productDetails.productName);
+							System.out.println("Qoh Stock: " + qohStock1);
+							System.out.println("current Stock: " +productDetails.currentStockValue);
+
+							soft.assertEquals(qohStock1, productDetails.currentStockValue,
+									"Actual and Expected QOH Mismatched for Product: " + productDetails.productName);
+
 						} 		
 
 					}
@@ -1236,7 +1255,7 @@ public class PurchaseOrderTest extends BaseClass {
 			Sendkeys(po.Quantity, excelData.Qty);
 
 			// Foc:-
-			if (excelData.Type.equalsIgnoreCase("Product")) {
+			/*	if (excelData.Type.equalsIgnoreCase("Product")) {
 
 				if (IsFOCManagementInPI == true) {
 					System.out.println("IsFOCManagementInSO: " + IsFOCManagementInPI);
@@ -1253,7 +1272,7 @@ public class PurchaseOrderTest extends BaseClass {
 			} else {
 
 				System.out.println("Foc Field Is Not Displayed");
-			}
+			}*/
 
 			//Price:-
 			click(po.SGD);
@@ -1313,12 +1332,13 @@ public class PurchaseOrderTest extends BaseClass {
 				} else if (excelData.DiscountAmount.isBlank() == false) {
 
 					double discAmtDouble1 = Double.parseDouble(excelData.DiscountAmount);
-					double excelPriceDouble = Double.parseDouble(excelData.Price);
+					double excelPriceDouble = Double.parseDouble(excelData.Price);					
+					double discountAmount = (excelPriceDouble * excelQtyDouble);
 
-					expectedDiscountAmount = (excelPriceDouble - discAmtDouble1);
+					expectedDiscountAmount = (discountAmount - discAmtDouble1);
 
-					Total = Total - discAmtDouble1;
-					System.out.println("Discount Amount Total: "+expectedDiscountAmount);
+					Total = expectedDiscountAmount - Total;
+					System.out.println("Discount Amount Total: "+Total);
 
 				}
 
@@ -1332,19 +1352,24 @@ public class PurchaseOrderTest extends BaseClass {
 
 			productPrice = driver.findElement(By.xpath("//table[@id='PurchaseOrderTable']//tbody//tr//td[2]"
 					+ "//div//textarea[contains(text(),'"+excelData.ProductName+"')]//following::td[@class='orderTotal']")).getText();
-			double productPriceDouble = Double.parseDouble(productPrice);
+			String replaceAllProductPrice = productPrice.replaceAll(",", "");
+			double productPriceDouble = Double.parseDouble(replaceAllProductPrice);
 			System.out.println("Actual Discount Amount: "+productPriceDouble);
 			System.out.println("Expected Discount Amount: "+expectedDiscountAmount);
 			System.out.println();	
 
+			soft.assertEquals(productPriceDouble, expectedDiscountAmount, 
+					"Actual and Expected Discount Amount Mismatched for "+excelData.ProductName);
+
 			ExpSubTotal = ExpSubTotal + productPriceDouble;
-			
+
 			if (excelData.ZeroGst.equals("TRUE")) {
-				ExpZeroGstProductamount = Double.parseDouble(productPrice) + ExpZeroGstProductamount;
+				ExpZeroGstProductamount = Double.parseDouble(replaceAllProductPrice) + ExpZeroGstProductamount;
+				System.out.println("ExpZeroGstProductamount: "+ExpZeroGstProductamount);
 			}
 
 		}
-		
+
 		//Over All Discount:-
 		click(po.OverAllDiscountType);
 		Select overAllDiscTypeSelect = new Select(po.OverAllDiscountType);
@@ -1360,10 +1385,14 @@ public class PurchaseOrderTest extends BaseClass {
 		if (getOverAllDiscountType.equals("$")) {
 			po.OverAllDiscount.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			Sendkeys(po.OverAllDiscount, getExcelOverAllDiscountAmount + Keys.ENTER);
+			Thread.sleep(1000);
+			click(po.Quantity);
 
 		} else if (getOverAllDiscountType.equals("%")) {
 			po.OverAllDiscount.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			Sendkeys(po.OverAllDiscount, getExcelOverAllDiscountPercentage + Keys.ENTER);
+			Thread.sleep(1000);
+			click(po.Quantity);
 
 		} else {
 			System.out.println("No Over All Discount Amounr and Percentage");
@@ -1373,10 +1402,14 @@ public class PurchaseOrderTest extends BaseClass {
 		// Sub Total Calculation:-
 		System.out.println("*** Sub Total Calculation ***");
 		String subTotalAmountString = driver.findElement(By.id("Subtotal")).getText();
-		double subTotalAmountDouble = Double.parseDouble(subTotalAmountString);
+		String replaceAllSubTotalAmountString = subTotalAmountString.replaceAll(",", "");
+		double subTotalAmountDouble = Double.parseDouble(replaceAllSubTotalAmountString);
 		System.out.println("Actual Sub Total Amount: " + subTotalAmountDouble);
 		System.out.println("Expected Sub Total Amount: " + ExpSubTotal);
 		System.out.println();
+
+		soft.assertEquals(subTotalAmountDouble, ExpSubTotal, 
+				"Actual and Expected SubTotal Mismatched");
 
 		//Over All Discount Calculation:-
 		System.out.println("*** Grand Total Calculation With Over All Discount and Percentage ***");
@@ -1386,13 +1419,12 @@ public class PurchaseOrderTest extends BaseClass {
 		double gstPercentage = Double.parseDouble(getExcelGstPercentage);
 		double discountPercentageAmount = 0;
 		double discountTotalAmount = 0;
-		// double finalSubTotalAmount = 0;
 
 		if (getOverAllDiscountType.equalsIgnoreCase("$")) {
 			System.out.println("Current Discount Type is: $");
 
 			discountTotalAmount = subTotalAmountDouble - discountAmountDouble;
-			System.out.println("Discount Amount is: "+discountAmountDouble);
+			System.out.println("Discount Amount is: "+discountTotalAmount);
 			System.out.println("Over All Discount Amount is: " + discountTotalAmount);
 
 		} else if (getOverAllDiscountType.equalsIgnoreCase("%")) {
@@ -1405,10 +1437,36 @@ public class PurchaseOrderTest extends BaseClass {
 			System.out.println("Over All Discount Percentage Amount is: " + discountPercentageAmount);
 		}
 
-		double zeroGstProductDiscountAmount = (ExpZeroGstProductamount - discountAmountDouble);
-		double subrationZerGstAmount = (ExpZeroGstProductamount - zeroGstProductDiscountAmount);
-		System.out.println("After Discount Zero Gst Product Amount is: " + zeroGstProductDiscountAmount);
-		double withoutZeroGstAmount = (discountTotalAmount - zeroGstProductDiscountAmount);
+		double divOverAllDisc = discountAmountDouble / subTotalAmountDouble;
+		double finalWithoutGstAmount = 0;
+
+		for (ExcelData excelData : excelDataList) {
+
+			if (excelData.ZeroGst.equalsIgnoreCase("true") || getOverAllDiscountType.equalsIgnoreCase("$")) {
+
+				double withoutGstAmount = divOverAllDisc * ExpZeroGstProductamount;
+				finalWithoutGstAmount = ExpZeroGstProductamount - withoutGstAmount;
+				String formatFinalWithoutGstAmount = String.format("%.2f", finalWithoutGstAmount);
+				System.out.println("Without Gst Product Amount: "+formatFinalWithoutGstAmount);
+
+			} else if (excelData.ZeroGst.equalsIgnoreCase("true") || getOverAllDiscountType.equalsIgnoreCase("%")) {
+
+				double zeroGstProductDiscountAmount = (ExpZeroGstProductamount * discountPercentageDouble / 100);
+				double subrationZerGstAmount = (ExpZeroGstProductamount - zeroGstProductDiscountAmount);
+				System.out.println("After Discount Zero Gst Product Amount is: " + subrationZerGstAmount);
+				double withoutZeroGstAmount = (discountPercentageAmount - subrationZerGstAmount);
+				System.out.println("Without Zero Gst Amount: "+withoutZeroGstAmount);
+				System.out.println();
+
+
+			}	
+			break;
+		}
+
+		//double formatFinalWithoutGstAmountDouble = Double.parseDouble(formatFinalWithoutGstAmount);
+		double subWithoutGstAmount = discountTotalAmount - finalWithoutGstAmount;
+		String formatSubWithoutGstAmount = String.format("%.2f", subWithoutGstAmount);
+		System.out.println("With Gst Product SubTotal: "+formatSubWithoutGstAmount);
 		System.out.println();
 
 		// GST CALCULATION
@@ -1421,22 +1479,22 @@ public class PurchaseOrderTest extends BaseClass {
 		System.out.println("Gst Type is: " + getExcelGstType);
 		if (getExcelGstType.equalsIgnoreCase("Inclusive")) {
 
-			finalExpectedGstAmount = (withoutZeroGstAmount * gstPercentage) / 109;
+			finalExpectedGstAmount = (subWithoutGstAmount * gstPercentage) / 109;
 			System.out.println("Inclusive Gst Amount is: " + finalExpectedGstAmount);
 
 		} else if (getExcelGstType.equalsIgnoreCase("Exclusive")) {
 
-			finalExpectedGstAmount = (withoutZeroGstAmount * gstPercentage) / 100;
+			finalExpectedGstAmount = (subWithoutGstAmount * gstPercentage) / 100;
 			System.out.println("Exclusive Gst Amount is: " + finalExpectedGstAmount);
 
 		} else if (getExcelGstType.equalsIgnoreCase("Zero") || getExcelGstType.equalsIgnoreCase("Overseas")) {
 
-			finalExpectedGstAmount = (withoutZeroGstAmount * gstPercentage) / 100;
+			finalExpectedGstAmount = (subWithoutGstAmount * gstPercentage) / 100;
 			System.out.println("Zero and Overseas Gst Amount is: " + finalExpectedGstAmount);
 
 		}	
 
-		String ActualGstAmount = driver.findElement(By.id("FooterGST")).getText();
+		String ActualGstAmount = driver.findElement(By.xpath("//table[@id='PurchaseOrderTable']//tfoot//tr[6]//td[8]//p[@id='FooterGST']")).getText();
 		System.out.println("Actual Gst Amount is: " + ActualGstAmount);
 
 		String ExpectedGstAmountFormat = String.format("%.2f", finalExpectedGstAmount);
@@ -1451,7 +1509,6 @@ public class PurchaseOrderTest extends BaseClass {
 
 		} else {
 
-			//	String ExpectedGstAmountFormat = String.format("%.2f", finalExpectedGstAmount);
 			System.out.println("Expected Gst Amount is: " + ExpectedGstAmountFormat);
 
 			soft.assertEquals(ActualGstAmount, ExpectedGstAmountFormat, "Actual and Expected Gst Amount Mismatched");
@@ -1461,8 +1518,9 @@ public class PurchaseOrderTest extends BaseClass {
 		// GRAND TOTAL AMOUNT
 		System.out.println("*** Grand Total Amount ***");
 
-		String finalTotalAmount = driver.findElement(By.id("FooterTotal")).getText();
-		double finalTotalAmountDouble = Double.parseDouble(finalTotalAmount);
+		String finalTotalAmount = driver.findElement(By.xpath("//table[@id='PurchaseOrderTable']//tfoot//tr[8]//td[8]//p[@id='FooterTotal']")).getText();
+		String replaceAllFinalTotalAmount = finalTotalAmount.replaceAll(",", "");
+		double finalTotalAmountDouble = Double.parseDouble(replaceAllFinalTotalAmount);
 		String finalTotalAmountFormat = String.format("%.2f", finalTotalAmountDouble);
 		System.out.println("Actual Grand Total Amount is: " + finalTotalAmountFormat);
 
@@ -1481,24 +1539,28 @@ public class PurchaseOrderTest extends BaseClass {
 		String currencyName = po.CurrencyCode.getText().trim();
 		System.out.println("Currency Name is: " + currencyName);
 
+		double total = 0;
 		if (currencyName.equalsIgnoreCase("INR")) {
 			double currencyRate = Double.parseDouble(getExcelCurrencyRate);
-			double total = (finalTotalAmountDouble * currencyRate);
+			total = (finalTotalAmountDouble * currencyRate);
 			System.out.println("Total Amount in INR ₹:" + total);
 
 		} else if (currencyName.equalsIgnoreCase("SGD")) {
 			double currencyRate = Double.parseDouble(getExcelCurrencyRate);
-			double total = (finalTotalAmountDouble * currencyRate);
+			total = (finalTotalAmountDouble * currencyRate);
 			System.out.println("Total Amount in SGD S$:" + total);
 
 		} else if (currencyName.equalsIgnoreCase("USD")) {
 			double currencyRate = Double.parseDouble(getExcelCurrencyRate);
-			double total = (finalTotalAmountDouble * currencyRate);
+			total = (finalTotalAmountDouble * currencyRate);
 			System.out.println("Total Amount in USD $:" + total);
 
 		} else {
 			System.out.println("Invalid or unsupported currency: " + currencyName);
 		}
+
+		soft.assertEquals(finalTotalAmountDouble, total, "Actual and Expected Currency Mismatched");
+
 		System.out.println();
 
 		// DECIMAL PLACE (2 or 4)
@@ -1538,7 +1600,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 				if (getBatchProductName.contains(excelData.ProductName)) {			
 
-					if (excelData.BatchProduct.equalsIgnoreCase("true")) {
+					if ("true".equalsIgnoreCase(excelData.BatchProduct)) {
 
 						System.out.println("batch product: "+excelData.ProductName);
 
@@ -1567,23 +1629,25 @@ public class PurchaseOrderTest extends BaseClass {
 		}
 		System.out.println();
 
+		Collections.reverse(excelDataList);
 		int excelDataListSize1 = excelDataList.size();
-		System.out.println("excelDataListSize1: "+excelDataListSize1);
-		for (int i = 1; i < excelDataListSize1; i++) {
+		for (int i = 0; i < excelDataListSize1; i++) {
 			ExcelData excelData = excelDataList.get(i);
 
+			System.out.println("*** Purchase Order page Data's Equals To Invoice Data's ***");
+
 			//Purchase Order Data Equals to Invoice:-
-			String getActualProductName = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+i+"]//td[2]"))
+			String getActualProductName = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[2]"))
 					.getAttribute("data-value");
 			System.out.println("Actual Product Name: "+getActualProductName);
 
-			if (getActualProductName.equalsIgnoreCase(excelData.ProductName)) {
+			if (getActualProductName.contains(excelData.ProductName)) {
 
 				System.out.println("Expected Product Name: "+excelData.ProductName);
 
 			}
 
-			String getActualQty = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+i+"]//td[3]//input[@id='detailQty']"))
+			String getActualQty = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[3]//input[@id='detailQty']"))
 					.getAttribute("value");
 			System.out.println("Actual Qty: "+getActualQty);
 
@@ -1593,7 +1657,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 			}
 
-			String getActualFoc = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+i+"]//td[4]"))
+			String getActualFoc = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[4]"))
 					.getAttribute("data-value");
 			System.out.println("Actual Foc: "+getActualFoc);
 
@@ -1603,7 +1667,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 			}
 
-			String getActualPrice = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+i+"]//td[5]"))
+			String getActualPrice = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[5]"))
 					.getAttribute("data-value");
 			System.out.println("Actual Price: "+getActualPrice);
 
@@ -1613,7 +1677,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 			}
 
-			String getActualUom = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+i+"]//td[6]//p[@id='uomText']")).getText();
+			String getActualUom = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[6]//p[@id='uomText']")).getText();
 			System.out.println("Actual Uom: "+getActualUom);
 
 			if (getActualUom.equalsIgnoreCase(excelData.Uom)) {
@@ -1622,7 +1686,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 			}
 
-			String getActualDiscount = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+i+"]//td[8]")).getAttribute("data-value");
+			String getActualDiscount = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[8]")).getAttribute("data-value");
 			System.out.println("Actual Discount Amount: "+getActualDiscount);
 
 			if (getActualDiscount.equalsIgnoreCase(excelData.DiscountAmount)) {
@@ -1631,14 +1695,14 @@ public class PurchaseOrderTest extends BaseClass {
 
 			}
 
-			String getActualAmount = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR'][\"+i+\"]//td[9]//p[@id='DetailPurchaseDetailTotal']")).getText();
+			String getActualAmount = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[9]//p[@id='DetailPurchaseDetailTotal']")).getText();
 			System.out.println("Actual Amount: "+getActualAmount);	
 
-			String expectedDiscountAmountString = String.valueOf(expectedDiscountAmount);
+		//	String expectedDiscountAmountString = String.valueOf(expectedDiscountAmount);
 
-			if (getActualAmount.equalsIgnoreCase(expectedDiscountAmountString)) {
+			if (getActualAmount.equalsIgnoreCase(productPrice)) {
 
-				System.out.println("Expected Amount: "+expectedDiscountAmountString);
+				System.out.println("Expected Amount: "+productPrice);
 
 			}
 			System.out.println();
@@ -1663,8 +1727,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 		String getGrandTotal = driver.findElement(By.id("FooterTotal")).getText();
 		System.out.println("Actual Grand Total: " + getGrandTotal);
-
-		if (getGrandTotal.equalsIgnoreCase(ExpectedGrandTotalAmountFormat)) {
+		if (getGrandTotal.equalsIgnoreCase(finalTotalAmount)) {
 			System.out.println("Expected Grand Total: " + finalTotalAmount);
 
 		}
@@ -1673,6 +1736,307 @@ public class PurchaseOrderTest extends BaseClass {
 		js.executeScript("arguments[0].click();", po.SaveButton);
 		System.out.println("** Purchase Invoice Save Successfull **");
 		Thread.sleep(5000);
+		System.out.println();
+
+		//Purchase Returns:-		
+		driver.findElement(By.xpath("//table[@id='purchasetable']//tbody//tr//td[6][contains(text(),'"
+				+formatedTimestamp+"')]//following::td[4]")).click();
+
+		click(pi.PurchaseReturn);
+		Thread.sleep(3000);
+		click(pi.PopupOk);
+
+		for (ExcelData excelData : excelDataList) {
+
+			int tableRowSize = driver.findElements(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr")).size();
+			//System.out.println("tableRowSize: "+tableRowSize);
+
+			for (int i = 2; i <= tableRowSize; i++) {
+
+				String getProductName = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+i+"]//td[2]//div//textarea")).getText();
+				//	System.out.println("getProductName: "+getProductName);
+
+				int intReturnQty = 0;
+				if (excelData.ReturnQty != null && !excelData.ReturnQty.trim().isEmpty()) {
+
+					intReturnQty = Integer.parseInt(excelData.ReturnQty);			
+				}				
+
+				if (intReturnQty > 0) {
+					if (getProductName.contains(excelData.ProductName)) {
+
+						//	System.out.println("##");
+						WebElement qtyField = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+i+"]//td[2]//div//textarea[contains(text(),'"
+								+getProductName+"')]//following::td[1]//input[@id='DetailQty']"));
+						qtyField.click();
+						qtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+						qtyField.sendKeys(excelData.ReturnQty + Keys.ENTER);
+
+						if (!excelData.Qty.equalsIgnoreCase(excelData.ReturnQty)) {
+
+							if ("true".equalsIgnoreCase(excelData.BatchProduct.trim())) {	
+
+								String totalQty = driver.findElement(By.xpath("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::strong//input[@id='TotalQty'])[1]"))
+										.getAttribute("value");
+								System.out.println("Total Qty: "+totalQty);
+
+								WebElement totalQtyField = driver.findElement(By.xpath("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::table//tbody//tr//td[6]//input[@id='Qty'])[1]"));
+								totalQtyField.click();
+								totalQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+								totalQtyField.sendKeys(totalQty + Keys.ENTER);
+								Thread.sleep(2000);
+
+								driver.findElement(By.xpath
+										("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::button[text()='Add'])[1]")).click();									
+							}
+
+						} else if ("true".equalsIgnoreCase(excelData.BatchProduct.trim())) {
+
+							driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+i+"]//td[2]//div//textarea[contains(text(),'"
+									+ ""+getProductName+"')]//following::td[8]//a[@id='BatchFolder']"))
+							.click();
+
+							String totalQty = driver.findElement(By.xpath("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::strong//input[@id='TotalQty'])[1]"))
+									.getAttribute("value");
+							System.out.println("Total Qty: "+totalQty);
+
+							WebElement totalQtyField = driver.findElement(By.xpath("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::table//tbody//tr//td[6]//input[@id='Qty'])[1]"));
+							totalQtyField.click();
+							totalQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+							totalQtyField.sendKeys(totalQty + Keys.ENTER);
+							Thread.sleep(2000);
+
+							driver.findElement(By.xpath
+									("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::button[text()='Add'])[1]")).click();								
+
+						}
+					}
+
+					/*	if (getProductName.equalsIgnoreCase(excelData.ProductName)) {
+
+						WebElement focField = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+i+"]//td[2]//div//textarea[contains(text(),'"
+								+ ""+getProductName+"')]//following::td[2]//input[@id='ItemFOCQty']"));
+						js.executeScript("arguments[0].click();", focField);
+						focField.clear();
+						focField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE +Keys.ENTER);
+						Thread.sleep(1500);
+
+						if (!getFoc.equalsIgnoreCase(excelData.ReturnQty)) {
+
+							if ("true".equalsIgnoreCase(excelData.BatchProduct.trim())) {	 
+
+								String totalQty = driver.findElement(By.xpath("(//div//strong[contains(text(),'"+getProductName+"')]//following::strong//input[@id='TotalQty'])[1]"))
+										.getAttribute("value");
+								System.out.println("Total Qty: "+totalQty);
+
+								WebElement totalQtyField = driver.findElement(By.xpath("(//div//strong[contains(text(),'"+getProductName+"')]//following::table//tbody//tr//td[6]//input[@id='Qty'])[1]"));
+								totalQtyField.click();
+								totalQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+								totalQtyField.sendKeys(totalQty + Keys.ENTER);
+								Thread.sleep(2000);
+
+								driver.findElement(By.xpath
+										("(//div//strong[contains(text(),'"+getProductName+"')]//following::button[text()='Add'])[1]")).click();									
+							}		
+						}
+					}*/
+
+				} else {
+
+					//	System.out.println("###");
+					if (getProductName.contains(excelData.ProductName)) {
+
+						WebElement delete = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+i+"]//td[2]//textarea[contains(text(),'"
+								+ ""+getProductName+"')]//following::td[8]//a[@class='fa fa-trash-o DeleteInvoiceDetails op ']"));
+						delete.click();
+						click(pi.PopupOk);
+						Thread.sleep(2000);
+						break;
+					}
+				}
+
+			}
+			System.out.println();
+		}
+		Thread.sleep(4000);
+
+
+		double expSubtotal = 0;
+		double returnExpZeroGstProductamount = 0;
+
+		int returnTableSize = driver.findElements(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr")).size();
+		System.out.println("Return Table Size: "+returnTableSize);
+
+		for (int j = 2; j <= returnTableSize; j++) {
+
+			String getProductName = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+j+"]//td[2]//div//textarea"))
+					.getText();
+
+			String getProductAmount = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+j+"]//td[9][@class='DetailTotal seperator']"))
+					.getText();
+
+			String replaceAllProductAmount = getProductAmount.replaceAll(",", "");
+			double productAmountDouble = Double.parseDouble(replaceAllProductAmount);
+
+			expSubtotal = expSubtotal + productAmountDouble;
+
+			int excelDataSize = excelDataList.size();
+			for (int i = 0; i < excelDataSize; i++) {
+				ExcelData excelData = excelDataList.get(i);
+
+				if (getProductName.contains(excelData.ProductName)  && excelData.ZeroGst.equals("TRUE")) {
+
+					returnExpZeroGstProductamount = Double.parseDouble(replaceAllProductAmount) + returnExpZeroGstProductamount;
+					System.out.println("returnExpZeroGstProductamount: "+returnExpZeroGstProductamount);
+				}
+
+			}
+
+		}
+		//System.out.println();
+
+		//SubTotal:-
+		System.out.println("*** Purchase Return SubTotal ***");
+
+		String returnSubtotal = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr//td//following::p[@id='FooterSubTotal']")).getText();
+		String replaceAllReturnSubtotal = returnSubtotal.replaceAll(",", "");
+		double returnSubtotalDouble = Double.parseDouble(replaceAllReturnSubtotal);
+		String formatReturnSubtotal = String.format("%.2f", returnSubtotalDouble);
+		System.out.println("Actual SubTotal is: "+formatReturnSubtotal);
+		String formatReturnExpSubtotal = String.format("%.2f", expSubtotal);
+		System.out.println("Expected SubTotal is: "+formatReturnExpSubtotal);
+
+		soft.assertEquals(formatReturnSubtotal, formatReturnExpSubtotal, "Atual and Expected SubTotal Mismatched");
+		System.out.println();
+
+		String getOverAllDiscAmount = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr//td//following::input[@id='Discount']"))
+				.getAttribute("value");
+		System.out.println("Get Over All discount Amount is: "+getOverAllDiscAmount);
+
+
+		//Over All Discount Calculation:-
+		System.out.println("*** Purchase Return Over All Discount and Percentage ***");
+
+		if (getOverAllDiscountType.equalsIgnoreCase("$")) {
+			System.out.println("Current Discount Type is: $");
+
+			discountTotalAmount = returnSubtotalDouble - discountAmountDouble;
+			System.out.println("Discount Amount is: "+discountTotalAmount);
+			System.out.println("Over All Discount Amount is: " + discountTotalAmount);
+
+		} else if (getOverAllDiscountType.equalsIgnoreCase("%")) {
+			System.out.println("Current Discount Type is: %");
+
+			discountTotalAmount = (subTotalAmountDouble * discountPercentageDouble / 100);
+			discountPercentageAmount = (subTotalAmountDouble - discountTotalAmount);
+
+			System.out.println("Discount Percentage Amount is: " + discountTotalAmount);
+			System.out.println("Over All Discount Percentage Amount is: " + discountPercentageAmount);
+		}
+
+		double returnDivOverAllDisc = discountAmountDouble / returnSubtotalDouble;
+		double returnfinalWithoutGstAmount = 0;
+
+		for (ExcelData excelData : excelDataList) {
+
+			if (excelData.ZeroGst.equalsIgnoreCase("true") || getOverAllDiscountType.equalsIgnoreCase("$")) {
+
+				double withoutGstAmount = returnDivOverAllDisc * returnExpZeroGstProductamount;
+				returnfinalWithoutGstAmount = returnExpZeroGstProductamount - withoutGstAmount;
+				String formatFinalWithoutGstAmount = String.format("%.2f", returnfinalWithoutGstAmount);
+				System.out.println("Without Gst Product Amount: "+formatFinalWithoutGstAmount);
+
+			} else if (excelData.ZeroGst.equalsIgnoreCase("true") || getOverAllDiscountType.equalsIgnoreCase("%")) {
+
+				double zeroGstProductDiscountAmount = (returnExpZeroGstProductamount * discountPercentageDouble / 100);
+				double subrationZerGstAmount = (returnExpZeroGstProductamount - zeroGstProductDiscountAmount);
+				System.out.println("After Discount Zero Gst Product Amount is: " + subrationZerGstAmount);
+				double withoutZeroGstAmount = (discountPercentageAmount - subrationZerGstAmount);
+				System.out.println("Without Zero Gst Amount: "+withoutZeroGstAmount);
+				System.out.println();
+
+
+			}	
+			break;
+		}
+
+		double returnsubWithoutGstAmount = discountTotalAmount - returnfinalWithoutGstAmount;
+		String formatReturnsubWithoutGstAmount = String.format("%.2f", returnsubWithoutGstAmount);
+		System.out.println("With Gst Product SubTotal: "+formatReturnsubWithoutGstAmount);
+		System.out.println();
+
+
+		// GST CALCULATION
+		System.out.println("*** Purchase Return Calculation With GST ***");
+
+		double returnFinalExpectedGstAmount = 0;
+
+		System.out.println("Gst Type is: " + getExcelGstType);
+		if (getExcelGstType.equalsIgnoreCase("Inclusive")) {
+
+			returnFinalExpectedGstAmount = (returnsubWithoutGstAmount * gstPercentage) / 109;
+			System.out.println("Inclusive Gst Amount is: " + returnFinalExpectedGstAmount);
+
+		} else if (getExcelGstType.equalsIgnoreCase("Exclusive")) {
+
+			returnFinalExpectedGstAmount = (returnsubWithoutGstAmount * gstPercentage) / 100;
+			System.out.println("Exclusive Gst Amount is: " + returnFinalExpectedGstAmount);
+
+		} else if (getExcelGstType.equalsIgnoreCase("Zero") || getExcelGstType.equalsIgnoreCase("Overseas")) {
+
+			returnFinalExpectedGstAmount = (returnsubWithoutGstAmount * gstPercentage) / 100;
+			System.out.println("Zero and Overseas Gst Amount is: " + returnFinalExpectedGstAmount);
+
+		}	
+
+		String returnActualGstAmount = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr//td//following::p[@id='FooterGST']")).getText();
+		System.out.println("Actual Gst Amount is: " + returnActualGstAmount);
+
+		String returnExpectedGstAmountFormat = String.format("%.2f", returnFinalExpectedGstAmount);
+
+		if (getExcelGstType.equalsIgnoreCase("Inclusive")) {
+
+			returnFinalExpectedGstAmount = 0;		
+			System.out.println("Expected Gst Amount: " + returnExpectedGstAmountFormat);
+
+			soft.assertEquals(returnActualGstAmount, returnExpectedGstAmountFormat, "Actual and Expected Gst Amount Mismatched");
+			System.out.println();
+
+		} else {
+
+			System.out.println("Expected Gst Amount is: " + returnExpectedGstAmountFormat);
+
+			soft.assertEquals(returnActualGstAmount, returnExpectedGstAmountFormat, "Actual and Expected Gst Amount Mismatched");
+			System.out.println();
+		}		
+
+		//Grand Total:-
+		System.out.println("*** Purchase Return Grand Total Calculation ***");
+
+		String returnGrandTotal = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr//td//following::p[@id='FCAmount']")).getText();	
+		String replaceAllReturnGrandTotal = returnGrandTotal.replaceAll(",", "");
+		double returnGrandTotalDouble = Double.parseDouble(replaceAllReturnGrandTotal);
+		String formatActualGrandTotal = String.format("%.2f", returnGrandTotalDouble);
+		System.out.println("Actual Grand Total is: "+formatActualGrandTotal);
+
+		double returnExpectedGstAmountDouble = Double.parseDouble(returnExpectedGstAmountFormat);
+
+		double returnExpectedGrandTotalAmount = (discountTotalAmount + returnExpectedGstAmountDouble);
+		String formatExpectedGrandTotalAmount = String.format("%.2f", returnExpectedGrandTotalAmount);
+		System.out.println("Expected Grand Total is: " + formatExpectedGrandTotalAmount);
+		System.out.println();
+
+		soft.assertEquals(formatActualGrandTotal, formatExpectedGrandTotalAmount, 
+				"Actual and Expected Grand Total Mismatched");
+
+
+
+
+
+		Thread.sleep(3000);
+		click(pi.Save);
+		System.out.println("** Purchase Return Save Successfull **");
+		Thread.sleep(3000);
 		System.out.println();
 	}
 
@@ -1760,7 +2124,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 	ArrayList<ExpectedStock> ExpexcetedProductStockList = new ArrayList<>();
 
-	// @Ignore
+	//@Ignore
 	@Test(priority = 22, dependsOnMethods = "ERPLoginPage")
 	public void QtyCalculation1() {
 

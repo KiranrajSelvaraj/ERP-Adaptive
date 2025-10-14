@@ -221,20 +221,6 @@ public class PurchaseOrderTest extends BaseClass {
 			ProductUomMap.put(Productcode, uomList1);
 
 		}
-
-		/*	Set<String> Products = ProductUomMap.keySet();
-		for (String Product : Products) {
-			System.out.println("Product :" + Product);
-			List<String> uom = ProductUomMap.get(Product);
-			int uomSize = uom.size();
-			for (int i = 0; i < uomSize; i++) {
-				String string = uom.get(i);
-				System.out.println("UOM: " + string);
-
-				System.out.println("***");
-			}
-		}*/
-
 	}
 
 	//System Settings:-
@@ -276,9 +262,7 @@ public class PurchaseOrderTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		String IsZeroQtyPurchaseString = driver
-				.findElement(By.xpath("//input[@id='BitValue']")).getAttribute("value");
-		IsZeroQtyPurchase = Boolean.parseBoolean(IsZeroQtyPurchaseString);
+		IsZeroQtyPurchase = ss.BooleanValue.isSelected();
 		System.out.println("IsZeroQtyPurchase: "+IsZeroQtyPurchase);
 		click(ss.Back);
 
@@ -292,9 +276,7 @@ public class PurchaseOrderTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		String IsZeroGSTManagementString = driver
-				.findElement(By.xpath("//input[@id='BitValue']")).getAttribute("value");
-		IsZeroGSTManagement = Boolean.parseBoolean(IsZeroGSTManagementString);
+		IsZeroGSTManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsZeroGSTManagement: "+IsZeroGSTManagement);
 		click(ss.Back);
 
@@ -308,9 +290,7 @@ public class PurchaseOrderTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		String IsMultipleProductForPurchaseString = driver
-				.findElement(By.xpath("//input[@id='BitValue']")).getAttribute("value");
-		IsMultipleProductForPurchase = Boolean.parseBoolean(IsMultipleProductForPurchaseString);
+		IsMultipleProductForPurchase = ss.BooleanValue.isSelected();
 		System.out.println("IsMultipleProductForPurchase : "+IsMultipleProductForPurchase);
 		click(ss.Back);
 
@@ -324,9 +304,7 @@ public class PurchaseOrderTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		String IsGSTManagementString = driver
-				.findElement(By.xpath("//input[@id='BitValue']")).getAttribute("value");
-		IsGSTManagement = Boolean.parseBoolean(IsGSTManagementString);
+		IsGSTManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsGSTManagement: "+IsGSTManagement);
 		click(ss.Back);
 
@@ -340,9 +318,7 @@ public class PurchaseOrderTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		String IsMultipleServiceForPurchaseString = driver
-				.findElement(By.xpath("//input[@id='BitValue']")).getAttribute("value");
-		IsGSTManagement = Boolean.parseBoolean(IsMultipleServiceForPurchaseString);
+		IsGSTManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsMultipleServiceForPurchase: "+IsMultipleServiceForPurchase);
 		click(ss.Back);
 
@@ -356,9 +332,7 @@ public class PurchaseOrderTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		String IsCurrencyEnabledString = driver
-				.findElement(By.xpath("//input[@id='BitValue']")).getAttribute("value");
-		IsCurrencyEnabled = Boolean.parseBoolean(IsCurrencyEnabledString);
+		IsCurrencyEnabled = ss.BooleanValue.isSelected();
 		System.out.println("IsCurrencyEnabled: "+IsCurrencyEnabled);
 		click(ss.Back);
 
@@ -372,9 +346,7 @@ public class PurchaseOrderTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		String IsWarehouseManagementString = driver
-				.findElement(By.xpath("//input[@id='BitValue']")).getAttribute("value");
-		IsWarehouseManagement = Boolean.parseBoolean(IsWarehouseManagementString);
+		IsWarehouseManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsWarehouseManagement: "+IsWarehouseManagement);
 		click(ss.Back);
 
@@ -388,9 +360,7 @@ public class PurchaseOrderTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		String IsBarcodeManagementInPurchaseString = driver
-				.findElement(By.xpath("//input[@id='BitValue']")).getAttribute("value");
-		IsBarcodeManagementInPurchase = Boolean.parseBoolean(IsBarcodeManagementInPurchaseString);
+		IsBarcodeManagementInPurchase = ss.BooleanValue.isSelected();
 		System.out.println("IsBarcodeManagementInPurchase: "+IsBarcodeManagementInPurchase);
 		click(ss.Back);
 
@@ -404,9 +374,7 @@ public class PurchaseOrderTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		String IsOpenItemManagementInPurchaseString = driver
-				.findElement(By.xpath("//input[@id='BitValue']")).getAttribute("value");
-		IsOpenItemManagementInPurchase = Boolean.parseBoolean(IsOpenItemManagementInPurchaseString);
+		IsOpenItemManagementInPurchase = ss.BooleanValue.isSelected();
 		System.out.println("IsOpenItemManagementInPurchase: "+IsOpenItemManagementInPurchase);
 		click(ss.Back);
 
@@ -436,9 +404,7 @@ public class PurchaseOrderTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		String IsEnableDirectPOtoGRNString = driver
-				.findElement(By.xpath("//input[@id='BitValue']")).getAttribute("value");
-		IsEnableDirectPOtoGRN = Boolean.parseBoolean(IsEnableDirectPOtoGRNString);
+		IsEnableDirectPOtoGRN = ss.BooleanValue.isSelected();
 		System.out.println("IsEnableDirectPOtoGRN: "+IsEnableDirectPOtoGRN);
 		click(ss.Back);
 
@@ -452,9 +418,7 @@ public class PurchaseOrderTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		String IsEnableDirectPOtoSOString = driver
-				.findElement(By.xpath("//input[@id='BitValue']")).getAttribute("value");
-		IsEnableDirectPOtoSO = Boolean.parseBoolean(IsEnableDirectPOtoSOString);
+		IsEnableDirectPOtoSO = ss.BooleanValue.isSelected();
 		System.out.println("IsEnableDirectPOtoSO: "+IsEnableDirectPOtoSO);
 		click(ss.Back);
 
@@ -468,9 +432,7 @@ public class PurchaseOrderTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		String IsEnableItemLevelDiscountInPurchaseString = driver
-				.findElement(By.xpath("//input[@id='BitValue']")).getAttribute("value");
-		IsEnableItemLevelDiscountInPurchase = Boolean.parseBoolean(IsEnableItemLevelDiscountInPurchaseString);
+		IsEnableItemLevelDiscountInPurchase = ss.BooleanValue.isSelected();
 		System.out.println("IsEnableItemLevelDiscountInPurchase:" +IsEnableItemLevelDiscountInPurchase);
 		click(ss.Back);
 
@@ -484,9 +446,7 @@ public class PurchaseOrderTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		String IsMultiWordSearchInProductString = driver.findElement(By.xpath("(//input[@name='BitValue'])[2]"))
-				.getAttribute("value");
-		IsMultiWordSearchInProduct = Boolean.parseBoolean(IsMultiWordSearchInProductString);
+		IsMultiWordSearchInProduct = ss.BooleanValue.isSelected();
 		System.out.println("IsMultiWordSearchInProduct :" + IsMultiWordSearchInProduct);
 		click(ss.Back);
 
@@ -500,9 +460,7 @@ public class PurchaseOrderTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		String IsFOCManagementInPIString = driver.findElement(By.xpath("//input[@id='BitValue']"))
-				.getAttribute("value");
-		IsFOCManagementInPI = Boolean.parseBoolean(IsFOCManagementInPIString);
+		IsFOCManagementInPI = ss.BooleanValue.isSelected();
 		System.out.println("IsFOCManagementInPI:" +IsFOCManagementInPI);
 		click(ss.Back);
 
@@ -1442,7 +1400,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 		for (ExcelData excelData : excelDataList) {
 
-			if (excelData.ZeroGst.equalsIgnoreCase("true") && getOverAllDiscountType.equalsIgnoreCase("$")) {
+			if (getOverAllDiscountType.equalsIgnoreCase("$")) {
 
 				double withoutGstAmount = divOverAllDisc * ExpZeroGstProductamount;
 				finalWithoutGstAmount = ExpZeroGstProductamount - withoutGstAmount;
@@ -1892,8 +1850,7 @@ public class PurchaseOrderTest extends BaseClass {
 			}
 
 		}
-		//System.out.println();
-
+		System.out.println();
 		//SubTotal:-
 		System.out.println("*** Purchase Return SubTotal ***");
 

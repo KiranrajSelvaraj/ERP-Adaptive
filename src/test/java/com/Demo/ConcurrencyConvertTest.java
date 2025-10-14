@@ -344,7 +344,7 @@ public class ConcurrencyConvertTest extends BaseClass {
 		click(sr.CopyReturn); 
 		Thread.sleep(2000);
 		click(sr.convertcreditnote); 
-		click(sr.AlertOK); 
+		click(sr.PopupOk); 
 		Thread.sleep(2000);
 
 		int batchFileSize2 = driver.findElements(By.xpath("//a[@class='fa fa-folder-open Popup']")).size();

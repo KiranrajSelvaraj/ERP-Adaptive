@@ -420,7 +420,7 @@ public class ConvertProcessTest extends BaseClass {
 		click(sr.CopyReturn);
 		Thread.sleep(2000);
 		click(sr.convertcreditnote);
-		click(sr.AlertOK);
+		click(sr.PopupOk);
 		Thread.sleep(2000);
 
 		List<WebElement> tableRow = driver.findElements(By.xpath("//table[@id='CreditNoteTable']//tbody//tr/td[13]"));

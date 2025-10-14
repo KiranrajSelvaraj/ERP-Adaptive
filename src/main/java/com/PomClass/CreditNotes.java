@@ -93,6 +93,12 @@ public class CreditNotes {
 	@FindBy(id = "Create")
 	public WebElement Save;
 	
+	@FindBy(id = "popup_ok")
+	public WebElement PopupOk;
+	
+	@FindBy(id = "popup_cancel")
+	public WebElement PopupCancel;
+	
 	@FindBy(xpath = "//input[@value='Back']")
 	public WebElement Back;
 	

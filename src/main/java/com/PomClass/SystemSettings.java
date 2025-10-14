@@ -66,6 +66,9 @@ public class SystemSettings {
 	@FindBy(xpath = "(//table[@id='systemsettingtable']//tbody//tr//td[6]//a[@title='Edit'])[1]")
 	public WebElement EditSystemSetting;
 	
+	@FindBy(id = "BitValue")
+	public WebElement BooleanValue;
+	
 	
 	
 	

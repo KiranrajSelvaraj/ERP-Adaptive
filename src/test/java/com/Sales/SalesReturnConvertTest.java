@@ -56,7 +56,7 @@ public class SalesReturnConvertTest extends BaseClass {
 		js.executeScript("arguments[0].click();", editIcon);
 		Thread.sleep(1000);
 		click(sr.IssueCreditNote);
-		click(sr.AlertOK);
+		click(sr.PopupOk);
 		Thread.sleep(2000);
 		
 		LocalDateTime now = LocalDateTime.now();
@@ -124,7 +124,7 @@ public class SalesReturnConvertTest extends BaseClass {
 		js.executeScript("arguments[0].click();", editIcon);
 		Thread.sleep(1000);
 		click(sr.IssueCreditNote);
-		click(sr.AlertOK);
+		click(sr.PopupOk);
 		Thread.sleep(2000);
 		
 		LocalDateTime now = LocalDateTime.now();

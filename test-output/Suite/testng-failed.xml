@@ -6,6 +6,7 @@
     <classes>
       <class name="com.Purchase.PurchaseOrderTest">
         <methods>
+          <include name="SystemSettingsPage"/>
           <include name="Exception"/>
           <include name="ERPLoginPage"/>
         </methods>

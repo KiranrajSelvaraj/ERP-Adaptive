@@ -1656,7 +1656,7 @@ public class PurchaseOrderTest extends BaseClass {
 			String getActualAmount = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[9]//p[@id='DetailPurchaseDetailTotal']")).getText();
 			System.out.println("Actual Amount: "+getActualAmount);	
 
-		//	String expectedDiscountAmountString = String.valueOf(expectedDiscountAmount);
+			//	String expectedDiscountAmountString = String.valueOf(expectedDiscountAmount);
 
 			if (getActualAmount.equalsIgnoreCase(productPrice)) {
 
@@ -1699,7 +1699,7 @@ public class PurchaseOrderTest extends BaseClass {
 		//Purchase Returns:-		
 		driver.findElement(By.xpath("//table[@id='purchasetable']//tbody//tr//td[6][contains(text(),'"
 				+formatedTimestamp+"')]//following::td[4]//a[@title='Details']")).click();
-		
+
 		Thread.sleep(5000);
 		js.executeScript("arguments[0].click();", pi.PurchaseReturn);
 		Thread.sleep(1000);
@@ -1709,7 +1709,7 @@ public class PurchaseOrderTest extends BaseClass {
 		for (ExcelData excelData : excelDataList) {
 
 			int tableRowSize = driver.findElements(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr")).size();
-			
+
 			for (int i = 2; i <= tableRowSize; i++) {
 
 				String getProductName = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+i+"]//td[2]//div//textarea")).getText();	
@@ -1723,6 +1723,7 @@ public class PurchaseOrderTest extends BaseClass {
 				if (intReturnQty > 0) {
 					if (getProductName.contains(excelData.ProductName)) {
 
+						Thread.sleep(3000);
 						WebElement qtyField = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+i+"]//td[2]//div//textarea[contains(text(),'"
 								+getProductName+"')]//following::td[1]//input[@id='DetailQty']"));
 						qtyField.click();
@@ -1733,6 +1734,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 							if ("true".equalsIgnoreCase(excelData.BatchProduct.trim())) {	
 
+								Thread.sleep(2000);
 								String totalQty = driver.findElement(By.xpath("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::strong//input[@id='TotalQty'])[1]"))
 										.getAttribute("value");
 								System.out.println("Total Qty: "+totalQty);
@@ -1748,7 +1750,7 @@ public class PurchaseOrderTest extends BaseClass {
 							}
 
 						} else if ("true".equalsIgnoreCase(excelData.BatchProduct.trim())) {
-
+							Thread.sleep(2000);
 							driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+i+"]//td[2]//div//textarea[contains(text(),'"
 									+ ""+getProductName+"')]//following::td[8]//a[@id='BatchFolder']"))
 							.click();
@@ -1802,7 +1804,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 					//	System.out.println("###");
 					if (getProductName.contains(excelData.ProductName)) {
-
+						Thread.sleep(3000);
 						WebElement delete = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+i+"]//td[2]//textarea[contains(text(),'"
 								+ ""+getProductName+"')]//following::td[8]//a[@class='fa fa-trash-o DeleteInvoiceDetails op ']"));
 						js.executeScript("arguments[0].click();", delete);
@@ -1813,7 +1815,7 @@ public class PurchaseOrderTest extends BaseClass {
 				}
 
 			}
-	
+
 		}
 		Thread.sleep(4000);
 

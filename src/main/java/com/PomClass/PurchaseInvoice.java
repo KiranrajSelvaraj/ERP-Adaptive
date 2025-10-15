@@ -48,6 +48,24 @@ public class PurchaseInvoice {
 	@FindBy(xpath = "//input[@id='ReferenceNo']")
 	public WebElement InvoiceNo;
 	
+	@FindBy(id = "select2-CurrencyId-container")
+	public WebElement CurrencyCode;
+	
+	@FindBy(id = "ProductCheck")
+	public WebElement ProductCheckBox;
+	
+	@FindBy(id = "ServiceCheck")
+	public WebElement ServiceCheckBox;
+	
+	@FindBy(id = "OpenCheck")
+	public WebElement OpenCheckBox;
+	
+	@FindBy(id = "OpenItem")
+	public WebElement OpenProduct;
+	
+	@FindBy(id="select2-ProductId-container")
+	public WebElement Chooseproduct;
+	
 	@FindBy(id = "select2-UOMId-container")
 	public WebElement Uom;
 	
@@ -73,7 +91,10 @@ public class PurchaseInvoice {
 	public WebElement Add;
 	
 	@FindBy(id = "DiscountType")
-	public WebElement DiscountType;
+	public WebElement OverAllDiscountType;
+	
+	@FindBy(id = "Discount")
+	public WebElement OverAllDiscount;
 	
 	@FindBy(xpath = "//button[@id='Create']")
 	public WebElement Save;

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="23" passed="22" failed="0" skipped="0">
+<testng-results ignored="5" total="23" passed="18" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-15T11:50:39 IST" name="Suite" finished-at="2025-10-15T12:06:38 IST" duration-ms="959052">
+  <suite started-at="2025-10-15T14:27:15 IST" name="Suite" finished-at="2025-10-15T14:39:09 IST" duration-ms="713803">
     <groups>
     </groups>
-    <test started-at="2025-10-15T11:50:39 IST" name="Test" finished-at="2025-10-15T12:06:38 IST" duration-ms="959052">
+    <test started-at="2025-10-15T14:27:15 IST" name="Test" finished-at="2025-10-15T14:39:09 IST" duration-ms="713803">
       <class name="com.Purchase.PurchaseOrderTest">
-        <test-method signature="ERPLoginPage()[pri:1, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T11:50:39 IST" name="ERPLoginPage" finished-at="2025-10-15T11:50:49 IST" duration-ms="9874" status="PASS">
+        <test-method signature="ERPLoginPage()[pri:1, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T14:27:15 IST" name="ERPLoginPage" finished-at="2025-10-15T14:27:24 IST" duration-ms="8419" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ERPLoginPage -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T11:50:51 IST" name="GetData" data-provider="Util2" finished-at="2025-10-15T11:50:51 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T14:27:25 IST" name="GetData" data-provider="Util2" finished-at="2025-10-15T14:27:25 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -142,7 +142,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T11:50:51 IST" name="GetData" data-provider="Util2" finished-at="2025-10-15T11:50:51 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="10" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T14:27:25 IST" name="GetData" data-provider="Util2" finished-at="2025-10-15T14:27:25 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -273,7 +273,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T11:50:51 IST" name="GetData" data-provider="Util2" finished-at="2025-10-15T11:50:51 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="3" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T14:27:25 IST" name="GetData" data-provider="Util2" finished-at="2025-10-15T14:27:25 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -404,7 +404,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T11:50:51 IST" name="GetData" data-provider="Util2" finished-at="2025-10-15T11:50:51 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="8" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T14:27:25 IST" name="GetData" data-provider="Util2" finished-at="2025-10-15T14:27:25 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -535,7 +535,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T11:50:51 IST" name="GetData" data-provider="Util2" finished-at="2025-10-15T11:50:51 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="4" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T14:27:25 IST" name="GetData" data-provider="Util2" finished-at="2025-10-15T14:27:25 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -666,7 +666,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T11:50:51 IST" name="GetData" data-provider="Util2" finished-at="2025-10-15T11:50:51 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="7" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T14:27:25 IST" name="GetData" data-provider="Util2" finished-at="2025-10-15T14:27:25 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -797,7 +797,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T11:50:51 IST" name="GetData" data-provider="Util2" finished-at="2025-10-15T11:50:51 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="3" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T14:27:25 IST" name="GetData" data-provider="Util2" finished-at="2025-10-15T14:27:25 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -928,7 +928,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T11:50:51 IST" name="GetData" data-provider="Util2" finished-at="2025-10-15T11:50:51 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="3" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T14:27:25 IST" name="GetData" data-provider="Util2" finished-at="2025-10-15T14:27:25 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1059,7 +1059,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T11:50:51 IST" name="GetData" data-provider="Util2" finished-at="2025-10-15T11:50:51 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="4" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T14:27:25 IST" name="GetData" data-provider="Util2" finished-at="2025-10-15T14:27:25 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1190,7 +1190,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T11:50:51 IST" name="GetData" data-provider="Util2" finished-at="2025-10-15T11:50:51 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T14:27:25 IST" name="GetData" data-provider="Util2" finished-at="2025-10-15T14:27:25 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1321,47 +1321,31 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="ProductUomData()[pri:7, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T11:50:51 IST" name="ProductUomData" finished-at="2025-10-15T11:50:51 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="4" status="PASS">
+        <test-method signature="ProductUomData()[pri:7, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T14:27:25 IST" name="ProductUomData" finished-at="2025-10-15T14:27:25 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ProductUomData -->
-        <test-method signature="SystemSettingsPage()[pri:10, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T11:50:51 IST" name="SystemSettingsPage" finished-at="2025-10-15T11:52:49 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="118619" status="PASS">
+        <test-method signature="SystemSettingsPage()[pri:10, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T14:27:25 IST" name="SystemSettingsPage" finished-at="2025-10-15T14:29:16 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="111429" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SystemSettingsPage -->
-        <test-method signature="ProductPage()[pri:12, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T11:52:49 IST" name="ProductPage" finished-at="2025-10-15T11:58:45 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="356008" status="PASS">
+        <test-method signature="ProductPage()[pri:12, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T14:29:16 IST" name="ProductPage" finished-at="2025-10-15T14:34:58 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="341780" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ProductPage -->
-        <test-method signature="VendorPage()[pri:14, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T11:58:45 IST" name="VendorPage" finished-at="2025-10-15T11:59:06 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="20980" status="PASS">
+        <test-method signature="VendorPage()[pri:14, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T14:34:58 IST" name="VendorPage" finished-at="2025-10-15T14:35:19 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="20945" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VendorPage -->
-        <test-method signature="UomPage()[pri:16, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T11:59:06 IST" name="UomPage" finished-at="2025-10-15T11:59:33 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="26120" status="PASS">
+        <test-method signature="UomPage()[pri:16, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T14:35:19 IST" name="UomPage" finished-at="2025-10-15T14:35:44 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="24967" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UomPage -->
-        <test-method signature="PurchaseOrderToInvoice()[pri:18, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T11:59:33 IST" name="PurchaseOrderToInvoice" finished-at="2025-10-15T12:02:54 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="201799" status="PASS">
+        <test-method signature="PurchaseOrderToInvoice()[pri:18, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T14:35:44 IST" name="PurchaseOrderToInvoice" finished-at="2025-10-15T14:39:09 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="205232" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PurchaseOrderToInvoice -->
-        <test-method signature="QtyCalculation()[pri:20, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T12:02:54 IST" name="QtyCalculation" finished-at="2025-10-15T12:02:54 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="10" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- QtyCalculation -->
-        <test-method signature="QtyCalculation1()[pri:22, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T12:02:54 IST" name="QtyCalculation1" finished-at="2025-10-15T12:02:54 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="5" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- QtyCalculation1 -->
-        <test-method signature="ExpectedProduct()[pri:24, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T12:02:54 IST" name="ExpectedProduct" finished-at="2025-10-15T12:05:17 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="142742" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ExpectedProduct -->
-        <test-method signature="ProductMovementPage()[pri:26, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T12:05:17 IST" name="ProductMovementPage" finished-at="2025-10-15T12:06:38 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="81302" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ProductMovementPage -->
-        <test-method signature="Exception()[pri:45, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T12:06:38 IST" name="Exception" finished-at="2025-10-15T12:06:38 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="0" status="PASS">
+        <test-method signature="Exception()[pri:45, instance:com.Purchase.PurchaseOrderTest@1530c739]" started-at="2025-10-15T14:39:09 IST" name="Exception" finished-at="2025-10-15T14:39:09 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Exception -->

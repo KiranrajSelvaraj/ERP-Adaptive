@@ -11,6 +11,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.collections4.map.HashedMap;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -968,7 +969,7 @@ public class PurchaseOrderTest extends BaseClass {
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		//	WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 
 		LocalDateTime TimeStamp = LocalDateTime.now();
 		DateTimeFormatter DateTimeFormate = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -1693,12 +1694,13 @@ public class PurchaseOrderTest extends BaseClass {
 		//Save:-
 		js.executeScript("arguments[0].click();", po.SaveButton);
 		System.out.println("** Purchase Invoice Save Successfull **");
-		Thread.sleep(5000);
 		System.out.println();
 
-		//Purchase Returns:-		
-		driver.findElement(By.xpath("//table[@id='purchasetable']//tbody//tr//td[6][contains(text(),'"
-				+formatedTimestamp+"')]//following::td[4]//a[@title='Details']")).click();
+		//Purchase Returns:-
+		Thread.sleep(5000);
+		WebElement details = driver.findElement(By.xpath("//table[@id='purchasetable']//tbody//tr//td[6]"
+				+ "[normalize-space()='"+formatedTimestamp+"']//following::td[4]//a[@title='Details']"));
+		js.executeScript("arguments[0].click();", details);
 
 		Thread.sleep(5000);
 		js.executeScript("arguments[0].click();", pi.PurchaseReturn);
@@ -1988,11 +1990,18 @@ public class PurchaseOrderTest extends BaseClass {
 				"Actual and Expected Grand Total Mismatched");
 
 
-
-
-
 		Thread.sleep(3000);
 		click(pi.Save);
+		
+		try {
+			
+			String alertText = driver.findElement(By.id("popup_message")).getText();
+			System.out.println("Alert Text: "+alertText);
+		
+			
+		} catch (Exception e) {
+			 System.out.println("No alert appeared after save.");
+		}
 		System.out.println("** Purchase Return Save Successfull **");
 		Thread.sleep(3000);
 		System.out.println();

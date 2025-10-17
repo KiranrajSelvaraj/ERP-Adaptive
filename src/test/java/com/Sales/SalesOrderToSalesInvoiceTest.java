@@ -2086,7 +2086,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 			String getProductName = driver.findElement(By.xpath("//table[@id='CreditNoteTable']//tbody//tr["+j+"]//td[2]//textarea")).getText();
 			System.out.println("getProductName: "+getProductName);
-			String getProductAmount = driver.findElement(By.xpath("//table[@id='CreditNoteTable']//tbody//tr["+j+"]//td[@id='totaldetailamount']")).getText();
+			String getProductAmount = driver.findElement(By.xpath("//table[@id='CreditNoteTable']//tbody//tr["+j+"]//td[13][@id='totaldetailamount']")).getAttribute("data-value");
 			System.out.println("getProductAmount: "+getProductAmount);
 			String replaceAllGetProductAmount = getProductAmount.replaceAll(",", "");
 			double getProductAmountDouble = Double.parseDouble(replaceAllGetProductAmount);

@@ -2112,8 +2112,8 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		System.out.println("*** Credit Notes SubTotal ***");
 
 		String getActSubtotal = driver.findElement(By.xpath("//table[@id='CreditNoteTable']//tfoot//tr[1]//td[13]//child::p[@id='tSubtotal']")).getText();
-		String replaceAllGetActSubtotal = getActSubtotal.replaceAll(",", "");
-		double getActSubtotalDouble = Double.parseDouble(replaceAllGetActSubtotal);
+	//	String replaceAllGetActSubtotal = getActSubtotal.replaceAll(",", "");
+		double getActSubtotalDouble = Double.parseDouble(getActSubtotal);
 		String formatGetActSubtotal = String.format("%.2f", getActSubtotalDouble);
 		System.out.println("Actual SubTotal is: "+formatGetActSubtotal);
 		String formatExpSubtotal = String.format("%.2f", expSubtotal);

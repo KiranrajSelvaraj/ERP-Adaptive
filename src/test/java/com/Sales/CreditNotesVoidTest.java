@@ -16,46 +16,37 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.BaseClass.BaseClass;
+import com.PomClass.CreditNotes;
 import com.PomClass.Login;
 import com.PomClass.Product;
 import com.PomClass.ProductMovement;
-import com.PomClass.SalesInvoice;
 import com.PomClass.SystemSettings;
 
 import com.Utility.Util1;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class SalesInvoiceVoidTest extends BaseClass{
+public class CreditNotesVoidTest extends BaseClass{
 
 	private String url;
 
 	SoftAssert soft = new SoftAssert();
 
-	@Parameters({ "env" })
-	@BeforeTest
-	public void Environment(String env) {
-
-		if (env.equals("Dev")) {
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-			driver.manage().window().maximize();
-			driver.get("https://erp.dev1.adaptivegroups.asia/ERP/Account/Login");
-			url = "https://erp.dev1.adaptivegroups.asia/ERP/";
-
-		}
-
-	}
-
 	@Test(priority = 1)
 	public void ERPLoginPage() throws InterruptedException {
+
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+
+		driver.get("https://erp.dev1.adaptivegroups.asia/ERP/Account/Login");
+		url = "https://erp.dev1.adaptivegroups.asia/ERP/";
 
 		Login lo = new Login(driver);
 
@@ -209,7 +200,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 	Map<String, List<String>> ProductUomMap = new HashedMap<>();
 
 	// @Ignore
-	@Test(priority = 5, dependsOnMethods = "ERPLoginPage")
+	@Test(priority = 6, dependsOnMethods = "ERPLoginPage")
 	public void ProductUOMData() throws InterruptedException {
 		ProductList.addAll(ProductSet);
 
@@ -239,6 +230,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 			ProductUomMap.put(getProductList, uomList1);
 
 		}
+
 	}
 
 	private boolean IsSalesManManagement;
@@ -250,7 +242,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 	private boolean IsDuplicateProductsInInvoice;
 	private boolean IsCartonManagement;
 	private boolean IsEnableItemLevelDiscountInSales;
-	private boolean IsFOCManagementInSO;
+	private boolean IsFOCManagementInCN;
 	private String BulkQtyMeasurement;
 	private String LooseQtyMeasurement;
 	private boolean IsAllowToEditSpecialPrice;
@@ -260,7 +252,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 	private boolean IsReturnManagementInSI;
 
 	// @Ignore
-	@Test(priority = 6, dependsOnMethods = "ERPLoginPage")
+	@Test(priority = 8, dependsOnMethods = "ERPLoginPage")
 	public void SystemSettings() throws InterruptedException {
 
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
@@ -278,11 +270,13 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		//	click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		IsSalesManManagement = ss.BooleanValue.isSelected();
+		String IsSalesManManagementString = driver.findElement(By.xpath("(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]"))
+				.getText();
+		IsSalesManManagement = Boolean.parseBoolean(IsSalesManManagementString);
 		System.out.println("IsSalesManManagement :" + IsSalesManManagement);
-		click(ss.Back);
+		//	click(ss.Back);
 
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].click();", ss.Clear);
@@ -292,11 +286,13 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		//	click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		IsWarehouseManagement = ss.BooleanValue.isSelected();
+		String IsWarehouseManagementString = driver.findElement(By.xpath("(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]"))
+				.getText();
+		IsWarehouseManagement = Boolean.parseBoolean(IsWarehouseManagementString);
 		System.out.println("IsWarehouseManagement :" + IsWarehouseManagement);
-		click(ss.Back);
+		//	click(ss.Back);
 
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].click();", ss.Clear);
@@ -306,11 +302,13 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		//	click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		IsWarehouseStorageManagement = ss.BooleanValue.isSelected();
+		String IsWarehouseStorageManagementString = driver.findElement(By.xpath("(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]"))
+				.getText();
+		IsWarehouseStorageManagement = Boolean.parseBoolean(IsWarehouseStorageManagementString);
 		System.out.println("IsWarehouseStorageManagement :" + IsWarehouseStorageManagement);
-		click(ss.Back);
+		//	click(ss.Back);
 
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].click();", ss.Clear);
@@ -320,11 +318,13 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		//	click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		IsBarcodeEnabled = ss.BooleanValue.isSelected();
+		String IsBarcodeEnabledString = driver.findElement(By.xpath("(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]"))
+				.getText();
+		IsBarcodeEnabled = Boolean.parseBoolean(IsBarcodeEnabledString);
 		System.out.println("IsBarcodeEnabled :" + IsBarcodeEnabled);
-		click(ss.Back);
+		//	click(ss.Back);
 
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].click();", ss.Clear);
@@ -334,11 +334,13 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		//	click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		IsBarcodeManagementInsales = ss.BooleanValue.isSelected();
+		String IsBarcodeManagementInsalesString = driver.findElement(By.xpath("(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]"))
+				.getText();
+		IsBarcodeManagementInsales = Boolean.parseBoolean(IsBarcodeManagementInsalesString);
 		System.out.println("IsBarcodeManagementInsales :" + IsBarcodeManagementInsales);
-		click(ss.Back);
+		//	click(ss.Back);
 
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].click();", ss.Clear);
@@ -348,11 +350,13 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		//	click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		IsMultiWordSearchInProduct = ss.BooleanValue.isSelected();
+		String IsMultiWordSearchInProductString = driver.findElement(By.xpath("(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]"))
+				.getText();
+		IsMultiWordSearchInProduct = Boolean.parseBoolean(IsMultiWordSearchInProductString);
 		System.out.println("IsMultiWordSearchInProduct :" + IsMultiWordSearchInProduct);
-		click(ss.Back);
+		//	click(ss.Back);
 
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].click();", ss.Clear);
@@ -362,11 +366,13 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		//	click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		IsDuplicateProductsInInvoice = ss.BooleanValue.isSelected();
+		String IsDuplicateProductsInInvoiceString = driver.findElement(By.xpath("(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]"))
+				.getText();
+		IsDuplicateProductsInInvoice = Boolean.parseBoolean(IsDuplicateProductsInInvoiceString);
 		System.out.println("IsDuplicateProductsInInvoice :" + IsDuplicateProductsInInvoice);
-		click(ss.Back);
+		//	click(ss.Back);
 
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].click();", ss.Clear);
@@ -376,11 +382,13 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		//	click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		IsCartonManagement = ss.BooleanValue.isSelected();
+		String IsCartonManagementString = driver.findElement(By.xpath("(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]"))
+				.getText();
+		IsCartonManagement = Boolean.parseBoolean(IsCartonManagementString);
 		System.out.println("IsCartonManagement :" + IsCartonManagement);
-		click(ss.Back);
+		//	click(ss.Back);
 
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].click();", ss.Clear);
@@ -390,25 +398,29 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		//	click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		IsEnableItemLevelDiscountInSales = ss.BooleanValue.isSelected();
+		String IsEnableItemLevelDiscountInSalesString = driver.findElement(By.xpath("(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]"))
+				.getText();
+		IsEnableItemLevelDiscountInSales = Boolean.parseBoolean(IsEnableItemLevelDiscountInSalesString);
 		System.out.println("IsEnableItemLevelDiscountInSales :" + IsEnableItemLevelDiscountInSales);
-		click(ss.Back);
+		//	click(ss.Back);
 
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].click();", ss.Clear);
 		js.executeScript("arguments[0].click();", ss.SystemsSettingsParamCodeSearchField);
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsFOCManagementInSO");
+		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsFOCManagementInCN");
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		//	click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		IsFOCManagementInSO = ss.BooleanValue.isSelected();
-		System.out.println("IsFOCManagementInSO :" + IsFOCManagementInSO);
-		click(ss.Back);
+		String IsFOCManagementInCNString = driver.findElement(By.xpath("(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]"))
+				.getText();
+		IsFOCManagementInCN = Boolean.parseBoolean(IsFOCManagementInCNString);
+		System.out.println("IsFOCManagementInCN :" + IsFOCManagementInCN);
+		//	click(ss.Back);
 
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].click();", ss.Clear);
@@ -418,12 +430,12 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		//	click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		BulkQtyMeasurement = driver.findElement(By.id("StringValue"))
-				.getAttribute("value");
+		BulkQtyMeasurement = driver.findElement(By.xpath("(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]"))
+				.getText();
 		System.out.println("BulkQtyMeasurement :" + BulkQtyMeasurement);
-		click(ss.Back);
+		//	click(ss.Back);
 
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].click();", ss.Clear);
@@ -433,12 +445,12 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		//	click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		LooseQtyMeasurement = driver.findElement(By.id("StringValue"))
-				.getAttribute("value");
+		LooseQtyMeasurement = driver.findElement(By.xpath("(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]"))
+				.getText();
 		System.out.println("LooseQtyMeasurement :" + LooseQtyMeasurement);
-		click(ss.Back);
+		//	click(ss.Back);
 
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].click();", ss.Clear);
@@ -448,11 +460,13 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		//	click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		IsAllowToEditSpecialPrice = ss.BooleanValue.isSelected();
+		String IsAllowToEditSpecialPriceString = driver.findElement(By.xpath("(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]"))
+				.getText();
+		IsAllowToEditSpecialPrice = Boolean.parseBoolean(IsAllowToEditSpecialPriceString);
 		System.out.println("IsAllowToEditSpecialPrice :" + IsAllowToEditSpecialPrice);
-		click(ss.Back);
+		//	click(ss.Back);
 
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].click();", ss.Clear);
@@ -462,13 +476,12 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
-		Thread.sleep(1000);
-		String DecimalCalculationForSalesString = driver.findElement(By.id("DecimalValue"))
-				.getAttribute("value");
+		//	click(ss.EditSystemSetting);
+		String DecimalCalculationForSalesString = driver.findElement(By.xpath("(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]"))
+				.getText();
 		DecimalCalculationForSales = Float.parseFloat(DecimalCalculationForSalesString);
 		System.out.println("DecimalCalculationForSales :" + DecimalCalculationForSales);
-		click(ss.Back);
+		//	click(ss.Back);
 
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].click();", ss.Clear);
@@ -478,11 +491,12 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
-		Thread.sleep(1000);
-		IsOpenItemManagementInsales = ss.BooleanValue.isSelected();
+		//	click(ss.EditSystemSetting);
+		String IsOpenItemManagementInsalesString = driver.findElement(By.xpath("(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]"))
+				.getText();
+		IsOpenItemManagementInsales = Boolean.parseBoolean(IsOpenItemManagementInsalesString);
 		System.out.println("IsOpenItemManagementInsales :" + IsOpenItemManagementInsales);
-		click(ss.Back);
+		//	click(ss.Back);
 
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].click();", ss.Clear);
@@ -492,11 +506,12 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
-		Thread.sleep(1000);
-		IsHeaderManagementInSO = ss.BooleanValue.isSelected();
+		//	click(ss.EditSystemSetting);
+		String IsHeaderManagementInSOString = driver.findElement(By.xpath("(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]"))
+				.getText();
+		IsHeaderManagementInSO = Boolean.parseBoolean(IsHeaderManagementInSOString);
 		System.out.println("IsHeaderManagementInSO :" + IsHeaderManagementInSO);
-		click(ss.Back);
+		//	click(ss.Back);
 
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].click();", ss.Clear);
@@ -506,11 +521,12 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
-		Thread.sleep(1000);
-		IsReturnManagementInSI = ss.BooleanValue.isSelected();
+		//	click(ss.EditSystemSetting);
+		String IsReturnManagementInSIString = driver.findElement(By.xpath("(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]"))
+				.getText();
+		IsReturnManagementInSI = Boolean.parseBoolean(IsReturnManagementInSIString);
 		System.out.println("IsReturnManagementInSI :" + IsReturnManagementInSI);
-		click(ss.Back);
+		//	click(ss.Back);
 
 		System.out.println();
 	}
@@ -615,9 +631,9 @@ public class SalesInvoiceVoidTest extends BaseClass{
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	// PRODUCT PAGE
+	// Product Page:-
 	// @Ignore
-	@Test(priority = 8, dependsOnMethods = "ERPLoginPage")
+	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
 		ProductList.addAll(ProductSet);
@@ -770,6 +786,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 						.getText();
 				System.out.println("LP Price: " + LPPrice);
 
+
 			} else {
 
 				for (int j = 1; j <= ProductUOMtablesize; j++) {
@@ -837,7 +854,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 	// UOM PAGE
 	// @Ignore
-	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
+	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
 
@@ -904,22 +921,21 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		}
 	}
 
-
-	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
-	public void SalesInvoicetoVoidProcess() throws InterruptedException {
+	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
+	public void DirecteCreditNote() throws InterruptedException {
 
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-		SalesInvoice si = new SalesInvoice(driver);
 
-		driver.navigate().to(url + "Sales/SalesInvoiceIndex");
-		Thread.sleep(4000);
-		System.out.println("* Sales Invoice Page *");
+		CreditNotes cn = new CreditNotes(driver);
 
-		click(si.AddInvoice);
-		Thread.sleep(4000);
+		driver.navigate().to(url + "SalesPurchases/CreditNotes");
+		Thread.sleep(5000);		
+		System.out.println("*** Credit Notes Page ***");
+
+		click(cn.AddCreditNote);
+		Thread.sleep(3000);
 
 		String getExcelGstType = "";
 		String getexcelOverAllDiscountType = "";
@@ -927,9 +943,13 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		String getExcelOverAllDiscountAmount = "";
 		String getExcelGstPercentage = "";
 		String getExcelCurrencyRate = "";
+		String getProductAmount = "";
+		//	String ExpDiscountProductPriceFormat = "";
 
-		double expZeroGstProductAmount = 0;
-		double expSubtotal = 0;
+		double ExpSubTotal = 0;
+		double ExpZeroGstProductamount = 0;
+		double expectedDiscountAmount = 0;
+		double withoutZeroGstAmount = 0;
 
 		int excelDataListSize = excelDataList.size();
 		for (int i = 0; i < excelDataListSize; i++) {
@@ -938,13 +958,18 @@ public class SalesInvoiceVoidTest extends BaseClass{
 			if (excelData.Customer.isEmpty() == false) {
 
 				Thread.sleep(2000);
-				click(si.Customer);
+				click(cn.Customer);
 				WebElement searchInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
 						By.xpath("//span[@id='select2-CustomerId-container']//following::input[@type='search'][1]")));
 				searchInput.sendKeys(excelData.Customer + Keys.ENTER);
 				Thread.sleep(2000);
 
-			}
+			}	
+
+			click(cn.GstType);
+			WebElement GstSearchInput = driver.findElement(
+					By.xpath("//span[@id='select2-GSTTypeId-container']//following::input[@type='search']"));
+			GstSearchInput.sendKeys(excelData.GstType + Keys.ENTER);
 
 			if (i == 0) {
 				getExcelGstType = excelData.GstType;
@@ -955,38 +980,33 @@ public class SalesInvoiceVoidTest extends BaseClass{
 				getExcelCurrencyRate = excelData.CurrencyRate;
 			}
 
+			// Choose Product:-
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
 				String productCheckbox = driver.findElement(By.id("ProductCheck")).getAttribute("checked");
 				System.out.println("Product Check Box is: " + productCheckbox);
 				if (!productCheckbox.equalsIgnoreCase("true")) {
-					click(si.ProductCheckBox);
+					click(cn.ProductCheckbox);
 
 				}
 
 			} else if (excelData.Type.equals("Service")) {
 
-				if (!si.ServiceCheckBox.isSelected()) {
-					click(si.ServiceCheckBox);
+				if (!cn.ServiceCheckbox.isSelected()) {
+					click(cn.ServiceCheckbox);
 				}
 
 			} else if (excelData.Type.equals("Open")) {
 
-				if (!si.OpenCheckBox.isSelected()) {
-					click(si.OpenCheckBox);
+				if (!cn.OpenCheckbox.isSelected()) {
+					click(cn.OpenCheckbox);
 				}
-
-			} else if (excelData.Type.equals("Header")) {
-
-				if (!si.HeaderCheckBox.isSelected()) {
-					click(si.HeaderCheckBox);
-				}
-
 			}
+
 
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
-				js.executeScript("arguments[0].click();", si.ChooseProduct);
+				click(cn.ChooseProduct);
 				driver.findElement(
 						By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"))
 				.sendKeys(excelData.ProductName + Keys.ENTER);
@@ -999,14 +1019,14 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 			} else if (excelData.Type.equalsIgnoreCase("Open")) {
 
-				si.OpenProduct.sendKeys(excelData.ProductName + Keys.ENTER);
+				cn.OpenProduct.sendKeys(excelData.ProductName + Keys.ENTER);
 
 			}
-			click(si.Qty);
+			click(cn.Qty);
 
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
-				click(si.ChooseUom);
+				click(cn.ChooseUom);
 				List<WebElement> subUomOption = driver.findElements(By.xpath(
 						"//span[@id='select2-UOMId-container']//following::input[@type='search']//following::ul//li"));
 				for (WebElement option : subUomOption) {
@@ -1019,7 +1039,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 			} else if (excelData.Type.equalsIgnoreCase("Service")) {
 
-				click(si.ChooseUom);
+				click(cn.ChooseUom);
 				List<WebElement> subUomOption = driver.findElements(By.xpath(
 						"//span[@id='select2-UOMId-container']//following::input[@type='search']//following::ul//li"));
 				for (WebElement option : subUomOption) {
@@ -1032,7 +1052,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 			} else if (excelData.Type.equalsIgnoreCase("Open")) {
 
-				click(si.ChooseUom);
+				click(cn.ChooseUom);
 				List<WebElement> subUomOption = driver.findElements(By.xpath(
 						"//span[@id='select2-UOMId-container']//following::input[@type='search']//following::ul//li"));
 				for (WebElement option : subUomOption) {
@@ -1043,9 +1063,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 				}
 
-			}
-
-			System.out.println();
+			}			
 
 			// Qoh Calculation:-
 			System.out.println("*** Grand Total Calculation With QOH ***");
@@ -1066,8 +1084,10 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 							int multipleBoxStock = (boxStock * 10);
 							int addLooseStock = (multipleBoxStock + looseStock);
+							//	System.out.println("Lower Uom Stock: "+addLooseStock);
 
 							String stock = "0 B/" + addLooseStock + " L";
+							//	System.out.println("Lower Uom Current Stock: "+stock);
 
 							System.out.println("carton Product");
 							System.out.println("Product Name: " + productDetails.productName);
@@ -1076,7 +1096,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 							soft.assertEquals(qohStock1, stock,
 									"Actual and Expected QOH Mismatched for Product: " + productDetails.productName);
 
-						}  else {
+						} else {
 
 							System.out.println("carton Product");
 							System.out.println("Product Name: " + productDetails.productName);
@@ -1086,7 +1106,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 							soft.assertEquals(qohStock1, productDetails.currentStockValue,
 									"Actual and Expected QOH Mismatched for Product: " + productDetails.productName);
 
-						} 		 			
+						} 		
 
 					}
 
@@ -1144,36 +1164,51 @@ public class SalesInvoiceVoidTest extends BaseClass{
 					break;
 				}
 			}
-
 			System.out.println();
 
 			//Qty:-
-			Sendkeys(si.Qty, excelData.Qty);
+			Sendkeys(cn.Qty, excelData.Qty);
 
-			//Price:-
-			click(si.Price);
-			si.Price.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-			Sendkeys(si.Price, excelData.Price);
-			Thread.sleep(1000);
+			// Foc:-
+			if (IsFOCManagementInCN == true) {
 
-			// Discount Amount,Percentage and Unit Discount and Percentage:-
-			if (IsEnableItemLevelDiscountInSales == true) {
+				if (excelData.Type.equalsIgnoreCase("Product")) {
 
-				click(si.DiscountPercentage);
-				si.DiscountPercentage.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-				Sendkeys(si.DiscountPercentage, excelData.DiscountPercentage);
+					click(cn.Foc);
+					Sendkeys(cn.Foc, excelData.Foc);
 
+				}  else if (excelData.Type.equalsIgnoreCase("Service")) {
+
+					click(cn.Foc);
+					Sendkeys(cn.Foc, excelData.Foc);
+
+				}
 
 			} else {
-				System.out.println("Discount Field Not Displayed");
-				System.out.println("Unit Discount Field Not Displayed");
 
+				System.out.println("Foc Field Is Not Displayed");
+			}
+
+			//Price:-
+			click(cn.Price);
+			cn.Price.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+			Sendkeys(cn.Price, excelData.Price);
+
+			//Item Level Discount:-
+			if (IsEnableItemLevelDiscountInSales == true) {
+
+				click(cn.DiscountAmount);
+				Sendkeys(cn.DiscountAmount, Keys.CONTROL + "a" + Keys.DELETE);
+				Sendkeys(cn.DiscountAmount, excelData.DiscountAmount);
+
+			} else {
+
+				System.out.println("Unit Discount Fields Not Displayed");
 			}
 
 			double Total = 0;
-
+			double excelQtyDouble = Double.parseDouble(excelData.Qty);
 			double priceDouble = Double.parseDouble(excelData.Price);
-			double qtyDouble = Double.parseDouble(excelData.Qty);
 
 			boolean unitDiscCheckboxBoolean = Boolean.parseBoolean(excelData.UnitDiscCheckbox);
 
@@ -1186,14 +1221,14 @@ public class SalesInvoiceVoidTest extends BaseClass{
 					double discountAmountRound = Math.round(discountPercentPrice);
 					double discAmountforPercent = discountAmountRound / 100;
 
-					Total = (priceDouble - discAmountforPercent) * qtyDouble;
-					System.out.println("Discount Percent Total: " + Total);
+					Total = (priceDouble - discAmountforPercent) * excelQtyDouble;
+					System.out.println("Item Level Discount Percentage Total: " + Total);
 
 				} else if (excelData.DiscountAmount.isBlank() == false) {
 					double discAmtDouble = Double.parseDouble(excelData.DiscountAmount);
 
-					Total = (priceDouble - discAmtDouble) * qtyDouble;
-					System.out.println("Discount Amount Total: " + Total);
+					Total = (priceDouble - discAmtDouble) * excelQtyDouble;
+					System.out.println("Item Level Discount Amount Total: " + Total);
 				}
 
 			} else {
@@ -1206,19 +1241,27 @@ public class SalesInvoiceVoidTest extends BaseClass{
 					double discAmtforPer = discPerAmtRound / 100;
 
 					Total = Total - discAmtforPer;
+					System.out.println("Discount Percentage Amount Total: "+Total);
 
 				} else if (excelData.DiscountAmount.isBlank() == false) {
 
 					double discAmtDouble1 = Double.parseDouble(excelData.DiscountAmount);
+					double excelPriceDouble = Double.parseDouble(excelData.Price);					
+					double discountAmount = (excelPriceDouble * excelQtyDouble);
 
-					Total = Total - discAmtDouble1;
+					expectedDiscountAmount = (discountAmount - discAmtDouble1);
+
+					Total = expectedDiscountAmount - Total;
+					System.out.println("Discount Amount Total: "+Total);
 
 				}
 
 			}
+			System.out.println();
 
-			//Add
-			click(si.Add);
+			//Add:-
+			Thread.sleep(1000);
+			click(cn.Add);
 			Thread.sleep(2000);
 
 			//Batch Details:-
@@ -1244,29 +1287,23 @@ public class SalesInvoiceVoidTest extends BaseClass{
 				driver.findElement(By.xpath("//strong[contains(text(),'"+excelData.ProductName+"')]//following::button[text()='Add']")).click();
 
 			}
-			Thread.sleep(2000);
-			String actualAmount = driver.findElement(By.xpath("//table[@id='SalesTable']//tbody//tr//td[2]//textarea"
-					+ "[contains(text(),'"+excelData.ProductName+" ')]//following::td[11]//p[@class='totaldetailamount']"))
-					.getText();
-			System.out.println("actualAmount: "+actualAmount);
 
-			double actualSubtotalDouble = Double.parseDouble(actualAmount);
-			expSubtotal = expSubtotal + actualSubtotalDouble;
+			getProductAmount = driver.findElement(By.xpath("//table[@id='CreditNoteTable']//tbody//tr//td[2]//div//textarea"
+					+ "[contains(text(),'"+excelData.ProductName+"')]//following::td[@id='totaldetailamount']")).getAttribute("data-value");
+			double getProductAmountDouble = Double.parseDouble(getProductAmount);
+			System.out.println("Actual Discount Amount is: "+getProductAmountDouble);
 
-			if (excelData.ZeroGst.equalsIgnoreCase("true")) {
+			ExpSubTotal = ExpSubTotal + getProductAmountDouble;
 
-				expZeroGstProductAmount = expZeroGstProductAmount + actualSubtotalDouble;
+			if (excelData.ZeroGst.equals("TRUE")) {
+				ExpZeroGstProductamount = getProductAmountDouble + ExpZeroGstProductamount;
+				System.out.println("ExpZeroGstProductamount: "+ExpZeroGstProductamount);
 
-			}	
-			Thread.sleep(1000);
-			js.executeScript("arguments[0].click();", si.Qty);
-			Thread.sleep(1000);
-		} //Excel Data List Loop
+			}
+		}
 
-		// Over All Discount:-
-		Thread.sleep(2000);
-		click(si.OverAllDiscountType);
-		Select overAllDiscTypeSelect = new Select(si.OverAllDiscountType);
+		click(cn.OverAllDiscountType);
+		Select overAllDiscTypeSelect = new Select(cn.OverAllDiscountType);
 		overAllDiscTypeSelect.selectByVisibleText(getexcelOverAllDiscountType);
 
 		WebElement overAllDiscountType = driver.findElement(By.id("DiscountType"));
@@ -1275,32 +1312,34 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		System.out.println("Over all Discount Type is: " + getOverAllDiscountType);
 
 		Thread.sleep(1000);
-		click(si.OverAllDiscount);
+		click(cn.OverAllDiscount);
 		if (getOverAllDiscountType.equals("$")) {
-			si.OverAllDiscount.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-			Sendkeys(si.OverAllDiscount, getExcelOverAllDiscountAmount + Keys.ENTER);
-			click(si.OverAllDiscount);
+			cn.OverAllDiscount.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+			Sendkeys(cn.OverAllDiscount, getExcelOverAllDiscountAmount + Keys.ENTER);
+			Thread.sleep(1000);
+			click(cn.Qty);
 
 		} else if (getOverAllDiscountType.equals("%")) {
-			si.OverAllDiscount.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-			Sendkeys(si.OverAllDiscount, getExcelOverAllDiscountPercentage + Keys.ENTER);
-			click(si.OverAllDiscount);
+			cn.OverAllDiscount.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+			Sendkeys(cn.OverAllDiscount, getExcelOverAllDiscountPercentage + Keys.ENTER);
+			Thread.sleep(1000);
+			click(cn.Qty);
 
 		} else {
 			System.out.println("No Over All Discount Amounr and Percentage");
 		}
 		System.out.println();
 
-		// Sub Total Calculation:-
 		System.out.println("*** Sub Total Calculation ***");
-		String subTotalAmountString = driver.findElement(By.xpath("//table[@id='SalesTable']//tfoot//tr[1]//td[13]//p[@id='tSubtotal']"))
-				.getText();
-		double subTotalAmountDouble = Double.parseDouble(subTotalAmountString);
-		System.out.println("Actual Sub Total Amount: " + subTotalAmountDouble);
-		System.out.println("Expected Sub Total Amount: " + expSubtotal);
+		String getSubtotalString = driver.findElement(By.xpath("//table[@id='CreditNoteTable']//tfoot//tr[1]//td[13]//p[@id='tSubtotal']")).getText();
+		double getSubtotalDouble = Double.parseDouble(getSubtotalString);
+		System.out.println("Actual Subtotal is: "+getSubtotalDouble);
+		System.out.println("Expected SubTotal is: "+ExpSubTotal);
 		System.out.println();
 
-		// Over All Discount Calculation:-
+		soft.assertEquals(getSubtotalDouble, ExpSubTotal, "Actual and Expected SubTotal Mismatched");
+
+		//Over All Discount Calculation:-
 		System.out.println("*** Grand Total Calculation With Over All Discount and Percentage ***");
 
 		double discountAmountDouble = Double.parseDouble(getExcelOverAllDiscountAmount);
@@ -1308,36 +1347,60 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		double gstPercentage = Double.parseDouble(getExcelGstPercentage);
 		double discountPercentageAmount = 0;
 		double discountTotalAmount = 0;
-		// double finalSubTotalAmount = 0;
 
 		if (getOverAllDiscountType.equalsIgnoreCase("$")) {
 			System.out.println("Current Discount Type is: $");
 
-			discountTotalAmount = subTotalAmountDouble - discountAmountDouble;
+			discountTotalAmount = getSubtotalDouble - discountAmountDouble;
+			System.out.println("Discount Amount is: "+discountTotalAmount);
 			System.out.println("Over All Discount Amount is: " + discountTotalAmount);
 
 		} else if (getOverAllDiscountType.equalsIgnoreCase("%")) {
 			System.out.println("Current Discount Type is: %");
 
-			discountTotalAmount = (subTotalAmountDouble * discountPercentageDouble / 100);
-			discountPercentageAmount = (subTotalAmountDouble - discountTotalAmount);
+			discountTotalAmount = (getSubtotalDouble * discountPercentageDouble / 100);
+			discountPercentageAmount = (getSubtotalDouble - discountTotalAmount);
 
 			System.out.println("Discount Percentage Amount is: " + discountTotalAmount);
 			System.out.println("Over All Discount Percentage Amount is: " + discountPercentageAmount);
 		}
 
-		double zeroGstProductDiscountAmount = (expZeroGstProductAmount * discountPercentageDouble / 100);
-		double subrationZerGstAmount = (expZeroGstProductAmount - zeroGstProductDiscountAmount);
-		System.out.println("After Discount Zero Gst Product Amount is: " + subrationZerGstAmount);
-		double withoutZeroGstAmount = (discountPercentageAmount - subrationZerGstAmount);
-		System.out.println();
+		double divOverAllDisc = discountAmountDouble / getSubtotalDouble;
+		double finalWithoutGstAmount = 0;
 
+		for (ExcelData excelData : excelDataList) {
+
+			if (excelData.ZeroGst.equalsIgnoreCase("true") && getOverAllDiscountType.equalsIgnoreCase("$")) {
+
+				double withoutGstAmount = divOverAllDisc * ExpZeroGstProductamount;
+				finalWithoutGstAmount = ExpZeroGstProductamount - withoutGstAmount;
+				String formatFinalWithoutGstAmount = String.format("%.2f", finalWithoutGstAmount);
+				System.out.println("Without Gst Product Amount: "+formatFinalWithoutGstAmount);
+
+			} else if (getOverAllDiscountType.equalsIgnoreCase("%")) {
+				
+				double gstProductAmount = ExpSubTotal + ExpZeroGstProductamount;
+				System.out.println("gstProductAmount: "+gstProductAmount);
+				double zeroGstProductDiscountAmount = (ExpZeroGstProductamount * discountPercentageDouble / 100);
+				double subrationZerGstAmount = (ExpZeroGstProductamount - zeroGstProductDiscountAmount);
+				System.out.println("After Discount Zero Gst Product Amount is: " + subrationZerGstAmount);
+				withoutZeroGstAmount = (discountPercentageAmount - subrationZerGstAmount);
+				System.out.println("Without Zero Gst Amount: "+withoutZeroGstAmount);
+				System.out.println();
+
+
+			}	
+			break;
+		}
+
+		double subWithoutGstAmount = discountTotalAmount - finalWithoutGstAmount;
+		String formatSubWithoutGstAmount = String.format("%.2f", subWithoutGstAmount);
+		System.out.println("With Gst Product SubTotal: "+formatSubWithoutGstAmount);
+		System.out.println();
 
 		// GST Calculation:-
 		System.out.println("*** Grand Total Calculation With GST ***");
 
-		// double ExpectedGstAmount = 0;
-		// double afterExpectedGstAmount = 0;
 		double finalExpectedGstAmount = 0;
 
 		System.out.println("Gst Type is: " + getExcelGstType);
@@ -1356,89 +1419,82 @@ public class SalesInvoiceVoidTest extends BaseClass{
 			finalExpectedGstAmount = (withoutZeroGstAmount * gstPercentage) / 100;
 			System.out.println("Zero and Overseas Gst Amount is: " + finalExpectedGstAmount);
 
-		}
+		}	
 
-		String ActualGstAmount = driver.findElement(By.id("GST")).getAttribute("value");
+		String ActualGstAmount = driver.findElement(By.xpath("//table[@id='CreditNoteTable']//tfoot//tr[6]//td[13]//input[@id='GSt']")).getAttribute("value");
 		System.out.println("Actual Gst Amount is: " + ActualGstAmount);
 
 		String ExpectedGstAmountFormat = String.format("%.2f", finalExpectedGstAmount);
 
 		if (getExcelGstType.equalsIgnoreCase("Inclusive")) {
 
-			finalExpectedGstAmount = 0;
+			finalExpectedGstAmount = 0;		
 			System.out.println("Expected Gst Amount: " + ExpectedGstAmountFormat);
 
-			soft.assertEquals(ActualGstAmount, ExpectedGstAmountFormat, 
-					"Actual and Expected Gst Amount Mismatched");
+			soft.assertEquals(ActualGstAmount, ExpectedGstAmountFormat, "Actual and Expected Gst Amount Mismatched");
+			System.out.println();
 
 		} else {
 
 			System.out.println("Expected Gst Amount is: " + ExpectedGstAmountFormat);
 
-			soft.assertEquals(ActualGstAmount, ExpectedGstAmountFormat, 
-					"Actual and Expected Gst Amount Mismatched");
+			soft.assertEquals(ActualGstAmount, ExpectedGstAmountFormat, "Actual and Expected Gst Amount Mismatched");
+			System.out.println();
 		}
 
 		// Grand Total Amount:-
 		System.out.println("*** Grand Total Amount ***");
 
-		String finalTotalAmount = driver.findElement(By.xpath("//input[@id='Amount']")).getAttribute("value");
-		double finalTotalAmountDouble = Double.parseDouble(finalTotalAmount);
+		String finalTotalAmount = driver.findElement(By.xpath("//table[@id='CreditNoteTable']//tfoot//tr[9]//td[12]//input[@id='Amount']")).getAttribute("value");
+		String replaceAllFinalTotalAmount = finalTotalAmount.replaceAll(",", "");
+		double finalTotalAmountDouble = Double.parseDouble(replaceAllFinalTotalAmount);
 		String finalTotalAmountFormat = String.format("%.2f", finalTotalAmountDouble);
 		System.out.println("Actual Grand Total Amount is: " + finalTotalAmountFormat);
 
-		double ExpectedGrandTotalAmount = (discountPercentageAmount + finalExpectedGstAmount);
+		double ExpectedGrandTotalAmount = (discountTotalAmount + finalExpectedGstAmount);
 		String ExpectedGrandTotalAmountFormat = String.format("%.2f", ExpectedGrandTotalAmount);
 		System.out.println("Expected Grand Total Amount is: " + ExpectedGrandTotalAmountFormat);
 		System.out.println();
 
 		soft.assertEquals(finalTotalAmountFormat, ExpectedGrandTotalAmountFormat, 
-				"Actual and Expected Grand Total Amount Mismatched");
+				"Actual and Expected Grand Total Mismatched");
 
-		// CURRENCY CALCULATION
+		// Currency Calculation:-
 		System.out.println("*** Grand Total Calculation With Currency ***");
 		System.out.println("Sub Total in Double: " + finalTotalAmountDouble);
 
-		String currencyName = si.CurrencyCode.getText().trim();
+		String currencyName = cn.CurrencyCode.getText().trim();
 		System.out.println("Currency Name is: " + currencyName);
 
+		double total = 0;
 		if (currencyName.equalsIgnoreCase("INR")) {
 			double currencyRate = Double.parseDouble(getExcelCurrencyRate);
-			double total = (finalTotalAmountDouble * currencyRate);
+			total = (finalTotalAmountDouble * currencyRate);
 			System.out.println("Total Amount in INR ₹:" + total);
 
 		} else if (currencyName.equalsIgnoreCase("SGD")) {
 			double currencyRate = Double.parseDouble(getExcelCurrencyRate);
-			double total = (finalTotalAmountDouble * currencyRate);
+			total = (finalTotalAmountDouble * currencyRate);
 			System.out.println("Total Amount in SGD S$:" + total);
 
 		} else if (currencyName.equalsIgnoreCase("USD")) {
 			double currencyRate = Double.parseDouble(getExcelCurrencyRate);
-			double total = (finalTotalAmountDouble * currencyRate);
+			total = (finalTotalAmountDouble * currencyRate);
 			System.out.println("Total Amount in USD $:" + total);
 
 		} else {
 			System.out.println("Invalid or unsupported currency: " + currencyName);
 		}
-		System.out.println();
 
-		// Decimal Place (2 or 4):-
-		System.out.println("*** Decimal Place ***");
-
-		if (DecimalCalculationForSales == 2) {
-			System.out.println("2 Decimal Place Amount is: " + finalTotalAmount);
-
-		} else if (DecimalCalculationForSales == 4) {
-			System.out.println("4 Decimal Place Amount is: " + finalTotalAmount);
-
-		} else {
-			System.out.println("Invalid Decimal Format");
-		}
+		soft.assertEquals(finalTotalAmountDouble, total, "Actual and Expected Currency Mismatched");
 
 		System.out.println();
+
+		String getCreditNotesNo = driver.findElement(By.id("CreditNoteNumber")).getAttribute("value");
+		System.out.println("getCreditNotesNo: "+getCreditNotesNo);
 
 		Thread.sleep(3000);
-		js.executeScript("arguments[0].click();", si.Save);
+		click(cn.Save);
 
 		try {
 
@@ -1450,25 +1506,19 @@ public class SalesInvoiceVoidTest extends BaseClass{
 			System.out.println("No alert appeared after save.");
 
 		}
-		System.out.println("** Sales Invoice Save Successfull **");
-		Thread.sleep(3000);
+		System.out.println("** Credit Notes Save Successfull **");
 		System.out.println();
 
-		String getSalesInvoiceNo = driver.findElement(By.xpath("(//table[@id='Invoicetable']//tbody//tr//td[3])[1]")).getText();
-		System.out.println("getSalesInvoiceNo: "+getSalesInvoiceNo);
-
-		Thread.sleep(2000);
-		WebElement delete = driver.findElement(By.xpath("//table[@id='Invoicetable']//tbody//tr//td[9]//a[@title='Delete'][1]"));
-		js.executeScript("arguments[0].click();", delete);
 		Thread.sleep(3000);
-		click(si.Delete);
-		Thread.sleep(1000);
-		click(si.PopupOk);
-		System.out.println("*** Sales Invoice Delete Successful ***");
-
-
+		WebElement delete = driver.findElement(By.xpath("//table[@id='credittable']//tbody//tr//td"
+				+ "[normalize-space()='"+getCreditNotesNo+"']//following::td[7]//a[@title='Delete']"));
+		delete.click();
+		Thread.sleep(2000);
+		click(cn.Delete);
+		Thread.sleep(2000);
+		click(cn.PopupOk);
+		System.out.println("*** Credit Notes Delete Successfull ***");
 	}
-
 
 	class ProductValidation {
 
@@ -1489,8 +1539,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 	double multipleQty = 0;
 
-	//@Ignore
-	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
+	@Ignore
+	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void QtyCalculation() throws InterruptedException {
 
 		System.out.println("*** Expected Qty Calculation ***");
@@ -1554,8 +1604,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 	ArrayList<ExpectedStock> ExpexcetedProductStockList = new ArrayList<>();
 
-	//@Ignore
-	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
+	@Ignore
+	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
 	public void QtyCalculation1() {
 
 		System.out.println("*** Qty Calculation ***");
@@ -1603,11 +1653,11 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 				if (matchedProduct.IsBase) {
 					stockType = "Is Base";
-					finalProductStock = (currentStockDouble - multipleQty - excelFocDouble);
+					finalProductStock = (currentStockDouble + multipleQty + excelFocDouble);
 
 				} else if (matchedProduct.IsNonCarton) {
 					stockType = "Is Non Carton";
-					finalProductStock = (currentStockDouble - multipleQty - excelFocDouble);
+					finalProductStock = (currentStockDouble + multipleQty + excelFocDouble);
 
 				} else if (matchedProduct.IsCarton) {
 					stockType = "Is Carton";
@@ -1628,7 +1678,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 					}
 
 					double addBandLStock = (multipleBoxStock + looseStockDouble);
-					finalProductStock = (addBandLStock - multipleQty - excelFocDouble);
+					finalProductStock = (addBandLStock + multipleQty + excelFocDouble);
 				}
 
 				break; // ✅ only one UOM calculation needed
@@ -1665,8 +1715,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 	ArrayList<ProductStock> ProductStockList = new ArrayList<>();
 
-	//@Ignore
-	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
+	@Ignore
+	@Test(priority = 20, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
@@ -1716,8 +1766,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		System.out.println();
 	}
 
-	//@Ignore
-	@Test(priority = 20, dependsOnMethods = "ERPLoginPage")
+	@Ignore
+	@Test(priority = 22, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
@@ -1792,5 +1842,9 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		soft.assertAll();
 
 	}
-	
-}//Main class loop
+
+
+
+
+
+}

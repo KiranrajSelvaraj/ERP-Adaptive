@@ -39,8 +39,26 @@ public class SalesInvoice {
 	@FindBy(id = "select2-PaymentTermsId-container")
 	public WebElement Terms;
 	
+	@FindBy(id = "ProductCheck")
+	public WebElement ProductCheckBox;
+	
+	@FindBy(id = "ServiceCheck")
+	public WebElement ServiceCheckBox;
+	
+	@FindBy(id = "OpenCheck")
+	public WebElement OpenCheckBox;
+	
+	@FindBy(id = "IsZeroRatedGST")
+	public WebElement ZeroGstCheckBox;
+	
+	@FindBy(id = "HeaderCheck")
+	public WebElement HeaderCheckBox;
+	
 	@FindBy(id = "select2-ProductId-container")
 	public WebElement ChooseProduct;
+	
+	@FindBy(id = "OpenItem")
+	public WebElement OpenProduct;
 	
 	@FindBy(id = "select2-UOMId-container")
 	public WebElement ChooseUom;
@@ -51,8 +69,23 @@ public class SalesInvoice {
 	@FindBy(id = "ItemPrice")
 	public WebElement Price;
 	
+	@FindBy(id = "DetailDiscountPercentage")
+	public WebElement DiscountPercentage;
+		
+	@FindBy(id = "IsUnits")
+	public WebElement IsUnitsCheckbox;
+	
+	@FindBy(id = "DiscountAmt")
+	public WebElement DiscountAmount;
+	
 	@FindBy(id = "btn_add")
 	public WebElement Add;
+	
+	@FindBy(id = "Discount")
+	public WebElement OverAllDiscount;
+	
+	@FindBy(id = "DiscountType")
+	public WebElement OverAllDiscountType;
 	
 	@FindBy(id = "Create")
 	public WebElement Save;
@@ -74,6 +107,9 @@ public class SalesInvoice {
 	
 	@FindBy(id = "popup_cancel")
 	public WebElement PopupCancel;
+	
+	@FindBy(xpath = "//input[@value='Delete']")
+	public WebElement Delete;
 	
 	
 	

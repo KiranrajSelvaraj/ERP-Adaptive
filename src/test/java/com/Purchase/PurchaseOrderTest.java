@@ -1697,7 +1697,7 @@ public class PurchaseOrderTest extends BaseClass {
 		System.out.println("** Purchase Invoice Save Successfull **");
 		System.out.println();
 
-		//Purchase Returns:-
+		//Purchase Returns:-		
 		Thread.sleep(5000);
 		WebElement details = driver.findElement(By.xpath("//table[@id='purchasetable']//tbody//tr//td[6]"
 				+ "[normalize-space()='"+formatedTimestamp+"']//following::td[4]//a[@title='Details']"));
@@ -1708,7 +1708,8 @@ public class PurchaseOrderTest extends BaseClass {
 		Thread.sleep(1000);
 		click(pi.PopupOk);
 		Thread.sleep(4000);
-
+		System.out.println("* Purchase Return Page *");
+		
 		for (ExcelData excelData : excelDataList) {
 
 			int tableRowSize = driver.findElements(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr")).size();
@@ -1752,11 +1753,13 @@ public class PurchaseOrderTest extends BaseClass {
 										("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::button[text()='Add'])[1]")).click();									
 							}
 
-						} else if ("true".equalsIgnoreCase(excelData.BatchProduct.trim())) {
+						}
+					/*	else if ("true".equalsIgnoreCase(excelData.BatchProduct.trim())) {	
+							
 							Thread.sleep(2000);
-							driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+i+"]//td[2]//div//textarea[contains(text(),'"
-									+ ""+getProductName+"')]//following::td[8]//a[@id='BatchFolder']"))
-							.click();
+							WebElement batchFile = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+i+"]//td[2]//div//textarea[contains(text(),'"
+									+ ""+getProductName+"')]//following::td[8]//a[@id='BatchFolder']"));
+							js.executeScript("arguments[0].click();", batchFile);
 
 							String totalQty = driver.findElement(By.xpath("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::strong//input[@id='TotalQty'])[1]"))
 									.getAttribute("value");
@@ -1771,7 +1774,7 @@ public class PurchaseOrderTest extends BaseClass {
 							driver.findElement(By.xpath
 									("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::button[text()='Add'])[1]")).click();								
 
-						}
+						}*/
 					}
 
 					/*	if (getProductName.equalsIgnoreCase(excelData.ProductName)) {

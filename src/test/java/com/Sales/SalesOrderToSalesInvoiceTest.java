@@ -1897,8 +1897,8 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		}
 
 		js.executeScript("arguments[0].click();", so.SaveandClose);
-		System.out.println("*Sales Invoice Save Successfull*");
-		System.out.println("**********************************");
+		System.out.println("*** Sales Invoice Save Successfull ***");
+		System.out.println("**************************************");
 		Thread.sleep(3000);
 		System.out.println();
 
@@ -1909,6 +1909,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		js.executeScript("arguments[0].click();", si.IssueCreditNote);
 		click(si.PopupOk);
 		Thread.sleep(2000);
+		System.out.println("* Credit Notes Page *");
 
 		for (ExcelData excelData : excelDataList) {
 
@@ -2084,9 +2085,9 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		for (int j = 2; j <= creditTableSize; j++) {
 
 			String getProductName = driver.findElement(By.xpath("//table[@id='CreditNoteTable']//tbody//tr["+j+"]//td[2]//textarea")).getText();
-
+			System.out.println("getProductName: "+getProductName);
 			String getProductAmount = driver.findElement(By.xpath("//table[@id='CreditNoteTable']//tbody//tr["+j+"]//td[@id='totaldetailamount']")).getText();
-
+			System.out.println("getProductAmount: "+getProductAmount);
 			String replaceAllGetProductAmount = getProductAmount.replaceAll(",", "");
 			double getProductAmountDouble = Double.parseDouble(replaceAllGetProductAmount);
 
@@ -2100,6 +2101,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 					creditExpZeroGstProductamount = getProductAmountDouble + creditExpZeroGstProductamount;
 					System.out.println("creditExpZeroGstProductamount: "+creditExpZeroGstProductamount);
+					System.out.println();
 				}
 
 			}
@@ -2229,7 +2231,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 
 		//Grand Total:-
-		System.out.println("*** Purchase Return Grand Total Calculation ***");
+		System.out.println("*** Credit Notes Grand Total Calculation ***");
 
 		String creditGrandTotal = driver.findElement(By.xpath("//table[@id='CreditNoteTable']//tfoot//tr//td//following::input[@id='Amount']")).getAttribute("value");	
 		String replaceAllCreditGrandTotal = creditGrandTotal.replaceAll(",", "");
@@ -2248,7 +2250,8 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 		Thread.sleep(3000);
 		click(cn.Save);
-		System.out.println("** Credit Notes Save Successfull **");
+		System.out.println("*** Credit Notes Save Successfull ***");
+		System.out.println();
 
 
 

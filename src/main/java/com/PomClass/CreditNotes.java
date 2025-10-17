@@ -102,6 +102,9 @@ public class CreditNotes {
 	@FindBy(xpath = "//input[@value='Back']")
 	public WebElement Back;
 	
+	@FindBy(xpath = "//input[@value='Delete']")
+	public WebElement Delete;
+	
 	
 	
 	public CreditNotes (WebDriver driver) {

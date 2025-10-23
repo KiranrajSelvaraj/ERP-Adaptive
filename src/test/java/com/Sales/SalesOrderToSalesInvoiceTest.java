@@ -2044,18 +2044,18 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 		String getActSubtotal = driver.findElement(By.xpath("//table[@id='CreditNoteTable']//tfoot//tr[1]//td[13]//child::p[@id='tSubtotal']")).getText();
 	//	String replaceAllGetActSubtotal = getActSubtotal.replaceAll(",", "");
-		double getActSubtotalDouble = Double.parseDouble(getActSubtotal);
-		String formatGetActSubtotal = String.format("%.2f", getActSubtotalDouble);
-		System.out.println("Actual SubTotal is: "+formatGetActSubtotal);
+	//	double getActSubtotalDouble = Double.parseDouble(getActSubtotal);
+	//	String formatGetActSubtotal = String.format("%.2f", getActSubtotalDouble);
+		System.out.println("Actual SubTotal is: "+getActSubtotal);
 		String formatExpSubtotal = String.format("%.2f", expSubtotal);
 		System.out.println("Expected SubTotal is: "+formatExpSubtotal);
 		System.out.println();
-		soft.assertEquals(formatGetActSubtotal, formatExpSubtotal, "Actual and Expected Credit Notes SubTotal Mismatched");
+		soft.assertEquals(getActSubtotal, formatExpSubtotal, "Actual and Expected Credit Notes SubTotal Mismatched");
 
 
 		//Over All Discount Calculation:-
 		System.out.println("*** Credit Notes Over All Discount and Percentage ***");
-
+		double getActSubtotalDouble = Double.parseDouble(getActSubtotal);
 		if (getOverAllDiscountType.equalsIgnoreCase("$")) {
 			System.out.println("Current Discount Type is: $");
 

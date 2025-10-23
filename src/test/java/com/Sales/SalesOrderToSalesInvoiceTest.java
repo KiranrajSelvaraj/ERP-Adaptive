@@ -1,5 +1,9 @@
 package com.Sales;
 
+import java.io.File;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -9,9 +13,12 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.collections4.map.HashedMap;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -99,8 +106,10 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		}
 
 		System.out.println("*ERP Login Page*");
+	
+	
+	
 	}
-
 	@DataProvider
 	public Object[][] Util1() {
 
@@ -1044,7 +1053,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 	// @Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
-	public void SalesToInvoice() throws InterruptedException {
+	public void SalesToInvoice() throws InterruptedException, IOException {
 
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -1588,6 +1597,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 			soft.assertEquals(ActualGstAmount, ExpectedGstAmountFormat, 
 					"Actual and Expected Gst Amount Mismatched");
 		}
+		System.out.println();
 
 		// Grand Total Amount:-
 		System.out.println("*** Grand Total Amount ***");
@@ -1650,7 +1660,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		click(so.ConvertInvoice);
 		click(so.PopupOk);
 		Thread.sleep(3000);		
-
+		System.out.println("** Sales Invoice Page **");
 		for (ExcelData excelData : excelDataList) {
 
 			if (excelData.BatchProduct.equalsIgnoreCase("true")) {
@@ -1724,6 +1734,17 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 		System.out.println();
 
+		js.executeScript("window.scrollBy(0, 500)", "");
+		
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+		LocalDateTime now11 = LocalDateTime.now();
+		String timestamp = dtf.format(now11).replace(":", ";").replace("/", "-");
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File s1 = ts.getScreenshotAs(OutputType.FILE);
+		File s2 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " SalesOrder Errors "
+				+ timestamp + ".png");
+		FileUtils.copyFile(s1, s2);
+		
 		Collections.reverse(excelDataList);
 
 		int excleDataListSize = excelDataList.size();
@@ -1971,8 +1992,18 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 			}
 			System.out.println();
 		}
-
 		Thread.sleep(4000);
+		
+	//	js.executeScript("window.scrollBy(0, 500)", "");
+		
+		DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+		LocalDateTime now111 = LocalDateTime.now();
+		String timestamp1 = dtf1.format(now111).replace(":", ";").replace("/", "-");
+		TakesScreenshot ts1 = (TakesScreenshot) driver;
+		File s11 = ts1.getScreenshotAs(OutputType.FILE);
+		File s21 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " SalesOrder Errors "
+				+ timestamp1 + ".png");
+		FileUtils.copyFile(s11, s21);
 
 		double expSubtotal = 0;
 		double creditExpZeroGstProductamount = 0;
@@ -2005,6 +2036,8 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 			}
 
 		}
+		
+		Thread.sleep(5000);
 
 		//SubTotal:-
 		System.out.println("*** Credit Notes SubTotal ***");
@@ -2149,6 +2182,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(3000);
 		click(cn.Save);
 		System.out.println("*** Credit Notes Save Successfull ***");
+		System.out.println();
 		System.out.println();
 
 

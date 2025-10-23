@@ -245,18 +245,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 		}
 
-		/*
-		 * Set<String> Products = ProductUomMap.keySet(); for (String Product :
-		 * Products) { // System.out.println("Product :" + Product); List<String> uom =
-		 * ProductUomMap.get(Product); int uomSize = uom.size(); for (int i = 0; i <
-		 * uomSize; i++) { String string = uom.get(i); // System.out.println("UOM: " +
-		 * string);
-		 * 
-		 * }
-		 * 
-		 * }
-		 */
-		// System.out.println();
 	}
 
 	private boolean IsSalesManManagement;
@@ -298,8 +286,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-	//	String IsSalesManManagementString = driver.findElement(By.xpath("(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]"))
-		//		.getText();
 		IsSalesManManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsSalesManManagement :" + IsSalesManManagement);
 		click(ss.Back);
@@ -314,10 +300,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		/*
-		 * String IsWarehouseManagementString = driver.findElement(By.xpath(
-		 * "(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]")) .getText();
-		 */
 		IsWarehouseManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsWarehouseManagement :" + IsWarehouseManagement);
 		click(ss.Back);
@@ -332,10 +314,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		/*
-		 * String IsWarehouseStorageManagementString = driver.findElement(By.xpath(
-		 * "(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]")) .getText();
-		 */
 		IsWarehouseStorageManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsWarehouseStorageManagement :" + IsWarehouseStorageManagement);
 		click(ss.Back);
@@ -350,10 +328,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		/*
-		 * String IsBarcodeEnabledString = driver.findElement(By.xpath(
-		 * "(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]")) .getText();
-		 */
 		IsBarcodeEnabled = ss.BooleanValue.isSelected();
 		System.out.println("IsBarcodeEnabled :" + IsBarcodeEnabled);
 		click(ss.Back);
@@ -368,10 +342,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		/*
-		 * String IsBarcodeManagementInsalesString = driver.findElement(By.xpath(
-		 * "(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]")) .getText();
-		 */
 		IsBarcodeManagementInsales = ss.BooleanValue.isSelected();
 		System.out.println("IsBarcodeManagementInsales :" + IsBarcodeManagementInsales);
 		click(ss.Back);
@@ -386,10 +356,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		/*
-		 * String IsMultiWordSearchInProductString = driver.findElement(By.xpath(
-		 * "(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]")) .getText();
-		 */
 		IsMultiWordSearchInProduct = ss.BooleanValue.isSelected();
 		System.out.println("IsMultiWordSearchInProduct :" + IsMultiWordSearchInProduct);
 		click(ss.Back);
@@ -404,10 +370,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		/*
-		 * String IsDuplicateProductsInInvoiceString = driver.findElement(By.xpath(
-		 * "(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]")) .getText();
-		 */
 		IsDuplicateProductsInInvoice = ss.BooleanValue.isSelected();
 		System.out.println("IsDuplicateProductsInInvoice :" + IsDuplicateProductsInInvoice);
 		click(ss.Back);
@@ -422,10 +384,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		/*
-		 * String IsCartonManagementString = driver.findElement(By.xpath(
-		 * "(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]")) .getText();
-		 */
 		IsCartonManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsCartonManagement :" + IsCartonManagement);
 		click(ss.Back);
@@ -440,10 +398,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		/*
-		 * String IsEnableItemLevelDiscountInSalesString = driver.findElement(By.xpath(
-		 * "(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]")) .getText();
-		 */
 		IsEnableItemLevelDiscountInSales = ss.BooleanValue.isSelected();
 		System.out.println("IsEnableItemLevelDiscountInSales :" + IsEnableItemLevelDiscountInSales);
 		click(ss.Back);
@@ -458,10 +412,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		/*
-		 * String IsFOCManagementInSOString = driver.findElement(By.xpath(
-		 * "(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]")) .getText();
-		 */
 		IsFOCManagementInSO = ss.BooleanValue.isSelected();
 		System.out.println("IsFOCManagementInSO :" + IsFOCManagementInSO);
 		click(ss.Back);
@@ -506,10 +456,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		/*
-		 * String IsAllowToEditSpecialPriceString = driver.findElement(By.xpath(
-		 * "(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]")) .getText();
-		 */
 		IsAllowToEditSpecialPrice = ss.BooleanValue.isSelected();
 		System.out.println("IsAllowToEditSpecialPrice :" + IsAllowToEditSpecialPrice);
 		click(ss.Back);
@@ -540,10 +486,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		/*
-		 * String IsOpenItemManagementInsalesString = driver.findElement(By.xpath(
-		 * "(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]")) .getText();
-		 */
 		IsOpenItemManagementInsales = ss.BooleanValue.isSelected();
 		System.out.println("IsOpenItemManagementInsales :" + IsOpenItemManagementInsales);
 		click(ss.Back);
@@ -558,10 +500,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		/*
-		 * String IsHeaderManagementInSOString = driver.findElement(By.xpath(
-		 * "(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]")) .getText();
-		 */
 		IsHeaderManagementInSO = ss.BooleanValue.isSelected();
 		System.out.println("IsHeaderManagementInSO :" + IsHeaderManagementInSO);
 		click(ss.Back);
@@ -576,10 +514,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		/*
-		 * String IsReturnManagementInSIString = driver.findElement(By.xpath(
-		 * "(//table[@id='systemsettingtable']//tbody//tr//td[5])[1]")) .getText();
-		 */
 		IsReturnManagementInSI = ss.BooleanValue.isSelected();
 		System.out.println("IsReturnManagementInSI :" + IsReturnManagementInSI);
 		click(ss.Back);
@@ -687,7 +621,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	// PRODUCT PAGE
 	// @Ignore
 	@Test(priority = 8, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
@@ -797,24 +730,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 					.trim();
 			System.out.println("Is Carton Selected: " + IsCartonSelected);
 
-			/*
-			 * WebElement stockAdjustmentCOA = driver.findElement(By.xpath(
-			 * "//label[normalize-space()='Stock Adjustment COA / GL']//following::span[@id='select2-StockAdjustmentCOAId-container']"
-			 * )); String stockAdjustmentCOAValue =
-			 * stockAdjustmentCOA.getAttribute("title").trim();
-			 * System.out.println("Stock Adjustment COA: " + stockAdjustmentCOAValue);
-			 * 
-			 * WebElement stockCOA = driver.findElement(By.xpath(
-			 * "//label[normalize-space()='Stock COA / GL']//following::span[@id='select2-GRNCOAId-container']"
-			 * )); String stockCOAValue = stockCOA.getAttribute("title").trim();
-			 * System.out.println("Stock COA: " + stockCOAValue);
-			 * 
-			 * WebElement COGSCOA = driver.findElement(By.xpath(
-			 * "//label[normalize-space()='COGS COA / GL']//following::span[@id='select2-COGSCOAId-container']"
-			 * )); String COGSCOAValue = COGSCOA.getAttribute("title").trim();
-			 * System.out.println("COGS COA: " + COGSCOAValue);
-			 */
-
 			Thread.sleep(3000);
 			WebElement stockTab = driver.findElement(By.xpath("//a[text()='Stock']"));
 			stockTab.click();
@@ -842,8 +757,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 			String SellingPrice = null;
 			String LPPrice = null;
-			// String RetailPrice = null;
-
+			
 			if (ProductUOMtablesize == 0) {
 
 				Thread.sleep(1000);
@@ -860,12 +774,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 								By.xpath("//dt[normalize-space()='Last Purchase Price']//following-sibling::dd[1]"))
 						.getText();
 				System.out.println("LP Price: " + LPPrice);
-
-				/*
-				 * RetailPrice = driver .findElement(By.
-				 * xpath("//label[text()='Retail Price']//following::input[@id='RetailPrice']"))
-				 * .getAttribute("value"); System.out.println("Retail Price: " + RetailPrice);
-				 */
 
 			} else {
 
@@ -889,13 +797,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 							"(//table[@id='ProductPartialUOM']//tbody//tr//td[2])[" + j + "]//following::td[4]//input"))
 							.getAttribute("value");
 					System.out.println("SP Value: " + SP);
-
-					/*
-					 * String RP = driver.findElement(By.xpath(
-					 * "(//table[@id='ProductPartialUOM']//tbody//tr//td[2])[" + j
-					 * +"]//following::td[5]//input")) .getAttribute("value").trim();
-					 * System.out.println("RP Value: " + RP);
-					 */
 
 					ProductUOM pruom = new ProductUOM(productName, uomValue, IsCarton, CartonPrice, IsNonCarton, IsBase,
 							ProductUOMtablesize, SubUOM, CurStock, LPP, SP);
@@ -1055,7 +956,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
 
-	// UOM PAGE
 	// @Ignore
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
@@ -1124,7 +1024,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		}
 	}
 
-	// SALES ORDER PAGE DATA
+	// Sales Order Page Data:-
 	@SuppressWarnings("unused")
 	class salesOrderData {
 
@@ -1648,8 +1548,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		// GST Calculation:-
 		System.out.println("*** Grand Total Calculation With GST ***");
 
-		// double ExpectedGstAmount = 0;
-		// double afterExpectedGstAmount = 0;
 		double finalExpectedGstAmount = 0;
 
 		System.out.println("Gst Type is: " + getExcelGstType);
@@ -1739,14 +1637,14 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 		if (DecimalCalculationForSales == 2) {
 			System.out.println("2 Decimal Place Amount is: " + finalTotalAmount);
-
+			
 		} else if (DecimalCalculationForSales == 4) {
 			System.out.println("4 Decimal Place Amount is: " + finalTotalAmount);
 
 		} else {
 			System.out.println("Invalid Decimal Format");
 		}
-
+		System.out.println("**************************************");
 		System.out.println();
 
 		click(so.ConvertInvoice);
@@ -2428,7 +2326,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 			if (!stockType.isEmpty()) {
 				System.out.println(stockType);
 				System.out.println("Product Name: " + matchedProduct.productName);
-				// System.out.println("Excel Qty: " + excelData.Qty + " " + excelData.Uom);
 				System.out.println("Final Expected Stock: " + finalProductStock);
 				System.out.println("----------------------------------");
 

@@ -7,5 +7,4 @@
             <class name="com.Sales.SalesOrderToSalesInvoiceTest"/>
         </classes>
     </test>
-
 </suite> 

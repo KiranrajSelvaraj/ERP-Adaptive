@@ -7,7 +7,8 @@
       <class name="com.Sales.CreditNotesVoidTest">
         <methods>
           <include name="ERPLoginPage"/>
-          <include name="Exception"/>
+          <include name="SystemSettings"/>
+          <include name="ExpectedProduct"/>
         </methods>
       </class> <!-- com.Sales.CreditNotesVoidTest -->
     </classes>

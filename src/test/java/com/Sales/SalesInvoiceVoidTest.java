@@ -13,6 +13,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -28,7 +29,6 @@ import com.PomClass.Product;
 import com.PomClass.ProductMovement;
 import com.PomClass.SalesInvoice;
 import com.PomClass.SystemSettings;
-
 import com.Utility.Util1;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -99,7 +99,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 	@DataProvider
 	public Object[][] Util1() {
 
-		Object data[][] = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\SalesOrder.xlsx", "Sheet1");
+		Object data[][] = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\SalesOrder1.xlsx", "Sheet1");
 		return data;
 
 	}
@@ -983,13 +983,18 @@ public class SalesInvoiceVoidTest extends BaseClass{
 				}
 
 			}
-
+			
+			Thread.sleep(3000);
 			if (excelData.Type.equalsIgnoreCase("Product")) {
-
-				js.executeScript("arguments[0].click();", si.ChooseProduct);
-				driver.findElement(
-						By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"))
-				.sendKeys(excelData.ProductName + Keys.ENTER);
+				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@id='select2-ProductId-container']"))).click();
+				WebElement productSearch = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']")));
+				productSearch.click();
+				productSearch.sendKeys(excelData.ProductName + Keys.ENTER);
+				
+			//	js.executeScript("arguments[0].click();", si.ChooseProduct);
+			//	driver.findElement(
+			//			By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"))
+			//	.sendKeys(excelData.ProductName + Keys.ENTER);
 
 			} else if (excelData.Type.equalsIgnoreCase("Service")) {
 
@@ -1244,6 +1249,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 				driver.findElement(By.xpath("//strong[contains(text(),'"+excelData.ProductName+"')]//following::button[text()='Add']")).click();
 
 			}
+			
 			Thread.sleep(2000);
 			String actualAmount = driver.findElement(By.xpath("//table[@id='SalesTable']//tbody//tr//td[2]//textarea"
 					+ "[contains(text(),'"+excelData.ProductName+" ')]//following::td[11]//p[@class='totaldetailamount']"))
@@ -1257,10 +1263,12 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 				expZeroGstProductAmount = expZeroGstProductAmount + actualSubtotalDouble;
 
-			}	
+			}
+			Actions action = new Actions(driver);
+			action.doubleClick(si.Qty).perform();
 			Thread.sleep(1000);
-			js.executeScript("arguments[0].click();", si.Qty);
-			Thread.sleep(1000);
+		//	js.executeScript("arguments[0].click();", si.Qty);
+			
 		} //Excel Data List Loop
 
 		// Over All Discount:-
@@ -1330,6 +1338,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		double subrationZerGstAmount = (expZeroGstProductAmount - zeroGstProductDiscountAmount);
 		System.out.println("After Discount Zero Gst Product Amount is: " + subrationZerGstAmount);
 		double withoutZeroGstAmount = (discountPercentageAmount - subrationZerGstAmount);
+		System.out.println("withoutZeroGstAmount: "+withoutZeroGstAmount);
 		System.out.println();
 
 
@@ -1340,25 +1349,29 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		// double afterExpectedGstAmount = 0;
 		double finalExpectedGstAmount = 0;
 
-		System.out.println("Gst Type is: " + getExcelGstType);
-		if (getExcelGstType.equalsIgnoreCase("Inclusive")) {
+	//	System.out.println("Gst Type is: " + getExcelGstType);
+		String getGstType = si.GstType.getText();
+		System.out.println("Gst Type is: "+getGstType);
+		System.out.println("Gst Percentage is: "+gstPercentage);
+		if (getGstType.equalsIgnoreCase("Inclusive")) {
 
-			finalExpectedGstAmount = (withoutZeroGstAmount * gstPercentage) / 109;
+			finalExpectedGstAmount = (withoutZeroGstAmount * 9) / 109;
 			System.out.println("Inclusive Gst Amount is: " + finalExpectedGstAmount);
 
-		} else if (getExcelGstType.equalsIgnoreCase("Exclusive")) {
+		} else if (getGstType.equalsIgnoreCase("Exclusive")) {
 
-			finalExpectedGstAmount = (withoutZeroGstAmount * gstPercentage) / 100;
+			finalExpectedGstAmount = (withoutZeroGstAmount * 9) / 100;
 			System.out.println("Exclusive Gst Amount is: " + finalExpectedGstAmount);
 
-		} else if (getExcelGstType.equalsIgnoreCase("Zero") || getExcelGstType.equalsIgnoreCase("Overseas")) {
+		} else if (getGstType.equalsIgnoreCase("Zero") || getExcelGstType.equalsIgnoreCase("Overseas")) {
 
-			finalExpectedGstAmount = (withoutZeroGstAmount * gstPercentage) / 100;
+			finalExpectedGstAmount = (withoutZeroGstAmount * 0) / 100;
 			System.out.println("Zero and Overseas Gst Amount is: " + finalExpectedGstAmount);
 
 		}
 
-		String ActualGstAmount = driver.findElement(By.id("GST")).getAttribute("value");
+		String ActualGstAmount = driver.findElement(By.xpath("//table[@id='SalesTable']//tfoot//tr[6]//td[12]//input[@id='GST']"))
+				.getAttribute("value");
 		System.out.println("Actual Gst Amount is: " + ActualGstAmount);
 
 		String ExpectedGstAmountFormat = String.format("%.2f", finalExpectedGstAmount);
@@ -1378,7 +1391,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 			soft.assertEquals(ActualGstAmount, ExpectedGstAmountFormat, 
 					"Actual and Expected Gst Amount Mismatched");
 		}
-
+		System.out.println();
+		
 		// Grand Total Amount:-
 		System.out.println("*** Grand Total Amount ***");
 
@@ -1465,7 +1479,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		click(si.PopupOk);
 		System.out.println("*** Sales Invoice Delete Successful ***");
-
+		System.out.println("***************************************");
+		System.out.println();
 
 	}
 
@@ -1668,6 +1683,12 @@ public class SalesInvoiceVoidTest extends BaseClass{
 	//@Ignore
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
+		
+		driver.navigate().back();
+		driver.navigate().refresh();
+		Thread.sleep(2000);
+		driver.navigate().to(url + "SalesPurchases/Product");
+		System.out.println("*Product Details Page*");
 
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -1675,11 +1696,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		Product prod = new Product(driver);
-
-		driver.navigate().to(url + "SalesPurchases/Product");
-		Thread.sleep(7000);
-		System.out.println("*Product Details Page*");
-
+		
+		Thread.sleep(5000);
 		for (String product : ProductSet) {
 
 			WebElement productcode = wait.until(ExpectedConditions.visibilityOfElementLocated
@@ -1719,17 +1737,17 @@ public class SalesInvoiceVoidTest extends BaseClass{
 	//@Ignore
 	@Test(priority = 20, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
+		
+		driver.navigate().to(url + "SalesPurchases/Product/ProductMovementsIndex");
+		System.out.println("*Product Movement Page*");
 
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		ProductMovement pm = new ProductMovement(driver);
-
-		driver.navigate().to(url + "SalesPurchases/Product/ProductMovementsIndex");
+		
 		Thread.sleep(7000);
-		System.out.println("*Product Movement Page*");
-		System.out.println();
 		for (String product : ProductSet) {
 
 			click(pm.ChooseProduct);

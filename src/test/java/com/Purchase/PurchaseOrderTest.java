@@ -962,15 +962,15 @@ public class PurchaseOrderTest extends BaseClass {
 			}
 		}
 	}
-	
-	
+
+
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
 	public void PurchaseOrderToInvoice() throws InterruptedException {
 
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-	//	WebDriverWait wait = new WebDriverWait(driver, 30);
+		//	WebDriverWait wait = new WebDriverWait(driver, 30);
 
 		LocalDateTime TimeStamp = LocalDateTime.now();
 		DateTimeFormatter DateTimeFormate = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -1709,7 +1709,7 @@ public class PurchaseOrderTest extends BaseClass {
 		click(pi.PopupOk);
 		Thread.sleep(4000);
 		System.out.println("* Purchase Return Page *");
-		
+
 		for (ExcelData excelData : excelDataList) {
 
 			int tableRowSize = driver.findElements(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr")).size();
@@ -1754,8 +1754,8 @@ public class PurchaseOrderTest extends BaseClass {
 							}
 
 						}
-					/*	else if ("true".equalsIgnoreCase(excelData.BatchProduct.trim())) {	
-							
+						/*	else if ("true".equalsIgnoreCase(excelData.BatchProduct.trim())) {	
+
 							Thread.sleep(2000);
 							WebElement batchFile = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+i+"]//td[2]//div//textarea[contains(text(),'"
 									+ ""+getProductName+"')]//following::td[8]//a[@id='BatchFolder']"));
@@ -1996,15 +1996,15 @@ public class PurchaseOrderTest extends BaseClass {
 
 		Thread.sleep(3000);
 		click(pi.Save);
-		
+
 		try {
-			
+
 			String alertText = driver.findElement(By.id("popup_message")).getText();
 			System.out.println("Alert Text: "+alertText);
-		
-			
+
+
 		} catch (Exception e) {
-			 System.out.println("No alert appeared after save.");
+			System.out.println("No alert appeared after save.");
 		}
 		System.out.println("** Purchase Return Save Successfull **");
 		Thread.sleep(3000);

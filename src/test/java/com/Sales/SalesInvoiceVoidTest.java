@@ -615,7 +615,6 @@ public class SalesInvoiceVoidTest extends BaseClass{
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	// PRODUCT PAGE
 	// @Ignore
 	@Test(priority = 8, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
@@ -835,7 +834,6 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
 
-	// UOM PAGE
 	// @Ignore
 	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
@@ -986,15 +984,11 @@ public class SalesInvoiceVoidTest extends BaseClass{
 			
 			Thread.sleep(3000);
 			if (excelData.Type.equalsIgnoreCase("Product")) {
+				
 				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@id='select2-ProductId-container']"))).click();
 				WebElement productSearch = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']")));
 				productSearch.click();
 				productSearch.sendKeys(excelData.ProductName + Keys.ENTER);
-				
-			//	js.executeScript("arguments[0].click();", si.ChooseProduct);
-			//	driver.findElement(
-			//			By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"))
-			//	.sendKeys(excelData.ProductName + Keys.ENTER);
 
 			} else if (excelData.Type.equalsIgnoreCase("Service")) {
 
@@ -1267,7 +1261,6 @@ public class SalesInvoiceVoidTest extends BaseClass{
 			Actions action = new Actions(driver);
 			action.doubleClick(si.Qty).perform();
 			Thread.sleep(1000);
-		//	js.executeScript("arguments[0].click();", si.Qty);
 			
 		} //Excel Data List Loop
 

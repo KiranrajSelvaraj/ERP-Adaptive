@@ -970,7 +970,7 @@ public class PurchaseOrderTest extends BaseClass {
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		//	WebDriverWait wait = new WebDriverWait(driver, 30);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 
 		LocalDateTime TimeStamp = LocalDateTime.now();
 		DateTimeFormatter DateTimeFormate = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -1713,7 +1713,7 @@ public class PurchaseOrderTest extends BaseClass {
 		for (ExcelData excelData : excelDataList) {
 
 			int tableRowSize = driver.findElements(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr")).size();
-
+		
 			for (int i = 2; i <= tableRowSize; i++) {
 
 				String getProductName = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+i+"]//td[2]//div//textarea")).getText();	
@@ -1726,7 +1726,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 				if (intReturnQty > 0) {
 					if (getProductName.contains(excelData.ProductName)) {
-
+						
 						Thread.sleep(3000);
 						WebElement qtyField = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+i+"]//td[2]//div//textarea[contains(text(),'"
 								+getProductName+"')]//following::td[1]//input[@id='DetailQty']"));
@@ -1737,12 +1737,21 @@ public class PurchaseOrderTest extends BaseClass {
 						if (!excelData.Qty.equalsIgnoreCase(excelData.ReturnQty)) {
 
 							if ("true".equalsIgnoreCase(excelData.BatchProduct.trim())) {	
-
-								Thread.sleep(2000);
+																
+								/*
+								 * String totalQty =
+								 * wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
+								 * ("(//div//strong[contains(text(),'"+excelData.ProductName+
+								 * "')]//following::strong//input[@id='TotalQty'])[1]")))
+								 * .getAttribute("value");
+								 */
+								
+								Thread.sleep(3000);
 								String totalQty = driver.findElement(By.xpath("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::strong//input[@id='TotalQty'])[1]"))
-										.getAttribute("value");
+										.getAttribute("value");		
 								System.out.println("Total Qty: "+totalQty);
-
+								Thread.sleep(2000);
+								
 								WebElement totalQtyField = driver.findElement(By.xpath("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::table//tbody//tr//td[6]//input[@id='Qty'])[1]"));
 								totalQtyField.click();
 								totalQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
@@ -1807,9 +1816,11 @@ public class PurchaseOrderTest extends BaseClass {
 					}*/
 
 				} else {
-
-					//	System.out.println("###");
+					
+					Thread.sleep(2000);
 					if (getProductName.contains(excelData.ProductName)) {
+						
+						System.out.println("Deleted Product: "+getProductName);					
 						Thread.sleep(3000);
 						WebElement delete = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+i+"]//td[2]//textarea[contains(text(),'"
 								+ ""+getProductName+"')]//following::td[8]//a[@class='fa fa-trash-o DeleteInvoiceDetails op ']"));

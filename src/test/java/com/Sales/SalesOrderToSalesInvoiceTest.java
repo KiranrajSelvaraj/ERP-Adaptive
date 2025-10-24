@@ -1993,8 +1993,16 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 			System.out.println();
 		}
 		Thread.sleep(4000);
+		click(cn.Save);
+		System.out.println("*** Credit Notes Save Successfull ***");
+		System.out.println();
 		
-	//	js.executeScript("window.scrollBy(0, 500)", "");
+		Thread.sleep(5000);
+		WebElement edit = driver.findElement(By.xpath
+				("(//table[@id='credittable']//tbody//tr[1]//td//following::td[7]//a[@title='Edit'])[1]"));
+		edit.click();
+		
+		js.executeScript("window.scrollBy(0, 500)", "");
 		
 		DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 		LocalDateTime now111 = LocalDateTime.now();
@@ -2040,7 +2048,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		//SubTotal:-
 		System.out.println("*** Credit Notes SubTotal ***");
 		Thread.sleep(5000);
-		String getActSubtotal = driver.findElement(By.xpath("//table[@id='CreditNoteTable']//tfoot//tr[1]//td[13]//child::input[@id='order']"))
+		String getActSubtotal = driver.findElement(By.xpath("//table[@id='CreditNoteTable']//tfoot//tr[1]//td[13]//child::p[@id='tSubtotal']"))
 				.getText();		
 	//	String replaceAllGetActSubtotal = getActSubtotal.replaceAll(",", "");
 		double getActSubtotalDouble = Double.parseDouble(getActSubtotal);

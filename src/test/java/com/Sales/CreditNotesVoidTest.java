@@ -88,7 +88,7 @@ public class CreditNotesVoidTest extends BaseClass {
 	@DataProvider
 	public Object[][] Util1() {
 
-		Object data[][] = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\SalesOrder1.xlsx", "Sheet1");
+		Object data[][] = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\CreditNotesVoid.xlsx", "Sheet1");
 		return data;
 
 	}
@@ -598,7 +598,6 @@ public class CreditNotesVoidTest extends BaseClass {
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	// Product Page:-
 	// @Ignore
 	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
@@ -818,7 +817,6 @@ public class CreditNotesVoidTest extends BaseClass {
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
 
-	// UOM PAGE
 	// @Ignore
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
@@ -1309,8 +1307,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 		System.out.println("*** Sub Total Calculation ***");
 		String getSubtotalString = driver
-				.findElement(By.xpath("//table[@id='CreditNoteTable']//tfoot//tr[1]//td[13]//p[@id='tSubtotal']"))
-				.getText();
+				.findElement(By.xpath("//input[@id='order']")).getAttribute("value");				
 		double getSubtotalDouble = Double.parseDouble(getSubtotalString);
 		System.out.println("Actual Subtotal is: " + getSubtotalDouble);
 		System.out.println("Expected SubTotal is: " + ExpSubTotal);

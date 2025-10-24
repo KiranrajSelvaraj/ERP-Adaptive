@@ -99,7 +99,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 	@DataProvider
 	public Object[][] Util1() {
 
-		Object data[][] = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\SalesOrder1.xlsx", "Sheet1");
+		Object data[][] = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\SalesInvoiceVoid.xlsx", "Sheet1");
 		return data;
 
 	}

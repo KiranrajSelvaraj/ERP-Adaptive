@@ -2048,16 +2048,21 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		//SubTotal:-
 		System.out.println("*** Credit Notes SubTotal ***");
 		Thread.sleep(5000);
-		String getActSubtotal = driver.findElement(By.xpath("//table[@id='CreditNoteTable']//tfoot//tr[1]//td[13]//child::p[@id='tSubtotal']"))
-				.getText();		
+		
+		WebElement subtotal = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
+				("//table[@id='CreditNoteTable']//tfoot//tr[1]//td[13]//child::p[@id='tSubtotal']")));
+		String subtotalString = subtotal.getText();
+		
+	//	String getActSubtotal = driver.findElement(By.xpath("//table[@id='CreditNoteTable']//tfoot//tr[1]//td[13]//child::p[@id='tSubtotal']"))
+	//			.getText();		
 	//	String replaceAllGetActSubtotal = getActSubtotal.replaceAll(",", "");
-		double getActSubtotalDouble = Double.parseDouble(getActSubtotal);
+		double getActSubtotalDouble = Double.parseDouble(subtotalString);
 		String formatGetActSubtotal = String.format("%.2f", getActSubtotalDouble);
 		System.out.println("Actual SubTotal is: "+formatGetActSubtotal);
 		String formatExpSubtotal = String.format("%.2f", expSubtotal);
 		System.out.println("Expected SubTotal is: "+formatExpSubtotal);
 		System.out.println();
-		soft.assertEquals(getActSubtotal, formatExpSubtotal, "Actual and Expected Credit Notes SubTotal Mismatched");
+		soft.assertEquals(subtotalString, formatExpSubtotal, "Actual and Expected Credit Notes SubTotal Mismatched");
 
 
 		//Over All Discount Calculation:-

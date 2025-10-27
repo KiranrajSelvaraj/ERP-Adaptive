@@ -1263,10 +1263,11 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 				totalQtyField.click();
 				totalQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 				totalQtyField.sendKeys(totalQty);
-
+				Thread.sleep(1000);
+				
 				WebElement batchAdd = driver.findElement(By.xpath
 						("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::button[text()='Add'])[1]"));
-				batchAdd.click();
+				js.executeScript("arguments[0].click();", batchAdd);
 				Thread.sleep(2000);
 
 			}

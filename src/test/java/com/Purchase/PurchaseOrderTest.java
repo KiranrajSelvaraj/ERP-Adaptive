@@ -1,5 +1,7 @@
 package com.Purchase;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -11,9 +13,12 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.collections4.map.HashedMap;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -965,12 +970,12 @@ public class PurchaseOrderTest extends BaseClass {
 
 
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
-	public void PurchaseOrderToInvoice() throws InterruptedException {
+	public void PurchaseOrderToInvoice() throws InterruptedException, IOException {
 
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+	//	WebDriverWait wait = new WebDriverWait(driver, 30);
 
 		LocalDateTime TimeStamp = LocalDateTime.now();
 		DateTimeFormatter DateTimeFormate = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -1737,14 +1742,17 @@ public class PurchaseOrderTest extends BaseClass {
 						if (!excelData.Qty.equalsIgnoreCase(excelData.ReturnQty)) {
 
 							if ("true".equalsIgnoreCase(excelData.BatchProduct.trim())) {	
-																
-								/*
-								 * String totalQty =
-								 * wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
-								 * ("(//div//strong[contains(text(),'"+excelData.ProductName+
-								 * "')]//following::strong//input[@id='TotalQty'])[1]")))
-								 * .getAttribute("value");
-								 */
+								
+								//Screen shot to the batch details:-
+								DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+								LocalDateTime now111 = LocalDateTime.now();
+								String timestamp1 = dtf1.format(now111).replace(":", ";").replace("/", "-");
+								TakesScreenshot ts1 = (TakesScreenshot) driver;
+								File s11 = ts1.getScreenshotAs(OutputType.FILE);
+								File s21 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " SalesOrder Errors "
+										+ timestamp1 + ".png");
+								FileUtils.copyFile(s11, s21);
+
 								
 								Thread.sleep(3000);
 								String totalQty = driver.findElement(By.xpath("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::strong//input[@id='TotalQty'])[1]"))

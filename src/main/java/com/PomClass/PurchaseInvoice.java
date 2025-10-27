@@ -69,7 +69,7 @@ public class PurchaseInvoice {
 	@FindBy(id = "select2-UOMId-container")
 	public WebElement Uom;
 	
-	@FindBy(id = "//input[@id='Qty']")
+	@FindBy(xpath = "//input[@id='Qty']")
 	public WebElement Qty;
 	
 	@FindBy(id = "FOCQty")
@@ -120,6 +120,9 @@ public class PurchaseInvoice {
 	
 	@FindBy(xpath = "//input[@id='purchasereturn']")
 	public WebElement PurchaseReturn;
+	
+	@FindBy(xpath = "//input[@value='Delete']")
+	public WebElement Delete;
 	
 	@FindBy(id = "popup_ok")
 	public WebElement PopupOk;

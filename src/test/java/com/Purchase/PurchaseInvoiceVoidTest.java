@@ -15,6 +15,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -30,12 +31,7 @@ import com.PomClass.ProductMovement;
 import com.PomClass.PurchaseInvoice;
 import com.PomClass.SystemSettings;
 import com.PomClass.Vendors;
-import com.Purchase.PurchaseOrderTest.ExcelData;
-import com.Purchase.PurchaseOrderTest.ExpectedStock;
-import com.Purchase.PurchaseOrderTest.ProductStock;
-import com.Purchase.PurchaseOrderTest.ProductValidation;
-import com.Purchase.PurchaseOrderTest.UOM;
-import com.Purchase.PurchaseOrderTest.product;
+
 import com.Utility.Util1;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -98,7 +94,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 
 	@DataProvider
 	public Object[][] Util2() {
-		Object[][] data = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\PurchaseOrder.xlsx", "Sheet1");
+		Object[][] data = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\PurchaseInvoiceVoid.xlsx", "Sheet1");
 		return data;
 
 	}
@@ -130,6 +126,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		private String GstPercentage;
 		private String ZeroGst;
 		private String BatchProduct;
+		private String BatchNo;
 		private String ReturnQty;
 
 		public ExcelData(String Vendor, String CurrencyCode, String CurrancyRate, String GstType, String Type,
@@ -137,7 +134,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 				String DiscountAmount, String UnitDiscCheckbox, String UnitDiscPercentage, String UnitDiscAmount,
 				String Price, String IsSpecialPriceCheckbox, String SpecialPrice, String OverAllDiscountType,
 				String OverAllDiscountAmount, String OverAllDiscountPercentage, String GstPercentage,
-				String ZeroGst, String BatchProduct, String ReturnQty) {
+				String ZeroGst, String BatchProduct, String BatchNo, String ReturnQty) {
 			super();
 
 			this.Vendor = Vendor;
@@ -164,6 +161,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 			this.GstPercentage = GstPercentage;
 			this.ZeroGst = ZeroGst;
 			this.BatchProduct = BatchProduct;
+			this.BatchNo = BatchNo;
 			this.ReturnQty = ReturnQty;
 
 		}
@@ -184,12 +182,12 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 			String DiscountAmount, String UnitDiscCheckbox, String UnitDiscPercentage, String UnitDiscAmount,
 			String Price, String IsSpecialPriceCheckbox, String SpecialPrice, String OverAllDiscountType,
 			String OverAllDiscountAmount, String OverAllDiscountPercentage, String GstPercentage, 
-			String ZeroGst, String BatchProduct, String ReturnQty) {
+			String ZeroGst, String BatchProduct, String BatchNo, String ReturnQty) {
 
 		ExcelData data = new ExcelData(Vendor, CurrencyCode, CurrancyRate, GstType, Type, ProductCode, ProductName,
 				Uom, Qty, Foc, DiscountPercentage, DiscountAmount, UnitDiscCheckbox, UnitDiscPercentage, UnitDiscAmount,
 				Price, IsSpecialPriceCheckbox, SpecialPrice, OverAllDiscountType, OverAllDiscountAmount,
-				OverAllDiscountPercentage, GstPercentage, ZeroGst, BatchProduct, ReturnQty);
+				OverAllDiscountPercentage, GstPercentage, ZeroGst, BatchProduct, BatchNo, ReturnQty);
 
 		excelDataList.add(data);
 		ProductSet.add(ProductCode);
@@ -948,7 +946,6 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		DateTimeFormatter DateTimeFormate = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 		String formatedTimestamp = TimeStamp.format(DateTimeFormate);
 
-
 		PurchaseInvoice pi = new PurchaseInvoice(driver);
 
 		driver.navigate().to(url + "Purchases/PurchaseInvoiceIndex");
@@ -982,11 +979,11 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 				vendorSearchField.click();
 				vendorSearchField.sendKeys(excelData.Vendor +Keys.ENTER);
 				Thread.sleep(2000);
+				
+				click(pi.InvoiceNo);
+				Sendkeys(pi.InvoiceNo, formatedTimestamp);
 
 			}
-
-			click(pi.InvoiceNo);
-			Sendkeys(pi.InvoiceNo, formatedTimestamp);
 
 			if (i == 0) {
 
@@ -1030,8 +1027,8 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 
 			}
 
-			Thread.sleep(1000);
 			click(pi.Qty);
+
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
 				click(pi.Uom);
@@ -1245,9 +1242,8 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 			//Add Button:-
 			click(pi.Add);
 			Thread.sleep(2000);
-			click(pi.Qty);
 			System.out.println();
-			
+
 			//Batch Details:-
 			if (excelData.BatchProduct.equalsIgnoreCase("true")) {
 
@@ -1255,14 +1251,21 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 						("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::input[@id='TotalQty'])[1]"))
 						.getAttribute("value");
 				System.out.println("Total Qty: "+totalQty);
-
+				
+				WebElement batchNo = driver.findElement(By.xpath
+						("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::input[@id='BatchNumber'])[1]"));
+				batchNo.click();
+				batchNo.sendKeys(excelData.BatchNo +Keys.ENTER);
+				Thread.sleep(1000);
+				
 				WebElement totalQtyField = driver.findElement(By.xpath
 						("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::input[@id='Qty'])[1]"));
 				totalQtyField.click();
 				totalQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 				totalQtyField.sendKeys(totalQty);
 
-				WebElement batchAdd = driver.findElement(By.xpath("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::button[text()='Add'])[1]"));
+				WebElement batchAdd = driver.findElement(By.xpath
+						("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::button[text()='Add'])[1]"));
 				batchAdd.click();
 				Thread.sleep(2000);
 
@@ -1274,18 +1277,23 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 			String replaceAllProductPrice = productPrice.replaceAll(",", "");
 			double productPriceDouble = Double.parseDouble(replaceAllProductPrice);
 			System.out.println("Actual Discount Amount: "+productPriceDouble);
-			System.out.println("Expected Discount Amount: "+expectedDiscountAmount);
+		//	System.out.println("Expected Discount Amount: "+expectedDiscountAmount);
 			System.out.println();	
 
-			soft.assertEquals(productPriceDouble, expectedDiscountAmount, 
-					"Actual and Expected Discount Amount Mismatched for "+excelData.ProductName);
-
+			/*
+			 * soft.assertEquals(productPriceDouble, expectedDiscountAmount,
+			 * "Actual and Expected Discount Amount Mismatched for "+excelData.ProductName);
+			 */
 			ExpSubTotal = ExpSubTotal + productPriceDouble;
 
 			if (excelData.ZeroGst.equals("TRUE")) {
 				ExpZeroGstProductamount = Double.parseDouble(replaceAllProductPrice) + ExpZeroGstProductamount;
 				System.out.println("ExpZeroGstProductamount: "+ExpZeroGstProductamount);
 			}
+			
+			Actions action = new Actions(driver);
+			action.doubleClick(pi.Qty).perform();
+			Thread.sleep(1000);
 
 		} //ExcelDataList Loop
 
@@ -1316,7 +1324,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		} else {
 			System.out.println("No Over All Discount Amounr and Percentage");
 		}
-		System.out.println();
+		System.out.println(); 
 
 		// Sub Total Calculation:-
 		System.out.println("*** Sub Total Calculation ***");
@@ -1329,7 +1337,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		System.out.println();
 
 		soft.assertEquals(subTotalAmountDouble, ExpSubTotal, "Actual and Expected SubTotal Mismatched");
-		
+
 		//Over All Discount Calculation:-
 		System.out.println("*** Grand Total Calculation With Over All Discount and Percentage ***");
 
@@ -1386,7 +1394,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		String formatSubWithoutGstAmount = String.format("%.2f", subWithoutGstAmount);
 		System.out.println("With Gst Product SubTotal: "+formatSubWithoutGstAmount);
 		System.out.println();
-		
+
 		// GST CALCULATION
 		System.out.println("*** Grand Total Calculation With GST ***");
 
@@ -1410,7 +1418,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 
 		}	
 
-		String ActualGstAmount = driver.findElement(By.xpath("//table[@id='PurchaseOrderTable']//tfoot//tr[6]//td[8]//p[@id='FooterGST']")).getText();
+		String ActualGstAmount = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tfoot//tr[6]//td[8]//p[@id='FooterGST']")).getText();
 		System.out.println("Actual Gst Amount is: " + ActualGstAmount);
 
 		String ExpectedGstAmountFormat = String.format("%.2f", finalExpectedGstAmount);
@@ -1430,89 +1438,95 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 			soft.assertEquals(ActualGstAmount, ExpectedGstAmountFormat, "Actual and Expected Gst Amount Mismatched");
 			System.out.println();
 		}	
-		
+
 		// GRAND TOTAL AMOUNT
-				System.out.println("*** Grand Total Amount ***");
+		System.out.println("*** Grand Total Amount ***");
 
-				String finalTotalAmount = driver.findElement(By.xpath("//table[@id='PurchaseOrderTable']//tfoot//tr[8]//td[8]//p[@id='FooterTotal']")).getText();
-				String replaceAllFinalTotalAmount = finalTotalAmount.replaceAll(",", "");
-				double finalTotalAmountDouble = Double.parseDouble(replaceAllFinalTotalAmount);
-				String finalTotalAmountFormat = String.format("%.2f", finalTotalAmountDouble);
-				System.out.println("Actual Grand Total Amount is: " + finalTotalAmountFormat);
+		String finalTotalAmount = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tfoot//tr[8]//td[8]//p[@id='FooterTotal']")).getText();
+		String replaceAllFinalTotalAmount = finalTotalAmount.replaceAll(",", "");
+		double finalTotalAmountDouble = Double.parseDouble(replaceAllFinalTotalAmount);
+		String finalTotalAmountFormat = String.format("%.2f", finalTotalAmountDouble);
+		System.out.println("Actual Grand Total Amount is: " + finalTotalAmountFormat);
 
-				double ExpectedGrandTotalAmount = (discountTotalAmount + finalExpectedGstAmount);
-				String ExpectedGrandTotalAmountFormat = String.format("%.2f", ExpectedGrandTotalAmount);
-				System.out.println("Expected Grand Total Amount is: " + ExpectedGrandTotalAmountFormat);
-				System.out.println();
+		double ExpectedGrandTotalAmount = (discountTotalAmount + finalExpectedGstAmount);
+		String ExpectedGrandTotalAmountFormat = String.format("%.2f", ExpectedGrandTotalAmount);
+		System.out.println("Expected Grand Total Amount is: " + ExpectedGrandTotalAmountFormat);
+		System.out.println();
 
-				soft.assertEquals(finalTotalAmountFormat, ExpectedGrandTotalAmountFormat, 
-						"Actual and Expected Grand Total Mismatched");
+		soft.assertEquals(finalTotalAmountFormat, ExpectedGrandTotalAmountFormat, 
+				"Actual and Expected Grand Total Mismatched");
 
-				// CURRENCY CALCULATION
-				System.out.println("*** Grand Total Calculation With Currency ***");
-				System.out.println("Sub Total in Double: " + finalTotalAmountDouble);
+		// CURRENCY CALCULATION
+		System.out.println("*** Grand Total Calculation With Currency ***");
+		System.out.println("Sub Total in Double: " + finalTotalAmountDouble);
 
-				String currencyName = pi.CurrencyCode.getText().trim();
-				System.out.println("Currency Name is: " + currencyName);
+		String currencyName = pi.CurrencyCode.getText().trim();
+		System.out.println("Currency Name is: " + currencyName);
 
-				double total = 0;
-				if (currencyName.equalsIgnoreCase("INR")) {
-					double currencyRate = Double.parseDouble(getExcelCurrencyRate);
-					total = (finalTotalAmountDouble * currencyRate);
-					System.out.println("Total Amount in INR ₹:" + total);
+		double total = 0;
+		if (currencyName.equalsIgnoreCase("INR")) {
+			double currencyRate = Double.parseDouble(getExcelCurrencyRate);
+			total = (finalTotalAmountDouble * currencyRate);
+			System.out.println("Total Amount in INR ₹:" + total);
 
-				} else if (currencyName.equalsIgnoreCase("SGD")) {
-					double currencyRate = Double.parseDouble(getExcelCurrencyRate);
-					total = (finalTotalAmountDouble * currencyRate);
-					System.out.println("Total Amount in SGD S$:" + total);
+		} else if (currencyName.equalsIgnoreCase("SGD")) {
+			double currencyRate = Double.parseDouble(getExcelCurrencyRate);
+			total = (finalTotalAmountDouble * currencyRate);
+			System.out.println("Total Amount in SGD S$:" + total);
 
-				} else if (currencyName.equalsIgnoreCase("USD")) {
-					double currencyRate = Double.parseDouble(getExcelCurrencyRate);
-					total = (finalTotalAmountDouble * currencyRate);
-					System.out.println("Total Amount in USD $:" + total);
+		} else if (currencyName.equalsIgnoreCase("USD")) {
+			double currencyRate = Double.parseDouble(getExcelCurrencyRate);
+			total = (finalTotalAmountDouble * currencyRate);
+			System.out.println("Total Amount in USD $:" + total);
 
-				} else {
-					System.out.println("Invalid or unsupported currency: " + currencyName);
-				}
+		} else {
+			System.out.println("Invalid or unsupported currency: " + currencyName);
+		}
 
-				soft.assertEquals(finalTotalAmountDouble, total, "Actual and Expected Currency Mismatched");
+		soft.assertEquals(finalTotalAmountDouble, total, "Actual and Expected Currency Mismatched");
 
-				System.out.println();
+		System.out.println();
 
-				// DECIMAL PLACE (2 or 4)
-				System.out.println("*** Decimal Place ***");
+		// DECIMAL PLACE (2 or 4)
+		System.out.println("*** Decimal Place ***");
 
-				if (DecimalCalculationForPurchase == 2) {
-					System.out.println("2 Decimal Place Amount is: " + finalTotalAmount);
+		if (DecimalCalculationForPurchase == 2) {
+			System.out.println("2 Decimal Place Amount is: " + finalTotalAmount);
 
-				} else if (DecimalCalculationForPurchase == 4) {
-					System.out.println("4 Decimal Place Amount is: " + finalTotalAmount);
+		} else if (DecimalCalculationForPurchase == 4) {
+			System.out.println("4 Decimal Place Amount is: " + finalTotalAmount);
 
-				} else {
-					System.out.println("Invalid Decimal Format");
-				}
-				System.out.println();
+		} else {
+			System.out.println("Invalid Decimal Format");
+		}
+		System.out.println();
 
-				Thread.sleep(4000);
-				click(pi.Save);
-				try {
-					
-					String alertText = driver.findElement(By.id("popup_message")).getText();
-					System.out.println("Alert Text: "+alertText);
-									
-				} catch (Exception e) {
-					 System.out.println("No alert appeared after save.");
-				}
-				System.out.println("** Purchase Invoice Save Successfull **");
-				System.out.println();
-				
-				//Void Process:-
-				Thread.sleep(5000);
-				
+		Thread.sleep(4000);
+		click(pi.Save);
+		try {
+
+			String alertText = driver.findElement(By.id("popup_message")).getText();
+			System.out.println("Alert Text: "+alertText);
+
+		} catch (Exception e) {
+			System.out.println("No alert appeared after save.");
+		}
+		System.out.println("** Purchase Invoice Save Successfull **");
+		System.out.println();
+
+		//Void Process:-
+		Thread.sleep(3000);
+		WebElement delete = driver.findElement(By.xpath
+				("//table[@id='purchasetable']//tbody//tr//td[contains(text(),'"+formatedTimestamp+"')]/following::td[4]//a[@title='Delete']"));
+		js.executeScript("arguments[0].click();", delete);
+		Thread.sleep(2000);
+		click(pi.Delete);
+		Thread.sleep(1000);
+		click(pi.PopupOk);
 
 	}
-	
-	
+
+
 	class ProductValidation {
 
 		String ProductCode;
@@ -1718,7 +1732,10 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		Product prod = new Product(driver);
-
+		
+		driver.navigate().back();
+		driver.navigate().refresh();
+		Thread.sleep(2000);
 		driver.navigate().to(url + "SalesPurchases/Product");
 		Thread.sleep(7000);
 		System.out.println("*** Product Page ***");

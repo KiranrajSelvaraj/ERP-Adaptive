@@ -1246,12 +1246,14 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 
 			//Batch Details:-
 			if (excelData.BatchProduct.equalsIgnoreCase("true")) {
-
+				
+				Thread.sleep(2000);
 				String totalQty = driver.findElement(By.xpath
 						("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::input[@id='TotalQty'])[1]"))
 						.getAttribute("value");
 				System.out.println("Total Qty: "+totalQty);
 				
+				Thread.sleep(1000);
 				WebElement batchNo = driver.findElement(By.xpath
 						("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::input[@id='BatchNumber'])[1]"));
 				batchNo.click();
@@ -1661,11 +1663,13 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 
 				if (matchedProduct.IsBase) {
 					stockType = "Is Base";
-					finalProductStock = (currentStockDouble + multipleQty + excelFocDouble);
+					finalProductStock = (currentStockDouble - multipleQty - excelFocDouble);
+				
 
 				} else if (matchedProduct.IsNonCarton) {
 					stockType = "Is Non Carton";
-					finalProductStock = (currentStockDouble + multipleQty + excelFocDouble);
+					finalProductStock = (currentStockDouble - multipleQty - excelFocDouble);
+					
 
 				} else if (matchedProduct.IsCarton) {
 					stockType = "Is Carton";
@@ -1686,7 +1690,8 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 					}
 
 					double addBandLStock = (multipleBoxStock + looseStockDouble);
-					finalProductStock = (addBandLStock + multipleQty + excelFocDouble);
+					finalProductStock = (addBandLStock - multipleQty - excelFocDouble);
+				
 				}
 
 				break; // ✅ only one UOM calculation needed

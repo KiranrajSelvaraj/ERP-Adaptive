@@ -1743,17 +1743,6 @@ public class PurchaseOrderTest extends BaseClass {
 
 							if ("true".equalsIgnoreCase(excelData.BatchProduct.trim())) {	
 								
-								//Screen shot to the batch details:-
-								DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-								LocalDateTime now111 = LocalDateTime.now();
-								String timestamp1 = dtf1.format(now111).replace(":", ";").replace("/", "-");
-								TakesScreenshot ts1 = (TakesScreenshot) driver;
-								File s11 = ts1.getScreenshotAs(OutputType.FILE);
-								File s21 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " SalesOrder Errors "
-										+ timestamp1 + ".png");
-								FileUtils.copyFile(s11, s21);
-
-								
 								Thread.sleep(3000);
 								String totalQty = driver.findElement(By.xpath("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::strong//input[@id='TotalQty'])[1]"))
 										.getAttribute("value");		
@@ -1765,6 +1754,17 @@ public class PurchaseOrderTest extends BaseClass {
 								totalQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 								totalQtyField.sendKeys(totalQty + Keys.ENTER);
 								Thread.sleep(2000);
+								
+								//Screen shot to the batch details:-
+								DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+								LocalDateTime now111 = LocalDateTime.now();
+								String timestamp1 = dtf1.format(now111).replace(":", ";").replace("/", "-");
+								TakesScreenshot ts1 = (TakesScreenshot) driver;
+								File s11 = ts1.getScreenshotAs(OutputType.FILE);
+								File s21 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " SalesOrder Errors "
+										+ timestamp1 + ".png");
+								FileUtils.copyFile(s11, s21);
+
 
 								driver.findElement(By.xpath
 										("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::button[text()='Add'])[1]")).click();									

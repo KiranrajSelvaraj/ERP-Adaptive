@@ -932,6 +932,8 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			}
 		}
 	}
+	
+	String transNo = "";
 
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
 	public void PurchaseReturn() throws InterruptedException {
@@ -1507,7 +1509,9 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		}
 		System.out.println("** Purchase Return Save Successfull **");
 		System.out.println();
-
+		
+		transNo = driver.findElement(By.xpath("//table[@id='PRtable']//tbody//tr[1]//td[3]")).getText();
+		System.out.println("TransNo: "+transNo);
 
 	} // Method loop
 	
@@ -1593,7 +1597,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		PurchaseReturns pr = new PurchaseReturns(driver);
 		
 		WebElement delete = driver.findElement(By.xpath
-				("(//table[@id='PRtable']//tbody//tr//td[11]//a[@title='Delete'])[1]"));
+				("//table[@id='PRtable']//tbody//tr[1]//td[contains(text(),'"+transNo+"')][1]//following::td[8]//a[@title='Delete']"));
 		js.executeScript("arguments[0].click();", delete);
 	//	Thread.sleep(2000);
 		click(pr.Delete);
@@ -1629,6 +1633,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 	public void QtyCalculation() throws InterruptedException {
 
 		System.out.println("*** Expected Qty Calculation ***");
+		System.out.println();
 
 		Set<String> Products = ProductUomMap.keySet();
 		for (String Product : Products) {

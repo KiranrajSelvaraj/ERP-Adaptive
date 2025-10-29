@@ -1265,7 +1265,8 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				Thread.sleep(2000);
 
 			}
-
+			
+			Thread.sleep(3000);
 			productPrice = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr//td[2]//textarea[contains(text(),' "
 					+ ""+excelData.ProductName+" ')]//following::td[@class='DetailTotal']"))
 					.getText();

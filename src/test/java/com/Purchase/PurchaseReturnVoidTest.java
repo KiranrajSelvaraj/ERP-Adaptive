@@ -1508,21 +1508,103 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		System.out.println("** Purchase Return Save Successfull **");
 		System.out.println();
 
-		//Void Process:-
-		Thread.sleep(3000);
+
+	} // Method loop
+	
+	@SuppressWarnings("unused")
+	class ReturnProductStock {
+
+		private String ReturnProductName;
+		private String ReturnProductStock;
+
+		public ReturnProductStock(String ReturnProductName, String ReturnProductStock) {
+			super();
+
+			this.ReturnProductName = ReturnProductName;
+			this.ReturnProductStock = ReturnProductStock;
+		}
+	}
+
+	ArrayList<ReturnProductStock> ReturnProductStockList = new ArrayList<>();
+	
+	@Test(priority = 19, dependsOnMethods = "ERPLoginPage")
+	public void ReturnStockProductPage() throws InterruptedException {
+		
+		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		Product prod = new Product(driver);
+
+		driver.navigate().back();
+		driver.navigate().refresh();
+		Thread.sleep(2000);
+		driver.navigate().to(url + "SalesPurchases/Product");
+		Thread.sleep(7000);
+		System.out.println("*** Product Page ***");
+
+		for (String product : ProductSet) {
+
+			WebElement productcode = wait.until(ExpectedConditions.visibilityOfElementLocated
+					(By.xpath("//input[@value='Fetch']//preceding::input[@placeholder='Find a product or code ']")));
+			Thread.sleep(1000);
+			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+			productcode.sendKeys(product);
+			Thread.sleep(1000);
+			click(prod.Fetch);
+			Thread.sleep(3000);
+
+			WebElement DetailsIcon = driver
+					.findElement(By.xpath("//table[@id='producttable']//tbody//tr//td[1][normalize-space()='" + product
+							+ "']//following::td[9]//a[@title='Details'][1]"));
+			js.executeScript("arguments[0].click();", DetailsIcon);
+			Thread.sleep(3000);
+
+			String returnProductName = driver.findElement(By.xpath("//div[@class='col-lg-7']//h2//b")).getText();
+			System.out.println("ReturnProductName: " + returnProductName);
+
+			String afterReturnCurrentStockValue = driver
+					.findElement(By.xpath("//dt[normalize-space()='Current Stock - HQ']//following-sibling::dd[1]"))
+					.getText();
+			System.out.println("After Return Product Stock: " + afterReturnCurrentStockValue);
+			System.out.println();
+			click(prod.Back);
+			Thread.sleep(2000);
+			
+			ReturnProductStock returnProdStock = new ReturnProductStock(returnProductName, afterReturnCurrentStockValue);
+			ReturnProductStockList.add(returnProdStock);
+			
+		}
+		System.out.println();
+			
+	}
+	
+	@Test(priority = 20, dependsOnMethods = "ERPLoginPage")
+	public void PurchaseReturnVoid() {
+		
+		driver.navigate().to(url +"Purchases/PurchaseReturnIndex");
+	//	Thread.sleep(4000);
+		System.out.println("* Purchase Return Page *");
+		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		PurchaseReturns pr = new PurchaseReturns(driver);
+		
 		WebElement delete = driver.findElement(By.xpath
 				("(//table[@id='PRtable']//tbody//tr//td[11]//a[@title='Delete'])[1]"));
 		js.executeScript("arguments[0].click();", delete);
-		Thread.sleep(2000);
+	//	Thread.sleep(2000);
 		click(pr.Delete);
-		Thread.sleep(1000);
+	//	Thread.sleep(1000);
 		click(pr.PopupOk);
 		System.out.println("*** Purchase Invoice Delete Successfull ***");
 		System.out.println();
+				
+	}
 
-	} // Method loop
-
-
+	
 	class ProductValidation {
 
 		String ProductCode;
@@ -1543,7 +1625,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 	double multipleQty = 0;
 
 	//@Ignore
-	@Test(priority = 20, dependsOnMethods = "ERPLoginPage")
+	@Test(priority = 21, dependsOnMethods = "ERPLoginPage")
 	public void QtyCalculation() throws InterruptedException {
 
 		System.out.println("*** Expected Qty Calculation ***");
@@ -1762,7 +1844,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			String afterCurrentStockValue = driver
 					.findElement(By.xpath("//dt[normalize-space()='Current Stock - HQ']//following-sibling::dd[1]"))
 					.getText();
-			System.out.println("After Invoice Product Stock: " + afterCurrentStockValue);
+			System.out.println("After Return Void Product Stock: " + afterCurrentStockValue);
 			System.out.println();
 			click(prod.Back);
 			Thread.sleep(2000);
@@ -1817,9 +1899,9 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 						String replaceProductStock = productStock.ProductStock.replaceAll("/0 L", "");
 
-						System.out.println("Product Movement Name               : " + trimProductName);
-						System.out.println("After Invoice Product Stock         : " + replaceProductStock);
-						System.out.println("After Invoice Product Movement Stock: " + balanceQty);
+						System.out.println("Product Movement Name                   : " + trimProductName);
+						System.out.println("After Return Void Product Stock         : " + replaceProductStock);
+						System.out.println("After Return Void Product Movement Stock: " + balanceQty);
 
 						soft.assertEquals(balanceQty, replaceProductStock,
 								"Actual and Expected Product Stock and Movement Stock Mismatched for Product "
@@ -1827,9 +1909,9 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 					} else {
 
-						System.out.println("Product Movement Name               : " + trimProductName);
-						System.out.println("After Invoice Product Stock         : " + productStock.ProductStock);
-						System.out.println("After Invoice Product Movement Stock: " + balanceQty);
+						System.out.println("Product Movement Name                   : " + trimProductName);
+						System.out.println("After Return Void Product Stock         : " + productStock.ProductStock);
+						System.out.println("After Return Void Product Movement Stock: " + balanceQty);
 
 						soft.assertEquals(balanceQty, productStock.ProductStock,
 								"Actual and Expected Product Stock and Movement Stock Mismatched for Product "

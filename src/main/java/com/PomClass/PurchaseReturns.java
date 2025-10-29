@@ -47,13 +47,28 @@ public class PurchaseReturns {
 	@FindBy(xpath = "//input[@id='ReferenceNo']")
 	public WebElement ReferenceNo;
 	
+	@FindBy(id = "select2-CurrencyId-container")
+	public WebElement CurrencyCode;
+	
+	@FindBy(id = "ProductCheck")
+	public WebElement ProductCheckBox;
+	
+	@FindBy(id = "ServiceCheck")
+	public WebElement ServiceCheckBox;
+	
+	@FindBy(id = "OpenCheck")
+	public WebElement OpenCheckBox;
+	
+	@FindBy(id = "OpenItem")
+	public WebElement OpenProduct;
+	
 	@FindBy(id = "select2-ProductId-container")
 	public WebElement ChooseProduct;
 	
 	@FindBy(id = "select2-UOMId-container")
 	public WebElement Uom;
 	
-	@FindBy(id = "//input[@id='Qty']")
+	@FindBy(xpath = "//input[@id='Qty']")
 	public WebElement Qty;
 	
 	@FindBy(id = "divIsLooseFOC")
@@ -75,10 +90,22 @@ public class PurchaseReturns {
 	public WebElement Add;
 	
 	@FindBy(id = "DiscountType")
-	public WebElement DiscountType;
+	public WebElement OverAllDiscountType;
+	
+	@FindBy(id = "Discount")
+	public WebElement OverAllDiscount;
 	
 	@FindBy(xpath = "//button[@id='Create']")
 	public WebElement Save;
+	
+	@FindBy(xpath = "//input[@value='Delete']")
+	public WebElement Delete;
+	
+	@FindBy(id = "popup_ok")
+	public WebElement PopupOk;
+	
+	@FindBy(id = "popup_cancel")
+	public WebElement PopupCancel;
 	
 	@FindBy(id = "btnhold")
 	public WebElement Hold;

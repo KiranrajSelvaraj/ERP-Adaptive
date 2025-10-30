@@ -98,17 +98,19 @@ public class StockAdjustmentV2Test extends BaseClass{
 
 		private String StockAdjustmentType;
 		private String Warehouse;
+		private String ProductCode;
 		private String ProductName;
 		private String Uom;
 		private String Qty;
 		private String BatchProduct;
 
-		public ExcelData(String StockAdjustmentType, String Warehouse, String ProductName,
+		public ExcelData(String StockAdjustmentType, String Warehouse, String ProductName, String ProductCode,
 				String Uom, String Qty, String BatchProduct) {
 			super();
 
 			this.StockAdjustmentType = StockAdjustmentType;
 			this.Warehouse = Warehouse;
+			this.ProductCode = ProductCode;
 			this.ProductName = ProductName;
 			this.Uom = Uom;
 			this.Qty = Qty;
@@ -121,13 +123,13 @@ public class StockAdjustmentV2Test extends BaseClass{
 	Set<String> ProductSet = new LinkedHashSet<String>();
 
 	@Test(priority = 4, dataProvider = "Util1", dependsOnMethods = "ERPLoginPage")
-	public void GetData(String StockAdjustmentType, String Warehouse, String ProductName,
+	public void GetData(String StockAdjustmentType, String Warehouse, String ProductName, String ProductCode,
 			String Uom, String Qty, String BatchProduct) {
 
-		ExcelData data = new ExcelData(StockAdjustmentType, Warehouse, ProductName, Uom, Qty, BatchProduct);
+		ExcelData data = new ExcelData(StockAdjustmentType, Warehouse, ProductCode, ProductName, Uom, Qty, BatchProduct);
 
 		excelDataList.add(data);
-		ProductSet.add(ProductName);
+		ProductSet.add(ProductCode);
 
 	}
 	
@@ -515,7 +517,7 @@ public class StockAdjustmentV2Test extends BaseClass{
 		}
 	}
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
 	public void StockAdjustment() {
 
@@ -645,7 +647,7 @@ public class StockAdjustmentV2Test extends BaseClass{
 
 	ArrayList<ProductStock> ProductStockList = new ArrayList<>();
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 20, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 		
@@ -699,7 +701,7 @@ public class StockAdjustmentV2Test extends BaseClass{
 		System.out.println();
 	}
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 22, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 		

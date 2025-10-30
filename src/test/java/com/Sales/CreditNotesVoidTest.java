@@ -627,8 +627,8 @@ public class CreditNotesVoidTest extends BaseClass {
 			Thread.sleep(3000);
 
 			WebElement DetailsIcon = driver
-					.findElement(By.xpath("//table[@id='producttable']//tbody//tr//td[1][normalize-space()='" + product
-							+ "']//following::td[9]//a[@title='Details'][1]"));
+					.findElement(By.xpath("//table[@id='producttable']//tbody//tr//td[2][normalize-space()='" + product
+							+ "']//following::td[8]//a[@title='Details'][1]"));
 			js.executeScript("arguments[0].click();", DetailsIcon);
 			Thread.sleep(3000);
 
@@ -1724,8 +1724,8 @@ public class CreditNotesVoidTest extends BaseClass {
 			Thread.sleep(3000);
 
 			WebElement DetailsIcon = driver
-					.findElement(By.xpath("//table[@id='producttable']//tbody//tr//td[1][normalize-space()='" + product
-							+ "']//following::td[9]//a[@title='Details'][1]"));
+					.findElement(By.xpath("//table[@id='producttable']//tbody//tr//td[2][normalize-space()='" + product
+							+ "']//following::td[8]//a[@title='Details'][1]"));
 			js.executeScript("arguments[0].click();", DetailsIcon);
 			Thread.sleep(3000);
 

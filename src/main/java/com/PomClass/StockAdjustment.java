@@ -9,12 +9,9 @@ public class StockAdjustment {
 	
 	public static WebDriver driver;
 	
-	
+	// V2 Index:-
 	@FindBy(id = "Create")
-	public WebElement AddStock;
-	
-	@FindBy(id = "Post")
-	public WebElement Post;
+	public WebElement CreateV2;
 	
 	@FindBy(id = "getTemplate")
 	public WebElement GetTemplate;
@@ -37,35 +34,15 @@ public class StockAdjustment {
 	@FindBy(xpath = "//select[@name='StockAdjustmenttable_length']//following-sibling::option[4]")
 	public WebElement ShowTableLength;
 	
-	@FindBy(id = "Date")
-	public WebElement Date;
+	@FindBy(xpath = "//li[@id='StockAdjustmenttable_previous']//child::a[text()='Previous']")
+	public WebElement Pervious;
 	
-	@FindBy(id = "IsDisposal")
-	public WebElement IsDisposal;
+	@FindBy(xpath = "//li[@id='StockAdjustmenttable_next']//child::a[text()='Next']")
+	public WebElement Next;
 	
-	@FindBy(id = "IsOpeningStock")
-	public WebElement IsOpeningStock;
-	
-	@FindBy(id = "select2-ProductId-container")
-	public WebElement ChooseProduct;
-	
-	@FindBy(xpath = "//button[text()='Add']")
-	public WebElement Add;
-		
-	@FindBy(xpath = "//a[text()='Copy Stock Adjustment']")
-	public WebElement CopyStockAdjustment;
-	
-	@FindBy(id = "btnsave")
-	public WebElement Save;
-	
-	@FindBy(xpath = "//input[@value='Back']")
-	public WebElement Back;
-	
-	
-	//Stock Adjustment V2 Page
-	
-	@FindBy(id = "Create")
-	public WebElement CreateV2;
+	// V2 Edit page:-
+	@FindBy(id = "SANumber")
+	public WebElement StockAdjustmentNumberV2;
 	
 	@FindBy(id = "Date")
 	public WebElement StockAdjustmentDateV2;
@@ -75,6 +52,9 @@ public class StockAdjustment {
 	
 	@FindBy(id = "select2-WarehouseId-container")
 	public WebElement WarehouseV2;
+	
+	@FindBy(id = "Remarks")
+	public WebElement RemarksV2;
 	
 	@FindBy(id = "select2-ProductId-container")
 	public WebElement ChooseProductV2;
@@ -105,7 +85,28 @@ public class StockAdjustment {
 	
 	
 	
+	// V1 page:-
+	@FindBy(id = "IsDisposal")
+	public WebElement IsDisposal;
 	
+	@FindBy(id = "IsOpeningStock")
+	public WebElement IsOpeningStock;
+	
+	@FindBy(id = "select2-ProductId-container")
+	public WebElement ChooseProduct;
+	
+	@FindBy(xpath = "//button[text()='Add']")
+	public WebElement Add;
+		
+	@FindBy(xpath = "//a[text()='Copy Stock Adjustment']")
+	public WebElement CopyStockAdjustment;
+	
+	@FindBy(id = "btnsave")
+	public WebElement Save;
+	
+	@FindBy(xpath = "//input[@value='Back']")
+	public WebElement Back;
+		
 	
 	public StockAdjustment(WebDriver driver) {
 		this.driver = driver;

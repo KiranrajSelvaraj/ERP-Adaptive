@@ -932,7 +932,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			}
 		}
 	}
-	
+
 	String transNo = "";
 
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
@@ -944,6 +944,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 
 		PurchaseReturns pr = new PurchaseReturns(driver);
 
@@ -1209,7 +1210,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 					double discPercentDouble = Double.parseDouble(excelData.DiscountPercentage);					
 					double expectedProductAmount = priceDouble * excelQtyDouble;
 					expectedDiscountPercentage = expectedProductAmount * discPercentDouble / 100;
-					
+
 					expectedDiscountPercentage = (expectedProductAmount - expectedDiscountPercentage);
 
 					Total = expectedDiscountPercentage - Total;
@@ -1265,11 +1266,19 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				Thread.sleep(2000);
 
 			}
-			
+
 			Thread.sleep(3000);
-			productPrice = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr//td[2]//textarea[contains(text(),' "
-					+ ""+excelData.ProductName+" ')]//following::td[@class='DetailTotal']"))
-					.getText();
+			/*
+			 * productPrice = driver.findElement(By.
+			 * xpath("//table[@id='PurchaseReturnTable']//tbody//tr//td[2]//textarea[contains(text(),' "
+			 * + ""+excelData.ProductName+" ')]//following::td[@class='DetailTotal']"))
+			 * .getText();
+			 */
+
+			WebElement productprice = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
+					("//table[@id='PurchaseReturnTable']//tbody//tr//td[2]//textarea[contains(text(),'"
+							+" "+excelData.ProductName +"')]//following::td[@class='DetailTotal']")));
+			productPrice = productprice.getText();
 			String replaceAllProductPrice = productPrice.replaceAll(",", "");
 			double productPriceDouble = Double.parseDouble(replaceAllProductPrice);
 			System.out.println("Actual Discount Amount: "+productPriceDouble);
@@ -1510,12 +1519,13 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		}
 		System.out.println("** Purchase Return Save Successfull **");
 		System.out.println();
-		
+
 		transNo = driver.findElement(By.xpath("//table[@id='PRtable']//tbody//tr[1]//td[3]")).getText();
 		System.out.println("TransNo: "+transNo);
 
 	} // Method loop
-	
+
+
 	@SuppressWarnings("unused")
 	class ReturnProductStock {
 
@@ -1531,10 +1541,10 @@ public class PurchaseReturnVoidTest extends BaseClass {
 	}
 
 	ArrayList<ReturnProductStock> ReturnProductStockList = new ArrayList<>();
-	
+
 	@Test(priority = 19, dependsOnMethods = "ERPLoginPage")
 	public void ReturnStockProductPage() throws InterruptedException {
-		
+
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		WebDriverWait wait = new WebDriverWait(driver, 20);
@@ -1576,40 +1586,40 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			System.out.println();
 			click(prod.Back);
 			Thread.sleep(2000);
-			
+
 			ReturnProductStock returnProdStock = new ReturnProductStock(returnProductName, afterReturnCurrentStockValue);
 			ReturnProductStockList.add(returnProdStock);
-			
+
 		}
 		System.out.println();
-			
+
 	}
-	
+
 	@Test(priority = 20, dependsOnMethods = "ERPLoginPage")
 	public void PurchaseReturnVoid() {
-		
+
 		driver.navigate().to(url +"Purchases/PurchaseReturnIndex");
-	//	Thread.sleep(4000);
+		//	Thread.sleep(4000);
 		System.out.println("* Purchase Return Page *");
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		PurchaseReturns pr = new PurchaseReturns(driver);
-		
+
 		WebElement delete = driver.findElement(By.xpath
 				("//table[@id='PRtable']//tbody//tr[1]//td[contains(text(),'"+transNo+"')][1]//following::td[8]//a[@title='Delete']"));
 		js.executeScript("arguments[0].click();", delete);
-	//	Thread.sleep(2000);
+		//	Thread.sleep(2000);
 		click(pr.Delete);
-	//	Thread.sleep(1000);
+		//	Thread.sleep(1000);
 		click(pr.PopupOk);
 		System.out.println("*** Purchase Invoice Delete Successfull ***");
 		System.out.println();
-				
+
 	}
 
-	
+
 	class ProductValidation {
 
 		String ProductCode;

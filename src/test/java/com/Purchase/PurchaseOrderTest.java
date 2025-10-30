@@ -2013,6 +2013,16 @@ public class PurchaseOrderTest extends BaseClass {
 
 		soft.assertEquals(formatActualGrandTotal, formatExpectedGrandTotalAmount, 
 				"Actual and Expected Grand Total Mismatched");
+		
+		Thread.sleep(1000);
+		DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+		LocalDateTime now111 = LocalDateTime.now();
+		String timestamp1 = dtf1.format(now111).replace(":", ";").replace("/", "-");
+		TakesScreenshot ts1 = (TakesScreenshot) driver;
+		File s11 = ts1.getScreenshotAs(OutputType.FILE);
+		File s21 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " PurchaseOrder Errors "
+				+ timestamp1 + ".png");
+		FileUtils.copyFile(s11, s21);
 
 
 		Thread.sleep(3000);

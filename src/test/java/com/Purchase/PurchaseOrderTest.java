@@ -2024,7 +2024,6 @@ public class PurchaseOrderTest extends BaseClass {
 				+ timestamp1 + ".png");
 		FileUtils.copyFile(s11, s21);
 
-
 		Thread.sleep(3000);
 		click(pi.Save);
 

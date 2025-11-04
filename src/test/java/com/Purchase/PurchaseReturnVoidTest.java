@@ -818,9 +818,9 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				js.executeScript("arguments[0].click();", fetchBtn);
 				Thread.sleep(3000);
 
-				WebElement EditIcon = driver.findElement(
+				WebElement detailsIcon = driver.findElement(
 						By.xpath("//table[@id='vendortable']//tbody//tr//td[2]//following::td[6]//a[@title='Details']"));
-				js.executeScript("arguments[0].click();", EditIcon);
+				js.executeScript("arguments[0].click();", detailsIcon);
 
 				String VendorName = driver.findElement(By.xpath("(//div[@class='col-lg-8']//child::h2//b)[1]"))
 						.getText();
@@ -1618,206 +1618,144 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		System.out.println();
 
 	}
+	
+	class StockCalculation {
 
+		private String calculateStock;
+		private String productName;
 
-	class ProductValidation {
-
-		String ProductCode;
-		String UOM;
-		int ProductQty;
-
-		public ProductValidation(String ProductCode, String UOM, int ProductQty) {
+		public StockCalculation(String calculateStock, String productName) {
 			super();
 
-			this.ProductCode = ProductCode;
-			this.UOM = UOM;
-			this.ProductQty = ProductQty;
+			this.calculateStock = calculateStock;
+			this.productName = productName;
+
 		}
 	}
 
-	ArrayList<ProductValidation> ProductValidationsList = new ArrayList<>();
+	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
 
-	double multipleQty = 0;
-
-	//@Ignore
-	@Test(priority = 21, dependsOnMethods = "ERPLoginPage")
-	public void QtyCalculation() throws InterruptedException {
-
-		System.out.println("*** Expected Qty Calculation ***");
-		System.out.println();
-
-		Set<String> Products = ProductUomMap.keySet();
-		for (String Product : Products) {
-			List<String> uom = ProductUomMap.get(Product);
-			for (String UOM : uom) {
-
-				int ProductQty = 0;
-
-				int excelDataListSize = excelDataList.size();
-				for (int i = 0; i < excelDataListSize; i++) {
-					ExcelData excelData = excelDataList.get(i);
-					if (excelData.ProductCode != null && excelData.Uom != null
-							&& excelData.ProductCode.trim().equals(Product.trim())
-							&& excelData.Uom.trim().equals(UOM.trim())) {
-
-						ProductQty = Integer.parseInt(excelData.Qty) + ProductQty;
-
-						System.out.println("Product Code : " + Product);
-						System.out.println("Uom          : " + UOM);
-						System.out.println("Product Qty  : " + ProductQty);
-
-						int uomDetailsListSize = UomDetailsList.size();
-						for (int j = 0; j < uomDetailsListSize; j++) {
-							UOM getUomDetails = UomDetailsList.get(j);
-
-							if (excelData.Uom.trim().equalsIgnoreCase(getUomDetails.UomCodeValue.trim())) {
-
-								double uomUnitDouble = Double.parseDouble(getUomDetails.UomUnits.trim());
-								double multipleQty = (ProductQty * uomUnitDouble);
-								System.out.println("Multiple Qty: " + multipleQty);
-								System.out.println();
-							}
-
-						}
-
-					}
-
-				}
-
-				ProductValidation ProdValidationDetails = new ProductValidation(Product, UOM, ProductQty);
-				ProductValidationsList.add(ProdValidationDetails);
-
-			}
-		}
-	}
-
-	@SuppressWarnings("unused")
-	class ExpectedStock {
-
-		private String finalProductStock;
-
-		public ExpectedStock(String finalProductStock) {
-			super();
-
-			this.finalProductStock = finalProductStock;
-		}
-	}
-
-	ArrayList<ExpectedStock> ExpexcetedProductStockList = new ArrayList<>();
-
-	//@Ignore
 	@Test(priority = 22, dependsOnMethods = "ERPLoginPage")
-	public void QtyCalculation1() {
+	public void StockCalculation() {
 
-		System.out.println("*** Qty Calculation ***");
+		System.out.println("* Stock Calculation *");
 
 		int excelDataListSize = excelDataList.size();
-		System.out.println("Excel Data List Size: " + excelDataListSize);
-		System.out.println();
 		for (int i = 0; i < excelDataListSize; i++) {
 			ExcelData excelData = excelDataList.get(i);
 
-			product matchedProduct = null;
-			for (product data : ProductDetailsList) {
-				if (data.productName.equalsIgnoreCase(excelData.ProductName)) {
-					matchedProduct = data;
+			double doubleExcelQty = 0;
+			double doubleUomUnit = 0;
+			double multipleQty = 0;
+
+			int UomDetailsListSize = UomDetailsList.size();
+			for (int j = 0; j < UomDetailsListSize; j++) {
+				UOM uomData = UomDetailsList.get(j);
+
+				if (excelData.Uom.equals(uomData.UomCodeValue)) {
+
+					doubleExcelQty = Double.parseDouble(excelData.Qty);
+					doubleUomUnit = Double.parseDouble(uomData.UomUnits);
+
+					multipleQty = doubleExcelQty * doubleUomUnit;
+					System.out.println("multipleQty is: "+multipleQty);
 					break;
-				}
-			}
-			if (matchedProduct == null)
-				continue;
+				}	
 
-			// Convert page stock into double (for base & non-carton)
-			double currentStockDouble = 0;
-			if (!matchedProduct.IsCarton) {
-				currentStockDouble = Double
-						.parseDouble(matchedProduct.currentStockValue.trim().replaceAll("[^0-9]", ""));
-			}
+			}  // Uom details list loop
 
-			// Excel Qty + FOC
-			double excelQtyDouble = Double.parseDouble(excelData.Qty.trim());
-			double excelFocDouble = (excelData.Foc != null && !excelData.Foc.trim().isEmpty())
-					? Double.parseDouble(excelData.Foc.trim())
-							: 0;
+			int ProductDetailsListSize = ProductDetailsList.size();
+			for (int k = 0; k < ProductDetailsListSize; k++) {
+				product productData = ProductDetailsList.get(k);
 
-			double finalProductStock = 0;
-			String stockType = "";
+				double calculateStockDouble = 0;
+				String calculateStock = "0";
 
-			// 🔁 Find matching UOM for this excel row
-			for (UOM uomDetailsData : UomDetailsList) {
-				if (!excelData.Uom.trim().equalsIgnoreCase(uomDetailsData.UomCodeValue.trim())) {
-					continue;
-				}
+				if (productData.productName.equalsIgnoreCase(excelData.ProductName)) {
+					
+					String productName = excelData.ProductName;
 
-				double uomUnitDouble = Double.parseDouble(uomDetailsData.UomUnits.trim());
-				double multipleQty = excelQtyDouble * uomUnitDouble;
+					if (productData.IsCarton) {
 
-				if (matchedProduct.IsBase) {
-					stockType = "Is Base";
-					finalProductStock = (currentStockDouble - multipleQty - excelFocDouble);
+						double multipleBoxStock = 0;
+						double doubleLooseCurrentStock = 0;
+
+						String[] splitCurrentStockValue = productData.currentStockValue.split("/");
+						for (String currentStock : splitCurrentStockValue) {
+							if (currentStock.contains("B")) {
+								String replaceAllBoxCurrentStock = currentStock.replaceAll("[A-Za-z]", "");
+								double doubleBoxCurrentStock = Double.parseDouble(replaceAllBoxCurrentStock);
+
+								multipleBoxStock = doubleBoxCurrentStock * 10;
+								//	System.out.println("multipleBoxStock is: "+multipleBoxStock);
 
 
-				} else if (matchedProduct.IsNonCarton) {
-					stockType = "Is Non Carton";
-					finalProductStock = (currentStockDouble - multipleQty - excelFocDouble);
+							} else if (currentStock.contains("L")) {
+								String replaceAllLooseCurrentStock = currentStock.replaceAll("[A-Za-z]", "");
+								doubleLooseCurrentStock = Double.parseDouble(replaceAllLooseCurrentStock);
+								//	System.out.println("doubleLooseCurrentStock is: "+doubleLooseCurrentStock);
 
+							} // Current stock loop
+						
+								double additionBoxandLooseStock = multipleBoxStock + doubleLooseCurrentStock;
+								calculateStockDouble = additionBoxandLooseStock + multipleQty;
+								calculateStockDouble = calculateStockDouble - multipleQty;
 
-				} else if (matchedProduct.IsCarton) {
-					stockType = "Is Carton";
+						}		
 
-					// Page Stock Format Example: "470 B/8 L"
-					String[] currentStockSplit = matchedProduct.currentStockValue.split("/");
-					double boxStockDouble = 0, looseStockDouble = 0, multipleBoxStock = 0;
+					} else {
+							
+							double doubleCurrentStock = Double.parseDouble(productData.currentStockValue);
+							calculateStockDouble = doubleCurrentStock + multipleQty;
+							calculateStockDouble = calculateStockDouble - multipleQty;
+							int intcalculateStock = (int) calculateStockDouble;
+							calculateStock = String.valueOf(intcalculateStock);
 
-					for (String currentStock : currentStockSplit) {
-						if (currentStock.contains("B")) {
-							String boxReplaceAll = currentStock.replaceAll("[A-Za-z]", "");
-							boxStockDouble = Double.parseDouble(boxReplaceAll);
-							multipleBoxStock = (uomUnitDouble * boxStockDouble);
-						} else if (currentStock.contains("L")) {
-							String looseReplaceAll = currentStock.replaceAll("[A-Za-z]", "");
-							looseStockDouble = Double.parseDouble(looseReplaceAll);
-						}
 					}
 
-					double addBandLStock = (multipleBoxStock + looseStockDouble);
-					finalProductStock = (addBandLStock - multipleQty - excelFocDouble);
+				//	calculateStock = String.valueOf(calculateStockDouble);
+
+					if (productData.IsCarton) {						
+
+						double diviedStock = calculateStockDouble / 10;
+						String stringCalculateStock = String.valueOf(diviedStock);						
+						String[] split = stringCalculateStock.split("\\.");
+						String boxQty = split[0];
+						String looseQty = "0";
+
+						if (split.length > 1) {
+							looseQty = split[1];
+						}
+
+						calculateStock = boxQty +" B/"+ looseQty +" L";					
+
+						System.out.println("Product Name: "+productName);
+						System.out.println("calculateCartonStock is: "+calculateStock);
+
+
+					} else {
+
+						System.out.println("Product Name: "+productName);
+						System.out.println("CalculateBaseandNonCartonStock is: "+calculateStock);
+
+					}
+
+					System.out.println();
+
+					StockCalculation StockCalculation = new StockCalculation(calculateStock, productName);
+					StockCalculationList.add(StockCalculation);
 
 				}
 
-				break; // ✅ only one UOM calculation needed
-			}
+			} // Product data loop	
 
-			// ✅ Save result
-			if (!stockType.isEmpty()) {
-				System.out.println(stockType);
-				System.out.println("Product Name: " + matchedProduct.productName);
-				// System.out.println("Excel Qty: " + excelData.Qty + " " + excelData.Uom);
-				System.out.println("Final Expected Stock: " + finalProductStock);
-				System.out.println("----------------------------------");
+		} // Excel data list loop
 
-				// Store for validation later
-				ExpectedStock expectedStock = new ExpectedStock(Double.toString(finalProductStock));
-				ExpexcetedProductStockList.add(expectedStock);
-			}
-		}
+		System.out.println("** Stock Claculation Completed **");
 		System.out.println();
-	}
 
-	class ProductStock {
-
-		private String ProductName;
-		private String ProductStock;
-
-		public ProductStock(String ProductName, String ProductStock) {
-			super();
-
-			this.ProductName = ProductName;
-			this.ProductStock = ProductStock;
-		}
-	}
-
-	ArrayList<ProductStock> ProductStockList = new ArrayList<>();
+	} // Method loop
+	
 
 	//@Ignore
 	@Test(priority = 24, dependsOnMethods = "ERPLoginPage")
@@ -1860,13 +1798,24 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			String afterCurrentStockValue = driver
 					.findElement(By.xpath("//dt[normalize-space()='Current Stock - HQ']//following-sibling::dd[1]"))
 					.getText();
-			System.out.println("After Return Void Product Stock: " + afterCurrentStockValue);
-			System.out.println();
-			click(prod.Back);
-			Thread.sleep(2000);
+	
+			for (StockCalculation stock : StockCalculationList) {
 
-			ProductStock productstock = new ProductStock(productName, afterCurrentStockValue);
-			ProductStockList.add(productstock);
+				if (stock.productName.equalsIgnoreCase(productName)) {
+
+					System.out.println("Actual Current Stock: "+afterCurrentStockValue);
+					System.out.println("Expected current Stock: "+stock.calculateStock);
+					System.out.println();
+					
+					soft.assertEquals(afterCurrentStockValue, stock.calculateStock, 
+							"Actual and Expected Product Stock Mismatched for Product "+stock.productName);
+					
+				}			
+
+			} // Stock calculation loop
+			
+			js.executeScript("arguments[0].click();", prod.Back);
+			Thread.sleep(2000);
 
 		}
 
@@ -1906,38 +1855,40 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			String balanceQty = driver
 					.findElement(By.xpath("(//div[@id='TableData']//following::table[1]//tbody//tr//td[4])[1]"))
 					.getText();
+			
+			for (StockCalculation stock : StockCalculationList) {
 
-			for (ProductStock productStock : ProductStockList) {
+				if (stock.productName.equalsIgnoreCase(trimProductName)) {
 
-				if (productStock.ProductName.equalsIgnoreCase(trimProductName)) {
+					if (stock.calculateStock.contains("/0 L")) {
 
-					if (productStock.ProductStock.contains("/0 L")) {
+						String replaceProductStock = stock.calculateStock.replaceAll("/0 L", "");
 
-						String replaceProductStock = productStock.ProductStock.replaceAll("/0 L", "");
+						System.out.println("Product Movement Name: "+ trimProductName);
+						System.out.println("Actual Product Movement Stock: "+ balanceQty);
+						System.out.println("Expected Product Movement Stock: "+ replaceProductStock);
 
-						System.out.println("Product Movement Name                   : " + trimProductName);
-						System.out.println("After Return Void Product Stock         : " + replaceProductStock);
-						System.out.println("After Return Void Product Movement Stock: " + balanceQty);
 
 						soft.assertEquals(balanceQty, replaceProductStock,
-								"Actual and Expected Product Stock and Movement Stock Mismatched for Product "
+								"Actual and Expected Product Movement Stock Mismatched for Product "
 										+ trimProductName);
 
 					} else {
 
-						System.out.println("Product Movement Name                   : " + trimProductName);
-						System.out.println("After Return Void Product Stock         : " + productStock.ProductStock);
-						System.out.println("After Return Void Product Movement Stock: " + balanceQty);
+						System.out.println("Product Movement Name: "+ trimProductName);
+						System.out.println("Actual Product Movement Stock: "+ balanceQty);
+						System.out.println("Expected Product Movement Stock: "+stock.calculateStock);
 
-						soft.assertEquals(balanceQty, productStock.ProductStock,
-								"Actual and Expected Product Stock and Movement Stock Mismatched for Product "
+
+						soft.assertEquals(balanceQty, stock.calculateStock,
+								"Actual and Expected Product Movement Stock Mismatched for Product "
 										+ trimProductName);
 
 					}
 					break;
 				}
 
-			}
+			} // Stock calculation list loop
 
 		}
 		System.out.println();

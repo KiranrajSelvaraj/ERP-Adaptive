@@ -19,17 +19,17 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.BaseClass.BaseClass;
-
 import com.PomClass.Login;
 import com.PomClass.Product;
 import com.PomClass.ProductMovement;
 import com.PomClass.StockAdjustment;
+
 import com.Utility.Util1;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class StockAdjustmentV2Test extends BaseClass{
-
+public class StockAdjustmentVoid extends BaseClass{
+	
 	private String url;
 
 	SoftAssert soft = new SoftAssert();
@@ -232,7 +232,7 @@ public class StockAdjustmentV2Test extends BaseClass{
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
 	// @Ignore
-	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
+	@Test(priority = 6, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
 		ProductList.addAll(ProductSet);
@@ -451,7 +451,7 @@ public class StockAdjustmentV2Test extends BaseClass{
 
 
 	// @Ignore
-	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
+	@Test(priority = 8, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
 
@@ -520,8 +520,8 @@ public class StockAdjustmentV2Test extends BaseClass{
 	}
 
 	//@Ignore
-	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
-	public void StockAdjustment() {
+	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
+	public void StockAdjustment() throws InterruptedException {
 
 		driver.navigate().to(url + "SalesPurchases/StockAdjustmentV2");
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
@@ -640,11 +640,27 @@ public class StockAdjustmentV2Test extends BaseClass{
 
 		soft.assertEquals(actualOverAllTotal, formatExpectedOverAllTotal, "Actual and Expected OverAllTotal Mismatched");
 
-		click(sa.SaveV2);
+		click(sa.HoldV2);
 		click(sa.AlertPopupOK);
 		click(sa.AlertPopupOK);
 		System.out.println("*** Stock Adjustment Save Successfull ***");
 		System.out.println();
+		
+		WebElement status = driver.findElement(By.id("Status"));
+		Select select = new Select(status);
+		select.selectByValue("HOLD");
+		click(sa.Fetch);
+		
+		Thread.sleep(2000);
+		String stockAdjustmentNo = driver.findElement(By.xpath("//table[@id='StockAdjustmenttable']//tbody//tr[1]//td[2]")).getText();
+		System.out.println("stockAdjustmentNo: "+stockAdjustmentNo);
+		
+		WebElement delete = driver.findElement(By.xpath
+				("//table[@id='StockAdjustmenttable']//tbody//tr//td[normalize-space()='"+stockAdjustmentNo+"']//following::td[4]//a[@title='Delete']"));
+		js.executeScript("arguments[0].click();", delete);
+		click(sa.AlertPopupOK);
+		click(sa.AlertPopupOK);
+		
 
 	} // Method loop
 
@@ -664,7 +680,7 @@ public class StockAdjustmentV2Test extends BaseClass{
 
 	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
 
-	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
+	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void StockCalculation() {
 
 		System.out.println("* Stock Calculation *");
@@ -738,12 +754,14 @@ public class StockAdjustmentV2Test extends BaseClass{
 								
 								double additionBoxandLooseStock = multipleBoxStock + doubleLooseCurrentStock;
 								calculateStockDouble = additionBoxandLooseStock + multipleQty;
+								calculateStockDouble = calculateStockDouble - multipleQty;
 								
 							} else if (stockAdjustmentType.equals("Deduct")) {
 								
 								double additionBoxandLooseStock = multipleBoxStock + doubleLooseCurrentStock;
 								calculateStockDouble = additionBoxandLooseStock - multipleQty;
-								
+								calculateStockDouble = calculateStockDouble + multipleQty;
+																
 							} else if (stockAdjustmentType.equals("Opening")) {
 								
 								double additionBoxandLooseStock = multipleBoxStock + doubleLooseCurrentStock;
@@ -759,11 +777,13 @@ public class StockAdjustmentV2Test extends BaseClass{
 							
 							double doubleCurrentStock = Double.parseDouble(productData.currentStockValue);
 							calculateStockDouble = doubleCurrentStock + multipleQty;
+							calculateStockDouble = calculateStockDouble - multipleQty;
 							
 						} else if (stockAdjustmentType.equals("Deduct")) {
 							
 							double doubleCurrentStock = Double.parseDouble(productData.currentStockValue);
 							calculateStockDouble = doubleCurrentStock - multipleQty;
+							calculateStockDouble = calculateStockDouble + multipleQty;
 							
 						} else if (stockAdjustmentType.equals("Opening")) {
 							
@@ -819,7 +839,7 @@ public class StockAdjustmentV2Test extends BaseClass{
 
 
 	//@Ignore
-	@Test(priority = 20, dependsOnMethods = "ERPLoginPage")
+	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 
 		driver.navigate().back();
@@ -884,7 +904,7 @@ public class StockAdjustmentV2Test extends BaseClass{
 	}
 
 	//@Ignore
-	@Test(priority = 22, dependsOnMethods = "ERPLoginPage")
+	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 
 		driver.navigate().to(url + "SalesPurchases/Product/ProductMovementsIndex");

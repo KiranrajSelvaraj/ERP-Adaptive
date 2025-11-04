@@ -4,12 +4,13 @@
   <test thread-count="1" parallel="methods" name="Test(failed)">
     <parameter name="env" value="Dev"/>
     <classes>
-      <class name="com.StockAdjustment.StockAdjustmentV2Test">
+      <class name="com.Purchase.PurchaseReturnVoidTest">
         <methods>
           <include name="ERPLoginPage"/>
-          <include name="ProductPage"/>
+          <include name="Exception"/>
+          <include name="SystemSettingsPage"/>
         </methods>
-      </class> <!-- com.StockAdjustment.StockAdjustmentV2Test -->
+      </class> <!-- com.Purchase.PurchaseReturnVoidTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

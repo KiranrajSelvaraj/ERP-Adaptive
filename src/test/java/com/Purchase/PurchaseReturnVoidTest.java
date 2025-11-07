@@ -1,5 +1,9 @@
 package com.Purchase;
 
+import java.io.File;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -8,9 +12,12 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.collections4.map.HashedMap;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -936,7 +943,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 	String transNo = "";
 
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
-	public void PurchaseReturn() throws InterruptedException {
+	public void PurchaseReturn() throws InterruptedException, IOException {
 
 		driver.navigate().to(url +"Purchases/PurchaseReturnIndex");
 		Thread.sleep(5000);
@@ -1259,6 +1266,16 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				totalQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 				totalQtyField.sendKeys(totalQty);
 				Thread.sleep(1000);
+				
+				//Screen shot to the batch details:-
+				DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+				LocalDateTime now111 = LocalDateTime.now();
+				String timestamp1 = dtf1.format(now111).replace(":", ";").replace("/", "-");
+				TakesScreenshot ts1 = (TakesScreenshot) driver;
+				File s11 = ts1.getScreenshotAs(OutputType.FILE);
+				File s21 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " PurchaseReturn Errors "
+						+ timestamp1 + ".png");
+				FileUtils.copyFile(s11, s21);
 
 				WebElement batchAdd = driver.findElement(By.xpath
 						("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::button[text()='Add'])[1]"));
@@ -1268,12 +1285,6 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			}
 
 			Thread.sleep(3000);
-			/*
-			 * productPrice = driver.findElement(By.
-			 * xpath("//table[@id='PurchaseReturnTable']//tbody//tr//td[2]//textarea[contains(text(),' "
-			 * + ""+excelData.ProductName+" ')]//following::td[@class='DetailTotal']"))
-			 * .getText();
-			 */
 
 			WebElement productprice = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
 					("//table[@id='PurchaseReturnTable']//tbody//tr//td[2]//textarea[contains(text(),'"

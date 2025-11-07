@@ -1240,7 +1240,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 			}
 
 			//Add Button:-
-			click(pi.Add);
+			js.executeScript("arguments[0].click();", pi.Add);
 			Thread.sleep(2000);
 			System.out.println();
 

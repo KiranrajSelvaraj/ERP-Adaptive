@@ -1021,20 +1021,20 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			}
 			Thread.sleep(2000);
 			if (excelData.Type.equalsIgnoreCase("Product")) {
-				
-				
+
 				Thread.sleep(2000);
 				click(pr.Qty);
 				Thread.sleep(1000);
-				click(pr.ChooseProduct);
+				wait.until(ExpectedConditions.elementToBeClickable(pr.ChooseProduct)).click();
 				Thread.sleep(2000);
-				driver.findElement(
-						By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"))
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
+						("//span[@id='select2-ProductId-container']//following::input[@type='search']")))
 				.sendKeys(excelData.ProductCode + Keys.ENTER);
+				//	driver.findElement(
+				//			By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"))
+				//	.sendKeys(excelData.ProductCode + Keys.ENTER);
 
 			}
-
-			
 
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 				click(pr.Qty);
@@ -1081,6 +1081,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 							System.out.println("Product Name: " + productDetails.productName);
 							System.out.println("Qoh Stock: " + qohStock1);
 							System.out.println("current Stock: " + stock);
+
 							soft.assertEquals(qohStock1, stock,
 									"Actual and Expected QOH Mismatched for Product: " + productDetails.productName);
 
@@ -1130,7 +1131,6 @@ public class PurchaseReturnVoidTest extends BaseClass {
 							System.out.println("Product Name: " + productDetails.productName);
 							System.out.println("Calculated QOH: " + replacetotalCalculatedStock);
 							System.out.println("Current Stock from List: " + productDetails.currentStockValue);
-							System.out.println();
 
 							soft.assertEquals(replacetotalCalculatedStock, productDetails.currentStockValue.trim(),
 									"Actual and Expected QOH Mismatched for Product: " + productDetails.productName);
@@ -1141,7 +1141,6 @@ public class PurchaseReturnVoidTest extends BaseClass {
 							System.out.println("Product Name: " + productDetails.productName);
 							System.out.println("QOH from Page: " + qohStock1);
 							System.out.println("Current Stock from List: " + productDetails.currentStockValue);
-							System.out.println();
 
 							soft.assertEquals(qohStock1, productDetails.currentStockValue,
 									"Actual and Expected QOH Mismatched for Product: " + productDetails.productName);
@@ -1886,6 +1885,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 						System.out.println("Product Movement Name: " + trimProductName);
 						System.out.println("Actual Product Movement Stock: " + balanceQty);
 						System.out.println("Expected Product Movement Stock: " + replaceProductStock);
+						System.out.println();
 
 						soft.assertEquals(balanceQty, replaceProductStock,
 								"Actual and Expected Product Movement Stock Mismatched for Product " + trimProductName);
@@ -1895,6 +1895,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 						System.out.println("Product Movement Name: " + trimProductName);
 						System.out.println("Actual Product Movement Stock: " + balanceQty);
 						System.out.println("Expected Product Movement Stock: " + stock.calculateStock);
+						System.out.println();
 
 						soft.assertEquals(balanceQty, stock.calculateStock,
 								"Actual and Expected Product Movement Stock Mismatched for Product " + trimProductName);

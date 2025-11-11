@@ -96,7 +96,6 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		System.out.println("*ERP Login Page*");
 	}
 
-
 	@DataProvider
 	public Object[][] Util2() {
 		Object[][] data = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\PurchaseReturnVoid.xlsx", "Sheet1");
@@ -104,7 +103,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 	}
 
-	//Excel Data:-
+	// Excel Data:-
 	@SuppressWarnings("unused")
 	class ExcelData {
 		private String Vendor;
@@ -138,8 +137,8 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				String ProductCode, String ProductName, String Uom, String Qty, String Foc, String DiscountPercentage,
 				String DiscountAmount, String UnitDiscCheckbox, String UnitDiscPercentage, String UnitDiscAmount,
 				String Price, String IsSpecialPriceCheckbox, String SpecialPrice, String OverAllDiscountType,
-				String OverAllDiscountAmount, String OverAllDiscountPercentage, String GstPercentage,
-				String ZeroGst, String BatchProduct, String BatchNo, String ReturnQty) {
+				String OverAllDiscountAmount, String OverAllDiscountPercentage, String GstPercentage, String ZeroGst,
+				String BatchProduct, String BatchNo, String ReturnQty) {
 			super();
 
 			this.Vendor = Vendor;
@@ -173,7 +172,6 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 	}
 
-
 	ArrayList<ExcelData> excelDataList = new ArrayList<>();
 
 	List<String> ProductList = new ArrayList<String>();
@@ -186,11 +184,11 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			String ProductCode, String ProductName, String Uom, String Qty, String Foc, String DiscountPercentage,
 			String DiscountAmount, String UnitDiscCheckbox, String UnitDiscPercentage, String UnitDiscAmount,
 			String Price, String IsSpecialPriceCheckbox, String SpecialPrice, String OverAllDiscountType,
-			String OverAllDiscountAmount, String OverAllDiscountPercentage, String GstPercentage, 
-			String ZeroGst, String BatchProduct, String BatchNo, String ReturnQty) {
+			String OverAllDiscountAmount, String OverAllDiscountPercentage, String GstPercentage, String ZeroGst,
+			String BatchProduct, String BatchNo, String ReturnQty) {
 
-		ExcelData data = new ExcelData(Vendor, CurrencyCode, CurrancyRate, GstType, Type, ProductCode, ProductName,
-				Uom, Qty, Foc, DiscountPercentage, DiscountAmount, UnitDiscCheckbox, UnitDiscPercentage, UnitDiscAmount,
+		ExcelData data = new ExcelData(Vendor, CurrencyCode, CurrancyRate, GstType, Type, ProductCode, ProductName, Uom,
+				Qty, Foc, DiscountPercentage, DiscountAmount, UnitDiscCheckbox, UnitDiscPercentage, UnitDiscAmount,
 				Price, IsSpecialPriceCheckbox, SpecialPrice, OverAllDiscountType, OverAllDiscountAmount,
 				OverAllDiscountPercentage, GstPercentage, ZeroGst, BatchProduct, BatchNo, ReturnQty);
 
@@ -232,7 +230,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		}
 	}
 
-	//System Settings:-
+	// System Settings:-
 	private boolean IsZeroQtyPurchase;
 	private boolean IsZeroGSTManagement;
 	private boolean IsMultipleProductForPurchase;
@@ -249,7 +247,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 	private boolean IsMultiWordSearchInProduct;
 	private boolean IsFOCManagementInPI;
 
-	//@Ignore
+	// @Ignore
 	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
 	public void SystemSettingsPage() throws InterruptedException {
 
@@ -272,7 +270,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsZeroQtyPurchase = ss.BooleanValue.isSelected();
-		System.out.println("IsZeroQtyPurchase: "+IsZeroQtyPurchase);
+		System.out.println("IsZeroQtyPurchase: " + IsZeroQtyPurchase);
 		click(ss.Back);
 
 		Thread.sleep(2000);
@@ -286,7 +284,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsZeroGSTManagement = ss.BooleanValue.isSelected();
-		System.out.println("IsZeroGSTManagement: "+IsZeroGSTManagement);
+		System.out.println("IsZeroGSTManagement: " + IsZeroGSTManagement);
 		click(ss.Back);
 
 		Thread.sleep(2000);
@@ -300,7 +298,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsMultipleProductForPurchase = ss.BooleanValue.isSelected();
-		System.out.println("IsMultipleProductForPurchase : "+IsMultipleProductForPurchase);
+		System.out.println("IsMultipleProductForPurchase : " + IsMultipleProductForPurchase);
 		click(ss.Back);
 
 		Thread.sleep(2000);
@@ -314,7 +312,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsGSTManagement = ss.BooleanValue.isSelected();
-		System.out.println("IsGSTManagement: "+IsGSTManagement);
+		System.out.println("IsGSTManagement: " + IsGSTManagement);
 		click(ss.Back);
 
 		Thread.sleep(2000);
@@ -328,7 +326,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsGSTManagement = ss.BooleanValue.isSelected();
-		System.out.println("IsMultipleServiceForPurchase: "+IsMultipleServiceForPurchase);
+		System.out.println("IsMultipleServiceForPurchase: " + IsMultipleServiceForPurchase);
 		click(ss.Back);
 
 		Thread.sleep(2000);
@@ -342,7 +340,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsCurrencyEnabled = ss.BooleanValue.isSelected();
-		System.out.println("IsCurrencyEnabled: "+IsCurrencyEnabled);
+		System.out.println("IsCurrencyEnabled: " + IsCurrencyEnabled);
 		click(ss.Back);
 
 		Thread.sleep(2000);
@@ -356,7 +354,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsWarehouseManagement = ss.BooleanValue.isSelected();
-		System.out.println("IsWarehouseManagement: "+IsWarehouseManagement);
+		System.out.println("IsWarehouseManagement: " + IsWarehouseManagement);
 		click(ss.Back);
 
 		Thread.sleep(2000);
@@ -370,7 +368,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsBarcodeManagementInPurchase = ss.BooleanValue.isSelected();
-		System.out.println("IsBarcodeManagementInPurchase: "+IsBarcodeManagementInPurchase);
+		System.out.println("IsBarcodeManagementInPurchase: " + IsBarcodeManagementInPurchase);
 		click(ss.Back);
 
 		Thread.sleep(2000);
@@ -384,7 +382,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsOpenItemManagementInPurchase = ss.BooleanValue.isSelected();
-		System.out.println("IsOpenItemManagementInPurchase: "+IsOpenItemManagementInPurchase);
+		System.out.println("IsOpenItemManagementInPurchase: " + IsOpenItemManagementInPurchase);
 		click(ss.Back);
 
 		Thread.sleep(2000);
@@ -397,10 +395,10 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		String DecimalCalculationForPurchaseString = driver
-				.findElement(By.xpath("//input[@id='DecimalValue']")).getAttribute("value");
+		String DecimalCalculationForPurchaseString = driver.findElement(By.xpath("//input[@id='DecimalValue']"))
+				.getAttribute("value");
 		DecimalCalculationForPurchase = Float.parseFloat(DecimalCalculationForPurchaseString);
-		System.out.println("DecimalCalculationForPurchase: "+DecimalCalculationForPurchase);
+		System.out.println("DecimalCalculationForPurchase: " + DecimalCalculationForPurchase);
 		click(ss.Back);
 
 		Thread.sleep(2000);
@@ -414,7 +412,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsEnableDirectPOtoGRN = ss.BooleanValue.isSelected();
-		System.out.println("IsEnableDirectPOtoGRN: "+IsEnableDirectPOtoGRN);
+		System.out.println("IsEnableDirectPOtoGRN: " + IsEnableDirectPOtoGRN);
 		click(ss.Back);
 
 		Thread.sleep(2000);
@@ -428,7 +426,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsEnableDirectPOtoSO = ss.BooleanValue.isSelected();
-		System.out.println("IsEnableDirectPOtoSO: "+IsEnableDirectPOtoSO);
+		System.out.println("IsEnableDirectPOtoSO: " + IsEnableDirectPOtoSO);
 		click(ss.Back);
 
 		Thread.sleep(2000);
@@ -442,7 +440,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsEnableItemLevelDiscountInPurchase = ss.BooleanValue.isSelected();
-		System.out.println("IsEnableItemLevelDiscountInPurchase:" +IsEnableItemLevelDiscountInPurchase);
+		System.out.println("IsEnableItemLevelDiscountInPurchase:" + IsEnableItemLevelDiscountInPurchase);
 		click(ss.Back);
 
 		Thread.sleep(2000);
@@ -470,14 +468,14 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsFOCManagementInPI = ss.BooleanValue.isSelected();
-		System.out.println("IsFOCManagementInPI:" +IsFOCManagementInPI);
+		System.out.println("IsFOCManagementInPI:" + IsFOCManagementInPI);
 		click(ss.Back);
 
 		System.out.println("***");
 
 	}
 
-	//Product Page:-
+	// Product Page:-
 	@SuppressWarnings("unused")
 	class product {
 
@@ -779,7 +777,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 	}
 
-	//Vendor Page:-
+	// Vendor Page:-
 	@SuppressWarnings("unused")
 	class Vendor {
 		private String VendorName;
@@ -796,7 +794,8 @@ public class PurchaseReturnVoidTest extends BaseClass {
 	}
 
 	ArrayList<Vendor> vendorDetailsList = new ArrayList<>();
-	//@Ignore
+
+	// @Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
 	public void VendorPage() throws InterruptedException {
 
@@ -825,26 +824,28 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				js.executeScript("arguments[0].click();", fetchBtn);
 				Thread.sleep(3000);
 
-				WebElement detailsIcon = driver.findElement(
-						By.xpath("//table[@id='vendortable']//tbody//tr//td[2]//following::td[6]//a[@title='Details']"));
+				WebElement detailsIcon = driver.findElement(By
+						.xpath("//table[@id='vendortable']//tbody//tr//td[2]//following::td[6]//a[@title='Details']"));
 				js.executeScript("arguments[0].click();", detailsIcon);
 
 				String VendorName = driver.findElement(By.xpath("(//div[@class='col-lg-8']//child::h2//b)[1]"))
 						.getText();
-				System.out.println("Vendar Name: "+VendorName);
+				System.out.println("Vendar Name: " + VendorName);
 
-				String APAccount = driver.findElement(By.xpath("//dt[normalize-space()='A/P Account']//following-sibling::dd[1]"))
+				String APAccount = driver
+						.findElement(By.xpath("//dt[normalize-space()='A/P Account']//following-sibling::dd[1]"))
 						.getText().trim();
 				System.out.println("A/P Account: " + APAccount);
 
 				WebElement InfoTab = driver.findElement(By.xpath("//a[text()='Info']"));
 				js.executeScript("arguments[0].click();", InfoTab);
-				//	InfoTab.click();
+				// InfoTab.click();
 				Thread.sleep(2000);
 
-				String GSTType = driver.findElement(By.xpath("//dt[normalize-space()='GST Type']//following-sibling::dd[1]"))
-						.getText().trim();
-				System.out.println("GST Type: " + GSTType);			
+				String GSTType = driver
+						.findElement(By.xpath("//dt[normalize-space()='GST Type']//following-sibling::dd[1]")).getText()
+						.trim();
+				System.out.println("GST Type: " + GSTType);
 				System.out.println("***");
 
 				Vendor VendorDetails = new Vendor(VendorName, GSTType, APAccount);
@@ -855,7 +856,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		}
 	}
 
-	//Uom Page:-
+	// Uom Page:-
 	@SuppressWarnings("unused")
 	public class UOM {
 		private String UomCodeValue;
@@ -874,6 +875,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 	}
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
+
 	// @Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
@@ -945,7 +947,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
 	public void PurchaseReturn() throws InterruptedException, IOException {
 
-		driver.navigate().to(url +"Purchases/PurchaseReturnIndex");
+		driver.navigate().to(url + "Purchases/PurchaseReturnIndex");
 		Thread.sleep(5000);
 		System.out.println("* Purchase Return Page *");
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
@@ -978,9 +980,10 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			if (excelData.Vendor.isEmpty() == false) {
 
 				click(pr.Vendor);
-				WebElement vendorSearchField = driver.findElement(By.xpath("//span[@id='select2-VendorId-container']//following::input[@type='search']"));
+				WebElement vendorSearchField = driver.findElement(
+						By.xpath("//span[@id='select2-VendorId-container']//following::input[@type='search']"));
 				vendorSearchField.click();
-				vendorSearchField.sendKeys(excelData.Vendor +Keys.ENTER);
+				vendorSearchField.sendKeys(excelData.Vendor + Keys.ENTER);
 				Thread.sleep(2000);
 
 			}
@@ -1062,10 +1065,10 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 							int multipleBoxStock = (boxStock * 10);
 							int addLooseStock = (multipleBoxStock + looseStock);
-							//	System.out.println("Lower Uom Stock: "+addLooseStock);
+							// System.out.println("Lower Uom Stock: "+addLooseStock);
 
 							String stock = "0 B/" + addLooseStock + " L";
-							//	System.out.println("Lower Uom Current Stock: "+stock);
+							// System.out.println("Lower Uom Current Stock: "+stock);
 
 							System.out.println("carton Product");
 							System.out.println("Product Name: " + productDetails.productName);
@@ -1079,12 +1082,12 @@ public class PurchaseReturnVoidTest extends BaseClass {
 							System.out.println("carton Product");
 							System.out.println("Product Name: " + productDetails.productName);
 							System.out.println("Qoh Stock: " + qohStock1);
-							System.out.println("current Stock: " +productDetails.currentStockValue);
+							System.out.println("current Stock: " + productDetails.currentStockValue);
 
 							soft.assertEquals(qohStock1, productDetails.currentStockValue,
 									"Actual and Expected QOH Mismatched for Product: " + productDetails.productName);
 
-						} 		
+						}
 
 					}
 
@@ -1118,8 +1121,8 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 							System.out.println("Non Carton Product");
 							System.out.println("Product Name: " + productDetails.productName);
-							System.out.println("Calculated QOH: " +replacetotalCalculatedStock);
-							System.out.println("Current Stock from List: " +productDetails.currentStockValue);
+							System.out.println("Calculated QOH: " + replacetotalCalculatedStock);
+							System.out.println("Current Stock from List: " + productDetails.currentStockValue);
 							System.out.println();
 
 							soft.assertEquals(replacetotalCalculatedStock, productDetails.currentStockValue.trim(),
@@ -1144,36 +1147,34 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			}
 			System.out.println();
 
-			//Qty:-
+			// Qty:-
 			Sendkeys(pr.Qty, excelData.Qty);
 
 			// Foc:-
-			/*	if (excelData.Type.equalsIgnoreCase("Product")) {
+			/*
+			 * if (excelData.Type.equalsIgnoreCase("Product")) {
+			 * 
+			 * if (IsFOCManagementInPI == true) { System.out.println("IsFOCManagementInSO: "
+			 * + IsFOCManagementInPI); click(pr.Foc); Sendkeys(pr.Foc, excelData.Foc);
+			 * 
+			 * }
+			 * 
+			 * } else if (excelData.Type.equalsIgnoreCase("Service")) {
+			 * 
+			 * click(pr.Foc); Sendkeys(pr.Foc, excelData.Foc);
+			 * 
+			 * } else {
+			 * 
+			 * System.out.println("Foc Field Is Not Displayed"); }
+			 */
 
-							if (IsFOCManagementInPI == true) {
-								System.out.println("IsFOCManagementInSO: " + IsFOCManagementInPI);
-								click(pr.Foc);
-								Sendkeys(pr.Foc, excelData.Foc);
-
-							}
-
-						} else if (excelData.Type.equalsIgnoreCase("Service")) {
-
-							click(pr.Foc);
-							Sendkeys(pr.Foc, excelData.Foc);
-
-						} else {
-
-							System.out.println("Foc Field Is Not Displayed");
-						}*/
-
-			//Price:-
+			// Price:-
 			click(pr.Price);
 			pr.Price.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			Sendkeys(pr.Price, excelData.Price);
 			Thread.sleep(1000);
 
-			//Item Level Discount:-
+			// Item Level Discount:-
 			if (IsEnableItemLevelDiscountInPurchase == true) {
 
 				click(pr.DiscountPercentage);
@@ -1214,43 +1215,42 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 				if (excelData.DiscountPercentage.isBlank() == false) {
 
-					double discPercentDouble = Double.parseDouble(excelData.DiscountPercentage);					
+					double discPercentDouble = Double.parseDouble(excelData.DiscountPercentage);
 					double expectedProductAmount = priceDouble * excelQtyDouble;
 					expectedDiscountPercentage = expectedProductAmount * discPercentDouble / 100;
 
 					expectedDiscountPercentage = (expectedProductAmount - expectedDiscountPercentage);
 
 					Total = expectedDiscountPercentage - Total;
-					System.out.println("Discount Percentage Amount Total: "+Total);
+					System.out.println("Discount Percentage Amount Total: " + Total);
 
 				} else if (excelData.DiscountAmount.isBlank() == false) {
 
 					double discAmtDouble1 = Double.parseDouble(excelData.DiscountAmount);
-					double excelPriceDouble = Double.parseDouble(excelData.Price);					
+					double excelPriceDouble = Double.parseDouble(excelData.Price);
 					double discountAmount = (excelPriceDouble * excelQtyDouble);
 
 					expectedDiscountAmount = (discountAmount - discAmtDouble1);
 
 					Total = expectedDiscountAmount - Total;
-					System.out.println("Discount Amount Total: "+Total);
+					System.out.println("Discount Amount Total: " + Total);
 
 				}
 
 			}
 
-			//Add Button:-
+			// Add Button:-
 			click(pr.Add);
 			Thread.sleep(2000);
 			System.out.println();
 
-			//Batch Details:-
+			// Batch Details:-
 			if (excelData.BatchProduct.equalsIgnoreCase("true")) {
 
 				Thread.sleep(2000);
-				String totalQty = driver.findElement(By.xpath
-						("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::input[@id='TotalQty'])[1]"))
-						.getAttribute("value");
-				System.out.println("Total Qty: "+totalQty);				
+				String totalQty = driver.findElement(By.xpath("(//div//strong[contains(text(),'" + excelData.ProductName
+						+ "')]//following::input[@id='TotalQty'])[1]")).getAttribute("value");
+				System.out.println("Total Qty: " + totalQty);
 				Thread.sleep(1000);
 
 				/*
@@ -1260,14 +1260,14 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				 * batchNo.sendKeys(excelData.BatchNo +Keys.ENTER); Thread.sleep(1000);
 				 */
 
-				WebElement totalQtyField = driver.findElement(By.xpath
-						("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::input[@id='Qty'])[1]"));
+				WebElement totalQtyField = driver.findElement(By.xpath("(//div//strong[contains(text(),'"
+						+ excelData.ProductName + "')]//following::input[@id='Qty'])[1]"));
 				totalQtyField.click();
 				totalQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 				totalQtyField.sendKeys(totalQty);
 				Thread.sleep(1000);
-				
-				//Screen shot to the batch details:-
+
+				// Screen shot to the batch details:-
 				DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 				LocalDateTime now111 = LocalDateTime.now();
 				String timestamp1 = dtf1.format(now111).replace(":", ";").replace("/", "-");
@@ -1277,33 +1277,39 @@ public class PurchaseReturnVoidTest extends BaseClass {
 						+ timestamp1 + ".png");
 				FileUtils.copyFile(s11, s21);
 
-				WebElement batchAdd = driver.findElement(By.xpath
-						("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::button[text()='Add'])[1]"));
+				WebElement batchAdd = driver.findElement(By.xpath("(//div//strong[contains(text(),'"
+						+ excelData.ProductName + "')]//following::button[text()='Add'])[1]"));
 				js.executeScript("arguments[0].click();", batchAdd);
 				Thread.sleep(2000);
 
 			}
 
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 
-			WebElement productprice = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
-					("//table[@id='PurchaseReturnTable']//tbody//tr//td[2]//textarea[contains(text(),'"
-							+" "+excelData.ProductName +"')]//following::td[@class='DetailTotal']")));
+			System.out.println("Expected Discount Amount: " + Total);
+
+			WebElement productprice = driver.findElement(
+					By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr//td[2]//div//textarea[contains(text(),'"
+							+ excelData.ProductName + "')]//following::td[7][@class='DetailTotal']"));
+			//System.out.println("element: " + productprice);
+			js.executeScript("arguments[0].scrollIntoView(true);", productprice);
+
 			productPrice = productprice.getText();
+			System.out.println(productPrice);
 			String replaceAllProductPrice = productPrice.replaceAll(",", "");
 			double productPriceDouble = Double.parseDouble(replaceAllProductPrice);
-			System.out.println("Actual Discount Amount: "+productPriceDouble);
-			System.out.println("Expected Discount Amount: "+Total);
-			System.out.println();	
+			System.out.println("Actual Discount Amount: " + productPriceDouble);
+
+			System.out.println();
 
 			soft.assertEquals(productPriceDouble, Total,
-					"Actual and Expected Discount Amount Mismatched for "+excelData.ProductName);
+					"Actual and Expected Discount Amount Mismatched for " + excelData.ProductName);
 
 			ExpSubTotal = ExpSubTotal + productPriceDouble;
 
 			if (excelData.ZeroGst.equals("TRUE")) {
 				ExpZeroGstProductamount = Double.parseDouble(replaceAllProductPrice) + ExpZeroGstProductamount;
-				System.out.println("ExpZeroGstProductamount: "+ExpZeroGstProductamount);
+				System.out.println("ExpZeroGstProductamount: " + ExpZeroGstProductamount);
 			}
 
 			Actions action = new Actions(driver);
@@ -1312,7 +1318,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 		} // Excel data loop
 
-		//Over All Discount:-
+		// Over All Discount:-
 		click(pr.OverAllDiscountType);
 		Select overAllDiscTypeSelect = new Select(pr.OverAllDiscountType);
 		overAllDiscTypeSelect.selectByVisibleText(getexcelOverAllDiscountType);
@@ -1339,12 +1345,14 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		} else {
 			System.out.println("No Over All Discount Amounr and Percentage");
 		}
-		System.out.println(); 
+		System.out.println();
 
 		// Sub Total Calculation:-
 		System.out.println("*** Sub Total Calculation ***");
-		String subTotalAmountString = driver.findElement(By.xpath
-				("//table[@id='PurchaseReturnTable']//tfoot//tr[1]//td[11]//p[@id='FooterSubTotal']")).getText();
+		String subTotalAmountString = driver
+				.findElement(
+						By.xpath("//table[@id='PurchaseReturnTable']//tfoot//tr[1]//td[11]//p[@id='FooterSubTotal']"))
+				.getText();
 		String replaceAllSubTotalAmountString = subTotalAmountString.replaceAll(",", "");
 		double subTotalAmountDouble = Double.parseDouble(replaceAllSubTotalAmountString);
 		System.out.println("Actual Sub Total Amount: " + subTotalAmountDouble);
@@ -1353,7 +1361,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 		soft.assertEquals(subTotalAmountDouble, ExpSubTotal, "Actual and Expected SubTotal Mismatched");
 
-		//Over All Discount Calculation:-
+		// Over All Discount Calculation:-
 		System.out.println("*** Grand Total Calculation With Over All Discount and Percentage ***");
 
 		double discountAmountDouble = Double.parseDouble(getExcelOverAllDiscountAmount);
@@ -1366,7 +1374,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			System.out.println("Current Discount Type is: $");
 
 			discountTotalAmount = subTotalAmountDouble - discountAmountDouble;
-			System.out.println("Discount Amount is: "+discountTotalAmount);
+			System.out.println("Discount Amount is: " + discountTotalAmount);
 			System.out.println("Over All Discount Amount is: " + discountTotalAmount);
 
 		} else if (getOverAllDiscountType.equalsIgnoreCase("%")) {
@@ -1389,7 +1397,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				double withoutGstAmount = divOverAllDisc * ExpZeroGstProductamount;
 				finalWithoutGstAmount = ExpZeroGstProductamount - withoutGstAmount;
 				String formatFinalWithoutGstAmount = String.format("%.2f", finalWithoutGstAmount);
-				System.out.println("Without Gst Product Amount: "+formatFinalWithoutGstAmount);
+				System.out.println("Without Gst Product Amount: " + formatFinalWithoutGstAmount);
 
 			} else if (excelData.ZeroGst.equalsIgnoreCase("true") && getOverAllDiscountType.equalsIgnoreCase("%")) {
 
@@ -1397,17 +1405,16 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				double subrationZerGstAmount = (ExpZeroGstProductamount - zeroGstProductDiscountAmount);
 				System.out.println("After Discount Zero Gst Product Amount is: " + subrationZerGstAmount);
 				double withoutZeroGstAmount = (discountPercentageAmount - subrationZerGstAmount);
-				System.out.println("Without Zero Gst Amount: "+withoutZeroGstAmount);
+				System.out.println("Without Zero Gst Amount: " + withoutZeroGstAmount);
 				System.out.println();
 
-
-			}	
+			}
 			break;
 		}
 
 		double subWithoutGstAmount = discountTotalAmount - finalWithoutGstAmount;
 		String formatSubWithoutGstAmount = String.format("%.2f", subWithoutGstAmount);
-		System.out.println("With Gst Product SubTotal: "+formatSubWithoutGstAmount);
+		System.out.println("With Gst Product SubTotal: " + formatSubWithoutGstAmount);
 		System.out.println();
 
 		// GST CALCULATION
@@ -1431,17 +1438,18 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			finalExpectedGstAmount = (subWithoutGstAmount * gstPercentage) / 100;
 			System.out.println("Zero and Overseas Gst Amount is: " + finalExpectedGstAmount);
 
-		}	
+		}
 
-		String ActualGstAmount = driver.findElement(By.xpath
-				("//table[@id='PurchaseReturnTable']//tfoot//tr[6]//td[11]//p[@id='FooterGST']")).getText();
+		String ActualGstAmount = driver
+				.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tfoot//tr[6]//td[11]//p[@id='FooterGST']"))
+				.getText();
 		System.out.println("Actual Gst Amount is: " + ActualGstAmount);
 
 		String ExpectedGstAmountFormat = String.format("%.2f", finalExpectedGstAmount);
 
 		if (getExcelGstType.equalsIgnoreCase("Inclusive")) {
 
-			finalExpectedGstAmount = 0;		
+			finalExpectedGstAmount = 0;
 			System.out.println("Expected Gst Amount: " + ExpectedGstAmountFormat);
 
 			soft.assertEquals(ActualGstAmount, ExpectedGstAmountFormat, "Actual and Expected Gst Amount Mismatched");
@@ -1453,13 +1461,14 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 			soft.assertEquals(ActualGstAmount, ExpectedGstAmountFormat, "Actual and Expected Gst Amount Mismatched");
 			System.out.println();
-		}	
+		}
 
 		// GRAND TOTAL AMOUNT
 		System.out.println("*** Grand Total Amount ***");
 
-		String finalTotalAmount = driver.findElement(By.xpath
-				("//table[@id='PurchaseReturnTable']//tfoot//tr[8]//td[11]//p[@id='FCAmount']")).getText();
+		String finalTotalAmount = driver
+				.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tfoot//tr[8]//td[11]//p[@id='FCAmount']"))
+				.getText();
 		String replaceAllFinalTotalAmount = finalTotalAmount.replaceAll(",", "");
 		double finalTotalAmountDouble = Double.parseDouble(replaceAllFinalTotalAmount);
 		String finalTotalAmountFormat = String.format("%.2f", finalTotalAmountDouble);
@@ -1470,7 +1479,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		System.out.println("Expected Grand Total Amount is: " + ExpectedGrandTotalAmountFormat);
 		System.out.println();
 
-		soft.assertEquals(finalTotalAmountFormat, ExpectedGrandTotalAmountFormat, 
+		soft.assertEquals(finalTotalAmountFormat, ExpectedGrandTotalAmountFormat,
 				"Actual and Expected Grand Total Mismatched");
 
 		// CURRENCY CALCULATION
@@ -1523,7 +1532,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		try {
 
 			String alertText = driver.findElement(By.id("popup_message")).getText();
-			System.out.println("Alert Text: "+alertText);
+			System.out.println("Alert Text: " + alertText);
 
 		} catch (Exception e) {
 			System.out.println("No alert appeared after save.");
@@ -1532,10 +1541,9 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		System.out.println();
 
 		transNo = driver.findElement(By.xpath("//table[@id='PRtable']//tbody//tr[1]//td[3]")).getText();
-		System.out.println("TransNo: "+transNo);
+		System.out.println("TransNo: " + transNo);
 
 	} // Method loop
-
 
 	@SuppressWarnings("unused")
 	class ReturnProductStock {
@@ -1572,8 +1580,8 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 		for (String product : ProductSet) {
 
-			WebElement productcode = wait.until(ExpectedConditions.visibilityOfElementLocated
-					(By.xpath("//input[@value='Fetch']//preceding::input[@placeholder='Find a product or code ']")));
+			WebElement productcode = wait.until(ExpectedConditions.visibilityOfElementLocated(
+					By.xpath("//input[@value='Fetch']//preceding::input[@placeholder='Find a product or code ']")));
 			Thread.sleep(1000);
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			productcode.sendKeys(product);
@@ -1598,7 +1606,8 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			click(prod.Back);
 			Thread.sleep(2000);
 
-			ReturnProductStock returnProdStock = new ReturnProductStock(returnProductName, afterReturnCurrentStockValue);
+			ReturnProductStock returnProdStock = new ReturnProductStock(returnProductName,
+					afterReturnCurrentStockValue);
 			ReturnProductStockList.add(returnProdStock);
 
 		}
@@ -1609,8 +1618,8 @@ public class PurchaseReturnVoidTest extends BaseClass {
 	@Test(priority = 20, dependsOnMethods = "ERPLoginPage")
 	public void PurchaseReturnVoid() {
 
-		driver.navigate().to(url +"Purchases/PurchaseReturnIndex");
-		//	Thread.sleep(4000);
+		driver.navigate().to(url + "Purchases/PurchaseReturnIndex");
+		// Thread.sleep(4000);
 		System.out.println("* Purchase Return Page *");
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -1618,18 +1627,18 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 		PurchaseReturns pr = new PurchaseReturns(driver);
 
-		WebElement delete = driver.findElement(By.xpath
-				("//table[@id='PRtable']//tbody//tr[1]//td[contains(text(),'"+transNo+"')][1]//following::td[8]//a[@title='Delete']"));
+		WebElement delete = driver.findElement(By.xpath("//table[@id='PRtable']//tbody//tr[1]//td[contains(text(),'"
+				+ transNo + "')][1]//following::td[8]//a[@title='Delete']"));
 		js.executeScript("arguments[0].click();", delete);
-		//	Thread.sleep(2000);
+		// Thread.sleep(2000);
 		click(pr.Delete);
-		//	Thread.sleep(1000);
+		// Thread.sleep(1000);
 		click(pr.PopupOk);
 		System.out.println("*** Purchase Invoice Delete Successfull ***");
 		System.out.println();
 
 	}
-	
+
 	class StockCalculation {
 
 		private String calculateStock;
@@ -1669,11 +1678,11 @@ public class PurchaseReturnVoidTest extends BaseClass {
 					doubleUomUnit = Double.parseDouble(uomData.UomUnits);
 
 					multipleQty = doubleExcelQty * doubleUomUnit;
-					System.out.println("multipleQty is: "+multipleQty);
+					System.out.println("multipleQty is: " + multipleQty);
 					break;
-				}	
+				}
 
-			}  // Uom details list loop
+			} // Uom details list loop
 
 			int ProductDetailsListSize = ProductDetailsList.size();
 			for (int k = 0; k < ProductDetailsListSize; k++) {
@@ -1683,7 +1692,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				String calculateStock = "0";
 
 				if (productData.productName.equalsIgnoreCase(excelData.ProductName)) {
-					
+
 					String productName = excelData.ProductName;
 
 					if (productData.IsCarton) {
@@ -1698,38 +1707,37 @@ public class PurchaseReturnVoidTest extends BaseClass {
 								double doubleBoxCurrentStock = Double.parseDouble(replaceAllBoxCurrentStock);
 
 								multipleBoxStock = doubleBoxCurrentStock * 10;
-								//	System.out.println("multipleBoxStock is: "+multipleBoxStock);
-
+								// System.out.println("multipleBoxStock is: "+multipleBoxStock);
 
 							} else if (currentStock.contains("L")) {
 								String replaceAllLooseCurrentStock = currentStock.replaceAll("[A-Za-z]", "");
 								doubleLooseCurrentStock = Double.parseDouble(replaceAllLooseCurrentStock);
-								//	System.out.println("doubleLooseCurrentStock is: "+doubleLooseCurrentStock);
+								// System.out.println("doubleLooseCurrentStock is: "+doubleLooseCurrentStock);
 
 							} // Current stock loop
-						
-								double additionBoxandLooseStock = multipleBoxStock + doubleLooseCurrentStock;
-								calculateStockDouble = additionBoxandLooseStock + multipleQty;
-								calculateStockDouble = calculateStockDouble - multipleQty;
 
-						}		
+							double additionBoxandLooseStock = multipleBoxStock + doubleLooseCurrentStock;
+							calculateStockDouble = additionBoxandLooseStock + multipleQty;
+							calculateStockDouble = calculateStockDouble - multipleQty;
+
+						}
 
 					} else {
-							
-							double doubleCurrentStock = Double.parseDouble(productData.currentStockValue);
-							calculateStockDouble = doubleCurrentStock + multipleQty;
-							calculateStockDouble = calculateStockDouble - multipleQty;
-							int intcalculateStock = (int) calculateStockDouble;
-							calculateStock = String.valueOf(intcalculateStock);
+
+						double doubleCurrentStock = Double.parseDouble(productData.currentStockValue);
+						calculateStockDouble = doubleCurrentStock + multipleQty;
+						calculateStockDouble = calculateStockDouble - multipleQty;
+						int intcalculateStock = (int) calculateStockDouble;
+						calculateStock = String.valueOf(intcalculateStock);
 
 					}
 
-				//	calculateStock = String.valueOf(calculateStockDouble);
+					// calculateStock = String.valueOf(calculateStockDouble);
 
-					if (productData.IsCarton) {						
+					if (productData.IsCarton) {
 
 						double diviedStock = calculateStockDouble / 10;
-						String stringCalculateStock = String.valueOf(diviedStock);						
+						String stringCalculateStock = String.valueOf(diviedStock);
 						String[] split = stringCalculateStock.split("\\.");
 						String boxQty = split[0];
 						String looseQty = "0";
@@ -1738,16 +1746,15 @@ public class PurchaseReturnVoidTest extends BaseClass {
 							looseQty = split[1];
 						}
 
-						calculateStock = boxQty +" B/"+ looseQty +" L";					
+						calculateStock = boxQty + " B/" + looseQty + " L";
 
-						System.out.println("Product Name: "+productName);
-						System.out.println("calculateCartonStock is: "+calculateStock);
-
+						System.out.println("Product Name: " + productName);
+						System.out.println("calculateCartonStock is: " + calculateStock);
 
 					} else {
 
-						System.out.println("Product Name: "+productName);
-						System.out.println("CalculateBaseandNonCartonStock is: "+calculateStock);
+						System.out.println("Product Name: " + productName);
+						System.out.println("CalculateBaseandNonCartonStock is: " + calculateStock);
 
 					}
 
@@ -1758,7 +1765,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 				}
 
-			} // Product data loop	
+			} // Product data loop
 
 		} // Excel data list loop
 
@@ -1766,9 +1773,8 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		System.out.println();
 
 	} // Method loop
-	
 
-	//@Ignore
+	// @Ignore
 	@Test(priority = 24, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 
@@ -1788,8 +1794,8 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 		for (String product : ProductSet) {
 
-			WebElement productcode = wait.until(ExpectedConditions.visibilityOfElementLocated
-					(By.xpath("//input[@value='Fetch']//preceding::input[@placeholder='Find a product or code ']")));
+			WebElement productcode = wait.until(ExpectedConditions.visibilityOfElementLocated(
+					By.xpath("//input[@value='Fetch']//preceding::input[@placeholder='Find a product or code ']")));
 			Thread.sleep(1000);
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			productcode.sendKeys(product);
@@ -1809,22 +1815,22 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			String afterCurrentStockValue = driver
 					.findElement(By.xpath("//dt[normalize-space()='Current Stock - HQ']//following-sibling::dd[1]"))
 					.getText();
-	
+
 			for (StockCalculation stock : StockCalculationList) {
 
 				if (stock.productName.equalsIgnoreCase(productName)) {
 
-					System.out.println("Actual Current Stock: "+afterCurrentStockValue);
-					System.out.println("Expected current Stock: "+stock.calculateStock);
+					System.out.println("Actual Current Stock: " + afterCurrentStockValue);
+					System.out.println("Expected current Stock: " + stock.calculateStock);
 					System.out.println();
-					
-					soft.assertEquals(afterCurrentStockValue, stock.calculateStock, 
-							"Actual and Expected Product Stock Mismatched for Product "+stock.productName);
-					
-				}			
+
+					soft.assertEquals(afterCurrentStockValue, stock.calculateStock,
+							"Actual and Expected Product Stock Mismatched for Product " + stock.productName);
+
+				}
 
 			} // Stock calculation loop
-			
+
 			js.executeScript("arguments[0].click();", prod.Back);
 			Thread.sleep(2000);
 
@@ -1833,7 +1839,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		System.out.println();
 	}
 
-	//@Ignore
+	// @Ignore
 	@Test(priority = 26, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 
@@ -1866,7 +1872,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			String balanceQty = driver
 					.findElement(By.xpath("(//div[@id='TableData']//following::table[1]//tbody//tr//td[4])[1]"))
 					.getText();
-			
+
 			for (StockCalculation stock : StockCalculationList) {
 
 				if (stock.productName.equalsIgnoreCase(trimProductName)) {
@@ -1875,25 +1881,21 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 						String replaceProductStock = stock.calculateStock.replaceAll("/0 L", "");
 
-						System.out.println("Product Movement Name: "+ trimProductName);
-						System.out.println("Actual Product Movement Stock: "+ balanceQty);
-						System.out.println("Expected Product Movement Stock: "+ replaceProductStock);
-
+						System.out.println("Product Movement Name: " + trimProductName);
+						System.out.println("Actual Product Movement Stock: " + balanceQty);
+						System.out.println("Expected Product Movement Stock: " + replaceProductStock);
 
 						soft.assertEquals(balanceQty, replaceProductStock,
-								"Actual and Expected Product Movement Stock Mismatched for Product "
-										+ trimProductName);
+								"Actual and Expected Product Movement Stock Mismatched for Product " + trimProductName);
 
 					} else {
 
-						System.out.println("Product Movement Name: "+ trimProductName);
-						System.out.println("Actual Product Movement Stock: "+ balanceQty);
-						System.out.println("Expected Product Movement Stock: "+stock.calculateStock);
-
+						System.out.println("Product Movement Name: " + trimProductName);
+						System.out.println("Actual Product Movement Stock: " + balanceQty);
+						System.out.println("Expected Product Movement Stock: " + stock.calculateStock);
 
 						soft.assertEquals(balanceQty, stock.calculateStock,
-								"Actual and Expected Product Movement Stock Mismatched for Product "
-										+ trimProductName);
+								"Actual and Expected Product Movement Stock Mismatched for Product " + trimProductName);
 
 					}
 					break;
@@ -1904,7 +1906,6 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		}
 		System.out.println();
 	}
-
 
 	@Test(priority = 45, dependsOnMethods = "ERPLoginPage")
 	private void Exception() throws InterruptedException {
@@ -1919,6 +1920,4 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 	}
 
-
-
-} //Main class loop
+} // Main class loop

@@ -1022,7 +1022,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
-				click(pr.ChooseProduct);
+				js.executeScript("arguments[0].click();", pr.ChooseProduct);
 				driver.findElement(
 						By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"))
 				.sendKeys(excelData.ProductCode + Keys.ENTER);
@@ -1291,11 +1291,9 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			WebElement productprice = driver.findElement(
 					By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr//td[2]//div//textarea[contains(text(),'"
 							+ excelData.ProductName + "')]//following::td[7][@class='DetailTotal']"));
-			//System.out.println("element: " + productprice);
 			js.executeScript("arguments[0].scrollIntoView(true);", productprice);
 
 			productPrice = productprice.getText();
-			System.out.println(productPrice);
 			String replaceAllProductPrice = productPrice.replaceAll(",", "");
 			double productPriceDouble = Double.parseDouble(replaceAllProductPrice);
 			System.out.println("Actual Discount Amount: " + productPriceDouble);

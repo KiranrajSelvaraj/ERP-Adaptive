@@ -1022,7 +1022,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
-				js.executeScript("arguments[0].click();", pr.ChooseProduct);
+				click(pr.ChooseProduct);
 				driver.findElement(
 						By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"))
 				.sendKeys(excelData.ProductCode + Keys.ENTER);

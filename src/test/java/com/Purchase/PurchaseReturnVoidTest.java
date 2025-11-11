@@ -1019,21 +1019,28 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				}
 
 			}
-
+			Thread.sleep(2000);
 			if (excelData.Type.equalsIgnoreCase("Product")) {
-
+				
+				
+				Thread.sleep(2000);
+				click(pr.Qty);
+				Thread.sleep(1000);
 				click(pr.ChooseProduct);
+				Thread.sleep(2000);
 				driver.findElement(
 						By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"))
 				.sendKeys(excelData.ProductCode + Keys.ENTER);
 
 			}
 
-			click(pr.Qty);
+			
 
 			if (excelData.Type.equalsIgnoreCase("Product")) {
-
+				click(pr.Qty);
+				Thread.sleep(1000);
 				click(pr.Uom);
+				Thread.sleep(1000);
 				List<WebElement> subUomOption = driver.findElements(By.xpath(
 						"//span[@id='select2-UOMId-container']//following::input[@type='search']//following::ul//li"));
 				for (WebElement option : subUomOption) {
@@ -1310,9 +1317,6 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				System.out.println("ExpZeroGstProductamount: " + ExpZeroGstProductamount);
 			}
 
-			Actions action = new Actions(driver);
-			action.doubleClick(pr.Qty).perform();
-			Thread.sleep(1000);
 
 		} // Excel data loop
 

@@ -20,7 +20,6 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -1025,6 +1024,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				Thread.sleep(2000);
 				click(pr.Qty);
 				Thread.sleep(1000);
+				js.executeScript("arguments[0].scrollIntoView(true);", pr.ChooseProduct);
 				wait.until(ExpectedConditions.elementToBeClickable(pr.ChooseProduct)).click();
 				Thread.sleep(2000);
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath

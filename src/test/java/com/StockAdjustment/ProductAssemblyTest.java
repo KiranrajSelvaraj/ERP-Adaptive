@@ -529,7 +529,7 @@ public class ProductAssemblyTest extends BaseClass{
 	}
 
 	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
-	public void ProductAssembly() {
+	public void ProductAssembly() throws InterruptedException {
 
 		driver.navigate().to(url +"SalesPurchases/ProductAssemblies");
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
@@ -538,22 +538,34 @@ public class ProductAssemblyTest extends BaseClass{
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 
 		com.PomClass.ProductAssembly pa = new com.PomClass.ProductAssembly(driver);
-
-		wait.until(ExpectedConditions.visibilityOf(pa.Create)).click();
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(pa.Create)).click();
 
 		int excelDataListsize = excelDataList.size();
 		for (int i = 0; i < excelDataListsize; i++) {
 			ExcelData excelData = excelDataList.get(i);
+			
+			String getAssemblyType = driver.findElement(By.id("select2-AssemblyTypeId-container"))
+					.getAttribute("title");
+			
+			if (!getAssemblyType.equalsIgnoreCase("Qty")) {
+				
+				click(pa.AssemblyType);
+				WebElement assemblyTypeSearch = driver.findElement(By.xpath("//span[@id='select2-AssemblyTypeId-container']//following::input[@type='search']"));
+				assemblyTypeSearch.click();
+				assemblyTypeSearch.sendKeys(excelData.AssemblyType +Keys.ENTER);
+			}
+			
+			String getType = driver.findElement(By.id("select2-Type-container"))
+					.getAttribute("title");
 
-			click(pa.AssemblyType);
-			WebElement assemblyTypeSearch = driver.findElement(By.xpath("//span[@id='select2-AssemblyTypeId-container']//following::input[@type='search']"));
-			assemblyTypeSearch.click();
-			assemblyTypeSearch.sendKeys(excelData.AssemblyType +Keys.ENTER);
-
-			click(pa.Type);
-			WebElement typeSearch = driver.findElement(By.xpath("//span[@id='select2-Type-container']//following::input[@type='search']"));
-			typeSearch.click();
-			typeSearch.sendKeys(excelData.Type +Keys.ENTER);
+			if (!getType.equalsIgnoreCase("Product")) {
+				
+				click(pa.Type);
+				WebElement typeSearch = driver.findElement(By.xpath("//span[@id='select2-Type-container']//following::input[@type='search']"));
+				typeSearch.click();
+				typeSearch.sendKeys(excelData.Type +Keys.ENTER);
+			}
 
 			click(pa.FromProduct);
 			WebElement fromProductSearch = driver.findElement(By.xpath("//span[@id='select2-FromProductId-container']//following::input[@type='search']"));
@@ -608,7 +620,7 @@ public class ProductAssemblyTest extends BaseClass{
 			click(pa.ToAdd);
 
 			WebElement toQtyField = driver.findElement(By.xpath
-					("//table[@id='assemblyTable']//tbody//tr//td[text()='"+excelData.ToProduct+"']//following::td[4]//input[@id='Qty']"));
+					("//table[@id='assemblyTable']//tbody//tr//td[contains(text(),'"+excelData.ToProduct+"')]//following::td[4]//input[@id='Qty']"));
 			toQtyField.click();
 			toQtyField.sendKeys(Keys.CONTROL +"a"+ Keys.DELETE);
 			toQtyField.sendKeys(excelData.ToQty +Keys.ENTER);
@@ -634,6 +646,9 @@ public class ProductAssemblyTest extends BaseClass{
 				batchAdd.click();
 
 			}
+			
+			Thread.sleep(2000);
+			
 
 
 		} // Excel data list loop

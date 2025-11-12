@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.collections4.map.HashedMap;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
@@ -1024,8 +1025,14 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				Thread.sleep(2000);
 				click(pr.Qty);
 				Thread.sleep(1000);
-				js.executeScript("arguments[0].scrollIntoView(true);", pr.ChooseProduct);
-				wait.until(ExpectedConditions.elementToBeClickable(pr.ChooseProduct)).click();
+				
+				try {
+				    wait.until(ExpectedConditions.elementToBeClickable(pr.ChooseProduct)).click();
+				} catch (ElementClickInterceptedException e) {
+				    Thread.sleep(1000);
+				    js.executeScript("arguments[0].click();", pr.ChooseProduct);
+				}
+				
 				Thread.sleep(2000);
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
 						("//span[@id='select2-ProductId-container']//following::input[@type='search']")))

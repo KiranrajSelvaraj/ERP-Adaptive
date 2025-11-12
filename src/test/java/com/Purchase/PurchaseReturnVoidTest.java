@@ -1024,19 +1024,27 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 				Thread.sleep(2000);
 				click(pr.Qty);
-				Thread.sleep(1000);
+				Thread.sleep(4000);
 				
-				try {
-				    wait.until(ExpectedConditions.elementToBeClickable(pr.ChooseProduct)).click();
-				} catch (ElementClickInterceptedException e) {
-				    Thread.sleep(1000);
-				    js.executeScript("arguments[0].click();", pr.ChooseProduct);
-				}
+				WebElement findElement = driver.findElement(By.xpath("//span[text()='Choose Product']//parent::span[@id='select2-ProductId-container']"));
 				
-				Thread.sleep(2000);
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
-						("//span[@id='select2-ProductId-container']//following::input[@type='search']")))
-				.sendKeys(excelData.ProductCode + Keys.ENTER);
+				findElement.click();
+				
+				/*
+				 * try {
+				 * wait.until(ExpectedConditions.elementToBeClickable(pr.ChooseProduct)).click()
+				 * ; } catch (ElementClickInterceptedException e) { Thread.sleep(1000);
+				 * js.executeScript("arguments[0].click();", pr.ChooseProduct); }
+				 */
+				
+				
+				
+				Thread.sleep(3000);
+				
+				WebElement findElement2 = driver.findElement(By.xpath("(//span[@id='select2-ProductId-container']//following::input[@type='search'])[1]"));
+				/*wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
+						("//span[@id='select2-ProductId-container']//following::input[@type='search']")))*/
+				findElement2.sendKeys(excelData.ProductCode + Keys.ENTER);
 				//	driver.findElement(
 				//			By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"))
 				//	.sendKeys(excelData.ProductCode + Keys.ENTER);

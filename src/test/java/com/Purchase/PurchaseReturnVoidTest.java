@@ -1026,12 +1026,17 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				click(pr.Qty);
 				Thread.sleep(4000);
 
-				((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath(
-						"(//span[text()='Choose Product']//parent::span[@id='select2-ProductId-container'])[1]")));
+				/*
+				 * ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+				 * driver.findElement(By.xpath(
+				 * "(//table [@class='table tblDiv']//span[@class='select2-selection select2-selection--single']//following::span[@class='select2-selection__arrow'])[1]"
+				 * )));
+				 */
 
-//				WebElement findElement = driver.findElement(By.xpath("(//span[text()='Choose Product']//parent::span[@id='select2-ProductId-container'])[1]"));
+			WebElement findElement =  driver.findElement(By.xpath(
+			"(//table [@class='table tblDiv']//span[@class='select2-selection select2-selection--single']//following::span[@class='select2-selection__arrow'])[1]"));
 
-				// findElement.click();
+			findElement.click();
 
 				/*
 				 * try {

@@ -1048,7 +1048,17 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				WebElement element = driver.findElement(By.id("select2-ProductId-container"));
 
 				Actions actions = new Actions(driver);
-				actions.moveToElement(element).click().build().perform();
+				actions.clickAndHold(element).build().perform();
+				
+				// Screen shot to the batch details:-
+				DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+				LocalDateTime now111 = LocalDateTime.now();
+				String timestamp1 = dtf1.format(now111).replace(":", ";").replace("/", "-");
+				TakesScreenshot ts1 = (TakesScreenshot) driver;
+				File s11 = ts1.getScreenshotAs(OutputType.FILE);
+				File s21 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " PurchaseReturn Product Errors "
+						+ timestamp1 + ".png");
+				FileUtils.copyFile(s11, s21);
 				
 
 				Thread.sleep(3000);

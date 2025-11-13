@@ -8,6 +8,9 @@
         <methods>
           <include name="ERPLoginPage"/>
           <include name="PurchaseReturn"/>
+          <include name="Exception"/>
+          <include name="GetData"/>
+          <include name="SystemSettingsPage"/>
         </methods>
       </class> <!-- com.Purchase.PurchaseReturnVoidTest -->
     </classes>

@@ -1050,18 +1050,10 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				Actions actions = new Actions(driver);
 				actions.moveToElement(element).click().build().perform();
 				
-				
-
-				/*
-				 * WebElement findElement =
-				 * driver.findElement(By.id("select2-ProductId-container"));
-				 * 
-				 * findElement.click();
-				 */
 
 				Thread.sleep(3000);
 
-				WebElement findElement2 = driver.findElement(By.xpath("(//input[@type='search'])[1]"));
+				WebElement findElement2 = driver.findElement(By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search'][1]"));
 
 				findElement2.sendKeys(excelData.ProductCode + Keys.ENTER);
 

@@ -28,7 +28,7 @@ import com.Utility.Util1;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class StockAdjustmentVoid extends BaseClass{
+public class StockAdjustmentV2Void extends BaseClass{
 	
 	private String url;
 

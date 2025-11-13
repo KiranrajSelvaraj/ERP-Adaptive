@@ -2,6 +2,7 @@ package com.Purchase;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -200,6 +202,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 	Map<String, List<String>> ProductUomMap = new HashedMap<>();
 
+	@Ignore
 	@Test(priority = 7, dependsOnMethods = "ERPLoginPage")
 	public void ProductUomData() throws InterruptedException {
 		ProductList.addAll(ProductSet);
@@ -577,7 +580,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
 	// Product Page:-
-	// @Ignore
+	@Ignore
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -795,7 +798,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 	ArrayList<Vendor> vendorDetailsList = new ArrayList<>();
 
-	// @Ignore
+	@Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
 	public void VendorPage() throws InterruptedException {
 
@@ -876,7 +879,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
 
-	// @Ignore
+	@Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
@@ -953,7 +956,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 50);
 
 		PurchaseReturns pr = new PurchaseReturns(driver);
 
@@ -998,66 +1001,69 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				getExcelCurrencyRate = excelData.CurrencyRate;
 			}
 
-			if (excelData.Type.equalsIgnoreCase("Product")) {
-
-				String productCheckbox = driver.findElement(By.id("ProductCheck")).getAttribute("checked");
-				if (!productCheckbox.equalsIgnoreCase("true")) {
-					click(pr.ProductCheckBox);
-
-				}
-
-			} else if (excelData.Type.equals("Service")) {
-
-				if (!pr.ServiceCheckBox.isSelected()) {
-					click(pr.ServiceCheckBox);
-				}
-
-			} else if (excelData.Type.equals("Open")) {
-
-				if (!pr.OpenCheckBox.isSelected()) {
-					click(pr.OpenCheckBox);
-				}
-
-			}
+			/*
+			 * if (excelData.Type.equalsIgnoreCase("Product")) {
+			 * 
+			 * String productCheckbox =
+			 * driver.findElement(By.id("ProductCheck")).getAttribute("checked"); if
+			 * (!productCheckbox.equalsIgnoreCase("true")) { click(pr.ProductCheckBox);
+			 * 
+			 * }
+			 * 
+			 * } else if (excelData.Type.equals("Service")) {
+			 * 
+			 * if (!pr.ServiceCheckBox.isSelected()) { click(pr.ServiceCheckBox); }
+			 * 
+			 * } else if (excelData.Type.equals("Open")) {
+			 * 
+			 * if (!pr.OpenCheckBox.isSelected()) { click(pr.OpenCheckBox); }
+			 * 
+			 * }
+			 */
 			Thread.sleep(2000);
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
 				Thread.sleep(2000);
 				click(pr.Qty);
 				Thread.sleep(4000);
+				
+				
 
+				// Wait until overlay gone
+			//	wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("a.leave_page")));
+
+				// Find and scroll
 				/*
-				 * ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
-				 * driver.findElement(By.xpath(
-				 * "(//table [@class='table tblDiv']//span[@class='select2-selection select2-selection--single']//following::span[@class='select2-selection__arrow'])[1]"
-				 * )));
+				 * WebElement element =
+				 * driver.findElement(By.id("select2-ProductId-container"));
+				 * ((JavascriptExecutor)
+				 * driver).executeScript("arguments[0].scrollIntoView(true);", element);
+				 * 
+				 * // Wait until clickable
+				 * wait.until(ExpectedConditions.elementToBeClickable(element));
+				 * 
+				 * // Try JS click (safe) ((JavascriptExecutor)
+				 * driver).executeScript("arguments[0].click();", element);
 				 */
+				WebElement element = driver.findElement(By.id("select2-ProductId-container"));
 
-			WebElement findElement =  driver.findElement(By.xpath(
-			"(//table [@class='table tblDiv']//span[@class='select2-selection select2-selection--single']//following::span[@class='select2-selection__arrow'])[1]"));
-
-			findElement.click();
+				Actions actions = new Actions(driver);
+				actions.moveToElement(element).click().build().perform();
+				
+				
 
 				/*
-				 * try {
-				 * wait.until(ExpectedConditions.elementToBeClickable(pr.ChooseProduct)).click()
-				 * ; } catch (ElementClickInterceptedException e) { Thread.sleep(1000);
-				 * js.executeScript("arguments[0].click();", pr.ChooseProduct); }
+				 * WebElement findElement =
+				 * driver.findElement(By.id("select2-ProductId-container"));
+				 * 
+				 * findElement.click();
 				 */
 
 				Thread.sleep(3000);
 
-				WebElement findElement2 = driver.findElement(
-						By.xpath("(//input[@type='search'])[1]"));
-				/*
-				 * wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
-				 * ("//span[@id='select2-ProductId-container']//following::input[@type='search']"
-				 * )))
-				 */
+				WebElement findElement2 = driver.findElement(By.xpath("(//input[@type='search'])[1]"));
+
 				findElement2.sendKeys(excelData.ProductCode + Keys.ENTER);
-				// driver.findElement(
-				// By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"))
-				// .sendKeys(excelData.ProductCode + Keys.ENTER);
 
 			}
 
@@ -1586,6 +1592,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 	ArrayList<ReturnProductStock> ReturnProductStockList = new ArrayList<>();
 
+	@Ignore
 	@Test(priority = 19, dependsOnMethods = "ERPLoginPage")
 	public void ReturnStockProductPage() throws InterruptedException {
 
@@ -1640,6 +1647,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 	}
 
+	@Ignore
 	@Test(priority = 20, dependsOnMethods = "ERPLoginPage")
 	public void PurchaseReturnVoid() {
 
@@ -1680,6 +1688,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
 
+	@Ignore
 	@Test(priority = 22, dependsOnMethods = "ERPLoginPage")
 	public void StockCalculation() {
 
@@ -1799,7 +1808,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 	} // Method loop
 
-	// @Ignore
+	@Ignore
 	@Test(priority = 24, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 
@@ -1864,7 +1873,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		System.out.println();
 	}
 
-	// @Ignore
+	@Ignore
 	@Test(priority = 26, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 

@@ -962,7 +962,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 		PurchaseReturns pr = new PurchaseReturns(driver);
 
-		click(pr.AddPurchaseReturn);
+		wait.until(ExpectedConditions.elementToBeClickable(pr.AddPurchaseReturn));
 		Thread.sleep(3000);
 
 		String getExcelGstType = "";

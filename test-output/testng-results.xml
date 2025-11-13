@@ -2,16 +2,16 @@
 <testng-results ignored="10" total="17" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-13T12:06:52 IST" name="Suite" finished-at="2025-11-13T12:10:58 IST" duration-ms="246294">
+  <suite started-at="2025-11-13T14:21:05 IST" name="Suite" finished-at="2025-11-13T14:25:13 IST" duration-ms="247982">
     <groups>
     </groups>
-    <test started-at="2025-11-13T12:06:52 IST" name="Test" finished-at="2025-11-13T12:10:58 IST" duration-ms="246294">
+    <test started-at="2025-11-13T14:21:05 IST" name="Test" finished-at="2025-11-13T14:25:13 IST" duration-ms="247982">
       <class name="com.Purchase.PurchaseReturnVoidTest">
-        <test-method signature="ERPLoginPage()[pri:1, instance:com.Purchase.PurchaseReturnVoidTest@6e9175d8]" started-at="2025-11-13T12:06:52 IST" name="ERPLoginPage" finished-at="2025-11-13T12:07:00 IST" duration-ms="7540" status="PASS">
+        <test-method signature="ERPLoginPage()[pri:1, instance:com.Purchase.PurchaseReturnVoidTest@6e9175d8]" started-at="2025-11-13T14:21:05 IST" name="ERPLoginPage" finished-at="2025-11-13T14:21:14 IST" duration-ms="8420" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ERPLoginPage -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@6e9175d8]" started-at="2025-11-13T12:07:01 IST" name="GetData" data-provider="Util2" finished-at="2025-11-13T12:07:01 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@6e9175d8]" started-at="2025-11-13T14:21:15 IST" name="GetData" data-provider="Util2" finished-at="2025-11-13T14:21:15 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -147,7 +147,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@6e9175d8]" started-at="2025-11-13T12:07:01 IST" name="GetData" data-provider="Util2" finished-at="2025-11-13T12:07:01 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="3" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@6e9175d8]" started-at="2025-11-13T14:21:15 IST" name="GetData" data-provider="Util2" finished-at="2025-11-13T14:21:15 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -283,7 +283,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@6e9175d8]" started-at="2025-11-13T12:07:01 IST" name="GetData" data-provider="Util2" finished-at="2025-11-13T12:07:01 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@6e9175d8]" started-at="2025-11-13T14:21:15 IST" name="GetData" data-provider="Util2" finished-at="2025-11-13T14:21:15 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -419,15 +419,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="SystemSettingsPage()[pri:10, instance:com.Purchase.PurchaseReturnVoidTest@6e9175d8]" started-at="2025-11-13T12:07:01 IST" name="SystemSettingsPage" finished-at="2025-11-13T12:08:53 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="112337" status="PASS">
+        <test-method signature="SystemSettingsPage()[pri:10, instance:com.Purchase.PurchaseReturnVoidTest@6e9175d8]" started-at="2025-11-13T14:21:15 IST" name="SystemSettingsPage" finished-at="2025-11-13T14:23:08 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="113316" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SystemSettingsPage -->
-        <test-method signature="PurchaseReturn()[pri:18, instance:com.Purchase.PurchaseReturnVoidTest@6e9175d8]" started-at="2025-11-13T12:08:53 IST" name="PurchaseReturn" finished-at="2025-11-13T12:10:58 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="125332" status="PASS">
+        <test-method signature="PurchaseReturn()[pri:18, instance:com.Purchase.PurchaseReturnVoidTest@6e9175d8]" started-at="2025-11-13T14:23:08 IST" name="PurchaseReturn" finished-at="2025-11-13T14:25:13 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="125067" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PurchaseReturn -->
-        <test-method signature="Exception()[pri:45, instance:com.Purchase.PurchaseReturnVoidTest@6e9175d8]" started-at="2025-11-13T12:10:58 IST" name="Exception" finished-at="2025-11-13T12:10:58 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="Exception()[pri:45, instance:com.Purchase.PurchaseReturnVoidTest@6e9175d8]" started-at="2025-11-13T14:25:13 IST" name="Exception" finished-at="2025-11-13T14:25:13 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Exception -->

@@ -957,6 +957,8 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, 50);
+		
+		js.executeScript("document.body.style.zoom='80%';");
 
 		PurchaseReturns pr = new PurchaseReturns(driver);
 
@@ -1027,6 +1029,9 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				click(pr.Qty);
 				Thread.sleep(4000);
 				
+				Actions actions = new Actions(driver);
+				actions.doubleClick(pr.Uom).build().perform();
+				
 				
 
 				// Wait until overlay gone
@@ -1047,7 +1052,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				 */
 				WebElement element = driver.findElement(By.id("select2-ProductId-container"));
 
-				Actions actions = new Actions(driver);
+			//	Actions actions = new Actions(driver);
 				actions.clickAndHold(element).build().perform();
 				
 				// Screen shot to the batch details:-
@@ -1064,8 +1069,9 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				Thread.sleep(3000);
 
 				WebElement findElement2 = driver.findElement(By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search'][1]"));
-
 				findElement2.sendKeys(excelData.ProductCode + Keys.ENTER);
+			//	js.executeScript("arguments[0].value='" + excelData.ProductCode + "';", findElement2);
+				
 
 			}
 

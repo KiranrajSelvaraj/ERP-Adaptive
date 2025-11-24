@@ -91,31 +91,35 @@ public class ProductAssemblyTest extends BaseClass{
 
 	}
 
-	
+
 	class ExcelData {
 
 		private String AssemblyType;
 		private String Type;
+		private String FromProductCode;
 		private String FromProduct;
 		private String FromUom;
 		private String FromQty;
 		private String FromBatchProduct;
+		private String ToProductCode;
 		private String ToProduct;
 		private String ToUom;
 		private String ToQty;
 		private String ToBatchProduct;
 		private String ToBatchNumber;
 
-		public ExcelData(String AssemblyType, String Type, String FromProduct, String FromUom, String FromQty, 
-				String FromBatchProduct, String ToProduct, String ToUom, String ToQty, String ToBatchProduct, String ToBatchNumber) {
+		public ExcelData(String AssemblyType, String Type, String FromProductCode, String FromProduct, String FromUom, String FromQty, 
+				String FromBatchProduct, String ToProductCode, String ToProduct, String ToUom, String ToQty, String ToBatchProduct, String ToBatchNumber) {
 			super();
 
 			this.AssemblyType = AssemblyType;
 			this.Type = Type;
+			this.FromProductCode = FromProductCode;
 			this.FromProduct = FromProduct;
 			this.FromUom = FromUom;
 			this.FromQty = FromQty;
 			this.FromBatchProduct = FromBatchProduct;
+			this.ToProductCode = ToProductCode;
 			this.ToProduct = ToProduct;
 			this.ToUom = ToUom;
 			this.ToQty = ToQty;
@@ -129,16 +133,16 @@ public class ProductAssemblyTest extends BaseClass{
 	Set<String> ProductSet = new LinkedHashSet<String>();
 
 	@Test(priority = 4, dataProvider = "Util1", dependsOnMethods = "ERPLoginPage")
-	public void GetData(String AssemblyType, String Type, String FromProduct, String FromUom, String FromQty, 
-			String FromBatchProduct, String ToProduct, String ToUom, String ToQty, String ToBatchProduct, String ToBatchNumber) {
+	public void GetData(String AssemblyType, String Type, String FromProductCode, String FromProduct, String FromUom, String FromQty, 
+			String FromBatchProduct, String ToProductCode, String ToProduct, String ToUom, String ToQty, String ToBatchProduct, String ToBatchNumber) {
 
-		ExcelData data = new ExcelData(AssemblyType, Type, FromProduct, FromUom, FromQty, 
-				FromBatchProduct, ToProduct, ToUom, ToQty, ToBatchProduct, ToBatchNumber);
+		ExcelData data = new ExcelData(AssemblyType, Type, FromProductCode, FromProduct, FromUom, FromQty, 
+				FromBatchProduct, ToProductCode, ToProduct, ToUom, ToQty, ToBatchProduct, ToBatchNumber);
 
 
 		excelDataList.add(data);
-		ProductSet.add(FromProduct);
-		ProductSet.add(ToProduct);
+		ProductSet.add(FromProductCode);
+		ProductSet.add(ToProductCode);
 
 	}
 
@@ -243,7 +247,7 @@ public class ProductAssemblyTest extends BaseClass{
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 6, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -459,7 +463,7 @@ public class ProductAssemblyTest extends BaseClass{
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 8, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
@@ -544,23 +548,23 @@ public class ProductAssemblyTest extends BaseClass{
 		int excelDataListsize = excelDataList.size();
 		for (int i = 0; i < excelDataListsize; i++) {
 			ExcelData excelData = excelDataList.get(i);
-			
+
 			String getAssemblyType = driver.findElement(By.id("select2-AssemblyTypeId-container"))
 					.getAttribute("title");
-			
+
 			if (!getAssemblyType.equalsIgnoreCase("Qty")) {
-				
+
 				click(pa.AssemblyType);
 				WebElement assemblyTypeSearch = driver.findElement(By.xpath("//span[@id='select2-AssemblyTypeId-container']//following::input[@type='search']"));
 				assemblyTypeSearch.click();
 				assemblyTypeSearch.sendKeys(excelData.AssemblyType +Keys.ENTER);
 			}
-			
+
 			String getType = driver.findElement(By.id("select2-Type-container"))
 					.getAttribute("title");
 
 			if (!getType.equalsIgnoreCase("Product")) {
-				
+
 				click(pa.Type);
 				WebElement typeSearch = driver.findElement(By.xpath("//span[@id='select2-Type-container']//following::input[@type='search']"));
 				typeSearch.click();
@@ -586,10 +590,13 @@ public class ProductAssemblyTest extends BaseClass{
 			fromQtyField.sendKeys(excelData.FromQty +Keys.ENTER);
 
 			if (excelData.FromBatchProduct.equalsIgnoreCase("true")) {
-				
-				WebElement batchFile = driver.findElement(By.xpath
-						("//table[@id='packageTable']//tbody//tr//td[contains(text(),'"+excelData.FromProduct+" ')]//following::td[7]//a[@class='fa fa-folder-open Popup']"));
-				batchFile.click();
+
+				/*
+				 * WebElement batchFile = driver.findElement(By.xpath
+				 * ("//table[@id='packageTable']//tbody//tr//td[contains(text(),'"+excelData.
+				 * FromProduct+" ')]//following::td[7]//a[@class='fa fa-folder-open Popup']"));
+				 * batchFile.click();
+				 */
 
 				String totalQty = driver.findElement(By.xpath
 						("//strong[contains(text(),'"+excelData.FromProduct+"')]//following::input[@id='BatchQty']")).getAttribute("value");
@@ -612,7 +619,7 @@ public class ProductAssemblyTest extends BaseClass{
 			toProductSearch.click();
 			toProductSearch.sendKeys(excelData.ToProduct +Keys.ENTER);
 
-			click(pa.FromUom);
+			click(pa.ToUom);
 			WebElement toUomSearch = driver.findElement(By.xpath("//span[@id='select2-ToUOMId-container']//following::input[@type='search']"));
 			toUomSearch.click();
 			toUomSearch.sendKeys(excelData.ToUom +Keys.ENTER);
@@ -630,32 +637,35 @@ public class ProductAssemblyTest extends BaseClass{
 				String totalQty = driver.findElement(By.xpath
 						("//strong[contains(text(),'"+excelData.ToProduct+"')]//following::input[@id='BatchQty']")).getAttribute("value");
 				System.out.println("totalQty is: "+totalQty);
-				
+
 				WebElement batchNoField = driver.findElement(By.xpath("//strong[contains(text(),'"+excelData.ToProduct+"')]//following::input[@id='BatchNumber']"));
 				batchNoField.click();
 				batchNoField.sendKeys(excelData.ToBatchNumber +Keys.ENTER);
 
 				WebElement batchQty = driver.findElement(By.xpath
-						("//strong[contains(text(),'"+excelData.FromProduct+"')]//following::input[@id='Qty']"));
-				batchQty.click();
+						("//strong[contains(text(),'"+excelData.ToProduct+"')]//following::input[@id='Qty']"));
+				Thread.sleep(2000);
+				js.executeScript("arguments[0].click();", batchQty);
+				//	wait.until(ExpectedConditions.elementToBeClickable(batchQty)).click();
 				batchQty.sendKeys(Keys.CONTROL +"a"+ Keys.DELETE);
 				batchQty.sendKeys(totalQty);
 
 				WebElement batchAdd = driver.findElement(By.xpath
-						("//strong[contains(text(),'"+excelData.FromProduct+"')]//following::button[text()='Add']"));
+						("//strong[contains(text(),'"+excelData.ToProduct+"')]//following::button[text()='Add']"));
 				batchAdd.click();
 
 			}
-			
+
 			Thread.sleep(2000);
-			
+
 
 
 		} // Excel data list loop
 
-		click(pa.Completed);
+		//	click(pa.Completed);
+		//	click(pa.PopupOk);
 		System.out.println("** Product Assembly Completed Successfull **");
-
+		System.out.println();
 
 	} // Method loop
 
@@ -684,38 +694,78 @@ public class ProductAssemblyTest extends BaseClass{
 		int excelDataListSize = excelDataList.size();
 		for (int i = 0; i < excelDataListSize; i++) {
 			ExcelData excelData = excelDataList.get(i);
+			
+			int ProductDetailsListSize = ProductDetailsList.size();
+			for (int k = 0; k < ProductDetailsListSize; k++) {
+				product productData = ProductDetailsList.get(k);
+				
+				boolean IsFromProduct = productData.productName.equalsIgnoreCase(excelData.FromProduct);
+				boolean IsToProduct = productData.productName.equalsIgnoreCase(excelData.ToProduct);
+
 
 			double doubleExcelQty = 0;
 			double doubleUomUnit = 0;
-			double multipleQty = 0;
+			double fromMultipleQty = 0;
+			double toMultipleQty = 0;
 
 			int UomDetailsListSize = UomDetailsList.size();
 			for (int j = 0; j < UomDetailsListSize; j++) {
 				UOM uomData = UomDetailsList.get(j);
 
-				if (excelData.FromUom.equals(uomData.UomCodeValue) || excelData.ToUom.equals(uomData.UomCodeValue)) {
+				doubleExcelQty = Double.parseDouble(excelData.FromQty);
+				doubleExcelQty = Double.parseDouble(excelData.ToQty);
+				doubleUomUnit = Double.parseDouble(uomData.UomUnits);
 
-					doubleExcelQty = Double.parseDouble(excelData.FromQty);
-					doubleExcelQty = Double.parseDouble(excelData.ToQty);
-					doubleUomUnit = Double.parseDouble(uomData.UomUnits);
+				if (IsFromProduct) {
+					if (excelData.FromUom.equals(uomData.UomCodeValue)) {
+						
+						fromMultipleQty = doubleExcelQty * doubleUomUnit;
+						System.out.println("From MultipleQty is: "+fromMultipleQty);
+						break;
+						
+					}
+					
+				} else if (IsToProduct) {
+					if (excelData.ToUom.equals(uomData.UomCodeValue)) {
+						
+						toMultipleQty = doubleExcelQty * doubleUomUnit;
+						System.out.println("To MultipleQty is: "+toMultipleQty);
+						break;
+						
+					}
+					
+				} 
+					
+				
+				/*
+				 * if (excelData.FromUom.equals(uomData.UomCodeValue) ||
+				 * excelData.ToUom.equals(uomData.UomCodeValue)) {
+				 * 
+				 * multipleQty = doubleExcelQty * doubleUomUnit;
+				 * System.out.println("From MultipleQty is: "+multipleQty); break;
+				 * 
+				 * }
+				 */
 
-					multipleQty = doubleExcelQty * doubleUomUnit;
-					System.out.println("multipleQty is: "+multipleQty);
-					break;
-				}	
 
 			}  // Uom details list loop
 
-			int ProductDetailsListSize = ProductDetailsList.size();
-			for (int k = 0; k < ProductDetailsListSize; k++) {
-				product productData = ProductDetailsList.get(k);
+			/*
+			 * int ProductDetailsListSize = ProductDetailsList.size(); for (int k = 0; k <
+			 * ProductDetailsListSize; k++) { product productData =
+			 * ProductDetailsList.get(k);
+			 */
 
 				double calculateStockDouble = 0;
 				String calculateStock = "0";
+				String productName = "";
+			//	String toProductName = "";
 
-				if (productData.productName.equalsIgnoreCase(excelData.FromProduct)) {
+				if (productData.productName.equalsIgnoreCase(excelData.FromProduct) 
+						|| productData.productName.equalsIgnoreCase(excelData.ToProduct)) {
 
-					String productName = excelData.FromProduct;
+					productName = excelData.FromProduct;
+					productName = excelData.ToProduct;
 
 					if (productData.IsCarton) {
 
@@ -729,54 +779,93 @@ public class ProductAssemblyTest extends BaseClass{
 								double doubleBoxCurrentStock = Double.parseDouble(replaceAllBoxCurrentStock);
 
 								multipleBoxStock = doubleBoxCurrentStock * 10;
-								//	System.out.println("multipleBoxStock is: "+multipleBoxStock);
-
 
 							} else if (currentStock.contains("L")) {
 								String replaceAllLooseCurrentStock = currentStock.replaceAll("[A-Za-z]", "");
 								doubleLooseCurrentStock = Double.parseDouble(replaceAllLooseCurrentStock);
-								//	System.out.println("doubleLooseCurrentStock is: "+doubleLooseCurrentStock);
+
 
 							} // Current stock loop
 
-							double additionBoxandLooseStock = multipleBoxStock + doubleLooseCurrentStock;
-							calculateStockDouble = additionBoxandLooseStock + multipleQty;
-							calculateStockDouble = calculateStockDouble - multipleQty;
+							if (IsFromProduct) {
+
+								double additionBoxandLooseStock = multipleBoxStock + doubleLooseCurrentStock;
+								calculateStockDouble = additionBoxandLooseStock + fromMultipleQty;
+								calculateStockDouble = calculateStockDouble - fromMultipleQty;
+
+							} else if (IsToProduct) {
+
+								double additionBoxandLooseStock = multipleBoxStock + doubleLooseCurrentStock;
+								calculateStockDouble = additionBoxandLooseStock + toMultipleQty;
+								calculateStockDouble = calculateStockDouble + toMultipleQty;
+
+							}	
 
 						}		
 
 					} else {
 
-						double doubleCurrentStock = Double.parseDouble(productData.currentStockValue);
-						calculateStockDouble = doubleCurrentStock + multipleQty;
-						calculateStockDouble = calculateStockDouble - multipleQty;
+						if (IsFromProduct) {
+
+							double doubleCurrentStock = Double.parseDouble(productData.currentStockValue);
+							calculateStockDouble = doubleCurrentStock + fromMultipleQty;
+							calculateStockDouble = calculateStockDouble - fromMultipleQty;
+
+						} else if (IsToProduct) {
+
+							double doubleCurrentStock = Double.parseDouble(productData.currentStockValue);
+							calculateStockDouble = doubleCurrentStock + toMultipleQty;
+							calculateStockDouble = calculateStockDouble + toMultipleQty;
+
+						}
 
 					}
 
 					calculateStock = String.valueOf(calculateStockDouble);
 
-					if (productData.IsCarton) {						
+					if (IsFromProduct || IsToProduct) {
 
-						double diviedStock = calculateStockDouble / 10;
-						String stringCalculateStock = String.valueOf(diviedStock);						
-						String[] split = stringCalculateStock.split("\\.");
-						String boxQty = split[0];
-						String looseQty = "0";
+						if (productData.IsCarton) {						
 
-						if (split.length > 1) {
-							looseQty = split[1];
+							double diviedStock = calculateStockDouble / 10;
+							String stringCalculateStock = String.valueOf(diviedStock);						
+							String[] split = stringCalculateStock.split("\\.");
+							String boxQty = split[0];
+							String looseQty = "0";
+
+							if (split.length > 1) {
+								looseQty = split[1];
+							}
+
+							calculateStock = boxQty +" B/"+ looseQty +" L";			
+
+							if (IsFromProduct) {
+
+								System.out.println("Product Name: "+productName);
+								System.out.println("calculateCartonStock is: "+calculateStock);
+
+							} else if (IsToProduct) {
+								
+								System.out.println("Product Name: "+productName);
+								System.out.println("calculateCartonStock is: "+calculateStock);
+								
+							}
+
+						} else {
+							
+							if (IsFromProduct) {
+								
+								System.out.println("Product Name: "+productName);
+								System.out.println("CalculateBaseandNonCartonStock is: "+calculateStockDouble);
+								
+							} else if (IsToProduct) {
+								
+								System.out.println("Product Name: "+productName);
+								System.out.println("CalculateBaseandNonCartonStock is: "+calculateStockDouble);
+								
+							}
+
 						}
-
-						calculateStock = boxQty +" B/"+ looseQty +" L";					
-
-						System.out.println("Product Name: "+productName);
-						System.out.println("calculateCartonStock is: "+calculateStock);
-
-
-					} else {
-
-						System.out.println("Product Name: "+productName);
-						System.out.println("CalculateBaseandNonCartonStock is: "+calculateStockDouble);
 
 					}
 
@@ -908,7 +997,7 @@ public class ProductAssemblyTest extends BaseClass{
 						System.out.println("Product Movement Name: "+ trimProductName);
 						System.out.println("Actual Product Movement Stock: "+ balanceQty);
 						System.out.println("Expected Product Movement Stock: "+ replaceProductStock);
-
+						System.out.println();
 
 						soft.assertEquals(balanceQty, replaceProductStock,
 								"Actual and Expected Product Movement Stock Mismatched for Product "
@@ -919,7 +1008,7 @@ public class ProductAssemblyTest extends BaseClass{
 						System.out.println("Product Movement Name: "+ trimProductName);
 						System.out.println("Actual Product Movement Stock: "+ balanceQty);
 						System.out.println("Expected Product Movement Stock: "+stock.calculateStock);
-
+						System.out.println();
 
 						soft.assertEquals(balanceQty, stock.calculateStock,
 								"Actual and Expected Product Movement Stock Mismatched for Product "

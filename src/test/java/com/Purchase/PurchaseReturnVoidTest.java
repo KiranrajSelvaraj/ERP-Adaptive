@@ -962,7 +962,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 		PurchaseReturns pr = new PurchaseReturns(driver);
 
-		wait.until(ExpectedConditions.elementToBeClickable(pr.AddPurchaseReturn));
+		js.executeScript("arguments[0].click();", pr.AddPurchaseReturn);
 		Thread.sleep(3000);
 
 		String getExcelGstType = "";
@@ -1072,8 +1072,19 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				findElement2.sendKeys(excelData.ProductCode + Keys.ENTER);
 			//	js.executeScript("arguments[0].value='" + excelData.ProductCode + "';", findElement2);
 				
+				// Screen shot to the batch details:-
+				DateTimeFormatter dtf12 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+				LocalDateTime now12 = LocalDateTime.now();
+				String timestamp12 = dtf12.format(now12).replace(":", ";").replace("/", "-");
+				TakesScreenshot ts12 = (TakesScreenshot) driver;
+				File s12 = ts12.getScreenshotAs(OutputType.FILE);
+				File s22 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " PurchaseReturn Product Errors "
+						+ timestamp12 + ".png");
+				FileUtils.copyFile(s12, s22);
 
 			}
+			
+			
 
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 				click(pr.Qty);

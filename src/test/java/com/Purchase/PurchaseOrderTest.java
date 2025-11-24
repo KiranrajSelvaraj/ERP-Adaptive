@@ -5,14 +5,11 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.collections4.map.HashedMap;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -197,37 +194,6 @@ public class PurchaseOrderTest extends BaseClass {
 
 	}
 
-	Map<String, List<String>> ProductUomMap = new HashedMap<>();
-
-	@Test(priority = 7, dependsOnMethods = "ERPLoginPage")
-	public void ProductUomData() throws InterruptedException {
-		ProductList.addAll(ProductSet);
-
-		int ProductListSize = ProductList.size();
-		System.out.println("Product size :" + ProductListSize);
-
-		for (int i = 0; i < ProductListSize; i++) {
-			Set<String> uomSet = new LinkedHashSet<>();
-			String Productcode = ProductList.get(i);
-			System.out.println("Productcode :" + Productcode);
-			List<String> uomList1 = new ArrayList<>();
-			int dataListSize = excelDataList.size();
-			System.out.println("Data Size: " + dataListSize);
-			for (int j = 0; j < dataListSize; j++) {
-				ExcelData excelData = excelDataList.get(j);
-
-				if (excelData.ProductCode.equals(Productcode)) {
-					System.out.println("UOM: " + excelData.Uom);
-					uomSet.add(excelData.Uom);
-
-				}
-
-			}
-			uomList1.addAll(uomSet);
-			ProductUomMap.put(Productcode, uomList1);
-
-		}
-	}
 
 	//System Settings:-
 	private boolean IsZeroQtyPurchase;
@@ -575,8 +541,7 @@ public class PurchaseOrderTest extends BaseClass {
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	// PRODUCT PAGE
-	// @Ignore
+	//@Ignore
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -903,7 +868,7 @@ public class PurchaseOrderTest extends BaseClass {
 	}
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
-	// @Ignore
+	//@Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
@@ -1074,7 +1039,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 			}
 
-			click(po.Quantity);
+			js.executeScript("arguments[0].click();", po.Quantity);
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
 				click(po.UOM);
@@ -1127,7 +1092,10 @@ public class PurchaseOrderTest extends BaseClass {
 
 					if (productDetails.IsCartonSelected.equalsIgnoreCase("true")) {
 
-						if (excelData.Uom.equalsIgnoreCase("1KG")) {
+						if (excelData.Uom.equalsIgnoreCase("1KG") ||
+							excelData.Uom.equalsIgnoreCase("1X10KG") ||
+							excelData.Uom.equalsIgnoreCase("1X1X1KG") ||
+							excelData.Uom.equalsIgnoreCase("KG")) {
 
 							String[] split = productDetails.currentStockValue.split("[ B/L]+");
 							int boxStock = Integer.parseInt(split[0]);
@@ -1315,7 +1283,7 @@ public class PurchaseOrderTest extends BaseClass {
 			//Add Button:-
 			click(po.AddButton);
 			Thread.sleep(2000);
-			click(po.Quantity);
+			js.executeScript("arguments[0].click();", po.Quantity);
 			System.out.println();
 
 			productPrice = driver.findElement(By.xpath("//table[@id='PurchaseOrderTable']//tbody//tr//td[2]"
@@ -1566,27 +1534,29 @@ public class PurchaseOrderTest extends BaseClass {
 				String getBatchProductName = driver.findElement(By.xpath("(//table[@id='PurchaseTable']//tbody//tr[@class='productTR'])["+i+"]//td[2]"))
 						.getAttribute("data-value");
 
-				if (getBatchProductName.contains(excelData.ProductName)) {			
+				if (getBatchProductName.contains(excelData.ProductName.trim())) {			
 
 					if ("true".equalsIgnoreCase(excelData.BatchProduct)) {
 
 						System.out.println("batch product: "+excelData.ProductName);
 
-						WebElement batchFiles = driver.findElement(By.xpath("(//table[@id='PurchaseTable']//tbody//tr[@class='productTR'])[" + i + "]//a[@class='fa fa-folder-open Popup']"));
+						WebElement batchFiles = driver.findElement(By.xpath
+								("(//table[@id='PurchaseTable']//tbody//tr[@class='productTR'])[" + i + "]//td[2]//textarea[contains(text(),'"+excelData.ProductName.trim()+"')]//following::td[8]//a[@id='BatchFolder']"));
 						js.executeScript("arguments[0].click();", batchFiles);
 
 						String totalQty = driver.findElement(By.xpath
-								("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::input[@id='TotalQty'])[1]"))
+								("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@id='TotalQty'])[1]"))
 								.getAttribute("value");
 						System.out.println("Total Qty: "+totalQty);
 
 						WebElement totalQtyField = driver.findElement(By.xpath
-								("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::input[@id='Qty'])[1]"));
+								("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@id='Qty'])[1]"));
 						totalQtyField.click();
 						totalQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 						totalQtyField.sendKeys(totalQty);
 
-						WebElement batchAdd = driver.findElement(By.xpath("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::button[text()='Add'])[1]"));
+						WebElement batchAdd = driver.findElement(By.xpath
+								("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::button[text()='Add'])[1]"));
 						batchAdd.click();
 						Thread.sleep(2000);
 
@@ -1597,7 +1567,7 @@ public class PurchaseOrderTest extends BaseClass {
 		}
 		System.out.println();
 
-		Collections.reverse(excelDataList);
+		//	Collections.reverse(excelDataList);
 		int excelDataListSize1 = excelDataList.size();
 		for (int i = 0; i < excelDataListSize1; i++) {
 			ExcelData excelData = excelDataList.get(i);
@@ -1701,11 +1671,24 @@ public class PurchaseOrderTest extends BaseClass {
 		}
 
 		//Save:-
-		js.executeScript("arguments[0].click();", po.SaveButton);
+		Thread.sleep(2000);
+		WebElement saveBtn = driver.findElement(By.xpath("//button[@id='Create']"));
+		js.executeScript("arguments[0].scrollIntoView(true);", saveBtn);
+		js.executeScript("arguments[0].click();", saveBtn);
+		
+		try {
+
+			String alertText = driver.findElement(By.id("popup_message")).getText();
+			System.out.println("Alert Text: " + alertText);
+
+		} catch (Exception e) {
+			System.out.println("No alert appeared after save.");
+		}
 		System.out.println("** Purchase Invoice Save Successfull **");
 		System.out.println();
 
-		//Purchase Returns:-		
+		//Purchase Returns:-	
+		driver.navigate().refresh();
 		Thread.sleep(5000);
 		WebElement details = driver.findElement(By.xpath("//table[@id='purchasetable']//tbody//tr//td[6]"
 				+ "[normalize-space()='"+formatedTimestamp+"']//following::td[4]//a[@title='Details']"));
@@ -1733,7 +1716,7 @@ public class PurchaseOrderTest extends BaseClass {
 				}				
 
 				if (intReturnQty > 0) {
-					if (getProductName.contains(excelData.ProductName)) {
+					if (getProductName.contains(excelData.ProductName.trim())) {
 
 						Thread.sleep(3000);
 						WebElement qtyField = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+i+"]//td[2]//div//textarea[contains(text(),'"
@@ -1747,12 +1730,12 @@ public class PurchaseOrderTest extends BaseClass {
 							if ("true".equalsIgnoreCase(excelData.BatchProduct.trim())) {	
 
 								Thread.sleep(3000);
-								String totalQty = driver.findElement(By.xpath("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::strong//input[@id='TotalQty'])[1]"))
+								String totalQty = driver.findElement(By.xpath("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::strong//input[@id='TotalQty'])[1]"))
 										.getAttribute("value");		
 								System.out.println("Total Qty: "+totalQty);
 								Thread.sleep(2000);
 
-								WebElement totalQtyField = driver.findElement(By.xpath("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::table//tbody//tr//td[6]//input[@id='Qty'])[1]"));
+								WebElement totalQtyField = driver.findElement(By.xpath("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::table//tbody//tr//td[6]//input[@id='Qty'])[1]"));
 								totalQtyField.click();
 								totalQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 								totalQtyField.sendKeys(totalQty + Keys.ENTER);
@@ -1770,7 +1753,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 
 								driver.findElement(By.xpath
-										("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::button[text()='Add'])[1]")).click();									
+										("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::button[text()='Add'])[1]")).click();									
 							}
 
 						}
@@ -1829,7 +1812,7 @@ public class PurchaseOrderTest extends BaseClass {
 				} else {
 
 					Thread.sleep(2000);
-					if (getProductName.contains(excelData.ProductName)) {
+					if (getProductName.contains(excelData.ProductName.trim())) {
 
 						System.out.println("Deleted Product: "+getProductName);					
 						Thread.sleep(3000);
@@ -1847,7 +1830,6 @@ public class PurchaseOrderTest extends BaseClass {
 		}
 		Thread.sleep(4000);
 
-
 		double expSubtotal = 0;
 		double returnExpZeroGstProductamount = 0;
 
@@ -1858,9 +1840,11 @@ public class PurchaseOrderTest extends BaseClass {
 
 			String getProductName = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+j+"]//td[2]//div//textarea"))
 					.getText();
+			System.out.println("getProductName: "+getProductName);
 
 			String getProductAmount = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+j+"]//td[9][@class='DetailTotal seperator']"))
 					.getText();
+			System.out.println("getProductAmount: "+getProductAmount);
 
 			String replaceAllProductAmount = getProductAmount.replaceAll(",", "");
 			double productAmountDouble = Double.parseDouble(replaceAllProductAmount);
@@ -1871,7 +1855,7 @@ public class PurchaseOrderTest extends BaseClass {
 			for (int i = 0; i < excelDataSize; i++) {
 				ExcelData excelData = excelDataList.get(i);
 
-				if (getProductName.contains(excelData.ProductName)  && excelData.ZeroGst.equals("TRUE")) {
+				if (excelData.ZeroGst.equals("TRUE") && getProductName.contains(excelData.ProductName.trim())) {
 
 					returnExpZeroGstProductamount = Double.parseDouble(replaceAllProductAmount) + returnExpZeroGstProductamount;
 					System.out.println("returnExpZeroGstProductamount: "+returnExpZeroGstProductamount);
@@ -1923,28 +1907,24 @@ public class PurchaseOrderTest extends BaseClass {
 		double returnDivOverAllDisc = discountAmountDouble / returnSubtotalDouble;
 		double returnfinalWithoutGstAmount = 0;
 
-		for (ExcelData excelData : excelDataList) {
+		if (getOverAllDiscountType.equalsIgnoreCase("$")) {
 
-			if (excelData.ZeroGst.equalsIgnoreCase("true") && getOverAllDiscountType.equalsIgnoreCase("$")) {
+			double withoutGstAmount = returnDivOverAllDisc * returnExpZeroGstProductamount;
+			returnfinalWithoutGstAmount = returnExpZeroGstProductamount - withoutGstAmount;
+			String formatFinalWithoutGstAmount = String.format("%.2f", returnfinalWithoutGstAmount);
+			System.out.println("Without Gst Product Amount: "+formatFinalWithoutGstAmount);
 
-				double withoutGstAmount = returnDivOverAllDisc * returnExpZeroGstProductamount;
-				returnfinalWithoutGstAmount = returnExpZeroGstProductamount - withoutGstAmount;
-				String formatFinalWithoutGstAmount = String.format("%.2f", returnfinalWithoutGstAmount);
-				System.out.println("Without Gst Product Amount: "+formatFinalWithoutGstAmount);
+		} else if (getOverAllDiscountType.equalsIgnoreCase("%")) {
 
-			} else if (excelData.ZeroGst.equalsIgnoreCase("true") && getOverAllDiscountType.equalsIgnoreCase("%")) {
-
-				double zeroGstProductDiscountAmount = (returnExpZeroGstProductamount * discountPercentageDouble / 100);
-				double subrationZerGstAmount = (returnExpZeroGstProductamount - zeroGstProductDiscountAmount);
-				System.out.println("After Discount Zero Gst Product Amount is: " + subrationZerGstAmount);
-				double withoutZeroGstAmount = (discountPercentageAmount - subrationZerGstAmount);
-				System.out.println("Without Zero Gst Amount: "+withoutZeroGstAmount);
-				System.out.println();
+			double zeroGstProductDiscountAmount = (returnExpZeroGstProductamount * discountPercentageDouble / 100);
+			double subrationZerGstAmount = (returnExpZeroGstProductamount - zeroGstProductDiscountAmount);
+			System.out.println("After Discount Zero Gst Product Amount is: " + subrationZerGstAmount);
+			double withoutZeroGstAmount = (discountPercentageAmount - subrationZerGstAmount);
+			System.out.println("Without Zero Gst Amount: "+withoutZeroGstAmount);
+			System.out.println();
 
 
-			}	
-			break;
-		}
+		}	
 
 		double returnsubWithoutGstAmount = discountTotalAmount - returnfinalWithoutGstAmount;
 		String formatReturnsubWithoutGstAmount = String.format("%.2f", returnsubWithoutGstAmount);
@@ -2057,7 +2037,7 @@ public class PurchaseOrderTest extends BaseClass {
 	}
 
 	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
-
+	//@Ignore
 	@Test(priority = 20, dependsOnMethods = "ERPLoginPage")
 	public void StockCalculation() {
 
@@ -2085,12 +2065,12 @@ public class PurchaseOrderTest extends BaseClass {
 
 					multipleQty = doubleExcelQty * doubleUomUnit;
 					System.out.println("multipleQty is: "+multipleQty);
-					
+
 					returnMultipleQty = returnQty * doubleUomUnit;
 					System.out.println("returnMultipleQty is: "+returnMultipleQty);
 					break;
-					
-					
+
+
 				}	
 
 			}  // Uom details list loop
@@ -2102,9 +2082,9 @@ public class PurchaseOrderTest extends BaseClass {
 				double calculateStockDouble = 0;
 				String calculateStock = "0";
 
-				if (productData.productName.equalsIgnoreCase(excelData.ProductName)) {
+				if (productData.productName.equalsIgnoreCase(excelData.ProductName.trim())) {
 
-					String productName = excelData.ProductName;
+					String productName = excelData.ProductName.trim();
 
 					if (productData.IsCarton) {
 

@@ -66,6 +66,9 @@ public class ProductAssembly {
 	@FindBy(id = "btnComplete")
 	public WebElement Completed;
 	
+	@FindBy(id = "popup_ok")
+	public WebElement PopupOk;
+	
 	@FindBy(xpath = "//input[@value='Back']")
 	public WebElement Back;
 	

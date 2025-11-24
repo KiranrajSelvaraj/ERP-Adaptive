@@ -5,11 +5,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
+
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.collections4.map.HashedMap;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -126,15 +125,18 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		private String GstPercentage;
 		private String ZeroGst;
 		private String BatchProduct;
-		private String BatchNo;
-		private String ReturnQty;
+		private String BatchNumber;
+		private String MfgDate;
+		private String ValPeriod;
+		private String ExpDate;
+
 
 		public ExcelData(String Vendor, String CurrencyCode, String CurrancyRate, String GstType, String Type,
 				String ProductCode, String ProductName, String Uom, String Qty, String Foc, String DiscountPercentage,
 				String DiscountAmount, String UnitDiscCheckbox, String UnitDiscPercentage, String UnitDiscAmount,
 				String Price, String IsSpecialPriceCheckbox, String SpecialPrice, String OverAllDiscountType,
 				String OverAllDiscountAmount, String OverAllDiscountPercentage, String GstPercentage,
-				String ZeroGst, String BatchProduct, String BatchNo, String ReturnQty) {
+				String ZeroGst, String BatchProduct, String BatchNumber, String MfgDate, String ValPeriod, String ExpDate) {
 			super();
 
 			this.Vendor = Vendor;
@@ -161,8 +163,11 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 			this.GstPercentage = GstPercentage;
 			this.ZeroGst = ZeroGst;
 			this.BatchProduct = BatchProduct;
-			this.BatchNo = BatchNo;
-			this.ReturnQty = ReturnQty;
+			this.BatchNumber = BatchNumber;
+			this.MfgDate = MfgDate;
+			this.ValPeriod = ValPeriod;
+			this.ExpDate = ExpDate;
+
 
 		}
 
@@ -182,49 +187,17 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 			String DiscountAmount, String UnitDiscCheckbox, String UnitDiscPercentage, String UnitDiscAmount,
 			String Price, String IsSpecialPriceCheckbox, String SpecialPrice, String OverAllDiscountType,
 			String OverAllDiscountAmount, String OverAllDiscountPercentage, String GstPercentage, 
-			String ZeroGst, String BatchProduct, String BatchNo, String ReturnQty) {
+			String ZeroGst, String BatchProduct, String BatchNumber, String MfgDate, String ValPeriod, String ExpDate) {
 
 		ExcelData data = new ExcelData(Vendor, CurrencyCode, CurrancyRate, GstType, Type, ProductCode, ProductName,
 				Uom, Qty, Foc, DiscountPercentage, DiscountAmount, UnitDiscCheckbox, UnitDiscPercentage, UnitDiscAmount,
 				Price, IsSpecialPriceCheckbox, SpecialPrice, OverAllDiscountType, OverAllDiscountAmount,
-				OverAllDiscountPercentage, GstPercentage, ZeroGst, BatchProduct, BatchNo, ReturnQty);
+				OverAllDiscountPercentage, GstPercentage, ZeroGst, BatchProduct, BatchNumber, MfgDate, ValPeriod, ExpDate);
 
 		excelDataList.add(data);
 		ProductSet.add(ProductCode);
 		VendorSet.add(Vendor);
 
-	}
-
-	Map<String, List<String>> ProductUomMap = new HashedMap<>();
-
-	@Test(priority = 7, dependsOnMethods = "ERPLoginPage")
-	public void ProductUomData() throws InterruptedException {
-		ProductList.addAll(ProductSet);
-
-		int ProductListSize = ProductList.size();
-		System.out.println("Product size :" + ProductListSize);
-
-		for (int i = 0; i < ProductListSize; i++) {
-			Set<String> uomSet = new LinkedHashSet<>();
-			String Productcode = ProductList.get(i);
-			System.out.println("Productcode :" + Productcode);
-			List<String> uomList1 = new ArrayList<>();
-			int dataListSize = excelDataList.size();
-			System.out.println("Data Size: " + dataListSize);
-			for (int j = 0; j < dataListSize; j++) {
-				ExcelData excelData = excelDataList.get(j);
-
-				if (excelData.ProductCode.equals(Productcode)) {
-					System.out.println("UOM: " + excelData.Uom);
-					uomSet.add(excelData.Uom);
-
-				}
-
-			}
-			uomList1.addAll(uomSet);
-			ProductUomMap.put(Productcode, uomList1);
-
-		}
 	}
 
 	//System Settings:-
@@ -574,7 +547,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
 	// Product Page:-
-	// @Ignore
+	//@Ignore
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -869,7 +842,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 	}
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
-	// @Ignore
+	//@Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
@@ -1026,8 +999,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 				.sendKeys(excelData.ProductCode + Keys.ENTER);
 
 			}
-
-			click(pi.Qty);
+			js.executeScript("arguments[0].click();", pi.Qty);
 
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
@@ -1172,7 +1144,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 			//Price:-
 			click(pi.Price);
 			pi.Price.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-			Sendkeys(pi.Price, excelData.Price);
+			Sendkeys(pi.Price, excelData.Price +Keys.ENTER);
 			Thread.sleep(1000);
 
 			//Item Level Discount:-
@@ -1249,33 +1221,45 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 
 				Thread.sleep(2000);
 				String totalQty = driver.findElement(By.xpath
-						("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::input[@id='TotalQty'])[1]"))
+						("(//div//strong[contains(normalize-space(),'"+excelData.ProductName.trim()+"')]//following::input[@id='TotalQty'])[1]"))
 						.getAttribute("value");
 				System.out.println("Total Qty: "+totalQty);
 
 				Thread.sleep(1000);
 				WebElement batchNo = driver.findElement(By.xpath
-						("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::input[@id='BatchNumber'])[1]"));
+						("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@id='BatchNumber'])[1]"));
 				batchNo.click();
-				batchNo.sendKeys(excelData.BatchNo +Keys.ENTER);
+				batchNo.sendKeys(excelData.BatchNumber +Keys.ENTER);
 				Thread.sleep(1000);
 
+		/*		WebElement mfgDate = driver.findElement(By.xpath
+						("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@class='ManufactureDate datepick form-control hasDatepicker'])[1]"));
+				mfgDate.click();
+				mfgDate.sendKeys(excelData.MfgDate +Keys.ENTER);
+				Thread.sleep(1000);
+
+				WebElement valPeriod = driver.findElement(By.xpath
+						("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@id='ValidPeriod'])[1]"));
+				valPeriod.click();
+				valPeriod.sendKeys(excelData.ValPeriod +Keys.ENTER);
+				Thread.sleep(1000);*/
+
 				WebElement totalQtyField = driver.findElement(By.xpath
-						("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::input[@id='Qty'])[1]"));
+						("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@id='Qty'])[1]"));
 				totalQtyField.click();
 				totalQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 				totalQtyField.sendKeys(totalQty);
 				Thread.sleep(1000);
 
 				WebElement batchAdd = driver.findElement(By.xpath
-						("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::button[text()='Add'])[1]"));
+						("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::button[text()='Add'])[1]"));
 				js.executeScript("arguments[0].click();", batchAdd);
 				Thread.sleep(2000);
 
 			}
 
 			productPrice = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr//td[2]//div//textarea"
-					+ "[contains(text(),'"+excelData.ProductName+"')]//following::td[7]//p[@id='DetailPurchaseDetailTotal']"))
+					+ "[contains(text(),'"+excelData.ProductName.trim()+"')]//following::td[7]//p[@id='DetailPurchaseDetailTotal']"))
 					.getText();
 			String replaceAllProductPrice = productPrice.replaceAll(",", "");
 			double productPriceDouble = Double.parseDouble(replaceAllProductPrice);
@@ -1518,7 +1502,8 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		System.out.println();
 
 		//Void Process:-
-		Thread.sleep(3000);
+		System.out.println("Purchace Invoice Number is: "+formatedTimestamp);
+			Thread.sleep(3000);
 		WebElement delete = driver.findElement(By.xpath
 				("//table[@id='purchasetable']//tbody//tr//td[contains(text(),'"+formatedTimestamp+"')]/following::td[4]//a[@title='Delete']"));
 		js.executeScript("arguments[0].click();", delete);
@@ -1526,6 +1511,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		click(pi.Delete);
 		Thread.sleep(1000);
 		click(pi.PopupOk);
+		System.out.println("*** Purchase Invoice Void Successfull ***");
 
 	}
 
@@ -1545,7 +1531,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 	}
 
 	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
-
+	//@Ignore
 	@Test(priority = 20, dependsOnMethods = "ERPLoginPage")
 	public void StockCalculation() {
 
@@ -1777,7 +1763,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 						System.out.println("Product Movement Name: "+ trimProductName);
 						System.out.println("Actual Product Movement Stock: "+ balanceQty);
 						System.out.println("Expected Product Movement Stock: "+ replaceProductStock);
-
+						System.out.println();
 
 						soft.assertEquals(balanceQty, replaceProductStock,
 								"Actual and Expected Product Movement Stock Mismatched for Product "
@@ -1788,7 +1774,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 						System.out.println("Product Movement Name: "+ trimProductName);
 						System.out.println("Actual Product Movement Stock: "+ balanceQty);
 						System.out.println("Expected Product Movement Stock: "+stock.calculateStock);
-
+						System.out.println();
 
 						soft.assertEquals(balanceQty, stock.calculateStock,
 								"Actual and Expected Product Movement Stock Mismatched for Product "

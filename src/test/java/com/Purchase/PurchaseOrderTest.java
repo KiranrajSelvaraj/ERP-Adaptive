@@ -650,24 +650,6 @@ public class PurchaseOrderTest extends BaseClass {
 					.trim();
 			System.out.println("Is Carton Selected: " + IsCartonSelected);
 
-			/*
-			 * WebElement stockAdjustmentCOA = driver.findElement(By.xpath(
-			 * "//label[normalize-space()='Stock Adjustment COA / GL']//following::span[@id='select2-StockAdjustmentCOAId-container']"
-			 * )); String stockAdjustmentCOAValue =
-			 * stockAdjustmentCOA.getAttribute("title").trim();
-			 * System.out.println("Stock Adjustment COA: " + stockAdjustmentCOAValue);
-			 * 
-			 * WebElement stockCOA = driver.findElement(By.xpath(
-			 * "//label[normalize-space()='Stock COA / GL']//following::span[@id='select2-GRNCOAId-container']"
-			 * )); String stockCOAValue = stockCOA.getAttribute("title").trim();
-			 * System.out.println("Stock COA: " + stockCOAValue);
-			 * 
-			 * WebElement COGSCOA = driver.findElement(By.xpath(
-			 * "//label[normalize-space()='COGS COA / GL']//following::span[@id='select2-COGSCOAId-container']"
-			 * )); String COGSCOAValue = COGSCOA.getAttribute("title").trim();
-			 * System.out.println("COGS COA: " + COGSCOAValue);
-			 */
-
 			Thread.sleep(3000);
 			WebElement stockTab = driver.findElement(By.xpath("//a[text()='Stock']"));
 			stockTab.click();
@@ -695,7 +677,6 @@ public class PurchaseOrderTest extends BaseClass {
 
 			String SellingPrice = null;
 			String LPPrice = null;
-			// String RetailPrice = null;
 
 			if (ProductUOMtablesize == 0) {
 
@@ -713,12 +694,6 @@ public class PurchaseOrderTest extends BaseClass {
 								By.xpath("//dt[normalize-space()='Last Purchase Price']//following-sibling::dd[1]"))
 						.getText();
 				System.out.println("LP Price: " + LPPrice);
-
-				/*
-				 * RetailPrice = driver .findElement(By.
-				 * xpath("//label[text()='Retail Price']//following::input[@id='RetailPrice']"))
-				 * .getAttribute("value"); System.out.println("Retail Price: " + RetailPrice);
-				 */
 
 			} else {
 
@@ -742,13 +717,6 @@ public class PurchaseOrderTest extends BaseClass {
 							"(//table[@id='ProductPartialUOM']//tbody//tr//td[2])[" + j + "]//following::td[4]//input"))
 							.getAttribute("value");
 					System.out.println("SP Value: " + SP);
-
-					/*
-					 * String RP = driver.findElement(By.xpath(
-					 * "(//table[@id='ProductPartialUOM']//tbody//tr//td[2])[" + j
-					 * +"]//following::td[5]//input")) .getAttribute("value").trim();
-					 * System.out.println("RP Value: " + RP);
-					 */
 
 					ProductUOM pruom = new ProductUOM(productName, uomValue, IsCarton, CartonPrice, IsNonCarton, IsBase,
 							ProductUOMtablesize, SubUOM, CurStock, LPP, SP);
@@ -833,7 +801,6 @@ public class PurchaseOrderTest extends BaseClass {
 
 				WebElement InfoTab = driver.findElement(By.xpath("//a[text()='Info']"));
 				js.executeScript("arguments[0].click();", InfoTab);
-				//	InfoTab.click();
 				Thread.sleep(2000);
 
 				String GSTType = driver.findElement(By.xpath("//dt[normalize-space()='GST Type']//following-sibling::dd[1]"))
@@ -2311,7 +2278,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 	}
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 46, dependsOnMethods = "ERPLoginPage")
 	private void quit() throws InterruptedException {
 		driver.quit();

@@ -546,7 +546,6 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	// Product Page:-
 	//@Ignore
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
@@ -764,7 +763,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 	}
 
 	ArrayList<Vendor> vendorDetailsList = new ArrayList<>();
-	//@Ignore
+	@Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
 	public void VendorPage() throws InterruptedException {
 
@@ -842,7 +841,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 	}
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
-	//@Ignore
+	@Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
@@ -999,7 +998,9 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 				.sendKeys(excelData.ProductCode + Keys.ENTER);
 
 			}
-			js.executeScript("arguments[0].click();", pi.Qty);
+
+			WebElement qty = driver.findElement(By.xpath("(//input[@id='Qty'])[1]"));
+			js.executeScript("arguments[0].click();", qty);
 
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
@@ -1027,7 +1028,11 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 
 					if (productDetails.IsCartonSelected.equalsIgnoreCase("true")) {
 
-						if (excelData.Uom.equalsIgnoreCase("1KG")) {
+						if (excelData.Uom.equalsIgnoreCase("1KG") ||
+								excelData.Uom.equalsIgnoreCase("1X10KG")||
+								excelData.Uom.equalsIgnoreCase("1X1KG")||
+								excelData.Uom.equalsIgnoreCase("1X1X1KG")||
+								excelData.Uom.equalsIgnoreCase("KG")) {
 
 							String[] split = productDetails.currentStockValue.split("[ B/L]+");
 							int boxStock = Integer.parseInt(split[0]);
@@ -1232,7 +1237,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 				batchNo.sendKeys(excelData.BatchNumber +Keys.ENTER);
 				Thread.sleep(1000);
 
-		/*		WebElement mfgDate = driver.findElement(By.xpath
+				/*	WebElement mfgDate = driver.findElement(By.xpath
 						("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@class='ManufactureDate datepick form-control hasDatepicker'])[1]"));
 				mfgDate.click();
 				mfgDate.sendKeys(excelData.MfgDate +Keys.ENTER);
@@ -1242,7 +1247,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 						("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@id='ValidPeriod'])[1]"));
 				valPeriod.click();
 				valPeriod.sendKeys(excelData.ValPeriod +Keys.ENTER);
-				Thread.sleep(1000);*/
+				Thread.sleep(1000); */
 
 				WebElement totalQtyField = driver.findElement(By.xpath
 						("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@id='Qty'])[1]"));
@@ -1503,15 +1508,15 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 
 		//Void Process:-
 		System.out.println("Purchace Invoice Number is: "+formatedTimestamp);
-			Thread.sleep(3000);
-		WebElement delete = driver.findElement(By.xpath
+		Thread.sleep(3000);
+		/*	WebElement delete = driver.findElement(By.xpath
 				("//table[@id='purchasetable']//tbody//tr//td[contains(text(),'"+formatedTimestamp+"')]/following::td[4]//a[@title='Delete']"));
 		js.executeScript("arguments[0].click();", delete);
 		Thread.sleep(2000);
 		click(pi.Delete);
 		Thread.sleep(1000);
 		click(pi.PopupOk);
-		System.out.println("*** Purchase Invoice Void Successfull ***");
+		System.out.println("*** Purchase Invoice Void Successfull ***");*/
 
 	}
 
@@ -1531,7 +1536,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 	}
 
 	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
-	//@Ignore
+	@Ignore
 	@Test(priority = 20, dependsOnMethods = "ERPLoginPage")
 	public void StockCalculation() {
 
@@ -1653,7 +1658,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 
 	} // Method loop
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 22, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 
@@ -1718,7 +1723,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		System.out.println();
 	}
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 24, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 

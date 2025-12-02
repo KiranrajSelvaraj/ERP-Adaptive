@@ -22,7 +22,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -1060,9 +1059,10 @@ public class PurchaseOrderTest extends BaseClass {
 					if (productDetails.IsCartonSelected.equalsIgnoreCase("true")) {
 
 						if (excelData.Uom.equalsIgnoreCase("1KG") ||
-							excelData.Uom.equalsIgnoreCase("1X10KG") ||
-							excelData.Uom.equalsIgnoreCase("1X1X1KG") ||
-							excelData.Uom.equalsIgnoreCase("KG")) {
+								excelData.Uom.equalsIgnoreCase("1X10KG")||
+								excelData.Uom.equalsIgnoreCase("1X1KG")||
+								excelData.Uom.equalsIgnoreCase("1X1X1KG")||
+								excelData.Uom.equalsIgnoreCase("KG")) {
 
 							String[] split = productDetails.currentStockValue.split("[ B/L]+");
 							int boxStock = Integer.parseInt(split[0]);
@@ -1642,7 +1642,7 @@ public class PurchaseOrderTest extends BaseClass {
 		WebElement saveBtn = driver.findElement(By.xpath("//button[@id='Create']"));
 		js.executeScript("arguments[0].scrollIntoView(true);", saveBtn);
 		js.executeScript("arguments[0].click();", saveBtn);
-		
+
 		try {
 
 			String alertText = driver.findElement(By.id("popup_message")).getText();

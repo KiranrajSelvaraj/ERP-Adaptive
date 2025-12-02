@@ -446,9 +446,6 @@ public class StockAdjustmentV2Test extends BaseClass{
 	}
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
-	//	List<String> UomList = new ArrayList<String>();
-	//	Set<String> UomSet = new LinkedHashSet<String>();
-
 
 	// @Ignore
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")

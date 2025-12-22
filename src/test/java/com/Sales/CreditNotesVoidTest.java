@@ -44,7 +44,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 		driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");
 		url = "https://erpauto.dev1.adaptivebizapp.com/ERP/";
-		
+
 		Login lo = new Login(driver);
 
 		Sendkeys(lo.CompanyCode, "UITDEMO1");

@@ -15,18 +15,15 @@ public class Login {
 	@FindBy(id="UserName")
 	public WebElement UserName;
 	
-	@FindBy(id="Password")
+	@FindBy(id="PasswordInput")
 	public WebElement Password;
 	
 	@FindBy(id="login")
 	public WebElement LoginButton;
 	
 	
-	
-	
 	public Login(WebDriver driver) {
-		this.driver = driver;
-		
+		this.driver = driver;		
 		PageFactory.initElements(driver, this);
 	}
 

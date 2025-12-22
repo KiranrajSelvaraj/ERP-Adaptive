@@ -219,7 +219,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 	}
 
-	
+
 	private boolean IsSalesManManagement;
 	private boolean IsWarehouseManagement;
 	private boolean IsWarehouseStorageManagement;
@@ -1784,6 +1784,14 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		}
 
 		js.executeScript("arguments[0].click();", so.SaveandClose);
+		try {
+
+			String alertText = driver.findElement(By.id("popup_message")).getText();
+			System.out.println("Alert Text: " + alertText);
+
+		} catch (Exception e) {
+			System.out.println("No alert appeared after save.");
+		}	
 		System.out.println("*** Sales Invoice Save Successfull ***");
 		System.out.println("**************************************");
 		Thread.sleep(3000);
@@ -1962,6 +1970,14 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		}
 		Thread.sleep(4000);
 		click(cn.Save);
+		try {
+
+			String alertText = driver.findElement(By.id("popup_message")).getText();
+			System.out.println("Alert Text: " + alertText);
+
+		} catch (Exception e) {
+			System.out.println("No alert appeared after save.");
+		}	
 		System.out.println("*** Credit Notes Save Successfull ***");
 		System.out.println();
 
@@ -2056,26 +2072,26 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		double creditDivOverAllDisc = discountAmountDouble / getActSubtotalDouble;
 		double creditfinalWithoutGstAmount = 0;
 		double subrationWithoutGstAmount = 0;
-		
-			if (getOverAllDiscountType.equals("$")) {
 
-				double withoutGstAmount = creditDivOverAllDisc * creditExpZeroGstProductamount;
-				creditfinalWithoutGstAmount = creditExpZeroGstProductamount - withoutGstAmount;
-				String formatFinalWithoutGstAmount = String.format("%.2f", creditfinalWithoutGstAmount);
-				System.out.println("Without Gst Product Amount: "+formatFinalWithoutGstAmount);
+		if (getOverAllDiscountType.equals("$")) {
 
-			} else if (getOverAllDiscountType.equals("%")) {
+			double withoutGstAmount = creditDivOverAllDisc * creditExpZeroGstProductamount;
+			creditfinalWithoutGstAmount = creditExpZeroGstProductamount - withoutGstAmount;
+			String formatFinalWithoutGstAmount = String.format("%.2f", creditfinalWithoutGstAmount);
+			System.out.println("Without Gst Product Amount: "+formatFinalWithoutGstAmount);
 
-				double withoutGstProductDiscountAmount = (creditExpZeroGstProductamount * discountPercentageDouble / 100);
-				System.out.println("withoutGstProductDiscountAmount: "+withoutGstProductDiscountAmount);
-				subrationWithoutGstAmount = (discountPercentageAmount - creditExpZeroGstProductamount);
-				System.out.println("After Discount Zero Gst Product Amount is: " + subrationWithoutGstAmount);
-				withoutZeroGstAmount = (discountPercentageAmount - subrationWithoutGstAmount);
-				System.out.println("withoutZeroGstAmount: "+withoutZeroGstAmount);
-				System.out.println();
+		} else if (getOverAllDiscountType.equals("%")) {
 
-			}	
-	
+			double withoutGstProductDiscountAmount = (creditExpZeroGstProductamount * discountPercentageDouble / 100);
+			System.out.println("withoutGstProductDiscountAmount: "+withoutGstProductDiscountAmount);
+			subrationWithoutGstAmount = (discountPercentageAmount - creditExpZeroGstProductamount);
+			System.out.println("After Discount Zero Gst Product Amount is: " + subrationWithoutGstAmount);
+			withoutZeroGstAmount = (discountPercentageAmount - subrationWithoutGstAmount);
+			System.out.println("withoutZeroGstAmount: "+withoutZeroGstAmount);
+			System.out.println();
+
+		}	
+
 		double creditSubWithoutGstAmount = discountPercentageAmount - subrationWithoutGstAmount;
 		String formatcreditsubWithoutGstAmount = String.format("%.2f", creditSubWithoutGstAmount);
 		System.out.println("With Gst Product SubTotal: "+formatcreditsubWithoutGstAmount);
@@ -2150,6 +2166,14 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 		Thread.sleep(3000);
 		click(cn.Save);
+		try {
+
+			String alertText = driver.findElement(By.id("popup_message")).getText();
+			System.out.println("Alert Text: " + alertText);
+
+		} catch (Exception e) {
+			System.out.println("No alert appeared after save.");
+		}	
 		System.out.println("*** Credit Notes Save Successfull ***");
 		System.out.println();
 		System.out.println();
@@ -2193,8 +2217,13 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 				if (excelData.Uom.equals(uomData.UomCodeValue)) {
 
+					if (excelData.CreditNotesQty != null && !excelData.CreditNotesQty.isEmpty()) {
+
+						creditNotesQty = Double.parseDouble(excelData.CreditNotesQty);
+					}
+
 					doubleExcelQty = Double.parseDouble(excelData.Qty);
-					creditNotesQty = Double.parseDouble(excelData.CreditNotesQty);
+					//		creditNotesQty = Double.parseDouble(excelData.CreditNotesQty);
 					doubleUomUnit = Double.parseDouble(uomData.UomUnits);
 
 					multipleQty = doubleExcelQty * doubleUomUnit;

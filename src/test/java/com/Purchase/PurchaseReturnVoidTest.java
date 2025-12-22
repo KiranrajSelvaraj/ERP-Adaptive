@@ -2,7 +2,6 @@ package com.Purchase;
 
 import java.io.File;
 import java.io.IOException;
-import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -15,7 +14,6 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.collections4.map.HashedMap;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
@@ -56,8 +54,8 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 
-		driver.get("https://erp.dev1.adaptivegroups.asia/ERP/Account/Login");
-		url = "https://erp.dev1.adaptivegroups.asia/ERP/";
+		driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");
+		url = "https://erpauto.dev1.adaptivebizapp.com/ERP/";
 
 		Login lo = new Login(driver);
 
@@ -580,7 +578,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
 	// Product Page:-
-	@Ignore
+	//@Ignore
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -798,7 +796,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 	ArrayList<Vendor> vendorDetailsList = new ArrayList<>();
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
 	public void VendorPage() throws InterruptedException {
 
@@ -879,7 +877,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
@@ -957,7 +955,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, 50);
-		
+
 		js.executeScript("document.body.style.zoom='80%';");
 
 		PurchaseReturns pr = new PurchaseReturns(driver);
@@ -1028,14 +1026,14 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				Thread.sleep(2000);
 				click(pr.Qty);
 				Thread.sleep(4000);
-				
+
 				Actions actions = new Actions(driver);
 				actions.doubleClick(pr.Uom).build().perform();
-				
-				
+
+
 
 				// Wait until overlay gone
-			//	wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("a.leave_page")));
+				//	wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("a.leave_page")));
 
 				// Find and scroll
 				/*
@@ -1052,9 +1050,9 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				 */
 				WebElement element = driver.findElement(By.id("select2-ProductId-container"));
 
-			//	Actions actions = new Actions(driver);
+				//	Actions actions = new Actions(driver);
 				actions.clickAndHold(element).build().perform();
-				
+
 				// Screen shot to the batch details:-
 				DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 				LocalDateTime now111 = LocalDateTime.now();
@@ -1064,14 +1062,14 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				File s21 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " PurchaseReturn Product Errors "
 						+ timestamp1 + ".png");
 				FileUtils.copyFile(s11, s21);
-				
+
 
 				Thread.sleep(3000);
 
 				WebElement findElement2 = driver.findElement(By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search'][1]"));
 				findElement2.sendKeys(excelData.ProductCode + Keys.ENTER);
-			//	js.executeScript("arguments[0].value='" + excelData.ProductCode + "';", findElement2);
-				
+				//	js.executeScript("arguments[0].value='" + excelData.ProductCode + "';", findElement2);
+
 				// Screen shot to the batch details:-
 				DateTimeFormatter dtf12 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 				LocalDateTime now12 = LocalDateTime.now();
@@ -1083,8 +1081,8 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				FileUtils.copyFile(s12, s22);
 
 			}
-			
-			
+
+
 
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 				click(pr.Qty);
@@ -1114,7 +1112,11 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 					if (productDetails.IsCartonSelected.equalsIgnoreCase("true")) {
 
-						if (excelData.Uom.equalsIgnoreCase("1KG")) {
+						if (excelData.Uom.equalsIgnoreCase("1KG") ||
+								excelData.Uom.equalsIgnoreCase("1X10KG")||
+								excelData.Uom.equalsIgnoreCase("1X1KG")||
+								excelData.Uom.equalsIgnoreCase("1X1X1KG")||
+								excelData.Uom.equalsIgnoreCase("KG")) {
 
 							String[] split = productDetails.currentStockValue.split("[ B/L]+");
 							int boxStock = Integer.parseInt(split[0]);
@@ -1156,7 +1158,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 						for (ProductUOM productUom : ProductUOMDetailsList) {
 							if (productUom.ProductUOMtablesize > 0
-									&& productUom.productCode1.equals(productDetails.productName)) {
+				&& productUom.productCode1.equals(productDetails.productName)) {
 
 								for (UOM uomDetails : UomDetailsList) {
 									if (uomDetails.UomCodeValue.equalsIgnoreCase(productUom.SubUOM)) {
@@ -1611,7 +1613,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 	ArrayList<ReturnProductStock> ReturnProductStockList = new ArrayList<>();
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 19, dependsOnMethods = "ERPLoginPage")
 	public void ReturnStockProductPage() throws InterruptedException {
 
@@ -1666,7 +1668,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 	}
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 20, dependsOnMethods = "ERPLoginPage")
 	public void PurchaseReturnVoid() {
 
@@ -1686,7 +1688,15 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		click(pr.Delete);
 		// Thread.sleep(1000);
 		click(pr.PopupOk);
-		System.out.println("*** Purchase Invoice Delete Successfull ***");
+		try {
+
+			String alertText = driver.findElement(By.id("popup_message")).getText();
+			System.out.println("Alert Text: " + alertText);
+
+		} catch (Exception e) {
+			System.out.println("No alert appeared after save.");
+		}
+		System.out.println("*** Purchase Return Delete Successfull ***");
 		System.out.println();
 
 	}
@@ -1707,7 +1717,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 22, dependsOnMethods = "ERPLoginPage")
 	public void StockCalculation() {
 
@@ -1827,7 +1837,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 	} // Method loop
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 24, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 
@@ -1853,7 +1863,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			productcode.sendKeys(product);
 			Thread.sleep(1000);
-			click(prod.Fetch);
+			js.executeScript("arguments[0].click();", prod.Fetch);
 			Thread.sleep(3000);
 
 			WebElement DetailsIcon = driver
@@ -1892,7 +1902,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		System.out.println();
 	}
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 26, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 

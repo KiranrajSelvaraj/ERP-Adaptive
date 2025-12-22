@@ -29,11 +29,14 @@ public class Vendors {
 	@FindBy(id="Create")
 	public WebElement Create;
 	
-	@FindBy(id="Create")
+	@FindBy(id="btnCreate")
 	public WebElement Save;
 	
 	@FindBy(xpath="//input[@value='Back']")
 	public WebElement Back;
+	
+	@FindBy(id = "popup_ok")
+	public WebElement AlertOk;
 	
 	@FindBy(id="popup_cancel")
 	public WebElement AlertCancel;

@@ -42,9 +42,9 @@ public class CreditNotesVoidTest extends BaseClass {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 
-		driver.get("https://erp.dev1.adaptivegroups.asia/ERP/Account/Login");
-		url = "https://erp.dev1.adaptivegroups.asia/ERP/";
-
+		driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");
+		url = "https://erpauto.dev1.adaptivebizapp.com/ERP/";
+		
 		Login lo = new Login(driver);
 
 		Sendkeys(lo.CompanyCode, "UITDEMO1");
@@ -1463,7 +1463,18 @@ public class CreditNotesVoidTest extends BaseClass {
 		click(cn.Delete);
 		Thread.sleep(2000);
 		click(cn.PopupOk);
+		try {
+
+			String alertText = driver.findElement(By.id("popup_message")).getText();
+			System.out.println("Alert Text: " + alertText);
+
+		} catch (Exception e) {
+
+			System.out.println("No alert appeared after save.");
+
+		}
 		System.out.println("*** Credit Notes Delete Successfull ***");
+		System.out.println();
 	}
 
 	class StockCalculation {
@@ -1630,7 +1641,7 @@ public class CreditNotesVoidTest extends BaseClass {
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			productcode.sendKeys(product);
 			Thread.sleep(1000);
-			click(prod.Fetch);
+			wait.until(ExpectedConditions.elementToBeClickable(prod.Fetch)).click();
 			Thread.sleep(3000);
 
 			WebElement DetailsIcon = driver

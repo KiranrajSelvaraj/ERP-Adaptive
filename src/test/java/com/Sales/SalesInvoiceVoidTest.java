@@ -46,8 +46,9 @@ public class SalesInvoiceVoidTest extends BaseClass{
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
-			driver.get("https://erp.dev1.adaptivegroups.asia/ERP/Account/Login");
-			url = "https://erp.dev1.adaptivegroups.asia/ERP/";
+			
+			driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");
+			url = "https://erpauto.dev1.adaptivebizapp.com/ERP/";
 
 		}
 
@@ -1440,8 +1441,17 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		click(si.Delete);
 		Thread.sleep(1000);
 		click(si.PopupOk);
+		try {
+
+			String alertText = driver.findElement(By.id("popup_message")).getText();
+			System.out.println("Alert Text: "+alertText);
+
+		} catch (Exception e) {
+
+			System.out.println("No alert appeared after save.");
+
+		}
 		System.out.println("*** Sales Invoice Delete Successful ***");
-		System.out.println("***************************************");
 		System.out.println();
 
 	}

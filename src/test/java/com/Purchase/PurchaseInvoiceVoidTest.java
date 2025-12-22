@@ -48,8 +48,8 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 
-		driver.get("https://erp.dev1.adaptivegroups.asia/ERP/Account/Login");
-		url = "https://erp.dev1.adaptivegroups.asia/ERP/";
+		driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");
+		url = "https://erpauto.dev1.adaptivebizapp.com/ERP/";
 
 		Login lo = new Login(driver);
 
@@ -763,7 +763,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 	}
 
 	ArrayList<Vendor> vendorDetailsList = new ArrayList<>();
-	@Ignore
+	//@Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
 	public void VendorPage() throws InterruptedException {
 
@@ -841,7 +841,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 	}
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
-	@Ignore
+	//@Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
@@ -1509,15 +1509,23 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		//Void Process:-
 		System.out.println("Purchace Invoice Number is: "+formatedTimestamp);
 		Thread.sleep(3000);
-		/*	WebElement delete = driver.findElement(By.xpath
+		WebElement delete = driver.findElement(By.xpath
 				("//table[@id='purchasetable']//tbody//tr//td[contains(text(),'"+formatedTimestamp+"')]/following::td[4]//a[@title='Delete']"));
 		js.executeScript("arguments[0].click();", delete);
 		Thread.sleep(2000);
 		click(pi.Delete);
 		Thread.sleep(1000);
 		click(pi.PopupOk);
-		System.out.println("*** Purchase Invoice Void Successfull ***");*/
+		try {
 
+			String alertText = driver.findElement(By.id("popup_message")).getText();
+			System.out.println("Alert Text: "+alertText);
+
+		} catch (Exception e) {
+			System.out.println("No alert appeared after save.");
+		}
+		System.out.println("*** Purchase Invoice Void Successfull ***");
+		System.out.println();
 	}
 
 
@@ -1536,7 +1544,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 	}
 
 	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
-	@Ignore
+	//@Ignore
 	@Test(priority = 20, dependsOnMethods = "ERPLoginPage")
 	public void StockCalculation() {
 
@@ -1658,7 +1666,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 
 	} // Method loop
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 22, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 
@@ -1723,7 +1731,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		System.out.println();
 	}
 
-	@Ignore
+//	@Ignore
 	@Test(priority = 24, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 

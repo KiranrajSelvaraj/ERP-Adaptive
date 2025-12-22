@@ -45,6 +45,9 @@ public class Customers {
 	@FindBy(id="GSTRegistrationNo")
 	public WebElement GSTRegNo;
 	
+	@FindBy(id = "select2-GSTTypeId-container")
+	public WebElement GstType;
+	
 	@FindBy(id="select2-PaymentTermsId-container")
 	public WebElement CreditTerms;
 	

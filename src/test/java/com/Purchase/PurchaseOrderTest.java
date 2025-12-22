@@ -786,9 +786,9 @@ public class PurchaseOrderTest extends BaseClass {
 				js.executeScript("arguments[0].click();", fetchBtn);
 				Thread.sleep(3000);
 
-				WebElement EditIcon = driver.findElement(
+				WebElement DetailsIcon = driver.findElement(
 						By.xpath("//table[@id='vendortable']//tbody//tr//td[2]//following::td[6]//a[@title='Details']"));
-				js.executeScript("arguments[0].click();", EditIcon);
+				js.executeScript("arguments[0].click();", DetailsIcon);
 
 				String VendorName = driver.findElement(By.xpath("(//div[@class='col-lg-8']//child::h2//b)[1]"))
 						.getText();

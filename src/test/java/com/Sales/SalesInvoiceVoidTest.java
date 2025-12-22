@@ -46,7 +46,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
-			
+
 			driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");
 			url = "https://erpauto.dev1.adaptivebizapp.com/ERP/";
 

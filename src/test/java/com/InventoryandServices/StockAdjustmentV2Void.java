@@ -640,6 +640,14 @@ public class StockAdjustmentV2Void extends BaseClass{
 
 		click(sa.HoldV2);
 		click(sa.AlertPopupOK);
+		try {
+
+			String alertText = driver.findElement(By.id("popup_message")).getText();
+			System.out.println("Alert Text: " + alertText);
+
+		} catch (Exception e) {
+			System.out.println("No alert appeared after save");
+		}		
 		click(sa.AlertPopupOK);
 		System.out.println("*** Stock Adjustment Save Successfull ***");
 		System.out.println();
@@ -658,6 +666,15 @@ public class StockAdjustmentV2Void extends BaseClass{
 		js.executeScript("arguments[0].click();", delete);
 		click(sa.AlertPopupOK);
 		click(sa.AlertPopupOK);
+		try {
+
+			String alertText = driver.findElement(By.id("popup_message")).getText();
+			System.out.println("Alert Text: " + alertText);
+
+		} catch (Exception e) {
+			System.out.println("No alert appeared after save");
+		}		
+		
 		
 
 	} // Method loop

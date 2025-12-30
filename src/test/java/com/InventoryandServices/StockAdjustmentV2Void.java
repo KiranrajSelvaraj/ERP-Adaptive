@@ -15,6 +15,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -41,13 +42,13 @@ public class StockAdjustmentV2Void extends BaseClass{
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 
-		driver.get("https://payauto.dev.adaptivegroups.asia/Account/Login");
-		url = "https://payauto.dev.adaptivegroups.asia/ERP/";
+		driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");
+		url = "https://erpauto.dev1.adaptivebizapp.com/ERP/";
 
 		Login lo = new Login(driver);
 
 		Sendkeys(lo.CompanyCode, "UITDEMO1");
-		Sendkeys(lo.UserName, "Kiran1");
+		Sendkeys(lo.UserName, "Kiran01");
 		Sendkeys(lo.Password, "Adaptive*123");
 		click(lo.LoginButton);
 		Thread.sleep(2000);
@@ -59,7 +60,7 @@ public class StockAdjustmentV2Void extends BaseClass{
 
 			Navigate_to(ActURL);
 			Sendkeys(lo.CompanyCode, "UITDEMO1");
-			Sendkeys(lo.UserName, "Kiran2");
+			Sendkeys(lo.UserName, "Kiran02");
 			Sendkeys(lo.Password, "Adaptive*123");
 			Thread.sleep(1000);
 			click(lo.LoginButton);
@@ -73,7 +74,7 @@ public class StockAdjustmentV2Void extends BaseClass{
 
 			Navigate_to(ActURL1);
 			Sendkeys(lo.CompanyCode, "UITDEMO1");
-			Sendkeys(lo.UserName, "Kiran3");
+			Sendkeys(lo.UserName, "Kiran03");
 			Sendkeys(lo.Password, "Adaptive*123");
 			Thread.sleep(1000);
 			click(lo.LoginButton);
@@ -231,7 +232,7 @@ public class StockAdjustmentV2Void extends BaseClass{
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	// @Ignore
+	//@Ignore
 	@Test(priority = 6, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -248,7 +249,8 @@ public class StockAdjustmentV2Void extends BaseClass{
 		System.out.println("Product Set Size: " + productSetSize);
 		for (String product : ProductSet) {
 
-			WebElement productcode = driver.findElement(By.xpath("(//input[@id='SearchString'])[1]"));
+			WebElement productcode = driver.findElement(By.xpath
+					("(//input[@id='SearchString' and @placeholder='Find a product or code '])[1]"));
 			Thread.sleep(1000);
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			productcode.sendKeys(product);
@@ -450,7 +452,7 @@ public class StockAdjustmentV2Void extends BaseClass{
 	//	Set<String> UomSet = new LinkedHashSet<String>();
 
 
-	// @Ignore
+	//@Ignore
 	@Test(priority = 8, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
@@ -528,9 +530,11 @@ public class StockAdjustmentV2Void extends BaseClass{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		StockAdjustment sa = new StockAdjustment(driver);
-
+		
+		Thread.sleep(2000);
 		WebElement createV2 = wait.until(ExpectedConditions.visibilityOf(sa.CreateV2));
 		js.executeScript("arguments[0].click();", createV2);
+		Thread.sleep(2000);
 
 		double expOverAllTotal = 0;
 
@@ -539,14 +543,20 @@ public class StockAdjustmentV2Void extends BaseClass{
 		for (int i = 0; i < ExcelDataListSize; i++) {
 			ExcelData excelData = excelDataList.get(i);
 
-			wait.until(ExpectedConditions.visibilityOf(sa.StockAdjustmentTypeV2)).click();
-			driver.findElement(
-					By.xpath("//span[@id='select2-StockAdjustmentTypeId-container']//following::input[@type='search']"))
-			.sendKeys(excelData.StockAdjustmentType + Keys.ENTER);
+			if (i == 0) {
+				
+				Thread.sleep(2000);
+				WebElement stockadjustmenttype = wait.until(ExpectedConditions.elementToBeClickable(sa.StockAdjustmentTypeV2));
+				stockadjustmenttype.click();
+				driver.findElement(
+						By.xpath("//span[@id='select2-StockAdjustmentTypeId-container']//following::input[@type='search']"))
+				.sendKeys(excelData.StockAdjustmentType + Keys.ENTER);
+
+			}
 
 			click(sa.ChooseProductV2);
 			driver.findElement(By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"))
-			.sendKeys(excelData.ProductName + Keys.ENTER);
+			.sendKeys(excelData.ProductCode + Keys.ENTER);
 
 
 			click(sa.UOMV2);
@@ -570,13 +580,16 @@ public class StockAdjustmentV2Void extends BaseClass{
 
 			} else {
 
-				if (excelData.Uom.contains("X")) {
-					click(sa.BQtyV2);
-					Sendkeys(sa.BQtyV2, excelData.Qty);
-
-				} else {
+				if (!excelData.Uom.contains("1KG") ||
+						excelData.Uom.contains("1X10KG") ||
+						excelData.Uom.contains("1X1KG")||
+						excelData.Uom.contains("1X1X1KG")||
+						excelData.Uom.contains("KG")) {
 					click(sa.LQtyV2);
 					Sendkeys(sa.LQtyV2, excelData.Qty);
+				} else {
+					click(sa.BQtyV2);
+					Sendkeys(sa.BQtyV2, excelData.Qty);
 
 				}
 

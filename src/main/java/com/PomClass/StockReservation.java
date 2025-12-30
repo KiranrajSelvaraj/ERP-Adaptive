@@ -72,6 +72,8 @@ public class StockReservation {
 	@FindBy(id = "popup_ok")
 	public WebElement PopupOk;
 	
+	@FindBy(id = "Reverse")
+	public WebElement Reverse;
 	
 	
 	public StockReservation(WebDriver driver) {

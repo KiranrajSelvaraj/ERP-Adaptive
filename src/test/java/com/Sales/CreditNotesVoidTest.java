@@ -1191,8 +1191,9 @@ public class CreditNotesVoidTest extends BaseClass {
 			System.out.println();
 
 			// Add:-
-			Thread.sleep(1000);
-			click(cn.Add);
+			Thread.sleep(2000);
+			WebElement add = wait.until(ExpectedConditions.elementToBeClickable(cn.Add));
+			add.click();
 			Thread.sleep(2000);
 
 			// Batch Details:-

@@ -58,8 +58,8 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
-			driver.get("https://erp.dev1.adaptivegroups.asia/ERP/Account/Login");
-			url = "https://erp.dev1.adaptivegroups.asia/ERP/";
+			driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");
+			url = "https://erpauto.dev1.adaptivebizapp.com/ERP/";
 
 		}
 
@@ -2409,14 +2409,35 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		driver.navigate().to(url + "SalesPurchases/Product/ProductMovementsIndex");
 		Thread.sleep(7000);
 		System.out.println("*** Product Movement Page ***");
-		for (String product : ProductSet) {
+		for (ExcelData excelData : excelDataList) {
 
 			click(pm.ChooseProduct);
 			WebElement productcode = driver.findElement(
 					By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"));
 			Thread.sleep(1000);
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-			productcode.sendKeys(product + Keys.ENTER);
+			productcode.sendKeys(excelData.ProductCode + Keys.ENTER);
+			Thread.sleep(2000);
+			
+			WebElement uomField = driver.findElement(By.id("UOM"));
+
+			if (uomField.isEnabled()) {
+				
+				click(pm.UOM);
+				List<WebElement> subUomOption = driver.findElements(By.xpath(
+						"//span[@id='select2-UOM-container']//following::input[@type='search']//following::ul//li"));
+				for (WebElement option : subUomOption) {
+					if (option.getText().trim().equals(excelData.Uom)) {
+						option.click();
+						break;
+					}
+
+				}
+				
+			} else {
+			    System.out.println("UOM field is NON-EDITABLE");
+			}
+			
 			Thread.sleep(1000);
 			js.executeScript("arguments[0].click();", pm.Fetch);
 			Thread.sleep(3000);

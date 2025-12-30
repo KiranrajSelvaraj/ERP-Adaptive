@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>40/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>51/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Dec 22 14:16:27 IST 2025</td>
+<td>Started on:</td><td>Tue Dec 30 09:48:05 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>3326 seconds (3326661 ms)</td>
+<tr><td>Total time:</td><td>19 seconds (19838 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,37 +76,36 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.ExpectedProduct()'><b>ExpectedProduct</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;button&quot; value=&quot;Fetch&quot; id=&quot;searchstring&quot; class=&quot;btn btn-primary&quot;&gt; is not clickable at point (1272, 155). Other element would receive the click: &lt;div class=&quot;modal&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=143.0.7499.41)
+<td title='com.InventoryandServices.StockAdjustmentV2Void.ExpectedProduct()'><b>ExpectedProduct</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void</td>
+<td><div><pre>org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=143.0.7499.170)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.29.93&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63630}, goog:processID: 22884, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 229a1cbd2e06b81cbef5dcf454d84c73
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53163}, goog:processID: 23384, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ad17229356d4655bc71b06bcc162e2ca
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy11.click(Unknown Source)
-	at com.BaseClass.BaseClass.click(BaseClass.java:103)
-	at com.Purchase.PurchaseReturnVoidTest.ExpectedProduct(PurchaseReturnVoidTest.java:1864)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.back(RemoteWebDriver.java:849)
+	at com.InventoryandServices.StockAdjustmentV2Void.ExpectedProduct(StockAdjustmentV2Void.java:864)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 20 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace723977360", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace723977360'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;button&quot; value=&quot;Fetch&quot; id=&quot;searchstring&quot; class=&quot;btn btn-primary&quot;&gt; is not clickable at point (1272, 155). Other element would receive the click: &lt;div class=&quot;modal&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=143.0.7499.41)
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1648116478", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1648116478'><pre>org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=143.0.7499.170)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.29.93&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63630}, goog:processID: 22884, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 229a1cbd2e06b81cbef5dcf454d84c73
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53163}, goog:processID: 23384, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ad17229356d4655bc71b06bcc162e2ca
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -118,67 +117,9 @@ Session ID: 229a1cbd2e06b81cbef5dcf454d84c73
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at jdk.internal.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy11.click(Unknown Source)
-	at com.BaseClass.BaseClass.click(BaseClass.java:103)
-	at com.Purchase.PurchaseReturnVoidTest.ExpectedProduct(PurchaseReturnVoidTest.java:1864)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-</pre></div></td>
-<td>272</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.Exception()'><b>Exception</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	Actual and Expected QOH Mismatched for Product: Sona Masoori expected [2 B/0 L] but found [0 B/20 L],
-	Actual and Expected QOH Mismatched for Product: Idli Rice expected [3 B/0 L] but found [0 B/30 L],
-	Actual and Expected QOH Mismatched for Product: Seeraga Samba expected [2 B/0 L] but found [0 B/20 L],
-	Actual and Expected QOH Mismatched for Product: Matta Rice (Kerala Red Rice) expected [2 B/0 L] but found [0 B/20 L],
-	Actual and Expected QOH Mismatched for Product: Jeeraga Samba expected [2 B/0 L] but found [0 B/20 L],
-	Actual and Expected QOH Mismatched for Product: Kolam Rice expected [3 B/0 L] but found [0 B/30 L],
-	Actual and Expected QOH Mismatched for Product: Boiled Rice (Parboiled Rice) expected [3 B/0 L] but found [0 B/30 L],
-	Actual and Expected QOH Mismatched for Product: Raw Rice (White Rice) expected [3 B/0 L] but found [0 B/30 L],
-	Actual and Expected QOH Mismatched for Product: Brown Rice expected [3 B/0 L] but found [0 B/30 L],
-	Actual and Expected QOH Mismatched for Product: Black Rice (Karuppu Kavuni) expected [4 B/0 L] but found [0 B/40 L],
-	Actual and Expected Product Movement Stock Mismatched for Product Coffee Day (CCD) expected [525] but found [1125]
-	at com.Purchase.PurchaseReturnVoidTest.Exception(PurchaseReturnVoidTest.java:1975)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1578586665", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1578586665'><pre>java.lang.AssertionError: The following asserts failed:
-	Actual and Expected QOH Mismatched for Product: Sona Masoori expected [2 B/0 L] but found [0 B/20 L],
-	Actual and Expected QOH Mismatched for Product: Idli Rice expected [3 B/0 L] but found [0 B/30 L],
-	Actual and Expected QOH Mismatched for Product: Seeraga Samba expected [2 B/0 L] but found [0 B/20 L],
-	Actual and Expected QOH Mismatched for Product: Matta Rice (Kerala Red Rice) expected [2 B/0 L] but found [0 B/20 L],
-	Actual and Expected QOH Mismatched for Product: Jeeraga Samba expected [2 B/0 L] but found [0 B/20 L],
-	Actual and Expected QOH Mismatched for Product: Kolam Rice expected [3 B/0 L] but found [0 B/30 L],
-	Actual and Expected QOH Mismatched for Product: Boiled Rice (Parboiled Rice) expected [3 B/0 L] but found [0 B/30 L],
-	Actual and Expected QOH Mismatched for Product: Raw Rice (White Rice) expected [3 B/0 L] but found [0 B/30 L],
-	Actual and Expected QOH Mismatched for Product: Brown Rice expected [3 B/0 L] but found [0 B/30 L],
-	Actual and Expected QOH Mismatched for Product: Black Rice (Karuppu Kavuni) expected [4 B/0 L] but found [0 B/40 L],
-	Actual and Expected Product Movement Stock Mismatched for Product Coffee Day (CCD) expected [525] but found [1125]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-	at com.Purchase.PurchaseReturnVoidTest.Exception(PurchaseReturnVoidTest.java:1975)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.back(RemoteWebDriver.java:849)
+	at com.InventoryandServices.StockAdjustmentV2Void.ExpectedProduct(StockAdjustmentV2Void.java:864)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -196,7 +137,129 @@ Session ID: 229a1cbd2e06b81cbef5dcf454d84c73
 	at java.base/java.lang.Thread.run(Thread.java:833)
 </pre></div></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.StockAdjustment()'><b>StockAdjustment</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=143.0.7499.170)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.29.93&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53163}, goog:processID: 23384, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ad17229356d4655bc71b06bcc162e2ca
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:857)
+	at com.InventoryandServices.StockAdjustmentV2Void.StockAdjustment(StockAdjustmentV2Void.java:526)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace684142346", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace684142346'><pre>org.openqa.selenium.WebDriverException: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=143.0.7499.170)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.29.93&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53163}, goog:processID: 23384, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ad17229356d4655bc71b06bcc162e2ca
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:857)
+	at com.InventoryandServices.StockAdjustmentV2Void.StockAdjustment(StockAdjustmentV2Void.java:526)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.ProductMovementPage()'><b>ProductMovementPage</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void</td>
+<td><div><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.29.93&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53163}, goog:processID: 23384, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ad17229356d4655bc71b06bcc162e2ca
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:857)
+	at com.InventoryandServices.StockAdjustmentV2Void.ProductMovementPage(StockAdjustmentV2Void.java:929)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1586566062", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1586566062'><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.29.93&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53163}, goog:processID: 23384, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ad17229356d4655bc71b06bcc162e2ca
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:857)
+	at com.InventoryandServices.StockAdjustmentV2Void.ProductMovementPage(StockAdjustmentV2Void.java:929)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>1</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -207,205 +270,260 @@ Session ID: 229a1cbd2e06b81cbef5dcf454d84c73
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0263, Hatti Kaapi, 25X25X1GM, 1, , 5, , , , , 144, , , , , , , , FALSE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0449, KitKat Dark, 1X1KG, 10, FALSE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0256, Nescafé, 25X25X1GM, 1, , 5, , , , , 137, , , , , , , , TRUE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0481, Milano, PCS, 10, FALSE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0229, Raw Rice (White Rice), 1X1X1KG, 1, , 5, , , , , 133, , , , , , , , FALSE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0476, Arrowroot Biscuit, Packets, 10, TRUE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0264, Bayar’s Coffee, 25X25X1GM, 1, , 5, , , , , 145, , , , , , , TRUE, FALSE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0464, Rusk, 10X1GM, 1, FALSE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.ProductMovementPage()'><b>ProductMovementPage</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
-<td></td>
-<td>367</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.PurchaseReturnVoid()'><b>PurchaseReturnVoid</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
-<td></td>
-<td>33</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0225, Matta Rice (Kerala Red Rice), 1X1X1KG, 1, , 5, , , , , 129, , , , , , , , TRUE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0472, Coconut Biscuits, Packets, 10, TRUE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0293, Groundnut Oil, PCS, 1, , 5, , , , , 150, , , , , , , , TRUE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0439, Milkybar, 1X1KG, 10, TRUE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.StockCalculation()'><b>StockCalculation</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0478, Parle-G, PCS, 10, FALSE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0261, Blue Tokai Coffee, 25X25X1GM, 1, , 5, , , , , 142, , , , , , , , FALSE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0482, Unibic Oats Cookies, PCS, 10, FALSE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0289, Rajma (Kidney Beans), PCS, 1, , 5, , , , , 146, , , , , , , , TRUE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0440, Galaxy, 1X1KG, 10, TRUE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: V0001, SGD, 1, , Product, P0222, Sona Masoori, 1X1X1KG, 1, , 5, , , , , 126, , , $, 25, 15, 9, , TRUE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0448, Ghirardelli Dark, 1X1KG, 10, FALSE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0262, Sleepy Owl, 25X25X1GM, 1, , 5, , , , , 143, , , , , , , , FALSE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0461, Digestive Biscuit, 10X1GM, 1, TRUE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.UomPage()'><b>UomPage</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
-<td></td>
-<td>32</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0230, Brown Rice, 1X1X1KG, 1, , 5, , , , , 134, , , , , , , , FALSE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0468, McVitie’s Digestive, 10X1GM, 1, FALSE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0296, Mustard Oil, Packets, 1, , 5, , , , , 153, , , , , , , , FALSE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0447, Godiva Dark, 1X1KG, 10, FALSE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0298, Poha (Flattened Rice), Packets, 1, , 5, , , , , 155, , , , , , , , FALSE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0460, Lindt Swiss Classic, 10X1GM, 1, TRUE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0255, Bru (Instant / Filter Blend), 25X25X1GM, 1, , 5, , , , , 136, , , , , , , , TRUE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0455, Twix, 10X1GM, 1, TRUE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.VendorPage()'><b>VendorPage</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
-<td></td>
-<td>22</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0258, Narasu’s Coffee, 25X25X1GM, 1, , 5, , , , , 139, , , , , , , , TRUE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0465, Britannia NutriChoice, 10X1GM, 1, FALSE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0231, Black Rice (Karuppu Kavuni), 1X1X1KG, 1, , 5, , , , , 135, , , , , , , TRUE, FALSE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0452, Hershey’s White, 1X1KG, 10, FALSE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0290, Chole (White Chickpeas), PCS, 1, , 5, , , , , 147, , , , , , , , TRUE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: Add, HQ, P0438, Dairy Milk, 1X1KG, 10, TRUE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0294, Gingelly (Sesame) Oil, Packets, 1, , 5, , , , , 151, , , , , , , TRUE, FALSE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0454, Mars, 1X1KG, 10, FALSE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0295, Coconut Oil, Packets, 1, , 5, , , , , 152, , , , , , , , FALSE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0475, Atta Biscuit, Packets, 10, TRUE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0291, Black Gram, PCS, 1, , 5, , , , , 148, , , , , , , , TRUE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0483, Oreo Strawberry, PCS, 10, FALSE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.PurchaseReturn()'><b>PurchaseReturn</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
-<td></td>
-<td>881</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0227, Kolam Rice, 1X1X1KG, 1, , 5, , , , , 131, , , , , , , TRUE, FALSE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0456, KitKat, 10X1GM, 1, TRUE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0257, Levista, 25X25X1GM, 1, , 5, , , , , 138, , , , , , , , TRUE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0457, 5 Star, 10X1GM, 1, TRUE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
-<td></td>
-<td>10</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0228, Boiled Rice (Parboiled Rice), 1X1X1KG, 1, , 5, , , , , 132, , , , , , , , FALSE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0480, Monaco, PCS, 10, FALSE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0224, Seeraga Samba, 1X1X1KG, 1, , 5, , , , , 128, , , , , , , , TRUE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.Exception()'><b>Exception</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0292, Sunflower Oil, PCS, 1, , 5, , , , , 149, , , , , , , , TRUE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0473, Butter Biscuits, Packets, 10, TRUE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0223, Idli Rice, 1X1X1KG, 1, , 5, , , , , 127, , , , , , , TRUE, TRUE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.StockCalculation()'><b>StockCalculation</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.ProductPage()'><b>ProductPage</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
-<td></td>
-<td>1190</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.ReturnStockProductPage()'><b>ReturnStockProductPage</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
-<td></td>
-<td>394</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0260, Tata Coffee / Tata Grand, 25X25X1GM, 1, , 5, , , , , 141, , , , , , , , FALSE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0450, Milkybar White, 1X1KG, 10, FALSE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0226, Jeeraga Samba, 1X1X1KG, 1, , 5, , , , , 130, , , , , , , , TRUE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0462, Cream Crackers, 10X1GM, 1, FALSE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0259, Coffee Day (CCD), 25X25X1GM, 1, , 5, , , , , 140, , , , , , , TRUE, TRUE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0445, Bournville, 1X1KG, 10, TRUE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0297, Ghee, Packets, 1, , 5, , , , , 154, , , , , , , , FALSE, , </td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0441, Lindt Milk Chocolate, 1X1KG, 10, TRUE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.SystemSettingsPage()'><b>SystemSettingsPage</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0443, Amul Milk Chocolate, 1X1KG, 10, TRUE</td>
 <td></td>
-<td>119</td>
-<td>com.Purchase.PurchaseReturnVoidTest@5b1669c0</td></tr>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0458, Munch, 10X1GM, 1, TRUE</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0463, Little Hearts, 10X1GM, 1, FALSE</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0485, Milk Bikis, PCS, 10, FALSE</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void</td>
+<td></td>
+<td>14</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0467, Horlicks Biscuits, 10X1GM, 1, FALSE</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0469, Bourbon Cream, 10X1GM, 1, FALSE</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0477, Salted Biscuit, Packets, 10, TRUE</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0444, Nestlé Milk Chocolate, 1X1KG, 10, TRUE</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0459, Ferrero Rocher, 10X1GM, 1, TRUE</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0451, Lindt White, 1X1KG, 10, FALSE</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0471, Ginger Nut Biscuits, Packets, 10, TRUE</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0442, Toblerone, 1X1KG, 10, TRUE</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0446, Hershey’s Dark, 1X1KG, 10, TRUE</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0453, Snickers, 1X1KG, 10, FALSE</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0484, Marie Gold, PCS, 10, FALSE</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0466, Sunfeast Dark Fantasy, 10X1GM, 1, FALSE</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0474, Cashew Cookies, Packets, 10, TRUE</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0470, Chocolate Chip Cookies, Packets, 10, TRUE</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV2Void.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV2Void<br>Parameters: , , P0479, Krackjack, PCS, 10, FALSE</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV2Void@3c77d488</td></tr>
 </table><p>
 </body>
 </html>

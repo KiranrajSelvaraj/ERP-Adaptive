@@ -1003,7 +1003,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 			js.executeScript("arguments[0].click();", qty);
 
 			if (excelData.Type.equalsIgnoreCase("Product")) {
-
+				click(pi.Qty);
 				click(pi.Uom);
 				List<WebElement> subUomOption = driver.findElements(By.xpath(
 						"//span[@id='select2-UOMId-container']//following::input[@type='search']//following::ul//li"));

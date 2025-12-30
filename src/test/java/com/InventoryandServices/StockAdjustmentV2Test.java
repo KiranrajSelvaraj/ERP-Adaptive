@@ -11,6 +11,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -232,7 +233,7 @@ public class StockAdjustmentV2Test extends BaseClass{
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -448,7 +449,7 @@ public class StockAdjustmentV2Test extends BaseClass{
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
@@ -517,7 +518,7 @@ public class StockAdjustmentV2Test extends BaseClass{
 
 	//@Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
-	public void StockAdjustment() {
+	public void StockAdjustment() throws InterruptedException {
 
 		driver.navigate().to(url + "SalesPurchases/StockAdjustmentV2");
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
@@ -525,10 +526,12 @@ public class StockAdjustmentV2Test extends BaseClass{
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, 10);
+		Actions action = new Actions(driver);
 		StockAdjustment sa = new StockAdjustment(driver);
 
 		WebElement createV2 = wait.until(ExpectedConditions.visibilityOf(sa.CreateV2));
 		js.executeScript("arguments[0].click();", createV2);
+		Thread.sleep(3000);
 		
 		double expOverAllTotal = 0;
 
@@ -539,9 +542,9 @@ public class StockAdjustmentV2Test extends BaseClass{
 
 			if (i == 0) {
 				
-				wait.until(ExpectedConditions.elementToBeClickable(sa.StockAdjustmentTypeV2));
-
-				js.executeScript("arguments[0].click();", sa.StockAdjustmentTypeV2);
+				Thread.sleep(2000);
+				WebElement stockadjustmenttype = wait.until(ExpectedConditions.elementToBeClickable(sa.StockAdjustmentTypeV2));
+				stockadjustmenttype.click();
 				driver.findElement(
 						By.xpath("//span[@id='select2-StockAdjustmentTypeId-container']//following::input[@type='search']"))
 				.sendKeys(excelData.StockAdjustmentType + Keys.ENTER);

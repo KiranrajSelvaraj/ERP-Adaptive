@@ -627,7 +627,7 @@ public class StockAdjustmentV2Void extends BaseClass{
 					batchLQty.sendKeys(Keys.CONTROL + "a" +Keys.DELETE);
 					batchLQty.sendKeys(excelData.Qty);
 				}				
-
+				Thread.sleep(1000);
 				WebElement close = driver.findElement(By.xpath("(//label[text()='"+excelData.ProductName+"']//preceding::span[@class='tooltipclose'])["+(i+1)+"]"));
 				js.executeScript("arguments[0].click();", close);
 			}
@@ -912,10 +912,10 @@ public class StockAdjustmentV2Void extends BaseClass{
 					if (stock.productName.equalsIgnoreCase(productName)) {
 
 						System.out.println("Actual Current Stock: "+afterCurrentStockValue);
-						System.out.println("Expected current Stock: "+stock.calculateStock);
+						System.out.println("Expected current Stock: "+stock.calculateStock.replaceAll("\\.0$", ""));
 						System.out.println();
 						
-						soft.assertEquals(afterCurrentStockValue, stock.calculateStock, 
+						soft.assertEquals(afterCurrentStockValue, stock.calculateStock.replaceAll("\\.0$", ""), 
 								"Actual and Expected Product Stock Mismatched for Product "+stock.productName);
 						
 					}			
@@ -944,15 +944,31 @@ public class StockAdjustmentV2Void extends BaseClass{
 		ProductMovement pm = new ProductMovement(driver);
 
 		Thread.sleep(5000);		
-		for (String product : ProductSet) {
+		for (ExcelData excelData : excelDataList) {
 
 			click(pm.ChooseProduct);
 			WebElement productcode = driver.findElement(
 					By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"));
 			Thread.sleep(1000);
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-			productcode.sendKeys(product + Keys.ENTER);
+			productcode.sendKeys(excelData.ProductCode + Keys.ENTER);
 			Thread.sleep(1000);
+			
+			boolean enabledUom = driver.findElement(By.xpath("//select[@id='UOM']")).isEnabled();
+			System.out.println("enabledUom: "+enabledUom);
+			if (enabledUom == true ) {
+				
+				click(pm.UOM);
+				List<WebElement> subUomOption = driver.findElements(By.xpath(
+						"//span[@id='select2-UOMId-container']//following::input[@type='search']//following::ul//li"));
+				for (WebElement option : subUomOption) {
+					if (option.getText().trim().equals(excelData.Uom)) {
+						option.click();
+						break;
+					}
+				}	
+			}
+			
 			js.executeScript("arguments[0].click();", pm.Fetch);
 			Thread.sleep(3000);
 
@@ -976,7 +992,7 @@ public class StockAdjustmentV2Void extends BaseClass{
 							System.out.println("Product Movement Name: "+ trimProductName);
 							System.out.println("Actual Product Movement Stock: "+ balanceQty);
 							System.out.println("Expected Product Movement Stock: "+ replaceProductStock);
-
+							System.out.println();
 
 							soft.assertEquals(balanceQty, replaceProductStock,
 									"Actual and Expected Product Movement Stock Mismatched for Product "
@@ -986,10 +1002,10 @@ public class StockAdjustmentV2Void extends BaseClass{
 
 							System.out.println("Product Movement Name: "+ trimProductName);
 							System.out.println("Actual Product Movement Stock: "+ balanceQty);
-							System.out.println("Expected Product Movement Stock: "+stock.calculateStock);
+							System.out.println("Expected Product Movement Stock: "+stock.calculateStock.replaceAll("\\.0$", ""));
+							System.out.println();
 
-
-							soft.assertEquals(balanceQty, stock.calculateStock,
+							soft.assertEquals(balanceQty, stock.calculateStock.replaceAll("\\.0$", ""),
 									"Actual and Expected Product Movement Stock Mismatched for Product "
 											+ trimProductName);
 

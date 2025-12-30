@@ -6,8 +6,7 @@
     <classes>
       <class name="com.InventoryandServices.StockAdjustmentV2Void">
         <methods>
-          <include name="ExpectedProduct"/>
-          <include name="ProductMovementPage"/>
+          <include name="Exception"/>
           <include name="ERPLoginPage"/>
           <include name="StockAdjustment"/>
         </methods>

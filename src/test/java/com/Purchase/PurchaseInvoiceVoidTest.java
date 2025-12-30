@@ -998,10 +998,10 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 				.sendKeys(excelData.ProductCode + Keys.ENTER);
 
 			}
-
+			Thread.sleep(1000);
 			WebElement qty = driver.findElement(By.xpath("(//input[@id='Qty'])[1]"));
 			js.executeScript("arguments[0].click();", qty);
-
+			Thread.sleep(1000);
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 				click(pi.Qty);
 				click(pi.Uom);
@@ -1731,7 +1731,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		System.out.println();
 	}
 
-//	@Ignore
+	//@Ignore
 	@Test(priority = 24, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 

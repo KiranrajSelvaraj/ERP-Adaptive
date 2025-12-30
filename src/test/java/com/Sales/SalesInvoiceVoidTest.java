@@ -1673,15 +1673,31 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		driver.navigate().to(url + "SalesPurchases/Product/ProductMovementsIndex");
 		Thread.sleep(7000);
 		System.out.println("*** Product Movement Page ***");
-		for (String product : ProductSet) {
+		
+		for (ExcelData excelData : excelDataList) {
 
 			click(pm.ChooseProduct);
 			WebElement productcode = driver.findElement(
 					By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"));
 			Thread.sleep(1000);
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-			productcode.sendKeys(product + Keys.ENTER);
+			productcode.sendKeys(excelData.ProductCode + Keys.ENTER);
 			Thread.sleep(1000);
+			
+			boolean enabledUom = driver.findElement(By.xpath("//select[@id='UOM']")).isEnabled();
+			System.out.println("enabledUom: "+enabledUom);
+			if (enabledUom == true ) {
+				
+				click(pm.UOM);
+				List<WebElement> subUomOption = driver.findElements(By.xpath(
+						"//span[@id='select2-UOMId-container']//following::input[@type='search']//following::ul//li"));
+				for (WebElement option : subUomOption) {
+					if (option.getText().trim().equals(excelData.Uom)) {
+						option.click();
+						break;
+					}
+				}	
+			}
 			js.executeScript("arguments[0].click();", pm.Fetch);
 			Thread.sleep(3000);
 

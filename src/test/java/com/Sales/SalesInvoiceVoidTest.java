@@ -1,6 +1,10 @@
 package com.Sales;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -9,9 +13,12 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -876,7 +883,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
-	public void SalesInvoicetoVoidProcess() throws InterruptedException {
+	public void SalesInvoicetoVoidProcess() throws InterruptedException, IOException {
 
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -961,16 +968,42 @@ public class SalesInvoiceVoidTest extends BaseClass{
 			Thread.sleep(3000);
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 				
-				fluentwait.until(driver -> {
+				// Screen shot to the product:-
+				DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+				LocalDateTime now1 = LocalDateTime.now();
+				String timestamp1 = dtf1.format(now1).replace(":", ";").replace("/", "-");
+				TakesScreenshot ts1 = (TakesScreenshot) driver;
+				File s1 = ts1.getScreenshotAs(OutputType.FILE);
+				File s2 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Product Field Error "
+						+ timestamp1 + ".png");
+				FileUtils.copyFile(s1, s2);
+				
+			/*	fluentwait.until(driver -> {
 				    WebElement prodfield = driver.findElement(By.xpath("//span[@id='select2-ProductId-container']"));
 				    prodfield.click();
 				    return true;
-				    });
+				    }); */
+				WebElement product = wait.until(
+				        ExpectedConditions.elementToBeClickable(By.id("select2-ProductId-container"))
+				);
+				js.executeScript("arguments[0].click();", product);
+				
+				// Screen shot to the product:-
+				DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+				LocalDateTime now2 = LocalDateTime.now();
+				String timestamp2 = dtf2.format(now2).replace(":", ";").replace("/", "-");
+				TakesScreenshot ts2 = (TakesScreenshot) driver;
+				File s11 = ts2.getScreenshotAs(OutputType.FILE);
+				File s21 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Product Field Error "
+						+ timestamp2 + ".png");
+				FileUtils.copyFile(s11, s21);
 
 				WebElement productSearch = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
 						("//span[@id='select2-ProductId-container']//following::input[@type='search']")));
 				productSearch.click();
 				productSearch.sendKeys(excelData.ProductCode + Keys.ENTER);
+				
+				
 
 			} else if (excelData.Type.equalsIgnoreCase("Service")) {
 

@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="39" passed="38" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-31T09:32:49 IST" name="Suite" finished-at="2025-12-31T10:23:27 IST" duration-ms="3038042">
+  <suite started-at="2025-12-31T10:31:17 IST" name="Suite" finished-at="2025-12-31T11:11:38 IST" duration-ms="2420701">
     <groups>
     </groups>
-    <test started-at="2025-12-31T09:32:49 IST" name="Test" finished-at="2025-12-31T10:23:27 IST" duration-ms="3038042">
+    <test started-at="2025-12-31T10:31:17 IST" name="Test" finished-at="2025-12-31T11:11:38 IST" duration-ms="2420701">
       <class name="com.Sales.CreditNotesVoidTest">
-        <test-method signature="ERPLoginPage()[pri:1, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:32:49 IST" name="ERPLoginPage" finished-at="2025-12-31T09:33:00 IST" duration-ms="10459" status="PASS">
+        <test-method signature="ERPLoginPage()[pri:1, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:17 IST" name="ERPLoginPage" finished-at="2025-12-31T10:31:32 IST" duration-ms="14827" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ERPLoginPage -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:33 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -142,7 +142,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="7" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -273,7 +273,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="4" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -404,7 +404,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="5" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -535,7 +535,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="4" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -666,7 +666,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="3" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="5" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -797,7 +797,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -928,7 +928,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="5" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1059,7 +1059,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="4" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1190,7 +1190,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="5" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1321,7 +1321,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="6" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1452,7 +1452,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="3" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1583,7 +1583,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="6" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1714,7 +1714,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1845,7 +1845,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="15" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1976,7 +1976,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="5" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="7" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -2107,7 +2107,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="4" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -2238,7 +2238,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -2369,7 +2369,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -2500,7 +2500,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -2631,7 +2631,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="3" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="9" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -2762,7 +2762,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -2893,7 +2893,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="4" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -3024,7 +3024,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:01 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:01 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="3" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="13" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -3155,7 +3155,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:02 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:02 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -3286,7 +3286,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:02 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:02 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -3417,7 +3417,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:02 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:02 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -3548,7 +3548,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:02 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:02 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="5" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="18" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -3679,7 +3679,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:02 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:02 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="3" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -3810,7 +3810,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:02 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T09:33:02 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="GetData" data-provider="Util1" finished-at="2025-12-31T10:31:34 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -3941,61 +3941,57 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="SystemSettings()[pri:6, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:33:02 IST" name="SystemSettings" finished-at="2025-12-31T09:35:08 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="126762" status="PASS">
+        <test-method signature="SystemSettings()[pri:6, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:31:34 IST" name="SystemSettings" finished-at="2025-12-31T10:33:42 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="127571" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SystemSettings -->
-        <test-method signature="ProductPage()[pri:8, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:35:08 IST" name="ProductPage" finished-at="2025-12-31T09:55:27 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="1218408" status="PASS">
+        <test-method signature="ProductPage()[pri:8, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:33:42 IST" name="ProductPage" finished-at="2025-12-31T10:53:40 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="1198554" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ProductPage -->
-        <test-method signature="UomPage()[pri:10, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:55:27 IST" name="UomPage" finished-at="2025-12-31T09:56:00 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="33088" status="PASS">
+        <test-method signature="UomPage()[pri:10, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:53:40 IST" name="UomPage" finished-at="2025-12-31T10:54:14 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="33717" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UomPage -->
-        <test-method signature="DirecteCreditNote()[pri:12, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T09:56:00 IST" name="DirecteCreditNote" finished-at="2025-12-31T10:02:48 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="408262" status="PASS">
+        <test-method signature="DirecteCreditNote()[pri:12, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:54:14 IST" name="DirecteCreditNote" finished-at="2025-12-31T11:00:51 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="397450" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DirecteCreditNote -->
-        <test-method signature="StockCalculation()[pri:14, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:02:48 IST" name="StockCalculation" finished-at="2025-12-31T10:02:48 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="4" status="PASS">
+        <test-method signature="StockCalculation()[pri:14, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T11:00:51 IST" name="StockCalculation" finished-at="2025-12-31T11:00:51 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="39" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StockCalculation -->
-        <test-method signature="ExpectedProduct()[pri:16, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:02:48 IST" name="ExpectedProduct" finished-at="2025-12-31T10:09:32 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="403585" status="PASS">
+        <test-method signature="ExpectedProduct()[pri:16, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T11:00:51 IST" name="ExpectedProduct" finished-at="2025-12-31T11:07:40 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="408657" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ExpectedProduct -->
-        <test-method signature="ProductMovementPage()[pri:18, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:09:32 IST" name="ProductMovementPage" finished-at="2025-12-31T10:23:27 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="835538" status="PASS">
+        <test-method signature="ProductMovementPage()[pri:18, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T11:07:40 IST" name="ProductMovementPage" finished-at="2025-12-31T11:11:38 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="237655" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ProductMovementPage -->
-        <test-method signature="Exception()[pri:30, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T10:23:27 IST" name="Exception" finished-at="2025-12-31T10:23:27 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="2" status="FAIL">
+        <test-method signature="Exception()[pri:30, instance:com.Sales.CreditNotesVoidTest@3c77d488]" started-at="2025-12-31T11:11:38 IST" name="Exception" finished-at="2025-12-31T11:11:38 IST" depends-on-methods="com.Sales.CreditNotesVoidTest.ERPLoginPage" duration-ms="2" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[The following asserts failed:
-Actual and Expected Product Movement Stock Mismatched for Product Fresh Butter expected [950] but found [24950],
-Actual and Expected Product Movement Stock Mismatched for Product Flavoured Milk expected [900] but found [24900],
-Actual and Expected Product Movement Stock Mismatched for Product Ice Cream (Family Pack) expected [1000] but found [25000],
-Actual and Expected Product Movement Stock Mismatched for Product Milkshake Bottle expected [950] but found [24950],
-Actual and Expected Product Movement Stock Mismatched for Product Bread Flour expected [950] but found [24950],
-Actual and Expected Product Movement Stock Mismatched for Product Castor Sugar expected [950] but found [24950],
-Actual and Expected Product Movement Stock Mismatched for Product Honey expected [950] but found [24950],
-Actual and Expected Product Movement Stock Mismatched for Product Maple Syrup expected [1000] but found [25000],
-Actual and Expected Product Movement Stock Mismatched for Product Baking Soda expected [950] but found [24950],
-Actual and Expected Product Movement Stock Mismatched for Product Baking Powder expected [950] but found [24950]]]>
+Actual and Expected Product Movement Stock Mismatched for Product Fresh Butter expected [950] but found [998],
+Actual and Expected Product Movement Stock Mismatched for Product Flavoured Milk expected [900] but found [996],
+Actual and Expected Product Movement Stock Mismatched for Product Milkshake Bottle expected [950] but found [998],
+Actual and Expected Product Movement Stock Mismatched for Product Bread Flour expected [950] but found [998],
+Actual and Expected Product Movement Stock Mismatched for Product Castor Sugar expected [950] but found [998],
+Actual and Expected Product Movement Stock Mismatched for Product Honey expected [950] but found [998],
+Actual and Expected Product Movement Stock Mismatched for Product Baking Soda expected [950] but found [998],
+Actual and Expected Product Movement Stock Mismatched for Product Baking Powder expected [950] but found [998]]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError: The following asserts failed:
-Actual and Expected Product Movement Stock Mismatched for Product Fresh Butter expected [950] but found [24950],
-Actual and Expected Product Movement Stock Mismatched for Product Flavoured Milk expected [900] but found [24900],
-Actual and Expected Product Movement Stock Mismatched for Product Ice Cream (Family Pack) expected [1000] but found [25000],
-Actual and Expected Product Movement Stock Mismatched for Product Milkshake Bottle expected [950] but found [24950],
-Actual and Expected Product Movement Stock Mismatched for Product Bread Flour expected [950] but found [24950],
-Actual and Expected Product Movement Stock Mismatched for Product Castor Sugar expected [950] but found [24950],
-Actual and Expected Product Movement Stock Mismatched for Product Honey expected [950] but found [24950],
-Actual and Expected Product Movement Stock Mismatched for Product Maple Syrup expected [1000] but found [25000],
-Actual and Expected Product Movement Stock Mismatched for Product Baking Soda expected [950] but found [24950],
-Actual and Expected Product Movement Stock Mismatched for Product Baking Powder expected [950] but found [24950]
+Actual and Expected Product Movement Stock Mismatched for Product Fresh Butter expected [950] but found [998],
+Actual and Expected Product Movement Stock Mismatched for Product Flavoured Milk expected [900] but found [996],
+Actual and Expected Product Movement Stock Mismatched for Product Milkshake Bottle expected [950] but found [998],
+Actual and Expected Product Movement Stock Mismatched for Product Bread Flour expected [950] but found [998],
+Actual and Expected Product Movement Stock Mismatched for Product Castor Sugar expected [950] but found [998],
+Actual and Expected Product Movement Stock Mismatched for Product Honey expected [950] but found [998],
+Actual and Expected Product Movement Stock Mismatched for Product Baking Soda expected [950] but found [998],
+Actual and Expected Product Movement Stock Mismatched for Product Baking Powder expected [950] but found [998]
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
 at com.Sales.CreditNotesVoidTest.Exception(CreditNotesVoidTest.java:1775)

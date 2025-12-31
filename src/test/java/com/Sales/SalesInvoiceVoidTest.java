@@ -1,19 +1,25 @@
 package com.Sales;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -877,6 +883,10 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		SalesInvoice si = new SalesInvoice(driver);
+		Wait<WebDriver> fluentwait = new FluentWait<WebDriver>(driver)
+				.withTimeout(Duration.ofSeconds(20))
+				.pollingEvery(Duration.ofSeconds(1))
+				.ignoring(NoSuchElementException.class);
 
 		driver.navigate().to(url + "Sales/SalesInvoiceIndex");
 		Thread.sleep(4000);
@@ -950,9 +960,15 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 			Thread.sleep(3000);
 			if (excelData.Type.equalsIgnoreCase("Product")) {
+				
+				fluentwait.until(driver -> {
+				    WebElement prodfield = driver.findElement(By.xpath("//span[@id='select2-ProductId-container']"));
+				    prodfield.click();
+				    return true;
+				    });
 
-				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@id='select2-ProductId-container']"))).click();
-				WebElement productSearch = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']")));
+				WebElement productSearch = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
+						("//span[@id='select2-ProductId-container']//following::input[@type='search']")));
 				productSearch.click();
 				productSearch.sendKeys(excelData.ProductCode + Keys.ENTER);
 
@@ -1690,7 +1706,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 				
 				click(pm.UOM);
 				List<WebElement> subUomOption = driver.findElements(By.xpath(
-						"//span[@id='select2-UOMId-container']//following::input[@type='search']//following::ul//li"));
+						"//span[@id='select2-UOM-container']//following::input[@type='search']//following::ul//li"));
 				for (WebElement option : subUomOption) {
 					if (option.getText().trim().equals(excelData.Uom)) {
 						option.click();
@@ -1698,6 +1714,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 					}
 				}	
 			}
+			
 			js.executeScript("arguments[0].click();", pm.Fetch);
 			Thread.sleep(3000);
 

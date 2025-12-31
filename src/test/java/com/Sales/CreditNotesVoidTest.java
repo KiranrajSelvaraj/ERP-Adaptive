@@ -15,6 +15,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -24,7 +25,6 @@ import com.PomClass.Login;
 import com.PomClass.Product;
 import com.PomClass.ProductMovement;
 import com.PomClass.SystemSettings;
-
 import com.Utility.Util1;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -230,7 +230,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsSalesManManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsSalesManManagement :" + IsSalesManManagement);
@@ -244,7 +244,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsWarehouseManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsWarehouseManagement :" + IsWarehouseManagement);
@@ -258,7 +258,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsWarehouseStorageManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsWarehouseStorageManagement :" + IsWarehouseStorageManagement);
@@ -272,7 +272,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsBarcodeEnabled = ss.BooleanValue.isSelected();
 		System.out.println("IsBarcodeEnabled :" + IsBarcodeEnabled);
@@ -286,7 +286,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsBarcodeManagementInsales = ss.BooleanValue.isSelected();
 		System.out.println("IsBarcodeManagementInsales :" + IsBarcodeManagementInsales);
@@ -300,7 +300,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsMultiWordSearchInProduct = ss.BooleanValue.isSelected();
 		System.out.println("IsMultiWordSearchInProduct :" + IsMultiWordSearchInProduct);
@@ -314,7 +314,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsDuplicateProductsInInvoice = ss.BooleanValue.isSelected();
 		System.out.println("IsDuplicateProductsInInvoice :" + IsDuplicateProductsInInvoice);
@@ -328,7 +328,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsCartonManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsCartonManagement :" + IsCartonManagement);
@@ -342,7 +342,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsEnableItemLevelDiscountInSales = ss.BooleanValue.isSelected();
 		System.out.println("IsEnableItemLevelDiscountInSales :" + IsEnableItemLevelDiscountInSales);
@@ -356,7 +356,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsFOCManagementInCN = ss.BooleanValue.isSelected();
 		System.out.println("IsFOCManagementInCN :" + IsFOCManagementInCN);
@@ -370,7 +370,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		BulkQtyMeasurement = driver.findElement(By.xpath("//input[@id='StringValue']")).getAttribute("value");
 		System.out.println("BulkQtyMeasurement :" + BulkQtyMeasurement);
@@ -384,7 +384,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		LooseQtyMeasurement = driver.findElement(By.xpath("//input[@id='StringValue']")).getAttribute("value");
 		System.out.println("LooseQtyMeasurement :" + LooseQtyMeasurement);
@@ -398,7 +398,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsAllowToEditSpecialPrice = ss.BooleanValue.isSelected();
 		System.out.println("IsAllowToEditSpecialPrice :" + IsAllowToEditSpecialPrice);
@@ -412,7 +412,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		String DecimalCalculationForSalesString = driver.findElement(By.xpath("//input[@id='DecimalValue']"))
 				.getAttribute("value");
 		DecimalCalculationForSales = Float.parseFloat(DecimalCalculationForSalesString);
@@ -427,7 +427,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		IsOpenItemManagementInsales = ss.BooleanValue.isSelected();
 		System.out.println("IsOpenItemManagementInsales :" + IsOpenItemManagementInsales);
 		click(ss.Back);
@@ -440,7 +440,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		IsHeaderManagementInSO = ss.BooleanValue.isSelected();
 		System.out.println("IsHeaderManagementInSO :" + IsHeaderManagementInSO);
 		click(ss.Back);
@@ -453,7 +453,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		IsReturnManagementInSI = ss.BooleanValue.isSelected();
 		System.out.println("IsReturnManagementInSI :" + IsReturnManagementInSI);
 		click(ss.Back);
@@ -561,7 +561,7 @@ public class CreditNotesVoidTest extends BaseClass {
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	// @Ignore
+	//@Ignore
 	@Test(priority = 8, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -780,7 +780,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
 
-	// @Ignore
+	//@Ignore
 	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
@@ -1228,11 +1228,10 @@ public class CreditNotesVoidTest extends BaseClass {
 
 			}
 
-			getProductAmount = driver
-					.findElement(By.xpath(
-							"//table[@id='CreditNoteTable']//tbody//tr//td[2]//div//textarea" + "[contains(text(),'"
-									+ excelData.ProductName + "')]//following::td[@id='totaldetailamount']"))
-					.getAttribute("data-value");
+			WebElement productamount = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath
+							("//table[@id='CreditNoteTable']//tbody//tr//td[2]//div//textarea[contains(text(),'"+ excelData.ProductName + "')]//following::td[@id='totaldetailamount']")));
+			getProductAmount = productamount.getAttribute("data-value");
+					
 			double getProductAmountDouble = Double.parseDouble(getProductAmount);
 			System.out.println("Actual Discount Amount is: " + getProductAmountDouble);
 
@@ -1694,15 +1693,32 @@ public class CreditNotesVoidTest extends BaseClass {
 		driver.navigate().to(url + "SalesPurchases/Product/ProductMovementsIndex");
 		Thread.sleep(7000);
 		System.out.println("*** Product Movement Page ***");
-		for (String product : ProductSet) {
+		
+		for (ExcelData excelData : excelDataList) {
 
 			click(pm.ChooseProduct);
 			WebElement productcode = driver.findElement(
 					By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"));
 			Thread.sleep(1000);
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-			productcode.sendKeys(product + Keys.ENTER);
+			productcode.sendKeys(excelData.ProductCode + Keys.ENTER);
 			Thread.sleep(1000);
+			
+			boolean enabledUom = driver.findElement(By.xpath("//select[@id='UOM']")).isEnabled();
+			System.out.println("enabledUom: "+enabledUom);
+			if (enabledUom == true ) {
+				
+				click(pm.UOM);
+				List<WebElement> subUomOption = driver.findElements(By.xpath(
+						"//span[@id='select2-UOM-container']//following::input[@type='search']//following::ul//li"));
+				for (WebElement option : subUomOption) {
+					if (option.getText().trim().equals(excelData.Uom)) {
+						option.click();
+						break;
+					}
+				}	
+			}
+			
 			js.executeScript("arguments[0].click();", pm.Fetch);
 			Thread.sleep(3000);
 

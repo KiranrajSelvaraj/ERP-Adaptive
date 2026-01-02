@@ -11,8 +11,6 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import java.util.function.Function;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -30,6 +28,7 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -594,7 +593,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	// @Ignore
+	//@Ignore
 	@Test(priority = 8, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -813,7 +812,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
 
-	// @Ignore
+	//@Ignore
 	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
@@ -889,6 +888,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, 20);
+		Actions action = new Actions(driver);
 		SalesInvoice si = new SalesInvoice(driver);
 		Wait<WebDriver> fluentwait = new FluentWait<WebDriver>(driver)
 				.withTimeout(Duration.ofSeconds(20))
@@ -967,43 +967,38 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 			Thread.sleep(3000);
 			if (excelData.Type.equalsIgnoreCase("Product")) {
-				
+
+				WebElement element = driver.findElement(By.id("select2-ProductId-container"));
+				js.executeScript("arguments[0].scrollIntoView(true);", element);
+
 				// Screen shot to the product:-
-				DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+				/*	DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 				LocalDateTime now1 = LocalDateTime.now();
 				String timestamp1 = dtf1.format(now1).replace(":", ";").replace("/", "-");
 				TakesScreenshot ts1 = (TakesScreenshot) driver;
 				File s1 = ts1.getScreenshotAs(OutputType.FILE);
 				File s2 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Product Field Error "
 						+ timestamp1 + ".png");
-				FileUtils.copyFile(s1, s2);
-				
-			/*	fluentwait.until(driver -> {
-				    WebElement prodfield = driver.findElement(By.xpath("//span[@id='select2-ProductId-container']"));
-				    prodfield.click();
-				    return true;
-				    }); */
-				WebElement product = wait.until(
-				        ExpectedConditions.elementToBeClickable(By.id("select2-ProductId-container"))
-				);
-				js.executeScript("arguments[0].click();", product);
-				
+				FileUtils.copyFile(s1, s2);	*/		
+
+				action.moveToElement(si.ChooseProduct).click().perform();
+
 				// Screen shot to the product:-
-				DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+				/*	DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 				LocalDateTime now2 = LocalDateTime.now();
 				String timestamp2 = dtf2.format(now2).replace(":", ";").replace("/", "-");
 				TakesScreenshot ts2 = (TakesScreenshot) driver;
 				File s11 = ts2.getScreenshotAs(OutputType.FILE);
 				File s21 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Product Field Error "
 						+ timestamp2 + ".png");
-				FileUtils.copyFile(s11, s21);
+				FileUtils.copyFile(s11, s21); */
 
 				WebElement productSearch = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
 						("//span[@id='select2-ProductId-container']//following::input[@type='search']")));
 				productSearch.click();
 				productSearch.sendKeys(excelData.ProductCode + Keys.ENTER);
-				
-				
+
+
 
 			} else if (excelData.Type.equalsIgnoreCase("Service")) {
 
@@ -1277,7 +1272,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 				expZeroGstProductAmount = expZeroGstProductAmount + actualSubtotalDouble;
 
 			}
-			Actions action = new Actions(driver);
+
 			action.doubleClick(si.Qty).perform();
 			Thread.sleep(1000);
 
@@ -1722,21 +1717,21 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		driver.navigate().to(url + "SalesPurchases/Product/ProductMovementsIndex");
 		Thread.sleep(7000);
 		System.out.println("*** Product Movement Page ***");
-		
-		for (ExcelData excelData : excelDataList) {
+
+		for (String product : ProductSet) {
 
 			click(pm.ChooseProduct);
 			WebElement productcode = driver.findElement(
 					By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"));
 			Thread.sleep(1000);
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-			productcode.sendKeys(excelData.ProductCode + Keys.ENTER);
+			productcode.sendKeys(product + Keys.ENTER);
 			Thread.sleep(1000);
-			
-			boolean enabledUom = driver.findElement(By.xpath("//select[@id='UOM']")).isEnabled();
+
+			/*	boolean enabledUom = driver.findElement(By.xpath("//select[@id='UOM']")).isEnabled();
 			System.out.println("enabledUom: "+enabledUom);
 			if (enabledUom == true ) {
-				
+
 				click(pm.UOM);
 				List<WebElement> subUomOption = driver.findElements(By.xpath(
 						"//span[@id='select2-UOM-container']//following::input[@type='search']//following::ul//li"));
@@ -1746,8 +1741,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 						break;
 					}
 				}	
-			}
-			
+			} */
+
 			js.executeScript("arguments[0].click();", pm.Fetch);
 			Thread.sleep(3000);
 

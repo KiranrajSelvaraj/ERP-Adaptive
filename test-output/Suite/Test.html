@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>38/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Dec 31 10:31:17 IST 2025</td>
+<td>Started on:</td><td>Fri Jan 02 09:48:38 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>2420 seconds (2420701 ms)</td>
+<tr><td>Total time:</td><td>2372 seconds (2372672 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,33 +76,21 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Sales.CreditNotesVoidTest.Exception()'><b>Exception</b><br>Test class: com.Sales.CreditNotesVoidTest</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	Actual and Expected Product Movement Stock Mismatched for Product Fresh Butter expected [950] but found [998],
-	Actual and Expected Product Movement Stock Mismatched for Product Flavoured Milk expected [900] but found [996],
-	Actual and Expected Product Movement Stock Mismatched for Product Milkshake Bottle expected [950] but found [998],
-	Actual and Expected Product Movement Stock Mismatched for Product Bread Flour expected [950] but found [998],
-	Actual and Expected Product Movement Stock Mismatched for Product Castor Sugar expected [950] but found [998],
-	Actual and Expected Product Movement Stock Mismatched for Product Honey expected [950] but found [998],
-	Actual and Expected Product Movement Stock Mismatched for Product Baking Soda expected [950] but found [998],
-	Actual and Expected Product Movement Stock Mismatched for Product Baking Powder expected [950] but found [998]
-	at com.Sales.CreditNotesVoidTest.Exception(CreditNotesVoidTest.java:1775)
+<td title='com.Sales.SalesInvoiceVoidTest.ProductMovementPage()'><b>ProductMovementPage</b><br>Test class: com.Sales.SalesInvoiceVoidTest</td>
+<td><div><pre>java.lang.NumberFormatException: For input string: &quot;99 B/8 L&quot;
+	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)
+	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.base/java.lang.Double.parseDouble(Double.java:651)
+	at com.Sales.SalesInvoiceVoidTest.ProductMovementPage(SalesInvoiceVoidTest.java:1786)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace488157293", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace488157293'><pre>java.lang.AssertionError: The following asserts failed:
-	Actual and Expected Product Movement Stock Mismatched for Product Fresh Butter expected [950] but found [998],
-	Actual and Expected Product Movement Stock Mismatched for Product Flavoured Milk expected [900] but found [996],
-	Actual and Expected Product Movement Stock Mismatched for Product Milkshake Bottle expected [950] but found [998],
-	Actual and Expected Product Movement Stock Mismatched for Product Bread Flour expected [950] but found [998],
-	Actual and Expected Product Movement Stock Mismatched for Product Castor Sugar expected [950] but found [998],
-	Actual and Expected Product Movement Stock Mismatched for Product Honey expected [950] but found [998],
-	Actual and Expected Product Movement Stock Mismatched for Product Baking Soda expected [950] but found [998],
-	Actual and Expected Product Movement Stock Mismatched for Product Baking Powder expected [950] but found [998]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-	at com.Sales.CreditNotesVoidTest.Exception(CreditNotesVoidTest.java:1775)
+... Removed 12 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace626895640", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace626895640'><pre>java.lang.NumberFormatException: For input string: &quot;99 B/8 L&quot;
+	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)
+	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.base/java.lang.Double.parseDouble(Double.java:651)
+	at com.Sales.SalesInvoiceVoidTest.ProductMovementPage(SalesInvoiceVoidTest.java:1786)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -119,8 +107,8 @@ function toggleAllBoxes() {
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 </pre></div></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
+<td>15</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -131,195 +119,195 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0342, Sensodyne Toothpaste, 1X1KG, 1, , , , , , , 78, , , , , , , , FALSE, </td>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0401, Mojito Lemon Mint Powder, PCS, 1, , , , , 5, , 141, , , , , , , , TRUE, </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
 <tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0407, Chilli Sauce, PCS, 1, , , , , , , 143, , , , , , , , FALSE, </td>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0354, Broom Stick, 1X1KG, 1, , , , , 5, , 128, , , , , , , , FALSE, </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
 <tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0341, Vatika Shampoo, 1X1KG, 1, , , , , , , 77, , , , , , , , FALSE, </td>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0418, Double-Side Tape, Packets, 1, , , , , 5, , 148, , , , , , , , FALSE, </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
 <tr>
-<td title='com.Sales.CreditNotesVoidTest.UomPage()'><b>UomPage</b><br>Test class: com.Sales.CreditNotesVoidTest</td>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0386, Cocoa Powder, 25X1GM, 1, , , , , 5, , 137, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0337, Medimix Soap, 1X1KG, 1, , , , , 5, , 124, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0369, Brown Sugar, 25X1GM, 1, , , , , 5, , 133, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0338, Hamam Soap, 1X1KG, 1, , , , , 5, , 125, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.SalesInvoicetoVoidProcess()'><b>SalesInvoicetoVoidProcess</b><br>Test class: com.Sales.SalesInvoiceVoidTest</td>
+<td></td>
+<td>562</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0403, Maggi Noodles, PCS, 1, , , , , 5, , 143, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0389, Food Color – Liquid, 25X1GM, 1, , , , , 5, , 140, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.SystemSettings()'><b>SystemSettings</b><br>Test class: com.Sales.SalesInvoiceVoidTest</td>
+<td></td>
+<td>135</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0385, Dark Chocolate, 25X1GM, 1, , , , , 5, , 136, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0356, Cream, 1X1KG, 1, , , , , 5, , 130, , , , , , , TRUE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0417, Graph Notebook, Packets, 1, , , , , 5, , 147, , , , , , , TRUE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0352, Steel Scrubber, 1X1KG, 1, , , , , 5, , 126, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.ExpectedProduct()'><b>ExpectedProduct</b><br>Test class: com.Sales.SalesInvoiceVoidTest</td>
+<td></td>
+<td>394</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0336, Pure Cow Ghee, 1X1KG, 1, , , , , 5, , 123, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0371, Icing Sugar, 25X1GM, 1, , , , , 5, , 135, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0420, Drawing Notebook, Packets, 1, , , , , 5, , 150, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0353, Mop Stick, 1X1KG, 1, , , , , 5, , 127, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0367, Self-Rising Flour, 25X1GM, 1, , , , , 5, , 131, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0355, Napthalene Balls, 1X1KG, 1, , , , , 5, , 129, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0402, Blue Lagoon Drink Powder, PCS, 1, , , , , 5, , 142, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.StockCalculation()'><b>StockCalculation</b><br>Test class: com.Sales.SalesInvoiceVoidTest</td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.Sales.SalesInvoiceVoidTest</td>
+<td></td>
+<td>5</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0405, Frozen Green Peas, PCS, 1, , , , , 5, , 146, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: C0002, SGD, 1, Zero, Product, P0334, Rice Bran Oil, 1X1KG, 1, , , , TRUE, 5, 25, 121, , , %, 10, 10, 0, , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0370, Powdered Sugar, 25X1GM, 1, , , , , 5, , 134, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.UomPage()'><b>UomPage</b><br>Test class: com.Sales.SalesInvoiceVoidTest</td>
 <td></td>
 <td>33</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
 <tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0390, Food Color – Gel, PCS, 1, , , , , , , 126, , , , , , , , TRUE, </td>
+<td title='com.Sales.SalesInvoiceVoidTest.Exception()'><b>Exception</b><br>Test class: com.Sales.SalesInvoiceVoidTest</td>
 <td></td>
 <td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
 <tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0324, Lemon Tea, 1X1KG, 1, , , , , , , 60, , , , , , , TRUE, TRUE, </td>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0387, Vanilla Essence, 25X1GM, 1, , , , , 5, , 138, , , , , , , , FALSE, </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
 <tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0360, Milkshake Bottle, 25X1GM, 1, , , , , , , 96, , , , , , , , TRUE, </td>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0421, Highlighter, Packets, 1, , , , , 5, , 151, , , , , , , , FALSE, </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
 <tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0372, Castor Sugar, 25X1GM, 1, , , , , , , 108, , , , , , , , FALSE, </td>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0404, Pasta, PCS, 1, , , , , 5, , 145, , , , , , , , TRUE, </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
 <tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0359, Ice Cream (Family Pack), 25X1GM, 1, , , , , , , 95, , , , , , , TRUE, TRUE, </td>
+<td title='com.Sales.SalesInvoiceVoidTest.ProductPage()'><b>ProductPage</b><br>Test class: com.Sales.SalesInvoiceVoidTest</td>
+<td></td>
+<td>1218</td>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
+<tr>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0335, Vanaspati, 1X1KG, 1, , , , , 5, , 122, , , , , , , TRUE, TRUE, </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
 <tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0340, Patanjali Shampoo, 1X1KG, 1, , , , , , , 76, , , , , , , , FALSE, </td>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0388, Strawberry Essence, 25X1GM, 1, , , , , 5, , 139, , , , , , , TRUE, FALSE, </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
 <tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0394, Paper Water Cup, PCS, 1, , , , , , , 130, , , , , , , , TRUE, </td>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0419, Scissors, Packets, 1, , , , , 5, , 149, , , , , , , , FALSE, </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
 <tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0409, Rice Vinegar, PCS, 1, , , , , , , 145, , , , , , , , FALSE, </td>
+<td title='com.Sales.SalesInvoiceVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesInvoiceVoidTest<br>Parameters: , , , , Product, P0368, Granulated Sugar, 25X1GM, 1, , , , , 5, , 132, , , , , , , , TRUE, </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.ProductPage()'><b>ProductPage</b><br>Test class: com.Sales.CreditNotesVoidTest</td>
-<td></td>
-<td>1198</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0339, Dettol Soap, 1X1KG, 1, , , , , , , 75, , , , , , , TRUE, FALSE, </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.ProductMovementPage()'><b>ProductMovementPage</b><br>Test class: com.Sales.CreditNotesVoidTest</td>
-<td></td>
-<td>237</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0391, Nuts Mix, PCS, 1, , , , , , , 127, , , , , , , , TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0327, Horlicks, 1X1KG, 1, , , , , , , 63, , , , , , , , TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0406, Frozen Sweet Corn, PCS, 1, , , , , , , 142, , , , , , , TRUE, FALSE, </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0376, Baking Powder, 25X1GM, 1, , , , , , , 112, , , , , , , TRUE, FALSE, </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0343, Dabur Red Paste, 1X1KG, 1, , , , , , , 79, , , , , , , TRUE, FALSE, </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0357, Fresh Butter, 25X1GM, 1, , , , , , , 93, , , , , , , , TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.SystemSettings()'><b>SystemSettings</b><br>Test class: com.Sales.CreditNotesVoidTest</td>
-<td></td>
-<td>127</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0410, Szechuan Pepper, PCS, 1, , , , , , , 146, , , , , , , , FALSE, </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.Sales.CreditNotesVoidTest</td>
-<td></td>
-<td>14</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.StockCalculation()'><b>StockCalculation</b><br>Test class: com.Sales.CreditNotesVoidTest</td>
-<td></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0325, Milo, 1X1KG, 1, , , , , , , 61, , , , , , , , TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0374, Maple Syrup, 25X1GM, 1, , , , , , , 110, , , , , , , , FALSE, </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0393, Cashew Pieces, PCS, 1, , , , , , , 129, , , , , , , , TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0358, Flavoured Milk, 25X1GM, 1, , , , , , , 94, , , , , , , , TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: C0001, SGD, 1, Zero, Product, P0323, Green Tea, 1X10KG, 1, , , , TRUE, 5, 25, 59, , , %, 10, 10, 0, , TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0392, Walnut, PCS, 1, , , , , , , 128, , , , , , , TRUE, TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0373, Honey, 25X1GM, 1, , , , , , , 109, , , , , , , , FALSE, </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.ExpectedProduct()'><b>ExpectedProduct</b><br>Test class: com.Sales.CreditNotesVoidTest</td>
-<td></td>
-<td>408</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0375, Baking Soda, 25X1GM, 1, , , , , , , 111, , , , , , , , FALSE, </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0408, Sweet & Sour Sauce, PCS, 1, , , , , , , 144, , , , , , , , FALSE, </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0361, Bread Flour, 25X1GM, 1, , , , , , , 97, , , , , , , , TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.DirecteCreditNote()'><b>DirecteCreditNote</b><br>Test class: com.Sales.CreditNotesVoidTest</td>
-<td></td>
-<td>397</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
-<tr>
-<td title='com.Sales.CreditNotesVoidTest.GetData()'><b>GetData</b><br>Test class: com.Sales.CreditNotesVoidTest<br>Parameters: , , , , Product, P0326, Boost, 1X1KG, 1, , , , , , , 62, , , , , , , , TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Sales.CreditNotesVoidTest@3c77d488</td></tr>
+<td>com.Sales.SalesInvoiceVoidTest@4b013c76</td></tr>
 </table><p>
 </body>
 </html>

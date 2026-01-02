@@ -916,18 +916,17 @@ public class StockAdjustmentV2Test extends BaseClass{
 		ProductMovement pm = new ProductMovement(driver);
 
 		Thread.sleep(5000);		
-		for (ExcelData excelData : excelDataList) {
+		for (String product : ProductSet) {
 
 			click(pm.ChooseProduct);
 			WebElement productcode = driver.findElement(
 					By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"));
 			Thread.sleep(1000);
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-			productcode.sendKeys(excelData.ProductCode + Keys.ENTER);
+			productcode.sendKeys(product + Keys.ENTER);
 			Thread.sleep(1000);
 			
-			WebElement uomField = driver.findElement(By.id("UOM"));
-
+		/*	WebElement uomField = driver.findElement(By.id("UOM"));
 			if (uomField.isEnabled()) {
 				
 				click(pm.UOM);
@@ -943,7 +942,7 @@ public class StockAdjustmentV2Test extends BaseClass{
 				
 			} else {
 			    System.out.println("UOM field is NON-EDITABLE");
-			}
+			} */
 			
 			js.executeScript("arguments[0].click();", pm.Fetch);
 			Thread.sleep(3000);

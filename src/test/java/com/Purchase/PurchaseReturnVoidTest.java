@@ -1,9 +1,6 @@
 package com.Purchase;
 
-import java.io.File;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -12,12 +9,9 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.collections4.map.HashedMap;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -198,39 +192,6 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 	}
 
-	Map<String, List<String>> ProductUomMap = new HashedMap<>();
-
-	@Ignore
-	@Test(priority = 7, dependsOnMethods = "ERPLoginPage")
-	public void ProductUomData() throws InterruptedException {
-		ProductList.addAll(ProductSet);
-
-		int ProductListSize = ProductList.size();
-		System.out.println("Product size :" + ProductListSize);
-
-		for (int i = 0; i < ProductListSize; i++) {
-			Set<String> uomSet = new LinkedHashSet<>();
-			String Productcode = ProductList.get(i);
-			System.out.println("Productcode :" + Productcode);
-			List<String> uomList1 = new ArrayList<>();
-			int dataListSize = excelDataList.size();
-			System.out.println("Data Size: " + dataListSize);
-			for (int j = 0; j < dataListSize; j++) {
-				ExcelData excelData = excelDataList.get(j);
-
-				if (excelData.ProductCode.equals(Productcode)) {
-					System.out.println("UOM: " + excelData.Uom);
-					uomSet.add(excelData.Uom);
-
-				}
-
-			}
-			uomList1.addAll(uomSet);
-			ProductUomMap.put(Productcode, uomList1);
-
-		}
-	}
-
 	// System Settings:-
 	private boolean IsZeroQtyPurchase;
 	private boolean IsZeroGSTManagement;
@@ -268,7 +229,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsZeroQtyPurchase = ss.BooleanValue.isSelected();
 		System.out.println("IsZeroQtyPurchase: " + IsZeroQtyPurchase);
@@ -282,7 +243,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsZeroGSTManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsZeroGSTManagement: " + IsZeroGSTManagement);
@@ -296,7 +257,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsMultipleProductForPurchase = ss.BooleanValue.isSelected();
 		System.out.println("IsMultipleProductForPurchase : " + IsMultipleProductForPurchase);
@@ -310,7 +271,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsGSTManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsGSTManagement: " + IsGSTManagement);
@@ -324,7 +285,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsGSTManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsMultipleServiceForPurchase: " + IsMultipleServiceForPurchase);
@@ -338,7 +299,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsCurrencyEnabled = ss.BooleanValue.isSelected();
 		System.out.println("IsCurrencyEnabled: " + IsCurrencyEnabled);
@@ -352,7 +313,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsWarehouseManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsWarehouseManagement: " + IsWarehouseManagement);
@@ -366,7 +327,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsBarcodeManagementInPurchase = ss.BooleanValue.isSelected();
 		System.out.println("IsBarcodeManagementInPurchase: " + IsBarcodeManagementInPurchase);
@@ -380,7 +341,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsOpenItemManagementInPurchase = ss.BooleanValue.isSelected();
 		System.out.println("IsOpenItemManagementInPurchase: " + IsOpenItemManagementInPurchase);
@@ -394,7 +355,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		String DecimalCalculationForPurchaseString = driver.findElement(By.xpath("//input[@id='DecimalValue']"))
 				.getAttribute("value");
@@ -410,7 +371,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsEnableDirectPOtoGRN = ss.BooleanValue.isSelected();
 		System.out.println("IsEnableDirectPOtoGRN: " + IsEnableDirectPOtoGRN);
@@ -424,7 +385,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsEnableDirectPOtoSO = ss.BooleanValue.isSelected();
 		System.out.println("IsEnableDirectPOtoSO: " + IsEnableDirectPOtoSO);
@@ -438,7 +399,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsEnableItemLevelDiscountInPurchase = ss.BooleanValue.isSelected();
 		System.out.println("IsEnableItemLevelDiscountInPurchase:" + IsEnableItemLevelDiscountInPurchase);
@@ -452,7 +413,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsMultiWordSearchInProduct = ss.BooleanValue.isSelected();
 		System.out.println("IsMultiWordSearchInProduct :" + IsMultiWordSearchInProduct);
@@ -466,7 +427,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsFOCManagementInPI = ss.BooleanValue.isSelected();
 		System.out.println("IsFOCManagementInPI:" + IsFOCManagementInPI);
@@ -955,8 +916,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, 50);
-
-		js.executeScript("document.body.style.zoom='80%';");
+		Actions action = new Actions(driver);
 
 		PurchaseReturns pr = new PurchaseReturns(driver);
 
@@ -1001,88 +961,36 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				getExcelCurrencyRate = excelData.CurrencyRate;
 			}
 
-			/*
-			 * if (excelData.Type.equalsIgnoreCase("Product")) {
-			 * 
-			 * String productCheckbox =
-			 * driver.findElement(By.id("ProductCheck")).getAttribute("checked"); if
-			 * (!productCheckbox.equalsIgnoreCase("true")) { click(pr.ProductCheckBox);
-			 * 
-			 * }
-			 * 
-			 * } else if (excelData.Type.equals("Service")) {
-			 * 
-			 * if (!pr.ServiceCheckBox.isSelected()) { click(pr.ServiceCheckBox); }
-			 * 
-			 * } else if (excelData.Type.equals("Open")) {
-			 * 
-			 * if (!pr.OpenCheckBox.isSelected()) { click(pr.OpenCheckBox); }
-			 * 
-			 * }
-			 */
-			Thread.sleep(2000);
+
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
-				Thread.sleep(2000);
-				click(pr.Qty);
-				Thread.sleep(4000);
+				String productCheckbox = driver.findElement(By.id("ProductCheck")).getAttribute("checked"); 
+				if(!productCheckbox.equalsIgnoreCase("true")) {
 
-				Actions actions = new Actions(driver);
-				actions.doubleClick(pr.Uom).build().perform();
+					click(pr.ProductCheckBox); 
+				}
 
+			} else if (excelData.Type.equals("Service")) {
 
+				if (!pr.ServiceCheckBox.isSelected()) {
+					click(pr.ServiceCheckBox); }
 
-				// Wait until overlay gone
-				//	wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("a.leave_page")));
+			} else if (excelData.Type.equals("Open")) {
 
-				// Find and scroll
-				/*
-				 * WebElement element =
-				 * driver.findElement(By.id("select2-ProductId-container"));
-				 * ((JavascriptExecutor)
-				 * driver).executeScript("arguments[0].scrollIntoView(true);", element);
-				 * 
-				 * // Wait until clickable
-				 * wait.until(ExpectedConditions.elementToBeClickable(element));
-				 * 
-				 * // Try JS click (safe) ((JavascriptExecutor)
-				 * driver).executeScript("arguments[0].click();", element);
-				 */
-				WebElement element = driver.findElement(By.id("select2-ProductId-container"));
-
-				//	Actions actions = new Actions(driver);
-				actions.clickAndHold(element).build().perform();
-
-				// Screen shot to the batch details:-
-				DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-				LocalDateTime now111 = LocalDateTime.now();
-				String timestamp1 = dtf1.format(now111).replace(":", ";").replace("/", "-");
-				TakesScreenshot ts1 = (TakesScreenshot) driver;
-				File s11 = ts1.getScreenshotAs(OutputType.FILE);
-				File s21 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " PurchaseReturn Product Errors "
-						+ timestamp1 + ".png");
-				FileUtils.copyFile(s11, s21);
-
-
-				Thread.sleep(3000);
-
-				WebElement findElement2 = driver.findElement(By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search'][1]"));
-				findElement2.sendKeys(excelData.ProductCode + Keys.ENTER);
-				//	js.executeScript("arguments[0].value='" + excelData.ProductCode + "';", findElement2);
-
-				// Screen shot to the batch details:-
-				DateTimeFormatter dtf12 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-				LocalDateTime now12 = LocalDateTime.now();
-				String timestamp12 = dtf12.format(now12).replace(":", ";").replace("/", "-");
-				TakesScreenshot ts12 = (TakesScreenshot) driver;
-				File s12 = ts12.getScreenshotAs(OutputType.FILE);
-				File s22 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " PurchaseReturn Product Errors "
-						+ timestamp12 + ".png");
-				FileUtils.copyFile(s12, s22);
+				if (!pr.OpenCheckBox.isSelected()) { 
+					click(pr.OpenCheckBox); }
 
 			}
 
+			Thread.sleep(2000);
+			if (excelData.Type.equalsIgnoreCase("Product")) {
 
+				action.moveToElement(pr.ChooseProduct).click().perform();
+
+				WebElement findElement2 = driver.findElement(By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search'][1]"));
+				findElement2.sendKeys(excelData.ProductCode + Keys.ENTER);
+
+			}
 
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 				click(pr.Qty);
@@ -1326,14 +1234,14 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				Thread.sleep(1000);
 
 				// Screen shot to the batch details:-
-				DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+				/*		DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 				LocalDateTime now111 = LocalDateTime.now();
 				String timestamp1 = dtf1.format(now111).replace(":", ";").replace("/", "-");
 				TakesScreenshot ts1 = (TakesScreenshot) driver;
 				File s11 = ts1.getScreenshotAs(OutputType.FILE);
 				File s21 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " PurchaseReturn Errors "
 						+ timestamp1 + ".png");
-				FileUtils.copyFile(s11, s21);
+				FileUtils.copyFile(s11, s21); */
 
 				WebElement batchAdd = driver.findElement(By.xpath("(//div//strong[contains(text(),'"
 						+ excelData.ProductName + "')]//following::button[text()='Add'])[1]"));
@@ -1367,6 +1275,8 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				ExpZeroGstProductamount = Double.parseDouble(replaceAllProductPrice) + ExpZeroGstProductamount;
 				System.out.println("ExpZeroGstProductamount: " + ExpZeroGstProductamount);
 			}
+			
+			action.moveToElement(pr.Qty).click().perform();
 
 		} // Excel data loop
 

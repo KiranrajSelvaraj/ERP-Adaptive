@@ -6,7 +6,11 @@
     <classes>
       <class name="com.Sales.SalesInvoiceVoidTest">
         <methods>
+          <include name="UomPage"/>
+          <include name="ExpectedProduct"/>
+          <include name="ProductPage"/>
           <include name="ProductMovementPage"/>
+          <include name="SalesInvoicetoVoidProcess"/>
           <include name="ERPLoginPage"/>
           <include name="Environment"/>
         </methods>

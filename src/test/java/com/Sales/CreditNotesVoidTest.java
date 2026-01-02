@@ -11,6 +11,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -854,7 +855,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-
+		Actions action = new Actions(driver);
 		CreditNotes cn = new CreditNotes(driver);
 
 		driver.navigate().to(url + "SalesPurchases/CreditNotes");
@@ -933,7 +934,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
-				click(cn.ChooseProduct);
+				action.moveToElement(cn.ChooseProduct).click().perform();
 				driver.findElement(
 						By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"))
 				.sendKeys(excelData.ProductCode + Keys.ENTER);
@@ -1704,7 +1705,7 @@ public class CreditNotesVoidTest extends BaseClass {
 			productcode.sendKeys(excelData.ProductCode + Keys.ENTER);
 			Thread.sleep(1000);
 			
-			boolean enabledUom = driver.findElement(By.xpath("//select[@id='UOM']")).isEnabled();
+		/*	boolean enabledUom = driver.findElement(By.xpath("//select[@id='UOM']")).isEnabled();
 			System.out.println("enabledUom: "+enabledUom);
 			if (enabledUom == true ) {
 				
@@ -1717,7 +1718,7 @@ public class CreditNotesVoidTest extends BaseClass {
 						break;
 					}
 				}	
-			}
+			} */
 			
 			js.executeScript("arguments[0].click();", pm.Fetch);
 			Thread.sleep(3000);

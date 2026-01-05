@@ -453,7 +453,7 @@ public class StockAdjustmentV2Test extends BaseClass{
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
-		
+
 		driver.navigate().to(url + "SalesPurchases/UOM");
 		Thread.sleep(4000);
 		System.out.println("*UOM Page*");
@@ -532,7 +532,7 @@ public class StockAdjustmentV2Test extends BaseClass{
 		WebElement createV2 = wait.until(ExpectedConditions.visibilityOf(sa.CreateV2));
 		js.executeScript("arguments[0].click();", createV2);
 		Thread.sleep(3000);
-		
+
 		double expOverAllTotal = 0;
 
 		int ExcelDataListSize = excelDataList.size();
@@ -541,7 +541,7 @@ public class StockAdjustmentV2Test extends BaseClass{
 			ExcelData excelData = excelDataList.get(i);
 
 			if (i == 0) {
-				
+
 				Thread.sleep(2000);
 				WebElement stockadjustmenttype = wait.until(ExpectedConditions.elementToBeClickable(sa.StockAdjustmentTypeV2));
 				stockadjustmenttype.click();
@@ -925,10 +925,10 @@ public class StockAdjustmentV2Test extends BaseClass{
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			productcode.sendKeys(product + Keys.ENTER);
 			Thread.sleep(1000);
-			
-		/*	WebElement uomField = driver.findElement(By.id("UOM"));
+
+			/*	WebElement uomField = driver.findElement(By.id("UOM"));
 			if (uomField.isEnabled()) {
-				
+
 				click(pm.UOM);
 				List<WebElement> subUomOption = driver.findElements(By.xpath(
 						"//span[@id='select2-UOM-container']//following::input[@type='search']//following::ul//li"));
@@ -939,11 +939,11 @@ public class StockAdjustmentV2Test extends BaseClass{
 					}
 
 				}
-				
+
 			} else {
 			    System.out.println("UOM field is NON-EDITABLE");
 			} */
-			
+
 			js.executeScript("arguments[0].click();", pm.Fetch);
 			Thread.sleep(3000);
 

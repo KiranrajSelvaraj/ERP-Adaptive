@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="1" parallel="methods" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="1" parallel="methods" name="Test(failed)">
+<suite thread-count="1" parallel="classes" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="1" parallel="classes" name="Test(failed)">
     <parameter name="env" value="Dev"/>
     <classes>
-      <class name="com.Purchase.PurchaseReturnVoidTest">
+      <class name="com.Sales.SalesInvoiceVoidTest">
         <methods>
+          <include name="UomPage"/>
+          <include name="ExpectedProduct"/>
+          <include name="ProductPage"/>
+          <include name="ProductMovementPage"/>
+          <include name="SystemSettings"/>
+          <include name="SalesInvoicetoVoidProcess"/>
           <include name="ERPLoginPage"/>
-          <include name="Exception"/>
-          <include name="SystemSettingsPage"/>
+          <include name="Environment"/>
         </methods>
-      </class> <!-- com.Purchase.PurchaseReturnVoidTest -->
+      </class> <!-- com.Sales.SalesInvoiceVoidTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

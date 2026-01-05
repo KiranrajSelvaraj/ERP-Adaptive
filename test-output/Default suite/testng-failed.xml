@@ -3,24 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Sales.SalesOrderToSalesInvoiceTest">
+      <class name="com.Demo.SalesOrderandInvoiceCreateDateTest">
         <methods>
-          <include name="GetData"/>
-          <include name="Exception"/>
-          <include name="ServicePage"/>
-          <include name="ProductUOMData"/>
+          <include name="SalesOrderDate"/>
           <include name="Environment"/>
           <include name="ERPLoginPage"/>
-          <include name="SalesToInvoice"/>
-          <include name="ProductPage"/>
-          <include name="UomPage"/>
-          <include name="QtyCalculation"/>
-          <include name="SystemSettings"/>
-          <include name="ExpectedProduct"/>
-          <include name="QtyCalculation1"/>
-          <include name="ProductMovementPage"/>
+          <include name="SalesInvoiceDate"/>
         </methods>
-      </class> <!-- com.Sales.SalesOrderToSalesInvoiceTest -->
+      </class> <!-- com.Demo.SalesOrderandInvoiceCreateDateTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

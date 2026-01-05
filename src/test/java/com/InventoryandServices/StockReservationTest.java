@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -536,19 +535,19 @@ public class StockReservationTest extends BaseClass {
 
 		System.out.println();
 	}
-	
+
 	class stockReservation {
-		
+
 		public String StockReservationNumber;
-		
+
 		public stockReservation(String StockReservationNumber) {
 			super();
-			
+
 			this.StockReservationNumber = StockReservationNumber;
 		}		
 	}
 	ArrayList<stockReservation> stockReservationList = new ArrayList<>();
-	
+
 	//@Ignore
 	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
 	public void StockReservation() throws InterruptedException {
@@ -557,21 +556,15 @@ public class StockReservationTest extends BaseClass {
 		driver.manage().timeouts().pageLoadTimeout(180, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		WebDriverWait wait = new WebDriverWait(driver, 60);
-	//	JavascriptExecutor js = (JavascriptExecutor) driver;
+		//	JavascriptExecutor js = (JavascriptExecutor) driver;
 		StockReservation sr = new StockReservation(driver);
 		System.out.println("* Stock Reservation Page *");
 		click(sr.AddStockReservation);
 		Thread.sleep(2000);
-		
-		String getReservationNumber = "";
 
 		int excelDataListSize = reservationExcelDataList.size();
 		for (int i = 0; i < excelDataListSize; i++) {
 			ReservationExcelData excelData = reservationExcelDataList.get(i);
-			
-			getReservationNumber = driver.findElement(By.xpath
-					("//input[@id='ReservationNumber']")).getAttribute("value");
-			System.out.println("getReservationNumber: "+getReservationNumber);
 
 			if (i == 0) {
 
@@ -586,6 +579,13 @@ public class StockReservationTest extends BaseClass {
 				WebElement salesmanSearchField = driver.findElement(By.xpath
 						("//span[@id='select2-SalesManId-container']//following::input[@type='search']"));
 				salesmanSearchField.sendKeys(excelData.Salesman +Keys.ENTER);
+				
+				String getReservationNumber = driver.findElement(By.xpath
+						("//input[@id='ReservationNumber']")).getAttribute("value");
+				System.out.println("getReservationNumber: "+getReservationNumber);
+				
+				stockReservation stockreserve = new stockReservation(getReservationNumber);
+				stockReservationList.add(stockreserve);
 
 				click(sr.ReleaseDate);
 				WebElement datePicker = driver.findElement(By.xpath
@@ -823,7 +823,7 @@ public class StockReservationTest extends BaseClass {
 					.findElement(By.xpath("//dt[normalize-space()='Total Stock']//following-sibling::dd[1]")).getText();
 			System.out.println("Total STock: " + totalStock);
 
-		/*	WebElement profitMargin = driver
+			/*	WebElement profitMargin = driver
 					.findElement(By.xpath("//dt[normalize-space()='Profit Margin %']//following-sibling::dd[1]"));
 			String profitMarginValue = profitMargin.getText();
 			System.out.println("Profit Margin: " + profitMarginValue);
@@ -857,7 +857,7 @@ public class StockReservationTest extends BaseClass {
 			String vendorNameValue = vendorName.getText();
 			System.out.println("Vendor Name: " + vendorNameValue);
 
-		/*	String batch = driver.findElement(By.xpath("(//dt[normalize-space()='Batch']//following::dd)[1]"))
+			/*	String batch = driver.findElement(By.xpath("(//dt[normalize-space()='Batch']//following::dd)[1]"))
 					.getText();
 			System.out.println("Batch: " + batch); */
 
@@ -1297,11 +1297,11 @@ public class StockReservationTest extends BaseClass {
 					break;
 				}
 			}
-			System.out.println(); 
+	
 			String getReservedQty = driver.findElement(By.id("ReservedQtyvalue")).getText();
 			System.out.println("getReservedQty: "+getReservedQty);
 			System.out.println();
-			
+
 			// Qty:-
 			Sendkeys(so.Qty, excelData.Qty);
 
@@ -1762,13 +1762,13 @@ public class StockReservationTest extends BaseClass {
 				+ timestamp + ".png");
 		FileUtils.copyFile(s1, s2);
 
-	//	Collections.reverse(salesExcelDataList);
+		//	Collections.reverse(salesExcelDataList);
 
 		int excleDataListSize = salesExcelDataList.size();
 		for (int i = 0; i < excleDataListSize; i++) {
 			SalesExcelData excelData = salesExcelDataList.get(i);
-			
-			
+
+
 			double doublePrice = Double.parseDouble(excelData.Price);
 			double doubleQty = Double.parseDouble(excelData.Qty);
 			double calAmount = doublePrice * doubleQty;
@@ -1792,7 +1792,7 @@ public class StockReservationTest extends BaseClass {
 				System.out.println("Expected uom: " + excelData.Uom);
 			}
 
-		/*	String getFoc = driver
+			/*	String getFoc = driver
 					.findElement(By.xpath(
 							"//table[@id='SalesTable']//tbody//tr[" + (i + 1) + "]//td[7]//input[@id='ItemFOC']"))
 					.getAttribute("value");
@@ -2143,34 +2143,114 @@ public class StockReservationTest extends BaseClass {
 		}
 		System.out.println();
 	}
-	
+
 	@Test(priority = 24, dependsOnMethods = "ERPLoginPage")
 	public void ReveresStockReservation() throws InterruptedException {
-		
+
 		driver.navigate().to(url +"SalesPurchases/StockReservation");
 		driver.manage().timeouts().pageLoadTimeout(180, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		WebDriverWait wait = new WebDriverWait(driver, 60);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
+		Actions action = new Actions(driver);
 		StockReservation sr = new StockReservation(driver);
 		System.out.println("* Stock Reservation Page *");
-		
+
 		int stockReservationListSize = stockReservationList.size();
 		for (int i = 0; i < stockReservationListSize; i++) {
 			stockReservation stockReservation = stockReservationList.get(i);
-			
+
 			WebElement details = driver.findElement(By.xpath
 					("//table[@id='StockTable']//tbody//tr[1]//td[contains(text(),'"+stockReservation.StockReservationNumber+"')]//following-sibling::td[5]//child::a[@title='Details']"));
 			js.executeScript("arguments[0].click()", details);
-			
+
 			Thread.sleep(3000);
-			click(sr.Reverse);
-			
-			
+			action.moveToElement(sr.Reverse).click().perform();
+
+
 		} // Stock reservation list loop
-		
-		
+
 	} // Reveres stock reservation
+
+	@Test(priority = 26, dependsOnMethods = "ERPLoginPage")
+	public void ReverseQtyCalculation() throws InterruptedException {
+
+		driver.navigate().to(url + "SalesPurchases/SalesOrderIndex");
+		Thread.sleep(5000);		
+		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		SalesOrder so = new SalesOrder(driver);
+
+		System.out.println("*** Sales To Invoice Page ***");
+
+		js.executeScript("arguments[0].click();", so.AddOrder);
+		Thread.sleep(3000);
+
+		int excelDataListSize = salesExcelDataList.size();
+		for (int i = 0; i < excelDataListSize; i++) {
+			SalesExcelData excelData = salesExcelDataList.get(i);
+
+			// Choose Product:-
+			if (excelData.Type.equalsIgnoreCase("Product")) {
+
+				String productCheckbox = driver.findElement(By.id("ProductCheck")).getAttribute("checked");
+				System.out.println("Product Check Box is: " + productCheckbox);
+				if (!productCheckbox.equalsIgnoreCase("true")) {
+					click(so.ProductCheckBox);
+
+				}
+
+			} else if (excelData.Type.equals("Service")) {
+
+				if (!so.ServiceCheckBox.isSelected()) {
+					click(so.ServiceCheckBox);
+				}
+
+			} else if (excelData.Type.equals("Open")) {
+
+				if (!so.OpenCheckBox.isSelected()) {
+					click(so.OpenCheckBox);
+				}
+
+			} else if (excelData.Type.equals("Header")) {
+
+				if (!so.HeaderCheckBox.isSelected()) {
+					click(so.HeaderCheckBox);
+				}
+
+			}
+
+			if (excelData.Type.equalsIgnoreCase("Product")) {
+
+				click(so.Product);
+				driver.findElement(
+						By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"))
+				.sendKeys(excelData.ProductCode + Keys.ENTER);
+
+			} else if (excelData.Type.equalsIgnoreCase("Service")) {
+
+				driver.findElement(
+						By.xpath("//span[@id='select2-ServiceId-container']//following::input[@type='search']"))
+				.sendKeys(excelData.ProductName + Keys.ENTER);
+
+			} else if (excelData.Type.equalsIgnoreCase("Open")) {
+
+				so.OpenProduct.sendKeys(excelData.ProductName + Keys.ENTER);
+
+			}
+
+			Thread.sleep(1000);
+			String getReservedQty = driver.findElement(By.id("ReservedQtyvalue")).getText();
+			System.out.println("getReservedQty: "+getReservedQty);
+			System.out.println();
+
+
+
+
+		} // Excel data list loop
+
+	} // Reverse qty calculation
 
 
 	@Test(priority = 30, dependsOnMethods = "ERPLoginPage")

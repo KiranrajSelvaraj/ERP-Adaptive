@@ -1,755 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="57" passed="57" failed="0" skipped="0">
+<testng-results ignored="0" total="43" passed="43" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-06T12:59:50 IST" name="Suite" finished-at="2026-01-06T14:03:56 IST" duration-ms="3845861">
+  <suite started-at="2026-01-06T16:46:02 IST" name="Suite" finished-at="2026-01-06T17:39:14 IST" duration-ms="3191661">
     <groups>
     </groups>
-    <test started-at="2026-01-06T12:59:50 IST" name="Test" finished-at="2026-01-06T14:03:56 IST" duration-ms="3845861">
-      <class name="com.InventoryandServices.StockAdjustmentV2Void">
-        <test-method signature="ERPLoginPage()[pri:1, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T12:59:51 IST" name="ERPLoginPage" finished-at="2026-01-06T13:00:07 IST" duration-ms="15976" status="PASS">
+    <test started-at="2026-01-06T16:46:02 IST" name="Test" finished-at="2026-01-06T17:39:14 IST" duration-ms="3191661">
+      <class name="com.Purchase.PurchaseReturnVoidTest">
+        <test-method signature="ERPLoginPage()[pri:1, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:46:02 IST" name="ERPLoginPage" finished-at="2026-01-06T16:47:27 IST" duration-ms="84181" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ERPLoginPage -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="7" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Add]]>
+                <![CDATA[V0001]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[HQ]]>
+                <![CDATA[SGD]]>
               </value>
             </param>
             <param index="2">
-              <value>
-                <![CDATA[P0438]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Dairy Milk]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[1X1KG]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[TRUE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="5" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0439]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Milkybar]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[1X1KG]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[TRUE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0440]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Galaxy]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[1X1KG]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[TRUE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="9" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0441]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Lindt Milk Chocolate]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[1X1KG]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[TRUE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0442]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Toblerone]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[1X1KG]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[TRUE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="11" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0443]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Amul Milk Chocolate]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[1X1KG]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[TRUE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="3" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0444]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Nestlé Milk Chocolate]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[1X1KG]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[TRUE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="3" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0445]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Bournville]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[1X1KG]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[TRUE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="3" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0446]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Hershey’s Dark]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[1X1KG]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[TRUE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="3" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0447]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Godiva Dark]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[1X1KG]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[FALSE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="6" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0448]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Ghirardelli Dark]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[1X1KG]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[FALSE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0449]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[KitKat Dark]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[1X1KG]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[FALSE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="12" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0450]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Milkybar White]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[1X1KG]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[FALSE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0451]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Lindt White]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[1X1KG]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[FALSE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0452]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Hershey’s White]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[1X1KG]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[FALSE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0453]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Snickers]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[1X1KG]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[FALSE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="3" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0454]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Mars]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[1X1KG]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[FALSE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0455]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Twix]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[10X1GM]]>
-              </value>
-            </param>
-            <param index="5">
               <value>
                 <![CDATA[1]]>
               </value>
             </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Product]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[P0222]]>
+              </value>
+            </param>
             <param index="6">
               <value>
+                <![CDATA[Sona Masoori]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[1X1X1KG]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[126]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[$]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[25]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[15]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[9]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
                 <![CDATA[TRUE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -763,34 +161,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0456]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[KitKat]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[10X1GM]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[P0223]]>
               </value>
             </param>
             <param index="6">
               <value>
+                <![CDATA[Idli Rice]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[1X1X1KG]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[127]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
                 <![CDATA[TRUE]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[TRUE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -804,34 +297,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0457]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[5 Star]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[10X1GM]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[P0224]]>
               </value>
             </param>
             <param index="6">
               <value>
+                <![CDATA[Seeraga Samba]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[1X1X1KG]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[128]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
                 <![CDATA[TRUE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -845,34 +433,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0458]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Munch]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[10X1GM]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[P0225]]>
               </value>
             </param>
             <param index="6">
               <value>
+                <![CDATA[Matta Rice (Kerala Red Rice)]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[1X1X1KG]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[129]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
                 <![CDATA[TRUE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -886,34 +569,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0459]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Ferrero Rocher]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[10X1GM]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[P0226]]>
               </value>
             </param>
             <param index="6">
               <value>
+                <![CDATA[Jeeraga Samba]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[1X1X1KG]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[130]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
                 <![CDATA[TRUE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -927,116 +705,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0460]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Lindt Swiss Classic]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[10X1GM]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[P0227]]>
               </value>
             </param>
             <param index="6">
+              <value>
+                <![CDATA[Kolam Rice]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[1X1X1KG]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[131]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
               <value>
                 <![CDATA[TRUE]]>
               </value>
             </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="12" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0461]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Digestive Biscuit]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[10X1GM]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[TRUE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0462]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Cream Crackers]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[10X1GM]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="6">
+            <param index="23">
               <value>
                 <![CDATA[FALSE]]>
               </value>
             </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="4" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1050,34 +841,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0463]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Little Hearts]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[10X1GM]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
+              <value>
+                <![CDATA[P0228]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Boiled Rice (Parboiled Rice)]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[1X1X1KG]]>
+              </value>
+            </param>
+            <param index="8">
               <value>
                 <![CDATA[1]]>
               </value>
             </param>
-            <param index="6">
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[132]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
               <value>
                 <![CDATA[FALSE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1091,34 +977,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0464]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Rusk]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[10X1GM]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
+              <value>
+                <![CDATA[P0229]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Raw Rice (White Rice)]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[1X1X1KG]]>
+              </value>
+            </param>
+            <param index="8">
               <value>
                 <![CDATA[1]]>
               </value>
             </param>
-            <param index="6">
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[133]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
               <value>
                 <![CDATA[FALSE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1132,34 +1113,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0465]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Britannia NutriChoice]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[10X1GM]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
+              <value>
+                <![CDATA[P0230]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Brown Rice]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[1X1X1KG]]>
+              </value>
+            </param>
+            <param index="8">
               <value>
                 <![CDATA[1]]>
               </value>
             </param>
-            <param index="6">
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[134]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
               <value>
                 <![CDATA[FALSE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="4" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1173,34 +1249,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0466]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Sunfeast Dark Fantasy]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[10X1GM]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
+              <value>
+                <![CDATA[P0231]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Black Rice (Karuppu Kavuni)]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[1X1X1KG]]>
+              </value>
+            </param>
+            <param index="8">
               <value>
                 <![CDATA[1]]>
               </value>
             </param>
-            <param index="6">
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[135]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[TRUE]]>
+              </value>
+            </param>
+            <param index="23">
               <value>
                 <![CDATA[FALSE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="0" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="5" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1214,34 +1385,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0467]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Horlicks Biscuits]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[10X1GM]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
+              <value>
+                <![CDATA[P0255]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Bru (Instant / Filter Blend)]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[25X25X1GM]]>
+              </value>
+            </param>
+            <param index="8">
               <value>
                 <![CDATA[1]]>
               </value>
             </param>
-            <param index="6">
+            <param index="9">
               <value>
-                <![CDATA[FALSE]]>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[136]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[TRUE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="8" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1255,34 +1521,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0468]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[McVitie’s Digestive]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[10X1GM]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
+              <value>
+                <![CDATA[P0256]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Nescafé]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[25X25X1GM]]>
+              </value>
+            </param>
+            <param index="8">
               <value>
                 <![CDATA[1]]>
               </value>
             </param>
-            <param index="6">
+            <param index="9">
               <value>
-                <![CDATA[FALSE]]>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[137]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[TRUE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1296,34 +1657,537 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0469]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Bourbon Cream]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[10X1GM]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
+              <value>
+                <![CDATA[P0257]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Levista]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[25X25X1GM]]>
+              </value>
+            </param>
+            <param index="8">
               <value>
                 <![CDATA[1]]>
               </value>
             </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[138]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[TRUE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetData -->
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Product]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[P0258]]>
+              </value>
+            </param>
             <param index="6">
+              <value>
+                <![CDATA[Narasu’s Coffee]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[25X25X1GM]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[139]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[TRUE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetData -->
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Product]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[P0259]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Coffee Day (CCD)]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[25X25X1GM]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[140]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[TRUE]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[TRUE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetData -->
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="10" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Product]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[P0260]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Tata Coffee / Tata Grand]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[25X25X1GM]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[141]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
               <value>
                 <![CDATA[FALSE]]>
               </value>
             </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1337,34 +2201,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0470]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Chocolate Chip Cookies]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Packets]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[10]]>
+                <![CDATA[P0261]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[TRUE]]>
+                <![CDATA[Blue Tokai Coffee]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[25X25X1GM]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[142]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[FALSE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1378,34 +2337,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0471]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Ginger Nut Biscuits]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Packets]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[10]]>
+                <![CDATA[P0262]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[TRUE]]>
+                <![CDATA[Sleepy Owl]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[25X25X1GM]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[143]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[FALSE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1419,34 +2473,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0472]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Coconut Biscuits]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Packets]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[10]]>
+                <![CDATA[P0263]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[TRUE]]>
+                <![CDATA[Hatti Kaapi]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[25X25X1GM]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[144]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[FALSE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="5" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1460,34 +2609,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0473]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Butter Biscuits]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Packets]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[10]]>
+                <![CDATA[P0264]]>
               </value>
             </param>
             <param index="6">
               <value>
+                <![CDATA[Bayar’s Coffee]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[25X25X1GM]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[145]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
                 <![CDATA[TRUE]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[FALSE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1501,198 +2745,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0474]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Cashew Cookies]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Packets]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[10]]>
+                <![CDATA[P0289]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[TRUE]]>
+                <![CDATA[Rajma (Kidney Beans)]]>
               </value>
             </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0475]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Atta Biscuit]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Packets]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[TRUE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="8" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0476]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Arrowroot Biscuit]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Packets]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[TRUE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0477]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Salted Biscuit]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Packets]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[TRUE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[P0478]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Parle-G]]>
-              </value>
-            </param>
-            <param index="4">
+            <param index="7">
               <value>
                 <![CDATA[PCS]]>
               </value>
             </param>
-            <param index="5">
+            <param index="8">
               <value>
-                <![CDATA[10]]>
+                <![CDATA[1]]>
               </value>
             </param>
-            <param index="6">
+            <param index="9">
               <value>
-                <![CDATA[FALSE]]>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[146]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[TRUE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1706,34 +2881,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0479]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Krackjack]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[PCS]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[10]]>
+                <![CDATA[P0290]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[FALSE]]>
+                <![CDATA[Chole (White Chickpeas)]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[PCS]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[147]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[TRUE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1747,34 +3017,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0480]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Monaco]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[PCS]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[10]]>
+                <![CDATA[P0291]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[FALSE]]>
+                <![CDATA[Black Gram]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[PCS]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[148]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[TRUE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="10" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1788,34 +3153,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0481]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Milano]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[PCS]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[10]]>
+                <![CDATA[P0292]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[FALSE]]>
+                <![CDATA[Sunflower Oil]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[PCS]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[149]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[TRUE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1829,34 +3289,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0482]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Unibic Oats Cookies]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[PCS]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[10]]>
+                <![CDATA[P0293]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[FALSE]]>
+                <![CDATA[Groundnut Oil]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[PCS]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[150]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[TRUE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1870,34 +3425,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0483]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Oreo Strawberry]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[PCS]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[10]]>
+                <![CDATA[P0294]]>
               </value>
             </param>
             <param index="6">
               <value>
+                <![CDATA[Gingelly (Sesame) Oil]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Packets]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[151]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[TRUE]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
                 <![CDATA[FALSE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="9" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1911,34 +3561,129 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0484]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Marie Gold]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[PCS]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[10]]>
+                <![CDATA[P0295]]>
               </value>
             </param>
             <param index="6">
               <value>
+                <![CDATA[Coconut Oil]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Packets]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[152]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
                 <![CDATA[FALSE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="GetData" data-provider="Util1" finished-at="2026-01-06T13:00:08 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1952,66 +3697,449 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[P0485]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Milk Bikis]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[PCS]]>
+                <![CDATA[Product]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[10]]>
+                <![CDATA[P0296]]>
               </value>
             </param>
             <param index="6">
               <value>
+                <![CDATA[Mustard Oil]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Packets]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[153]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
                 <![CDATA[FALSE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="ProductPage()[pri:6, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:00:08 IST" name="ProductPage" finished-at="2026-01-06T13:27:44 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1655440" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="6" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Product]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[P0297]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Ghee]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Packets]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[154]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[FALSE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetData -->
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="GetData" data-provider="Util2" finished-at="2026-01-06T16:47:28 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Product]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[P0298]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Poha (Flattened Rice)]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Packets]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[155]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[FALSE]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetData -->
+        <test-method signature="SystemSettingsPage()[pri:10, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:47:28 IST" name="SystemSettingsPage" finished-at="2026-01-06T16:49:25 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="116767" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SystemSettingsPage -->
+        <test-method signature="ProductPage()[pri:12, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T16:49:25 IST" name="ProductPage" finished-at="2026-01-06T17:09:12 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="1187240" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ProductPage -->
-        <test-method signature="UomPage()[pri:8, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:27:44 IST" name="UomPage" finished-at="2026-01-06T13:28:18 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="34216" status="PASS">
+        <test-method signature="VendorPage()[pri:14, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T17:09:12 IST" name="VendorPage" finished-at="2026-01-06T17:09:38 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="26349" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VendorPage -->
+        <test-method signature="UomPage()[pri:16, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T17:09:38 IST" name="UomPage" finished-at="2026-01-06T17:10:11 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="32405" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UomPage -->
-        <test-method signature="StockAdjustment()[pri:10, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:28:18 IST" name="StockAdjustment" finished-at="2026-01-06T13:31:23 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="185343" status="PASS">
+        <test-method signature="PurchaseReturn()[pri:18, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T17:10:11 IST" name="PurchaseReturn" finished-at="2026-01-06T17:19:48 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="576834" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- StockAdjustment -->
-        <test-method signature="StockCalculation()[pri:12, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:31:23 IST" name="StockCalculation" finished-at="2026-01-06T13:31:23 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="20" status="PASS">
+        </test-method> <!-- PurchaseReturn -->
+        <test-method signature="ReturnStockProductPage()[pri:19, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T17:19:48 IST" name="ReturnStockProductPage" finished-at="2026-01-06T17:26:47 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="419465" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReturnStockProductPage -->
+        <test-method signature="PurchaseReturnVoid()[pri:20, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T17:26:47 IST" name="PurchaseReturnVoid" finished-at="2026-01-06T17:27:22 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="35225" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PurchaseReturnVoid -->
+        <test-method signature="StockCalculation()[pri:22, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T17:27:22 IST" name="StockCalculation" finished-at="2026-01-06T17:27:22 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="12" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StockCalculation -->
-        <test-method signature="ExpectedProduct()[pri:14, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:31:23 IST" name="ExpectedProduct" finished-at="2026-01-06T13:42:12 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="648516" status="PASS">
+        <test-method signature="ExpectedProduct()[pri:24, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T17:27:22 IST" name="ExpectedProduct" finished-at="2026-01-06T17:34:10 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="407409" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ExpectedProduct -->
-        <test-method signature="ProductMovementPage()[pri:16, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T13:42:12 IST" name="ProductMovementPage" finished-at="2026-01-06T14:03:56 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1303931" status="PASS">
+        <test-method signature="ProductMovementPage()[pri:26, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T17:34:10 IST" name="ProductMovementPage" finished-at="2026-01-06T17:39:14 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="303832" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ProductMovementPage -->
-        <test-method signature="Exception()[pri:30, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T14:03:56 IST" name="Exception" finished-at="2026-01-06T14:03:56 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="Exception()[pri:45, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T17:39:14 IST" name="Exception" finished-at="2026-01-06T17:39:14 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Exception -->
-        <test-method signature="quit()[pri:40, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-06T14:03:56 IST" name="quit" finished-at="2026-01-06T14:03:56 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="653" status="PASS">
+        <test-method signature="quit()[pri:46, instance:com.Purchase.PurchaseReturnVoidTest@d86a6f]" started-at="2026-01-06T17:39:14 IST" name="quit" finished-at="2026-01-06T17:39:14 IST" depends-on-methods="com.Purchase.PurchaseReturnVoidTest.ERPLoginPage" duration-ms="514" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-      </class> <!-- com.InventoryandServices.StockAdjustmentV2Void -->
+      </class> <!-- com.Purchase.PurchaseReturnVoidTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

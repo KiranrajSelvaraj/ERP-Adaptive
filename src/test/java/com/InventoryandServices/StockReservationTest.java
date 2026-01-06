@@ -1212,7 +1212,7 @@ public class StockReservationTest extends BaseClass {
 			// Qoh Calculation:-
 			System.out.println("*** Grand Total Calculation With QOH ***");
 
-			String qohStock1 = driver.findElement(By.id("QOHvalue")).getAttribute("value");
+			String qohStock1 = driver.findElement(By.id("QOHvalue")).getText();
 
 			for (product productDetails : ProductDetailsList) {
 
@@ -1610,7 +1610,7 @@ public class StockReservationTest extends BaseClass {
 			System.out.println("Zero and Overseas Gst Amount is: " + finalExpectedGstAmount);
 
 		}
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		String ActualGstAmount = driver.findElement(By.id("GST")).getAttribute("value");
 		System.out.println("Actual Gst Amount is: " + ActualGstAmount);
 
@@ -2214,7 +2214,7 @@ public class StockReservationTest extends BaseClass {
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
 				String productCheckbox = driver.findElement(By.id("ProductCheck")).getAttribute("checked");
-				System.out.println("Product Check Box is: " + productCheckbox);
+			//	System.out.println("Product Check Box is: " + productCheckbox);
 				if (!productCheckbox.equalsIgnoreCase("true")) {
 					click(so.ProductCheckBox);
 
@@ -2262,7 +2262,6 @@ public class StockReservationTest extends BaseClass {
 			Thread.sleep(1000);
 			String getReservedQty = driver.findElement(By.id("ReservedQtyvalue")).getText();
 			System.out.println("Actual Reserve Qty: "+getReservedQty);
-			System.out.println();
 
 			int ReservationQtyListSize = ReservationQtyList.size();
 			for (int j = 0; j < ReservationQtyListSize; j++) {
@@ -2272,9 +2271,10 @@ public class StockReservationTest extends BaseClass {
 				double doubleReserveQty = Double.parseDouble(reservationQty.ReserveQty);
 				double subrationQty = doubleQty - doubleReserveQty;
 				String stringReserveQty = String.valueOf(subrationQty);				
-				System.out.println("Expected Reserve Qty: "+stringReserveQty);		
-				
-				soft.assertEquals(getReservedQty, stringReserveQty, 
+				System.out.println("Expected Reserve Qty: "+stringReserveQty.replaceAll("\\.0$", ""));
+				System.out.println();
+
+				soft.assertEquals(getReservedQty, stringReserveQty.replaceAll("\\.0$", ""), 
 						"Actual and Expected Reseeve Qty Mismatched for "+excelData.ProductName);
 				
 				break;
@@ -2288,6 +2288,12 @@ public class StockReservationTest extends BaseClass {
 	@Test(priority = 30, dependsOnMethods = "ERPLoginPage")
 	private void Exception() throws InterruptedException {
 		soft.assertAll();
+
+	}
+	
+	@Test(priority = 40, dependsOnMethods = "ERPLoginPage")
+	private void quit() throws InterruptedException {
+		driver.quit();
 
 	}
 

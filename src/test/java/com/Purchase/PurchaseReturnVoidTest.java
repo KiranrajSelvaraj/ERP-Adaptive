@@ -1888,7 +1888,6 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 	}
 
-	@Ignore
 	@Test(priority = 46, dependsOnMethods = "ERPLoginPage")
 	private void quit() throws InterruptedException {
 		driver.quit();

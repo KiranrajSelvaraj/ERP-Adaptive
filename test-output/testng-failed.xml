@@ -4,18 +4,14 @@
   <test thread-count="1" parallel="classes" name="Test(failed)">
     <parameter name="env" value="Dev"/>
     <classes>
-      <class name="com.Sales.SalesInvoiceVoidTest">
+      <class name="com.InventoryandServices.StockAdjustmentV2Void">
         <methods>
-          <include name="UomPage"/>
           <include name="ExpectedProduct"/>
-          <include name="ProductPage"/>
           <include name="ProductMovementPage"/>
-          <include name="SystemSettings"/>
-          <include name="SalesInvoicetoVoidProcess"/>
           <include name="ERPLoginPage"/>
-          <include name="Environment"/>
+          <include name="StockAdjustment"/>
         </methods>
-      </class> <!-- com.Sales.SalesInvoiceVoidTest -->
+      </class> <!-- com.InventoryandServices.StockAdjustmentV2Void -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

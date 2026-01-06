@@ -193,7 +193,6 @@ public class PurchaseOrderTest extends BaseClass {
 
 	}
 
-
 	//System Settings:-
 	private boolean IsZeroQtyPurchase;
 	private boolean IsZeroGSTManagement;

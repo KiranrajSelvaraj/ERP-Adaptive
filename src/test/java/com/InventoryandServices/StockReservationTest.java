@@ -28,6 +28,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.BaseClass.BaseClass;
+import com.InventoryandServices.StockReservationTest.ReservationQty;
 import com.PomClass.Login;
 import com.PomClass.Product;
 import com.PomClass.ProductMovement;
@@ -579,11 +580,11 @@ public class StockReservationTest extends BaseClass {
 				WebElement salesmanSearchField = driver.findElement(By.xpath
 						("//span[@id='select2-SalesManId-container']//following::input[@type='search']"));
 				salesmanSearchField.sendKeys(excelData.Salesman +Keys.ENTER);
-				
+
 				String getReservationNumber = driver.findElement(By.xpath
 						("//input[@id='ReservationNumber']")).getAttribute("value");
 				System.out.println("getReservationNumber: "+getReservationNumber);
-				
+
 				stockReservation stockreserve = new stockReservation(getReservationNumber);
 				stockReservationList.add(stockreserve);
 
@@ -1042,6 +1043,20 @@ public class StockReservationTest extends BaseClass {
 			}
 		}
 	}
+
+	public class ReservationQty {
+
+		public String ReserveQty;
+
+		public ReservationQty (String ReserveQty) {
+			super();
+
+			this.ReserveQty = ReserveQty;
+		}
+	}
+
+	ArrayList<ReservationQty> ReservationQtyList = new ArrayList<>();
+
 	//@Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void SalesToInvoice() throws InterruptedException, IOException {
@@ -1065,7 +1080,7 @@ public class StockReservationTest extends BaseClass {
 		String getExcelOverAllDiscountAmount = "";
 		String getExcelGstPercentage = "";
 		String getExcelCurrencyRate = "";
-		String productPrice = "";
+		//	String productPrice = "";
 		String ExpDiscountProductPriceFormat = "";
 
 		double ActDiscountProductPriceDouble = 0;
@@ -1297,10 +1312,13 @@ public class StockReservationTest extends BaseClass {
 					break;
 				}
 			}
-	
+
 			String getReservedQty = driver.findElement(By.id("ReservedQtyvalue")).getText();
 			System.out.println("getReservedQty: "+getReservedQty);
 			System.out.println();
+
+			ReservationQty reserveQty = new ReservationQty(getReservedQty);
+			ReservationQtyList.add(reserveQty);
 
 			// Qty:-
 			Sendkeys(so.Qty, excelData.Qty);
@@ -1592,7 +1610,7 @@ public class StockReservationTest extends BaseClass {
 			System.out.println("Zero and Overseas Gst Amount is: " + finalExpectedGstAmount);
 
 		}
-
+		Thread.sleep(2000);
 		String ActualGstAmount = driver.findElement(By.id("GST")).getAttribute("value");
 		System.out.println("Actual Gst Amount is: " + ActualGstAmount);
 
@@ -2165,21 +2183,22 @@ public class StockReservationTest extends BaseClass {
 
 			Thread.sleep(3000);
 			action.moveToElement(sr.Reverse).click().perform();
-
+			System.out.println("** Stock Reservation Reverse Successfull **");
+			System.out.println();
 
 		} // Stock reservation list loop
-
+		Thread.sleep(3000);
 	} // Reveres stock reservation
 
 	@Test(priority = 26, dependsOnMethods = "ERPLoginPage")
 	public void ReverseQtyCalculation() throws InterruptedException {
 
-		driver.navigate().to(url + "SalesPurchases/SalesOrderIndex");
+		driver.navigate().to(url + "SalesPurchases/SalesOrderIndex/Index");
 		Thread.sleep(5000);		
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+	//	WebDriverWait wait = new WebDriverWait(driver, 20);
 		SalesOrder so = new SalesOrder(driver);
 
 		System.out.println("*** Sales To Invoice Page ***");
@@ -2242,12 +2261,25 @@ public class StockReservationTest extends BaseClass {
 
 			Thread.sleep(1000);
 			String getReservedQty = driver.findElement(By.id("ReservedQtyvalue")).getText();
-			System.out.println("getReservedQty: "+getReservedQty);
+			System.out.println("Actual Reserve Qty: "+getReservedQty);
 			System.out.println();
 
+			int ReservationQtyListSize = ReservationQtyList.size();
+			for (int j = 0; j < ReservationQtyListSize; j++) {
+				ReservationQty reservationQty = ReservationQtyList.get(j);
 
-
-
+				double doubleQty = Double.parseDouble(excelData.Qty); 
+				double doubleReserveQty = Double.parseDouble(reservationQty.ReserveQty);
+				double subrationQty = doubleQty - doubleReserveQty;
+				String stringReserveQty = String.valueOf(subrationQty);				
+				System.out.println("Expected Reserve Qty: "+stringReserveQty);		
+				
+				soft.assertEquals(getReservedQty, stringReserveQty, 
+						"Actual and Expected Reseeve Qty Mismatched for "+excelData.ProductName);
+				
+				break;
+			} // Reservation qty list loop
+			
 		} // Excel data list loop
 
 	} // Reverse qty calculation

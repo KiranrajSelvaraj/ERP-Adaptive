@@ -562,7 +562,7 @@ public class CreditNotesVoidTest extends BaseClass {
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	//@Ignore
+	// @Ignore
 	@Test(priority = 8, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -781,7 +781,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
 
-	//@Ignore
+	// @Ignore
 	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
@@ -937,13 +937,13 @@ public class CreditNotesVoidTest extends BaseClass {
 				action.moveToElement(cn.ChooseProduct).click().perform();
 				driver.findElement(
 						By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"))
-				.sendKeys(excelData.ProductCode + Keys.ENTER);
+						.sendKeys(excelData.ProductCode + Keys.ENTER);
 
 			} else if (excelData.Type.equalsIgnoreCase("Service")) {
 
 				driver.findElement(
 						By.xpath("//span[@id='select2-ServiceId-container']//following::input[@type='search']"))
-				.sendKeys(excelData.ProductCode + Keys.ENTER);
+						.sendKeys(excelData.ProductCode + Keys.ENTER);
 
 			} else if (excelData.Type.equalsIgnoreCase("Open")) {
 
@@ -1004,11 +1004,9 @@ public class CreditNotesVoidTest extends BaseClass {
 
 					if (productDetails.IsCartonSelected.equalsIgnoreCase("true")) {
 
-						if (excelData.Uom.equalsIgnoreCase("1KG") ||
-								excelData.Uom.equalsIgnoreCase("1X10KG")||
-								excelData.Uom.equalsIgnoreCase("1X1KG")||
-								excelData.Uom.equalsIgnoreCase("1X1X1KG")||
-								excelData.Uom.equalsIgnoreCase("KG")) {
+						if (excelData.Uom.equalsIgnoreCase("1KG") || excelData.Uom.equalsIgnoreCase("1X10KG")
+								|| excelData.Uom.equalsIgnoreCase("1X1KG") || excelData.Uom.equalsIgnoreCase("1X1X1KG")
+								|| excelData.Uom.equalsIgnoreCase("KG")) {
 
 							String[] split = productDetails.currentStockValue.split("[ B/L]+");
 							int boxStock = Integer.parseInt(split[0]);
@@ -1049,7 +1047,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 						for (ProductUOM productUom : ProductUOMDetailsList) {
 							if (productUom.ProductUOMtablesize > 0
-				&& productUom.productCode1.equals(productDetails.productName)) {
+									&& productUom.productCode1.equals(productDetails.productName)) {
 
 								for (UOM uomDetails : UomDetailsList) {
 									if (uomDetails.UomCodeValue.equalsIgnoreCase(productUom.SubUOM)) {
@@ -1225,14 +1223,15 @@ public class CreditNotesVoidTest extends BaseClass {
 				Thread.sleep(2000);
 				driver.findElement(By.xpath(
 						"//strong[contains(text(),'" + excelData.ProductName + "')]//following::button[text()='Add']"))
-				.click();
+						.click();
 
 			}
 
-			WebElement productamount = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath
-							("//table[@id='CreditNoteTable']//tbody//tr//td[2]//div//textarea[contains(text(),'"+ excelData.ProductName + "')]//following::td[@id='totaldetailamount']")));
+			WebElement productamount = wait.until(ExpectedConditions.presenceOfElementLocated(
+					By.xpath("//table[@id='CreditNoteTable']//tbody//tr//td[2]//div//textarea[contains(text(),'"
+							+ excelData.ProductName + "')]//following::td[@id='totaldetailamount']")));
 			getProductAmount = productamount.getAttribute("data-value");
-					
+
 			double getProductAmountDouble = Double.parseDouble(getProductAmount);
 			System.out.println("Actual Discount Amount is: " + getProductAmountDouble);
 
@@ -1274,8 +1273,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		System.out.println();
 
 		System.out.println("*** Sub Total Calculation ***");
-		String getSubtotalString = driver
-				.findElement(By.xpath("//input[@id='order']")).getAttribute("value");				
+		String getSubtotalString = driver.findElement(By.xpath("//input[@id='order']")).getAttribute("value");
 		double getSubtotalDouble = Double.parseDouble(getSubtotalString);
 		System.out.println("Actual Subtotal is: " + getSubtotalDouble);
 		System.out.println("Expected SubTotal is: " + ExpSubTotal);
@@ -1493,7 +1491,8 @@ public class CreditNotesVoidTest extends BaseClass {
 	}
 
 	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
-	//@Ignore
+
+	// @Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
 	public void StockCalculation() {
 
@@ -1517,11 +1516,11 @@ public class CreditNotesVoidTest extends BaseClass {
 					doubleUomUnit = Double.parseDouble(uomData.UomUnits);
 
 					multipleQty = doubleExcelQty * doubleUomUnit;
-					System.out.println("multipleQty is: "+multipleQty);
+					System.out.println("multipleQty is: " + multipleQty);
 					break;
-				}	
+				}
 
-			}  // Uom details list loop
+			} // Uom details list loop
 
 			int ProductDetailsListSize = ProductDetailsList.size();
 			for (int k = 0; k < ProductDetailsListSize; k++) {
@@ -1546,13 +1545,12 @@ public class CreditNotesVoidTest extends BaseClass {
 								double doubleBoxCurrentStock = Double.parseDouble(replaceAllBoxCurrentStock);
 
 								multipleBoxStock = doubleBoxCurrentStock * 10;
-								//	System.out.println("multipleBoxStock is: "+multipleBoxStock);
-
+								// System.out.println("multipleBoxStock is: "+multipleBoxStock);
 
 							} else if (currentStock.contains("L")) {
 								String replaceAllLooseCurrentStock = currentStock.replaceAll("[A-Za-z]", "");
 								doubleLooseCurrentStock = Double.parseDouble(replaceAllLooseCurrentStock);
-								//	System.out.println("doubleLooseCurrentStock is: "+doubleLooseCurrentStock);
+								// System.out.println("doubleLooseCurrentStock is: "+doubleLooseCurrentStock);
 
 							} // Current stock loop
 
@@ -1560,7 +1558,7 @@ public class CreditNotesVoidTest extends BaseClass {
 							calculateStockDouble = additionBoxandLooseStock + multipleQty;
 							calculateStockDouble = calculateStockDouble - multipleQty;
 
-						}		
+						}
 
 					} else {
 
@@ -1572,12 +1570,12 @@ public class CreditNotesVoidTest extends BaseClass {
 
 					}
 
-					//	calculateStock = String.valueOf(calculateStockDouble);
+					// calculateStock = String.valueOf(calculateStockDouble);
 
-					if (productData.IsCarton) {						
+					if (productData.IsCarton) {
 
 						double diviedStock = calculateStockDouble / 10;
-						String stringCalculateStock = String.valueOf(diviedStock);						
+						String stringCalculateStock = String.valueOf(diviedStock);
 						String[] split = stringCalculateStock.split("\\.");
 						String boxQty = split[0];
 						String looseQty = "0";
@@ -1586,16 +1584,15 @@ public class CreditNotesVoidTest extends BaseClass {
 							looseQty = split[1];
 						}
 
-						calculateStock = boxQty +" B/"+ looseQty +" L";					
+						calculateStock = boxQty + " B/" + looseQty + " L";
 
-						System.out.println("Product Name: "+productName);
-						System.out.println("calculateCartonStock is: "+calculateStock);
-
+						System.out.println("Product Name: " + productName);
+						System.out.println("calculateCartonStock is: " + calculateStock);
 
 					} else {
 
-						System.out.println("Product Name: "+productName);
-						System.out.println("CalculateBaseandNonCartonStock is: "+calculateStock);
+						System.out.println("Product Name: " + productName);
+						System.out.println("CalculateBaseandNonCartonStock is: " + calculateStock);
 
 					}
 
@@ -1606,7 +1603,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 				}
 
-			} // Product data loop	
+			} // Product data loop
 
 		} // Excel data list loop
 
@@ -1615,8 +1612,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 	} // Method loop
 
-
-	//@Ignore
+	// @Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 
@@ -1636,8 +1632,8 @@ public class CreditNotesVoidTest extends BaseClass {
 
 		for (String product : ProductSet) {
 
-			WebElement productcode = wait.until(ExpectedConditions.visibilityOfElementLocated
-					(By.xpath("//input[@value='Fetch']//preceding::input[@placeholder='Find a product or code ']")));
+			WebElement productcode = wait.until(ExpectedConditions.visibilityOfElementLocated(
+					By.xpath("//input[@value='Fetch']//preceding::input[@placeholder='Find a product or code ']")));
 			Thread.sleep(1000);
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			productcode.sendKeys(product);
@@ -1662,14 +1658,14 @@ public class CreditNotesVoidTest extends BaseClass {
 
 				if (stock.productName.equalsIgnoreCase(productName)) {
 
-					System.out.println("Actual Current Stock: "+afterCurrentStockValue);
-					System.out.println("Expected current Stock: "+stock.calculateStock);
+					System.out.println("Actual Current Stock: " + afterCurrentStockValue);
+					System.out.println("Expected current Stock: " + stock.calculateStock);
 					System.out.println();
 
-					soft.assertEquals(afterCurrentStockValue, stock.calculateStock, 
-							"Actual and Expected Product Stock Mismatched for Product "+stock.productName);
+					soft.assertEquals(afterCurrentStockValue, stock.calculateStock,
+							"Actual and Expected Product Stock Mismatched for Product " + stock.productName);
 
-				}			
+				}
 
 			} // Stock calculation loop
 
@@ -1681,7 +1677,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		System.out.println();
 	}
 
-	//@Ignore
+	// @Ignore
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 
@@ -1694,7 +1690,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		driver.navigate().to(url + "SalesPurchases/Product/ProductMovementsIndex");
 		Thread.sleep(7000);
 		System.out.println("*** Product Movement Page ***");
-		
+
 		for (ExcelData excelData : excelDataList) {
 
 			click(pm.ChooseProduct);
@@ -1704,22 +1700,19 @@ public class CreditNotesVoidTest extends BaseClass {
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			productcode.sendKeys(excelData.ProductCode + Keys.ENTER);
 			Thread.sleep(1000);
-			
-		/*	boolean enabledUom = driver.findElement(By.xpath("//select[@id='UOM']")).isEnabled();
-			System.out.println("enabledUom: "+enabledUom);
-			if (enabledUom == true ) {
-				
-				click(pm.UOM);
-				List<WebElement> subUomOption = driver.findElements(By.xpath(
-						"//span[@id='select2-UOM-container']//following::input[@type='search']//following::ul//li"));
-				for (WebElement option : subUomOption) {
-					if (option.getText().trim().equals(excelData.Uom)) {
-						option.click();
-						break;
-					}
-				}	
-			} */
-			
+
+			/*
+			 * boolean enabledUom =
+			 * driver.findElement(By.xpath("//select[@id='UOM']")).isEnabled();
+			 * System.out.println("enabledUom: "+enabledUom); if (enabledUom == true ) {
+			 * 
+			 * click(pm.UOM); List<WebElement> subUomOption = driver.findElements(By.xpath(
+			 * "//span[@id='select2-UOM-container']//following::input[@type='search']//following::ul//li"
+			 * )); for (WebElement option : subUomOption) { if
+			 * (option.getText().trim().equals(excelData.Uom)) { option.click(); break; } }
+			 * }
+			 */
+
 			js.executeScript("arguments[0].click();", pm.Fetch);
 			Thread.sleep(3000);
 
@@ -1740,25 +1733,23 @@ public class CreditNotesVoidTest extends BaseClass {
 
 						String replaceProductStock = stock.calculateStock.replaceAll("/0 L", "");
 
-						System.out.println("Product Movement Name: "+ trimProductName);
-						System.out.println("Actual Product Movement Stock: "+ balanceQty);
-						System.out.println("Expected Product Movement Stock: "+ replaceProductStock);
+						System.out.println("Product Movement Name: " + trimProductName);
+						System.out.println("Actual Product Movement Stock: " + balanceQty);
+						System.out.println("Expected Product Movement Stock: " + replaceProductStock);
 						System.out.println();
 
 						soft.assertEquals(balanceQty, replaceProductStock,
-								"Actual and Expected Product Movement Stock Mismatched for Product "
-										+ trimProductName);
+								"Actual and Expected Product Movement Stock Mismatched for Product " + trimProductName);
 
 					} else {
 
-						System.out.println("Product Movement Name: "+ trimProductName);
-						System.out.println("Actual Product Movement Stock: "+ balanceQty);
-						System.out.println("Expected Product Movement Stock: "+stock.calculateStock);
+						System.out.println("Product Movement Name: " + trimProductName);
+						System.out.println("Actual Product Movement Stock: " + balanceQty);
+						System.out.println("Expected Product Movement Stock: " + stock.calculateStock);
 						System.out.println();
 
 						soft.assertEquals(balanceQty, stock.calculateStock,
-								"Actual and Expected Product Movement Stock Mismatched for Product "
-										+ trimProductName);
+								"Actual and Expected Product Movement Stock Mismatched for Product " + trimProductName);
 
 					}
 					break;
@@ -1770,10 +1761,15 @@ public class CreditNotesVoidTest extends BaseClass {
 		System.out.println();
 	}
 
-
 	@Test(priority = 30, dependsOnMethods = "ERPLoginPage")
 	private void Exception() throws InterruptedException {
 		soft.assertAll();
+
+	}
+
+	@Test(priority = 40, dependsOnMethods = "ERPLoginPage")
+	private void quit() throws InterruptedException {
+		driver.quit();
 
 	}
 

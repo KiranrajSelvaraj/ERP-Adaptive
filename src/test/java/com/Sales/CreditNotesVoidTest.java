@@ -931,7 +931,10 @@ public class CreditNotesVoidTest extends BaseClass {
 					click(cn.OpenCheckbox);
 				}
 			}
-
+			
+			click(cn.Qty);
+			click(cn.DiscountAmount);
+			Thread.sleep(2000);
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
 				action.moveToElement(cn.ChooseProduct).click().perform();

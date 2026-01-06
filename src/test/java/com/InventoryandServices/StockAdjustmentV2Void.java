@@ -628,7 +628,8 @@ public class StockAdjustmentV2Void extends BaseClass{
 					batchLQty.sendKeys(excelData.Qty);
 				}				
 				Thread.sleep(1000);
-				WebElement close = driver.findElement(By.xpath("(//label[text()='"+excelData.ProductName+"']//preceding::span[@class='tooltipclose'])["+(i+1)+"]"));
+				WebElement close = driver.findElement(By.xpath
+						("//div[contains(@class,'tooltipmodal-content') and .//label[text()='"+excelData.ProductName+"']]//span[@class='tooltipclose']"));
 				js.executeScript("arguments[0].click();", close);
 			}
 
@@ -954,7 +955,7 @@ public class StockAdjustmentV2Void extends BaseClass{
 			productcode.sendKeys(excelData.ProductCode + Keys.ENTER);
 			Thread.sleep(1000);
 			
-			boolean enabledUom = driver.findElement(By.xpath("//select[@id='UOM']")).isEnabled();
+		/*	boolean enabledUom = driver.findElement(By.xpath("//select[@id='UOM']")).isEnabled();
 			System.out.println("enabledUom: "+enabledUom);
 			if (enabledUom == true ) {
 				
@@ -967,7 +968,7 @@ public class StockAdjustmentV2Void extends BaseClass{
 						break;
 					}
 				}	
-			}
+			} */
 			
 			js.executeScript("arguments[0].click();", pm.Fetch);
 			Thread.sleep(3000);

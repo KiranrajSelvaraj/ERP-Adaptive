@@ -4,12 +4,22 @@
   <test thread-count="1" parallel="classes" name="Test(failed)">
     <parameter name="env" value="Dev"/>
     <classes>
-      <class name="com.InventoryandServices.StockReservationTest">
+      <class name="com.Purchase.PurchaseOrderTest">
         <methods>
+          <include name="GetData"/>
+          <include name="StockCalculation"/>
+          <include name="SystemSettingsPage"/>
+          <include name="PurchaseOrderToInvoice"/>
+          <include name="quit"/>
+          <include name="UomPage"/>
+          <include name="ProductPage"/>
           <include name="Exception"/>
+          <include name="ExpectedProduct"/>
           <include name="ERPLoginPage"/>
+          <include name="VendorPage"/>
+          <include name="ProductMovementPage"/>
         </methods>
-      </class> <!-- com.InventoryandServices.StockReservationTest -->
+      </class> <!-- com.Purchase.PurchaseOrderTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

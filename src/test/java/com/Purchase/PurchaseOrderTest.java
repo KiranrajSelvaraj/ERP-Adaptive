@@ -50,9 +50,8 @@ public class PurchaseOrderTest extends BaseClass {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 
-		driver.get("https://erp.dev1.adaptivegroups.asia/ERP/Account/Login");
-		url = "https://erp.dev1.adaptivegroups.asia/ERP/";
-
+		driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");
+		url = "https://erpauto.dev1.adaptivebizapp.com/ERP/";
 		Login lo = new Login(driver);
 
 		Sendkeys(lo.CompanyCode, "UITDEMO1");
@@ -228,9 +227,9 @@ public class PurchaseOrderTest extends BaseClass {
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsZeroQtyPurchase" + Keys.ENTER);
 		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
+		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsZeroQtyPurchase = ss.BooleanValue.isSelected();
 		System.out.println("IsZeroQtyPurchase: "+IsZeroQtyPurchase);
@@ -242,9 +241,9 @@ public class PurchaseOrderTest extends BaseClass {
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsZeroGSTManagement" + Keys.ENTER);
 		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
+		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsZeroGSTManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsZeroGSTManagement: "+IsZeroGSTManagement);
@@ -256,9 +255,9 @@ public class PurchaseOrderTest extends BaseClass {
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsMultipleProductForPurchase" + Keys.ENTER);
 		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
+		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsMultipleProductForPurchase = ss.BooleanValue.isSelected();
 		System.out.println("IsMultipleProductForPurchase : "+IsMultipleProductForPurchase);
@@ -270,9 +269,9 @@ public class PurchaseOrderTest extends BaseClass {
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsGSTManagement" + Keys.ENTER);
 		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
+		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsGSTManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsGSTManagement: "+IsGSTManagement);
@@ -284,9 +283,9 @@ public class PurchaseOrderTest extends BaseClass {
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsMultipleServiceForPurchase" + Keys.ENTER);
 		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
+		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsGSTManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsMultipleServiceForPurchase: "+IsMultipleServiceForPurchase);
@@ -298,9 +297,9 @@ public class PurchaseOrderTest extends BaseClass {
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsCurrencyEnabled" + Keys.ENTER);
 		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
+		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsCurrencyEnabled = ss.BooleanValue.isSelected();
 		System.out.println("IsCurrencyEnabled: "+IsCurrencyEnabled);
@@ -312,9 +311,9 @@ public class PurchaseOrderTest extends BaseClass {
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsWarehouseManagement" + Keys.ENTER);
 		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
+		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsWarehouseManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsWarehouseManagement: "+IsWarehouseManagement);
@@ -326,9 +325,9 @@ public class PurchaseOrderTest extends BaseClass {
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsBarcodeManagementInPurchase" + Keys.ENTER);
 		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
+		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsBarcodeManagementInPurchase = ss.BooleanValue.isSelected();
 		System.out.println("IsBarcodeManagementInPurchase: "+IsBarcodeManagementInPurchase);
@@ -340,9 +339,9 @@ public class PurchaseOrderTest extends BaseClass {
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsOpenItemManagementInPurchase" + Keys.ENTER);
 		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
+		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsOpenItemManagementInPurchase = ss.BooleanValue.isSelected();
 		System.out.println("IsOpenItemManagementInPurchase: "+IsOpenItemManagementInPurchase);
@@ -354,9 +353,9 @@ public class PurchaseOrderTest extends BaseClass {
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "DecimalCalculationForPurchase" + Keys.ENTER);
 		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
+		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		String DecimalCalculationForPurchaseString = driver
 				.findElement(By.xpath("//input[@id='DecimalValue']")).getAttribute("value");
@@ -370,9 +369,9 @@ public class PurchaseOrderTest extends BaseClass {
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsEnableDirectPOtoGRN" + Keys.ENTER);
 		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
+		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsEnableDirectPOtoGRN = ss.BooleanValue.isSelected();
 		System.out.println("IsEnableDirectPOtoGRN: "+IsEnableDirectPOtoGRN);
@@ -384,9 +383,9 @@ public class PurchaseOrderTest extends BaseClass {
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsEnableDirectPOtoSO" + Keys.ENTER);
 		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
+		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsEnableDirectPOtoSO = ss.BooleanValue.isSelected();
 		System.out.println("IsEnableDirectPOtoSO: "+IsEnableDirectPOtoSO);
@@ -398,9 +397,9 @@ public class PurchaseOrderTest extends BaseClass {
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsEnableItemLevelDiscountInPurchase" + Keys.ENTER);
 		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
+		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsEnableItemLevelDiscountInPurchase = ss.BooleanValue.isSelected();
 		System.out.println("IsEnableItemLevelDiscountInPurchase:" +IsEnableItemLevelDiscountInPurchase);
@@ -414,7 +413,7 @@ public class PurchaseOrderTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsMultiWordSearchInProduct = ss.BooleanValue.isSelected();
 		System.out.println("IsMultiWordSearchInProduct :" + IsMultiWordSearchInProduct);
@@ -428,7 +427,7 @@ public class PurchaseOrderTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsFOCManagementInPI = ss.BooleanValue.isSelected();
 		System.out.println("IsFOCManagementInPI:" +IsFOCManagementInPI);

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="7" failed="1" skipped="0">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-08T12:20:56 IST" name="Suite" finished-at="2026-01-08T12:25:44 IST" duration-ms="287841">
+  <suite started-at="2026-01-08T12:37:35 IST" name="Suite" finished-at="2026-01-08T12:41:17 IST" duration-ms="222734">
     <groups>
     </groups>
-    <test started-at="2026-01-08T12:20:56 IST" name="Test" finished-at="2026-01-08T12:25:44 IST" duration-ms="287841">
+    <test started-at="2026-01-08T12:37:35 IST" name="Test" finished-at="2026-01-08T12:41:17 IST" duration-ms="222734">
       <class name="com.Purchase.PurchaseGRNTest">
-        <test-method signature="ERPLoginPage()[pri:1, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:20:56 IST" name="ERPLoginPage" finished-at="2026-01-08T12:21:18 IST" duration-ms="22345" status="PASS">
+        <test-method signature="ERPLoginPage()[pri:1, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:37:35 IST" name="ERPLoginPage" finished-at="2026-01-08T12:37:49 IST" duration-ms="14052" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ERPLoginPage -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:21:19 IST" name="GetData" data-provider="Util2" finished-at="2026-01-08T12:21:19 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="7" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:37:50 IST" name="GetData" data-provider="Util2" finished-at="2026-01-08T12:37:50 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -142,77 +142,27 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="SystemSettingsPage()[pri:10, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:21:19 IST" name="SystemSettingsPage" finished-at="2026-01-08T12:23:42 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="142384" status="PASS">
+        <test-method signature="SystemSettingsPage()[pri:10, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:37:50 IST" name="SystemSettingsPage" finished-at="2026-01-08T12:39:51 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="121460" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SystemSettingsPage -->
-        <test-method signature="ProductPage()[pri:12, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:23:42 IST" name="ProductPage" finished-at="2026-01-08T12:24:13 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="31597" status="PASS">
+        <test-method signature="ProductPage()[pri:12, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:39:51 IST" name="ProductPage" finished-at="2026-01-08T12:40:21 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="29283" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ProductPage -->
-        <test-method signature="VendorPage()[pri:14, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:24:13 IST" name="VendorPage" finished-at="2026-01-08T12:24:30 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="16528" status="PASS">
+        <test-method signature="VendorPage()[pri:14, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:40:21 IST" name="VendorPage" finished-at="2026-01-08T12:40:34 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="12984" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VendorPage -->
-        <test-method signature="UomPage()[pri:16, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:24:30 IST" name="UomPage" finished-at="2026-01-08T12:24:45 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="14928" status="PASS">
+        <test-method signature="UomPage()[pri:16, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:40:34 IST" name="UomPage" finished-at="2026-01-08T12:40:47 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="12994" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UomPage -->
-        <test-method signature="PurchaseOrderToInvoice()[pri:18, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:24:45 IST" name="PurchaseOrderToInvoice" finished-at="2026-01-08T12:25:34 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="49485" status="PASS">
+        <test-method signature="PurchaseOrderToInvoice()[pri:18, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:40:47 IST" name="PurchaseOrderToInvoice" finished-at="2026-01-08T12:41:10 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="23484" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PurchaseOrderToInvoice -->
-        <test-method signature="GoodReceivingNote()[pri:20, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:25:34 IST" name="GoodReceivingNote" finished-at="2026-01-08T12:25:44 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="9438" status="FAIL">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
-            <message>
-              <![CDATA[element click intercepted: Element <a data-id="a61e8cf5-212a-4f81-895e-af8e80096b3a" class="options" title="Details">...</a> is not clickable at point (1303, 417). Other element would receive the click: <td style="text-align:center;" width="7%">...</td>
-  (Session info: chrome=143.0.7499.170)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-7QA4B29', ip: '192.168.1.35', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63695}, goog:processID: 5264, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a49bf95570266163f717dc95a74364f8]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a data-id="a61e8cf5-212a-4f81-895e-af8e80096b3a" class="options" title="Details">...</a> is not clickable at point (1303, 417). Other element would receive the click: <td style="text-align:center;" width="7%">...</td>
-  (Session info: chrome=143.0.7499.170)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-7QA4B29', ip: '192.168.1.35', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63695}, goog:processID: 5264, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a49bf95570266163f717dc95a74364f8
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-at com.Purchase.PurchaseGRNTest.GoodReceivingNote(PurchaseGRNTest.java:1526)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+        <test-method signature="GoodReceivingNote()[pri:20, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:41:10 IST" name="GoodReceivingNote" finished-at="2026-01-08T12:41:17 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="7247" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GoodReceivingNote -->

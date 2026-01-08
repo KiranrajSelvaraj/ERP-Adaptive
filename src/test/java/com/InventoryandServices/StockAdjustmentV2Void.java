@@ -845,7 +845,7 @@ public class StockAdjustmentV2Void extends BaseClass{
 					} else {
 
 						System.out.println("Product Name: "+productName);
-						System.out.println("CalculateBaseandNonCartonStock is: "+calculateStockDouble);
+						System.out.println("CalculateBaseandNonCartonStock is: "+calculateStock);
 
 					}
 

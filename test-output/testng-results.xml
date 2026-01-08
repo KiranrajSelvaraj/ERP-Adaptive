@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-08T12:37:35 IST" name="Suite" finished-at="2026-01-08T12:41:17 IST" duration-ms="222734">
+  <suite started-at="2026-01-08T12:59:32 IST" name="Suite" finished-at="2026-01-08T13:04:11 IST" duration-ms="278144">
     <groups>
     </groups>
-    <test started-at="2026-01-08T12:37:35 IST" name="Test" finished-at="2026-01-08T12:41:17 IST" duration-ms="222734">
+    <test started-at="2026-01-08T12:59:32 IST" name="Test" finished-at="2026-01-08T13:04:11 IST" duration-ms="278144">
       <class name="com.Purchase.PurchaseGRNTest">
-        <test-method signature="ERPLoginPage()[pri:1, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:37:35 IST" name="ERPLoginPage" finished-at="2026-01-08T12:37:49 IST" duration-ms="14052" status="PASS">
+        <test-method signature="ERPLoginPage()[pri:1, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:59:33 IST" name="ERPLoginPage" finished-at="2026-01-08T12:59:51 IST" duration-ms="18401" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ERPLoginPage -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:37:50 IST" name="GetData" data-provider="Util2" finished-at="2026-01-08T12:37:50 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:59:52 IST" name="GetData" data-provider="Util2" finished-at="2026-01-08T12:59:52 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -142,27 +142,27 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="SystemSettingsPage()[pri:10, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:37:50 IST" name="SystemSettingsPage" finished-at="2026-01-08T12:39:51 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="121460" status="PASS">
+        <test-method signature="SystemSettingsPage()[pri:10, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:59:52 IST" name="SystemSettingsPage" finished-at="2026-01-08T13:02:00 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="127790" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SystemSettingsPage -->
-        <test-method signature="ProductPage()[pri:12, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:39:51 IST" name="ProductPage" finished-at="2026-01-08T12:40:21 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="29283" status="PASS">
+        <test-method signature="ProductPage()[pri:12, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T13:02:00 IST" name="ProductPage" finished-at="2026-01-08T13:02:29 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="29059" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ProductPage -->
-        <test-method signature="VendorPage()[pri:14, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:40:21 IST" name="VendorPage" finished-at="2026-01-08T12:40:34 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="12984" status="PASS">
+        <test-method signature="VendorPage()[pri:14, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T13:02:29 IST" name="VendorPage" finished-at="2026-01-08T13:02:42 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="13289" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VendorPage -->
-        <test-method signature="UomPage()[pri:16, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:40:34 IST" name="UomPage" finished-at="2026-01-08T12:40:47 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="12994" status="PASS">
+        <test-method signature="UomPage()[pri:16, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T13:02:42 IST" name="UomPage" finished-at="2026-01-08T13:02:55 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="13003" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UomPage -->
-        <test-method signature="PurchaseOrderToInvoice()[pri:18, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:40:47 IST" name="PurchaseOrderToInvoice" finished-at="2026-01-08T12:41:10 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="23484" status="PASS">
+        <test-method signature="PurchaseOrderToInvoice()[pri:18, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T13:02:55 IST" name="PurchaseOrderToInvoice" finished-at="2026-01-08T13:03:20 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="24920" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PurchaseOrderToInvoice -->
-        <test-method signature="GoodReceivingNote()[pri:20, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T12:41:10 IST" name="GoodReceivingNote" finished-at="2026-01-08T12:41:17 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="7247" status="PASS">
+        <test-method signature="GoodReceivingNote()[pri:20, instance:com.Purchase.PurchaseGRNTest@3c77d488]" started-at="2026-01-08T13:03:20 IST" name="GoodReceivingNote" finished-at="2026-01-08T13:04:11 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="50371" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GoodReceivingNote -->

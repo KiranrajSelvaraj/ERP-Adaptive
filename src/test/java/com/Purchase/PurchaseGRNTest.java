@@ -1582,6 +1582,15 @@ public class PurchaseGRNTest extends BaseClass {
 		
 		
 		js.executeScript("arguments[0].click()", pi.Save);
+		try {
+			
+			String alertText = driver.findElement(By.id("popup_message")).getText();
+			System.out.println("Alert Text: " + alertText);
+			
+		} catch (Exception e) {
+			
+			System.out.println("No alert appeared after save");
+		}
 		System.out.println("*** Purchase Invocie Save Successfull ***");
 		
 		

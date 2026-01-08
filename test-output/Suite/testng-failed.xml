@@ -6,8 +6,8 @@
     <classes>
       <class name="com.Purchase.PurchaseGRNTest">
         <methods>
-          <include name="PurchaseOrderToInvoice"/>
           <include name="ERPLoginPage"/>
+          <include name="GoodReceivingNote"/>
         </methods>
       </class> <!-- com.Purchase.PurchaseGRNTest -->
     </classes>

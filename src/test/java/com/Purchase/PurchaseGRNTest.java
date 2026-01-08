@@ -1495,10 +1495,11 @@ public class PurchaseGRNTest extends BaseClass {
 		
 		driver.navigate().to(url +"SalesPurchases/GoodsReceivingNotes");
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		GoodReceivingNote grn = new GoodReceivingNote(driver);
+		PurchaseInvoice pi = new PurchaseInvoice(driver);
 		
 		LocalDateTime TimeStamp = LocalDateTime.now();
 		DateTimeFormatter DateTimeFormate = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -1520,9 +1521,13 @@ public class PurchaseGRNTest extends BaseClass {
 			
 		} // Purchase order data list loop
 		
-		WebElement details = driver.findElement(By.xpath
+		WebElement details = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath
+				("(//table[@id='GoodsReceivingTable']//tbody//tr//td[normalize-space()='GRN-0015']//following::td//a[@title='Details'])[1]")));
+		js.executeScript("arguments[0].click();", details);
+		
+	/*	WebElement details = driver.findElement(By.xpath
 				("(//table[@id='GoodsReceivingTable']//tbody//tr//td[normalize-space()='GRN-0015']//following::td//a[@title='Details'])[1]"));
-		wait.until(ExpectedConditions.elementToBeClickable(details)).click();
+		wait.until(ExpectedConditions.elementToBeClickable(details)).click(); */
 		
 		WebElement convertInvoice = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ConvertInvoice")));
 		js.executeScript("arguments[0].click();", convertInvoice);
@@ -1531,21 +1536,53 @@ public class PurchaseGRNTest extends BaseClass {
 		WebElement invoiceNo = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ReferenceNo")));
 		js.executeScript("arguments[0].click();", invoiceNo);
 		invoiceNo.sendKeys(formatedTimestamp);
+		System.out.println("Invoice No: "+formatedTimestamp);
 		
-		
+
 		for (ExcelData excelData : excelDataList) {
-			
-		
-			
-			
-			if ("true".equalsIgnoreCase(excelData.BatchProduct)) {
-				
-				
-				
-			}
+
+			int tablesize = driver.findElements(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']")).size();
+			for (int i = 1; i <= tablesize; i++) {
+
+				String getBatchProductName = driver.findElement(By.xpath("(//table[@id='PurchaseTable']//tbody//tr[@class='productTR'])["+i+"]//td[2]"))
+						.getAttribute("data-value");
+
+				if (getBatchProductName.contains(excelData.ProductName)) {
+
+					if ("true".equalsIgnoreCase(excelData.BatchProduct)) {
+						
+						System.out.println("batch product: "+excelData.ProductName);
+
+						WebElement batchFiles = driver.findElement(By.xpath
+								("(//table[@id='PurchaseTable']//tbody//tr[@class='productTR'])[" + i + "]//td[2]//textarea[contains(text(),'"+excelData.ProductName.trim()+"')]//following::td[8]//a[@id='BatchFolder']"));
+						js.executeScript("arguments[0].click();", batchFiles);
+
+						String totalQty = driver.findElement(By.xpath
+								("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@id='TotalQty'])[1]"))
+								.getAttribute("value");
+						System.out.println("Total Qty: "+totalQty);
+
+						WebElement totalQtyField = driver.findElement(By.xpath
+								("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@id='Qty'])[1]"));
+						totalQtyField.click();
+						totalQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+						totalQtyField.sendKeys(totalQty);
+
+						WebElement batchAdd = driver.findElement(By.xpath
+								("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::button[text()='Add'])[1]"));
+						batchAdd.click();
+					
+					}
+					break;
+				}
+
+			} // Table size loop			
 			
 		} // Excel data list loop
 		
+		
+		js.executeScript("arguments[0].click()", pi.Save);
+		System.out.println("*** Purchase Invocie Save Successfull ***");
 		
 		
 	} // Good receiving note

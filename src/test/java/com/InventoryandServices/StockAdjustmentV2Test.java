@@ -863,7 +863,7 @@ public class StockAdjustmentV2Test extends BaseClass{
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			productcode.sendKeys(product);
 			Thread.sleep(1000);
-			click(prod.Fetch);
+			js.executeScript("arguments[0].click();", prod.Fetch);
 			Thread.sleep(3000);
 
 			WebElement DetailsIcon = driver

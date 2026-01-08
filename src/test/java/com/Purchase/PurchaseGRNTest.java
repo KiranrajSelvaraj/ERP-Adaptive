@@ -26,10 +26,15 @@ import com.BaseClass.BaseClass;
 import com.PomClass.GoodReceivingNote;
 import com.PomClass.Login;
 import com.PomClass.Product;
+import com.PomClass.ProductMovement;
 import com.PomClass.PurchaseInvoice;
 import com.PomClass.PurchaseOrder;
 import com.PomClass.SystemSettings;
 import com.PomClass.Vendors;
+import com.Purchase.PurchaseInvoiceVoidTest.ExcelData;
+import com.Purchase.PurchaseInvoiceVoidTest.StockCalculation;
+import com.Purchase.PurchaseInvoiceVoidTest.UOM;
+import com.Purchase.PurchaseInvoiceVoidTest.product;
 import com.Utility.Util1;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -1595,6 +1600,274 @@ public class PurchaseGRNTest extends BaseClass {
 		
 		
 	} // Good receiving note
+	
+	class StockCalculation {
+
+		private String calculateStock;
+		private String productName;
+
+		public StockCalculation(String calculateStock, String productName) {
+			super();
+
+			this.calculateStock = calculateStock;
+			this.productName = productName;
+
+		}
+	}
+
+	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
+	//@Ignore
+	@Test(priority = 22, dependsOnMethods = "ERPLoginPage")
+	public void StockCalculation() {
+
+		System.out.println("* Stock Calculation *");
+
+		int excelDataListSize = excelDataList.size();
+		for (int i = 0; i < excelDataListSize; i++) {
+			ExcelData excelData = excelDataList.get(i);
+
+			double doubleExcelQty = 0;
+			double doubleUomUnit = 0;
+			double multipleQty = 0;
+
+			int UomDetailsListSize = UomDetailsList.size();
+			for (int j = 0; j < UomDetailsListSize; j++) {
+				UOM uomData = UomDetailsList.get(j);
+
+				if (excelData.Uom.equals(uomData.UomCodeValue)) {
+
+					doubleExcelQty = Double.parseDouble(excelData.Qty);
+					doubleUomUnit = Double.parseDouble(uomData.UomUnits);
+
+					multipleQty = doubleExcelQty * doubleUomUnit;
+					System.out.println("multipleQty is: "+multipleQty);
+					break;
+				}	
+
+			}  // Uom details list loop
+
+			int ProductDetailsListSize = ProductDetailsList.size();
+			for (int k = 0; k < ProductDetailsListSize; k++) {
+				product productData = ProductDetailsList.get(k);
+
+				double calculateStockDouble = 0;
+				String calculateStock = "0";
+
+				if (productData.productName.equalsIgnoreCase(excelData.ProductName)) {
+
+					String productName = excelData.ProductName;
+
+					if (productData.IsCarton) {
+
+						double multipleBoxStock = 0;
+						double doubleLooseCurrentStock = 0;
+
+						String[] splitCurrentStockValue = productData.currentStockValue.split("/");
+						for (String currentStock : splitCurrentStockValue) {
+							if (currentStock.contains("B")) {
+								String replaceAllBoxCurrentStock = currentStock.replaceAll("[A-Za-z]", "");
+								double doubleBoxCurrentStock = Double.parseDouble(replaceAllBoxCurrentStock);
+
+								multipleBoxStock = doubleBoxCurrentStock * 10;
+								//	System.out.println("multipleBoxStock is: "+multipleBoxStock);
+
+
+							} else if (currentStock.contains("L")) {
+								String replaceAllLooseCurrentStock = currentStock.replaceAll("[A-Za-z]", "");
+								doubleLooseCurrentStock = Double.parseDouble(replaceAllLooseCurrentStock);
+								//	System.out.println("doubleLooseCurrentStock is: "+doubleLooseCurrentStock);
+
+							} // Current stock loop
+
+							double additionBoxandLooseStock = multipleBoxStock + doubleLooseCurrentStock;
+							calculateStockDouble = additionBoxandLooseStock + multipleQty;
+							calculateStockDouble = calculateStockDouble - multipleQty;
+
+						}		
+
+					} else {
+
+						double doubleCurrentStock = Double.parseDouble(productData.currentStockValue);
+						calculateStockDouble = doubleCurrentStock + multipleQty;
+						calculateStockDouble = calculateStockDouble - multipleQty;
+						int intcalculateStock = (int) calculateStockDouble;
+						calculateStock = String.valueOf(intcalculateStock);
+
+					}
+
+					//	calculateStock = String.valueOf(calculateStockDouble);
+
+					if (productData.IsCarton) {						
+
+						double diviedStock = calculateStockDouble / 10;
+						String stringCalculateStock = String.valueOf(diviedStock);						
+						String[] split = stringCalculateStock.split("\\.");
+						String boxQty = split[0];
+						String looseQty = "0";
+
+						if (split.length > 1) {
+							looseQty = split[1];
+						}
+
+						calculateStock = boxQty +" B/"+ looseQty +" L";					
+
+						System.out.println("Product Name: "+productName);
+						System.out.println("calculateCartonStock is: "+calculateStock);
+
+
+					} else {
+
+						System.out.println("Product Name: "+productName);
+						System.out.println("CalculateBaseandNonCartonStock is: "+calculateStock);
+
+					}
+
+					System.out.println();
+
+					StockCalculation StockCalculation = new StockCalculation(calculateStock, productName);
+					StockCalculationList.add(StockCalculation);
+
+				}
+
+			} // Product data loop	
+
+		} // Excel data list loop
+
+		System.out.println("** Stock Claculation Completed **");
+		System.out.println();
+
+	} // Method loop
+
+	//@Ignore
+	@Test(priority = 24, dependsOnMethods = "ERPLoginPage")
+	public void ExpectedProduct() throws InterruptedException {
+		
+		driver.navigate().to(url + "SalesPurchases/Product");
+		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		Product prod = new Product(driver);
+		System.out.println("*** Product Page ***");
+
+		for (String product : ProductSet) {
+
+			WebElement productcode = wait.until(ExpectedConditions.visibilityOfElementLocated
+					(By.xpath("//input[@value='Fetch']//preceding::input[@placeholder='Find a product or code ']")));
+			Thread.sleep(1000);
+			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+			productcode.sendKeys(product);
+			Thread.sleep(1000);
+			click(prod.Fetch);
+			Thread.sleep(3000);
+
+			WebElement DetailsIcon = driver.findElement(By.xpath
+					("(//table[@id='producttable']//tbody//tr//td//child::p[text()='"+product+"']//following::td//child::a[@title='Details'])[1]"));
+			js.executeScript("arguments[0].click();", DetailsIcon);
+			Thread.sleep(3000);
+
+			String productName = driver.findElement(By.xpath("//div[@class='col-lg-7']//h2//b")).getText();
+			System.out.println("ProductName: " + productName);
+
+			String afterCurrentStockValue = driver
+					.findElement(By.xpath("//dt[normalize-space()='Current Stock - HQ']//following-sibling::dd[1]"))
+					.getText();
+
+			for (StockCalculation stock : StockCalculationList) {
+
+				if (stock.productName.equalsIgnoreCase(productName)) {
+
+					System.out.println("Actual Current Stock: "+afterCurrentStockValue);
+					System.out.println("Expected current Stock: "+stock.calculateStock);
+					System.out.println();
+
+					soft.assertEquals(afterCurrentStockValue, stock.calculateStock, 
+							"Actual and Expected Product Stock Mismatched for Product "+stock.productName);
+
+				}			
+
+			} // Stock calculation loop
+
+			js.executeScript("arguments[0].click();", prod.Back);
+			Thread.sleep(2000);
+
+		}
+
+		System.out.println();
+	}
+
+	//@Ignore
+	@Test(priority = 24, dependsOnMethods = "ERPLoginPage")
+	public void ProductMovementPage() throws InterruptedException {
+
+		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		ProductMovement pm = new ProductMovement(driver);
+
+		driver.navigate().to(url + "SalesPurchases/Product/ProductMovementsIndex");
+		Thread.sleep(7000);
+		System.out.println("*** Product Movement Page ***");
+		for (String product : ProductSet) {
+
+			click(pm.ChooseProduct);
+			WebElement productcode = driver.findElement(
+					By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"));
+			Thread.sleep(1000);
+			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+			productcode.sendKeys(product + Keys.ENTER);
+			Thread.sleep(1000);
+			js.executeScript("arguments[0].click();", pm.Fetch);
+			Thread.sleep(3000);
+
+			String productMovementName = driver.findElement(By.xpath("//span[@id='select2-ProductId-container']"))
+					.getAttribute("title");
+			String[] split = productMovementName.split(" - ", 2);
+			String trimProductName = split[1].trim();
+
+			String balanceQty = driver
+					.findElement(By.xpath("(//div[@id='TableData']//following::table[1]//tbody//tr//td[4])[1]"))
+					.getText();
+
+			for (StockCalculation stock : StockCalculationList) {
+
+				if (stock.productName.equalsIgnoreCase(trimProductName)) {
+
+					if (stock.calculateStock.contains("/0 L")) {
+
+						String replaceProductStock = stock.calculateStock.replaceAll("/0 L", "");
+
+						System.out.println("Product Movement Name: "+ trimProductName);
+						System.out.println("Actual Product Movement Stock: "+ balanceQty);
+						System.out.println("Expected Product Movement Stock: "+ replaceProductStock);
+						System.out.println();
+
+						soft.assertEquals(balanceQty, replaceProductStock,
+								"Actual and Expected Product Movement Stock Mismatched for Product "
+										+ trimProductName);
+
+					} else {
+
+						System.out.println("Product Movement Name: "+ trimProductName);
+						System.out.println("Actual Product Movement Stock: "+ balanceQty);
+						System.out.println("Expected Product Movement Stock: "+stock.calculateStock);
+						System.out.println();
+
+						soft.assertEquals(balanceQty, stock.calculateStock,
+								"Actual and Expected Product Movement Stock Mismatched for Product "
+										+ trimProductName);
+
+					}
+					break;
+				}
+
+			} // Stock calculation list loop
+
+		}
+		System.out.println();
+	}
+
 
 
 } // Purchase GRN test

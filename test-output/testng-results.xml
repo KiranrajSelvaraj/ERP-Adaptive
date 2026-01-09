@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="57" passed="57" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-08T14:27:19 IST" name="Suite" finished-at="2026-01-08T15:12:59 IST" duration-ms="2739654">
+  <suite started-at="2026-01-09T10:05:47 IST" name="Suite" finished-at="2026-01-09T10:50:00 IST" duration-ms="2653308">
     <groups>
     </groups>
-    <test started-at="2026-01-08T14:27:19 IST" name="Test" finished-at="2026-01-08T15:12:59 IST" duration-ms="2739654">
-      <class name="com.InventoryandServices.StockAdjustmentV2Void">
-        <test-method signature="ERPLoginPage()[pri:1, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:19 IST" name="ERPLoginPage" finished-at="2026-01-08T14:27:35 IST" duration-ms="15341" status="PASS">
+    <test started-at="2026-01-09T10:05:47 IST" name="Test" finished-at="2026-01-09T10:50:00 IST" duration-ms="2653308">
+      <class name="com.InventoryandServices.StockAdjustmentV2Test">
+        <test-method signature="ERPLoginPage()[pri:1, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:47 IST" name="ERPLoginPage" finished-at="2026-01-09T10:05:56 IST" duration-ms="8822" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ERPLoginPage -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="3" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -52,7 +52,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="3" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -93,7 +93,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="3" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -134,7 +134,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="3" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -175,7 +175,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="5" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -216,7 +216,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="3" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="13" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -257,7 +257,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -298,7 +298,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -339,7 +339,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -380,7 +380,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="7" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -421,7 +421,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="4" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -462,7 +462,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -503,7 +503,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="3" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="8" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -544,7 +544,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -585,7 +585,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -626,7 +626,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="4" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="31" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -667,7 +667,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="3" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="14" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -708,7 +708,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -749,7 +749,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="20" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -790,7 +790,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="5" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -831,7 +831,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -872,7 +872,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="4" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -913,7 +913,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="5" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -954,7 +954,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="5" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="31" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -995,7 +995,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:57 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1036,7 +1036,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:57 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1077,7 +1077,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1118,7 +1118,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="0" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1159,7 +1159,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="4" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1200,7 +1200,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1241,7 +1241,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="3" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="4" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1282,7 +1282,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1323,7 +1323,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1364,7 +1364,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1405,7 +1405,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1446,7 +1446,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="40" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1487,7 +1487,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1528,7 +1528,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1569,7 +1569,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1610,7 +1610,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1651,7 +1651,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="5" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="4" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1692,7 +1692,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1733,7 +1733,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1774,7 +1774,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1815,7 +1815,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1856,7 +1856,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1897,7 +1897,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1938,7 +1938,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="GetData" data-provider="Util1" finished-at="2026-01-08T14:27:36 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="GetData" data-provider="Util1" finished-at="2026-01-09T10:05:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1979,39 +1979,39 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="ProductPage()[pri:6, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:27:36 IST" name="ProductPage" finished-at="2026-01-08T14:53:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="1581590" status="PASS">
+        <test-method signature="ProductPage()[pri:10, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:05:58 IST" name="ProductPage" finished-at="2026-01-09T10:31:38 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1540287" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ProductPage -->
-        <test-method signature="UomPage()[pri:8, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:53:58 IST" name="UomPage" finished-at="2026-01-08T14:54:32 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="34680" status="PASS">
+        <test-method signature="UomPage()[pri:12, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:31:38 IST" name="UomPage" finished-at="2026-01-09T10:32:12 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="33774" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UomPage -->
-        <test-method signature="StockAdjustment()[pri:10, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:54:32 IST" name="StockAdjustment" finished-at="2026-01-08T14:57:32 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="179863" status="PASS">
+        <test-method signature="StockAdjustment()[pri:14, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:32:12 IST" name="StockAdjustment" finished-at="2026-01-09T10:33:46 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="94112" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StockAdjustment -->
-        <test-method signature="StockCalculation()[pri:12, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:57:32 IST" name="StockCalculation" finished-at="2026-01-08T14:57:32 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="16" status="PASS">
+        <test-method signature="StockCalculation()[pri:16, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:33:46 IST" name="StockCalculation" finished-at="2026-01-09T10:33:46 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="10" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StockCalculation -->
-        <test-method signature="ExpectedProduct()[pri:14, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T14:57:32 IST" name="ExpectedProduct" finished-at="2026-01-08T15:07:50 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="617293" status="PASS">
+        <test-method signature="ExpectedProduct()[pri:20, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:33:46 IST" name="ExpectedProduct" finished-at="2026-01-09T10:44:04 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="618359" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ExpectedProduct -->
-        <test-method signature="ProductMovementPage()[pri:16, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T15:07:50 IST" name="ProductMovementPage" finished-at="2026-01-08T15:12:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="308840" status="PASS">
+        <test-method signature="ProductMovementPage()[pri:22, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:44:04 IST" name="ProductMovementPage" finished-at="2026-01-09T10:50:00 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="355449" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ProductMovementPage -->
-        <test-method signature="Exception()[pri:30, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T15:12:58 IST" name="Exception" finished-at="2026-01-08T15:12:58 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="Exception()[pri:30, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:50:00 IST" name="Exception" finished-at="2026-01-09T10:50:00 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Exception -->
-        <test-method signature="quit()[pri:40, instance:com.InventoryandServices.StockAdjustmentV2Void@738dc9b]" started-at="2026-01-08T15:12:58 IST" name="quit" finished-at="2026-01-08T15:12:59 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Void.ERPLoginPage" duration-ms="476" status="PASS">
+        <test-method signature="quit()[pri:40, instance:com.InventoryandServices.StockAdjustmentV2Test@738dc9b]" started-at="2026-01-09T10:50:00 IST" name="quit" finished-at="2026-01-09T10:50:00 IST" depends-on-methods="com.InventoryandServices.StockAdjustmentV2Test.ERPLoginPage" duration-ms="589" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-      </class> <!-- com.InventoryandServices.StockAdjustmentV2Void -->
+      </class> <!-- com.InventoryandServices.StockAdjustmentV2Test -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

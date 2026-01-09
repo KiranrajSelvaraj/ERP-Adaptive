@@ -1001,5 +1001,12 @@ public class StockAdjustmentV2Test extends BaseClass{
 		soft.assertAll();
 
 	}
+	
+	@Test(priority = 40, dependsOnMethods = "ERPLoginPage")
+	private void quit() throws InterruptedException {
+		driver.quit();
+
+	}
+
 
 } // Main class loop

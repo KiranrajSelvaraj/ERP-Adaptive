@@ -1263,8 +1263,8 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 
 			}
 
-			productPrice = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr//td[2]//div//textarea"
-					+ "[contains(text(),'"+excelData.ProductName.trim()+"')]//following::td[7]//p[@id='DetailPurchaseDetailTotal']"))
+			productPrice = driver.findElement(By.xpath
+					("//table[@id='PurchaseTable']//tbody//tr//td//child::div//textarea[contains(text(),'"+excelData.ProductName+"')]//following::td//child::p[@id='DetailPurchaseDetailTotal']"))
 					.getText();
 			String replaceAllProductPrice = productPrice.replaceAll(",", "");
 			double productPriceDouble = Double.parseDouble(replaceAllProductPrice);

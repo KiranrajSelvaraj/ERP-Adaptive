@@ -914,7 +914,7 @@ public class PurchaseGRNTest extends BaseClass {
 	}
 	
 	ArrayList<PurchaseOrderData> purchaseOrderDataList = new ArrayList<>();
-
+	//@Ignore
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
 	public void PurchaseOrderToInvoice() throws InterruptedException, IOException {
 		
@@ -1250,7 +1250,6 @@ public class PurchaseGRNTest extends BaseClass {
 					System.out.println("Discount Amount Total: "+Total);
 
 				}
-
 			}
 
 			//Add Button:-
@@ -1348,8 +1347,8 @@ public class PurchaseGRNTest extends BaseClass {
 
 		double divOverAllDisc = discountAmountDouble / subTotalAmountDouble;
 		double finalWithoutGstAmount = 0;
-
-		for (ExcelData excelData : excelDataList) {
+		double subWithoutGstAmount = 0;
+		double SubWithoutGstAmountDouble = 0;
 
 			if (getOverAllDiscountType.equalsIgnoreCase("$")) {
 
@@ -1357,32 +1356,32 @@ public class PurchaseGRNTest extends BaseClass {
 				finalWithoutGstAmount = ExpZeroGstProductamount - withoutGstAmount;
 				String formatFinalWithoutGstAmount = String.format("%.2f", finalWithoutGstAmount);
 				System.out.println("Without Gst Product Amount: "+formatFinalWithoutGstAmount);
+				
+				subWithoutGstAmount = discountTotalAmount - finalWithoutGstAmount;
+				String formatSubWithoutGstAmount = String.format("%.2f", subWithoutGstAmount);
+				SubWithoutGstAmountDouble = Double.parseDouble(formatSubWithoutGstAmount);
+				System.out.println("With Gst Product SubTotal: "+formatSubWithoutGstAmount);
+				System.out.println();
 
-			} else if (excelData.ZeroGst.equalsIgnoreCase("true") && getOverAllDiscountType.equalsIgnoreCase("%")) {
+			} else if (getOverAllDiscountType.equalsIgnoreCase("%")) {
 
 				double zeroGstProductDiscountAmount = (ExpZeroGstProductamount * discountPercentageDouble / 100);
 				double subrationZerGstAmount = (ExpZeroGstProductamount - zeroGstProductDiscountAmount);
 				System.out.println("After Discount Zero Gst Product Amount is: " + subrationZerGstAmount);
 				double withoutZeroGstAmount = (discountPercentageAmount - subrationZerGstAmount);
 				System.out.println("Without Zero Gst Amount: "+withoutZeroGstAmount);
+				
+				subWithoutGstAmount = discountPercentageAmount - finalWithoutGstAmount;
+				String formatSubWithoutGstAmount = String.format("%.2f", subWithoutGstAmount);
+				SubWithoutGstAmountDouble = Double.parseDouble(formatSubWithoutGstAmount);
+				System.out.println("With Gst Product SubTotal: "+formatSubWithoutGstAmount);
 				System.out.println();
 
-
 			}	
-			break;
-		}
-
-		//double formatFinalWithoutGstAmountDouble = Double.parseDouble(formatFinalWithoutGstAmount);
-		double subWithoutGstAmount = discountTotalAmount - finalWithoutGstAmount;
-		String formatSubWithoutGstAmount = String.format("%.2f", subWithoutGstAmount);
-		System.out.println("With Gst Product SubTotal: "+formatSubWithoutGstAmount);
-		System.out.println();
-
+		
 		// GST CALCULATION
 		System.out.println("*** Grand Total Calculation With GST ***");
 
-		// double ExpectedGstAmount = 0;
-		// double afterExpectedGstAmount = 0;
 		double finalExpectedGstAmount = 0;
 
 		System.out.println("Gst Type is: " + getExcelGstType);
@@ -1408,7 +1407,6 @@ public class PurchaseGRNTest extends BaseClass {
 		System.out.println("Actual Gst Amount is: " + ActualGstAmount);
 
 		String ExpectedGstAmountFormat = String.format("%.2f", finalExpectedGstAmount);
-
 		if (getExcelGstType.equalsIgnoreCase("Inclusive")) {
 
 			finalExpectedGstAmount = 0;		
@@ -1435,7 +1433,7 @@ public class PurchaseGRNTest extends BaseClass {
 		String finalTotalAmountFormat = String.format("%.2f", finalTotalAmountDouble);
 		System.out.println("Actual Grand Total Amount is: " + finalTotalAmountFormat);
 
-		double ExpectedGrandTotalAmount = (discountTotalAmount + finalExpectedGstAmount);
+		double ExpectedGrandTotalAmount = (SubWithoutGstAmountDouble + finalExpectedGstAmount);
 		String ExpectedGrandTotalAmountFormat = String.format("%.2f", ExpectedGrandTotalAmount);
 		System.out.println("Expected Grand Total Amount is: " + ExpectedGrandTotalAmountFormat);
 		System.out.println();
@@ -1510,29 +1508,40 @@ public class PurchaseGRNTest extends BaseClass {
 		DateTimeFormatter DateTimeFormate = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 		String formatedTimestamp = TimeStamp.format(DateTimeFormate);
 		
+		String getGrnNo = "";
+		
 		int purchaseOrderDataListSize = purchaseOrderDataList.size();
 		for (int i = 0; i < purchaseOrderDataListSize; i++) {
 			PurchaseOrderData purchaseOrderData = purchaseOrderDataList.get(i);
 			
-			WebElement edit = driver.findElement(By.xpath
-					("(//table[@id='GoodsReceivingTable']//tbody//tr//td[normalize-space()='"+purchaseOrderData.PurchaseOrderNo+"']//following::td//a[@title='Edit'])[1]"));
-			wait.until(ExpectedConditions.elementToBeClickable(edit)).click();
+			WebElement edit = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath
+					("(//table[@id='GoodsReceivingTable']//tbody//tr//td[normalize-space()='"+purchaseOrderData.PurchaseOrderNo+"']//following::td//a[@title='Edit'])[1]")));
+			js.executeScript("arguments[0].click();", edit);
 			
-			String getGrnNo = driver.findElement(By.id("GRNNo")).getAttribute("value");
+			getGrnNo = driver.findElement(By.id("GRNNo")).getAttribute("value");
 			System.out.println("getGrnNo: "+getGrnNo);
 			
 			wait.until(ExpectedConditions.elementToBeClickable(grn.Complete)).click();
 			click(grn.AlertOK);
 			
-		} // Purchase order data list loop
+		} // Purchase order data list loop 
+		
+		/*
+		 * WebElement edit =
+		 * wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath
+		 * ("(//table[@id='GoodsReceivingTable']//tbody//tr//td[normalize-space()='0572']//following::td//a[@title='Edit'])[1]"
+		 * ))); js.executeScript("arguments[0].click();", edit);
+		 * 
+		 * getGrnNo = driver.findElement(By.id("GRNNo")).getAttribute("value");
+		 * System.out.println("getGrnNo: "+getGrnNo);
+		 * 
+		 * wait.until(ExpectedConditions.elementToBeClickable(grn.Complete)).click();
+		 * click(grn.AlertOK);
+		 */
 		
 		WebElement details = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath
-				("(//table[@id='GoodsReceivingTable']//tbody//tr//td[normalize-space()='GRN-0015']//following::td//a[@title='Details'])[1]")));
+				("(//table[@id='GoodsReceivingTable']//tbody//tr//td[normalize-space()='"+getGrnNo+"']//following::td//a[@title='Details'])[1]")));
 		js.executeScript("arguments[0].click();", details);
-		
-	/*	WebElement details = driver.findElement(By.xpath
-				("(//table[@id='GoodsReceivingTable']//tbody//tr//td[normalize-space()='GRN-0015']//following::td//a[@title='Details'])[1]"));
-		wait.until(ExpectedConditions.elementToBeClickable(details)).click(); */
 		
 		WebElement convertInvoice = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ConvertInvoice")));
 		js.executeScript("arguments[0].click();", convertInvoice);
@@ -1597,7 +1606,7 @@ public class PurchaseGRNTest extends BaseClass {
 			System.out.println("No alert appeared after save");
 		}
 		System.out.println("*** Purchase Invocie Save Successfull ***");
-		
+		System.out.println();
 		
 	} // Good receiving note
 	
@@ -1621,7 +1630,8 @@ public class PurchaseGRNTest extends BaseClass {
 	public void StockCalculation() {
 
 		System.out.println("* Stock Calculation *");
-
+		System.out.println();
+		
 		int excelDataListSize = excelDataList.size();
 		for (int i = 0; i < excelDataListSize; i++) {
 			ExcelData excelData = excelDataList.get(i);
@@ -1681,21 +1691,17 @@ public class PurchaseGRNTest extends BaseClass {
 
 							double additionBoxandLooseStock = multipleBoxStock + doubleLooseCurrentStock;
 							calculateStockDouble = additionBoxandLooseStock + multipleQty;
-							calculateStockDouble = calculateStockDouble - multipleQty;
-
+						
 						}		
 
 					} else {
 
 						double doubleCurrentStock = Double.parseDouble(productData.currentStockValue);
 						calculateStockDouble = doubleCurrentStock + multipleQty;
-						calculateStockDouble = calculateStockDouble - multipleQty;
 						int intcalculateStock = (int) calculateStockDouble;
 						calculateStock = String.valueOf(intcalculateStock);
 
 					}
-
-					//	calculateStock = String.valueOf(calculateStockDouble);
 
 					if (productData.IsCarton) {						
 
@@ -1714,7 +1720,6 @@ public class PurchaseGRNTest extends BaseClass {
 						System.out.println("Product Name: "+productName);
 						System.out.println("calculateCartonStock is: "+calculateStock);
 
-
 					} else {
 
 						System.out.println("Product Name: "+productName);
@@ -1723,7 +1728,6 @@ public class PurchaseGRNTest extends BaseClass {
 					}
 
 					System.out.println();
-
 					StockCalculation StockCalculation = new StockCalculation(calculateStock, productName);
 					StockCalculationList.add(StockCalculation);
 
@@ -1799,16 +1803,14 @@ public class PurchaseGRNTest extends BaseClass {
 	//@Ignore
 	@Test(priority = 24, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
-
+		
+		driver.navigate().to(url + "SalesPurchases/Product/ProductMovementsIndex");
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-
 		ProductMovement pm = new ProductMovement(driver);
-
-		driver.navigate().to(url + "SalesPurchases/Product/ProductMovementsIndex");
-		Thread.sleep(7000);
 		System.out.println("*** Product Movement Page ***");
+		
 		for (String product : ProductSet) {
 
 			click(pm.ChooseProduct);
@@ -1866,6 +1868,19 @@ public class PurchaseGRNTest extends BaseClass {
 
 		}
 		System.out.println();
+	}
+	
+	@Test(priority = 45, dependsOnMethods = "ERPLoginPage")
+	private void Exception() throws InterruptedException {
+		soft.assertAll();
+
+	}
+
+	@Ignore
+	@Test(priority = 46, dependsOnMethods = "ERPLoginPage")
+	private void quit() throws InterruptedException {
+		driver.quit();
+
 	}
 
 

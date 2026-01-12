@@ -210,7 +210,7 @@ public class PurchaseGRNTest extends BaseClass {
 	private boolean IsMultiWordSearchInProduct;
 	private boolean IsFOCManagementInPI;
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
 	public void SystemSettingsPage() throws InterruptedException {
 
@@ -539,7 +539,7 @@ public class PurchaseGRNTest extends BaseClass {
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -756,7 +756,7 @@ public class PurchaseGRNTest extends BaseClass {
 	}
 
 	ArrayList<Vendor> vendorDetailsList = new ArrayList<>();
-	@Ignore
+	//@Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
 	public void VendorPage() throws InterruptedException {
 
@@ -835,7 +835,7 @@ public class PurchaseGRNTest extends BaseClass {
 	}
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
-	@Ignore
+	//@Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
@@ -902,7 +902,7 @@ public class PurchaseGRNTest extends BaseClass {
 	} // Uom page
 
 	String PurchaseOrderNo;
-	
+
 	//@Ignore
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
 	public void PurchaseOrderToInvoice() throws InterruptedException, IOException {
@@ -1475,12 +1475,12 @@ public class PurchaseGRNTest extends BaseClass {
 		// Convert GRN Process:-
 		click(po.ConvertGRN);
 		try {
-			
+
 			String alertText = driver.findElement(By.id("popup_message")).getText();
 			System.out.println("Alert Text: " + alertText);
-			
+
 		} catch (Exception e) {
-			
+
 			System.out.println("No alert appeared");
 		}
 		click(po.PopupAlertOk);
@@ -1496,50 +1496,50 @@ public class PurchaseGRNTest extends BaseClass {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		GoodReceivingNote grn = new GoodReceivingNote(driver);
-	//	PurchaseInvoice pi = new PurchaseInvoice(driver);
+		//	PurchaseInvoice pi = new PurchaseInvoice(driver);
 
 		LocalDateTime TimeStamp = LocalDateTime.now();
 		DateTimeFormatter DateTimeFormate = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 		String formatedTimestamp = TimeStamp.format(DateTimeFormate);
 
 		String getGrnNo = "";
-			
-			Thread.sleep(5000);
-			System.out.println(PurchaseOrderNo);
-			WebElement findElement = driver.findElement(By.xpath("//input[@id='PONo']"));
-			findElement.sendKeys(PurchaseOrderNo+Keys.ENTER);
-			Thread.sleep(1000);
-						
-			driver.findElement(By.id("searchstring")).click();
-			Thread.sleep(4000);
-			
-			driver.findElement(By.xpath("//table[@id='GoodsReceivingTable']//tbody//tr[1]//td//a[@title='Details']")).click();
-			/*
-			 * WebElement details =
-			 * wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath
-			 * ("(//table[@id='GoodsReceivingTable']//tbody//tr//td[normalize-space()='"+
-			 * PurchaseOrderNo+"']//following::td//a[@title='Details'])[1]")));
-			 * js.executeScript("arguments[0].click();", details);
-			 */
-			
-			Thread.sleep(3000);
-			getGrnNo = driver.findElement(By.id("GRNNo")).getAttribute("value");
-			System.out.println("getGrnNo: "+getGrnNo);
-			Thread.sleep(2000);
 
-			wait.until(ExpectedConditions.elementToBeClickable(grn.Complete)).click();
-			try {
-				
-				String alertText = driver.findElement(By.id("popup_message")).getText();
-				System.out.println("Alert Text: " + alertText);
-				
-			} catch (Exception e) {
-				
-				System.out.println("No alert appeared");
-			}
-			click(grn.AlertOK);
+		Thread.sleep(5000);
+		System.out.println(PurchaseOrderNo);
+		WebElement findElement = driver.findElement(By.xpath("//input[@id='PONo']"));
+		findElement.sendKeys(PurchaseOrderNo+Keys.ENTER);
+		Thread.sleep(1000);
 
-		 
+		driver.findElement(By.id("searchstring")).click();
+		Thread.sleep(4000);
+
+		driver.findElement(By.xpath("//table[@id='GoodsReceivingTable']//tbody//tr[1]//td//a[@title='Details']")).click();
+		/*
+		 * WebElement details =
+		 * wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath
+		 * ("(//table[@id='GoodsReceivingTable']//tbody//tr//td[normalize-space()='"+
+		 * PurchaseOrderNo+"']//following::td//a[@title='Details'])[1]")));
+		 * js.executeScript("arguments[0].click();", details);
+		 */
+
+		Thread.sleep(3000);
+		getGrnNo = driver.findElement(By.id("GRNNo")).getAttribute("value");
+		System.out.println("getGrnNo: "+getGrnNo);
+		Thread.sleep(2000);
+
+		wait.until(ExpectedConditions.elementToBeClickable(grn.Complete)).click();
+		try {
+
+			String alertText = driver.findElement(By.id("popup_message")).getText();
+			System.out.println("Alert Text: " + alertText);
+
+		} catch (Exception e) {
+
+			System.out.println("No alert appeared");
+		}
+		click(grn.AlertOK);
+
+
 		Thread.sleep(3000);
 		WebElement details1 = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath
 				("(//table[@id='GoodsReceivingTable']//tbody//tr//td[normalize-space()='"+getGrnNo+"']//following::td//a[@title='Details'])[1]")));
@@ -1701,7 +1701,7 @@ public class PurchaseGRNTest extends BaseClass {
 	}
 
 	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
-	@Ignore
+	//@Ignore
 	@Test(priority = 22, dependsOnMethods = "ERPLoginPage")
 	public void StockCalculation() {
 
@@ -1818,7 +1818,7 @@ public class PurchaseGRNTest extends BaseClass {
 
 	} // Method loop
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 24, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 
@@ -1876,7 +1876,7 @@ public class PurchaseGRNTest extends BaseClass {
 		System.out.println();
 	}
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 24, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 

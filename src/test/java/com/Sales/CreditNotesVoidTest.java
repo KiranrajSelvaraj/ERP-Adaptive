@@ -1,14 +1,21 @@
 package com.Sales;
 
+import java.io.File;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -850,12 +857,13 @@ public class CreditNotesVoidTest extends BaseClass {
 	}
 
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
-	public void DirecteCreditNote() throws InterruptedException {
+	public void DirecteCreditNote() throws InterruptedException, IOException {
 
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-		Actions action = new Actions(driver);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+	//	Actions action = new Actions(driver);
 		CreditNotes cn = new CreditNotes(driver);
 
 		driver.navigate().to(url + "SalesPurchases/CreditNotes");
@@ -933,14 +941,51 @@ public class CreditNotesVoidTest extends BaseClass {
 			}
 			
 			click(cn.Qty);
+			// Screen shot to the product:-
+			DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+			LocalDateTime now1 = LocalDateTime.now();
+			String timestamp1 = dtf1.format(now1).replace(":", ";").replace("/", "-");
+			TakesScreenshot ts1 = (TakesScreenshot) driver;
+			File s1 = ts1.getScreenshotAs(OutputType.FILE);
+			File s2 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Qty Field Error "
+					+ timestamp1 + ".png");
+			FileUtils.copyFile(s1, s2);			
+			
 			click(cn.DiscountAmount);
-			Thread.sleep(2000);
+			// Screen shot to the product:-
+			DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+			LocalDateTime now2 = LocalDateTime.now();
+			String timestamp2 = dtf2.format(now2).replace(":", ";").replace("/", "-");
+			TakesScreenshot ts2 = (TakesScreenshot) driver;
+			File s11 = ts2.getScreenshotAs(OutputType.FILE);
+			File s21 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Discount Field Error "
+					+ timestamp2 + ".png");
+			FileUtils.copyFile(s11, s21);	
+			Thread.sleep(3000);
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
-				action.moveToElement(cn.ChooseProduct).click().perform();
+				click(cn.ChooseProduct);
+				DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+				LocalDateTime now3 = LocalDateTime.now();
+				String timestamp3 = dtf3.format(now3).replace(":", ";").replace("/", "-");
+				TakesScreenshot ts3 = (TakesScreenshot) driver;
+				File s111 = ts3.getScreenshotAs(OutputType.FILE);
+				File s211 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Product Field Error "
+						+ timestamp3 + ".png");
+				FileUtils.copyFile(s111, s211);	
+				
 				driver.findElement(
 						By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"))
 						.sendKeys(excelData.ProductCode + Keys.ENTER);
+				DateTimeFormatter dtf4 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+				LocalDateTime now4 = LocalDateTime.now();
+				String timestamp4 = dtf4.format(now4).replace(":", ";").replace("/", "-");
+				TakesScreenshot ts4 = (TakesScreenshot) driver;
+				File s1111 = ts4.getScreenshotAs(OutputType.FILE);
+				File s2111 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Product Field Error "
+						+ timestamp4 + ".png");
+				FileUtils.copyFile(s1111, s2111);	
+				
 
 			} else if (excelData.Type.equalsIgnoreCase("Service")) {
 
@@ -1245,7 +1290,10 @@ public class CreditNotesVoidTest extends BaseClass {
 				System.out.println("ExpZeroGstProductamount: " + ExpZeroGstProductamount);
 
 			}
-		}
+			
+			js.executeScript("window.scrollBy(0, -400);");
+			
+		} // Excel data list loop
 
 		click(cn.OverAllDiscountType);
 		Select overAllDiscTypeSelect = new Select(cn.OverAllDiscountType);

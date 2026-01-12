@@ -1321,7 +1321,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		// Sub Total Calculation:-
 		System.out.println("*** Sub Total Calculation ***");
 		String subTotalAmountString = driver.findElement(By.xpath
-				("//table[@id='PurchaseTable']//tfoot//tr[1]//td[8]//p[@id='FooterSubTotal']")).getText();
+				("//table[@id='PurchaseTable']//tfoot//tr//td//p[@id='FooterSubTotal']")).getText();
 		String replaceAllSubTotalAmountString = subTotalAmountString.replaceAll(",", "");
 		double subTotalAmountDouble = Double.parseDouble(replaceAllSubTotalAmountString);
 		System.out.println("Actual Sub Total Amount: " + subTotalAmountDouble);
@@ -1410,7 +1410,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 
 		}	
 
-		String ActualGstAmount = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tfoot//tr[6]//td[8]//p[@id='FooterGST']")).getText();
+		String ActualGstAmount = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tfoot//tr//td//p[@id='FooterGST']")).getText();
 		System.out.println("Actual Gst Amount is: " + ActualGstAmount);
 
 		String ExpectedGstAmountFormat = String.format("%.2f", finalExpectedGstAmount);
@@ -1434,7 +1434,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		// GRAND TOTAL AMOUNT
 		System.out.println("*** Grand Total Amount ***");
 
-		String finalTotalAmount = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tfoot//tr[8]//td[8]//p[@id='FooterTotal']")).getText();
+		String finalTotalAmount = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tfoot//tr//td//p[@id='FooterTotal']")).getText();
 		String replaceAllFinalTotalAmount = finalTotalAmount.replaceAll(",", "");
 		double finalTotalAmountDouble = Double.parseDouble(replaceAllFinalTotalAmount);
 		String finalTotalAmountFormat = String.format("%.2f", finalTotalAmountDouble);

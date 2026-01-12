@@ -1540,7 +1540,8 @@ public class PurchaseOrderTest extends BaseClass {
 			System.out.println("*** Purchase Order page Data's Equals To Invoice Data's ***");
 
 			//Purchase Order Data Equals to Invoice:-
-			String getActualProductName = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[2]"))
+			String getActualProductName = driver.findElement(By.xpath
+					("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[2]"))
 					.getAttribute("data-value");
 			System.out.println("Actual Product Name: "+getActualProductName);
 
@@ -1550,7 +1551,8 @@ public class PurchaseOrderTest extends BaseClass {
 
 			}
 
-			String getActualQty = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[3]//input[@id='detailQty']"))
+			String getActualQty = driver.findElement(By.xpath
+					("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[3]//input[@id='detailQty']"))
 					.getAttribute("value");
 			System.out.println("Actual Qty: "+getActualQty);
 
@@ -1560,7 +1562,8 @@ public class PurchaseOrderTest extends BaseClass {
 
 			}
 
-			String getActualFoc = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[4]"))
+			String getActualFoc = driver.findElement(By.xpath
+					("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[4]"))
 					.getAttribute("data-value");
 			System.out.println("Actual Foc: "+getActualFoc);
 
@@ -1570,7 +1573,8 @@ public class PurchaseOrderTest extends BaseClass {
 
 			}
 
-			String getActualPrice = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[5]"))
+			String getActualPrice = driver.findElement(By.xpath
+					("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[5]"))
 					.getAttribute("data-value");
 			System.out.println("Actual Price: "+getActualPrice);
 
@@ -1580,7 +1584,9 @@ public class PurchaseOrderTest extends BaseClass {
 
 			}
 
-			String getActualUom = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[6]//p[@id='uomText']")).getText();
+			String getActualUom = driver.findElement(By.xpath
+					("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[6]//p[@id='uomText']"))
+					.getText();
 			System.out.println("Actual Uom: "+getActualUom);
 
 			if (getActualUom.equalsIgnoreCase(excelData.Uom)) {
@@ -1589,7 +1595,9 @@ public class PurchaseOrderTest extends BaseClass {
 
 			}
 
-			String getActualDiscount = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[8]")).getAttribute("data-value");
+			String getActualDiscount = driver.findElement(By.xpath
+					("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[8]"))
+					.getAttribute("data-value");
 			System.out.println("Actual Discount Amount: "+getActualDiscount);
 
 			if (getActualDiscount.equalsIgnoreCase(excelData.DiscountAmount)) {
@@ -1598,7 +1606,9 @@ public class PurchaseOrderTest extends BaseClass {
 
 			}
 
-			String getActualAmount = driver.findElement(By.xpath("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[9]//p[@id='DetailPurchaseDetailTotal']")).getText();
+			String getActualAmount = driver.findElement(By.xpath
+					("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[9]//p[@id='DetailPurchaseDetailTotal']"))
+					.getText();
 			System.out.println("Actual Amount: "+getActualAmount);	
 
 			//	String expectedDiscountAmountString = String.valueOf(expectedDiscountAmount);
@@ -1630,6 +1640,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 		String getGrandTotal = driver.findElement(By.id("FooterTotal")).getText();
 		System.out.println("Actual Grand Total: " + getGrandTotal);
+		
 		if (getGrandTotal.equalsIgnoreCase(finalTotalAmount)) {
 			System.out.println("Expected Grand Total: " + finalTotalAmount);
 

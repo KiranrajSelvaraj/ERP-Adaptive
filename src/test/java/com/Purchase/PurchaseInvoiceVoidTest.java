@@ -237,7 +237,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsZeroQtyPurchase = ss.BooleanValue.isSelected();
 		System.out.println("IsZeroQtyPurchase: "+IsZeroQtyPurchase);
@@ -251,7 +251,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsZeroGSTManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsZeroGSTManagement: "+IsZeroGSTManagement);
@@ -265,7 +265,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsMultipleProductForPurchase = ss.BooleanValue.isSelected();
 		System.out.println("IsMultipleProductForPurchase : "+IsMultipleProductForPurchase);
@@ -279,7 +279,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsGSTManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsGSTManagement: "+IsGSTManagement);
@@ -293,7 +293,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsGSTManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsMultipleServiceForPurchase: "+IsMultipleServiceForPurchase);
@@ -307,7 +307,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsCurrencyEnabled = ss.BooleanValue.isSelected();
 		System.out.println("IsCurrencyEnabled: "+IsCurrencyEnabled);
@@ -321,7 +321,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsWarehouseManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsWarehouseManagement: "+IsWarehouseManagement);
@@ -335,7 +335,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsBarcodeManagementInPurchase = ss.BooleanValue.isSelected();
 		System.out.println("IsBarcodeManagementInPurchase: "+IsBarcodeManagementInPurchase);
@@ -349,7 +349,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsOpenItemManagementInPurchase = ss.BooleanValue.isSelected();
 		System.out.println("IsOpenItemManagementInPurchase: "+IsOpenItemManagementInPurchase);
@@ -363,7 +363,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		String DecimalCalculationForPurchaseString = driver
 				.findElement(By.xpath("//input[@id='DecimalValue']")).getAttribute("value");
@@ -379,7 +379,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsEnableDirectPOtoGRN = ss.BooleanValue.isSelected();
 		System.out.println("IsEnableDirectPOtoGRN: "+IsEnableDirectPOtoGRN);
@@ -393,7 +393,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsEnableDirectPOtoSO = ss.BooleanValue.isSelected();
 		System.out.println("IsEnableDirectPOtoSO: "+IsEnableDirectPOtoSO);
@@ -407,7 +407,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		click(ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsEnableItemLevelDiscountInPurchase = ss.BooleanValue.isSelected();
 		System.out.println("IsEnableItemLevelDiscountInPurchase:" +IsEnableItemLevelDiscountInPurchase);
@@ -421,7 +421,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsMultiWordSearchInProduct = ss.BooleanValue.isSelected();
 		System.out.println("IsMultiWordSearchInProduct :" + IsMultiWordSearchInProduct);
@@ -435,7 +435,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsFOCManagementInPI = ss.BooleanValue.isSelected();
 		System.out.println("IsFOCManagementInPI:" +IsFOCManagementInPI);

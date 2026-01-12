@@ -1302,7 +1302,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 		// Sub Total Calculation:-
 		System.out.println("*** Sub Total Calculation ***");
-		String subTotalAmountString = driver.findElement(By.xpath("//table[@id='SalesTable']//tfoot//tr[1]//td[13]//p[@id='tSubtotal']"))
+		String subTotalAmountString = driver.findElement(By.xpath("//table[@id='SalesTable']//tfoot//tr//td//p[@id='tSubtotal']"))
 				.getText();
 		double subTotalAmountDouble = Double.parseDouble(subTotalAmountString);
 		System.out.println("Actual Sub Total Amount: " + subTotalAmountDouble);
@@ -1346,11 +1346,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		// GST Calculation:-
 		System.out.println("*** Grand Total Calculation With GST ***");
 
-		// double ExpectedGstAmount = 0;
-		// double afterExpectedGstAmount = 0;
 		double finalExpectedGstAmount = 0;
 
-		//	System.out.println("Gst Type is: " + getExcelGstType);
 		String getGstType = si.GstType.getText();
 		System.out.println("Gst Type is: "+getGstType);
 		System.out.println("Gst Percentage is: "+gstPercentage);
@@ -1371,7 +1368,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 		}
 
-		String ActualGstAmount = driver.findElement(By.xpath("//table[@id='SalesTable']//tfoot//tr[6]//td[12]//input[@id='GST']"))
+		String ActualGstAmount = driver.findElement(By.xpath("//table[@id='SalesTable']//tfoot//tr//td//input[@id='GST']"))
 				.getAttribute("value");
 		System.out.println("Actual Gst Amount is: " + ActualGstAmount);
 
@@ -1397,7 +1394,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		// Grand Total Amount:-
 		System.out.println("*** Grand Total Amount ***");
 
-		String finalTotalAmount = driver.findElement(By.xpath("//input[@id='Amount']")).getAttribute("value");
+		String finalTotalAmount = driver.findElement(By.xpath
+				("//table[@id='SalesTable']//tfoot//tr//td//input[@id='Amount']")).getAttribute("value");
 		double finalTotalAmountDouble = Double.parseDouble(finalTotalAmount);
 		String finalTotalAmountFormat = String.format("%.2f", finalTotalAmountDouble);
 		System.out.println("Actual Grand Total Amount is: " + finalTotalAmountFormat);

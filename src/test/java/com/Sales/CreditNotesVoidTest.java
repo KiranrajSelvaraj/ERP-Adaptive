@@ -1276,7 +1276,8 @@ public class CreditNotesVoidTest extends BaseClass {
 		System.out.println();
 
 		System.out.println("*** Sub Total Calculation ***");
-		String getSubtotalString = driver.findElement(By.xpath("//input[@id='order']")).getAttribute("value");
+		String getSubtotalString = driver.findElement(By.xpath
+				("//table[@id='CreditNoteTable']//tfoot//tr//td//input[@id='order']")).getAttribute("value");
 		double getSubtotalDouble = Double.parseDouble(getSubtotalString);
 		System.out.println("Actual Subtotal is: " + getSubtotalDouble);
 		System.out.println("Expected SubTotal is: " + ExpSubTotal);
@@ -1366,7 +1367,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		}
 
 		String ActualGstAmount = driver
-				.findElement(By.xpath("//table[@id='CreditNoteTable']//tfoot//tr[6]//td[13]//input[@id='GSt']"))
+				.findElement(By.xpath("//table[@id='CreditNoteTable']//tfoot//tr//td//input[@id='GSt']"))
 				.getAttribute("value");
 		System.out.println("Actual Gst Amount is: " + ActualGstAmount);
 
@@ -1392,7 +1393,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		System.out.println("*** Grand Total Amount ***");
 
 		String finalTotalAmount = driver
-				.findElement(By.xpath("//table[@id='CreditNoteTable']//tfoot//tr[9]//td[12]//input[@id='Amount']"))
+				.findElement(By.xpath("//table[@id='CreditNoteTable']//tfoot//tr//td//input[@id='Amount']"))
 				.getAttribute("value");
 		String replaceAllFinalTotalAmount = finalTotalAmount.replaceAll(",", "");
 		double finalTotalAmountDouble = Double.parseDouble(replaceAllFinalTotalAmount);

@@ -4,12 +4,17 @@
   <test thread-count="1" parallel="classes" name="Test(failed)">
     <parameter name="env" value="Dev"/>
     <classes>
-      <class name="com.Sales.CreditNotesVoidTest">
+      <class name="com.Sales.SalesInvoiceVoidTest">
         <methods>
+          <include name="GetData"/>
+          <include name="Exception"/>
+          <include name="close"/>
+          <include name="SystemSettings"/>
+          <include name="SalesInvoicetoVoidProcess"/>
+          <include name="Environment"/>
           <include name="ERPLoginPage"/>
-          <include name="DirecteCreditNote"/>
         </methods>
-      </class> <!-- com.Sales.CreditNotesVoidTest -->
+      </class> <!-- com.Sales.SalesInvoiceVoidTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -238,7 +238,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 	private boolean IsHeaderManagementInSO;
 	private boolean IsReturnManagementInSI;
 
-	// @Ignore
+	@Ignore
 	@Test(priority = 6, dependsOnMethods = "ERPLoginPage")
 	public void SystemSettings() throws InterruptedException {
 
@@ -912,6 +912,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		int excelDataListSize = excelDataList.size();
 		for (int i = 0; i < excelDataListSize; i++) {
 			ExcelData excelData = excelDataList.get(i);
+			System.out.println(excelData.Customer.isEmpty());
 
 			if (excelData.Customer.isEmpty() == false) {
 
@@ -933,86 +934,101 @@ public class SalesInvoiceVoidTest extends BaseClass{
 				getExcelCurrencyRate = excelData.CurrencyRate;
 			}
 
-			if (excelData.Type.equalsIgnoreCase("Product")) {
-
-				String productCheckbox = driver.findElement(By.id("ProductCheck")).getAttribute("checked");
-				System.out.println("Product Check Box is: " + productCheckbox);
-				if (!productCheckbox.equalsIgnoreCase("true")) {
-					click(si.ProductCheckBox);
-
-				}
-
-			} else if (excelData.Type.equals("Service")) {
-
-				if (!si.ServiceCheckBox.isSelected()) {
-					click(si.ServiceCheckBox);
-				}
-
-			} else if (excelData.Type.equals("Open")) {
-
-				if (!si.OpenCheckBox.isSelected()) {
-					click(si.OpenCheckBox);
-				}
-
-			} else if (excelData.Type.equals("Header")) {
-
-				if (!si.HeaderCheckBox.isSelected()) {
-					click(si.HeaderCheckBox);
-				}
-
-			}
+			/*
+			 * if (excelData.Type.equalsIgnoreCase("Product")) {
+			 * 
+			 * String productCheckbox =
+			 * driver.findElement(By.id("ProductCheck")).getAttribute("checked");
+			 * System.out.println("Product Check Box is: " + productCheckbox); if
+			 * (!productCheckbox.equalsIgnoreCase("true")) { click(si.ProductCheckBox);
+			 * 
+			 * }
+			 * 
+			 * } else if (excelData.Type.equals("Service")) {
+			 * 
+			 * if (!si.ServiceCheckBox.isSelected()) { click(si.ServiceCheckBox); }
+			 * 
+			 * } else if (excelData.Type.equals("Open")) {
+			 * 
+			 * if (!si.OpenCheckBox.isSelected()) { click(si.OpenCheckBox); }
+			 * 
+			 * } else if (excelData.Type.equals("Header")) {
+			 * 
+			 * if (!si.HeaderCheckBox.isSelected()) { click(si.HeaderCheckBox); }
+			 * 
+			 * }
+			 */
 			
 		//	click(si.Qty);
 		//	Thread.sleep(1000);
 		//	click(si.DiscountAmount);
+			Thread.sleep(2000);
+			System.out.println("excelData.ProductCode: "+excelData.ProductCode);
+			
+			click(si.Qty);
+			Thread.sleep(1000);
+			click(si.DiscountAmount);
+			Thread.sleep(1000);
+			
+				WebElement Product = driver.findElement(By.xpath("(//span[@id='select2-ProductId-container'])[1]"));
+				Product.click();
+			
+			
+			WebElement productSearch = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
+					("(//span[@id='select2-ProductId-container']//following::input[@type='search'])[1]")));
+			productSearch.click();
+			productSearch.sendKeys(excelData.ProductCode + Keys.ENTER);
 
-			Thread.sleep(3000);
-			if (excelData.Type.equalsIgnoreCase("Product")) {
+			Thread.sleep(2000);
+			/*if (excelData.Type.equalsIgnoreCase("Product")) {
 				
 				if (i == 0) {
 					click(si.ChooseProduct);
-				}
+				}*/
 
 				
 
 				// Screen shot to the product:-
-				DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-				LocalDateTime now1 = LocalDateTime.now();
-				String timestamp1 = dtf1.format(now1).replace(":", ";").replace("/", "-");
-				TakesScreenshot ts1 = (TakesScreenshot) driver;
-				File s1 = ts1.getScreenshotAs(OutputType.FILE);
-				File s2 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Sales Product Field Error "
-						+ timestamp1 + ".png");
-				FileUtils.copyFile(s1, s2);		
-
-				WebElement productSearch = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
-						("//span[@id='select2-ProductId-container']//following::input[@type='search']")));
-				productSearch.click();
-				productSearch.sendKeys(excelData.ProductCode + Keys.ENTER);
-				
-				// Screen shot to the product:-
-				DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-				LocalDateTime now2 = LocalDateTime.now();
-				String timestamp2 = dtf2.format(now2).replace(":", ";").replace("/", "-");
-				TakesScreenshot ts2 = (TakesScreenshot) driver;
-				File s11 = ts2.getScreenshotAs(OutputType.FILE);
-				File s21 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Sales Product Field Error "
-						+ timestamp2 + ".png");
-				FileUtils.copyFile(s11, s21); 
-
-
-			} else if (excelData.Type.equalsIgnoreCase("Service")) {
-
-				driver.findElement(
-						By.xpath("//span[@id='select2-ServiceId-container']//following::input[@type='search']"))
-				.sendKeys(excelData.ProductCode + Keys.ENTER);
-
-			} else if (excelData.Type.equalsIgnoreCase("Open")) {
-
-				si.OpenProduct.sendKeys(excelData.ProductCode + Keys.ENTER);
-
-			}
+				/*
+				 * DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+				 * LocalDateTime now1 = LocalDateTime.now(); String timestamp1 =
+				 * dtf1.format(now1).replace(":", ";").replace("/", "-"); TakesScreenshot ts1 =
+				 * (TakesScreenshot) driver; File s1 = ts1.getScreenshotAs(OutputType.FILE);
+				 * File s2 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + "
+				 * Sales Product Field Error " + timestamp1 + ".png"); FileUtils.copyFile(s1,
+				 * s2);
+				 * 
+				 * WebElement productSearch =
+				 * wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
+				 * ("//span[@id='select2-ProductId-container']//following::input[@type='search']"
+				 * ))); productSearch.click(); productSearch.sendKeys(excelData.ProductCode +
+				 * Keys.ENTER);
+				 * 
+				 * // Screen shot to the product:- DateTimeFormatter dtf2 =
+				 * DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"); LocalDateTime now2 =
+				 * LocalDateTime.now(); String timestamp2 = dtf2.format(now2).replace(":",
+				 * ";").replace("/", "-"); TakesScreenshot ts2 = (TakesScreenshot) driver; File
+				 * s11 = ts2.getScreenshotAs(OutputType.FILE); File s21 = new
+				 * File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Sales Product
+				 * Field Error " + timestamp2 + ".png"); FileUtils.copyFile(s11, s21);
+				 * 
+				 * 
+				 * } else if (excelData.Type.equalsIgnoreCase("Service")) {
+				 * 
+				 * driver.findElement( By.xpath(
+				 * "//span[@id='select2-ServiceId-container']//following::input[@type='search']"
+				 * )) .sendKeys(excelData.ProductCode + Keys.ENTER);
+				 * 
+				 * } else if (excelData.Type.equalsIgnoreCase("Open")) {
+				 * 
+				 * si.OpenProduct.sendKeys(excelData.ProductCode + Keys.ENTER);
+				 * 
+				 * }
+				 */
 			click(si.Qty);
+			Thread.sleep(1000);
+			click(si.DiscountAmount);
+			Thread.sleep(1000);
 
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
@@ -1799,6 +1815,12 @@ public class SalesInvoiceVoidTest extends BaseClass{
 	@Test(priority = 30, dependsOnMethods = "ERPLoginPage")
 	private void Exception() throws InterruptedException {
 		soft.assertAll();
+
+	}
+//	@Ignore
+	@Test(priority = 40, dependsOnMethods = "ERPLoginPage")
+	private void close() throws InterruptedException {
+		driver.quit();
 
 	}
 

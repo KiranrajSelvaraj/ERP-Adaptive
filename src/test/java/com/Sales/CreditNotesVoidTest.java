@@ -567,6 +567,7 @@ public class CreditNotesVoidTest extends BaseClass {
 	public void ProductPage() throws InterruptedException {
 
 		ProductList.addAll(ProductSet);
+		
 		driver.navigate().to(url + "SalesPurchases/Product");
 		Thread.sleep(7000);
 		System.out.println("*Product Details Page*");
@@ -752,7 +753,7 @@ public class CreditNotesVoidTest extends BaseClass {
 			ProductDetailsList.add(pr);
 
 			Thread.sleep(2000);
-			driver.navigate().back();
+			click(prod.Back);
 			System.out.println("***");
 
 		}

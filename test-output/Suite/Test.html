@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>35/6/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jan 13 15:11:46 IST 2026</td>
+<td>Started on:</td><td>Tue Jan 13 15:49:16 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>1638 seconds (1638900 ms)</td>
+<tr><td>Total time:</td><td>1966 seconds (1966885 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,37 +76,146 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='com.Purchase.PurchaseGRNTest.GoodReceivingNote()'><b>GoodReceivingNote</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;button&quot; value=&quot;Fetch&quot; id=&quot;searchstring&quot; class=&quot;btn btn-primary &quot; style=&quot;margin-left:2px;&quot;&gt; is not clickable at point (1269, 121). Other element would receive the click: &lt;div class=&quot;modal&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=143.0.7499.170)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.35&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62916}, goog:processID: 10280, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 932d7afced499b6b8352093e65bb8d55
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at com.Purchase.PurchaseGRNTest.GoodReceivingNote(PurchaseGRNTest.java:1515)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1945164769", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1945164769'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;button&quot; value=&quot;Fetch&quot; id=&quot;searchstring&quot; class=&quot;btn btn-primary &quot; style=&quot;margin-left:2px;&quot;&gt; is not clickable at point (1269, 121). Other element would receive the click: &lt;div class=&quot;modal&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=143.0.7499.170)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.35&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62916}, goog:processID: 10280, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 932d7afced499b6b8352093e65bb8d55
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at com.Purchase.PurchaseGRNTest.GoodReceivingNote(PurchaseGRNTest.java:1515)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>8</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
 <td title='com.Purchase.PurchaseGRNTest.Exception()'><b>Exception</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
 <td><div><pre>java.lang.AssertionError: The following asserts failed:
 	Actual and Expected QOH Mismatched for Product: Garam Masala expected [0 B/20 L] but found [2 B/0 L],
 	Actual and Expected Discount Amount Mismatched for Garam Masala expected [54.0] but found [64.0],
+	Actual and Expected QOH Mismatched for Product: Sambar Masala expected [0 B/20 L] but found [2 B/0 L],
 	Actual and Expected Discount Amount Mismatched for Sambar Masala expected [55.0] but found [65.0],
+	Actual and Expected QOH Mismatched for Product: Rasam Powder expected [0 B/20 L] but found [2 B/0 L],
 	Actual and Expected Discount Amount Mismatched for Rasam Powder expected [56.0] but found [66.0],
 	Actual and Expected Discount Amount Mismatched for Biryani Masala expected [57.0] but found [67.0],
 	Actual and Expected Discount Amount Mismatched for Egg Curry Masala expected [58.0] but found [68.0],
 	Actual and Expected Discount Amount Mismatched for Red Rice expected [70.0] but found [80.0],
 	Actual and Expected Discount Amount Mismatched for Steam Rice expected [71.0] but found [81.0],
-	Actual and Expected Product Stock Mismatched for Product Garam Masala expected [2 B/1 L] but found [2 B/0 L],
-	Actual and Expected Product Movement Stock Mismatched for Product Garam Masala expected [2 B/1 L] but found [2 B]
-	at com.Purchase.PurchaseGRNTest.Exception(PurchaseGRNTest.java:1950)
+	Actual and Expected Discount Amount Mismatched for Biryani Rice (Long Grain) expected [72.0] but found [82.0],
+	Actual and Expected Discount Amount Mismatched for Mapillai Samba expected [73.0] but found [83.0],
+	Actual and Expected Discount Amount Mismatched for Kitchili Samba expected [74.0] but found [84.0],
+	Actual and Expected Discount Amount Mismatched for Medium Roast Coffee Powder expected [88.0] but found [98.0],
+	Actual and Expected Discount Amount Mismatched for Dark Roast Coffee Powder expected [89.0] but found [99.0],
+	Actual and Expected Discount Amount Mismatched for Cold Brew Grind Powder expected [90.0] but found [100.0],
+	Actual and Expected Discount Amount Mismatched for Arabica Coffee Powder expected [91.0] but found [101.0],
+	Actual and Expected Discount Amount Mismatched for Robusta Coffee Powder expected [92.0] but found [102.0],
+	Actual and Expected Discount Amount Mismatched for Continental Coffee expected [104.0] but found [114.0],
+	Actual and Expected Discount Amount Mismatched for Classic Coffee expected [105.0] but found [115.0],
+	Actual and Expected Discount Amount Mismatched for The Indian Bean expected [106.0] but found [116.0],
+	Actual and Expected Discount Amount Mismatched for Third Wave Coffee Roasters expected [107.0] but found [117.0],
+	Actual and Expected Discount Amount Mismatched for Coorg Coffee expected [108.0] but found [118.0],
+	Actual and Expected Discount Amount Mismatched for Moong Dal expected [121.0] but found [131.0],
+	Actual and Expected Discount Amount Mismatched for Chana Dal expected [122.0] but found [132.0],
+	Actual and Expected Discount Amount Mismatched for Masoor Dal expected [123.0] but found [133.0],
+	Actual and Expected Discount Amount Mismatched for Urad Dal expected [124.0] but found [134.0],
+	Actual and Expected Discount Amount Mismatched for Green Gram expected [125.0] but found [135.0],
+	Actual and Expected Discount Amount Mismatched for Oats expected [137.0] but found [147.0],
+	Actual and Expected Discount Amount Mismatched for Cornflakes expected [138.0] but found [148.0],
+	Actual and Expected Discount Amount Mismatched for Dosa Mix expected [139.0] but found [149.0],
+	Actual and Expected Discount Amount Mismatched for Idli Mix expected [140.0] but found [150.0],
+	Actual and Expected Discount Amount Mismatched for Tomato Ketchup expected [141.0] but found [151.0],
+	Actual and Expected SubTotal Mismatched expected [3230.0] but found [2930.0]
+	at com.Purchase.PurchaseGRNTest.Exception(PurchaseGRNTest.java:1952)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1281086763", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1281086763'><pre>java.lang.AssertionError: The following asserts failed:
+... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1561473731", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1561473731'><pre>java.lang.AssertionError: The following asserts failed:
 	Actual and Expected QOH Mismatched for Product: Garam Masala expected [0 B/20 L] but found [2 B/0 L],
 	Actual and Expected Discount Amount Mismatched for Garam Masala expected [54.0] but found [64.0],
+	Actual and Expected QOH Mismatched for Product: Sambar Masala expected [0 B/20 L] but found [2 B/0 L],
 	Actual and Expected Discount Amount Mismatched for Sambar Masala expected [55.0] but found [65.0],
+	Actual and Expected QOH Mismatched for Product: Rasam Powder expected [0 B/20 L] but found [2 B/0 L],
 	Actual and Expected Discount Amount Mismatched for Rasam Powder expected [56.0] but found [66.0],
 	Actual and Expected Discount Amount Mismatched for Biryani Masala expected [57.0] but found [67.0],
 	Actual and Expected Discount Amount Mismatched for Egg Curry Masala expected [58.0] but found [68.0],
 	Actual and Expected Discount Amount Mismatched for Red Rice expected [70.0] but found [80.0],
 	Actual and Expected Discount Amount Mismatched for Steam Rice expected [71.0] but found [81.0],
-	Actual and Expected Product Stock Mismatched for Product Garam Masala expected [2 B/1 L] but found [2 B/0 L],
-	Actual and Expected Product Movement Stock Mismatched for Product Garam Masala expected [2 B/1 L] but found [2 B]
+	Actual and Expected Discount Amount Mismatched for Biryani Rice (Long Grain) expected [72.0] but found [82.0],
+	Actual and Expected Discount Amount Mismatched for Mapillai Samba expected [73.0] but found [83.0],
+	Actual and Expected Discount Amount Mismatched for Kitchili Samba expected [74.0] but found [84.0],
+	Actual and Expected Discount Amount Mismatched for Medium Roast Coffee Powder expected [88.0] but found [98.0],
+	Actual and Expected Discount Amount Mismatched for Dark Roast Coffee Powder expected [89.0] but found [99.0],
+	Actual and Expected Discount Amount Mismatched for Cold Brew Grind Powder expected [90.0] but found [100.0],
+	Actual and Expected Discount Amount Mismatched for Arabica Coffee Powder expected [91.0] but found [101.0],
+	Actual and Expected Discount Amount Mismatched for Robusta Coffee Powder expected [92.0] but found [102.0],
+	Actual and Expected Discount Amount Mismatched for Continental Coffee expected [104.0] but found [114.0],
+	Actual and Expected Discount Amount Mismatched for Classic Coffee expected [105.0] but found [115.0],
+	Actual and Expected Discount Amount Mismatched for The Indian Bean expected [106.0] but found [116.0],
+	Actual and Expected Discount Amount Mismatched for Third Wave Coffee Roasters expected [107.0] but found [117.0],
+	Actual and Expected Discount Amount Mismatched for Coorg Coffee expected [108.0] but found [118.0],
+	Actual and Expected Discount Amount Mismatched for Moong Dal expected [121.0] but found [131.0],
+	Actual and Expected Discount Amount Mismatched for Chana Dal expected [122.0] but found [132.0],
+	Actual and Expected Discount Amount Mismatched for Masoor Dal expected [123.0] but found [133.0],
+	Actual and Expected Discount Amount Mismatched for Urad Dal expected [124.0] but found [134.0],
+	Actual and Expected Discount Amount Mismatched for Green Gram expected [125.0] but found [135.0],
+	Actual and Expected Discount Amount Mismatched for Oats expected [137.0] but found [147.0],
+	Actual and Expected Discount Amount Mismatched for Cornflakes expected [138.0] but found [148.0],
+	Actual and Expected Discount Amount Mismatched for Dosa Mix expected [139.0] but found [149.0],
+	Actual and Expected Discount Amount Mismatched for Idli Mix expected [140.0] but found [150.0],
+	Actual and Expected Discount Amount Mismatched for Tomato Ketchup expected [141.0] but found [151.0],
+	Actual and Expected SubTotal Mismatched expected [3230.0] but found [2930.0]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-	at com.Purchase.PurchaseGRNTest.Exception(PurchaseGRNTest.java:1950)
+	at com.Purchase.PurchaseGRNTest.Exception(PurchaseGRNTest.java:1952)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -126,40 +235,34 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.ProductPage()'><b>ProductPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;col-lg-7&apos;]//following::small&quot;}
+<td title='com.Purchase.PurchaseGRNTest.UomPage()'><b>UomPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;select2-selection__rendered&quot; id=&quot;select2-DropDown-container&quot;&gt;...&lt;/span&gt; is not clickable at point (1178, 121). Other element would receive the click: &lt;div class=&quot;modal&quot;&gt;...&lt;/div&gt;
   (Session info: chrome=143.0.7499.170)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.35&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61973}, goog:processID: 10768, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
-*** Element info: {Using=xpath, value=//div[@class=&apos;col-lg-7&apos;]//following::small}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62916}, goog:processID: 10280, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 932d7afced499b6b8352093e65bb8d55
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.Purchase.PurchaseGRNTest.ProductPage(PurchaseGRNTest.java:576)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at com.Purchase.PurchaseGRNTest.UomPage(PurchaseGRNTest.java:855)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1659679816", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1659679816'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;col-lg-7&apos;]//following::small&quot;}
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace150132234", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace150132234'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;select2-selection__rendered&quot; id=&quot;select2-DropDown-container&quot;&gt;...&lt;/span&gt; is not clickable at point (1178, 121). Other element would receive the click: &lt;div class=&quot;modal&quot;&gt;...&lt;/div&gt;
   (Session info: chrome=143.0.7499.170)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.35&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61973}, goog:processID: 10768, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
-*** Element info: {Using=xpath, value=//div[@class=&apos;col-lg-7&apos;]//following::small}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62916}, goog:processID: 10280, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 932d7afced499b6b8352093e65bb8d55
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -171,11 +274,9 @@ Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.Purchase.PurchaseGRNTest.ProductPage(PurchaseGRNTest.java:576)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at com.Purchase.PurchaseGRNTest.UomPage(PurchaseGRNTest.java:855)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -192,17 +293,17 @@ Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 </pre></div></td>
-<td>253</td>
+<td>11</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.ExpectedProduct()'><b>ExpectedProduct</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;button&quot; value=&quot;Fetch&quot; id=&quot;searchstring&quot; class=&quot;btn btn-primary&quot;&gt; is not clickable at point (1272, 155). Other element would receive the click: &lt;div class=&quot;modal&quot;&gt;...&lt;/div&gt;
+<td title='com.Purchase.PurchaseGRNTest.ProductMovementPage()'><b>ProductMovementPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;select2-selection__rendered&quot; id=&quot;select2-ProductId-container&quot; title=&quot;...&quot;&gt;P0283 - Moong Dal&lt;/span&gt; is not clickable at point (651, 150). Other element would receive the click: &lt;div class=&quot;modal&quot;&gt;...&lt;/div&gt;
   (Session info: chrome=143.0.7499.170)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.35&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61973}, goog:processID: 10768, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62916}, goog:processID: 10280, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 932d7afced499b6b8352093e65bb8d55
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -214,18 +315,18 @@ Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 	at jdk.proxy2/jdk.proxy2.$Proxy11.click(Unknown Source)
 	at com.BaseClass.BaseClass.click(BaseClass.java:103)
-	at com.Purchase.PurchaseGRNTest.ExpectedProduct(PurchaseGRNTest.java:1841)
+	at com.Purchase.PurchaseGRNTest.ProductMovementPage(PurchaseGRNTest.java:1894)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 20 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1170317445", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1170317445'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;button&quot; value=&quot;Fetch&quot; id=&quot;searchstring&quot; class=&quot;btn btn-primary&quot;&gt; is not clickable at point (1272, 155). Other element would receive the click: &lt;div class=&quot;modal&quot;&gt;...&lt;/div&gt;
+... Removed 20 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1133756907", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1133756907'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;select2-selection__rendered&quot; id=&quot;select2-ProductId-container&quot; title=&quot;...&quot;&gt;P0283 - Moong Dal&lt;/span&gt; is not clickable at point (651, 150). Other element would receive the click: &lt;div class=&quot;modal&quot;&gt;...&lt;/div&gt;
   (Session info: chrome=143.0.7499.170)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.35&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61973}, goog:processID: 10768, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62916}, goog:processID: 10280, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 932d7afced499b6b8352093e65bb8d55
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -245,7 +346,7 @@ Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 	at jdk.proxy2/jdk.proxy2.$Proxy11.click(Unknown Source)
 	at com.BaseClass.BaseClass.click(BaseClass.java:103)
-	at com.Purchase.PurchaseGRNTest.ExpectedProduct(PurchaseGRNTest.java:1841)
+	at com.Purchase.PurchaseGRNTest.ProductMovementPage(PurchaseGRNTest.java:1894)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -262,43 +363,37 @@ Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 </pre></div></td>
-<td>338</td>
+<td>171</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.PurchaseOrderToInvoice()'><b>PurchaseOrderToInvoice</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//table[@id=&apos;PurchaseOrderTable&apos;]//tbody//tr//td[2]//div//textarea[contains(text(),&apos;Biryani Rice (Long Grain)&apos;)]//following::td[@class=&apos;orderTotal&apos;]&quot;}
+<td title='com.Purchase.PurchaseGRNTest.ProductPage()'><b>ProductPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a href=&quot;#...&quot; data-toggle=&quot;tab&quot;&gt;Info&lt;/a&gt; is not clickable at point (274, 581). Other element would receive the click: &lt;div class=&quot;modal&quot;&gt;...&lt;/div&gt;
   (Session info: chrome=143.0.7499.170)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.35&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61973}, goog:processID: 10768, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
-*** Element info: {Using=xpath, value=//table[@id=&apos;PurchaseOrderTable&apos;]//tbody//tr//td[2]//div//textarea[contains(text(),&apos;Biryani Rice (Long Grain)&apos;)]//following::td[@class=&apos;orderTotal&apos;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62916}, goog:processID: 10280, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 932d7afced499b6b8352093e65bb8d55
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.Purchase.PurchaseGRNTest.PurchaseOrderToInvoice(PurchaseGRNTest.java:1247)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at com.Purchase.PurchaseGRNTest.ProductPage(PurchaseGRNTest.java:619)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1815948043", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1815948043'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//table[@id=&apos;PurchaseOrderTable&apos;]//tbody//tr//td[2]//div//textarea[contains(text(),&apos;Biryani Rice (Long Grain)&apos;)]//following::td[@class=&apos;orderTotal&apos;]&quot;}
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1099209167", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1099209167'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a href=&quot;#...&quot; data-toggle=&quot;tab&quot;&gt;Info&lt;/a&gt; is not clickable at point (274, 581). Other element would receive the click: &lt;div class=&quot;modal&quot;&gt;...&lt;/div&gt;
   (Session info: chrome=143.0.7499.170)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.35&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61973}, goog:processID: 10768, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
-*** Element info: {Using=xpath, value=//table[@id=&apos;PurchaseOrderTable&apos;]//tbody//tr//td[2]//div//textarea[contains(text(),&apos;Biryani Rice (Long Grain)&apos;)]//following::td[@class=&apos;orderTotal&apos;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62916}, goog:processID: 10280, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 932d7afced499b6b8352093e65bb8d55
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -310,11 +405,9 @@ Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.Purchase.PurchaseGRNTest.PurchaseOrderToInvoice(PurchaseGRNTest.java:1247)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at com.Purchase.PurchaseGRNTest.ProductPage(PurchaseGRNTest.java:619)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -331,43 +424,40 @@ Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 </pre></div></td>
-<td>551</td>
+<td>219</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.GoodReceivingNote()'><b>GoodReceivingNote</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//table[@id=&apos;GoodsReceivingTable&apos;]//tbody//tr[1]//td//a[@title=&apos;Details&apos;]&quot;}
+<td title='com.Purchase.PurchaseGRNTest.VendorPage()'><b>VendorPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;button&quot; value=&quot;Back&quot; class=&quot;btn btn-primary&quot; onclick=&quot;location.href=&apos;/ERP/SalesPurchases/Vendor&apos;&quot;&gt; is not clickable at point (1234, 126). Other element would receive the click: &lt;div class=&quot;modal&quot;&gt;...&lt;/div&gt;
   (Session info: chrome=143.0.7499.170)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.35&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61973}, goog:processID: 10768, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
-*** Element info: {Using=xpath, value=//table[@id=&apos;GoodsReceivingTable&apos;]//tbody//tr[1]//td//a[@title=&apos;Details&apos;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62916}, goog:processID: 10280, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 932d7afced499b6b8352093e65bb8d55
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.Purchase.PurchaseGRNTest.GoodReceivingNote(PurchaseGRNTest.java:1516)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy11.click(Unknown Source)
+	at com.BaseClass.BaseClass.click(BaseClass.java:103)
+	at com.Purchase.PurchaseGRNTest.VendorPage(PurchaseGRNTest.java:812)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1744883735", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1744883735'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//table[@id=&apos;GoodsReceivingTable&apos;]//tbody//tr[1]//td//a[@title=&apos;Details&apos;]&quot;}
+... Removed 20 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace416235137", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace416235137'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;button&quot; value=&quot;Back&quot; class=&quot;btn btn-primary&quot; onclick=&quot;location.href=&apos;/ERP/SalesPurchases/Vendor&apos;&quot;&gt; is not clickable at point (1234, 126). Other element would receive the click: &lt;div class=&quot;modal&quot;&gt;...&lt;/div&gt;
   (Session info: chrome=143.0.7499.170)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.35&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61973}, goog:processID: 10768, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
-*** Element info: {Using=xpath, value=//table[@id=&apos;GoodsReceivingTable&apos;]//tbody//tr[1]//td//a[@title=&apos;Details&apos;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62916}, goog:processID: 10280, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 932d7afced499b6b8352093e65bb8d55
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -379,11 +469,15 @@ Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.Purchase.PurchaseGRNTest.GoodReceivingNote(PurchaseGRNTest.java:1516)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy11.click(Unknown Source)
+	at com.BaseClass.BaseClass.click(BaseClass.java:103)
+	at com.Purchase.PurchaseGRNTest.VendorPage(PurchaseGRNTest.java:812)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -400,41 +494,7 @@ Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 </pre></div></td>
-<td>52</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.SystemSettingsPage()'><b>SystemSettingsPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
-<td><div><pre>java.lang.NumberFormatException: empty String
-	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1842)
-	at java.base/jdk.internal.math.FloatingDecimal.parseFloat(FloatingDecimal.java:122)
-	at java.base/java.lang.Float.parseFloat(Float.java:476)
-	at com.Purchase.PurchaseGRNTest.SystemSettingsPage(PurchaseGRNTest.java:363)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 12 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1295658352", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1295658352'><pre>java.lang.NumberFormatException: empty String
-	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1842)
-	at java.base/jdk.internal.math.FloatingDecimal.parseFloat(FloatingDecimal.java:122)
-	at java.base/java.lang.Float.parseFloat(Float.java:476)
-	at com.Purchase.PurchaseGRNTest.SystemSettingsPage(PurchaseGRNTest.java:363)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-</pre></div></td>
-<td>94</td>
+<td>70</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -446,72 +506,7 @@ Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0253, Arabica Coffee Powder, 25X25X1GM, 1, , , 10, , , , 101, , , , , , , TRUE, TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0301, Dosa Mix, Packets, 1, , , 10, , , , 149, , , , , , , , FALSE, </td>
-<td></td>
-<td>0</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0220, Egg Curry Masala, 1X1X1KG, 1, , , 10, , , , 68, , , , , , , TRUE, TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0303, Tomato Ketchup, Packets, 1, , , 10, , , , 151, , , , , , , , FALSE, </td>
-<td></td>
-<td>0</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0252, Cold Brew Grind Powder, 25X25X1GM, 1, , , 10, , , , 100, , , , , , , , TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: V0001, SGD, 1, Zero, Product, P0216, Garam Masala, 1X1X1KG, 1, , , 10, , , , 64, , , %, 100, 10, 0, , TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0287, Green Gram, PCS, 1, , , 10, , , , 135, , , , , , , , TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
-<td></td>
-<td>49</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.ProductMovementPage()'><b>ProductMovementPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
-<td></td>
-<td>257</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0299, Oats, Packets, 1, , , 10, , , , 147, , , , , , , , FALSE, </td>
-<td></td>
-<td>0</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0236, Kitchili Samba, 1X1X1KG, 1, , , 10, , , , 84, , , , , , , , FALSE, </td>
-<td></td>
-<td>0</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0250, Medium Roast Coffee Powder, 25X25X1GM, 1, , , 10, , , , 98, , , , , , , , TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0234, Biryani Rice (Long Grain), 1X1X1KG, 1, , , 10, , , , 82, , , , , , , , FALSE, </td>
-<td></td>
-<td>0</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.StockCalculation()'><b>StockCalculation</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0218, Rasam Powder, 1X1X1KG, 1, , , 10, , , , 66, , , , , , , , TRUE, </td>
 <td></td>
 <td>0</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
@@ -521,42 +516,12 @@ Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
 <td>0</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0235, Mapillai Samba, 1X1X1KG, 1, , , 10, , , , 83, , , , , , , , FALSE, </td>
-<td></td>
-<td>0</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0232, Red Rice, 1X1X1KG, 1, , , 10, , , , 80, , , , , , , , FALSE, </td>
-<td></td>
-<td>0</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0284, Chana Dal, PCS, 1, , , 10, , , , 132, , , , , , , , TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0300, Cornflakes, Packets, 1, , , 10, , , , 148, , , , , , , TRUE, FALSE, </td>
-<td></td>
-<td>0</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.UomPage()'><b>UomPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
-<td></td>
-<td>13</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0286, Urad Dal, PCS, 1, , , 10, , , , 134, , , , , , , , TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0270, Coorg Coffee, 25X25X1GM, 1, , , 10, , , , 118, , , , , , , TRUE, FALSE, </td>
-<td></td>
-<td>0</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
 <td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0219, Biryani Masala, 1X1X1KG, 1, , , 10, , , , 67, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0251, Dark Roast Coffee Powder, 25X25X1GM, 1, , , 10, , , , 99, , , , , , , , TRUE, </td>
 <td></td>
 <td>0</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
@@ -566,9 +531,49 @@ Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
 <td>0</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0268, The Indian Bean, 25X25X1GM, 1, , , 10, , , , 116, , , , , , , , FALSE, </td>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0253, Arabica Coffee Powder, 25X25X1GM, 1, , , 10, , , , 101, , , , , , , TRUE, TRUE, </td>
 <td></td>
 <td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0220, Egg Curry Masala, 1X1X1KG, 1, , , 10, , , , 68, , , , , , , TRUE, TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.PurchaseOrderToInvoice()'><b>PurchaseOrderToInvoice</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td></td>
+<td>938</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0250, Medium Roast Coffee Powder, 25X25X1GM, 1, , , 10, , , , 98, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0235, Mapillai Samba, 1X1X1KG, 1, , , 10, , , , 83, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0270, Coorg Coffee, 25X25X1GM, 1, , , 10, , , , 118, , , , , , , TRUE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0217, Sambar Masala, 1X1X1KG, 1, , , 10, , , , 65, , , , , , , TRUE, TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0254, Robusta Coffee Powder, 25X25X1GM, 1, , , 10, , , , 102, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.SystemSettingsPage()'><b>SystemSettingsPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td></td>
+<td>124</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
 <tr>
 <td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0285, Masoor Dal, PCS, 1, , , 10, , , , 133, , , , , , , , TRUE, </td>
@@ -581,7 +586,12 @@ Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
 <td>0</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0233, Steam Rice, 1X1X1KG, 1, , , 10, , , , 81, , , , , , , , FALSE, </td>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0299, Oats, Packets, 1, , , 10, , , , 147, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0286, Urad Dal, PCS, 1, , , 10, , , , 134, , , , , , , , TRUE, </td>
 <td></td>
 <td>0</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
@@ -591,32 +601,82 @@ Session ID: f94f682d46d4dc8c11b98cecd7c6ca93
 <td>0</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
 <tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0303, Tomato Ketchup, Packets, 1, , , 10, , , , 151, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.ExpectedProduct()'><b>ExpectedProduct</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td></td>
+<td>403</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: V0001, SGD, 1, Zero, Product, P0216, Garam Masala, 1X1X1KG, 1, , , 10, , , , 64, , , %, 100, 10, 0, , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0232, Red Rice, 1X1X1KG, 1, , , 10, , , , 80, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0236, Kitchili Samba, 1X1X1KG, 1, , , 10, , , , 84, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0301, Dosa Mix, Packets, 1, , , 10, , , , 149, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0287, Green Gram, PCS, 1, , , 10, , , , 135, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0300, Cornflakes, Packets, 1, , , 10, , , , 148, , , , , , , TRUE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0268, The Indian Bean, 25X25X1GM, 1, , , 10, , , , 116, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.StockCalculation()'><b>StockCalculation</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0233, Steam Rice, 1X1X1KG, 1, , , 10, , , , 81, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0284, Chana Dal, PCS, 1, , , 10, , , , 132, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0252, Cold Brew Grind Powder, 25X25X1GM, 1, , , 10, , , , 100, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
 <td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0267, Classic Coffee, 25X25X1GM, 1, , , 10, , , , 115, , , , , , , , FALSE, </td>
 <td></td>
 <td>0</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.VendorPage()'><b>VendorPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td title='com.Purchase.PurchaseGRNTest.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
 <td></td>
-<td>27</td>
+<td>17</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0251, Dark Roast Coffee Powder, 25X25X1GM, 1, , , 10, , , , 99, , , , , , , , TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0218, Rasam Powder, 1X1X1KG, 1, , , 10, , , , 66, , , , , , , , TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0254, Robusta Coffee Powder, 25X25X1GM, 1, , , 10, , , , 102, , , , , , , , TRUE, </td>
-<td></td>
-<td>0</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0217, Sambar Masala, 1X1X1KG, 1, , , 10, , , , 65, , , , , , , TRUE, TRUE, </td>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0234, Biryani Rice (Long Grain), 1X1X1KG, 1, , , 10, , , , 82, , , , , , , , FALSE, </td>
 <td></td>
 <td>0</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>

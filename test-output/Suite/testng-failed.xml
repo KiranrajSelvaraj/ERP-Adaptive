@@ -6,11 +6,11 @@
     <classes>
       <class name="com.Purchase.PurchaseGRNTest">
         <methods>
-          <include name="ExpectedProduct"/>
+          <include name="UomPage"/>
           <include name="ProductPage"/>
-          <include name="PurchaseOrderToInvoice"/>
-          <include name="SystemSettingsPage"/>
+          <include name="VendorPage"/>
           <include name="ERPLoginPage"/>
+          <include name="ProductMovementPage"/>
           <include name="Exception"/>
           <include name="GoodReceivingNote"/>
         </methods>

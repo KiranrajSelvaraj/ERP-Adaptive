@@ -1237,6 +1237,13 @@ public class PurchaseGRNTest extends BaseClass {
 
 				}
 			}
+			
+			productPrice = driver.findElement(By.id("PurchaseOrderDetailTotal")).getAttribute("value");
+			String replaceAllProductPrice = productPrice.replaceAll(",", "");
+			double productPriceDouble = Double.parseDouble(replaceAllProductPrice);
+			System.out.println("Actual Discount Amount: "+productPriceDouble);
+			System.out.println("Expected Discount Amount: "+expectedDiscountAmount);
+			System.out.println();	
 
 			//Add Button:-
 			click(po.AddButton);
@@ -1244,14 +1251,9 @@ public class PurchaseGRNTest extends BaseClass {
 			js.executeScript("arguments[0].click();", po.Quantity);
 			System.out.println();
 
-			productPrice = driver.findElement(By.xpath("//table[@id='PurchaseOrderTable']//tbody//tr//td[2]"
-					+ "//div//textarea[contains(text(),'"+excelData.ProductName+"')]//following::td[@class='orderTotal']")).getText();
-			String replaceAllProductPrice = productPrice.replaceAll(",", "");
-			double productPriceDouble = Double.parseDouble(replaceAllProductPrice);
-			System.out.println("Actual Discount Amount: "+productPriceDouble);
-			System.out.println("Expected Discount Amount: "+expectedDiscountAmount);
-			System.out.println();	
-
+		/*	productPrice = driver.findElement(By.xpath("//table[@id='PurchaseOrderTable']//tbody//tr//td[2]"
+					+ "//div//textarea[contains(text(),'"+excelData.ProductName+"')]//following::td[@class='orderTotal']")).getText(); */
+			
 			soft.assertEquals(productPriceDouble, expectedDiscountAmount, 
 					"Actual and Expected Discount Amount Mismatched for "+excelData.ProductName);
 
@@ -1838,7 +1840,7 @@ public class PurchaseGRNTest extends BaseClass {
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			productcode.sendKeys(product);
 			Thread.sleep(1000);
-			click(prod.Fetch);
+			js.executeScript("arguments[0].click();", prod.Fetch);
 			Thread.sleep(3000);
 
 			WebElement DetailsIcon = driver.findElement(By.xpath

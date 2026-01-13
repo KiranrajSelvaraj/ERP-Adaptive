@@ -792,6 +792,7 @@ public class SalesInvoiceVoidTest extends BaseClass {
 
 		UOMList.addAll(UOMSet);
 		driver.navigate().to(url + "SalesPurchases/UOM");
+		Thread.sleep(5000);
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -802,7 +803,8 @@ public class SalesInvoiceVoidTest extends BaseClass {
 
 		for (String uom : UOMSet) {
 
-			driver.findElement(By.id("select2-DropDown-container")).click();
+			WebElement selectUom = driver.findElement(By.id("select2-DropDown-container"));
+			js.executeScript("arguments[0].click();", selectUom);
 			WebElement UOMSearchField = driver.findElement(
 					By.xpath("//span[@id='select2-DropDown-container']//following::input[@type='search']"));
 			UOMSearchField.sendKeys(uom + Keys.ENTER);
@@ -1429,6 +1431,8 @@ public class SalesInvoiceVoidTest extends BaseClass {
 		}
 		System.out.println("** Sales Invoice Save Successfull **");
 		Thread.sleep(3000);
+		driver.navigate().refresh();
+		Thread.sleep(4000);
 		System.out.println();
 
 		String getSalesInvoiceNo = driver.findElement(By.xpath("(//table[@id='Invoicetable']//tbody//tr//td[3])[1]"))

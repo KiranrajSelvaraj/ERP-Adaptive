@@ -45,7 +45,7 @@ import com.Utility.Util1;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class SalesInvoiceVoidTest extends BaseClass{
+public class SalesInvoiceVoidTest extends BaseClass {
 
 	private String url;
 
@@ -117,7 +117,6 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 	}
 
-
 	@SuppressWarnings("unused")
 	class ExcelData {
 		private String Customer;
@@ -150,8 +149,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 				String ProductCode, String ProductName, String Uom, String Qty, String Foc, String DiscountPercentage,
 				String DiscountAmount, String UnitDiscCheckbox, String UnitDiscPercentage, String UnitDiscAmount,
 				String Price, String IsSpecialPriceCheckbox, String SpecialPrice, String OverAllDiscountType,
-				String OverAllDiscountAmount, String OverAllDiscountPercentage, String GstPercentage, 
-				String ZeroGst, String BatchProduct, String CreditNotesQty) {
+				String OverAllDiscountAmount, String OverAllDiscountPercentage, String GstPercentage, String ZeroGst,
+				String BatchProduct, String CreditNotesQty) {
 			super();
 
 			this.Customer = Customer;
@@ -197,8 +196,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 			String ProductCode, String ProductName, String Uom, String Qty, String Foc, String DiscountPercentage,
 			String DiscountAmount, String UnitDiscCheckbox, String UnitDiscPercentage, String UnitDiscAmount,
 			String Price, String IsSpecialPriceCheckbox, String SpecialPrice, String OverAllDiscountType,
-			String OverAllDiscountAmount, String OverAllDiscountPercentage, String GstPercentage, 
-			String ZeroGst, String BatchProduct, String CreditNotesQty) {
+			String OverAllDiscountAmount, String OverAllDiscountPercentage, String GstPercentage, String ZeroGst,
+			String BatchProduct, String CreditNotesQty) {
 
 		ExcelData data = new ExcelData(Customer, CurrencyCode, CurrencyRate, GstType, Type, ProductCode, ProductName,
 				Uom, Qty, Foc, DiscountPercentage, DiscountAmount, UnitDiscCheckbox, UnitDiscPercentage, UnitDiscAmount,
@@ -218,7 +217,6 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		}
 
 	}
-
 
 	private boolean IsSalesManManagement;
 	private boolean IsWarehouseManagement;
@@ -399,8 +397,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		BulkQtyMeasurement = driver.findElement(By.id("StringValue"))
-				.getAttribute("value");
+		BulkQtyMeasurement = driver.findElement(By.id("StringValue")).getAttribute("value");
 		System.out.println("BulkQtyMeasurement :" + BulkQtyMeasurement);
 		click(ss.Back);
 
@@ -414,8 +411,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		LooseQtyMeasurement = driver.findElement(By.id("StringValue"))
-				.getAttribute("value");
+		LooseQtyMeasurement = driver.findElement(By.id("StringValue")).getAttribute("value");
 		System.out.println("LooseQtyMeasurement :" + LooseQtyMeasurement);
 		click(ss.Back);
 
@@ -443,8 +439,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(2000);
 		click(ss.EditSystemSetting);
 		Thread.sleep(1000);
-		String DecimalCalculationForSalesString = driver.findElement(By.id("DecimalValue"))
-				.getAttribute("value");
+		String DecimalCalculationForSalesString = driver.findElement(By.id("DecimalValue")).getAttribute("value");
 		DecimalCalculationForSales = Float.parseFloat(DecimalCalculationForSalesString);
 		System.out.println("DecimalCalculationForSales :" + DecimalCalculationForSales);
 		click(ss.Back);
@@ -881,7 +876,6 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		}
 	}
 
-
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void SalesInvoicetoVoidProcess() throws InterruptedException, IOException {
 
@@ -889,7 +883,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-	//	Actions action = new Actions(driver);
+		// Actions action = new Actions(driver);
 		SalesInvoice si = new SalesInvoice(driver);
 
 		driver.navigate().to(url + "Sales/SalesInvoiceIndex");
@@ -934,6 +928,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 				getExcelCurrencyRate = excelData.CurrencyRate;
 			}
 
+			
+			js.executeScript("window.scrollBy(0, 1000)", "");
 			/*
 			 * if (excelData.Type.equalsIgnoreCase("Product")) {
 			 * 
@@ -958,73 +954,101 @@ public class SalesInvoiceVoidTest extends BaseClass{
 			 * 
 			 * }
 			 */
-			
-		//	click(si.Qty);
-		//	Thread.sleep(1000);
-		//	click(si.DiscountAmount);
+
+			// click(si.Qty);
+			// Thread.sleep(1000);
+			// click(si.DiscountAmount);
 			Thread.sleep(2000);
-			System.out.println("excelData.ProductCode: "+excelData.ProductCode);
-			
+			System.out.println("excelData.ProductCode: " + excelData.ProductCode);
+
 			click(si.Qty);
 			Thread.sleep(1000);
 			click(si.DiscountAmount);
 			Thread.sleep(1000);
 			
-				WebElement Product = driver.findElement(By.xpath("(//span[@id='select2-ProductId-container'])[1]"));
-				Product.click();
+			click(si.ServiceCheckBox);
+			Thread.sleep(1000);
+			click(si.ProductCheckBox);
+
+			WebElement Product = driver.findElement(By.xpath("(//span[@id='select2-ProductId-container'])[1]"));
+			Thread.sleep(1000);
+			//((JavascriptExecutor) driver).executeScript("arguments[0].click();", Product);
+			
+			 Product.click();
+
+			DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+			LocalDateTime now1 = LocalDateTime.now();
+			String timestamp1 = dtf1.format(now1).replace(":", ";").replace("/", "-");
+			TakesScreenshot ts1 = (TakesScreenshot) driver;
+			File s1 = ts1.getScreenshotAs(OutputType.FILE);
+			File s2 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\+ Sales Product Field Error "
+					+ timestamp1 + ".png");
+			FileUtils.copyFile(s1, s2);
 			
 			
-			WebElement productSearch = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
-					("(//span[@id='select2-ProductId-container']//following::input[@type='search'])[1]")));
-			productSearch.click();
-			productSearch.sendKeys(excelData.ProductCode + Keys.ENTER);
+			WebElement productSearch = driver.findElement(By.xpath("(//span[@id='select2-ProductId-container']//following::input[@type='search'])[1]"));
+			/*
+			 * WebElement productSearch =
+			 * wait.until(ExpectedConditions.visibilityOfElementLocated( By.xpath(
+			 * "(//span[@id='select2-ProductId-container']//following::input[@type='search'])[1]"
+			 * )));
+			 */
+			
+			click(productSearch);
+			Thread.sleep(1000);
+			productSearch.sendKeys(Keys.CONTROL + "a");
+			productSearch.sendKeys(Keys.DELETE);
+			Thread.sleep(1000);
+			Sendkeys(productSearch, excelData.ProductCode + Keys.ENTER);
+			/*
+			 * productSearch.click(); productSearch.sendKeys(excelData.ProductCode +
+			 * Keys.ENTER);
+			 */
 
 			Thread.sleep(2000);
-			/*if (excelData.Type.equalsIgnoreCase("Product")) {
-				
-				if (i == 0) {
-					click(si.ChooseProduct);
-				}*/
+			/*
+			 * if (excelData.Type.equalsIgnoreCase("Product")) {
+			 * 
+			 * if (i == 0) { click(si.ChooseProduct); }
+			 */
 
-				
-
-				// Screen shot to the product:-
-				/*
-				 * DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-				 * LocalDateTime now1 = LocalDateTime.now(); String timestamp1 =
-				 * dtf1.format(now1).replace(":", ";").replace("/", "-"); TakesScreenshot ts1 =
-				 * (TakesScreenshot) driver; File s1 = ts1.getScreenshotAs(OutputType.FILE);
-				 * File s2 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + "
-				 * Sales Product Field Error " + timestamp1 + ".png"); FileUtils.copyFile(s1,
-				 * s2);
-				 * 
-				 * WebElement productSearch =
-				 * wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
-				 * ("//span[@id='select2-ProductId-container']//following::input[@type='search']"
-				 * ))); productSearch.click(); productSearch.sendKeys(excelData.ProductCode +
-				 * Keys.ENTER);
-				 * 
-				 * // Screen shot to the product:- DateTimeFormatter dtf2 =
-				 * DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"); LocalDateTime now2 =
-				 * LocalDateTime.now(); String timestamp2 = dtf2.format(now2).replace(":",
-				 * ";").replace("/", "-"); TakesScreenshot ts2 = (TakesScreenshot) driver; File
-				 * s11 = ts2.getScreenshotAs(OutputType.FILE); File s21 = new
-				 * File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Sales Product
-				 * Field Error " + timestamp2 + ".png"); FileUtils.copyFile(s11, s21);
-				 * 
-				 * 
-				 * } else if (excelData.Type.equalsIgnoreCase("Service")) {
-				 * 
-				 * driver.findElement( By.xpath(
-				 * "//span[@id='select2-ServiceId-container']//following::input[@type='search']"
-				 * )) .sendKeys(excelData.ProductCode + Keys.ENTER);
-				 * 
-				 * } else if (excelData.Type.equalsIgnoreCase("Open")) {
-				 * 
-				 * si.OpenProduct.sendKeys(excelData.ProductCode + Keys.ENTER);
-				 * 
-				 * }
-				 */
+			// Screen shot to the product:-
+			/*
+			 * DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+			 * LocalDateTime now1 = LocalDateTime.now(); String timestamp1 =
+			 * dtf1.format(now1).replace(":", ";").replace("/", "-"); TakesScreenshot ts1 =
+			 * (TakesScreenshot) driver; File s1 = ts1.getScreenshotAs(OutputType.FILE);
+			 * File s2 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + "
+			 * Sales Product Field Error " + timestamp1 + ".png"); FileUtils.copyFile(s1,
+			 * s2);
+			 * 
+			 * WebElement productSearch =
+			 * wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
+			 * ("//span[@id='select2-ProductId-container']//following::input[@type='search']"
+			 * ))); productSearch.click(); productSearch.sendKeys(excelData.ProductCode +
+			 * Keys.ENTER);
+			 * 
+			 * // Screen shot to the product:- DateTimeFormatter dtf2 =
+			 * DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"); LocalDateTime now2 =
+			 * LocalDateTime.now(); String timestamp2 = dtf2.format(now2).replace(":",
+			 * ";").replace("/", "-"); TakesScreenshot ts2 = (TakesScreenshot) driver; File
+			 * s11 = ts2.getScreenshotAs(OutputType.FILE); File s21 = new
+			 * File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Sales Product
+			 * Field Error " + timestamp2 + ".png"); FileUtils.copyFile(s11, s21);
+			 * 
+			 * 
+			 * } else if (excelData.Type.equalsIgnoreCase("Service")) {
+			 * 
+			 * driver.findElement( By.xpath(
+			 * "//span[@id='select2-ServiceId-container']//following::input[@type='search']"
+			 * )) .sendKeys(excelData.ProductCode + Keys.ENTER);
+			 * 
+			 * } else if (excelData.Type.equalsIgnoreCase("Open")) {
+			 * 
+			 * si.OpenProduct.sendKeys(excelData.ProductCode + Keys.ENTER);
+			 * 
+			 * }
+			 */
 			click(si.Qty);
 			Thread.sleep(1000);
 			click(si.DiscountAmount);
@@ -1084,11 +1108,9 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 					if (productDetails.IsCartonSelected.equalsIgnoreCase("true")) {
 
-						if (excelData.Uom.equalsIgnoreCase("1KG") ||
-								excelData.Uom.equalsIgnoreCase("1X10KG")||
-								excelData.Uom.equalsIgnoreCase("1X1KG")||
-								excelData.Uom.equalsIgnoreCase("1X1X1KG")||
-								excelData.Uom.equalsIgnoreCase("KG")) {
+						if (excelData.Uom.equalsIgnoreCase("1KG") || excelData.Uom.equalsIgnoreCase("1X10KG")
+								|| excelData.Uom.equalsIgnoreCase("1X1KG") || excelData.Uom.equalsIgnoreCase("1X1X1KG")
+								|| excelData.Uom.equalsIgnoreCase("KG")) {
 
 							String[] split = productDetails.currentStockValue.split("[ B/L]+");
 							int boxStock = Integer.parseInt(split[0]);
@@ -1106,17 +1128,17 @@ public class SalesInvoiceVoidTest extends BaseClass{
 							soft.assertEquals(qohStock1, stock,
 									"Actual and Expected QOH Mismatched for Product: " + productDetails.productName);
 
-						}  else {
+						} else {
 
 							System.out.println("carton Product");
 							System.out.println("Product Name: " + productDetails.productName);
 							System.out.println("Qoh Stock: " + qohStock1);
-							System.out.println("current Stock: " +productDetails.currentStockValue);
+							System.out.println("current Stock: " + productDetails.currentStockValue);
 
 							soft.assertEquals(qohStock1, productDetails.currentStockValue,
 									"Actual and Expected QOH Mismatched for Product: " + productDetails.productName);
 
-						} 		 			
+						}
 
 					}
 
@@ -1127,7 +1149,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 						for (ProductUOM productUom : ProductUOMDetailsList) {
 							if (productUom.ProductUOMtablesize > 0
-				&& productUom.productCode1.equals(productDetails.productName)) {
+									&& productUom.productCode1.equals(productDetails.productName)) {
 
 								for (UOM uomDetails : UomDetailsList) {
 									if (uomDetails.UomCodeValue.equalsIgnoreCase(productUom.SubUOM)) {
@@ -1150,8 +1172,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 							System.out.println("Non Carton Product");
 							System.out.println("Product Name: " + productDetails.productName);
-							System.out.println("Calculated QOH: " +replacetotalCalculatedStock);
-							System.out.println("Current Stock from List: " +productDetails.currentStockValue);
+							System.out.println("Calculated QOH: " + replacetotalCalculatedStock);
+							System.out.println("Current Stock from List: " + productDetails.currentStockValue);
 							System.out.println();
 
 							soft.assertEquals(replacetotalCalculatedStock, productDetails.currentStockValue.trim(),
@@ -1177,10 +1199,10 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 			System.out.println();
 
-			//Qty:-
+			// Qty:-
 			Sendkeys(si.Qty, excelData.Qty);
 
-			//Price:-
+			// Price:-
 			click(si.Price);
 			si.Price.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			Sendkeys(si.Price, excelData.Price);
@@ -1192,7 +1214,6 @@ public class SalesInvoiceVoidTest extends BaseClass{
 				click(si.DiscountPercentage);
 				si.DiscountPercentage.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 				Sendkeys(si.DiscountPercentage, excelData.DiscountPercentage);
-
 
 			} else {
 				System.out.println("Discount Field Not Displayed");
@@ -1246,44 +1267,54 @@ public class SalesInvoiceVoidTest extends BaseClass{
 				}
 
 			}
-			
+
 			Thread.sleep(1000);
 			String getActualAmout = driver.findElement(By.id("ItemAmount")).getAttribute("value");
-			System.out.println("Actual Amount: "+getActualAmout);
+			System.out.println("Actual Amount: " + getActualAmout);
 
-			//Add
+			// Add
 			click(si.Add);
 			Thread.sleep(2000);
 
-			//Batch Details:-
+			// Batch Details:-
 			if (excelData.BatchProduct.equalsIgnoreCase("true")) {
 
-				String bQty = driver.findElement(By.xpath("//strong[contains(text(),'"+excelData.ProductName+"')]//following::input[@id='BQty']")).getAttribute("value");
-				System.out.println("B.Qty is: "+bQty);
+				String bQty = driver.findElement(By.xpath(
+						"//strong[contains(text(),'" + excelData.ProductName + "')]//following::input[@id='BQty']"))
+						.getAttribute("value");
+				System.out.println("B.Qty is: " + bQty);
 
-				String lQty = driver.findElement(By.xpath("//strong[contains(text(),'"+excelData.ProductName+"')]//following::input[@id='LQty']")).getAttribute("value");
-				System.out.println("L.Qty is: "+lQty);
+				String lQty = driver.findElement(By.xpath(
+						"//strong[contains(text(),'" + excelData.ProductName + "')]//following::input[@id='LQty']"))
+						.getAttribute("value");
+				System.out.println("L.Qty is: " + lQty);
 
-				WebElement bulkQty = driver.findElement(By.xpath("//strong[contains(text(),'"+excelData.ProductName+"')]//following::input[@id='BulkQty']"));
+				WebElement bulkQty = driver.findElement(By.xpath(
+						"//strong[contains(text(),'" + excelData.ProductName + "')]//following::input[@id='BulkQty']"));
 				bulkQty.click();
 				bulkQty.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 				bulkQty.sendKeys(bQty);
 
-				WebElement looseQty = driver.findElement(By.xpath("//strong[contains(text(),'"+excelData.ProductName+"')]//following::input[@id='LooseQty']"));
+				WebElement looseQty = driver.findElement(By.xpath("//strong[contains(text(),'" + excelData.ProductName
+						+ "')]//following::input[@id='LooseQty']"));
 				looseQty.click();
 				looseQty.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 				looseQty.sendKeys(lQty);
 
 				Thread.sleep(2000);
-				driver.findElement(By.xpath("//strong[contains(text(),'"+excelData.ProductName+"')]//following::button[text()='Add']")).click();
+				driver.findElement(By.xpath(
+						"//strong[contains(text(),'" + excelData.ProductName + "')]//following::button[text()='Add']"))
+						.click();
 
 			}
 
-		/*	Thread.sleep(2000);
-			String actualAmount = driver.findElement(By.xpath("//table[@id='SalesTable']//tbody//tr//td[2]//textarea"
-					+ "[contains(text(),'"+excelData.ProductName+" ')]//following::td[11]//p[@class='totaldetailamount']"))
-					.getText();
-			System.out.println("actualAmount: "+actualAmount); */
+			/*
+			 * Thread.sleep(2000); String actualAmount = driver.findElement(By.xpath(
+			 * "//table[@id='SalesTable']//tbody//tr//td[2]//textarea" +
+			 * "[contains(text(),'"+excelData.
+			 * ProductName+" ')]//following::td[11]//p[@class='totaldetailamount']"))
+			 * .getText(); System.out.println("actualAmount: "+actualAmount);
+			 */
 
 			double actualSubtotalDouble = Double.parseDouble(getActualAmout);
 			expSubtotal = expSubtotal + actualSubtotalDouble;
@@ -1294,8 +1325,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 			}
 
-		//	js.executeScript("window.scrollBy(0, -400);");
-		} //Excel Data List Loop
+			// js.executeScript("window.scrollBy(0, -400);");
+		} // Excel Data List Loop
 
 		// Over All Discount:-
 		Thread.sleep(2000);
@@ -1327,8 +1358,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 		// Sub Total Calculation:-
 		System.out.println("*** Sub Total Calculation ***");
-		String subTotalAmountString = driver.findElement(By.xpath("//table[@id='SalesTable']//tfoot//tr//td//p[@id='tSubtotal']"))
-				.getText();
+		String subTotalAmountString = driver
+				.findElement(By.xpath("//table[@id='SalesTable']//tfoot//tr//td//p[@id='tSubtotal']")).getText();
 		double subTotalAmountDouble = Double.parseDouble(subTotalAmountString);
 		System.out.println("Actual Sub Total Amount: " + subTotalAmountDouble);
 		System.out.println("Expected Sub Total Amount: " + expSubtotal);
@@ -1364,9 +1395,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		double subrationZerGstAmount = (expZeroGstProductAmount - zeroGstProductDiscountAmount);
 		System.out.println("After Discount Zero Gst Product Amount is: " + subrationZerGstAmount);
 		double withoutZeroGstAmount = (discountPercentageAmount - subrationZerGstAmount);
-		System.out.println("withoutZeroGstAmount: "+withoutZeroGstAmount);
+		System.out.println("withoutZeroGstAmount: " + withoutZeroGstAmount);
 		System.out.println();
-
 
 		// GST Calculation:-
 		System.out.println("*** Grand Total Calculation With GST ***");
@@ -1374,8 +1404,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		double finalExpectedGstAmount = 0;
 
 		String getGstType = si.GstType.getText();
-		System.out.println("Gst Type is: "+getGstType);
-		System.out.println("Gst Percentage is: "+gstPercentage);
+		System.out.println("Gst Type is: " + getGstType);
+		System.out.println("Gst Percentage is: " + gstPercentage);
 		if (getGstType.equalsIgnoreCase("Inclusive")) {
 
 			finalExpectedGstAmount = (withoutZeroGstAmount * 9) / 109;
@@ -1393,7 +1423,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 		}
 
-		String ActualGstAmount = driver.findElement(By.xpath("//table[@id='SalesTable']//tfoot//tr//td//input[@id='GST']"))
+		String ActualGstAmount = driver
+				.findElement(By.xpath("//table[@id='SalesTable']//tfoot//tr//td//input[@id='GST']"))
 				.getAttribute("value");
 		System.out.println("Actual Gst Amount is: " + ActualGstAmount);
 
@@ -1404,23 +1435,22 @@ public class SalesInvoiceVoidTest extends BaseClass{
 			finalExpectedGstAmount = 0;
 			System.out.println("Expected Gst Amount: " + ExpectedGstAmountFormat);
 
-			soft.assertEquals(ActualGstAmount, ExpectedGstAmountFormat, 
-					"Actual and Expected Gst Amount Mismatched");
+			soft.assertEquals(ActualGstAmount, ExpectedGstAmountFormat, "Actual and Expected Gst Amount Mismatched");
 
 		} else {
 
 			System.out.println("Expected Gst Amount is: " + ExpectedGstAmountFormat);
 
-			soft.assertEquals(ActualGstAmount, ExpectedGstAmountFormat, 
-					"Actual and Expected Gst Amount Mismatched");
+			soft.assertEquals(ActualGstAmount, ExpectedGstAmountFormat, "Actual and Expected Gst Amount Mismatched");
 		}
 		System.out.println();
 
 		// Grand Total Amount:-
 		System.out.println("*** Grand Total Amount ***");
 
-		String finalTotalAmount = driver.findElement(By.xpath
-				("//table[@id='SalesTable']//tfoot//tr//td//input[@id='Amount']")).getAttribute("value");
+		String finalTotalAmount = driver
+				.findElement(By.xpath("//table[@id='SalesTable']//tfoot//tr//td//input[@id='Amount']"))
+				.getAttribute("value");
 		double finalTotalAmountDouble = Double.parseDouble(finalTotalAmount);
 		String finalTotalAmountFormat = String.format("%.2f", finalTotalAmountDouble);
 		System.out.println("Actual Grand Total Amount is: " + finalTotalAmountFormat);
@@ -1430,7 +1460,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		System.out.println("Expected Grand Total Amount is: " + ExpectedGrandTotalAmountFormat);
 		System.out.println();
 
-		soft.assertEquals(finalTotalAmountFormat, ExpectedGrandTotalAmountFormat, 
+		soft.assertEquals(finalTotalAmountFormat, ExpectedGrandTotalAmountFormat,
 				"Actual and Expected Grand Total Amount Mismatched");
 
 		// CURRENCY CALCULATION
@@ -1481,7 +1511,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		try {
 
 			String alertText = driver.findElement(By.id("popup_message")).getText();
-			System.out.println("Alert Text: "+alertText);
+			System.out.println("Alert Text: " + alertText);
 
 		} catch (Exception e) {
 
@@ -1492,11 +1522,13 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		Thread.sleep(3000);
 		System.out.println();
 
-		String getSalesInvoiceNo = driver.findElement(By.xpath("(//table[@id='Invoicetable']//tbody//tr//td[3])[1]")).getText();
-		System.out.println("getSalesInvoiceNo: "+getSalesInvoiceNo);
+		String getSalesInvoiceNo = driver.findElement(By.xpath("(//table[@id='Invoicetable']//tbody//tr//td[3])[1]"))
+				.getText();
+		System.out.println("getSalesInvoiceNo: " + getSalesInvoiceNo);
 
 		Thread.sleep(2000);
-		WebElement delete = driver.findElement(By.xpath("//table[@id='Invoicetable']//tbody//tr//td[9]//a[@title='Delete'][1]"));
+		WebElement delete = driver
+				.findElement(By.xpath("//table[@id='Invoicetable']//tbody//tr//td[9]//a[@title='Delete'][1]"));
 		js.executeScript("arguments[0].click();", delete);
 		Thread.sleep(3000);
 		click(si.Delete);
@@ -1505,7 +1537,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		try {
 
 			String alertText = driver.findElement(By.id("popup_message")).getText();
-			System.out.println("Alert Text: "+alertText);
+			System.out.println("Alert Text: " + alertText);
 
 		} catch (Exception e) {
 
@@ -1516,7 +1548,6 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		System.out.println();
 
 	}
-
 
 	class StockCalculation {
 
@@ -1533,6 +1564,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 	}
 
 	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
+
 	@Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
 	public void StockCalculation() {
@@ -1557,11 +1589,11 @@ public class SalesInvoiceVoidTest extends BaseClass{
 					doubleUomUnit = Double.parseDouble(uomData.UomUnits);
 
 					multipleQty = doubleExcelQty * doubleUomUnit;
-					System.out.println("multipleQty is: "+multipleQty);
+					System.out.println("multipleQty is: " + multipleQty);
 					break;
-				}	
+				}
 
-			}  // Uom details list loop
+			} // Uom details list loop
 
 			int ProductDetailsListSize = ProductDetailsList.size();
 			for (int k = 0; k < ProductDetailsListSize; k++) {
@@ -1586,13 +1618,12 @@ public class SalesInvoiceVoidTest extends BaseClass{
 								double doubleBoxCurrentStock = Double.parseDouble(replaceAllBoxCurrentStock);
 
 								multipleBoxStock = doubleBoxCurrentStock * 10;
-								//	System.out.println("multipleBoxStock is: "+multipleBoxStock);
-
+								// System.out.println("multipleBoxStock is: "+multipleBoxStock);
 
 							} else if (currentStock.contains("L")) {
 								String replaceAllLooseCurrentStock = currentStock.replaceAll("[A-Za-z]", "");
 								doubleLooseCurrentStock = Double.parseDouble(replaceAllLooseCurrentStock);
-								//	System.out.println("doubleLooseCurrentStock is: "+doubleLooseCurrentStock);
+								// System.out.println("doubleLooseCurrentStock is: "+doubleLooseCurrentStock);
 
 							} // Current stock loop
 
@@ -1600,7 +1631,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 							calculateStockDouble = additionBoxandLooseStock - multipleQty;
 							calculateStockDouble = calculateStockDouble + multipleQty;
 
-						}		
+						}
 
 					} else {
 
@@ -1612,12 +1643,12 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 					}
 
-					//	calculateStock = String.valueOf(calculateStockDouble);
+					// calculateStock = String.valueOf(calculateStockDouble);
 
-					if (productData.IsCarton) {						
+					if (productData.IsCarton) {
 
 						double diviedStock = calculateStockDouble / 10;
-						String stringCalculateStock = String.valueOf(diviedStock);						
+						String stringCalculateStock = String.valueOf(diviedStock);
 						String[] split = stringCalculateStock.split("\\.");
 						String boxQty = split[0];
 						String looseQty = "0";
@@ -1626,16 +1657,15 @@ public class SalesInvoiceVoidTest extends BaseClass{
 							looseQty = split[1];
 						}
 
-						calculateStock = boxQty +" B/"+ looseQty +" L";					
+						calculateStock = boxQty + " B/" + looseQty + " L";
 
-						System.out.println("Product Name: "+productName);
-						System.out.println("calculateCartonStock is: "+calculateStock);
-
+						System.out.println("Product Name: " + productName);
+						System.out.println("calculateCartonStock is: " + calculateStock);
 
 					} else {
 
-						System.out.println("Product Name: "+productName);
-						System.out.println("CalculateBaseandNonCartonStock is: "+calculateStock);
+						System.out.println("Product Name: " + productName);
+						System.out.println("CalculateBaseandNonCartonStock is: " + calculateStock);
 
 					}
 
@@ -1646,7 +1676,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 				}
 
-			} // Product data loop	
+			} // Product data loop
 
 		} // Excel data list loop
 
@@ -1654,7 +1684,6 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		System.out.println();
 
 	} // Method loop
-
 
 	@Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
@@ -1676,8 +1705,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 		for (String product : ProductSet) {
 
-			WebElement productcode = wait.until(ExpectedConditions.visibilityOfElementLocated
-					(By.xpath("//input[@value='Fetch']//preceding::input[@placeholder='Find a product or code ']")));
+			WebElement productcode = wait.until(ExpectedConditions.visibilityOfElementLocated(
+					By.xpath("//input[@value='Fetch']//preceding::input[@placeholder='Find a product or code ']")));
 			Thread.sleep(1000);
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			productcode.sendKeys(product);
@@ -1702,14 +1731,14 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 				if (stock.productName.equalsIgnoreCase(productName)) {
 
-					System.out.println("Actual Current Stock: "+afterCurrentStockValue);
-					System.out.println("Expected current Stock: "+stock.calculateStock);
+					System.out.println("Actual Current Stock: " + afterCurrentStockValue);
+					System.out.println("Expected current Stock: " + stock.calculateStock);
 					System.out.println();
 
-					soft.assertEquals(afterCurrentStockValue, stock.calculateStock, 
-							"Actual and Expected Product Stock Mismatched for Product "+stock.productName);
+					soft.assertEquals(afterCurrentStockValue, stock.calculateStock,
+							"Actual and Expected Product Stock Mismatched for Product " + stock.productName);
 
-				}			
+				}
 
 			} // Stock calculation loop
 
@@ -1745,20 +1774,17 @@ public class SalesInvoiceVoidTest extends BaseClass{
 			productcode.sendKeys(product + Keys.ENTER);
 			Thread.sleep(1000);
 
-			/*	boolean enabledUom = driver.findElement(By.xpath("//select[@id='UOM']")).isEnabled();
-			System.out.println("enabledUom: "+enabledUom);
-			if (enabledUom == true ) {
-
-				click(pm.UOM);
-				List<WebElement> subUomOption = driver.findElements(By.xpath(
-						"//span[@id='select2-UOM-container']//following::input[@type='search']//following::ul//li"));
-				for (WebElement option : subUomOption) {
-					if (option.getText().trim().equals(excelData.Uom)) {
-						option.click();
-						break;
-					}
-				}	
-			} */
+			/*
+			 * boolean enabledUom =
+			 * driver.findElement(By.xpath("//select[@id='UOM']")).isEnabled();
+			 * System.out.println("enabledUom: "+enabledUom); if (enabledUom == true ) {
+			 * 
+			 * click(pm.UOM); List<WebElement> subUomOption = driver.findElements(By.xpath(
+			 * "//span[@id='select2-UOM-container']//following::input[@type='search']//following::ul//li"
+			 * )); for (WebElement option : subUomOption) { if
+			 * (option.getText().trim().equals(excelData.Uom)) { option.click(); break; } }
+			 * }
+			 */
 
 			js.executeScript("arguments[0].click();", pm.Fetch);
 			Thread.sleep(3000);
@@ -1780,25 +1806,23 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 						String replaceProductStock = stock.calculateStock.replaceAll("/0 L", "");
 
-						System.out.println("Product Movement Name: "+ trimProductName);
-						System.out.println("Actual Product Movement Stock: "+ balanceQty);
-						System.out.println("Expected Product Movement Stock: "+ replaceProductStock);
+						System.out.println("Product Movement Name: " + trimProductName);
+						System.out.println("Actual Product Movement Stock: " + balanceQty);
+						System.out.println("Expected Product Movement Stock: " + replaceProductStock);
 						System.out.println();
 
 						soft.assertEquals(balanceQty, replaceProductStock,
-								"Actual and Expected Product Movement Stock Mismatched for Product "
-										+ trimProductName);
+								"Actual and Expected Product Movement Stock Mismatched for Product " + trimProductName);
 
 					} else {
 
-						System.out.println("Product Movement Name: "+ trimProductName);
-						System.out.println("Actual Product Movement Stock: "+ balanceQty);
-						System.out.println("Expected Product Movement Stock: "+stock.calculateStock);
+						System.out.println("Product Movement Name: " + trimProductName);
+						System.out.println("Actual Product Movement Stock: " + balanceQty);
+						System.out.println("Expected Product Movement Stock: " + stock.calculateStock);
 						System.out.println();
 
 						soft.assertEquals(balanceQty, stock.calculateStock,
-								"Actual and Expected Product Movement Stock Mismatched for Product "
-										+ trimProductName);
+								"Actual and Expected Product Movement Stock Mismatched for Product " + trimProductName);
 
 					}
 					break;
@@ -1810,13 +1834,12 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		System.out.println();
 	}
 
-
-
 	@Test(priority = 30, dependsOnMethods = "ERPLoginPage")
 	private void Exception() throws InterruptedException {
 		soft.assertAll();
 
 	}
+
 //	@Ignore
 	@Test(priority = 40, dependsOnMethods = "ERPLoginPage")
 	private void close() throws InterruptedException {
@@ -1824,4 +1847,4 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 	}
 
-}//Main class loop
+}// Main class loop

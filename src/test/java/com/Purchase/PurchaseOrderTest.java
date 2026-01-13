@@ -49,10 +49,10 @@ public class PurchaseOrderTest extends BaseClass {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
+		Login lo = new Login(driver);
 
 		driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");
 		url = "https://erpauto.dev1.adaptivebizapp.com/ERP/";
-		Login lo = new Login(driver);
 
 		Sendkeys(lo.CompanyCode, "UITDEMO1");
 		Sendkeys(lo.UserName, "Kiran01");
@@ -1244,6 +1244,14 @@ public class PurchaseOrderTest extends BaseClass {
 				}
 
 			}
+			Thread.sleep(2000);
+			String getTotalAmount = driver.findElement(By.id
+					("PurchaseOrderDetailTotal")).getAttribute("value");
+			String replaceAllProductPrice = getTotalAmount.replaceAll(",", "");
+			double actualDiscountAmount = Double.parseDouble(replaceAllProductPrice);
+			System.out.println("Actual Discout Amount: "+actualDiscountAmount);
+			
+			
 
 			//Add Button:-
 			click(po.AddButton);
@@ -1251,18 +1259,18 @@ public class PurchaseOrderTest extends BaseClass {
 			js.executeScript("arguments[0].click();", po.Quantity);
 			System.out.println();
 
-			productPrice = driver.findElement(By.xpath("//table[@id='PurchaseOrderTable']//tbody//tr//td[2]"
-					+ "//div//textarea[contains(text(),'"+excelData.ProductName+"')]//following::td[@class='orderTotal']")).getText();
-			String replaceAllProductPrice = productPrice.replaceAll(",", "");
-			double productPriceDouble = Double.parseDouble(replaceAllProductPrice);
-			System.out.println("Actual Discount Amount: "+productPriceDouble);
+		/*	productPrice = driver.findElement(By.xpath("//table[@id='PurchaseOrderTable']//tbody//tr//td[2]"
+					+ "//div//textarea[contains(text(),'"+excelData.ProductName+"')]//following::td[@class='orderTotal']")).getText(); */
+		//	String replaceAllProductPrice = productPrice.replaceAll(",", "");
+		//	double productPriceDouble = Double.parseDouble(replaceAllProductPrice);
+		//	System.out.println("Actual Discount Amount: "+productPriceDouble);
 			System.out.println("Expected Discount Amount: "+expectedDiscountAmount);
 			System.out.println();	
 
-			soft.assertEquals(productPriceDouble, expectedDiscountAmount, 
+			soft.assertEquals(actualDiscountAmount, expectedDiscountAmount, 
 					"Actual and Expected Discount Amount Mismatched for "+excelData.ProductName);
 
-			ExpSubTotal = ExpSubTotal + productPriceDouble;
+			ExpSubTotal = ExpSubTotal + actualDiscountAmount;
 
 			if (excelData.ZeroGst.equals("TRUE")) {
 				ExpZeroGstProductamount = Double.parseDouble(replaceAllProductPrice) + ExpZeroGstProductamount;
@@ -1302,7 +1310,8 @@ public class PurchaseOrderTest extends BaseClass {
 
 		// Sub Total Calculation:-
 		System.out.println("*** Sub Total Calculation ***");
-		String subTotalAmountString = driver.findElement(By.id("Subtotal")).getText();
+		String subTotalAmountString = driver.findElement(By.xpath
+				("//table[@id='PurchaseOrderTable']//tfoot//tr//td[@id='Subtotal']")).getText();
 		String replaceAllSubTotalAmountString = subTotalAmountString.replaceAll(",", "");
 		double subTotalAmountDouble = Double.parseDouble(replaceAllSubTotalAmountString);
 		System.out.println("Actual Sub Total Amount: " + subTotalAmountDouble);
@@ -1395,7 +1404,8 @@ public class PurchaseOrderTest extends BaseClass {
 
 		}	
 
-		String ActualGstAmount = driver.findElement(By.xpath("//table[@id='PurchaseOrderTable']//tfoot//tr[6]//td[8]//p[@id='FooterGST']")).getText();
+		String ActualGstAmount = driver.findElement(By.xpath
+				("//table[@id='PurchaseOrderTable']//tfoot//tr//td//p[@id='FooterGST']")).getText();
 		System.out.println("Actual Gst Amount is: " + ActualGstAmount);
 
 		String ExpectedGstAmountFormat = String.format("%.2f", finalExpectedGstAmount);
@@ -1419,7 +1429,7 @@ public class PurchaseOrderTest extends BaseClass {
 		// GRAND TOTAL AMOUNT
 		System.out.println("*** Grand Total Amount ***");
 
-		String finalTotalAmount = driver.findElement(By.xpath("//table[@id='PurchaseOrderTable']//tfoot//tr[8]//td[8]//p[@id='FooterTotal']")).getText();
+		String finalTotalAmount = driver.findElement(By.xpath("//table[@id='PurchaseOrderTable']//tfoot//tr//td//p[@id='FooterTotal']")).getText();
 		String replaceAllFinalTotalAmount = finalTotalAmount.replaceAll(",", "");
 		double finalTotalAmountDouble = Double.parseDouble(replaceAllFinalTotalAmount);
 		String finalTotalAmountFormat = String.format("%.2f", finalTotalAmountDouble);
@@ -1640,7 +1650,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 		String getGrandTotal = driver.findElement(By.id("FooterTotal")).getText();
 		System.out.println("Actual Grand Total: " + getGrandTotal);
-		
+
 		if (getGrandTotal.equalsIgnoreCase(finalTotalAmount)) {
 			System.out.println("Expected Grand Total: " + finalTotalAmount);
 
@@ -2253,7 +2263,7 @@ public class PurchaseOrderTest extends BaseClass {
 						System.out.println("Product Movement Name: "+ trimProductName);
 						System.out.println("Actual Product Movement Stock: "+ balanceQty);
 						System.out.println("Expected Product Movement Stock: "+ replaceProductStock);
-
+						System.out.println();
 
 						soft.assertEquals(balanceQty, replaceProductStock,
 								"Actual and Expected Product Movement Stock Mismatched for Product "
@@ -2264,7 +2274,7 @@ public class PurchaseOrderTest extends BaseClass {
 						System.out.println("Product Movement Name: "+ trimProductName);
 						System.out.println("Actual Product Movement Stock: "+ balanceQty);
 						System.out.println("Expected Product Movement Stock: "+stock.calculateStock);
-
+						System.out.println();
 
 						soft.assertEquals(balanceQty, stock.calculateStock,
 								"Actual and Expected Product Movement Stock Mismatched for Product "

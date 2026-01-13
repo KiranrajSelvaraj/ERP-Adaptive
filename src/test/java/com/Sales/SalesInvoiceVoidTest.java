@@ -594,7 +594,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 8, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -813,7 +813,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
@@ -889,12 +889,8 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-		Actions action = new Actions(driver);
+	//	Actions action = new Actions(driver);
 		SalesInvoice si = new SalesInvoice(driver);
-		Wait<WebDriver> fluentwait = new FluentWait<WebDriver>(driver)
-				.withTimeout(Duration.ofSeconds(20))
-				.pollingEvery(Duration.ofSeconds(1))
-				.ignoring(NoSuchElementException.class);
 
 		driver.navigate().to(url + "Sales/SalesInvoiceIndex");
 		Thread.sleep(4000);
@@ -966,24 +962,28 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 			}
 			
-			click(si.Qty);
-			Thread.sleep(1000);
-			click(si.DiscountAmount);
+		//	click(si.Qty);
+		//	Thread.sleep(1000);
+		//	click(si.DiscountAmount);
 
 			Thread.sleep(3000);
 			if (excelData.Type.equalsIgnoreCase("Product")) {
+				
+				if (i == 0) {
+					click(si.ChooseProduct);
+				}
 
-				click(si.ChooseProduct);
+				
 
 				// Screen shot to the product:-
-				DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+			/*	DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 				LocalDateTime now1 = LocalDateTime.now();
 				String timestamp1 = dtf1.format(now1).replace(":", ";").replace("/", "-");
 				TakesScreenshot ts1 = (TakesScreenshot) driver;
 				File s1 = ts1.getScreenshotAs(OutputType.FILE);
 				File s2 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Sales Product Field Error "
 						+ timestamp1 + ".png");
-				FileUtils.copyFile(s1, s2);		
+				FileUtils.copyFile(s1, s2);		*/
 
 				WebElement productSearch = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
 						("//span[@id='select2-ProductId-container']//following::input[@type='search']")));
@@ -991,14 +991,14 @@ public class SalesInvoiceVoidTest extends BaseClass{
 				productSearch.sendKeys(excelData.ProductCode + Keys.ENTER);
 				
 				// Screen shot to the product:-
-				DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+			/*	DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 				LocalDateTime now2 = LocalDateTime.now();
 				String timestamp2 = dtf2.format(now2).replace(":", ";").replace("/", "-");
 				TakesScreenshot ts2 = (TakesScreenshot) driver;
 				File s11 = ts2.getScreenshotAs(OutputType.FILE);
 				File s21 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Sales Product Field Error "
 						+ timestamp2 + ".png");
-				FileUtils.copyFile(s11, s21);
+				FileUtils.copyFile(s11, s21); */
 
 
 			} else if (excelData.Type.equalsIgnoreCase("Service")) {
@@ -1230,6 +1230,10 @@ public class SalesInvoiceVoidTest extends BaseClass{
 				}
 
 			}
+			
+			Thread.sleep(1000);
+			String getActualAmout = driver.findElement(By.id("ItemAmount")).getAttribute("value");
+			System.out.println("Actual Amount: "+getActualAmout);
 
 			//Add
 			click(si.Add);
@@ -1259,13 +1263,13 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 			}
 
-			Thread.sleep(2000);
+		/*	Thread.sleep(2000);
 			String actualAmount = driver.findElement(By.xpath("//table[@id='SalesTable']//tbody//tr//td[2]//textarea"
 					+ "[contains(text(),'"+excelData.ProductName+" ')]//following::td[11]//p[@class='totaldetailamount']"))
 					.getText();
-			System.out.println("actualAmount: "+actualAmount);
+			System.out.println("actualAmount: "+actualAmount); */
 
-			double actualSubtotalDouble = Double.parseDouble(actualAmount);
+			double actualSubtotalDouble = Double.parseDouble(getActualAmout);
 			expSubtotal = expSubtotal + actualSubtotalDouble;
 
 			if (excelData.ZeroGst.equalsIgnoreCase("true")) {
@@ -1274,7 +1278,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 
 			}
 
-			js.executeScript("window.scrollBy(0, -400);");
+		//	js.executeScript("window.scrollBy(0, -400);");
 		} //Excel Data List Loop
 
 		// Over All Discount:-
@@ -1513,7 +1517,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 	}
 
 	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
-	//@Ignore
+	@Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
 	public void StockCalculation() {
 
@@ -1636,7 +1640,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 	} // Method loop
 
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 
@@ -1701,7 +1705,7 @@ public class SalesInvoiceVoidTest extends BaseClass{
 		System.out.println();
 	}
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 

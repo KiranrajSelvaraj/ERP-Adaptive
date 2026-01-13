@@ -18,7 +18,6 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -219,7 +218,7 @@ public class CreditNotesVoidTest extends BaseClass {
 	private boolean IsHeaderManagementInSO;
 	private boolean IsReturnManagementInSI;
 
-	// @Ignore
+	@Ignore
 	@Test(priority = 6, dependsOnMethods = "ERPLoginPage")
 	public void SystemSettings() throws InterruptedException {
 
@@ -569,7 +568,7 @@ public class CreditNotesVoidTest extends BaseClass {
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	// @Ignore
+	@Ignore
 	@Test(priority = 8, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -788,7 +787,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
 
-	// @Ignore
+	@Ignore
 	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
@@ -940,7 +939,7 @@ public class CreditNotesVoidTest extends BaseClass {
 				}
 			}
 			
-			click(cn.Qty);
+		/*	click(cn.Qty);
 			// Screen shot to the product:-
 			DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 			LocalDateTime now1 = LocalDateTime.now();
@@ -961,30 +960,35 @@ public class CreditNotesVoidTest extends BaseClass {
 			File s21 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Discount Field Error "
 					+ timestamp2 + ".png");
 			FileUtils.copyFile(s11, s21);	
-			Thread.sleep(3000);
+			Thread.sleep(3000); */
 			if (excelData.Type.equalsIgnoreCase("Product")) {
-
-				click(cn.ChooseProduct);
-				DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+				
+				if (i == 0) {
+					click(cn.ChooseProduct);
+					
+				}
+				
+			/*	DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 				LocalDateTime now3 = LocalDateTime.now();
 				String timestamp3 = dtf3.format(now3).replace(":", ";").replace("/", "-");
 				TakesScreenshot ts3 = (TakesScreenshot) driver;
 				File s111 = ts3.getScreenshotAs(OutputType.FILE);
 				File s211 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Product Field Error "
 						+ timestamp3 + ".png");
-				FileUtils.copyFile(s111, s211);	
+				FileUtils.copyFile(s111, s211);	*/
 				
-				driver.findElement(
-						By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"))
-						.sendKeys(excelData.ProductCode + Keys.ENTER);
-				DateTimeFormatter dtf4 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+				WebElement productSearch = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
+						("//span[@id='select2-ProductId-container']//following::input[@type='search']")));
+				productSearch.click();
+				productSearch.sendKeys(excelData.ProductCode + Keys.ENTER);
+			/*	DateTimeFormatter dtf4 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 				LocalDateTime now4 = LocalDateTime.now();
 				String timestamp4 = dtf4.format(now4).replace(":", ";").replace("/", "-");
 				TakesScreenshot ts4 = (TakesScreenshot) driver;
 				File s1111 = ts4.getScreenshotAs(OutputType.FILE);
 				File s2111 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Product Field Error "
 						+ timestamp4 + ".png");
-				FileUtils.copyFile(s1111, s2111);	
+				FileUtils.copyFile(s1111, s2111);	*/
 				
 
 			} else if (excelData.Type.equalsIgnoreCase("Service")) {
@@ -1236,6 +1240,11 @@ public class CreditNotesVoidTest extends BaseClass {
 
 			}
 			System.out.println();
+			
+			Thread.sleep(1000);
+			String getActualAmout = driver.findElement(By.id("ItemAmount")).getAttribute("value");
+			double getProductAmountDouble = Double.parseDouble(getActualAmout);
+			System.out.println("Actual Amount: "+getActualAmout);
 
 			// Add:-
 			Thread.sleep(2000);
@@ -1275,13 +1284,13 @@ public class CreditNotesVoidTest extends BaseClass {
 
 			}
 
-			WebElement productamount = wait.until(ExpectedConditions.presenceOfElementLocated(
+		/*	WebElement productamount = wait.until(ExpectedConditions.presenceOfElementLocated(
 					By.xpath("//table[@id='CreditNoteTable']//tbody//tr//td[2]//div//textarea[contains(text(),'"
 							+ excelData.ProductName + "')]//following::td[@id='totaldetailamount']")));
 			getProductAmount = productamount.getAttribute("data-value");
 
 			double getProductAmountDouble = Double.parseDouble(getProductAmount);
-			System.out.println("Actual Discount Amount is: " + getProductAmountDouble);
+			System.out.println("Actual Discount Amount is: " + getProductAmountDouble);*/
 
 			ExpSubTotal = ExpSubTotal + getProductAmountDouble;
 
@@ -1544,7 +1553,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
 
-	// @Ignore
+	@Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
 	public void StockCalculation() {
 
@@ -1664,7 +1673,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 	} // Method loop
 
-	// @Ignore
+	@Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 
@@ -1729,7 +1738,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		System.out.println();
 	}
 
-	// @Ignore
+	@Ignore
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 

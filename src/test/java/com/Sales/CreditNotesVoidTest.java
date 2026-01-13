@@ -579,7 +579,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		System.out.println("Product Set Size: " + productSetSize);
 		for (String product : ProductSet) {
 
-			WebElement productcode = driver.findElement(By.xpath("(//input[@id='SearchString' and @placeholder='Find a product or code '])[1]"));
+			WebElement productcode = driver.findElement(By.xpath("(//input[@id='SearchString'])[1]"));
 			Thread.sleep(1000);
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			productcode.sendKeys(product);

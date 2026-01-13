@@ -576,20 +576,19 @@ public class SalesInvoiceVoidTest extends BaseClass {
 
 		ProductList.addAll(ProductSet);
 		driver.navigate().to(url + "SalesPurchases/Product");
+		Thread.sleep(4000);
+		System.out.println("*Product Details Page*");
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		WebDriverWait wait = new WebDriverWait(driver, 60);
+	//	WebDriverWait wait = new WebDriverWait(driver, 60);
 		Product prod = new Product(driver);
-		Thread.sleep(4000);
-		System.out.println("*Product Details Page*");
-
+		
 		int productSetSize = ProductSet.size();
 		System.out.println("Product Set Size: " + productSetSize);
 		for (String product : ProductSet) {
-			
-			WebElement productcode = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
-					("(//input[@id='SearchString' and @placeholder='Find a product or code '])[1]")));
+
+			WebElement productcode = driver.findElement(By.xpath("(//input[@id='SearchString'])[1]"));
 			Thread.sleep(1000);
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			productcode.sendKeys(product);

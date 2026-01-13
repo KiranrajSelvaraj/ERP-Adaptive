@@ -904,7 +904,7 @@ public class SalesInvoiceVoidTest extends BaseClass {
 		double expSubtotal = 0;
 
 		int excelDataListSize = excelDataList.size();
-		for (int i = 0; i < excelDataListSize; i++) {
+		for (int i = 0; i < excelDataListSize; i++) {	
 			ExcelData excelData = excelDataList.get(i);
 			System.out.println(excelData.Customer.isEmpty());
 
@@ -958,47 +958,47 @@ public class SalesInvoiceVoidTest extends BaseClass {
 			// click(si.Qty);
 			// Thread.sleep(1000);
 			// click(si.DiscountAmount);
-			Thread.sleep(2000);
-			System.out.println("excelData.ProductCode: " + excelData.ProductCode);
-
-			click(si.Qty);
-			Thread.sleep(1000);
-			click(si.DiscountAmount);
-			Thread.sleep(1000);
+			/*
+			 * Thread.sleep(2000); System.out.println("excelData.ProductCode: " +
+			 * excelData.ProductCode);
+			 * 
+			 * click(si.Qty); Thread.sleep(1000); click(si.DiscountAmount);
+			 * Thread.sleep(1000);
+			 * 
+			 * click(si.ServiceCheckBox); Thread.sleep(1000);
+			 */
 			
-			click(si.ServiceCheckBox);
-			Thread.sleep(1000);
-			click(si.ProductCheckBox);
+			System.out.println(i);
+			if (i==0) {
+				System.out.println("@@@@");
+				WebElement Product = driver.findElement(By.xpath("(//span[@id='select2-ProductId-container'])[1]"));
+				Thread.sleep(1000);
+				 Product.click();
+			}
+			
 
-			WebElement Product = driver.findElement(By.xpath("(//span[@id='select2-ProductId-container'])[1]"));
-			Thread.sleep(1000);
+			
+			
+		
+			
+
+			
 			//((JavascriptExecutor) driver).executeScript("arguments[0].click();", Product);
 			
-			 Product.click();
+			
 
-			DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-			LocalDateTime now1 = LocalDateTime.now();
-			String timestamp1 = dtf1.format(now1).replace(":", ";").replace("/", "-");
-			TakesScreenshot ts1 = (TakesScreenshot) driver;
-			File s1 = ts1.getScreenshotAs(OutputType.FILE);
-			File s2 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\+ Sales Product Field Error "
-					+ timestamp1 + ".png");
-			FileUtils.copyFile(s1, s2);
 			
 			
-			WebElement productSearch = driver.findElement(By.xpath("(//span[@id='select2-ProductId-container']//following::input[@type='search'])[1]"));
+			
+			WebElement productSearch = driver.findElement(By.xpath("(//input[@type='search'])[1]"));
 			/*
 			 * WebElement productSearch =
 			 * wait.until(ExpectedConditions.visibilityOfElementLocated( By.xpath(
 			 * "(//span[@id='select2-ProductId-container']//following::input[@type='search'])[1]"
 			 * )));
 			 */
-			
-			click(productSearch);
-			Thread.sleep(1000);
-			productSearch.sendKeys(Keys.CONTROL + "a");
-			productSearch.sendKeys(Keys.DELETE);
-			Thread.sleep(1000);
+			System.out.println(excelData.ProductCode);
+			clear(productSearch);
 			Sendkeys(productSearch, excelData.ProductCode + Keys.ENTER);
 			/*
 			 * productSearch.click(); productSearch.sendKeys(excelData.ProductCode +
@@ -1324,6 +1324,8 @@ public class SalesInvoiceVoidTest extends BaseClass {
 				expZeroGstProductAmount = expZeroGstProductAmount + actualSubtotalDouble;
 
 			}
+			
+			Thread.sleep(3000);
 
 			// js.executeScript("window.scrollBy(0, -400);");
 		} // Excel Data List Loop

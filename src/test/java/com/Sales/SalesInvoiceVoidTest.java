@@ -976,14 +976,14 @@ public class SalesInvoiceVoidTest extends BaseClass{
 				
 
 				// Screen shot to the product:-
-			/*	DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+				DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 				LocalDateTime now1 = LocalDateTime.now();
 				String timestamp1 = dtf1.format(now1).replace(":", ";").replace("/", "-");
 				TakesScreenshot ts1 = (TakesScreenshot) driver;
 				File s1 = ts1.getScreenshotAs(OutputType.FILE);
 				File s2 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Sales Product Field Error "
 						+ timestamp1 + ".png");
-				FileUtils.copyFile(s1, s2);		*/
+				FileUtils.copyFile(s1, s2);		
 
 				WebElement productSearch = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
 						("//span[@id='select2-ProductId-container']//following::input[@type='search']")));
@@ -991,14 +991,14 @@ public class SalesInvoiceVoidTest extends BaseClass{
 				productSearch.sendKeys(excelData.ProductCode + Keys.ENTER);
 				
 				// Screen shot to the product:-
-			/*	DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+				DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 				LocalDateTime now2 = LocalDateTime.now();
 				String timestamp2 = dtf2.format(now2).replace(":", ";").replace("/", "-");
 				TakesScreenshot ts2 = (TakesScreenshot) driver;
 				File s11 = ts2.getScreenshotAs(OutputType.FILE);
 				File s21 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Sales Product Field Error "
 						+ timestamp2 + ".png");
-				FileUtils.copyFile(s11, s21); */
+				FileUtils.copyFile(s11, s21); 
 
 
 			} else if (excelData.Type.equalsIgnoreCase("Service")) {

@@ -1,31 +1,19 @@
 package com.Sales;
 
-import java.io.File;
 import java.io.IOException;
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -64,7 +52,6 @@ public class SalesInvoiceVoidTest extends BaseClass {
 			url = "https://erpauto.dev1.adaptivebizapp.com/ERP/";
 
 		}
-
 	}
 
 	@Test(priority = 1)
@@ -178,9 +165,7 @@ public class SalesInvoiceVoidTest extends BaseClass {
 			this.ZeroGst = ZeroGst;
 			this.BatchProduct = BatchProduct;
 			this.CreditNotesQty = CreditNotesQty;
-
 		}
-
 	}
 
 	Set<String> ExcelUniqueProductDataSet = new LinkedHashSet<String>();
@@ -215,7 +200,6 @@ public class SalesInvoiceVoidTest extends BaseClass {
 			ServiceSet.add(ProductCode);
 
 		}
-
 	}
 
 	private boolean IsSalesManManagement;
@@ -236,16 +220,14 @@ public class SalesInvoiceVoidTest extends BaseClass {
 	private boolean IsHeaderManagementInSO;
 	private boolean IsReturnManagementInSI;
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 6, dependsOnMethods = "ERPLoginPage")
 	public void SystemSettings() throws InterruptedException {
 
+		driver.navigate().to(url + "SystemSetting");
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-
-		driver.navigate().to(url + "SystemSetting");
+		JavascriptExecutor js = (JavascriptExecutor) driver;		
 		Thread.sleep(5000);
 		SystemSettings ss = new SystemSettings(driver);
 
@@ -485,7 +467,6 @@ public class SalesInvoiceVoidTest extends BaseClass {
 		IsReturnManagementInSI = ss.BooleanValue.isSelected();
 		System.out.println("IsReturnManagementInSI :" + IsReturnManagementInSI);
 		click(ss.Back);
-
 		System.out.println();
 	}
 
@@ -589,25 +570,22 @@ public class SalesInvoiceVoidTest extends BaseClass {
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 8, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
 		ProductList.addAll(ProductSet);
-
+		driver.navigate().to(url + "SalesPurchases/Product");
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-
 		Product prod = new Product(driver);
+		Thread.sleep(4000);
+		System.out.println("*Product Details Page*");
 
 		int productSetSize = ProductSet.size();
 		System.out.println("Product Set Size: " + productSetSize);
 		for (String product : ProductSet) {
-
-			driver.navigate().to(url + "SalesPurchases/Product");
-			Thread.sleep(7000);
-			System.out.println("*Product Details Page*");
 
 			WebElement productcode = driver.findElement(By.xpath("(//input[@id='SearchString'])[1]"));
 			Thread.sleep(1000);
@@ -784,9 +762,7 @@ public class SalesInvoiceVoidTest extends BaseClass {
 			Thread.sleep(2000);
 			driver.navigate().back();
 			System.out.println("***");
-
 		}
-
 	}
 
 	@SuppressWarnings("unused")
@@ -808,18 +784,15 @@ public class SalesInvoiceVoidTest extends BaseClass {
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
-		UOMList.addAll(UOMSet);
 
+		UOMList.addAll(UOMSet);
+		driver.navigate().to(url + "SalesPurchases/UOM");
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-
-		driver.navigate().to(url + "SalesPurchases/UOM");
-		Thread.sleep(4000);
 		System.out.println("*UOM Page*");
 
 		int uomSetSize = UOMSet.size();
@@ -879,14 +852,12 @@ public class SalesInvoiceVoidTest extends BaseClass {
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void SalesInvoicetoVoidProcess() throws InterruptedException, IOException {
 
+		driver.navigate().to(url + "Sales/SalesInvoiceIndex");
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-		// Actions action = new Actions(driver);
-		SalesInvoice si = new SalesInvoice(driver);
-
-		driver.navigate().to(url + "Sales/SalesInvoiceIndex");
+		SalesInvoice si = new SalesInvoice(driver);		
 		Thread.sleep(4000);
 		System.out.println("* Sales Invoice Page *");
 
@@ -906,7 +877,6 @@ public class SalesInvoiceVoidTest extends BaseClass {
 		int excelDataListSize = excelDataList.size();
 		for (int i = 0; i < excelDataListSize; i++) {	
 			ExcelData excelData = excelDataList.get(i);
-			System.out.println(excelData.Customer.isEmpty());
 
 			if (excelData.Customer.isEmpty() == false) {
 
@@ -928,8 +898,6 @@ public class SalesInvoiceVoidTest extends BaseClass {
 				getExcelCurrencyRate = excelData.CurrencyRate;
 			}
 
-			
-			js.executeScript("window.scrollBy(0, 1000)", "");
 			/*
 			 * if (excelData.Type.equalsIgnoreCase("Product")) {
 			 * 
@@ -954,101 +922,39 @@ public class SalesInvoiceVoidTest extends BaseClass {
 			 * 
 			 * }
 			 */
-
-			// click(si.Qty);
-			// Thread.sleep(1000);
-			// click(si.DiscountAmount);
-			/*
-			 * Thread.sleep(2000); System.out.println("excelData.ProductCode: " +
-			 * excelData.ProductCode);
-			 * 
-			 * click(si.Qty); Thread.sleep(1000); click(si.DiscountAmount);
-			 * Thread.sleep(1000);
-			 * 
-			 * click(si.ServiceCheckBox); Thread.sleep(1000);
-			 */
-			
+			js.executeScript("window.scrollBy(0, 1000)", "");
 			System.out.println(i);
-			if (i==0) {
-				System.out.println("@@@@");
+
+			if (i==0) {	
+
 				WebElement Product = driver.findElement(By.xpath("(//span[@id='select2-ProductId-container'])[1]"));
 				Thread.sleep(1000);
-				 Product.click();
-			}
-			
+				Product.click();
+			}		
 
-			
-			
-		
-			
-
-			
-			//((JavascriptExecutor) driver).executeScript("arguments[0].click();", Product);
-			
-			
-
-			
-			
-			
 			WebElement productSearch = driver.findElement(By.xpath("(//input[@type='search'])[1]"));
-			/*
-			 * WebElement productSearch =
-			 * wait.until(ExpectedConditions.visibilityOfElementLocated( By.xpath(
-			 * "(//span[@id='select2-ProductId-container']//following::input[@type='search'])[1]"
-			 * )));
-			 */
 			System.out.println(excelData.ProductCode);
 			clear(productSearch);
 			Sendkeys(productSearch, excelData.ProductCode + Keys.ENTER);
-			/*
-			 * productSearch.click(); productSearch.sendKeys(excelData.ProductCode +
-			 * Keys.ENTER);
-			 */
-
 			Thread.sleep(2000);
-			/*
-			 * if (excelData.Type.equalsIgnoreCase("Product")) {
-			 * 
-			 * if (i == 0) { click(si.ChooseProduct); }
-			 */
 
-			// Screen shot to the product:-
-			/*
-			 * DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-			 * LocalDateTime now1 = LocalDateTime.now(); String timestamp1 =
-			 * dtf1.format(now1).replace(":", ";").replace("/", "-"); TakesScreenshot ts1 =
-			 * (TakesScreenshot) driver; File s1 = ts1.getScreenshotAs(OutputType.FILE);
-			 * File s2 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + "
-			 * Sales Product Field Error " + timestamp1 + ".png"); FileUtils.copyFile(s1,
-			 * s2);
-			 * 
-			 * WebElement productSearch =
-			 * wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
-			 * ("//span[@id='select2-ProductId-container']//following::input[@type='search']"
-			 * ))); productSearch.click(); productSearch.sendKeys(excelData.ProductCode +
-			 * Keys.ENTER);
-			 * 
-			 * // Screen shot to the product:- DateTimeFormatter dtf2 =
-			 * DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"); LocalDateTime now2 =
-			 * LocalDateTime.now(); String timestamp2 = dtf2.format(now2).replace(":",
-			 * ";").replace("/", "-"); TakesScreenshot ts2 = (TakesScreenshot) driver; File
-			 * s11 = ts2.getScreenshotAs(OutputType.FILE); File s21 = new
-			 * File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " Sales Product
-			 * Field Error " + timestamp2 + ".png"); FileUtils.copyFile(s11, s21);
-			 * 
-			 * 
-			 * } else if (excelData.Type.equalsIgnoreCase("Service")) {
-			 * 
-			 * driver.findElement( By.xpath(
-			 * "//span[@id='select2-ServiceId-container']//following::input[@type='search']"
-			 * )) .sendKeys(excelData.ProductCode + Keys.ENTER);
-			 * 
-			 * } else if (excelData.Type.equalsIgnoreCase("Open")) {
-			 * 
-			 * si.OpenProduct.sendKeys(excelData.ProductCode + Keys.ENTER);
-			 * 
-			 * }
-			 */
+			/*	  if (excelData.Type.equalsIgnoreCase("Product")) {
+
+			  if (i == 0) { 
+				  click(si.ChooseProduct); 
+			  }
+
+			  } else if (excelData.Type.equalsIgnoreCase("Service")) {
+
+			  driver.findElement( By.xpath("//span[@id='select2-ServiceId-container']//following::input[@type='search']")) 
+			  .sendKeys(excelData.ProductCode + Keys.ENTER);
+
+			  } else if (excelData.Type.equalsIgnoreCase("Open")) {	
+
+			  si.OpenProduct.sendKeys(excelData.ProductCode + Keys.ENTER);	
+
+			  } */
+
 			click(si.Qty);
 			Thread.sleep(1000);
 			click(si.DiscountAmount);
@@ -1067,7 +973,9 @@ public class SalesInvoiceVoidTest extends BaseClass {
 
 				}
 
-			} else if (excelData.Type.equalsIgnoreCase("Service")) {
+			}
+
+			/*	else if (excelData.Type.equalsIgnoreCase("Service")) {
 
 				click(si.ChooseUom);
 				List<WebElement> subUomOption = driver.findElements(By.xpath(
@@ -1093,7 +1001,7 @@ public class SalesInvoiceVoidTest extends BaseClass {
 
 				}
 
-			}
+			} */
 
 			System.out.println();
 
@@ -1149,7 +1057,7 @@ public class SalesInvoiceVoidTest extends BaseClass {
 
 						for (ProductUOM productUom : ProductUOMDetailsList) {
 							if (productUom.ProductUOMtablesize > 0
-									&& productUom.productCode1.equals(productDetails.productName)) {
+				&& productUom.productCode1.equals(productDetails.productName)) {
 
 								for (UOM uomDetails : UomDetailsList) {
 									if (uomDetails.UomCodeValue.equalsIgnoreCase(productUom.SubUOM)) {
@@ -1191,12 +1099,10 @@ public class SalesInvoiceVoidTest extends BaseClass {
 									"Actual and Expected QOH Mismatched for Product: " + productDetails.productName);
 
 						}
-
 					}
 					break;
 				}
 			}
-
 			System.out.println();
 
 			// Qty:-
@@ -1263,9 +1169,7 @@ public class SalesInvoiceVoidTest extends BaseClass {
 					double discAmtDouble1 = Double.parseDouble(excelData.DiscountAmount);
 
 					Total = Total - discAmtDouble1;
-
 				}
-
 			}
 
 			Thread.sleep(1000);
@@ -1304,7 +1208,9 @@ public class SalesInvoiceVoidTest extends BaseClass {
 				Thread.sleep(2000);
 				driver.findElement(By.xpath(
 						"//strong[contains(text(),'" + excelData.ProductName + "')]//following::button[text()='Add']"))
-						.click();
+				.click();
+				Thread.sleep(1000);
+				System.out.println("** Batch File Closed **");
 
 			}
 
@@ -1324,10 +1230,9 @@ public class SalesInvoiceVoidTest extends BaseClass {
 				expZeroGstProductAmount = expZeroGstProductAmount + actualSubtotalDouble;
 
 			}
-			
-			Thread.sleep(3000);
+			System.out.println();
+			Thread.sleep(4000);
 
-			// js.executeScript("window.scrollBy(0, -400);");
 		} // Excel Data List Loop
 
 		// Over All Discount:-
@@ -1567,12 +1472,11 @@ public class SalesInvoiceVoidTest extends BaseClass {
 
 	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
 	public void StockCalculation() {
 
 		System.out.println("* Stock Calculation *");
-
 		int excelDataListSize = excelDataList.size();
 		for (int i = 0; i < excelDataListSize; i++) {
 			ExcelData excelData = excelDataList.get(i);
@@ -1687,23 +1591,21 @@ public class SalesInvoiceVoidTest extends BaseClass {
 
 	} // Method loop
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
-
-		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-
-		Product prod = new Product(driver);
 
 		driver.navigate().back();
 		driver.navigate().refresh();
 		Thread.sleep(2000);
 		driver.navigate().to(url + "SalesPurchases/Product");
-		Thread.sleep(7000);
+		Thread.sleep(4000);
 		System.out.println("*** Product Page ***");
+		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		Product prod = new Product(driver);
 
 		for (String product : ProductSet) {
 
@@ -1741,29 +1643,24 @@ public class SalesInvoiceVoidTest extends BaseClass {
 							"Actual and Expected Product Stock Mismatched for Product " + stock.productName);
 
 				}
-
 			} // Stock calculation loop
 
 			js.executeScript("arguments[0].click();", prod.Back);
 			Thread.sleep(2000);
-
 		}
-
 		System.out.println();
 	}
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 
+		driver.navigate().to(url + "SalesPurchases/Product/ProductMovementsIndex");
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-
 		ProductMovement pm = new ProductMovement(driver);
-
-		driver.navigate().to(url + "SalesPurchases/Product/ProductMovementsIndex");
-		Thread.sleep(7000);
+		Thread.sleep(4000);
 		System.out.println("*** Product Movement Page ***");
 
 		for (String product : ProductSet) {
@@ -1775,18 +1672,6 @@ public class SalesInvoiceVoidTest extends BaseClass {
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			productcode.sendKeys(product + Keys.ENTER);
 			Thread.sleep(1000);
-
-			/*
-			 * boolean enabledUom =
-			 * driver.findElement(By.xpath("//select[@id='UOM']")).isEnabled();
-			 * System.out.println("enabledUom: "+enabledUom); if (enabledUom == true ) {
-			 * 
-			 * click(pm.UOM); List<WebElement> subUomOption = driver.findElements(By.xpath(
-			 * "//span[@id='select2-UOM-container']//following::input[@type='search']//following::ul//li"
-			 * )); for (WebElement option : subUomOption) { if
-			 * (option.getText().trim().equals(excelData.Uom)) { option.click(); break; } }
-			 * }
-			 */
 
 			js.executeScript("arguments[0].click();", pm.Fetch);
 			Thread.sleep(3000);
@@ -1829,9 +1714,7 @@ public class SalesInvoiceVoidTest extends BaseClass {
 					}
 					break;
 				}
-
 			} // Stock calculation list loop
-
 		}
 		System.out.println();
 	}
@@ -1842,7 +1725,6 @@ public class SalesInvoiceVoidTest extends BaseClass {
 
 	}
 
-//	@Ignore
 	@Test(priority = 40, dependsOnMethods = "ERPLoginPage")
 	private void close() throws InterruptedException {
 		driver.quit();

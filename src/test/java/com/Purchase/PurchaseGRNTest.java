@@ -569,7 +569,7 @@ public class PurchaseGRNTest extends BaseClass {
 
 			WebElement DetailsIcon = driver
 					.findElement(By.xpath("//table[@id='producttable']//tbody//tr//td[1][normalize-space()='" + product
-							+ "']//following::td[9]//a[@title='Details'][1]"));
+							+ "']//following::td//a[@title='Details'][1]"));
 			js.executeScript("arguments[0].click();", DetailsIcon);
 			Thread.sleep(3000);
 
@@ -614,9 +614,10 @@ public class PurchaseGRNTest extends BaseClass {
 					.findElement(By.xpath("//dt[normalize-space()='Margin Tolerance %']//following-sibling::dd[1]"));
 			String marginToleranceValue = marginTolerance.getText();
 			System.out.println("Margin Tolerance: " + marginToleranceValue);
-
+			
+			Thread.sleep(2000);
 			WebElement InfoTab = driver.findElement(By.xpath("//a[text()='Info']"));
-			InfoTab.click();
+			js.executeScript("arguments[0].click();", InfoTab);
 			Thread.sleep(2000);
 
 			WebElement purchaseCOA = driver
@@ -809,11 +810,11 @@ public class PurchaseGRNTest extends BaseClass {
 				Vendor VendorDetails = new Vendor(VendorName, GSTType, APAccount);
 				vendorDetailsList.add(VendorDetails);
 
-				click(vd.Back);
+				js.executeScript("arguments[0].click();", vd.Back);
+				Thread.sleep(2000);
 			}
 		}
 	} // Vendor page
-
 
 	//Uom Page:-
 	@SuppressWarnings("unused")
@@ -852,7 +853,9 @@ public class PurchaseGRNTest extends BaseClass {
 		System.out.println("Uom Set Size: " + uomSetSize);
 		for (String uom : UOMSet) {
 
-			driver.findElement(By.id("select2-DropDown-container")).click();
+			WebElement uomfield = driver.findElement(By.id("select2-DropDown-container"));
+			uomfield.click();
+		//	js.executeScript("arguments[0].click();", uomfield);
 			WebElement UOMSearchField = driver.findElement(
 					By.xpath("//span[@id='select2-DropDown-container']//following::input[@type='search']"));
 			UOMSearchField.sendKeys(uom + Keys.ENTER);
@@ -1541,9 +1544,8 @@ public class PurchaseGRNTest extends BaseClass {
 		}
 		click(grn.AlertOK);
 
-
 		Thread.sleep(3000);
-		WebElement details1 = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath
+		WebElement details1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath
 				("(//table[@id='GoodsReceivingTable']//tbody//tr//td[normalize-space()='"+getGrnNo+"']//following::td//a[@title='Details'])[1]")));
 		js.executeScript("arguments[0].click();", details1);
 
@@ -1564,7 +1566,6 @@ public class PurchaseGRNTest extends BaseClass {
 		js.executeScript("arguments[0].click();", invoiceNo);
 		invoiceNo.sendKeys(formatedTimestamp);
 		System.out.println("Invoice No: "+formatedTimestamp);
-
 
 		for (ExcelData excelData : excelDataList) {
 

@@ -145,7 +145,7 @@ public class StockReservationTest extends BaseClass {
 	@DataProvider
 	public Object[][] Util2() {
 
-		Object data[][] = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\SalesOrder.xlsx", "Sheet1");
+		Object data[][] = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\StockReservationSalesOrder.xlsx", "Sheet1");
 		return data;
 
 	}
@@ -1611,8 +1611,10 @@ public class StockReservationTest extends BaseClass {
 
 		}
 		Thread.sleep(3000);
+		driver.findElement(By.id("ItemQty")).click();
 		String ActualGstAmount = driver.findElement(By.id("GST")).getAttribute("value");
-		System.out.println("Actual Gst Amount is: " + ActualGstAmount);
+		double actualGstAmountDouble = Double.parseDouble(ActualGstAmount.replaceAll(",", ""));
+		System.out.println("Actual Gst Amount is: " + actualGstAmountDouble);
 
 		String ExpectedGstAmountFormat = String.format("%.2f", finalExpectedGstAmount);
 
@@ -1621,7 +1623,7 @@ public class StockReservationTest extends BaseClass {
 			finalExpectedGstAmount = 0;
 			System.out.println("Expected Gst Amount: " + ExpectedGstAmountFormat);
 
-			soft.assertEquals(ActualGstAmount, ExpectedGstAmountFormat, 
+			soft.assertEquals(actualGstAmountDouble, ExpectedGstAmountFormat, 
 					"Actual and Expected Gst Amount Mismatched");
 
 		} else {

@@ -91,7 +91,7 @@ public class ProductAssemblyTest extends BaseClass{
 
 	}
 
-
+	@SuppressWarnings("unused")
 	class ExcelData {
 
 		private String AssemblyType;
@@ -687,7 +687,6 @@ public class ProductAssemblyTest extends BaseClass{
 	public void StockCalculation() {
 
 		System.out.println("* Stock Calculation *");
-
 
 		int excelDataListSize = excelDataList.size();
 		for (int i = 0; i < excelDataListSize; i++) {

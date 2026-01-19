@@ -2477,7 +2477,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 	}
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 40, dependsOnMethods = "ERPLoginPage")
 	private void close() throws InterruptedException {
 		driver.close();

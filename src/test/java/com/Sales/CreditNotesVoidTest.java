@@ -966,7 +966,6 @@ public class CreditNotesVoidTest extends BaseClass {
 			Thread.sleep(2000);
 
 			click(cn.Qty);
-
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
 				click(cn.ChooseUom);
@@ -1243,6 +1242,9 @@ public class CreditNotesVoidTest extends BaseClass {
 				driver.findElement(By.xpath(
 						"//strong[contains(text(),'" + excelData.ProductName + "')]//following::button[text()='Add']"))
 				.click();
+				
+				Thread.sleep(2000);
+				click(cn.Qty);
 
 			}
 

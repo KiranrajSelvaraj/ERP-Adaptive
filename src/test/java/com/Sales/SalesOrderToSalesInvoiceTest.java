@@ -1842,7 +1842,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 							bQtyField.sendKeys(excelData.CreditNotesQty);
 							click(cn.Qty);
 
-							if (getProductName.equalsIgnoreCase(excelData.BatchProduct)) {
+							if ("true".equalsIgnoreCase(excelData.BatchProduct)) {
 
 								String batchBQty = driver.findElement(By.xpath("(//strong[contains(text(),'"+excelData.ProductName+"')]"
 										+ "//following::input[@id='BQty'])[1]")).getAttribute("value");
@@ -1871,10 +1871,10 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 									+getProductName+"')]//following::td[5]//input[@type='number']"));
 							lQtyField.click();
 							lQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-							lQtyField.sendKeys(excelData.CreditNotesQty);
-							click(cn.Qty);
+							lQtyField.sendKeys(excelData.CreditNotesQty +Keys.ENTER);
+							//	click(cn.Qty);
 
-							if (getProductName.equalsIgnoreCase(excelData.BatchProduct)) {
+							if ("true".equalsIgnoreCase(excelData.BatchProduct)) {
 
 								String batchBQty = driver.findElement(By.xpath("(//strong[contains(text(),'"+excelData.ProductName+"')]"
 										+ "//following::input[@id='BQty'])[1]")).getAttribute("value");
@@ -2223,7 +2223,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 					}
 
 					doubleExcelQty = Double.parseDouble(excelData.Qty);
-					//		creditNotesQty = Double.parseDouble(excelData.CreditNotesQty);
+					//creditNotesQty = Double.parseDouble(excelData.CreditNotesQty);
 					doubleUomUnit = Double.parseDouble(uomData.UomUnits);
 
 					multipleQty = doubleExcelQty * doubleUomUnit;
@@ -2418,26 +2418,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			productcode.sendKeys(excelData.ProductCode + Keys.ENTER);
 			Thread.sleep(2000);
-			
-			WebElement uomField = driver.findElement(By.id("UOM"));
 
-			if (uomField.isEnabled()) {
-				
-				click(pm.UOM);
-				List<WebElement> subUomOption = driver.findElements(By.xpath(
-						"//span[@id='select2-UOM-container']//following::input[@type='search']//following::ul//li"));
-				for (WebElement option : subUomOption) {
-					if (option.getText().trim().equals(excelData.Uom)) {
-						option.click();
-						break;
-					}
-
-				}
-				
-			} else {
-			    System.out.println("UOM field is NON-EDITABLE");
-			}
-			
 			Thread.sleep(1000);
 			js.executeScript("arguments[0].click();", pm.Fetch);
 			Thread.sleep(3000);
@@ -2462,7 +2443,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 						System.out.println("Product Movement Name: "+ trimProductName);
 						System.out.println("Actual Product Movement Stock: "+ balanceQty);
 						System.out.println("Expected Product Movement Stock: "+ replaceProductStock);
-
+						System.out.println();
 
 						soft.assertEquals(balanceQty, replaceProductStock,
 								"Actual and Expected Product Movement Stock Mismatched for Product "
@@ -2473,7 +2454,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 						System.out.println("Product Movement Name: "+ trimProductName);
 						System.out.println("Actual Product Movement Stock: "+ balanceQty);
 						System.out.println("Expected Product Movement Stock: "+stock.calculateStock);
-
+						System.out.println();
 
 						soft.assertEquals(balanceQty, stock.calculateStock,
 								"Actual and Expected Product Movement Stock Mismatched for Product "
@@ -2493,6 +2474,13 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 	@Test(priority = 30, dependsOnMethods = "ERPLoginPage")
 	private void Exception() throws InterruptedException {
 		soft.assertAll();
+
+	}
+
+	@Ignore
+	@Test(priority = 40, dependsOnMethods = "ERPLoginPage")
+	private void close() throws InterruptedException {
+		driver.close();
 
 	}
 

@@ -567,7 +567,7 @@ public class CreditNotesVoidTest extends BaseClass {
 	public void ProductPage() throws InterruptedException {
 
 		ProductList.addAll(ProductSet);
-		
+
 		driver.navigate().to(url + "SalesPurchases/Product");
 		Thread.sleep(7000);
 		System.out.println("*Product Details Page*");
@@ -782,7 +782,7 @@ public class CreditNotesVoidTest extends BaseClass {
 	//@Ignore
 	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
-		
+
 		UOMList.addAll(UOMSet);
 		driver.navigate().to(url + "SalesPurchases/UOM");
 		Thread.sleep(4000);
@@ -796,7 +796,8 @@ public class CreditNotesVoidTest extends BaseClass {
 
 		for (String uom : UOMSet) {
 
-			driver.findElement(By.id("select2-DropDown-container")).click();
+			WebElement selectUom = driver.findElement(By.xpath("//span[@id='select2-DropDown-container']"));
+			selectUom.click();
 			WebElement UOMSearchField = driver.findElement(
 					By.xpath("//span[@id='select2-DropDown-container']//following::input[@type='search']"));
 			UOMSearchField.sendKeys(uom + Keys.ENTER);
@@ -852,7 +853,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-	//	Actions action = new Actions(driver);
+		//	Actions action = new Actions(driver);
 		CreditNotes cn = new CreditNotes(driver);
 
 		driver.navigate().to(url + "SalesPurchases/CreditNotes");
@@ -906,7 +907,7 @@ public class CreditNotesVoidTest extends BaseClass {
 			}
 
 			// Choose Product:-
-		/*	if (excelData.Type.equalsIgnoreCase("Product")) {
+			/*	if (excelData.Type.equalsIgnoreCase("Product")) {
 
 				String productCheckbox = driver.findElement(By.id("ProductCheck")).getAttribute("checked");
 				if (!productCheckbox.equalsIgnoreCase("true")) {
@@ -926,19 +927,19 @@ public class CreditNotesVoidTest extends BaseClass {
 					click(cn.OpenCheckbox);
 				}
 			} */
-		
-		/*	if (excelData.Type.equalsIgnoreCase("Product")) {
-				
+
+			/*	if (excelData.Type.equalsIgnoreCase("Product")) {
+
 				if (i == 0) {
 					click(cn.ChooseProduct);
-					
+
 				}
-				
+
 				WebElement productSearch = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
 						("//span[@id='select2-ProductId-container']//following::input[@type='search']")));
 				productSearch.click();
 				productSearch.sendKeys(excelData.ProductCode + Keys.ENTER);
-			
+
 			} else if (excelData.Type.equalsIgnoreCase("Service")) {
 
 				driver.findElement(
@@ -950,20 +951,20 @@ public class CreditNotesVoidTest extends BaseClass {
 				cn.OpenProduct.sendKeys(excelData.ProductCode + Keys.ENTER);
 
 			} */
-			
+
 			js.executeScript("window.scrollBy(0, 700)", "");
 			System.out.println(i);
 
 			WebElement Product = driver.findElement(By.xpath("(//span[@id='select2-ProductId-container'])[1]"));
 			Thread.sleep(1000);
 			Product.click();
-			
+
 			WebElement productSearch = driver.findElement(By.xpath("(//input[@type='search'])[1]"));
 			System.out.println(excelData.ProductCode);
 			clear(productSearch);
 			Sendkeys(productSearch, excelData.ProductCode + Keys.ENTER);
 			Thread.sleep(2000);
-					
+
 			click(cn.Qty);
 
 			if (excelData.Type.equalsIgnoreCase("Product")) {
@@ -980,8 +981,8 @@ public class CreditNotesVoidTest extends BaseClass {
 				}
 
 			} 
-			
-		/*	else if (excelData.Type.equalsIgnoreCase("Service")) {
+
+			/*	else if (excelData.Type.equalsIgnoreCase("Service")) {
 
 				click(cn.ChooseUom);
 				List<WebElement> subUomOption = driver.findElements(By.xpath(
@@ -1063,7 +1064,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 						for (ProductUOM productUom : ProductUOMDetailsList) {
 							if (productUom.ProductUOMtablesize > 0
-									&& productUom.productCode1.equals(productDetails.productName)) {
+				&& productUom.productCode1.equals(productDetails.productName)) {
 
 								for (UOM uomDetails : UomDetailsList) {
 									if (uomDetails.UomCodeValue.equalsIgnoreCase(productUom.SubUOM)) {
@@ -1202,7 +1203,7 @@ public class CreditNotesVoidTest extends BaseClass {
 				}
 			}
 			System.out.println();
-			
+
 			Thread.sleep(1000);
 			getProductAmount = driver.findElement(By.id("ItemAmount")).getAttribute("value");
 			double getProductAmountDouble = Double.parseDouble(getProductAmount);
@@ -1241,11 +1242,11 @@ public class CreditNotesVoidTest extends BaseClass {
 				Thread.sleep(2000);
 				driver.findElement(By.xpath(
 						"//strong[contains(text(),'" + excelData.ProductName + "')]//following::button[text()='Add']"))
-						.click();
+				.click();
 
 			}
 
-		/*	WebElement productamount = wait.until(ExpectedConditions.presenceOfElementLocated(
+			/*	WebElement productamount = wait.until(ExpectedConditions.presenceOfElementLocated(
 					By.xpath("//table[@id='CreditNoteTable']//tbody//tr//td[2]//div//textarea[contains(text(),'"
 							+ excelData.ProductName + "')]//following::td[@id='totaldetailamount']")));
 			getProductAmount = productamount.getAttribute("data-value");
@@ -1262,7 +1263,7 @@ public class CreditNotesVoidTest extends BaseClass {
 			}
 			Thread.sleep(4000);
 			js.executeScript("window.scrollBy(0, -500);");
-			
+
 		} // Excel data list loop
 
 		click(cn.OverAllDiscountType);
@@ -1783,7 +1784,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		soft.assertAll();
 
 	}
-	
+
 	//@Ignore
 	@Test(priority = 40, dependsOnMethods = "ERPLoginPage")
 	private void quit() throws InterruptedException {

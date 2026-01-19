@@ -1242,7 +1242,7 @@ public class CreditNotesVoidTest extends BaseClass {
 				driver.findElement(By.xpath(
 						"//strong[contains(text(),'" + excelData.ProductName + "')]//following::button[text()='Add']"))
 				.click();
-				
+
 				Thread.sleep(2000);
 				click(cn.Qty);
 
@@ -1265,6 +1265,7 @@ public class CreditNotesVoidTest extends BaseClass {
 			}
 			Thread.sleep(4000);
 			js.executeScript("window.scrollBy(0, -500);");
+			click(cn.Qty);
 
 		} // Excel data list loop
 

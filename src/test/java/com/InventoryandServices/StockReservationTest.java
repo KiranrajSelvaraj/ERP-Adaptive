@@ -1614,23 +1614,24 @@ public class StockReservationTest extends BaseClass {
 		driver.findElement(By.id("ItemQty")).click();
 		String ActualGstAmount = driver.findElement(By.id("GST")).getAttribute("value");
 		double actualGstAmountDouble = Double.parseDouble(ActualGstAmount.replaceAll(",", ""));
-		System.out.println("Actual Gst Amount is: " + actualGstAmountDouble);
+		String actualGstAmountFormat = String.format("%.2f", actualGstAmountDouble);
+		System.out.println("Actual Gst Amount is: " +actualGstAmountFormat);
 
 		String ExpectedGstAmountFormat = String.format("%.2f", finalExpectedGstAmount);
 
 		if (getExcelGstType.equalsIgnoreCase("Inclusive")) {
 
 			finalExpectedGstAmount = 0;
-			System.out.println("Expected Gst Amount: " + ExpectedGstAmountFormat);
+			System.out.println("Expected Gst Amount is: " + ExpectedGstAmountFormat);
 
-			soft.assertEquals(actualGstAmountDouble, ExpectedGstAmountFormat, 
+			soft.assertEquals(actualGstAmountFormat, ExpectedGstAmountFormat, 
 					"Actual and Expected Gst Amount Mismatched");
 
 		} else {
 
 			System.out.println("Expected Gst Amount is: " + ExpectedGstAmountFormat);
 
-			soft.assertEquals(ActualGstAmount, ExpectedGstAmountFormat, 
+			soft.assertEquals(actualGstAmountFormat, ExpectedGstAmountFormat, 
 					"Actual and Expected Gst Amount Mismatched");
 		}
 		System.out.println();

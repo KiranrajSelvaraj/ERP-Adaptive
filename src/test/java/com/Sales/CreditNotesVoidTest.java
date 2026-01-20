@@ -890,13 +890,16 @@ public class CreditNotesVoidTest extends BaseClass {
 
 			}
 
-			click(cn.GstType);
-			WebElement GstSearchInput = driver.findElement(
-					By.xpath("//span[@id='select2-GSTTypeId-container']//following::input[@type='search']"));
-			GstSearchInput.sendKeys(excelData.GstType + Keys.ENTER);
-			System.out.println();
+			if (i == 0) {
+
+				click(cn.GstType);
+				WebElement GstSearchInput = driver.findElement(
+						By.xpath("//span[@id='select2-GSTTypeId-container']//following::input[@type='search']"));
+				GstSearchInput.sendKeys(excelData.GstType + Keys.ENTER);				
+			}
 
 			if (i == 0) {
+
 				getExcelGstType = excelData.GstType;
 				getexcelOverAllDiscountType = excelData.OverAllDiscountType;
 				getExcelOverAllDiscountPercentage = excelData.OverAllDiscountPercentage;

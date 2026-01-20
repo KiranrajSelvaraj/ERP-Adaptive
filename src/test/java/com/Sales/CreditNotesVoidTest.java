@@ -16,7 +16,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -562,7 +561,7 @@ public class CreditNotesVoidTest extends BaseClass {
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 8, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -779,7 +778,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 
@@ -957,33 +956,17 @@ public class CreditNotesVoidTest extends BaseClass {
 			click(cn.Price);
 			System.out.println(i);
 			Thread.sleep(3000);
-			
-WebElement findElement = driver.findElement(By.xpath("//select[@id='ProductId']"));
-Select select=new Select(findElement);
-for (WebElement option : select.getOptions()) {
-	System.out.println("option: "+option.getText());
-	System.out.println("excelData.ProductCode: "+excelData.ProductCode);
-    if (option.getText().contains(excelData.ProductCode)) {
-    	System.out.println("%");
-        option.click();
-        break;
-    }
-}
 
-			
-			/*
-			 * Thread.sleep(1000); WebElement Product =
-			 * driver.findElement(By.xpath("(//span[@id='select2-ProductId-container'])[1]")
-			 * ); Thread.sleep(1000);
-			 * 
-			 * Product.click();
-			 * 
-			 * WebElement productSearch =
-			 * driver.findElement(By.xpath("(//input[@type='search'])[1]"));
-			 * System.out.println(excelData.ProductCode); clear(productSearch);
-			 * Sendkeys(productSearch, excelData.ProductCode + Keys.ENTER);
-			 * Thread.sleep(2000);
-			 */
+			WebElement findElement = driver.findElement(By.xpath("//select[@id='ProductId']"));
+			Select select=new Select(findElement);
+			for (WebElement option : select.getOptions()) {
+
+				if (option.getText().contains(excelData.ProductCode)) {
+					System.out.println("%");
+					option.click();
+					break;
+				}
+			}
 
 			click(cn.Qty);
 			if (excelData.Type.equalsIgnoreCase("Product")) {
@@ -996,9 +979,7 @@ for (WebElement option : select.getOptions()) {
 						option.click();
 						break;
 					}
-
 				}
-
 			}
 
 			/*
@@ -1079,7 +1060,7 @@ for (WebElement option : select.getOptions()) {
 
 						for (ProductUOM productUom : ProductUOMDetailsList) {
 							if (productUom.ProductUOMtablesize > 0
-									&& productUom.productCode1.equals(productDetails.productName)) {
+				&& productUom.productCode1.equals(productDetails.productName)) {
 
 								for (UOM uomDetails : UomDetailsList) {
 									if (uomDetails.UomCodeValue.equalsIgnoreCase(productUom.SubUOM)) {
@@ -1257,9 +1238,9 @@ for (WebElement option : select.getOptions()) {
 				Thread.sleep(2000);
 				driver.findElement(By.xpath(
 						"//strong[contains(text(),'" + excelData.ProductName + "')]//following::button[text()='Add']"))
-						.click();
+				.click();
 
-				Thread.sleep(2000);
+				Thread.sleep(4000);
 				click(cn.Qty);
 
 			}
@@ -1538,7 +1519,7 @@ for (WebElement option : select.getOptions()) {
 
 	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
 	public void StockCalculation() {
 
@@ -1657,7 +1638,7 @@ for (WebElement option : select.getOptions()) {
 
 	} // Method loop
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 
@@ -1720,7 +1701,7 @@ for (WebElement option : select.getOptions()) {
 		System.out.println();
 	}
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 

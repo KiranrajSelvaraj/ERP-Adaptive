@@ -562,7 +562,7 @@ public class CreditNotesVoidTest extends BaseClass {
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 8, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -779,7 +779,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 
@@ -953,7 +953,11 @@ public class CreditNotesVoidTest extends BaseClass {
 			} */
 
 			js.executeScript("window.scrollBy(0, 700)", "");
+			click(cn.Qty);
+			Thread.sleep(1000);
+			click(cn.Price);
 			System.out.println(i);
+			Thread.sleep(3000);
 
 			WebElement Product = driver.findElement(By.xpath("(//span[@id='select2-ProductId-container'])[1]"));
 			Thread.sleep(1000);
@@ -1264,8 +1268,8 @@ public class CreditNotesVoidTest extends BaseClass {
 
 			}
 			Thread.sleep(4000);
-			js.executeScript("window.scrollBy(0, -500);");
-			click(cn.Qty);
+			//js.executeScript("window.scrollBy(0, -500);");
+			//click(cn.Qty);
 
 		} // Excel data list loop
 
@@ -1518,7 +1522,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
 	public void StockCalculation() {
 
@@ -1637,7 +1641,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 	} // Method loop
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 
@@ -1700,7 +1704,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		System.out.println();
 	}
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 

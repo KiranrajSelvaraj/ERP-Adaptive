@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>18/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>11/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jan 20 09:19:52 IST 2026</td>
+<td>Started on:</td><td>Tue Jan 20 10:04:17 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>854 seconds (854573 ms)</td>
+<tr><td>Total time:</td><td>265 seconds (265063 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,63 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.Sales.SalesOrderToSalesInvoiceTest.Exception()'><b>Exception</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	Actual and Expected Special Price Discount Mismatched for Product Rice Bran Oil expected [200.00] but found [242.00],
+	Actual and Expected Special Price Discount Mismatched for Product Vanaspati expected [100.00] but found [122.00],
+	Actual and Expected Special Price Discount Mismatched for Product Pure Cow Ghee expected [200.00] but found [246.00],
+	Actual and Expected Special Price Discount Mismatched for Product Self-Rising Flour expected [100.00] but found [131.00],
+	Actual and Expected Special Price Discount Mismatched for Product Granulated Sugar expected [200.00] but found [264.00],
+	Actual and Expected Special Price Discount Mismatched for Product Brown Sugar expected [100.00] but found [133.00],
+	Actual and Expected Special Price Discount Mismatched for Product Mojito Lemon Mint Powder expected [200.00] but found [282.00],
+	Actual and Expected Special Price Discount Mismatched for Product Blue Lagoon Drink Powder expected [100.00] but found [142.00],
+	Actual and Expected Special Price Discount Mismatched for Product Maggi Noodles expected [200.00] but found [286.00]
+	at com.Sales.SalesOrderToSalesInvoiceTest.Exception(SalesOrderToSalesInvoiceTest.java:2476)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace438530109", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace438530109'><pre>java.lang.AssertionError: The following asserts failed:
+	Actual and Expected Special Price Discount Mismatched for Product Rice Bran Oil expected [200.00] but found [242.00],
+	Actual and Expected Special Price Discount Mismatched for Product Vanaspati expected [100.00] but found [122.00],
+	Actual and Expected Special Price Discount Mismatched for Product Pure Cow Ghee expected [200.00] but found [246.00],
+	Actual and Expected Special Price Discount Mismatched for Product Self-Rising Flour expected [100.00] but found [131.00],
+	Actual and Expected Special Price Discount Mismatched for Product Granulated Sugar expected [200.00] but found [264.00],
+	Actual and Expected Special Price Discount Mismatched for Product Brown Sugar expected [100.00] but found [133.00],
+	Actual and Expected Special Price Discount Mismatched for Product Mojito Lemon Mint Powder expected [200.00] but found [282.00],
+	Actual and Expected Special Price Discount Mismatched for Product Blue Lagoon Drink Powder expected [100.00] but found [142.00],
+	Actual and Expected Special Price Discount Mismatched for Product Maggi Noodles expected [200.00] but found [286.00]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at com.Sales.SalesOrderToSalesInvoiceTest.Exception(SalesOrderToSalesInvoiceTest.java:2476)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>0</td>
+<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,95 +133,60 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0290, Chole (White Chickpeas), PCS, 1, , 5, , , , , 147, , , , , , , , TRUE, , </td>
+<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0335, Vanaspati, 1X1KG, 1, , , , , 5, , 122, TRUE, 100, , , , , TRUE, TRUE, </td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@2892d68</td></tr>
+<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.ReturnStockProductPage()'><b>ReturnStockProductPage</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
-<td></td>
-<td>88</td>
-<td>com.Purchase.PurchaseReturnVoidTest@2892d68</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.Exception()'><b>Exception</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
+<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0401, Mojito Lemon Mint Powder, PCS, 2, , , , , 5, , 141, TRUE, 100, , , , , , TRUE, 1</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@2892d68</td></tr>
+<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.ProductMovementPage()'><b>ProductMovementPage</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
-<td></td>
-<td>51</td>
-<td>com.Purchase.PurchaseReturnVoidTest@2892d68</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: V0004, SGD, 1, Inclusive, Product, P0222, Sona Masoori, 1X1X1KG, 1, , 5, , , , , 126, , , $, 25, 15, 9, , TRUE, , </td>
+<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0402, Blue Lagoon Drink Powder, PCS, 1, , , , , 5, , 142, TRUE, 100, , , , , , TRUE, </td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@2892d68</td></tr>
+<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0263, Hatti Kaapi, 25X25X1GM, 1, , 5, , , , , 144, , , , , , , , FALSE, , </td>
+<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0368, Granulated Sugar, 25X1GM, 2, , , , , 5, , 132, TRUE, 100, , , , , , TRUE, 1</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@2892d68</td></tr>
+<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.ExpectedProduct()'><b>ExpectedProduct</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
+<td title='com.Sales.SalesOrderToSalesInvoiceTest.SalesToInvoice()'><b>SalesToInvoice</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
 <td></td>
-<td>87</td>
-<td>com.Purchase.PurchaseReturnVoidTest@2892d68</td></tr>
+<td>247</td>
+<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.PurchaseReturnVoid()'><b>PurchaseReturnVoid</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
-<td></td>
-<td>32</td>
-<td>com.Purchase.PurchaseReturnVoidTest@2892d68</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.VendorPage()'><b>VendorPage</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
-<td></td>
-<td>21</td>
-<td>com.Purchase.PurchaseReturnVoidTest@2892d68</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.StockCalculation()'><b>StockCalculation</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
+<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0367, Self-Rising Flour, 25X1GM, 1, , , , , 5, , 131, TRUE, 100, , , , , , TRUE, </td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@2892d68</td></tr>
+<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.PurchaseReturn()'><b>PurchaseReturn</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
-<td></td>
-<td>163</td>
-<td>com.Purchase.PurchaseReturnVoidTest@2892d68</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.SystemSettingsPage()'><b>SystemSettingsPage</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
-<td></td>
-<td>118</td>
-<td>com.Purchase.PurchaseReturnVoidTest@2892d68</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0259, Coffee Day (CCD), 25X25X1GM, 1, , 5, , , , , 140, , , , , , , TRUE, TRUE, , </td>
+<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: C0002, SGD, 1, Zero, Product, P0334, Rice Bran Oil, 1X1KG, 2, , , , TRUE, 5, 25, 121, TRUE, 100, %, 10, 10, 0, , TRUE, 1</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@2892d68</td></tr>
+<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.UomPage()'><b>UomPage</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
-<td></td>
-<td>33</td>
-<td>com.Purchase.PurchaseReturnVoidTest@2892d68</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
-<td></td>
-<td>12</td>
-<td>com.Purchase.PurchaseReturnVoidTest@2892d68</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0296, Mustard Oil, Packets, 1, , 5, , , , , 153, , , , , , , , FALSE, , </td>
+<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0369, Brown Sugar, 25X1GM, 1, , , , , 5, , 133, TRUE, 100, , , , , , TRUE, </td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@2892d68</td></tr>
+<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.ProductPage()'><b>ProductPage</b><br>Test class: com.Purchase.PurchaseReturnVoidTest</td>
-<td></td>
-<td>242</td>
-<td>com.Purchase.PurchaseReturnVoidTest@2892d68</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseReturnVoidTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseReturnVoidTest<br>Parameters: , , , , Product, P0230, Brown Rice, 1X1X1KG, 1, , 5, , , , , 134, , , , , , , , FALSE, , </td>
+<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0403, Maggi Noodles, PCS, 2, , , , , 5, , 143, TRUE, 100, , , , , , TRUE, 1</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseReturnVoidTest@2892d68</td></tr>
+<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
+<tr>
+<td title='com.Sales.SalesOrderToSalesInvoiceTest.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
+<td></td>
+<td>10</td>
+<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
+<tr>
+<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0336, Pure Cow Ghee, 1X1KG, 2, , , , , 5, , 123, TRUE, 100, , , , , , TRUE, 1</td>
+<td></td>
+<td>0</td>
+<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
 </table><p>
 </body>
 </html>

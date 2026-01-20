@@ -112,7 +112,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 	@DataProvider
 	public Object[][] Util1() {
 
-		Object data[][] = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\SalesOrder.xlsx", "Sheet1");
+		Object data[][] = Util1.getTestData("C:\\Adaptive\\ERP\\SalesOrder.xlsx", "SO");
 		return data;
 
 	}
@@ -238,7 +238,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 	private boolean IsHeaderManagementInSO;
 	private boolean IsReturnManagementInSI;
 
-	// @Ignore
+	@Ignore
 	@Test(priority = 6, dependsOnMethods = "ERPLoginPage")
 	public void SystemSettings() throws InterruptedException {
 
@@ -594,7 +594,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	// @Ignore
+	@Ignore
 	@Test(priority = 8, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -929,7 +929,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
 
-	// @Ignore
+	@Ignore
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
@@ -1642,7 +1642,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 							.xpath("(//a[@class='fa fa-pencil-square-o editInvoiceDetails op'])[" + i + "]//preceding::td[8]"))
 							.getAttribute("data-value");
 
-					if (getProductName.equalsIgnoreCase(excelData.BatchProduct)) {
+					if (getProductName.equalsIgnoreCase(excelData.ProductName)) {
 
 						WebElement batchFiles = driver.findElement(By.xpath("(//table[@id='SalesTable']//tbody//tr)[2]//td["+i+"]//following::td[12]//a[@class='fa fa-folder-open Popup']"));
 						js.executeScript("arguments[0].click();", batchFiles);
@@ -1691,17 +1691,12 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 							Thread.sleep(3000);
 							break;
 						}
-
 					}
-
 				}
-
 			}
-
 		}
 
 		System.out.println();
-
 		js.executeScript("window.scrollBy(0, 500)", "");
 
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
@@ -1949,10 +1944,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 					} */
 
-
-
-
-
 				} else {
 
 					if (getProductName.contains(excelData.ProductName)) {
@@ -2011,6 +2002,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 			System.out.println("getProductAmount: "+getProductAmount);
 			String replaceAllGetProductAmount = getProductAmount.replaceAll(",", "");
 			double getProductAmountDouble = Double.parseDouble(replaceAllGetProductAmount);
+			System.out.println();
 
 			expSubtotal = expSubtotal + getProductAmountDouble;
 
@@ -2032,10 +2024,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		//SubTotal:-
 		System.out.println("*** Credit Notes SubTotal ***");
 		Thread.sleep(5000);
-
-		//	WebElement subtotal = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
-		//			("//table[@id='CreditNoteTable']//tfoot//tr[1]//td[13]//child::p[@id='tSubtotal']")));
-		//	String subtotalString = subtotal.getText();
 
 		String getActSubtotal = driver.findElement(By.xpath("//input[@id='order']"))
 				.getAttribute("value");		
@@ -2195,7 +2183,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 	}
 
 	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
-	//@Ignore
+	@Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void StockCalculation() {
 
@@ -2331,7 +2319,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 	} // Method loop
 
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 
@@ -2396,7 +2384,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		System.out.println();
 	}
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 20, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 
@@ -2477,7 +2465,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 	}
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 40, dependsOnMethods = "ERPLoginPage")
 	private void close() throws InterruptedException {
 		driver.close();

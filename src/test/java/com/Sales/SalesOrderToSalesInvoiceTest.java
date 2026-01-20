@@ -112,7 +112,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 	@DataProvider
 	public Object[][] Util1() {
 
-		Object data[][] = Util1.getTestData("C:\\Adaptive\\ERP\\SalesOrder.xlsx", "SO");
+		Object data[][] = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\SalesOrder.xlsx", "SO");
 		return data;
 
 	}
@@ -238,7 +238,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 	private boolean IsHeaderManagementInSO;
 	private boolean IsReturnManagementInSI;
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 6, dependsOnMethods = "ERPLoginPage")
 	public void SystemSettings() throws InterruptedException {
 
@@ -594,7 +594,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 8, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -929,7 +929,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
@@ -2183,7 +2183,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 	}
 
 	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
-	@Ignore
+	//@Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void StockCalculation() {
 
@@ -2319,7 +2319,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 	} // Method loop
 
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 
@@ -2384,7 +2384,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		System.out.println();
 	}
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 20, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 

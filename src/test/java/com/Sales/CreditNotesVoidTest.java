@@ -212,7 +212,7 @@ public class CreditNotesVoidTest extends BaseClass {
 	private boolean IsHeaderManagementInSO;
 	private boolean IsReturnManagementInSI;
 
-	//@Ignore
+	// @Ignore
 	@Test(priority = 6, dependsOnMethods = "ERPLoginPage")
 	public void SystemSettings() throws InterruptedException {
 
@@ -853,7 +853,7 @@ public class CreditNotesVoidTest extends BaseClass {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		//	Actions action = new Actions(driver);
+		// Actions action = new Actions(driver);
 		CreditNotes cn = new CreditNotes(driver);
 
 		driver.navigate().to(url + "SalesPurchases/CreditNotes");
@@ -907,58 +907,59 @@ public class CreditNotesVoidTest extends BaseClass {
 			}
 
 			// Choose Product:-
-			/*	if (excelData.Type.equalsIgnoreCase("Product")) {
+			/*
+			 * if (excelData.Type.equalsIgnoreCase("Product")) {
+			 * 
+			 * String productCheckbox =
+			 * driver.findElement(By.id("ProductCheck")).getAttribute("checked"); if
+			 * (!productCheckbox.equalsIgnoreCase("true")) { click(cn.ProductCheckbox);
+			 * 
+			 * }
+			 * 
+			 * } else if (excelData.Type.equals("Service")) {
+			 * 
+			 * if (!cn.ServiceCheckbox.isSelected()) { click(cn.ServiceCheckbox); }
+			 * 
+			 * } else if (excelData.Type.equals("Open")) {
+			 * 
+			 * if (!cn.OpenCheckbox.isSelected()) { click(cn.OpenCheckbox); } }
+			 */
 
-				String productCheckbox = driver.findElement(By.id("ProductCheck")).getAttribute("checked");
-				if (!productCheckbox.equalsIgnoreCase("true")) {
-					click(cn.ProductCheckbox);
+			/*
+			 * if (excelData.Type.equalsIgnoreCase("Product")) {
+			 * 
+			 * if (i == 0) { click(cn.ChooseProduct);
+			 * 
+			 * }
+			 * 
+			 * WebElement productSearch =
+			 * wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
+			 * ("//span[@id='select2-ProductId-container']//following::input[@type='search']"
+			 * ))); productSearch.click(); productSearch.sendKeys(excelData.ProductCode +
+			 * Keys.ENTER);
+			 * 
+			 * } else if (excelData.Type.equalsIgnoreCase("Service")) {
+			 * 
+			 * driver.findElement( By.xpath(
+			 * "//span[@id='select2-ServiceId-container']//following::input[@type='search']"
+			 * )) .sendKeys(excelData.ProductCode + Keys.ENTER);
+			 * 
+			 * } else if (excelData.Type.equalsIgnoreCase("Open")) {
+			 * 
+			 * cn.OpenProduct.sendKeys(excelData.ProductCode + Keys.ENTER);
+			 * 
+			 * }
+			 */
 
-				}
-
-			} else if (excelData.Type.equals("Service")) {
-
-				if (!cn.ServiceCheckbox.isSelected()) {
-					click(cn.ServiceCheckbox);
-				}
-
-			} else if (excelData.Type.equals("Open")) {
-
-				if (!cn.OpenCheckbox.isSelected()) {
-					click(cn.OpenCheckbox);
-				}
-			} */
-
-			/*	if (excelData.Type.equalsIgnoreCase("Product")) {
-
-				if (i == 0) {
-					click(cn.ChooseProduct);
-
-				}
-
-				WebElement productSearch = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
-						("//span[@id='select2-ProductId-container']//following::input[@type='search']")));
-				productSearch.click();
-				productSearch.sendKeys(excelData.ProductCode + Keys.ENTER);
-
-			} else if (excelData.Type.equalsIgnoreCase("Service")) {
-
-				driver.findElement(
-						By.xpath("//span[@id='select2-ServiceId-container']//following::input[@type='search']"))
-						.sendKeys(excelData.ProductCode + Keys.ENTER);
-
-			} else if (excelData.Type.equalsIgnoreCase("Open")) {
-
-				cn.OpenProduct.sendKeys(excelData.ProductCode + Keys.ENTER);
-
-			} */
-
-			js.executeScript("window.scrollBy(0, 700)", "");
+			js.executeScript("window.scrollBy(0, 1000)", "");
 			click(cn.Qty);
 			Thread.sleep(1000);
 			click(cn.Price);
 			System.out.println(i);
 			Thread.sleep(3000);
 
+			clear(driver.findElement(By.xpath("(//span[@id='select2-ProductId-container'])[1]")));
+			Thread.sleep(1000);
 			WebElement Product = driver.findElement(By.xpath("(//span[@id='select2-ProductId-container'])[1]"));
 			Thread.sleep(1000);
 			Product.click();
@@ -983,35 +984,31 @@ public class CreditNotesVoidTest extends BaseClass {
 
 				}
 
-			} 
+			}
 
-			/*	else if (excelData.Type.equalsIgnoreCase("Service")) {
-
-				click(cn.ChooseUom);
-				List<WebElement> subUomOption = driver.findElements(By.xpath(
-						"//span[@id='select2-UOMId-container']//following::input[@type='search']//following::ul//li"));
-				for (WebElement option : subUomOption) {
-					if (option.getText().trim().equals(excelData.Uom)) {
-						option.click();
-						break;
-					}
-
-				}
-
-			} else if (excelData.Type.equalsIgnoreCase("Open")) {
-
-				click(cn.ChooseUom);
-				List<WebElement> subUomOption = driver.findElements(By.xpath(
-						"//span[@id='select2-UOMId-container']//following::input[@type='search']//following::ul//li"));
-				for (WebElement option : subUomOption) {
-					if (option.getText().trim().equals(excelData.Uom)) {
-						option.click();
-						break;
-					}
-
-				}
-
-			} */
+			/*
+			 * else if (excelData.Type.equalsIgnoreCase("Service")) {
+			 * 
+			 * click(cn.ChooseUom); List<WebElement> subUomOption =
+			 * driver.findElements(By.xpath(
+			 * "//span[@id='select2-UOMId-container']//following::input[@type='search']//following::ul//li"
+			 * )); for (WebElement option : subUomOption) { if
+			 * (option.getText().trim().equals(excelData.Uom)) { option.click(); break; }
+			 * 
+			 * }
+			 * 
+			 * } else if (excelData.Type.equalsIgnoreCase("Open")) {
+			 * 
+			 * click(cn.ChooseUom); List<WebElement> subUomOption =
+			 * driver.findElements(By.xpath(
+			 * "//span[@id='select2-UOMId-container']//following::input[@type='search']//following::ul//li"
+			 * )); for (WebElement option : subUomOption) { if
+			 * (option.getText().trim().equals(excelData.Uom)) { option.click(); break; }
+			 * 
+			 * }
+			 * 
+			 * }
+			 */
 
 			// Qoh Calculation:-
 			System.out.println("*** Grand Total Calculation With QOH ***");
@@ -1067,7 +1064,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 						for (ProductUOM productUom : ProductUOMDetailsList) {
 							if (productUom.ProductUOMtablesize > 0
-				&& productUom.productCode1.equals(productDetails.productName)) {
+									&& productUom.productCode1.equals(productDetails.productName)) {
 
 								for (UOM uomDetails : UomDetailsList) {
 									if (uomDetails.UomCodeValue.equalsIgnoreCase(productUom.SubUOM)) {
@@ -1210,7 +1207,7 @@ public class CreditNotesVoidTest extends BaseClass {
 			Thread.sleep(1000);
 			getProductAmount = driver.findElement(By.id("ItemAmount")).getAttribute("value");
 			double getProductAmountDouble = Double.parseDouble(getProductAmount);
-			System.out.println("Actual Amount: "+getProductAmountDouble);
+			System.out.println("Actual Amount: " + getProductAmountDouble);
 
 			// Add:-
 			Thread.sleep(2000);
@@ -1245,20 +1242,23 @@ public class CreditNotesVoidTest extends BaseClass {
 				Thread.sleep(2000);
 				driver.findElement(By.xpath(
 						"//strong[contains(text(),'" + excelData.ProductName + "')]//following::button[text()='Add']"))
-				.click();
+						.click();
 
 				Thread.sleep(2000);
 				click(cn.Qty);
 
 			}
 
-			/*	WebElement productamount = wait.until(ExpectedConditions.presenceOfElementLocated(
-					By.xpath("//table[@id='CreditNoteTable']//tbody//tr//td[2]//div//textarea[contains(text(),'"
-							+ excelData.ProductName + "')]//following::td[@id='totaldetailamount']")));
-			getProductAmount = productamount.getAttribute("data-value");
-
-			double getProductAmountDouble = Double.parseDouble(getProductAmount);
-			System.out.println("Actual Discount Amount is: " + getProductAmountDouble);*/
+			/*
+			 * WebElement productamount =
+			 * wait.until(ExpectedConditions.presenceOfElementLocated( By.xpath(
+			 * "//table[@id='CreditNoteTable']//tbody//tr//td[2]//div//textarea[contains(text(),'"
+			 * + excelData.ProductName + "')]//following::td[@id='totaldetailamount']")));
+			 * getProductAmount = productamount.getAttribute("data-value");
+			 * 
+			 * double getProductAmountDouble = Double.parseDouble(getProductAmount);
+			 * System.out.println("Actual Discount Amount is: " + getProductAmountDouble);
+			 */
 
 			ExpSubTotal = ExpSubTotal + getProductAmountDouble;
 
@@ -1268,8 +1268,8 @@ public class CreditNotesVoidTest extends BaseClass {
 
 			}
 			Thread.sleep(4000);
-			//js.executeScript("window.scrollBy(0, -500);");
-			//click(cn.Qty);
+			// js.executeScript("window.scrollBy(0, -500);");
+			// click(cn.Qty);
 
 		} // Excel data list loop
 
@@ -1302,8 +1302,9 @@ public class CreditNotesVoidTest extends BaseClass {
 		System.out.println();
 
 		System.out.println("*** Sub Total Calculation ***");
-		String getSubtotalString = driver.findElement(By.xpath
-				("//table[@id='CreditNoteTable']//tfoot//tr//td//input[@id='order']")).getAttribute("value");
+		String getSubtotalString = driver
+				.findElement(By.xpath("//table[@id='CreditNoteTable']//tfoot//tr//td//input[@id='order']"))
+				.getAttribute("value");
 		double getSubtotalDouble = Double.parseDouble(getSubtotalString);
 		System.out.println("Actual Subtotal is: " + getSubtotalDouble);
 		System.out.println("Expected SubTotal is: " + ExpSubTotal);
@@ -1792,7 +1793,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 	}
 
-	//@Ignore
+	// @Ignore
 	@Test(priority = 40, dependsOnMethods = "ERPLoginPage")
 	private void quit() throws InterruptedException {
 		driver.quit();

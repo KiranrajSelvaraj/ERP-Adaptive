@@ -957,18 +957,33 @@ public class CreditNotesVoidTest extends BaseClass {
 			click(cn.Price);
 			System.out.println(i);
 			Thread.sleep(3000);
+			
+WebElement findElement = driver.findElement(By.xpath("//select[@id='ProductId']"));
+Select select=new Select(findElement);
+for (WebElement option : select.getOptions()) {
+	System.out.println("option: "+option.getText());
+	System.out.println("excelData.ProductCode: "+excelData.ProductCode);
+    if (option.getText().contains(excelData.ProductCode)) {
+    	System.out.println("%");
+        option.click();
+        break;
+    }
+}
 
-			clear(driver.findElement(By.xpath("(//span[@id='select2-ProductId-container'])[1]")));
-			Thread.sleep(1000);
-			WebElement Product = driver.findElement(By.xpath("(//span[@id='select2-ProductId-container'])[1]"));
-			Thread.sleep(1000);
-			Product.click();
-
-			WebElement productSearch = driver.findElement(By.xpath("(//input[@type='search'])[1]"));
-			System.out.println(excelData.ProductCode);
-			clear(productSearch);
-			Sendkeys(productSearch, excelData.ProductCode + Keys.ENTER);
-			Thread.sleep(2000);
+			
+			/*
+			 * Thread.sleep(1000); WebElement Product =
+			 * driver.findElement(By.xpath("(//span[@id='select2-ProductId-container'])[1]")
+			 * ); Thread.sleep(1000);
+			 * 
+			 * Product.click();
+			 * 
+			 * WebElement productSearch =
+			 * driver.findElement(By.xpath("(//input[@type='search'])[1]"));
+			 * System.out.println(excelData.ProductCode); clear(productSearch);
+			 * Sendkeys(productSearch, excelData.ProductCode + Keys.ENTER);
+			 * Thread.sleep(2000);
+			 */
 
 			click(cn.Qty);
 			if (excelData.Type.equalsIgnoreCase("Product")) {

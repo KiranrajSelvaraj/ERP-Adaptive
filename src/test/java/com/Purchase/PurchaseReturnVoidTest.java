@@ -915,7 +915,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		WebDriverWait wait = new WebDriverWait(driver, 50);
+		//	WebDriverWait wait = new WebDriverWait(driver, 50);
 		Actions action = new Actions(driver);
 
 		PurchaseReturns pr = new PurchaseReturns(driver);
@@ -1184,9 +1184,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 					double discPercentDouble = Double.parseDouble(excelData.DiscountPercentage);
 					double expectedProductAmount = priceDouble * excelQtyDouble;
 					expectedDiscountPercentage = expectedProductAmount * discPercentDouble / 100;
-
 					expectedDiscountPercentage = (expectedProductAmount - expectedDiscountPercentage);
-
 					Total = expectedDiscountPercentage - Total;
 					System.out.println("Discount Percentage Amount Total: " + Total);
 
@@ -1195,20 +1193,14 @@ public class PurchaseReturnVoidTest extends BaseClass {
 					double discAmtDouble1 = Double.parseDouble(excelData.DiscountAmount);
 					double excelPriceDouble = Double.parseDouble(excelData.Price);
 					double discountAmount = (excelPriceDouble * excelQtyDouble);
-
 					expectedDiscountAmount = (discountAmount - discAmtDouble1);
-
 					Total = expectedDiscountAmount - Total;
 					System.out.println("Discount Amount Total: " + Total);
-
 				}
-
 			}
-
 			// Add Button:-
 			click(pr.Add);
 			Thread.sleep(2000);
-			System.out.println();
 
 			// Batch Details:-
 			if (excelData.BatchProduct.equalsIgnoreCase("true")) {
@@ -1219,12 +1211,11 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				System.out.println("Total Qty: " + totalQty);
 				Thread.sleep(1000);
 
-				/*
-				 * WebElement batchNo = driver.findElement(By.xpath
-				 * ("(//div//strong[contains(text(),'"+excelData.ProductName+
-				 * "')]//following::input[@id='BatchNumber'])[1]")); batchNo.click();
-				 * batchNo.sendKeys(excelData.BatchNo +Keys.ENTER); Thread.sleep(1000);
-				 */
+				/*	WebElement batchNo = driver.findElement(By.xpath
+						("(//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::input[@id='BatchNumber'])[1]"));					  
+				batchNo.click();
+				batchNo.sendKeys(excelData.BatchNo +Keys.ENTER); */
+				Thread.sleep(1000);
 
 				WebElement totalQtyField = driver.findElement(By.xpath("(//div//strong[contains(text(),'"
 						+ excelData.ProductName + "')]//following::input[@id='Qty'])[1]"));
@@ -1232,16 +1223,6 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				totalQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 				totalQtyField.sendKeys(totalQty);
 				Thread.sleep(1000);
-
-				// Screen shot to the batch details:-
-				/*		DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-				LocalDateTime now111 = LocalDateTime.now();
-				String timestamp1 = dtf1.format(now111).replace(":", ";").replace("/", "-");
-				TakesScreenshot ts1 = (TakesScreenshot) driver;
-				File s11 = ts1.getScreenshotAs(OutputType.FILE);
-				File s21 = new File("C:\\Adaptive\\Automation\\Payroll\\Login Error\\" + " PurchaseReturn Errors "
-						+ timestamp1 + ".png");
-				FileUtils.copyFile(s11, s21); */
 
 				WebElement batchAdd = driver.findElement(By.xpath("(//div//strong[contains(text(),'"
 						+ excelData.ProductName + "')]//following::button[text()='Add'])[1]"));
@@ -1251,19 +1232,14 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			}
 
 			Thread.sleep(4000);
-
-			System.out.println("Expected Discount Amount: " + Total);
-
-			WebElement productprice = driver.findElement(
+			productPrice = driver.findElement(
 					By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr//td[2]//div//textarea[contains(text(),'"
-							+ excelData.ProductName + "')]//following::td[7][@class='DetailTotal']"));
-			js.executeScript("arguments[0].scrollIntoView(true);", productprice);
-
-			productPrice = productprice.getText();
+							+ excelData.ProductName + "')]//following::td[@class='DetailTotal']")).getText();
+			//	js.executeScript("arguments[0].scrollIntoView(true);", productprice);
 			String replaceAllProductPrice = productPrice.replaceAll(",", "");
 			double productPriceDouble = Double.parseDouble(replaceAllProductPrice);
 			System.out.println("Actual Discount Amount: " + productPriceDouble);
-
+			System.out.println("Expected Discount Amount: " + Total);
 			System.out.println();
 
 			soft.assertEquals(productPriceDouble, Total,
@@ -1275,7 +1251,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 				ExpZeroGstProductamount = Double.parseDouble(replaceAllProductPrice) + ExpZeroGstProductamount;
 				System.out.println("ExpZeroGstProductamount: " + ExpZeroGstProductamount);
 			}
-			
+
 			action.moveToElement(pr.Qty).click().perform();
 
 		} // Excel data loop
@@ -1313,7 +1289,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		System.out.println("*** Sub Total Calculation ***");
 		String subTotalAmountString = driver
 				.findElement(
-						By.xpath("//table[@id='PurchaseReturnTable']//tfoot//tr[1]//td[11]//p[@id='FooterSubTotal']"))
+						By.xpath("//table[@id='PurchaseReturnTable']//tfoot//tr//td//p[@id='FooterSubTotal']"))
 				.getText();
 		String replaceAllSubTotalAmountString = subTotalAmountString.replaceAll(",", "");
 		double subTotalAmountDouble = Double.parseDouble(replaceAllSubTotalAmountString);
@@ -1403,7 +1379,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		}
 
 		String ActualGstAmount = driver
-				.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tfoot//tr[6]//td[11]//p[@id='FooterGST']"))
+				.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tfoot//tr//td//p[@id='FooterGST']"))
 				.getText();
 		System.out.println("Actual Gst Amount is: " + ActualGstAmount);
 
@@ -1429,7 +1405,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 		System.out.println("*** Grand Total Amount ***");
 
 		String finalTotalAmount = driver
-				.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tfoot//tr[8]//td[11]//p[@id='FCAmount']"))
+				.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tfoot//tr//td//p[@id='FCAmount']"))
 				.getText();
 		String replaceAllFinalTotalAmount = finalTotalAmount.replaceAll(",", "");
 		double finalTotalAmountDouble = Double.parseDouble(replaceAllFinalTotalAmount);
@@ -1888,6 +1864,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 	}
 
+	@Ignore
 	@Test(priority = 46, dependsOnMethods = "ERPLoginPage")
 	private void quit() throws InterruptedException {
 		driver.quit();

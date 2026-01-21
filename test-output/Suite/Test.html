@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>9/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>25/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Jan 21 10:58:51 IST 2026</td>
+<td>Started on:</td><td>Wed Jan 21 12:27:54 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>360 seconds (360622 ms)</td>
+<tr><td>Total time:</td><td>1555 seconds (1555665 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,115 +76,80 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.GoodReceivingNote()'><b>GoodReceivingNote</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: (//table[@id=&apos;GoodsReceivingTable&apos;]//tbody//tr//td[normalize-space()=&apos;GRN-0058&apos;]//following::td//a[@title=&apos;Details&apos;])[1] (tried for 30 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at com.Purchase.PurchaseGRNTest.GoodReceivingNote(PurchaseGRNTest.java:1548)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//table[@id=&apos;GoodsReceivingTable&apos;]//tbody//tr//td[normalize-space()=&apos;GRN-0058&apos;]//following::td//a[@title=&apos;Details&apos;])[1]&quot;}
-  (Session info: chrome=143.0.7499.170)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.35&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49407}, goog:processID: 17200, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 2552ff632b247d814128de1e38c49864
-*** Element info: {Using=xpath, value=(//table[@id=&apos;GoodsReceivingTable&apos;]//tbody//tr//td[normalize-space()=&apos;GRN-0058&apos;]//following::td//a[@title=&apos;Details&apos;])[1]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
-	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 16 more
-... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1213546406", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1213546406'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: (//table[@id=&apos;GoodsReceivingTable&apos;]//tbody//tr//td[normalize-space()=&apos;GRN-0058&apos;]//following::td//a[@title=&apos;Details&apos;])[1] (tried for 30 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at com.Purchase.PurchaseGRNTest.GoodReceivingNote(PurchaseGRNTest.java:1548)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//table[@id=&apos;GoodsReceivingTable&apos;]//tbody//tr//td[normalize-space()=&apos;GRN-0058&apos;]//following::td//a[@title=&apos;Details&apos;])[1]&quot;}
-  (Session info: chrome=143.0.7499.170)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.35&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49407}, goog:processID: 17200, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 2552ff632b247d814128de1e38c49864
-*** Element info: {Using=xpath, value=(//table[@id=&apos;GoodsReceivingTable&apos;]//tbody//tr//td[normalize-space()=&apos;GRN-0058&apos;]//following::td//a[@title=&apos;Details&apos;])[1]}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
-	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 16 more
-</pre></div></td>
-<td>62</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
 <td title='com.Purchase.PurchaseGRNTest.Exception()'><b>Exception</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
 <td><div><pre>java.lang.AssertionError: The following asserts failed:
-	Actual and Expected Discount Amount Mismatched for white Chilli Powder expected [49.0] but found [59.0],
-	Actual and Expected Discount Amount Mismatched for Thooyamalli Rice expected [75.0] but found [85.0],
-	Actual and Expected Discount Amount Mismatched for Medium Roast Coffee Powder expected [186.0] but found [196.0],
-	Actual and Expected Discount Amount Mismatched for Araku Valley Coffee expected [230.0] but found [240.0],
-	Actual and Expected Discount Amount Mismatched for Toor Dal expected [120.0] but found [130.0],
-	Actual and Expected Discount Amount Mismatched for Soy Sauce expected [294.0] but found [304.0],
-	Actual and Expected SubTotal Mismatched expected [1014.0] but found [954.0],
-	Actual and Expected Gst Amount Mismatched expected [70.01] but found [70.82],
-	Actual and Expected Grand Total Mismatched expected [847.92] but found [924.82]
+	Actual and Expected QOH Mismatched for Product: Red Rice expected [0 B/29 L] but found [2 B/9 L],
+	Actual and Expected Discount Amount Mismatched for Red Rice expected [70.0] but found [80.0],
+	Actual and Expected QOH Mismatched for Product: Steam Rice expected [0 B/30 L] but found [3 B/0 L],
+	Actual and Expected Discount Amount Mismatched for Steam Rice expected [71.0] but found [81.0],
+	Actual and Expected QOH Mismatched for Product: Biryani Rice (Long Grain) expected [0 B/30 L] but found [3 B/0 L],
+	Actual and Expected Discount Amount Mismatched for Biryani Rice (Long Grain) expected [72.0] but found [82.0],
+	Actual and Expected QOH Mismatched for Product: Mapillai Samba expected [0 B/30 L] but found [3 B/0 L],
+	Actual and Expected Discount Amount Mismatched for Mapillai Samba expected [73.0] but found [83.0],
+	Actual and Expected QOH Mismatched for Product: Kitchili Samba expected [0 B/30 L] but found [3 B/0 L],
+	Actual and Expected Discount Amount Mismatched for Kitchili Samba expected [74.0] but found [84.0],
+	Actual and Expected Discount Amount Mismatched for Continental Coffee expected [104.0] but found [114.0],
+	Actual and Expected Discount Amount Mismatched for Classic Coffee expected [105.0] but found [115.0],
+	Actual and Expected Discount Amount Mismatched for The Indian Bean expected [106.0] but found [116.0],
+	Actual and Expected Discount Amount Mismatched for Third Wave Coffee Roasters expected [107.0] but found [117.0],
+	Actual and Expected Discount Amount Mismatched for Coorg Coffee expected [108.0] but found [118.0],
+	Actual and Expected Discount Amount Mismatched for Oats expected [137.0] but found [147.0],
+	Actual and Expected Discount Amount Mismatched for Cornflakes expected [138.0] but found [148.0],
+	Actual and Expected Discount Amount Mismatched for Dosa Mix expected [139.0] but found [149.0],
+	Actual and Expected Discount Amount Mismatched for Idli Mix expected [140.0] but found [150.0],
+	Actual and Expected Discount Amount Mismatched for Tomato Ketchup expected [141.0] but found [151.0],
+	Actual and Expected SubTotal Mismatched expected [1735.0] but found [1585.0],
+	Actual and Expected Gst Amount Mismatched expected [0.00] but found [108.46],
+	Actual and Expected Grand Total Mismatched expected [1426.50] but found [1534.96],
+	Actual and Expected Product Stock Mismatched for Product Red Rice expected [3 B/0 L] but found [3 B/9 L],
+	Actual and Expected Product Stock Mismatched for Product Steam Rice expected [3 B/1 L] but found [4 B/0 L],
+	Actual and Expected Product Stock Mismatched for Product Biryani Rice (Long Grain) expected [3 B/1 L] but found [4 B/0 L],
+	Actual and Expected Product Stock Mismatched for Product Mapillai Samba expected [3 B/1 L] but found [4 B/0 L],
+	Actual and Expected Product Stock Mismatched for Product Kitchili Samba expected [3 B/1 L] but found [4 B/0 L],
+	Actual and Expected Product Movement Stock Mismatched for Product Red Rice expected [3 B] but found [3 B/9 L],
+	Actual and Expected Product Movement Stock Mismatched for Product Steam Rice expected [3 B/1 L] but found [4 B],
+	Actual and Expected Product Movement Stock Mismatched for Product Biryani Rice (Long Grain) expected [3 B/1 L] but found [4 B],
+	Actual and Expected Product Movement Stock Mismatched for Product Mapillai Samba expected [3 B/1 L] but found [4 B],
+	Actual and Expected Product Movement Stock Mismatched for Product Kitchili Samba expected [3 B/1 L] but found [4 B]
 	at com.Purchase.PurchaseGRNTest.Exception(PurchaseGRNTest.java:1953)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace127339632", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace127339632'><pre>java.lang.AssertionError: The following asserts failed:
-	Actual and Expected Discount Amount Mismatched for white Chilli Powder expected [49.0] but found [59.0],
-	Actual and Expected Discount Amount Mismatched for Thooyamalli Rice expected [75.0] but found [85.0],
-	Actual and Expected Discount Amount Mismatched for Medium Roast Coffee Powder expected [186.0] but found [196.0],
-	Actual and Expected Discount Amount Mismatched for Araku Valley Coffee expected [230.0] but found [240.0],
-	Actual and Expected Discount Amount Mismatched for Toor Dal expected [120.0] but found [130.0],
-	Actual and Expected Discount Amount Mismatched for Soy Sauce expected [294.0] but found [304.0],
-	Actual and Expected SubTotal Mismatched expected [1014.0] but found [954.0],
-	Actual and Expected Gst Amount Mismatched expected [70.01] but found [70.82],
-	Actual and Expected Grand Total Mismatched expected [847.92] but found [924.82]
+... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace163812565", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace163812565'><pre>java.lang.AssertionError: The following asserts failed:
+	Actual and Expected QOH Mismatched for Product: Red Rice expected [0 B/29 L] but found [2 B/9 L],
+	Actual and Expected Discount Amount Mismatched for Red Rice expected [70.0] but found [80.0],
+	Actual and Expected QOH Mismatched for Product: Steam Rice expected [0 B/30 L] but found [3 B/0 L],
+	Actual and Expected Discount Amount Mismatched for Steam Rice expected [71.0] but found [81.0],
+	Actual and Expected QOH Mismatched for Product: Biryani Rice (Long Grain) expected [0 B/30 L] but found [3 B/0 L],
+	Actual and Expected Discount Amount Mismatched for Biryani Rice (Long Grain) expected [72.0] but found [82.0],
+	Actual and Expected QOH Mismatched for Product: Mapillai Samba expected [0 B/30 L] but found [3 B/0 L],
+	Actual and Expected Discount Amount Mismatched for Mapillai Samba expected [73.0] but found [83.0],
+	Actual and Expected QOH Mismatched for Product: Kitchili Samba expected [0 B/30 L] but found [3 B/0 L],
+	Actual and Expected Discount Amount Mismatched for Kitchili Samba expected [74.0] but found [84.0],
+	Actual and Expected Discount Amount Mismatched for Continental Coffee expected [104.0] but found [114.0],
+	Actual and Expected Discount Amount Mismatched for Classic Coffee expected [105.0] but found [115.0],
+	Actual and Expected Discount Amount Mismatched for The Indian Bean expected [106.0] but found [116.0],
+	Actual and Expected Discount Amount Mismatched for Third Wave Coffee Roasters expected [107.0] but found [117.0],
+	Actual and Expected Discount Amount Mismatched for Coorg Coffee expected [108.0] but found [118.0],
+	Actual and Expected Discount Amount Mismatched for Oats expected [137.0] but found [147.0],
+	Actual and Expected Discount Amount Mismatched for Cornflakes expected [138.0] but found [148.0],
+	Actual and Expected Discount Amount Mismatched for Dosa Mix expected [139.0] but found [149.0],
+	Actual and Expected Discount Amount Mismatched for Idli Mix expected [140.0] but found [150.0],
+	Actual and Expected Discount Amount Mismatched for Tomato Ketchup expected [141.0] but found [151.0],
+	Actual and Expected SubTotal Mismatched expected [1735.0] but found [1585.0],
+	Actual and Expected Gst Amount Mismatched expected [0.00] but found [108.46],
+	Actual and Expected Grand Total Mismatched expected [1426.50] but found [1534.96],
+	Actual and Expected Product Stock Mismatched for Product Red Rice expected [3 B/0 L] but found [3 B/9 L],
+	Actual and Expected Product Stock Mismatched for Product Steam Rice expected [3 B/1 L] but found [4 B/0 L],
+	Actual and Expected Product Stock Mismatched for Product Biryani Rice (Long Grain) expected [3 B/1 L] but found [4 B/0 L],
+	Actual and Expected Product Stock Mismatched for Product Mapillai Samba expected [3 B/1 L] but found [4 B/0 L],
+	Actual and Expected Product Stock Mismatched for Product Kitchili Samba expected [3 B/1 L] but found [4 B/0 L],
+	Actual and Expected Product Movement Stock Mismatched for Product Red Rice expected [3 B] but found [3 B/9 L],
+	Actual and Expected Product Movement Stock Mismatched for Product Steam Rice expected [3 B/1 L] but found [4 B],
+	Actual and Expected Product Movement Stock Mismatched for Product Biryani Rice (Long Grain) expected [3 B/1 L] but found [4 B],
+	Actual and Expected Product Movement Stock Mismatched for Product Mapillai Samba expected [3 B/1 L] but found [4 B],
+	Actual and Expected Product Movement Stock Mismatched for Product Kitchili Samba expected [3 B/1 L] but found [4 B]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
 	at com.Purchase.PurchaseGRNTest.Exception(PurchaseGRNTest.java:1953)
@@ -216,49 +181,129 @@ Session ID: 2552ff632b247d814128de1e38c49864
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
-<td></td>
-<td>15</td>
-<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0304, Soy Sauce, Packets, 2, , , 10, , , , 152, , , , , , , , FALSE, 1</td>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0267, Classic Coffee, 25X25X1GM, 1, , , 10, , , , 115, , , , , , , , FALSE, </td>
 <td></td>
 <td>0</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: V0003, SGD, 1, Exclusive, Product, P0311, white Chilli Powder, 1X10KG, 1, , , 10, , , , 59, , , $, 100, 10, 9, , TRUE, 0</td>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0233, Steam Rice, 1X1X1KG, 1, , , 10, , , , 81, , , , , , , , FALSE, </td>
 <td></td>
 <td>0</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0282, Toor Dal, PCS, 1, , , 10, , , , 130, , , , , , , , TRUE, 0</td>
+<td title='com.Purchase.PurchaseGRNTest.ProductPage()'><b>ProductPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td></td>
+<td>607</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0236, Kitchili Samba, 1X1X1KG, 1, , , 10, , , , 84, , , , , , , , FALSE, </td>
 <td></td>
 <td>0</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.PurchaseOrderToInvoice()'><b>PurchaseOrderToInvoice</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0303, Tomato Ketchup, Packets, 1, , , 10, , , , 151, , , , , , , , FALSE, </td>
 <td></td>
-<td>165</td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0302, Idli Mix, Packets, 1, , , 10, , , , 150, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: V0001, SGD, 1, Exclusive, Product, P0232, Red Rice, 1X1X1KG, 1, , , 10, , , , 80, , , %, 100, 10, 0, , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0299, Oats, Packets, 1, , , 10, , , , 147, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
 <tr>
 <td title='com.Purchase.PurchaseGRNTest.SystemSettingsPage()'><b>SystemSettingsPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
 <td></td>
-<td>116</td>
+<td>113</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0250, Medium Roast Coffee Powder, 25X25X1GM, 2, , , 10, , , , 98, , , , , , , , TRUE, 1</td>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0266, Continental Coffee, 25X25X1GM, 1, , , 10, , , , 114, , , , , , , , FALSE, </td>
 <td></td>
 <td>0</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0237, Thooyamalli Rice, 1X1X1KG, 1, , , 10, , , , 85, , , , , , , TRUE, FALSE, 0</td>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0301, Dosa Mix, Packets, 1, , , 10, , , , 149, , , , , , , , FALSE, </td>
 <td></td>
 <td>0</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0272, Araku Valley Coffee, 25X25X1GM, 2, , , 10, , , , 120, , , , , , , , FALSE, 1</td>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0270, Coorg Coffee, 25X25X1GM, 1, , , 10, , , , 118, , , , , , , TRUE, FALSE, </td>
 <td></td>
 <td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0269, Third Wave Coffee Roasters, 25X25X1GM, 1, , , 10, , , , 117, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0268, The Indian Bean, 25X25X1GM, 1, , , 10, , , , 116, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GoodReceivingNote()'><b>GoodReceivingNote</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td></td>
+<td>82</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.UomPage()'><b>UomPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td></td>
+<td>26</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0234, Biryani Rice (Long Grain), 1X1X1KG, 1, , , 10, , , , 82, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.VendorPage()'><b>VendorPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td></td>
+<td>26</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.PurchaseOrderToInvoice()'><b>PurchaseOrderToInvoice</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td></td>
+<td>392</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0235, Mapillai Samba, 1X1X1KG, 1, , , 10, , , , 83, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td></td>
+<td>17</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.ExpectedProduct()'><b>ExpectedProduct</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td></td>
+<td>180</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: , , , , Product, P0300, Cornflakes, Packets, 1, , , 10, , , , 148, , , , , , , TRUE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.StockCalculation()'><b>StockCalculation</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td></td>
+<td>0</td>
+<td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
+<tr>
+<td title='com.Purchase.PurchaseGRNTest.ProductMovementPage()'><b>ProductMovementPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td></td>
+<td>107</td>
 <td>com.Purchase.PurchaseGRNTest@d86a6f</td></tr>
 </table><p>
 </body>

@@ -8,7 +8,6 @@
         <methods>
           <include name="ERPLoginPage"/>
           <include name="Exception"/>
-          <include name="GoodReceivingNote"/>
         </methods>
       </class> <!-- com.Purchase.PurchaseGRNTest -->
     </classes>

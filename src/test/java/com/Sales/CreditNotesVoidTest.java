@@ -1645,8 +1645,6 @@ public class CreditNotesVoidTest extends BaseClass {
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 
-		driver.navigate().back();
-		driver.navigate().refresh();
 		Thread.sleep(2000);
 		driver.navigate().to(url + "SalesPurchases/Product");
 		Thread.sleep(7000);

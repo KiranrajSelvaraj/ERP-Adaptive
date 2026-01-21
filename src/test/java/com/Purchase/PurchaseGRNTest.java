@@ -95,7 +95,7 @@ public class PurchaseGRNTest extends BaseClass {
 
 	@DataProvider
 	public Object[][] Util2() {
-		Object[][] data = Util1.getTestData("C:\\Adaptive\\ERP\\PurchaseOrder7.xlsx", "Sheet1");
+		Object[][] data = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\PurchaseGRN.xlsx", "Sheet1");
 		return data;
 
 	}
@@ -539,7 +539,7 @@ public class PurchaseGRNTest extends BaseClass {
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -757,7 +757,7 @@ public class PurchaseGRNTest extends BaseClass {
 	}
 
 	ArrayList<Vendor> vendorDetailsList = new ArrayList<>();
-	@Ignore
+	//@Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
 	public void VendorPage() throws InterruptedException {
 
@@ -836,7 +836,7 @@ public class PurchaseGRNTest extends BaseClass {
 	}
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
-	@Ignore
+	//@Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
@@ -1241,21 +1241,19 @@ public class PurchaseGRNTest extends BaseClass {
 				}
 			}
 			
-			productPrice = driver.findElement(By.id("PurchaseOrderDetailTotal")).getAttribute("value");
-			String replaceAllProductPrice = productPrice.replaceAll(",", "");
-			double productPriceDouble = Double.parseDouble(replaceAllProductPrice);
-			System.out.println("Actual Discount Amount: "+productPriceDouble);
-			System.out.println("Expected Discount Amount: "+expectedDiscountAmount);
-			System.out.println();	
-
 			//Add Button:-
 			click(po.AddButton);
 			Thread.sleep(2000);
 			js.executeScript("arguments[0].click();", po.Quantity);
 			System.out.println();
 
-		/*	productPrice = driver.findElement(By.xpath("//table[@id='PurchaseOrderTable']//tbody//tr//td[2]"
-					+ "//div//textarea[contains(text(),'"+excelData.ProductName+"')]//following::td[@class='orderTotal']")).getText(); */
+			productPrice = driver.findElement(By.xpath("//table[@id='PurchaseOrderTable']//tbody//tr//td[2]"
+					+ "//div//textarea[contains(text(),'"+excelData.ProductName+"')]//following::td[@class='orderTotal']")).getText();
+			String replaceAllProductPrice = productPrice.replaceAll(",", "");
+			double productPriceDouble = Double.parseDouble(replaceAllProductPrice);
+			System.out.println("Actual Discount Amount: "+productPriceDouble);
+			System.out.println("Expected Discount Amount: "+expectedDiscountAmount);
+			System.out.println();	
 			
 			soft.assertEquals(productPriceDouble, expectedDiscountAmount, 
 					"Actual and Expected Discount Amount Mismatched for "+excelData.ProductName);
@@ -1510,7 +1508,7 @@ public class PurchaseGRNTest extends BaseClass {
 		String getGrnNo = "";
 
 		Thread.sleep(5000);
-		System.out.println(PurchaseOrderNo);
+	//	System.out.println(PurchaseOrderNo);
 		WebElement findElement = driver.findElement(By.xpath("//input[@id='PONo']"));
 		findElement.sendKeys(PurchaseOrderNo+Keys.ENTER);
 		Thread.sleep(1000);
@@ -1574,7 +1572,7 @@ public class PurchaseGRNTest extends BaseClass {
 
 				String getProductName = driver.findElement(By.xpath("(//table[@id='PurchaseTable']//tbody//tr[@class='productTR'])["+i+"]//td[2]"))
 						.getAttribute("data-value");
-				System.out.println("getProductName: "+getProductName);
+			//	System.out.println("getProductName: "+getProductName);
 
 				if (getProductName.contains(excelData.ProductName)) {
 
@@ -1673,8 +1671,8 @@ public class PurchaseGRNTest extends BaseClass {
 
 		js.executeScript("window.scrollBy(0,700);");
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//button[text()='Save & Close']//following::button[@type='button' and @data-toggle='dropdown'])[1]")).click();
-		driver.findElement(By.xpath("//input[@id='Save']")).click();
+	//	driver.findElement(By.xpath("(//button[text()='Save & Close']//following::button[@type='button' and @data-toggle='dropdown'])[1]")).click();
+		driver.findElement(By.xpath("//button[@id='Create' and @value='Save & Close']")).click();
 		try {
 
 			String alertText = driver.findElement(By.id("popup_message")).getText();
@@ -1704,7 +1702,7 @@ public class PurchaseGRNTest extends BaseClass {
 	}
 
 	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
-	@Ignore
+	//@Ignore
 	@Test(priority = 22, dependsOnMethods = "ERPLoginPage")
 	public void StockCalculation() {
 
@@ -1821,7 +1819,7 @@ public class PurchaseGRNTest extends BaseClass {
 
 	} // Method loop
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 24, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 
@@ -1879,7 +1877,7 @@ public class PurchaseGRNTest extends BaseClass {
 		System.out.println();
 	}
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 24, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 

@@ -1293,7 +1293,7 @@ public class CreditNotesVoidTest extends BaseClass {
 			cn.OverAllDiscount.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			Sendkeys(cn.OverAllDiscount, getExcelOverAllDiscountPercentage + Keys.ENTER);
 			Thread.sleep(1000);
-			click(cn.Qty);
+			js.executeScript("arguments[0].click();", cn.Qty);
 
 		} else {
 			System.out.println("No Over All Discount Amount and Percentage");

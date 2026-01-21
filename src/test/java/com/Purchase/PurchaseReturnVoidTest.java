@@ -962,7 +962,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			}
 
 
-			if (excelData.Type.equalsIgnoreCase("Product")) {
+		/*	if (excelData.Type.equalsIgnoreCase("Product")) {
 
 				String productCheckbox = driver.findElement(By.id("ProductCheck")).getAttribute("checked"); 
 				if(!productCheckbox.equalsIgnoreCase("true")) {
@@ -986,11 +986,28 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
 				action.moveToElement(pr.ChooseProduct).click().perform();
-
 				WebElement findElement2 = driver.findElement(By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search'][1]"));
 				findElement2.sendKeys(excelData.ProductCode + Keys.ENTER);
 
-			}
+			} */
+			
+			js.executeScript("window.scrollBy(0, 1000)", "");
+			click(pr.Qty);
+			Thread.sleep(1000);
+			click(pr.Price);
+			System.out.println(i);
+			Thread.sleep(3000);
+
+			WebElement findElement = driver.findElement(By.xpath("//select[@id='ProductId']"));
+			Select select=new Select(findElement);
+			for (WebElement option : select.getOptions()) {
+
+				if (option.getText().contains(excelData.ProductCode)) {
+					System.out.println("%");
+					option.click();
+					break;
+				}
+			}			
 
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 				click(pr.Qty);
@@ -1004,9 +1021,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 						option.click();
 						break;
 					}
-
 				}
-
 			}
 
 			// Qoh Calculation:-

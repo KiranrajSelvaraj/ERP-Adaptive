@@ -95,7 +95,7 @@ public class PurchaseGRNTest extends BaseClass {
 
 	@DataProvider
 	public Object[][] Util2() {
-		Object[][] data = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\PurchaseGRN.xlsx", "Sheet1");
+		Object[][] data = Util1.getTestData("C:\\Adaptive\\ERP\\PurchaseOrder7.xlsx", "Sheet1");
 		return data;
 
 	}
@@ -359,8 +359,8 @@ public class PurchaseGRNTest extends BaseClass {
 		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		String DecimalCalculationForPurchaseString = driver
-				.findElement(By.xpath("//input[@id='DecimalValue']")).getAttribute("value");
-		DecimalCalculationForPurchase = Float.parseFloat(DecimalCalculationForPurchaseString);
+				.findElement(By.xpath("//input[@id='DecimalValue']")).getAttribute("value").trim();
+		DecimalCalculationForPurchase = Float.parseFloat(DecimalCalculationForPurchaseString.trim());
 		System.out.println("DecimalCalculationForPurchase: "+DecimalCalculationForPurchase);
 		click(ss.Back);
 
@@ -539,7 +539,7 @@ public class PurchaseGRNTest extends BaseClass {
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -757,7 +757,7 @@ public class PurchaseGRNTest extends BaseClass {
 	}
 
 	ArrayList<Vendor> vendorDetailsList = new ArrayList<>();
-	//@Ignore
+	@Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
 	public void VendorPage() throws InterruptedException {
 
@@ -836,7 +836,7 @@ public class PurchaseGRNTest extends BaseClass {
 	}
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
-	//@Ignore
+	@Ignore
 	@Test(priority = 16, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
@@ -1545,7 +1545,7 @@ public class PurchaseGRNTest extends BaseClass {
 		click(grn.AlertOK);
 
 		Thread.sleep(3000);
-		WebElement details1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath
+		WebElement details1 = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath
 				("(//table[@id='GoodsReceivingTable']//tbody//tr//td[normalize-space()='"+getGrnNo+"']//following::td//a[@title='Details'])[1]")));
 		js.executeScript("arguments[0].click();", details1);
 
@@ -1704,7 +1704,7 @@ public class PurchaseGRNTest extends BaseClass {
 	}
 
 	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
-	//@Ignore
+	@Ignore
 	@Test(priority = 22, dependsOnMethods = "ERPLoginPage")
 	public void StockCalculation() {
 
@@ -1821,7 +1821,7 @@ public class PurchaseGRNTest extends BaseClass {
 
 	} // Method loop
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 24, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 
@@ -1879,7 +1879,7 @@ public class PurchaseGRNTest extends BaseClass {
 		System.out.println();
 	}
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 24, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 

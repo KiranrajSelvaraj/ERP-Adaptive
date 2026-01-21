@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="17" passed="16" failed="0" skipped="0">
+<testng-results ignored="7" total="18" passed="9" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-21T09:25:34 IST" name="Suite" finished-at="2026-01-21T09:40:21 IST" duration-ms="886591">
+  <suite started-at="2026-01-21T10:58:51 IST" name="Suite" finished-at="2026-01-21T11:04:51 IST" duration-ms="360622">
     <groups>
     </groups>
-    <test started-at="2026-01-21T09:25:34 IST" name="Test" finished-at="2026-01-21T09:40:21 IST" duration-ms="886591">
-      <class name="com.Purchase.PurchaseOrderTest">
-        <test-method signature="ERPLoginPage()[pri:1, instance:com.Purchase.PurchaseOrderTest@4145bad8]" started-at="2026-01-21T09:25:34 IST" name="ERPLoginPage" finished-at="2026-01-21T09:25:48 IST" duration-ms="14314" status="PASS">
+    <test started-at="2026-01-21T10:58:51 IST" name="Test" finished-at="2026-01-21T11:04:51 IST" duration-ms="360622">
+      <class name="com.Purchase.PurchaseGRNTest">
+        <test-method signature="ERPLoginPage()[pri:1, instance:com.Purchase.PurchaseGRNTest@d86a6f]" started-at="2026-01-21T10:58:51 IST" name="ERPLoginPage" finished-at="2026-01-21T10:59:06 IST" duration-ms="15360" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ERPLoginPage -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@4145bad8]" started-at="2026-01-21T09:25:50 IST" name="GetData" data-provider="Util2" finished-at="2026-01-21T09:25:50 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="7" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseGRNTest@d86a6f]" started-at="2026-01-21T10:59:07 IST" name="GetData" data-provider="Util2" finished-at="2026-01-21T10:59:07 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -142,7 +142,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@4145bad8]" started-at="2026-01-21T09:25:50 IST" name="GetData" data-provider="Util2" finished-at="2026-01-21T09:25:50 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="8" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseGRNTest@d86a6f]" started-at="2026-01-21T10:59:07 IST" name="GetData" data-provider="Util2" finished-at="2026-01-21T10:59:07 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="4" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -273,7 +273,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@4145bad8]" started-at="2026-01-21T09:25:50 IST" name="GetData" data-provider="Util2" finished-at="2026-01-21T09:25:50 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="4" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseGRNTest@d86a6f]" started-at="2026-01-21T10:59:07 IST" name="GetData" data-provider="Util2" finished-at="2026-01-21T10:59:07 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="4" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -404,7 +404,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@4145bad8]" started-at="2026-01-21T09:25:50 IST" name="GetData" data-provider="Util2" finished-at="2026-01-21T09:25:50 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="5" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseGRNTest@d86a6f]" started-at="2026-01-21T10:59:07 IST" name="GetData" data-provider="Util2" finished-at="2026-01-21T10:59:07 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -535,7 +535,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@4145bad8]" started-at="2026-01-21T09:25:50 IST" name="GetData" data-provider="Util2" finished-at="2026-01-21T09:25:50 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="2" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseGRNTest@d86a6f]" started-at="2026-01-21T10:59:07 IST" name="GetData" data-provider="Util2" finished-at="2026-01-21T10:59:07 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -666,7 +666,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseOrderTest@4145bad8]" started-at="2026-01-21T09:25:50 IST" name="GetData" data-provider="Util2" finished-at="2026-01-21T09:25:50 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="20" status="PASS">
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Purchase.PurchaseGRNTest@d86a6f]" started-at="2026-01-21T10:59:07 IST" name="GetData" data-provider="Util2" finished-at="2026-01-21T10:59:07 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -797,43 +797,123 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetData -->
-        <test-method signature="SystemSettingsPage()[pri:10, instance:com.Purchase.PurchaseOrderTest@4145bad8]" started-at="2026-01-21T09:25:50 IST" name="SystemSettingsPage" finished-at="2026-01-21T09:27:50 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="120697" status="PASS">
+        <test-method signature="SystemSettingsPage()[pri:10, instance:com.Purchase.PurchaseGRNTest@d86a6f]" started-at="2026-01-21T10:59:07 IST" name="SystemSettingsPage" finished-at="2026-01-21T11:01:03 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="116015" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SystemSettingsPage -->
-        <test-method signature="ProductPage()[pri:12, instance:com.Purchase.PurchaseOrderTest@4145bad8]" started-at="2026-01-21T09:27:50 IST" name="ProductPage" finished-at="2026-01-21T09:31:53 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="242098" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ProductPage -->
-        <test-method signature="VendorPage()[pri:14, instance:com.Purchase.PurchaseOrderTest@4145bad8]" started-at="2026-01-21T09:31:53 IST" name="VendorPage" finished-at="2026-01-21T09:32:16 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="23792" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VendorPage -->
-        <test-method signature="UomPage()[pri:16, instance:com.Purchase.PurchaseOrderTest@4145bad8]" started-at="2026-01-21T09:32:16 IST" name="UomPage" finished-at="2026-01-21T09:32:50 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="33718" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- UomPage -->
-        <test-method signature="PurchaseOrderToInvoice()[pri:18, instance:com.Purchase.PurchaseOrderTest@4145bad8]" started-at="2026-01-21T09:32:50 IST" name="PurchaseOrderToInvoice" finished-at="2026-01-21T09:38:04 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="313541" status="PASS">
+        <test-method signature="PurchaseOrderToInvoice()[pri:18, instance:com.Purchase.PurchaseGRNTest@d86a6f]" started-at="2026-01-21T11:01:03 IST" name="PurchaseOrderToInvoice" finished-at="2026-01-21T11:03:49 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="165741" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PurchaseOrderToInvoice -->
-        <test-method signature="StockCalculation()[pri:20, instance:com.Purchase.PurchaseOrderTest@4145bad8]" started-at="2026-01-21T09:38:04 IST" name="StockCalculation" finished-at="2026-01-21T09:38:04 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="5" status="PASS">
+        <test-method signature="GoodReceivingNote()[pri:20, instance:com.Purchase.PurchaseGRNTest@d86a6f]" started-at="2026-01-21T11:03:49 IST" name="GoodReceivingNote" finished-at="2026-01-21T11:04:51 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="62051" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for presence of element located by: By.xpath: (//table[@id='GoodsReceivingTable']//tbody//tr//td[normalize-space()='GRN-0058']//following::td//a[@title='Details'])[1] (tried for 30 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: (//table[@id='GoodsReceivingTable']//tbody//tr//td[normalize-space()='GRN-0058']//following::td//a[@title='Details'])[1] (tried for 30 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at com.Purchase.PurchaseGRNTest.GoodReceivingNote(PurchaseGRNTest.java:1548)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//table[@id='GoodsReceivingTable']//tbody//tr//td[normalize-space()='GRN-0058']//following::td//a[@title='Details'])[1]"}
+  (Session info: chrome=143.0.7499.170)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-7QA4B29', ip: '192.168.1.35', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49407}, goog:processID: 17200, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2552ff632b247d814128de1e38c49864
+*** Element info: {Using=xpath, value=(//table[@id='GoodsReceivingTable']//tbody//tr//td[normalize-space()='GRN-0058']//following::td//a[@title='Details'])[1]}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+... 16 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- StockCalculation -->
-        <test-method signature="ExpectedProduct()[pri:22, instance:com.Purchase.PurchaseOrderTest@4145bad8]" started-at="2026-01-21T09:38:04 IST" name="ExpectedProduct" finished-at="2026-01-21T09:39:30 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="86003" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ExpectedProduct -->
-        <test-method signature="ProductMovementPage()[pri:24, instance:com.Purchase.PurchaseOrderTest@4145bad8]" started-at="2026-01-21T09:39:30 IST" name="ProductMovementPage" finished-at="2026-01-21T09:40:21 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="50914" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ProductMovementPage -->
-        <test-method signature="Exception()[pri:45, instance:com.Purchase.PurchaseOrderTest@4145bad8]" started-at="2026-01-21T09:40:21 IST" name="Exception" finished-at="2026-01-21T09:40:21 IST" depends-on-methods="com.Purchase.PurchaseOrderTest.ERPLoginPage" duration-ms="2" status="PASS">
+        </test-method> <!-- GoodReceivingNote -->
+        <test-method signature="Exception()[pri:45, instance:com.Purchase.PurchaseGRNTest@d86a6f]" started-at="2026-01-21T11:04:51 IST" name="Exception" finished-at="2026-01-21T11:04:51 IST" depends-on-methods="com.Purchase.PurchaseGRNTest.ERPLoginPage" duration-ms="2" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+Actual and Expected Discount Amount Mismatched for white Chilli Powder expected [49.0] but found [59.0],
+Actual and Expected Discount Amount Mismatched for Thooyamalli Rice expected [75.0] but found [85.0],
+Actual and Expected Discount Amount Mismatched for Medium Roast Coffee Powder expected [186.0] but found [196.0],
+Actual and Expected Discount Amount Mismatched for Araku Valley Coffee expected [230.0] but found [240.0],
+Actual and Expected Discount Amount Mismatched for Toor Dal expected [120.0] but found [130.0],
+Actual and Expected Discount Amount Mismatched for Soy Sauce expected [294.0] but found [304.0],
+Actual and Expected SubTotal Mismatched expected [1014.0] but found [954.0],
+Actual and Expected Gst Amount Mismatched expected [70.01] but found [70.82],
+Actual and Expected Grand Total Mismatched expected [847.92] but found [924.82]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+Actual and Expected Discount Amount Mismatched for white Chilli Powder expected [49.0] but found [59.0],
+Actual and Expected Discount Amount Mismatched for Thooyamalli Rice expected [75.0] but found [85.0],
+Actual and Expected Discount Amount Mismatched for Medium Roast Coffee Powder expected [186.0] but found [196.0],
+Actual and Expected Discount Amount Mismatched for Araku Valley Coffee expected [230.0] but found [240.0],
+Actual and Expected Discount Amount Mismatched for Toor Dal expected [120.0] but found [130.0],
+Actual and Expected Discount Amount Mismatched for Soy Sauce expected [294.0] but found [304.0],
+Actual and Expected SubTotal Mismatched expected [1014.0] but found [954.0],
+Actual and Expected Gst Amount Mismatched expected [70.01] but found [70.82],
+Actual and Expected Grand Total Mismatched expected [847.92] but found [924.82]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+at com.Purchase.PurchaseGRNTest.Exception(PurchaseGRNTest.java:1953)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Exception -->
-      </class> <!-- com.Purchase.PurchaseOrderTest -->
+      </class> <!-- com.Purchase.PurchaseGRNTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

@@ -1005,7 +1005,7 @@ public class PurchaseGRNTest extends BaseClass {
 
 			}
 
-			js.executeScript("arguments[0].click();", po.Quantity);
+			click(po.Quantity);
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
 				click(po.UOM);
@@ -1244,7 +1244,7 @@ public class PurchaseGRNTest extends BaseClass {
 			//Add Button:-
 			click(po.AddButton);
 			Thread.sleep(2000);
-			js.executeScript("arguments[0].click();", po.Quantity);
+			click(po.Quantity);
 			System.out.println();
 
 			productPrice = driver.findElement(By.xpath("//table[@id='PurchaseOrderTable']//tbody//tr//td[2]"

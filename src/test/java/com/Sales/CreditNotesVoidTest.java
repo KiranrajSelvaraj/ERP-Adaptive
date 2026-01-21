@@ -87,7 +87,7 @@ public class CreditNotesVoidTest extends BaseClass {
 	@DataProvider
 	public Object[][] Util1() {
 
-		Object data[][] = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\CreditNotesVoid.xlsx", "Sheet1");
+		Object data[][] = Util1.getTestData("C:\\Adaptive\\ERP\\CreditNotes.xlsx", "Sheet1");
 		return data;
 
 	}
@@ -1691,14 +1691,11 @@ public class CreditNotesVoidTest extends BaseClass {
 							"Actual and Expected Product Stock Mismatched for Product " + stock.productName);
 
 				}
-
 			} // Stock calculation loop
 
 			js.executeScript("arguments[0].click();", prod.Back);
 			Thread.sleep(2000);
-
 		}
-
 		System.out.println();
 	}
 
@@ -1723,18 +1720,6 @@ public class CreditNotesVoidTest extends BaseClass {
 			productcode.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			productcode.sendKeys(excelData.ProductCode + Keys.ENTER);
 			Thread.sleep(1000);
-
-			/*
-			 * boolean enabledUom =
-			 * driver.findElement(By.xpath("//select[@id='UOM']")).isEnabled();
-			 * System.out.println("enabledUom: "+enabledUom); if (enabledUom == true ) {
-			 * 
-			 * click(pm.UOM); List<WebElement> subUomOption = driver.findElements(By.xpath(
-			 * "//span[@id='select2-UOM-container']//following::input[@type='search']//following::ul//li"
-			 * )); for (WebElement option : subUomOption) { if
-			 * (option.getText().trim().equals(excelData.Uom)) { option.click(); break; } }
-			 * }
-			 */
 
 			js.executeScript("arguments[0].click();", pm.Fetch);
 			Thread.sleep(3000);
@@ -1777,11 +1762,8 @@ public class CreditNotesVoidTest extends BaseClass {
 					}
 					break;
 				}
-
 			} // Stock calculation list loop
-
 		}
-		System.out.println();
 	}
 
 	@Test(priority = 30, dependsOnMethods = "ERPLoginPage")

@@ -112,7 +112,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 	@DataProvider
 	public Object[][] Util1() {
 
-		Object data[][] = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\SalesOrder.xlsx", "SO");
+		Object data[][] = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\SalesOrder.xlsx", "Sheet1");
 		return data;
 
 	}

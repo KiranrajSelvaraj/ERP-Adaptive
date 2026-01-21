@@ -18,7 +18,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -27,14 +26,9 @@ import com.PomClass.GoodReceivingNote;
 import com.PomClass.Login;
 import com.PomClass.Product;
 import com.PomClass.ProductMovement;
-import com.PomClass.PurchaseInvoice;
 import com.PomClass.PurchaseOrder;
 import com.PomClass.SystemSettings;
 import com.PomClass.Vendors;
-import com.Purchase.PurchaseInvoiceVoidTest.ExcelData;
-import com.Purchase.PurchaseInvoiceVoidTest.StockCalculation;
-import com.Purchase.PurchaseInvoiceVoidTest.UOM;
-import com.Purchase.PurchaseInvoiceVoidTest.product;
 import com.Utility.Util1;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -614,7 +608,7 @@ public class PurchaseGRNTest extends BaseClass {
 					.findElement(By.xpath("//dt[normalize-space()='Margin Tolerance %']//following-sibling::dd[1]"));
 			String marginToleranceValue = marginTolerance.getText();
 			System.out.println("Margin Tolerance: " + marginToleranceValue);
-			
+
 			Thread.sleep(2000);
 			WebElement InfoTab = driver.findElement(By.xpath("//a[text()='Info']"));
 			js.executeScript("arguments[0].click();", InfoTab);
@@ -855,7 +849,7 @@ public class PurchaseGRNTest extends BaseClass {
 
 			WebElement uomfield = driver.findElement(By.id("select2-DropDown-container"));
 			uomfield.click();
-		//	js.executeScript("arguments[0].click();", uomfield);
+			//	js.executeScript("arguments[0].click();", uomfield);
 			WebElement UOMSearchField = driver.findElement(
 					By.xpath("//span[@id='select2-DropDown-container']//following::input[@type='search']"));
 			UOMSearchField.sendKeys(uom + Keys.ENTER);
@@ -1240,7 +1234,7 @@ public class PurchaseGRNTest extends BaseClass {
 
 				}
 			}
-			
+
 			//Add Button:-
 			click(po.AddButton);
 			Thread.sleep(2000);
@@ -1254,7 +1248,7 @@ public class PurchaseGRNTest extends BaseClass {
 			System.out.println("Actual Discount Amount: "+productPriceDouble);
 			System.out.println("Expected Discount Amount: "+expectedDiscountAmount);
 			System.out.println();	
-			
+
 			soft.assertEquals(productPriceDouble, expectedDiscountAmount, 
 					"Actual and Expected Discount Amount Mismatched for "+excelData.ProductName);
 
@@ -1508,7 +1502,7 @@ public class PurchaseGRNTest extends BaseClass {
 		String getGrnNo = "";
 
 		Thread.sleep(5000);
-	//	System.out.println(PurchaseOrderNo);
+		//	System.out.println(PurchaseOrderNo);
 		WebElement findElement = driver.findElement(By.xpath("//input[@id='PONo']"));
 		findElement.sendKeys(PurchaseOrderNo+Keys.ENTER);
 		Thread.sleep(1000);
@@ -1572,7 +1566,7 @@ public class PurchaseGRNTest extends BaseClass {
 
 				String getProductName = driver.findElement(By.xpath("(//table[@id='PurchaseTable']//tbody//tr[@class='productTR'])["+i+"]//td[2]"))
 						.getAttribute("data-value");
-			//	System.out.println("getProductName: "+getProductName);
+				//	System.out.println("getProductName: "+getProductName);
 
 				if (getProductName.contains(excelData.ProductName)) {
 
@@ -1671,7 +1665,7 @@ public class PurchaseGRNTest extends BaseClass {
 
 		js.executeScript("window.scrollBy(0,700);");
 		Thread.sleep(3000);
-	//	driver.findElement(By.xpath("(//button[text()='Save & Close']//following::button[@type='button' and @data-toggle='dropdown'])[1]")).click();
+		//	driver.findElement(By.xpath("(//button[text()='Save & Close']//following::button[@type='button' and @data-toggle='dropdown'])[1]")).click();
 		driver.findElement(By.xpath("//button[@id='Create' and @value='Save & Close']")).click();
 		try {
 
@@ -1952,7 +1946,7 @@ public class PurchaseGRNTest extends BaseClass {
 
 	}
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 46, dependsOnMethods = "ERPLoginPage")
 	private void quit() throws InterruptedException {
 		driver.quit();

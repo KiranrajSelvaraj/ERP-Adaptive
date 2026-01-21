@@ -1003,7 +1003,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 			}
 
-			js.executeScript("arguments[0].click();", po.Quantity);
+			click(po.Quantity);
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
 				click(po.UOM);
@@ -1225,8 +1225,6 @@ public class PurchaseOrderTest extends BaseClass {
 					double discPerAmtRound = Math.round(discountPerAmt * 100);
 					double discAmtforPer = discPerAmtRound / 100;
 
-
-
 					Total = Total - discAmtforPer;
 					System.out.println("Discount Percentage Amount Total: "+Total);
 
@@ -1237,40 +1235,31 @@ public class PurchaseOrderTest extends BaseClass {
 					double discountAmount = (excelPriceDouble * excelQtyDouble);
 
 					expectedDiscountAmount = (discountAmount - discAmtDouble1);
-
 					Total = expectedDiscountAmount - Total;
 					System.out.println("Discount Amount Total: "+Total);
 
 				}
 
 			}
-			Thread.sleep(2000);
-			String getTotalAmount = driver.findElement(By.id
-					("PurchaseOrderDetailTotal")).getAttribute("value");
-			String replaceAllProductPrice = getTotalAmount.replaceAll(",", "");
-			double actualDiscountAmount = Double.parseDouble(replaceAllProductPrice);
-			System.out.println("Actual Discout Amount: "+actualDiscountAmount);
-			
-			
-
+			Thread.sleep(2000);			
 			//Add Button:-
 			click(po.AddButton);
 			Thread.sleep(2000);
 			js.executeScript("arguments[0].click();", po.Quantity);
 			System.out.println();
 
-		/*	productPrice = driver.findElement(By.xpath("//table[@id='PurchaseOrderTable']//tbody//tr//td[2]"
-					+ "//div//textarea[contains(text(),'"+excelData.ProductName+"')]//following::td[@class='orderTotal']")).getText(); */
-		//	String replaceAllProductPrice = productPrice.replaceAll(",", "");
-		//	double productPriceDouble = Double.parseDouble(replaceAllProductPrice);
-		//	System.out.println("Actual Discount Amount: "+productPriceDouble);
+			productPrice = driver.findElement(By.xpath("//table[@id='PurchaseOrderTable']//tbody//tr//td[2]"
+					+ "//div//textarea[contains(text(),'"+excelData.ProductName+"')]//following::td[@class='orderTotal']")).getText(); 
+			String replaceAllProductPrice = productPrice.replaceAll(",", "");
+			double productPriceDouble = Double.parseDouble(replaceAllProductPrice);
+			System.out.println("Actual Discount Amount: "+productPriceDouble);
 			System.out.println("Expected Discount Amount: "+expectedDiscountAmount);
 			System.out.println();	
 
-			soft.assertEquals(actualDiscountAmount, expectedDiscountAmount, 
+			soft.assertEquals(productPriceDouble, expectedDiscountAmount, 
 					"Actual and Expected Discount Amount Mismatched for "+excelData.ProductName);
 
-			ExpSubTotal = ExpSubTotal + actualDiscountAmount;
+			ExpSubTotal = ExpSubTotal + productPriceDouble;
 
 			if (excelData.ZeroGst.equals("TRUE")) {
 				ExpZeroGstProductamount = Double.parseDouble(replaceAllProductPrice) + ExpZeroGstProductamount;
@@ -1516,7 +1505,7 @@ public class PurchaseOrderTest extends BaseClass {
 						System.out.println("batch product: "+excelData.ProductName);
 
 						WebElement batchFiles = driver.findElement(By.xpath
-								("(//table[@id='PurchaseTable']//tbody//tr[@class='productTR'])[" + i + "]//td[2]//textarea[contains(text(),'"+excelData.ProductName.trim()+"')]//following::td[8]//a[@id='BatchFolder']"));
+								("(//table[@id='PurchaseTable']//tbody//tr[@class='productTR'])[" + i + "]//td//textarea[contains(text(),'"+excelData.ProductName.trim()+"')]//following::td//a[@id='BatchFolder']"));
 						js.executeScript("arguments[0].click();", batchFiles);
 
 						String totalQty = driver.findElement(By.xpath
@@ -1551,8 +1540,8 @@ public class PurchaseOrderTest extends BaseClass {
 
 			//Purchase Order Data Equals to Invoice:-
 			String getActualProductName = driver.findElement(By.xpath
-					("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[2]"))
-					.getAttribute("data-value");
+					("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td//child::textarea[@id='Description']"))
+					.getText();
 			System.out.println("Actual Product Name: "+getActualProductName);
 
 			if (getActualProductName.contains(excelData.ProductName)) {
@@ -1562,7 +1551,7 @@ public class PurchaseOrderTest extends BaseClass {
 			}
 
 			String getActualQty = driver.findElement(By.xpath
-					("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[3]//input[@id='detailQty']"))
+					("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td//input[@id='detailQty']"))
 					.getAttribute("value");
 			System.out.println("Actual Qty: "+getActualQty);
 
@@ -1572,7 +1561,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 			}
 
-			String getActualFoc = driver.findElement(By.xpath
+			/*	String getActualFoc = driver.findElement(By.xpath
 					("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[4]"))
 					.getAttribute("data-value");
 			System.out.println("Actual Foc: "+getActualFoc);
@@ -1581,11 +1570,11 @@ public class PurchaseOrderTest extends BaseClass {
 
 				System.out.println("Expected Foc: "+excelData.Foc);
 
-			}
+			} */
 
 			String getActualPrice = driver.findElement(By.xpath
-					("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[5]"))
-					.getAttribute("data-value");
+					("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td//child::input[@id='InvoicePrice']"))
+					.getAttribute("value");
 			System.out.println("Actual Price: "+getActualPrice);
 
 			if (getActualPrice.equalsIgnoreCase(excelData.Price)) {
@@ -1595,7 +1584,7 @@ public class PurchaseOrderTest extends BaseClass {
 			}
 
 			String getActualUom = driver.findElement(By.xpath
-					("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[6]//p[@id='uomText']"))
+					("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td//p[@id='uomText']"))
 					.getText();
 			System.out.println("Actual Uom: "+getActualUom);
 
@@ -1606,8 +1595,8 @@ public class PurchaseOrderTest extends BaseClass {
 			}
 
 			String getActualDiscount = driver.findElement(By.xpath
-					("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[8]"))
-					.getAttribute("data-value");
+					("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td//child::input[@id='DiscountAmount']"))
+					.getAttribute("value");
 			System.out.println("Actual Discount Amount: "+getActualDiscount);
 
 			if (getActualDiscount.equalsIgnoreCase(excelData.DiscountAmount)) {
@@ -1617,7 +1606,7 @@ public class PurchaseOrderTest extends BaseClass {
 			}
 
 			String getActualAmount = driver.findElement(By.xpath
-					("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td[9]//p[@id='DetailPurchaseDetailTotal']"))
+					("//table[@id='PurchaseTable']//tbody//tr[@class='productTR']["+(i+1)+"]//td//p[@id='DetailPurchaseDetailTotal']"))
 					.getText();
 			System.out.println("Actual Amount: "+getActualAmount);	
 
@@ -1802,8 +1791,9 @@ public class PurchaseOrderTest extends BaseClass {
 
 						System.out.println("Deleted Product: "+getProductName);					
 						Thread.sleep(3000);
-						WebElement delete = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+i+"]//td[2]//textarea[contains(text(),'"
-								+ ""+getProductName+"')]//following::td[8]//a[@class='fa fa-trash-o DeleteInvoiceDetails op ']"));
+						WebElement delete = driver.findElement(By.xpath
+								("(//table[@id='PurchaseReturnTable']//tbody//tr["+i+"]//td//textarea[contains(text(),'"
+										+ ""+getProductName+"')]//following::td//a[@class='fa fa-trash-o DeleteInvoiceDetails op '])[1]"));
 						js.executeScript("arguments[0].click();", delete);
 						click(pi.PopupOk);
 						Thread.sleep(2000);
@@ -1824,11 +1814,12 @@ public class PurchaseOrderTest extends BaseClass {
 
 		for (int j = 2; j <= returnTableSize; j++) {
 
-			String getProductName = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+j+"]//td[2]//div//textarea"))
+			String getProductName = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+j+"]//td//div//textarea"))
 					.getText();
 			System.out.println("getProductName: "+getProductName);
 
-			String getProductAmount = driver.findElement(By.xpath("//table[@id='PurchaseReturnTable']//tbody//tr["+j+"]//td[9][@class='DetailTotal seperator']"))
+			String getProductAmount = driver.findElement(By.xpath
+					("//table[@id='PurchaseReturnTable']//tbody//tr["+j+"]//td[@class='DetailTotal seperator']"))
 					.getText();
 			System.out.println("getProductAmount: "+getProductAmount);
 

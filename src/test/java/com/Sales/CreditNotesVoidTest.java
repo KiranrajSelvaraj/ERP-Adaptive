@@ -1296,7 +1296,7 @@ public class CreditNotesVoidTest extends BaseClass {
 			click(cn.Qty);
 
 		} else {
-			System.out.println("No Over All Discount Amounr and Percentage");
+			System.out.println("No Over All Discount Amount and Percentage");
 		}
 		System.out.println();
 

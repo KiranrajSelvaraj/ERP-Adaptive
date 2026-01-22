@@ -26,6 +26,7 @@ import com.PomClass.GoodReceivingNote;
 import com.PomClass.Login;
 import com.PomClass.Product;
 import com.PomClass.ProductMovement;
+import com.PomClass.PurchaseInvoice;
 import com.PomClass.PurchaseOrder;
 import com.PomClass.SystemSettings;
 import com.PomClass.Vendors;
@@ -1260,10 +1261,11 @@ public class PurchaseGRNTest extends BaseClass {
 			}
 
 		}
-
+		
 		//Over All Discount:-
 		click(po.OverAllDiscountType);
-		Select overAllDiscTypeSelect = new Select(po.OverAllDiscountType);
+		WebElement overalldisctype = driver.findElement(By.id("DiscountType"));
+		Select overAllDiscTypeSelect = new Select(overalldisctype);
 		overAllDiscTypeSelect.selectByVisibleText(getexcelOverAllDiscountType);
 
 		WebElement overAllDiscountType = driver.findElement(By.id("DiscountType"));
@@ -1416,7 +1418,7 @@ public class PurchaseGRNTest extends BaseClass {
 		String finalTotalAmountFormat = String.format("%.2f", finalTotalAmountDouble);
 		System.out.println("Actual Grand Total Amount is: " + finalTotalAmountFormat);
 
-		double ExpectedGrandTotalAmount = (SubWithoutGstAmountDouble + finalExpectedGstAmount);
+		double ExpectedGrandTotalAmount = (discountTotalAmount + finalExpectedGstAmount);
 		String ExpectedGrandTotalAmountFormat = String.format("%.2f", ExpectedGrandTotalAmount);
 		System.out.println("Expected Grand Total Amount is: " + ExpectedGrandTotalAmountFormat);
 		System.out.println();
@@ -1493,7 +1495,7 @@ public class PurchaseGRNTest extends BaseClass {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		GoodReceivingNote grn = new GoodReceivingNote(driver);
-		//	PurchaseInvoice pi = new PurchaseInvoice(driver);
+		PurchaseInvoice pi = new PurchaseInvoice(driver);
 
 		LocalDateTime TimeStamp = LocalDateTime.now();
 		DateTimeFormatter DateTimeFormate = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -1678,6 +1680,25 @@ public class PurchaseGRNTest extends BaseClass {
 		}
 		System.out.println("*** Purchase Invocie Save Successfull ***");
 		System.out.println();
+		
+		WebElement delete = driver.findElement(By.xpath
+				("(//table[@id='purchasetable']//tbody//tr//td[normalize-space()='"+formatedTimestamp+"']//following::a[@title='Delete'])[1]"));
+		delete.click();
+		Thread.sleep(2000);
+		click(pi.Delete);
+		Thread.sleep(1000);
+		click(pi.PopupOk);
+		try {
+
+			String alertText = driver.findElement(By.id("popup_message")).getText();
+			System.out.println("Alert Text: "+alertText);
+
+		} catch (Exception e) {
+			System.out.println("No alert appeared after save.");
+		}
+		System.out.println("*** Purchase Invoice Void Successfull ***");
+		System.out.println();
+		
 
 	} // Good receiving note
 
@@ -1762,13 +1783,15 @@ public class PurchaseGRNTest extends BaseClass {
 
 							double additionBoxandLooseStock = multipleBoxStock + doubleLooseCurrentStock;
 							calculateStockDouble = additionBoxandLooseStock + multipleQty;
-
+							calculateStockDouble = calculateStockDouble - multipleQty;
+							
 						}		
 
 					} else {
 
 						double doubleCurrentStock = Double.parseDouble(productData.currentStockValue);
 						calculateStockDouble = doubleCurrentStock + multipleQty;
+						calculateStockDouble = calculateStockDouble - multipleQty;
 						int intcalculateStock = (int) calculateStockDouble;
 						calculateStock = String.valueOf(intcalculateStock);
 

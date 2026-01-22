@@ -596,8 +596,7 @@ public class StockReservationTest extends BaseClass {
 
 			if (i == 0) {
 
-				Actions action = new Actions(driver);
-				action.moveToElement(sr.Product).click().perform();
+				click(sr.Product);
 				WebElement productSearchField = driver.findElement(By.xpath
 						("//span[@id='select2-ProductId-container']//following::input[@type='search']"));
 				productSearchField.sendKeys(excelData.ProductCode +Keys.ENTER);
@@ -1528,16 +1527,18 @@ public class StockReservationTest extends BaseClass {
 		WebElement overAllDiscountType = driver.findElement(By.id("DiscountType"));
 		Select overAllDiscountTypeSelect = new Select(overAllDiscountType);
 		String getOverAllDiscountType = overAllDiscountTypeSelect.getFirstSelectedOption().getText();
-		System.out.println("Over all Discount Type is: " + getOverAllDiscountType);
+		
 
 		Thread.sleep(1000);
 		click(so.OverAllDiscount);
 		if (getOverAllDiscountType.equals("$")) {
+			System.out.println("Over all Discount Type is: " + getOverAllDiscountType);
 			so.OverAllDiscount.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			Sendkeys(so.OverAllDiscount, getExcelOverAllDiscountAmount + Keys.ENTER);
 			click(so.OverAllDiscount);
 
 		} else if (getOverAllDiscountType.equals("%")) {
+			System.out.println("Over all Discount Type is: " + getOverAllDiscountType);
 			so.OverAllDiscount.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			Sendkeys(so.OverAllDiscount, getExcelOverAllDiscountPercentage + Keys.ENTER);
 			click(so.OverAllDiscount);
@@ -2278,7 +2279,7 @@ public class StockReservationTest extends BaseClass {
 				System.out.println();
 
 				soft.assertEquals(getReservedQty, stringReserveQty.replaceAll("\\.0$", ""), 
-						"Actual and Expected Reseeve Qty Mismatched for "+excelData.ProductName);
+						"Actual and Expected Reserve Qty Mismatched for "+excelData.ProductName);
 				
 				break;
 			} // Reservation qty list loop
@@ -2299,7 +2300,5 @@ public class StockReservationTest extends BaseClass {
 		driver.quit();
 
 	}
-
-
 
 } // Main class loop

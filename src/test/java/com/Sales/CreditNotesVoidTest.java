@@ -87,7 +87,7 @@ public class CreditNotesVoidTest extends BaseClass {
 	@DataProvider
 	public Object[][] Util1() {
 
-		Object data[][] = Util1.getTestData("C:\\Adaptive\\ERP\\CreditNotes.xlsx", "Sheet1");
+		Object data[][] = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\CreditNotesVoid.xlsx", "Sheet1");
 		return data;
 
 	}
@@ -1649,8 +1649,8 @@ public class CreditNotesVoidTest extends BaseClass {
 		driver.navigate().to(url + "SalesPurchases/Product");
 		Thread.sleep(7000);
 		System.out.println("*** Product Page ***");
-		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(300, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		Product prod = new Product(driver);

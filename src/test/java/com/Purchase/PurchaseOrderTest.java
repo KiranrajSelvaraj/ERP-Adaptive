@@ -986,7 +986,7 @@ public class PurchaseOrderTest extends BaseClass {
 			}
 
 			if (excelData.Type.equalsIgnoreCase("Product")) {
-				
+
 				js.executeScript("window.scrollBy(0, 1000)", "");
 				click(po.Quantity);
 				Thread.sleep(1000);
@@ -1003,7 +1003,7 @@ public class PurchaseOrderTest extends BaseClass {
 						break;
 					}
 				}
-				
+
 			} else if (excelData.Type.equalsIgnoreCase("Service")) {
 
 				driver.findElement(By.xpath("//span[@id='select2-ServiceId-container']//following::input[@type='search']"))

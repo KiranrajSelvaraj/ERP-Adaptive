@@ -93,7 +93,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 	@DataProvider
 	public Object[][] Util2() {
-		Object[][] data = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\PurchaseOrder.xlsx", "Sheet1");
+		Object[][] data = Util1.getTestData("C:\\Adaptive\\ERP\\PurchaseOrder7.xlsx", "Sheet1");
 		return data;
 
 	}
@@ -213,7 +213,7 @@ public class PurchaseOrderTest extends BaseClass {
 	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
 	public void SystemSettingsPage() throws InterruptedException {
 
-		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(300, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -544,8 +544,8 @@ public class PurchaseOrderTest extends BaseClass {
 
 		ProductList.addAll(ProductSet);
 
-		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(300, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		Product prod = new Product(driver);
@@ -761,7 +761,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 		VendorList.addAll(VendorSet);
 
-		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(300, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -837,8 +837,8 @@ public class PurchaseOrderTest extends BaseClass {
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
 
-		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(300, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		driver.navigate().to(url + "SalesPurchases/UOM");
@@ -902,7 +902,7 @@ public class PurchaseOrderTest extends BaseClass {
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
 	public void PurchaseOrderToInvoice() throws InterruptedException, IOException {
 
-		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(300, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		//	WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -986,12 +986,24 @@ public class PurchaseOrderTest extends BaseClass {
 			}
 
 			if (excelData.Type.equalsIgnoreCase("Product")) {
+				
+				js.executeScript("window.scrollBy(0, 1000)", "");
+				click(po.Quantity);
+				Thread.sleep(1000);
+				click(po.SGD);
+				System.out.println(i);
 
-				click(po.ChooseproductName);
-				driver.findElement(
-						By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"))
-				.sendKeys(excelData.ProductCode + Keys.ENTER);
+				WebElement findElement = driver.findElement(By.xpath("//select[@id='ProductId']"));
+				Select select=new Select(findElement);
+				for (WebElement option : select.getOptions()) {
 
+					if (option.getText().contains(excelData.ProductCode)) {
+						System.out.println("%");
+						option.click();
+						break;
+					}
+				}
+				
 			} else if (excelData.Type.equalsIgnoreCase("Service")) {
 
 				driver.findElement(By.xpath("//span[@id='select2-ServiceId-container']//following::input[@type='search']"))
@@ -2148,8 +2160,8 @@ public class PurchaseOrderTest extends BaseClass {
 	@Test(priority = 22, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 
-		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(300, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -2213,8 +2225,8 @@ public class PurchaseOrderTest extends BaseClass {
 	@Test(priority = 24, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 
-		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(300, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		ProductMovement pm = new ProductMovement(driver);
@@ -2259,7 +2271,6 @@ public class PurchaseOrderTest extends BaseClass {
 						soft.assertEquals(balanceQty, replaceProductStock,
 								"Actual and Expected Product Movement Stock Mismatched for Product "
 										+ trimProductName);
-
 					} else {
 
 						System.out.println("Product Movement Name: "+ trimProductName);
@@ -2270,15 +2281,12 @@ public class PurchaseOrderTest extends BaseClass {
 						soft.assertEquals(balanceQty, stock.calculateStock,
 								"Actual and Expected Product Movement Stock Mismatched for Product "
 										+ trimProductName);
-
 					}
 					break;
 				}
 
 			} // Stock calculation list loop
-
 		}
-		System.out.println();
 	}
 
 

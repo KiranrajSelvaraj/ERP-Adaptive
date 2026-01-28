@@ -17,7 +17,7 @@ public class Login {
 	
 	@FindBy(id="PasswordInput")
 	public WebElement Password;
-	
+		
 	@FindBy(id="login")
 	public WebElement LoginButton;
 	

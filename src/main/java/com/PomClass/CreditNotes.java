@@ -102,6 +102,12 @@ public class CreditNotes {
 	@FindBy(xpath = "//input[@value='Back']")
 	public WebElement Back;
 	
+	@FindBy(id = "btnPopupPost")
+	public WebElement Post;
+	
+	@FindBy(id = "btnHold")
+	public WebElement Hold;
+	
 	@FindBy(xpath = "//input[@value='Delete']")
 	public WebElement Delete;
 	

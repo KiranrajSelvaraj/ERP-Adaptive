@@ -15,7 +15,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -90,7 +89,6 @@ public class MobileVanTransfersTest extends BaseClass {
 
 	}
 
-	@SuppressWarnings("unused")
 	class ExcelData {
 
 		private String FromWarehouse;
@@ -306,7 +304,8 @@ public class MobileVanTransfersTest extends BaseClass {
 					.findElement(By.xpath("//dt[normalize-space()='Margin Tolerance %']//following-sibling::dd[1]"));
 			String marginToleranceValue = marginTolerance.getText();
 			System.out.println("Margin Tolerance: " + marginToleranceValue);
-
+			Thread.sleep(2000);
+			
 			WebElement InfoTab = driver.findElement(By.xpath("//a[text()='Info']"));
 			InfoTab.click();
 			Thread.sleep(2000);
@@ -523,7 +522,7 @@ public class MobileVanTransfersTest extends BaseClass {
 		driver.manage().timeouts().pageLoadTimeout(180, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		JavascriptExecutor js =(JavascriptExecutor) driver;
-		WebDriverWait wait = new WebDriverWait(driver, 60);
+	//	WebDriverWait wait = new WebDriverWait(driver, 60);
 		MobileVanTransfers mvt = new MobileVanTransfers(driver);
 
 		String getExcelFromWarehouse = "";

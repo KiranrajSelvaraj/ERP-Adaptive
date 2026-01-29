@@ -4,12 +4,13 @@
   <test thread-count="1" parallel="classes" name="Test(failed)">
     <parameter name="env" value="Dev"/>
     <classes>
-      <class name="com.MobileVanSales.MobileVanTransfersTest">
+      <class name="com.Warehouse.WarehouseTransferTest">
         <methods>
+          <include name="WarehouseTransfer"/>
+          <include name="Exception"/>
           <include name="ERPLoginPage"/>
-          <include name="ProductMovementPage"/>
         </methods>
-      </class> <!-- com.MobileVanSales.MobileVanTransfersTest -->
+      </class> <!-- com.Warehouse.WarehouseTransferTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -19,7 +19,7 @@ public class DeliveryVehicleAssign {
 	public WebElement ChooseVehicle;
 	
 	@FindBy(xpath = "//select[@id='DriverId']//following::span[@class='select2-selection select2-selection--multiple']")
-	public WebElement CHooseDriver;
+	public WebElement ChooseDriver;
 	
 	@FindBy(id = "assign")
 	public WebElement Assign;

@@ -376,8 +376,8 @@ public class StockAffectedCheckTest extends BaseClass{
 		driver.findElement(By.xpath("//span[@id='select2-VehicleId-container']//following::input[@type='search'][3]"))
 		.sendKeys("TN 45 AF 8888" +Keys.ENTER);
 		Thread.sleep(2000);
-		click(dva.CHooseDriver);
-		Sendkeys(dva.CHooseDriver, "Siva" +Keys.ENTER);
+		click(dva.ChooseDriver);
+		Sendkeys(dva.ChooseDriver, "Siva" +Keys.ENTER);
 		Thread.sleep(2000);
 
 

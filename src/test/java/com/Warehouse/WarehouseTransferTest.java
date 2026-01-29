@@ -16,7 +16,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -530,12 +529,14 @@ public class WarehouseTransferTest extends BaseClass{
 		driver.navigate().to(url +"SalesPurchases/WarehouseTransfers");
 		driver.manage().timeouts().pageLoadTimeout(180, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		JavascriptExecutor js =(JavascriptExecutor) driver;
+		//	JavascriptExecutor js =(JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		WarehouseTransfer wt = new WarehouseTransfer(driver);
 
-		//	js.executeScript("arguments[0].clik();", wt.CreateNew);
-		click(wt.CreateNew);
+
+		//	click(wt.CreateNew);
+		WebElement create = wait.until(ExpectedConditions.elementToBeClickable(wt.CreateNew));
+		create.click();
 
 		int excelDataListSize = excelDataList.size();
 		for (int i = 0; i < excelDataListSize; i++) {

@@ -4,7 +4,7 @@
   <test name="Test">
         <parameter name="env" value="Dev"/>
         <classes>
-            <class name="com.MobileVanSales.MobileVanTransfersTest"/>
+            <class name="com.Warehouse.WarehouseTransferTest"/>
         </classes>
     </test>
 </suite> 

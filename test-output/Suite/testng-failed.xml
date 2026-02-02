@@ -6,14 +6,11 @@
     <classes>
       <class name="com.Sales.InvoiceDeliveryAssignTest">
         <methods>
-          <include name="StockCalculation"/>
-          <include name="SystemSettings"/>
           <include name="ERPLoginPage"/>
+          <include name="Exception"/>
           <include name="Environment"/>
           <include name="DeliveryVehicleAssign"/>
-          <include name="UomPage"/>
           <include name="SalesInvoice"/>
-          <include name="ProductPage"/>
         </methods>
       </class> <!-- com.Sales.InvoiceDeliveryAssignTest -->
     </classes>

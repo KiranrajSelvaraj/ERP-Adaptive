@@ -1681,6 +1681,7 @@ public class PurchaseGRNTest extends BaseClass {
 		System.out.println("*** Purchase Invocie Save Successfull ***");
 		System.out.println();
 		
+		Thread.sleep(3000);
 		WebElement delete = driver.findElement(By.xpath
 				("(//table[@id='purchasetable']//tbody//tr//td[normalize-space()='"+formatedTimestamp+"']//following::a[@title='Delete'])[1]"));
 		delete.click();

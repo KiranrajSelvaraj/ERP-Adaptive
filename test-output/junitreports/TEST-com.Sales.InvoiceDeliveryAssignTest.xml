@@ -1,435 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="15" passed="7" failed="6" skipped="0">
-  <reporter-output>
-  </reporter-output>
-  <suite started-at="2026-02-02T10:36:06 IST" name="Suite" finished-at="2026-02-02T10:41:20 IST" duration-ms="314281">
-    <groups>
-    </groups>
-    <test started-at="2026-02-02T10:36:06 IST" name="Test" finished-at="2026-02-02T10:41:20 IST" duration-ms="314281">
-      <class name="com.Sales.InvoiceDeliveryAssignTest">
-        <test-method is-config="true" signature="Environment(java.lang.String)[pri:0, instance:com.Sales.InvoiceDeliveryAssignTest@4be29ed9]" started-at="2026-02-02T10:36:06 IST" name="Environment" finished-at="2026-02-02T10:36:11 IST" duration-ms="5603" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Dev]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Environment -->
-        <test-method signature="ERPLoginPage()[pri:1, instance:com.Sales.InvoiceDeliveryAssignTest@4be29ed9]" started-at="2026-02-02T10:36:11 IST" name="ERPLoginPage" finished-at="2026-02-02T10:36:16 IST" duration-ms="4913" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ERPLoginPage -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.InvoiceDeliveryAssignTest@4be29ed9]" started-at="2026-02-02T10:36:18 IST" name="GetData" data-provider="Util1" finished-at="2026-02-02T10:36:18 IST" depends-on-methods="com.Sales.InvoiceDeliveryAssignTest.ERPLoginPage" duration-ms="4" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[SGD]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Exclusive]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Product]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[1251]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[1848 PREMIUM Brandy (6 BOT)]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[6X250ML]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[25]]>
-              </value>
-            </param>
-            <param index="15">
-              <value>
-                <![CDATA[121]]>
-              </value>
-            </param>
-            <param index="16">
-              <value>
-                <![CDATA[TRUE]]>
-              </value>
-            </param>
-            <param index="17">
-              <value>
-                <![CDATA[100]]>
-              </value>
-            </param>
-            <param index="18">
-              <value>
-                <![CDATA[%]]>
-              </value>
-            </param>
-            <param index="19">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="20">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="21">
-              <value>
-                <![CDATA[9]]>
-              </value>
-            </param>
-            <param index="22">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="23">
-              <value>
-                <![CDATA[FALSE]]>
-              </value>
-            </param>
-            <param index="24">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.InvoiceDeliveryAssignTest@4be29ed9]" started-at="2026-02-02T10:36:18 IST" name="GetData" data-provider="Util1" finished-at="2026-02-02T10:36:18 IST" depends-on-methods="com.Sales.InvoiceDeliveryAssignTest.ERPLoginPage" duration-ms="3" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Product]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[21562]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[8 PM GRAIN Beer (7 BOT)]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[7X250ML]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="15">
-              <value>
-                <![CDATA[122]]>
-              </value>
-            </param>
-            <param index="16">
-              <value>
-                <![CDATA[TRUE]]>
-              </value>
-            </param>
-            <param index="17">
-              <value>
-                <![CDATA[100]]>
-              </value>
-            </param>
-            <param index="18">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="19">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="20">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="21">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="22">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="23">
-              <value>
-                <![CDATA[FALSE]]>
-              </value>
-            </param>
-            <param index="24">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Sales.InvoiceDeliveryAssignTest@4be29ed9]" started-at="2026-02-02T10:36:18 IST" name="GetData" data-provider="Util1" finished-at="2026-02-02T10:36:18 IST" depends-on-methods="com.Sales.InvoiceDeliveryAssignTest.ERPLoginPage" duration-ms="3" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Product]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[21363]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[AGE DE OAK Beer (8 BOT)]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[CAN]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="15">
-              <value>
-                <![CDATA[123]]>
-              </value>
-            </param>
-            <param index="16">
-              <value>
-                <![CDATA[TRUE]]>
-              </value>
-            </param>
-            <param index="17">
-              <value>
-                <![CDATA[100]]>
-              </value>
-            </param>
-            <param index="18">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="19">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="20">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="21">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="22">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="23">
-              <value>
-                <![CDATA[FALSE]]>
-              </value>
-            </param>
-            <param index="24">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="SystemSettings()[pri:6, instance:com.Sales.InvoiceDeliveryAssignTest@4be29ed9]" started-at="2026-02-02T10:36:18 IST" name="SystemSettings" finished-at="2026-02-02T10:36:59 IST" depends-on-methods="com.Sales.InvoiceDeliveryAssignTest.ERPLoginPage" duration-ms="41088" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#SearchString"}
+<!-- Generated by org.testng.reporters.JUnitReportReporter -->
+<testsuite hostname="DESKTOP-7QA4B29" failures="0" tests="15" name="com.Sales.InvoiceDeliveryAssignTest" time="307.053" errors="6" timestamp="2026-02-02T10:41:20 IST" skipped="2">
+  <testcase classname="com.Sales.InvoiceDeliveryAssignTest" name="ERPLoginPage" time="4.913"/>
+  <system-out/>
+  <testcase classname="com.Sales.InvoiceDeliveryAssignTest" name="GetData" time="0.004"/>
+  <system-out/>
+  <testcase classname="com.Sales.InvoiceDeliveryAssignTest" name="GetData" time="0.003"/>
+  <system-out/>
+  <testcase classname="com.Sales.InvoiceDeliveryAssignTest" name="GetData" time="0.003"/>
+  <system-out/>
+  <testcase classname="com.Sales.InvoiceDeliveryAssignTest" name="SystemSettings" time="41.088">
+    <error message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#SearchString&quot;}
   (Session info: chrome=144.0.7559.110)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-7QA4B29', ip: '192.168.1.35', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Build info: version: &#039;3.141.59&#039;, revision: &#039;e82be7d358&#039;, time: &#039;2018-11-14T08:17:03&#039;
+System info: host: &#039;DESKTOP-7QA4B29&#039;, ip: &#039;192.168.1.35&#039;, os.name: &#039;Windows 10&#039;, os.arch: &#039;amd64&#039;, os.version: &#039;10.0&#039;, java.version: &#039;17.0.2&#039;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.110, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61304}, goog:processID: 17828, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
 Session ID: f710e4d298e671d588dcf94be94d2278
-*** Element info: {Using=id, value=SearchString}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#SearchString"}
+*** Element info: {Using=id, value=SearchString}" type="org.openqa.selenium.NoSuchElementException">
+      <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#SearchString"}
   (Session info: chrome=144.0.7559.110)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
@@ -482,26 +72,20 @@ at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecuto
 at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 at java.base/java.lang.Thread.run(Thread.java:833)
 ]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SystemSettings -->
-        <test-method signature="ProductPage()[pri:8, instance:com.Sales.InvoiceDeliveryAssignTest@4be29ed9]" started-at="2026-02-02T10:36:59 IST" name="ProductPage" finished-at="2026-02-02T10:37:54 IST" depends-on-methods="com.Sales.InvoiceDeliveryAssignTest.ERPLoginPage" duration-ms="55099" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//input[@id='SearchString'])[1]"}
+    </error>
+  </testcase> <!-- SystemSettings -->
+  <system-out/>
+  <testcase classname="com.Sales.InvoiceDeliveryAssignTest" name="ProductPage" time="55.099">
+    <error message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//input[@id=&#039;SearchString&#039;])[1]&quot;}
   (Session info: chrome=144.0.7559.110)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-7QA4B29', ip: '192.168.1.35', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Build info: version: &#039;3.141.59&#039;, revision: &#039;e82be7d358&#039;, time: &#039;2018-11-14T08:17:03&#039;
+System info: host: &#039;DESKTOP-7QA4B29&#039;, ip: &#039;192.168.1.35&#039;, os.name: &#039;Windows 10&#039;, os.arch: &#039;amd64&#039;, os.version: &#039;10.0&#039;, java.version: &#039;17.0.2&#039;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.110, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61304}, goog:processID: 17828, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
 Session ID: f710e4d298e671d588dcf94be94d2278
-*** Element info: {Using=xpath, value=(//input[@id='SearchString'])[1]}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//input[@id='SearchString'])[1]"}
+*** Element info: {Using=xpath, value=(//input[@id=&#039;SearchString&#039;])[1]}" type="org.openqa.selenium.NoSuchElementException">
+      <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//input[@id='SearchString'])[1]"}
   (Session info: chrome=144.0.7559.110)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
@@ -542,26 +126,20 @@ at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecuto
 at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 at java.base/java.lang.Thread.run(Thread.java:833)
 ]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ProductPage -->
-        <test-method signature="UomPage()[pri:10, instance:com.Sales.InvoiceDeliveryAssignTest@4be29ed9]" started-at="2026-02-02T10:37:54 IST" name="UomPage" finished-at="2026-02-02T10:38:30 IST" depends-on-methods="com.Sales.InvoiceDeliveryAssignTest.ERPLoginPage" duration-ms="35658" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//span[@id='select2-DropDown-container']//following::input[@type='search']"}
+    </error>
+  </testcase> <!-- ProductPage -->
+  <system-out/>
+  <testcase classname="com.Sales.InvoiceDeliveryAssignTest" name="UomPage" time="35.658">
+    <error message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[@id=&#039;select2-DropDown-container&#039;]//following::input[@type=&#039;search&#039;]&quot;}
   (Session info: chrome=144.0.7559.110)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-7QA4B29', ip: '192.168.1.35', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Build info: version: &#039;3.141.59&#039;, revision: &#039;e82be7d358&#039;, time: &#039;2018-11-14T08:17:03&#039;
+System info: host: &#039;DESKTOP-7QA4B29&#039;, ip: &#039;192.168.1.35&#039;, os.name: &#039;Windows 10&#039;, os.arch: &#039;amd64&#039;, os.version: &#039;10.0&#039;, java.version: &#039;17.0.2&#039;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.110, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61304}, goog:processID: 17828, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
 Session ID: f710e4d298e671d588dcf94be94d2278
-*** Element info: {Using=xpath, value=//span[@id='select2-DropDown-container']//following::input[@type='search']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[@id='select2-DropDown-container']//following::input[@type='search']"}
+*** Element info: {Using=xpath, value=//span[@id=&#039;select2-DropDown-container&#039;]//following::input[@type=&#039;search&#039;]}" type="org.openqa.selenium.NoSuchElementException">
+      <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[@id='select2-DropDown-container']//following::input[@type='search']"}
   (Session info: chrome=144.0.7559.110)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
@@ -602,26 +180,20 @@ at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecuto
 at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 at java.base/java.lang.Thread.run(Thread.java:833)
 ]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- UomPage -->
-        <test-method signature="SalesInvoice()[pri:12, instance:com.Sales.InvoiceDeliveryAssignTest@4be29ed9]" started-at="2026-02-02T10:38:30 IST" name="SalesInvoice" finished-at="2026-02-02T10:39:10 IST" depends-on-methods="com.Sales.InvoiceDeliveryAssignTest.ERPLoginPage" duration-ms="40781" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#select2\-CustomerId\-container"}
+    </error>
+  </testcase> <!-- UomPage -->
+  <system-out/>
+  <testcase classname="com.Sales.InvoiceDeliveryAssignTest" name="SalesInvoice" time="40.781">
+    <error message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#select2\-CustomerId\-container&quot;}
   (Session info: chrome=144.0.7559.110)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-7QA4B29', ip: '192.168.1.35', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Build info: version: &#039;3.141.59&#039;, revision: &#039;e82be7d358&#039;, time: &#039;2018-11-14T08:17:03&#039;
+System info: host: &#039;DESKTOP-7QA4B29&#039;, ip: &#039;192.168.1.35&#039;, os.name: &#039;Windows 10&#039;, os.arch: &#039;amd64&#039;, os.version: &#039;10.0&#039;, java.version: &#039;17.0.2&#039;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.110, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61304}, goog:processID: 17828, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
 Session ID: f710e4d298e671d588dcf94be94d2278
-*** Element info: {Using=id, value=select2-CustomerId-container}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#select2\-CustomerId\-container"}
+*** Element info: {Using=id, value=select2-CustomerId-container}" type="org.openqa.selenium.NoSuchElementException">
+      <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#select2\-CustomerId\-container"}
   (Session info: chrome=144.0.7559.110)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
@@ -666,18 +238,12 @@ at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecuto
 at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 at java.base/java.lang.Thread.run(Thread.java:833)
 ]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SalesInvoice -->
-        <test-method signature="DeliveryVehicleAssign()[pri:14, instance:com.Sales.InvoiceDeliveryAssignTest@4be29ed9]" started-at="2026-02-02T10:39:10 IST" name="DeliveryVehicleAssign" finished-at="2026-02-02T10:40:11 IST" depends-on-methods="com.Sales.InvoiceDeliveryAssignTest.ERPLoginPage" duration-ms="60961" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //table[@id='DeliveryVehicleAssignTable']//tbody//tr//td[normalize-space()='']//preceding::td[2] (tried for 30 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //table[@id='DeliveryVehicleAssignTable']//tbody//tr//td[normalize-space()='']//preceding::td[2] (tried for 30 second(s) with 500 milliseconds interval)
+    </error>
+  </testcase> <!-- SalesInvoice -->
+  <system-out/>
+  <testcase classname="com.Sales.InvoiceDeliveryAssignTest" name="DeliveryVehicleAssign" time="60.961">
+    <error message="Expected condition failed: waiting for element to be clickable: By.xpath: //table[@id=&#039;DeliveryVehicleAssignTable&#039;]//tbody//tr//td[normalize-space()=&#039;&#039;]//preceding::td[2] (tried for 30 second(s) with 500 milliseconds interval)" type="org.openqa.selenium.TimeoutException">
+      <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //table[@id='DeliveryVehicleAssignTable']//tbody//tr//td[normalize-space()='']//preceding::td[2] (tried for 30 second(s) with 500 milliseconds interval)
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 at com.Sales.InvoiceDeliveryAssignTest.DeliveryVehicleAssign(InvoiceDeliveryAssignTest.java:1443)
@@ -727,18 +293,12 @@ at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
 ... 16 more
 ]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DeliveryVehicleAssign -->
-        <test-method signature="StockCalculation()[pri:16, instance:com.Sales.InvoiceDeliveryAssignTest@4be29ed9]" started-at="2026-02-02T10:40:11 IST" name="StockCalculation" finished-at="2026-02-02T10:40:11 IST" depends-on-methods="com.Sales.InvoiceDeliveryAssignTest.ERPLoginPage" duration-ms="3" status="FAIL">
-          <exception class="java.lang.NumberFormatException">
-            <message>
-              <![CDATA[For input string: "457 BULK/5 LS"]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NumberFormatException: For input string: "457 BULK/5 LS"
+    </error>
+  </testcase> <!-- DeliveryVehicleAssign -->
+  <system-out/>
+  <testcase classname="com.Sales.InvoiceDeliveryAssignTest" name="StockCalculation" time="0.003">
+    <error message="For input string: &quot;457 BULK/5 LS&quot;" type="java.lang.NumberFormatException">
+      <![CDATA[java.lang.NumberFormatException: For input string: "457 BULK/5 LS"
 at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)
 at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
 at java.base/java.lang.Double.parseDouble(Double.java:651)
@@ -759,24 +319,21 @@ at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecuto
 at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 at java.base/java.lang.Thread.run(Thread.java:833)
 ]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NumberFormatException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- StockCalculation -->
-        <test-method signature="ExpectedProduct()[pri:18, instance:com.Sales.InvoiceDeliveryAssignTest@4be29ed9]" started-at="2026-02-02T10:40:11 IST" name="ExpectedProduct" finished-at="2026-02-02T10:40:57 IST" depends-on-methods="com.Sales.InvoiceDeliveryAssignTest.ERPLoginPage" duration-ms="45461" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ExpectedProduct -->
-        <test-method signature="ProductMovementPage()[pri:20, instance:com.Sales.InvoiceDeliveryAssignTest@4be29ed9]" started-at="2026-02-02T10:40:57 IST" name="ProductMovementPage" finished-at="2026-02-02T10:41:20 IST" depends-on-methods="com.Sales.InvoiceDeliveryAssignTest.ERPLoginPage" duration-ms="23078" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ProductMovementPage -->
-        <test-method signature="Exception()[pri:30, instance:com.Sales.InvoiceDeliveryAssignTest@4be29ed9]" started-at="2026-02-02T10:41:20 IST" name="Exception" finished-at="2026-02-02T10:41:20 IST" depends-on-methods="com.Sales.InvoiceDeliveryAssignTest.ERPLoginPage" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Exception -->
-      </class> <!-- com.Sales.InvoiceDeliveryAssignTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
-</testng-results>
+    </error>
+  </testcase> <!-- StockCalculation -->
+  <system-out/>
+  <testcase classname="com.Sales.InvoiceDeliveryAssignTest" name="ExpectedProduct" time="45.461"/>
+  <system-out/>
+  <testcase classname="com.Sales.InvoiceDeliveryAssignTest" name="ProductMovementPage" time="23.078"/>
+  <system-out/>
+  <testcase classname="com.Sales.InvoiceDeliveryAssignTest" name="Exception" time="0.001"/>
+  <system-out/>
+  <testcase classname="com.Sales.InvoiceDeliveryAssignTest" name="DeliveryVehicleAssignReverse">
+    <skipped/>
+  </testcase> <!-- DeliveryVehicleAssignReverse -->
+  <system-out/>
+  <testcase classname="com.Sales.InvoiceDeliveryAssignTest" name="close">
+    <skipped/>
+  </testcase> <!-- close -->
+  <system-out/>
+</testsuite> <!-- com.Sales.InvoiceDeliveryAssignTest -->

@@ -24,6 +24,9 @@ public class DeliveryVehicleAssign {
 	@FindBy(id = "assign")
 	public WebElement Assign;
 	
+	@FindBy(id = "unassign")
+	public WebElement UnAssign;
+	
 	@FindBy(id = "startDate")
 	public WebElement FromDate;
 	

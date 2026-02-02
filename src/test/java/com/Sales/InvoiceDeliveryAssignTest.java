@@ -17,6 +17,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -47,8 +48,8 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 
-			driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");
-			url = "https://erpauto.dev1.adaptivebizapp.com/ERP/";
+			driver.get("https://erp.dev1.adaptivegroups.asia/Account/Login");
+			url = "https://erp.dev1.adaptivegroups.asia/ERP/";
 
 		}
 	}
@@ -58,47 +59,19 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 
 		Login lo = new Login(driver);
 
-		Sendkeys(lo.CompanyCode, "UITDEMO1");
-		Sendkeys(lo.UserName, "Kiran01");
+		Sendkeys(lo.CompanyCode, "jayb1");
+		Sendkeys(lo.UserName, "vasu");
 		Sendkeys(lo.Password, "Adaptive*123");
 		click(lo.LoginButton);
 		Thread.sleep(2000);
 
-		String ActURL = driver.getCurrentUrl();
-		boolean equals = url.equalsIgnoreCase(ActURL);
-
-		if (equals == false) {
-
-			Navigate_to(ActURL);
-			Sendkeys(lo.CompanyCode, "UITDEMO1");
-			Sendkeys(lo.UserName, "Kiran02");
-			Sendkeys(lo.Password, "Adaptive*123");
-			Thread.sleep(1000);
-			click(lo.LoginButton);
-
-		}
-
-		String ActURL1 = driver.getCurrentUrl();
-		boolean equals1 = url.equalsIgnoreCase(ActURL1);
-
-		if (equals1 == false) {
-
-			Navigate_to(ActURL1);
-			Sendkeys(lo.CompanyCode, "UITDEMO1");
-			Sendkeys(lo.UserName, "Kiran03");
-			Sendkeys(lo.Password, "Adaptive*123");
-			Thread.sleep(1000);
-			click(lo.LoginButton);
-
-		}
-
-		System.out.println("*ERP Login Page*");
+		System.out.println("*ERP Login Page*"); 
 	}
 
 	@DataProvider
 	public Object[][] Util1() {
 
-		Object data[][] = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\SalesInvoiceVoid.xlsx", "Sheet1");
+		Object data[][] = Util1.getTestData("C:\\Adaptive\\ERP\\SalesOrder.xlsx", "SO");
 		return data;
 
 	}
@@ -200,7 +173,8 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 
 		}
 	}
-
+	
+	private boolean IsStockUpdateInDeliveryAssign;
 	private boolean IsSalesManManagement;
 	private boolean IsWarehouseManagement;
 	private boolean IsWarehouseStorageManagement;
@@ -229,6 +203,18 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 		JavascriptExecutor js = (JavascriptExecutor) driver;		
 		Thread.sleep(5000);
 		SystemSettings ss = new SystemSettings(driver);
+		
+		js.executeScript("arguments[0].click();", ss.SystemsSettingsParamCodeSearchField);
+		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsStockUpdateInDeliveryAssign");
+		Thread.sleep(1000);
+		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
+		Thread.sleep(2000);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
+		Thread.sleep(1000);
+		IsStockUpdateInDeliveryAssign = ss.BooleanValue.isSelected();
+		System.out.println("IsStockUpdateInDeliveryAssign :" + IsStockUpdateInDeliveryAssign);
+		click(ss.Back);
 
 		js.executeScript("arguments[0].click();", ss.SystemsSettingsParamCodeSearchField);
 		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
@@ -477,10 +463,10 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 		private String departmentValue;
 		private String categoryValue;
 		private String brandValue;
-		private String profitMarginValue;
-		private String marginToleranceValue;
+	//	private String profitMarginValue;
+	//	private String marginToleranceValue;
 		private String vendorNameValue;
-		private String batch;
+	//	private String batch;
 		private String purchaseCOAValue;
 		private String salesCOAValue;
 		private String currentStockValue;
@@ -495,8 +481,8 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 		private String LPPrice;
 
 		public product(String productCode, String productName, String departmentValue, String categoryValue,
-				String brandValue, String profitMarginValue, String marginToleranceValue, String vendorNameValue,
-				String batch, String purchaseCOAValue, String salesCOAValue, String currentStockValue,
+				String brandValue, String vendorNameValue,
+				String purchaseCOAValue, String salesCOAValue, String currentStockValue,
 				String TotalStock, String uomValue, String IsCartonSelected, boolean IsCarton, String CartonPrice,
 				boolean IsNonCarton, boolean IsBase, String SellingPrice, String LPPrice) {
 			super();
@@ -506,10 +492,10 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 			this.departmentValue = departmentValue;
 			this.categoryValue = categoryValue;
 			this.brandValue = brandValue;
-			this.profitMarginValue = profitMarginValue;
-			this.marginToleranceValue = marginToleranceValue;
+		//	this.profitMarginValue = profitMarginValue;
+		//	this.marginToleranceValue = marginToleranceValue;
 			this.vendorNameValue = vendorNameValue;
-			this.batch = batch;
+		//	this.batch = batch;
 			this.purchaseCOAValue = purchaseCOAValue;
 			this.salesCOAValue = salesCOAValue;
 			this.currentStockValue = currentStockValue;
@@ -634,7 +620,7 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 					.findElement(By.xpath("//dt[normalize-space()='Total Stock']//following-sibling::dd[1]")).getText();
 			System.out.println("Total STock: " + totalStock);
 
-			WebElement profitMargin = driver
+		/*	WebElement profitMargin = driver
 					.findElement(By.xpath("//dt[normalize-space()='Profit Margin %']//following-sibling::dd[1]"));
 			String profitMarginValue = profitMargin.getText();
 			System.out.println("Profit Margin: " + profitMarginValue);
@@ -642,7 +628,7 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 			WebElement marginTolerance = driver
 					.findElement(By.xpath("//dt[normalize-space()='Margin Tolerance %']//following-sibling::dd[1]"));
 			String marginToleranceValue = marginTolerance.getText();
-			System.out.println("Margin Tolerance: " + marginToleranceValue);
+			System.out.println("Margin Tolerance: " + marginToleranceValue); */
 
 			WebElement InfoTab = driver.findElement(By.xpath("//a[text()='Info']"));
 			InfoTab.click();
@@ -668,9 +654,9 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 			String vendorNameValue = vendorName.getText();
 			System.out.println("Vendor Name: " + vendorNameValue);
 
-			String batch = driver.findElement(By.xpath("(//dt[normalize-space()='Batch']//following::dd)[1]"))
+		/*	String batch = driver.findElement(By.xpath("(//dt[normalize-space()='Batch']//following::dd)[1]"))
 					.getText();
-			System.out.println("Batch: " + batch);
+			System.out.println("Batch: " + batch); */
 
 			String IsCartonSelected = driver
 					.findElement(By.xpath("//dt[normalize-space()='Carton']//following-sibling::dd[1]")).getText()
@@ -755,7 +741,7 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 			}
 
 			product pr = new product(productCode, productName, departmentValue, categoryValue, brandValue,
-					profitMarginValue, marginToleranceValue, vendorNameValue, batch, purchaseCOAValue, salesCOAValue,
+					vendorNameValue, purchaseCOAValue, salesCOAValue,
 					currentStockValue, totalStock, uomValue, IsCartonSelected, IsCarton, CartonPrice, IsNonCarton,
 					IsBase, SellingPrice, LPPrice);
 			ProductDetailsList.add(pr);
@@ -851,9 +837,11 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 			}
 		}
 	}
+	
+	String getInvoiceNo = "";
 
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
-	public void SalesInvoicetoVoidProcess() throws InterruptedException, IOException {
+	public void SalesInvoice() throws InterruptedException, IOException {
 
 		driver.navigate().to(url + "Sales/SalesInvoiceIndex");
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
@@ -1112,10 +1100,16 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 			Sendkeys(si.Qty, excelData.Qty);
 
 			// Price:-
-			click(si.Price);
+		/*	click(si.Price);
 			si.Price.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
 			Sendkeys(si.Price, excelData.Price);
-			Thread.sleep(1000);
+			Thread.sleep(1000); */
+			
+			WebElement price = driver.findElement(By.id("RatingType"));
+			price.click();
+			price.sendKeys(Keys.CONTROL +"a"+ Keys.DELETE);
+			price.sendKeys(excelData.Price);
+			Thread.sleep(2000);
 
 			// Discount Amount,Percentage and Unit Discount and Percentage:-
 			if (IsEnableItemLevelDiscountInSales == true) {
@@ -1417,7 +1411,7 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 
 		Thread.sleep(3000);
 		js.executeScript("arguments[0].click();", si.Save);
-
+		click(si.PopupOk);
 		try {
 
 			String alertText = driver.findElement(By.id("popup_message")).getText();
@@ -1429,6 +1423,10 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 
 		}
 		System.out.println("** Sales Invoice Save Successfull **");
+		
+		getInvoiceNo = driver.findElement(By.xpath("(//table[@id='Invoicetable']//tbody//tr//td[3])[1]")).getText();
+		System.out.println("getInvoiceNo: "+getInvoiceNo);
+		System.out.println();
 
 	}
 
@@ -1436,13 +1434,14 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 	public void DeliveryVehicleAssign() {
 
 		driver.navigate().to(url +"SalesPurchases/DeliveryVehicleAssign/DeliveryVehicleAssignIndex");
+		System.out.println("* DeliveryAssign Page *");
 		driver.manage().timeouts().pageLoadTimeout(300, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		DeliveryVehicleAssign dva = new DeliveryVehicleAssign(driver);
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 
 		WebElement checkBox = wait.until(ExpectedConditions.elementToBeClickable(By.xpath
-				("//table[@id='DeliveryVehicleAssignTable']//tbody//tr//td[normalize-space()='0337']//preceding::td[2]")));
+				("//table[@id='DeliveryVehicleAssignTable']//tbody//tr//td[normalize-space()='"+getInvoiceNo+"']//preceding::td[2]")));
 		checkBox.click();
 
 		click(dva.ChooseVehicle);
@@ -1465,6 +1464,7 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 		}
 
 		click(dva.Assign);
+		click(dva.PopupOK);
 		try {
 
 			String alertText = driver.findElement(By.id("popup_message")).getText();
@@ -1475,10 +1475,7 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 			System.out.println("No alert appeared after save.");
 
 		}
-
-
-
-
+		System.out.println();
 	}
 
 	class StockCalculation {
@@ -1544,14 +1541,14 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 
 						String[] splitCurrentStockValue = productData.currentStockValue.split("/");
 						for (String currentStock : splitCurrentStockValue) {
-							if (currentStock.contains("B")) {
+							if (currentStock.contains("BULK")) {
 								String replaceAllBoxCurrentStock = currentStock.replaceAll("[A-Za-z]", "");
 								double doubleBoxCurrentStock = Double.parseDouble(replaceAllBoxCurrentStock);
 
 								multipleBoxStock = doubleBoxCurrentStock * 10;
 								// System.out.println("multipleBoxStock is: "+multipleBoxStock);
 
-							} else if (currentStock.contains("L")) {
+							} else if (currentStock.contains("LS")) {
 								String replaceAllLooseCurrentStock = currentStock.replaceAll("[A-Za-z]", "");
 								doubleLooseCurrentStock = Double.parseDouble(replaceAllLooseCurrentStock);
 								// System.out.println("doubleLooseCurrentStock is: "+doubleLooseCurrentStock);
@@ -1743,6 +1740,50 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 		}
 		System.out.println();
 	}
+	
+	@Ignore
+	@Test(priority = 22, dependsOnMethods = "ERPLoginPage")
+	public void DeliveryVehicleAssignReverse() {
+		
+		driver.navigate().to(url +"SalesPurchases/DeliveryVehicleAssign/DeliveryVehicleAssignIndex");
+		System.out.println("* DeliveryAssign Page *");
+		driver.manage().timeouts().pageLoadTimeout(300, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		DeliveryVehicleAssign dva = new DeliveryVehicleAssign(driver);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		
+		WebElement statusdropdown = driver.findElement(By.id("IsAssigned"));
+		Select select = new Select(statusdropdown);
+		for (WebElement options : select.getOptions()) {
+			if (options.getText().trim().equalsIgnoreCase("Assigned")) {
+				options.click();
+				break;			
+			}			
+		}
+		
+		//click(dva.Fetch);
+		WebElement fetch = wait.until(ExpectedConditions.elementToBeClickable(dva.Fetch));
+		fetch.click();
+
+		WebElement checkBox = wait.until(ExpectedConditions.elementToBeClickable(By.xpath
+				("//table[@id='DeliveryVehicleAssignTable']//tbody//tr//td[normalize-space()='"+getInvoiceNo+"']//preceding::td[2]")));
+		checkBox.click();
+		
+		click(dva.UnAssign);	
+		click(dva.PopupOK);
+		try {
+			
+			String alertText = driver.findElement(By.id("popup_message")).getText();
+			System.out.println("Alert Text: " + alertText);
+
+		} catch (Exception e) {
+
+			System.out.println("No alert appeared after save.");
+
+		}
+
+	}
+
 
 	@Test(priority = 30, dependsOnMethods = "ERPLoginPage")
 	private void Exception() throws InterruptedException {
@@ -1750,7 +1791,7 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 
 	}
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 40, dependsOnMethods = "ERPLoginPage")
 	private void close() throws InterruptedException {
 		driver.quit();

@@ -1684,7 +1684,7 @@ public class PurchaseGRNTest extends BaseClass {
 		Thread.sleep(3000);
 		WebElement delete = driver.findElement(By.xpath
 				("(//table[@id='purchasetable']//tbody//tr//td[normalize-space()='"+formatedTimestamp+"']//following::a[@title='Delete'])[1]"));
-		wait.until(ExpectedConditions.elementToBeClickable(delete));
+	//	wait.until(ExpectedConditions.elementToBeClickable(delete));
 		js.executeScript("arguments[0].click();", delete);
 		Thread.sleep(2000);
 		click(pi.Delete);

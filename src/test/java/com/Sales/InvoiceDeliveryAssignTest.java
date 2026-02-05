@@ -36,7 +36,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class InvoiceDeliveryAssignTest extends BaseClass {
 
 	private String url;
-
 	SoftAssert soft = new SoftAssert();
 
 	@Parameters({ "env" })

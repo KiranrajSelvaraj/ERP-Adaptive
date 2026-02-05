@@ -2254,7 +2254,7 @@ public class StockReservationTest extends BaseClass {
 
 				double doubleQty = Double.parseDouble(excelData.Qty); 
 				double doubleReserveQty = Double.parseDouble(reservationQty.ReserveQty);
-				double subrationQty = doubleQty - doubleReserveQty;
+				double subrationQty = doubleReserveQty - doubleQty;
 				String stringReserveQty = String.valueOf(subrationQty);				
 				System.out.println("Expected Reserve Qty: "+stringReserveQty.replaceAll("\\.0$", ""));
 				System.out.println();

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>10/3/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>73/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Feb 02 12:21:56 IST 2026</td>
+<td>Started on:</td><td>Thu Feb 05 14:11:42 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>446 seconds (446799 ms)</td>
+<tr><td>Total time:</td><td>6845 seconds (6845894 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,172 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.Sales.InvoiceDeliveryAssignTest.DeliveryVehicleAssign()'><b>DeliveryVehicleAssign</b><br>Test class: com.Sales.InvoiceDeliveryAssignTest</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //table[@id=&apos;DeliveryVehicleAssignTable&apos;]//tbody//tr//td[normalize-space()=&apos;&apos;]//preceding::td[2] (tried for 30 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at com.Sales.InvoiceDeliveryAssignTest.DeliveryVehicleAssign(InvoiceDeliveryAssignTest.java:1443)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//table[@id=&apos;DeliveryVehicleAssignTable&apos;]//tbody//tr//td[normalize-space()=&apos;&apos;]//preceding::td[2]&quot;}
-  (Session info: chrome=144.0.7559.110)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.35&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.110, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62599}, goog:processID: 8876, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: dd9ce9c1ae8c459cdf08bf90ff892772
-*** Element info: {Using=xpath, value=//table[@id=&apos;DeliveryVehicleAssignTable&apos;]//tbody//tr//td[normalize-space()=&apos;&apos;]//preceding::td[2]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 16 more
-... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2006797573", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2006797573'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //table[@id=&apos;DeliveryVehicleAssignTable&apos;]//tbody//tr//td[normalize-space()=&apos;&apos;]//preceding::td[2] (tried for 30 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at com.Sales.InvoiceDeliveryAssignTest.DeliveryVehicleAssign(InvoiceDeliveryAssignTest.java:1443)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//table[@id=&apos;DeliveryVehicleAssignTable&apos;]//tbody//tr//td[normalize-space()=&apos;&apos;]//preceding::td[2]&quot;}
-  (Session info: chrome=144.0.7559.110)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.35&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.110, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62599}, goog:processID: 8876, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: dd9ce9c1ae8c459cdf08bf90ff892772
-*** Element info: {Using=xpath, value=//table[@id=&apos;DeliveryVehicleAssignTable&apos;]//tbody//tr//td[normalize-space()=&apos;&apos;]//preceding::td[2]}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 16 more
-</pre></div></td>
-<td>61</td>
-<td>com.Sales.InvoiceDeliveryAssignTest@4be29ed9</td></tr>
-<tr>
-<td title='com.Sales.InvoiceDeliveryAssignTest.SalesInvoice()'><b>SalesInvoice</b><br>Test class: com.Sales.InvoiceDeliveryAssignTest</td>
-<td><div><pre>java.lang.NumberFormatException: empty String
-	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1842)
-	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
-	at java.base/java.lang.Double.parseDouble(Double.java:651)
-	at com.Sales.InvoiceDeliveryAssignTest.SalesInvoice(InvoiceDeliveryAssignTest.java:1056)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 12 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace31489724", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace31489724'><pre>java.lang.NumberFormatException: empty String
-	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1842)
-	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
-	at java.base/java.lang.Double.parseDouble(Double.java:651)
-	at com.Sales.InvoiceDeliveryAssignTest.SalesInvoice(InvoiceDeliveryAssignTest.java:1056)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-</pre></div></td>
-<td>41</td>
-<td>com.Sales.InvoiceDeliveryAssignTest@4be29ed9</td></tr>
-<tr>
-<td title='com.Sales.InvoiceDeliveryAssignTest.Exception()'><b>Exception</b><br>Test class: com.Sales.InvoiceDeliveryAssignTest</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	Actual and Expected Product Stock Mismatched for Product 1848 PREMIUM Brandy (6 BOT) expected [456 B/9 L] but found [457 BULK/5 LS],
-	Actual and Expected Product Stock Mismatched for Product 8 PM GRAIN Beer (7 BOT) expected [1593] but found [1600],
-	Actual and Expected Product Stock Mismatched for Product AGE DE OAK Beer (8 BOT) expected [410] but found [411]
-	at com.Sales.InvoiceDeliveryAssignTest.Exception(InvoiceDeliveryAssignTest.java:1790)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace907721974", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace907721974'><pre>java.lang.AssertionError: The following asserts failed:
-	Actual and Expected Product Stock Mismatched for Product 1848 PREMIUM Brandy (6 BOT) expected [456 B/9 L] but found [457 BULK/5 LS],
-	Actual and Expected Product Stock Mismatched for Product 8 PM GRAIN Beer (7 BOT) expected [1593] but found [1600],
-	Actual and Expected Product Stock Mismatched for Product AGE DE OAK Beer (8 BOT) expected [410] but found [411]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-	at com.Sales.InvoiceDeliveryAssignTest.Exception(InvoiceDeliveryAssignTest.java:1790)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-</pre></div></td>
-<td>0</td>
-<td>com.Sales.InvoiceDeliveryAssignTest@4be29ed9</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -242,55 +76,370 @@ Session ID: dd9ce9c1ae8c459cdf08bf90ff892772
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Sales.InvoiceDeliveryAssignTest.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.Sales.InvoiceDeliveryAssignTest</td>
-<td></td>
-<td>4</td>
-<td>com.Sales.InvoiceDeliveryAssignTest@4be29ed9</td></tr>
-<tr>
-<td title='com.Sales.InvoiceDeliveryAssignTest.SystemSettings()'><b>SystemSettings</b><br>Test class: com.Sales.InvoiceDeliveryAssignTest</td>
-<td></td>
-<td>131</td>
-<td>com.Sales.InvoiceDeliveryAssignTest@4be29ed9</td></tr>
-<tr>
-<td title='com.Sales.InvoiceDeliveryAssignTest.ProductPage()'><b>ProductPage</b><br>Test class: com.Sales.InvoiceDeliveryAssignTest</td>
-<td></td>
-<td>109</td>
-<td>com.Sales.InvoiceDeliveryAssignTest@4be29ed9</td></tr>
-<tr>
-<td title='com.Sales.InvoiceDeliveryAssignTest.StockCalculation()'><b>StockCalculation</b><br>Test class: com.Sales.InvoiceDeliveryAssignTest</td>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0021-PRD, VitrA NEST WALL HUNG WC PAN (WITH BIDET FUNCTION) WHITE, PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.InvoiceDeliveryAssignTest@4be29ed9</td></tr>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
 <tr>
-<td title='com.Sales.InvoiceDeliveryAssignTest.ExpectedProduct()'><b>ExpectedProduct</b><br>Test class: com.Sales.InvoiceDeliveryAssignTest</td>
-<td></td>
-<td>44</td>
-<td>com.Sales.InvoiceDeliveryAssignTest@4be29ed9</td></tr>
-<tr>
-<td title='com.Sales.InvoiceDeliveryAssignTest.GetData()'><b>GetData</b><br>Test class: com.Sales.InvoiceDeliveryAssignTest<br>Parameters: , , , , Product, 21363, AGE DE OAK Beer (8 BOT), CAN, 1, , , , , 5, , 123, TRUE, 100, , , , , , FALSE, </td>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0029-PRD, VitrA WATER JEWELS ROUND BOWL BASIN (40CM) PLATINUM, PCS, 10</td>
 <td></td>
 <td>0</td>
-<td>com.Sales.InvoiceDeliveryAssignTest@4be29ed9</td></tr>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
 <tr>
-<td title='com.Sales.InvoiceDeliveryAssignTest.GetData()'><b>GetData</b><br>Test class: com.Sales.InvoiceDeliveryAssignTest<br>Parameters: 1, SGD, 1, Exclusive, Product, 1251, 1848 PREMIUM Brandy (6 BOT), 6X250ML, 1, , , , , 5, 25, 121, TRUE, 100, %, 10, 10, 9, , FALSE, </td>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0023-PRD, VitrA S50 WALL HUNG WC PAN, 54CM, PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.InvoiceDeliveryAssignTest@4be29ed9</td></tr>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
 <tr>
-<td title='com.Sales.InvoiceDeliveryAssignTest.UomPage()'><b>UomPage</b><br>Test class: com.Sales.InvoiceDeliveryAssignTest</td>
-<td></td>
-<td>21</td>
-<td>com.Sales.InvoiceDeliveryAssignTest@4be29ed9</td></tr>
-<tr>
-<td title='com.Sales.InvoiceDeliveryAssignTest.GetData()'><b>GetData</b><br>Test class: com.Sales.InvoiceDeliveryAssignTest<br>Parameters: , , , , Product, 21562, 8 PM GRAIN Beer (7 BOT), 7X250ML, 1, , , , , 5, , 122, TRUE, 100, , , , , , FALSE, </td>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: Amar (SGD), Henry Joy, 28, , ASLA-0008-PRD, VitrA ARKITEKT VANITY BASIN (86CM), PCS, 10</td>
 <td></td>
 <td>0</td>
-<td>com.Sales.InvoiceDeliveryAssignTest@4be29ed9</td></tr>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
 <tr>
-<td title='com.Sales.InvoiceDeliveryAssignTest.ProductMovementPage()'><b>ProductMovementPage</b><br>Test class: com.Sales.InvoiceDeliveryAssignTest</td>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0014-PRD, VitrA NOUVELLA SIT-ON WASH BASIN (42CM) WHITE, PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
 <td></td>
-<td>24</td>
-<td>com.Sales.InvoiceDeliveryAssignTest@4be29ed9</td></tr>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0028-PRD, VitrA WATER JEWELS ROUND BOWL BASIN (40CM) BLACK, PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0016-PRD, VitrA MATRIX SEAT & COVER (SOFT CLOSING), PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0014-PRD, VitrA NOUVELLA SIT-ON WASH BASIN (42CM) WHITE, PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0027-PRD, VitrA WATER JEWELS ROUND BOWL (40CM) TERRACOTTA TURQUOISE, PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: ASLA-0002-CUS, USD, 1, Exclusive, Product, ASLA-0008-PRD, VitrA ARKITEKT VANITY BASIN (86CM), PCS, 10, , 5, 10, TRUE, 5, 10, 61, TRUE, 100, %, 100, 20, 9, FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0031-PRD, VitrA WATER JEWELS ROUND BOWL BASIN (40CM) GOLD LINED, PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0024-PRD, VitrA OPTIONS COUNTER BOWL BASIN (43CM) WHITE, PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0015-PRD, VitrA NUOVELLA SEMI RECESSED BASIN (SIZE: 500X500X180MM) WHITE, PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0026-PRD, VitrA WATER JEWELS ROUND BOWL (40CM) TERRACOTTA BLUE, PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0030-PRD, VitrA WATER JEWELS ROUND BOWL BASIN (40CM) GOLD, PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0020-PRD, VitrA NEST WALL HUNG WC PAN (57CM) WHITE, PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0033-PRD, VitrA WATER JEWELS ROUND BOWL BASIN (40CM) COPPER LINED, PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0019-PRD, VitrA SOFTCUBE WALL HUNG WC PAN (WHITE), PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0023-PRD, VitrA S50 WALL HUNG WC PAN, 54CM, PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0036-PRD, VitrA WATER JEWELS BOWL BASIN (40CM) STONE GREY (VC), PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0018-PRD, VitrA VALARTE OPEN BACK CLOSED-COUPLED WC PAN (70CM) WHITE, PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0036-PRD, VitrA WATER JEWELS BOWL BASIN (40CM) STONE GREY (VC), PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0012-PRD, VitrA NUOVELLA DOUBLE WASHBASIN (80CM) WHITE, PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.UomPage()'><b>UomPage</b><br>Test class: com.InventoryandServices.StockReservationTest</td>
+<td></td>
+<td>12</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0027-PRD, VitrA WATER JEWELS ROUND BOWL (40CM) TERRACOTTA TURQUOISE, PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0037-PRD, VitrA WATER JEWELS ROUND BOWL BASIN (40CM) BLACK WHITE (VC), PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0022-PRD, VitrA S50 BACK-TO-WALL CLOSED COUPLED WC PAN (66CM) WHITE, PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0028-PRD, VitrA WATER JEWELS ROUND BOWL BASIN (40CM) BLACK, PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0034-PRD, VitrA WATER JEWELS BASIN (40CM) WHITE (VC), PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0010-PRD, VitrA NOUVELLA WALL HUNG WASH BASIN (600X500X180MM), PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.SalesToInvoice()'><b>SalesToInvoice</b><br>Test class: com.InventoryandServices.StockReservationTest</td>
+<td></td>
+<td>2079</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0037-PRD, VitrA WATER JEWELS ROUND BOWL BASIN (40CM) BLACK WHITE (VC), PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0034-PRD, VitrA WATER JEWELS BASIN (40CM) WHITE (VC), PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0025-PRD, VitrA WATER JEWELS BOWL BASIN (40CM) WHITE, PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0013-PRD, VitrA NOUVELLA WH WASHBASIN C/W 2-TH (SIZE:80X50CM), PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.ProductMovementPage()'><b>ProductMovementPage</b><br>Test class: com.InventoryandServices.StockReservationTest</td>
+<td></td>
+<td>238</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.StockCalculation()'><b>StockCalculation</b><br>Test class: com.InventoryandServices.StockReservationTest</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0009-PRD, VitrA NUOVELLA WALL HUNG WASH BASIN (50CM) WHITE, PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0017-PRD, VitrA SUNRISE WASH BASIN (70CM) WHITE, PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.ExpectedProduct()'><b>ExpectedProduct</b><br>Test class: com.InventoryandServices.StockReservationTest</td>
+<td></td>
+<td>413</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0032-PRD, VitrA WATER JEWELS ROUND BOWL BASIN (40CM) COPPER, PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0029-PRD, VitrA WATER JEWELS ROUND BOWL BASIN (40CM) PLATINUM, PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0020-PRD, VitrA NEST WALL HUNG WC PAN (57CM) WHITE, PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.ReveresStockReservation()'><b>ReveresStockReservation</b><br>Test class: com.InventoryandServices.StockReservationTest</td>
+<td></td>
+<td>8</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0022-PRD, VitrA S50 BACK-TO-WALL CLOSED COUPLED WC PAN (66CM) WHITE, PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0033-PRD, VitrA WATER JEWELS ROUND BOWL BASIN (40CM) COPPER LINED, PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0018-PRD, VitrA VALARTE OPEN BACK CLOSED-COUPLED WC PAN (70CM) WHITE, PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.StockReservation()'><b>StockReservation</b><br>Test class: com.InventoryandServices.StockReservationTest</td>
+<td></td>
+<td>1923</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0011-PRD, VitrA NOUVELLA WALL HUNG WASH BASIN (600X500MM), PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0026-PRD, VitrA WATER JEWELS ROUND BOWL (40CM) TERRACOTTA BLUE, PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0009-PRD, VitrA NUOVELLA WALL HUNG WASH BASIN (50CM) WHITE, PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0019-PRD, VitrA SOFTCUBE WALL HUNG WC PAN (WHITE), PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.ProductPage()'><b>ProductPage</b><br>Test class: com.InventoryandServices.StockReservationTest</td>
+<td></td>
+<td>1907</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0032-PRD, VitrA WATER JEWELS ROUND BOWL BASIN (40CM) COPPER, PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0024-PRD, VitrA OPTIONS COUNTER BOWL BASIN (43CM) WHITE, PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0013-PRD, VitrA NOUVELLA WH WASHBASIN C/W 2-TH (SIZE:80X50CM), PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0031-PRD, VitrA WATER JEWELS ROUND BOWL BASIN (40CM) GOLD LINED, PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0035-PRD, VitrA WATER JEWELS BOWL BASIN (40CM) TERRACOTA BLUE (VC), PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.Exception()'><b>Exception</b><br>Test class: com.InventoryandServices.StockReservationTest</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0015-PRD, VitrA NUOVELLA SEMI RECESSED BASIN (SIZE: 500X500X180MM) WHITE, PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.InventoryandServices.StockReservationTest</td>
+<td></td>
+<td>57</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0010-PRD, VitrA NOUVELLA WALL HUNG WASH BASIN (600X500X180MM), PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0035-PRD, VitrA WATER JEWELS BOWL BASIN (40CM) TERRACOTA BLUE (VC), PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.ReverseQtyCalculation()'><b>ReverseQtyCalculation</b><br>Test class: com.InventoryandServices.StockReservationTest</td>
+<td></td>
+<td>70</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0025-PRD, VitrA WATER JEWELS BOWL BASIN (40CM) WHITE, PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0011-PRD, VitrA NOUVELLA WALL HUNG WASH BASIN (600X500MM), PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0017-PRD, VitrA SUNRISE WASH BASIN (70CM) WHITE, PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.SystemSettingsPage()'><b>SystemSettingsPage</b><br>Test class: com.InventoryandServices.StockReservationTest</td>
+<td></td>
+<td>130</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.quit()'><b>quit</b><br>Test class: com.InventoryandServices.StockReservationTest</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0016-PRD, VitrA MATRIX SEAT & COVER (SOFT CLOSING), PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0021-PRD, VitrA NEST WALL HUNG WC PAN (WITH BIDET FUNCTION) WHITE, PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , Product, ASLA-0030-PRD, VitrA WATER JEWELS ROUND BOWL BASIN (40CM) GOLD, PCS, 10, , 5, , , , , 61, TRUE, 100, , , , , FALSE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockReservationTest.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockReservationTest<br>Parameters: , , , , ASLA-0012-PRD, VitrA NUOVELLA DOUBLE WASHBASIN (80CM) WHITE, PCS, 10</td>
+<td></td>
+<td>0</td>
+<td>com.InventoryandServices.StockReservationTest@3646a422</td></tr>
 </table><p>
 </body>
 </html>

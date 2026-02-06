@@ -1006,8 +1006,10 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 
 					if (productDetails.IsCartonSelected.equalsIgnoreCase("true")) {
 
-						if (excelData.Uom.equalsIgnoreCase("1KG") || excelData.Uom.equalsIgnoreCase("1X10KG")
-								|| excelData.Uom.equalsIgnoreCase("1X1KG") || excelData.Uom.equalsIgnoreCase("1X1X1KG")
+						if (excelData.Uom.equalsIgnoreCase("1KG") 
+								|| excelData.Uom.equalsIgnoreCase("1X10KG")
+								|| excelData.Uom.equalsIgnoreCase("1X1KG") 
+								|| excelData.Uom.equalsIgnoreCase("1X1X1KG")
 								|| excelData.Uom.equalsIgnoreCase("KG")) {
 
 							String[] split = productDetails.currentStockValue.split("[ B/L]+");
@@ -1430,7 +1432,7 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 	}
 
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
-	public void DeliveryVehicleAssign() {
+	public void DeliveryVehicleAssign() throws InterruptedException {
 
 		driver.navigate().to(url +"SalesPurchases/DeliveryVehicleAssign/DeliveryVehicleAssignIndex");
 		System.out.println("* DeliveryAssign Page *");
@@ -1438,7 +1440,8 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		DeliveryVehicleAssign dva = new DeliveryVehicleAssign(driver);
 		WebDriverWait wait = new WebDriverWait(driver, 30);
-
+		
+		Thread.sleep(4000);		
 		WebElement checkBox = wait.until(ExpectedConditions.elementToBeClickable(By.xpath
 				("//table[@id='DeliveryVehicleAssignTable']//tbody//tr//td[normalize-space()='"+getInvoiceNo+"']//preceding::td[2]")));
 		checkBox.click();
@@ -1584,7 +1587,7 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 							looseQty = split[1];
 						}
 
-						calculateStock = boxQty + " B/" + looseQty + " L";
+						calculateStock = boxQty + " BULK/" + looseQty + " LS";
 
 						System.out.println("Product Name: " + productName);
 						System.out.println("calculateCartonStock is: " + calculateStock);

@@ -534,7 +534,7 @@ public class StockReservationTest extends BaseClass {
 
 		System.out.println();
 	}
-	
+
 	String getReservationNumber = "";
 
 	//@Ignore
@@ -572,7 +572,7 @@ public class StockReservationTest extends BaseClass {
 				getReservationNumber = driver.findElement(By.xpath
 						("//input[@id='ReservationNumber']")).getAttribute("value");
 				System.out.println("getReservationNumber: "+getReservationNumber);
-				
+
 				WebElement releaseDate = wait.until(ExpectedConditions.elementToBeClickable(sr.ReleaseDate));
 				releaseDate.click();
 				WebElement datePicker = driver.findElement(By.xpath
@@ -580,7 +580,7 @@ public class StockReservationTest extends BaseClass {
 				datePicker.click();
 			}	
 
-				if (i == 0) {
+			if (i == 0) {
 
 				click(sr.Product);
 				WebElement productSearchField = driver.findElement(By.xpath
@@ -2163,14 +2163,14 @@ public class StockReservationTest extends BaseClass {
 		StockReservation sr = new StockReservation(driver);
 		System.out.println("* Stock Reservation Page *");
 
-			WebElement details = driver.findElement(By.xpath
-					("//table[@id='StockTable']//tbody//tr[1]//td[contains(text(),'"+getReservationNumber+"')]//following-sibling::td[5]//child::a[@title='Details']"));
-			js.executeScript("arguments[0].click()", details);
+		WebElement details = driver.findElement(By.xpath
+				("//table[@id='StockTable']//tbody//tr[1]//td[contains(text(),'"+getReservationNumber+"')]//following-sibling::td[5]//child::a[@title='Details']"));
+		js.executeScript("arguments[0].click()", details);
 
-			Thread.sleep(3000);
-			action.moveToElement(sr.Reverse).click().perform();
-			System.out.println("** Stock Reservation Reverse Successfull **");
-			System.out.println();
+		Thread.sleep(3000);
+		action.moveToElement(sr.Reverse).click().perform();
+		System.out.println("** Stock Reservation Reverse Successfull **");
+		System.out.println();
 
 		Thread.sleep(3000);
 	} // Reveres stock reservation

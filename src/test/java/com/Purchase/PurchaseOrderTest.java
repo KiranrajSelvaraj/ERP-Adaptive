@@ -988,21 +988,16 @@ public class PurchaseOrderTest extends BaseClass {
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 
 				js.executeScript("window.scrollBy(0, 1000)", "");
-				click(po.Quantity);
-				Thread.sleep(1000);
-				click(po.SGD);
-				System.out.println(i);
+				click(po.Quantity); 
+				Thread.sleep(1000); 
+				click(po.SGD);				 
+				System.out.println(i);		
 
-				WebElement findElement = driver.findElement(By.xpath("//select[@id='ProductId']"));
-				Select select=new Select(findElement);
-				for (WebElement option : select.getOptions()) {
+				click(po.ChooseproductName);
+				WebElement inputsearch = driver.findElement(By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"));
+				inputsearch.click();
+				inputsearch.sendKeys(excelData.ProductCode +Keys.ENTER);
 
-					if (option.getText().contains(excelData.ProductCode)) {
-						System.out.println("%");
-						option.click();
-						break;
-					}
-				}
 
 			} else if (excelData.Type.equalsIgnoreCase("Service")) {
 

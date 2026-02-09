@@ -716,17 +716,17 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 					System.out.println("SubUOM Value: " + SubUOM);
 
 					String CurStock = driver.findElement(By
-							.xpath("(//table[@id='ProductPartialUOM']//tbody//tr//td[2])[" + j + "]//following::td[2]"))
+							.xpath("(//table[@id='ProductPartialUOM']//tbody//tr//td[2])[" + j + "]//following::td[1]"))
 							.getText().trim();
 					System.out.println("CurStockValue: " + CurStock);
 
 					String LPP = driver.findElement(By.xpath(
-							"(//table[@id='ProductPartialUOM']//tbody//tr//td[2])[" + j + "]//following::td[3]//input"))
+							"(//table[@id='ProductPartialUOM']//tbody//tr//td[2])[" + j + "]//following::td[2]//input"))
 							.getAttribute("value").trim();
 					System.out.println("LPP Value: " + LPP);
 
 					String SP = driver.findElement(By.xpath(
-							"(//table[@id='ProductPartialUOM']//tbody//tr//td[2])[" + j + "]//following::td[4]//input"))
+							"(//table[@id='ProductPartialUOM']//tbody//tr//td[2])[" + j + "]//following::td[3]//input"))
 							.getAttribute("value");
 					System.out.println("SP Value: " + SP);
 

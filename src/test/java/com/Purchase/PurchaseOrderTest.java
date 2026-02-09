@@ -93,7 +93,7 @@ public class PurchaseOrderTest extends BaseClass {
 
 	@DataProvider
 	public Object[][] Util2() {
-		Object[][] data = Util1.getTestData("C:\\Adaptive\\ERP\\PurchaseOrder.xlsx", "Sheet1");
+		Object[][] data = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\PurchaseOrder.xlsx", "Sheet1");
 		return data;
 
 	}

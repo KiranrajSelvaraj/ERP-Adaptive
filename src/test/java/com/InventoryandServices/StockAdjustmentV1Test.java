@@ -21,7 +21,6 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.BaseClass.BaseClass;
-
 import com.PomClass.Login;
 import com.PomClass.Product;
 import com.PomClass.ProductMovement;
@@ -30,10 +29,9 @@ import com.Utility.Util1;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class StockAdjustmentV2Test extends BaseClass{
+public class StockAdjustmentV1Test extends BaseClass {
 
 	private String url;
-
 	SoftAssert soft = new SoftAssert();
 
 	@Test(priority = 1)
@@ -42,11 +40,10 @@ public class StockAdjustmentV2Test extends BaseClass{
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
+		Login lo = new Login(driver);
 
 		driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");
 		url = "https://erpauto.dev1.adaptivebizapp.com/ERP/";
-
-		Login lo = new Login(driver);
 
 		Sendkeys(lo.CompanyCode, "UITDEMO1");
 		Sendkeys(lo.UserName, "Kiran01");
@@ -87,34 +84,30 @@ public class StockAdjustmentV2Test extends BaseClass{
 
 	@DataProvider
 	public Object[][] Util1() {
-
-		Object data[][] = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\StockAdjustment.xlsx", "Sheet1");
+		Object[][] data = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\StockAdjustmentV1.xlsx", "Sheet1");
 		return data;
 
 	}
 
-	@SuppressWarnings("unused")
 	class ExcelData {
 
 		private String StockAdjustmentType;
-		private String Warehouse;
 		private String ProductCode;
 		private String ProductName;
 		private String Uom;
 		private String Qty;
 		private String BatchProduct;
 
-		public ExcelData(String StockAdjustmentType, String Warehouse, String ProductCode, String ProductName,
-				String Uom, String Qty, String BatchProduct) {
+		public ExcelData(String StockAdjustmentType, String ProductCode, String ProductName, String Uom, String Qty, String BatchProduct) {
 			super();
 
 			this.StockAdjustmentType = StockAdjustmentType;
-			this.Warehouse = Warehouse;
 			this.ProductCode = ProductCode;
 			this.ProductName = ProductName;
 			this.Uom = Uom;
 			this.Qty = Qty;
 			this.BatchProduct = BatchProduct;
+
 		}
 	}
 
@@ -123,10 +116,9 @@ public class StockAdjustmentV2Test extends BaseClass{
 	Set<String> ProductSet = new LinkedHashSet<String>();
 
 	@Test(priority = 4, dataProvider = "Util1", dependsOnMethods = "ERPLoginPage")
-	public void GetData(String StockAdjustmentType, String Warehouse, String ProductCode, String ProductName,
-			String Uom, String Qty, String BatchProduct) {
+	public void GetData(String StockAdjustmentType, String ProductCode, String ProductName, String Uom, String Qty, String BatchProduct) {
 
-		ExcelData data = new ExcelData(StockAdjustmentType, Warehouse, ProductCode, ProductName, Uom, Qty, BatchProduct);
+		ExcelData data = new ExcelData(StockAdjustmentType, ProductCode, ProductName, Uom, Qty, BatchProduct);
 
 		excelDataList.add(data);
 		ProductSet.add(ProductCode);
@@ -518,154 +510,100 @@ public class StockAdjustmentV2Test extends BaseClass{
 
 	//@Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
-	public void StockAdjustment() throws InterruptedException {
+	public void StockAdjustmentV1() throws InterruptedException {
 
-		driver.navigate().to(url + "SalesPurchases/StockAdjustmentV2");
+		driver.navigate().to(url + "SalesPurchases/StockAdjustment");
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		//	JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-	//	Actions action = new Actions(driver);
+		//	Actions action = new Actions(driver);
 		StockAdjustment sa = new StockAdjustment(driver);
 
-		WebElement createV2 = wait.until(ExpectedConditions.visibilityOf(sa.CreateV2));
-		js.executeScript("arguments[0].click();", createV2);
+		WebElement addStock = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='Create' and @value='[+] Add Stock']")));
+		addStock.click();
 		Thread.sleep(3000);
-
-		double expOverAllTotal = 0;
 
 		int ExcelDataListSize = excelDataList.size();
 		System.out.println("Excel Data List Size Is:" + ExcelDataListSize);
 		for (int i = 0; i < ExcelDataListSize; i++) {
 			ExcelData excelData = excelDataList.get(i);
 
-			if (i == 0) {
+			click(sa.ChooseProduct);
+			WebElement inputsearch = driver.findElement(By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"));
+			inputsearch.click();
+			inputsearch.sendKeys(excelData.ProductCode +Keys.ENTER);
 
-				Thread.sleep(2000);
-				WebElement stockadjustmenttype = wait.until(ExpectedConditions.elementToBeClickable(sa.StockAdjustmentTypeV2));
-				stockadjustmenttype.click();
-				driver.findElement(
-						By.xpath("//span[@id='select2-StockAdjustmentTypeId-container']//following::input[@type='search']"))
-				.sendKeys(excelData.StockAdjustmentType + Keys.ENTER);
+			WebElement editQty = driver.findElement(By.xpath
+					("//table[@id='ProductList']//tbody//tr//td//b[contains(text(),'"+excelData.ProductName+"')]//following::td[contains(text(),'"+excelData.Uom+"')]//following-sibling::td//input[@id='Qty']"));
+			editQty.click();
+			editQty.sendKeys(Keys.CONTROL +"a"+ Keys.DELETE);
+			editQty.sendKeys(excelData.Qty);
 
-			}
-
-			click(sa.ChooseProductV2);
-			driver.findElement(By.xpath("//span[@id='select2-ProductId-container']//following::input[@type='search']"))
-			.sendKeys(excelData.ProductCode + Keys.ENTER);
-
-
-			click(sa.UOMV2);
-			List<WebElement> subUomOption = driver.findElements(By.xpath(
-					"//span[@id='select2-UOMId-container']//following::input[@type='search']//following::ul//li"));
-			for (WebElement option : subUomOption) {
-				if (option.getText().trim().equals(excelData.Uom)) {
-					option.click();
-					break;
-				}
-			}
-
-
-			WebElement bQtyBox = driver.findElement(By.xpath("//input[@id='BuQty']"));
-			String isDisabled = bQtyBox.getAttribute("disabled");
-			System.out.println("isDisabled " + isDisabled);
-
-			if ("true".equalsIgnoreCase(isDisabled)) {
-				click(sa.LQtyV2);
-				Sendkeys(sa.LQtyV2, excelData.Qty);
-
-			} else {
-
-				if (!excelData.Uom.contains("1KG") ||
-						excelData.Uom.contains("1X10KG") ||
-						excelData.Uom.contains("1X1KG")||
-						excelData.Uom.contains("1X1X1KG")||
-						excelData.Uom.contains("KG")) {
-					click(sa.LQtyV2);
-					Sendkeys(sa.LQtyV2, excelData.Qty);
-				} else {
-					click(sa.BQtyV2);
-					Sendkeys(sa.BQtyV2, excelData.Qty);
-
-				}
-
-			}
-
-			click(sa.AddV2);
-
-			String bQty = driver.findElement(By.xpath("//table[@id='StockAdjustmentDetails']//tbody//tr//td[2]//div["
-					+ "text()='"+excelData.ProductName+"']//following::td[2]//div//input[@id='BQty']")).getAttribute("value");
-			System.out.println("BQty is: "+bQty);
-
-			String lQty = driver.findElement(By.xpath("//table[@id='StockAdjustmentDetails']//tbody//tr//td[2]//div[contains"
-					+ "(text(),'"+excelData.ProductName+"')]//following::td[2]//div//input[@id='LQty']")).getAttribute("value");
-			System.out.println("LQty is: "+lQty);
-
-			int intBQty = Integer.parseInt(bQty);
-			int intLQty = Integer.parseInt(lQty);			
+			Thread.sleep(2000);
+			click(sa.Add);
 
 			if ("true".equalsIgnoreCase(excelData.BatchProduct)) {
 
-				WebElement batchFile = driver.findElement(By.xpath("//table[@id='StockAdjustmentDetails']//tbody//tr//td[2]//div[contains(text(),'"
-						+ ""+excelData.ProductName+"')]//following::td[5]//a[@id='linkBatch']"));
-				batchFile.click();
+				Thread.sleep(3000);
+				WebElement batchfile = driver.findElement(By.xpath
+						("//table[@id='StockAdjustmentDetails']//tbody//tr//td//b[contains(text(),' "+excelData.ProductName+"')]//following::td//a[@class='fa fa-folder-open Popup']"));
+				batchfile.click();
 
-				if (intBQty > 0) {
+				Thread.sleep(2000);
+				String bQtyValue = driver.findElement(By.xpath
+						("(//strong[text()=' "+excelData.ProductName+"']//following::div[text()='B.Qty : ']//child::strong//input[@id='BQty'])[last()]")).getAttribute("value");
+				System.out.println("bQtyValue: "+bQtyValue);
 
-					WebElement batchBQty = driver.findElement(By.xpath
-							("(//label[text()='"+excelData.ProductName+"']//following::div//input[@id='batchBQty'])[1]"));
-					batchBQty.click();
-					batchBQty.sendKeys(Keys.CONTROL + "a" +Keys.DELETE);
-					batchBQty.sendKeys(excelData.Qty);
+				String lQtyValue = driver.findElement(By.xpath
+						("(//strong[text()=' "+excelData.ProductName+"']//following::div[text()='L.Qty : ']//child::strong//input[@id='LQty'])[last()]")).getAttribute("value");
+				System.out.println("lQtyValue: "+lQtyValue);
 
-				} else if (intLQty > 0) {
+				for (product product : ProductDetailsList) {
 
-					WebElement batchLQty = driver.findElement(By.xpath
-							("(//label[text()='"+excelData.ProductName+"']//following::div//input[@id='batchLQty'])[1]"));
-					batchLQty.click();
-					batchLQty.sendKeys(Keys.CONTROL + "a" +Keys.DELETE);
-					batchLQty.sendKeys(excelData.Qty);
-				}				
+					if (product.productName.equalsIgnoreCase(excelData.ProductName)) {
 
-				WebElement close = driver.findElement(By.xpath
-						("//div[contains(@class,'tooltipmodal-content') and .//label[text()='"+excelData.ProductName+"']]//span[@class='tooltipclose']"));
-				js.executeScript("arguments[0].click();", close);
+						if (product.IsCarton == true) {
+
+							WebElement bQty = driver.findElement(By.xpath
+									("(//strong[text()=' "+excelData.ProductName+"']//following::table//tbody//tr//td//child::input[@id='BulkQty'])[last()]"));
+							bQty.click();
+							bQty.sendKeys(Keys.CONTROL +"a"+ Keys.DELETE);
+							bQty.sendKeys(bQtyValue);					
+						}
+						break;
+					}
+				}			
+
+				WebElement lQty = driver.findElement(By.xpath
+						("(//strong[text()=' "+excelData.ProductName+"']//following::table//tbody//tr//td//child::input[@id='LooseQty'])[last()]"));
+				lQty.click();
+				lQty.sendKeys(Keys.CONTROL +"a"+ Keys.DELETE);
+				lQty.sendKeys(lQtyValue);
+
+				Thread.sleep(2000);
+				WebElement add = driver.findElement(By.xpath("(//strong[text()=' "+excelData.ProductName+"']//following::div[@class='modal-footer']//child::button[text()='Add'])[last()]"));
+				//	WebElement until = wait.until(ExpectedConditions.elementToBeClickable(add));
+				//	until.click();
+				add.click();
+
 			}
 
-			String produtTotal = driver.findElement(By.xpath("//table[@id='StockAdjustmentDetails']//tbody//tr//td[2]//div[contains"
-					+ "(text(),'"+excelData.ProductName+"')]//following::td[4]//input[@id='TOTAL']")).getAttribute("value");
-			System.out.println("Produt Total is: "+produtTotal);
+		}
 
-			double productTotalDouble = Double.parseDouble(produtTotal);
-			expOverAllTotal = expOverAllTotal + productTotalDouble;
-
-		} // Excel data list loop
-
-		String formatExpectedOverAllTotal = String.format("%.2f", expOverAllTotal);
-
-		String actualOverAllTotal = driver.findElement(By.xpath
-				("//table[@id='StockAdjustmentDetails']//tfoot//tr//td[@id='OverallTotal']")).getText();
-		System.out.println("Actual OverAllTotal is: "+actualOverAllTotal);
-		System.out.println("Expected OverAllTotal is: "+formatExpectedOverAllTotal);
-
-		soft.assertEquals(actualOverAllTotal, formatExpectedOverAllTotal, "Actual and Expected OverAllTotal Mismatched");
-
-		click(sa.SaveV2);
-		click(sa.AlertPopupOK);
+		Thread.sleep(3000);
+		click(sa.Save);
 		try {
 
 			String alertText = driver.findElement(By.id("popup_message")).getText();
 			System.out.println("Alert Text: " + alertText);
 
 		} catch (Exception e) {
-			System.out.println("No alert appeared after save");
-		}		
-		click(sa.AlertPopupOK);
+			System.out.println("No alert appeared after save.");
+		}	
 		System.out.println("*** Stock Adjustment Save Successfull ***");
-		System.out.println();
-
-	} // Method loop
+	}
 
 	class StockCalculation {
 
@@ -738,7 +676,7 @@ public class StockAdjustmentV2Test extends BaseClass{
 
 						String[] splitCurrentStockValue = productData.currentStockValue.split("/");
 						for (String currentStock : splitCurrentStockValue) {
-							if (currentStock.contains("B")) {
+							if (currentStock.contains("BULK")) {
 								String replaceAllBoxCurrentStock = currentStock.replaceAll("[A-Za-z]", "");
 								double doubleBoxCurrentStock = Double.parseDouble(replaceAllBoxCurrentStock);
 
@@ -746,7 +684,7 @@ public class StockAdjustmentV2Test extends BaseClass{
 								//	System.out.println("multipleBoxStock is: "+multipleBoxStock);
 
 
-							} else if (currentStock.contains("L")) {
+							} else if (currentStock.contains("LOOSE")) {
 								String replaceAllLooseCurrentStock = currentStock.replaceAll("[A-Za-z]", "");
 								doubleLooseCurrentStock = Double.parseDouble(replaceAllLooseCurrentStock);
 								//	System.out.println("doubleLooseCurrentStock is: "+doubleLooseCurrentStock);
@@ -766,10 +704,10 @@ public class StockAdjustmentV2Test extends BaseClass{
 							} else if (stockAdjustmentType.equals("Opening")) {
 
 								double additionBoxandLooseStock = multipleBoxStock + doubleLooseCurrentStock;
-								calculateStockDouble = additionBoxandLooseStock - multipleQty;
+								additionBoxandLooseStock = 0;
+								calculateStockDouble = additionBoxandLooseStock + multipleQty;
 
 							}
-
 						}		
 
 					} else {
@@ -787,10 +725,10 @@ public class StockAdjustmentV2Test extends BaseClass{
 						} else if (stockAdjustmentType.equals("Opening")) {
 
 							double doubleCurrentStock = Double.parseDouble(productData.currentStockValue);
+							doubleCurrentStock = 0;
 							calculateStockDouble = doubleCurrentStock + multipleQty;
 
 						}
-
 					}
 
 					calculateStock = String.valueOf(calculateStockDouble);
@@ -1001,6 +939,7 @@ public class StockAdjustmentV2Test extends BaseClass{
 		soft.assertAll();
 
 	}
+
 	@Ignore
 	@Test(priority = 40, dependsOnMethods = "ERPLoginPage")
 	private void quit() throws InterruptedException {
@@ -1008,5 +947,4 @@ public class StockAdjustmentV2Test extends BaseClass{
 
 	}
 
-
-} // Main class loop
+}

@@ -257,7 +257,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsSalesManManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsSalesManManagement :" + IsSalesManManagement);
@@ -271,7 +271,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsWarehouseManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsWarehouseManagement :" + IsWarehouseManagement);
@@ -285,7 +285,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsWarehouseStorageManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsWarehouseStorageManagement :" + IsWarehouseStorageManagement);
@@ -299,7 +299,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsBarcodeEnabled = ss.BooleanValue.isSelected();
 		System.out.println("IsBarcodeEnabled :" + IsBarcodeEnabled);
@@ -313,7 +313,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsBarcodeManagementInsales = ss.BooleanValue.isSelected();
 		System.out.println("IsBarcodeManagementInsales :" + IsBarcodeManagementInsales);
@@ -327,7 +327,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsMultiWordSearchInProduct = ss.BooleanValue.isSelected();
 		System.out.println("IsMultiWordSearchInProduct :" + IsMultiWordSearchInProduct);
@@ -341,7 +341,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsDuplicateProductsInInvoice = ss.BooleanValue.isSelected();
 		System.out.println("IsDuplicateProductsInInvoice :" + IsDuplicateProductsInInvoice);
@@ -355,7 +355,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsCartonManagement = ss.BooleanValue.isSelected();
 		System.out.println("IsCartonManagement :" + IsCartonManagement);
@@ -369,7 +369,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsEnableItemLevelDiscountInSales = ss.BooleanValue.isSelected();
 		System.out.println("IsEnableItemLevelDiscountInSales :" + IsEnableItemLevelDiscountInSales);
@@ -383,7 +383,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsFOCManagementInSO = ss.BooleanValue.isSelected();
 		System.out.println("IsFOCManagementInSO :" + IsFOCManagementInSO);
@@ -397,7 +397,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		BulkQtyMeasurement = driver.findElement(By.id("StringValue"))
 				.getAttribute("value");
@@ -412,7 +412,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		LooseQtyMeasurement = driver.findElement(By.id("StringValue"))
 				.getAttribute("value");
@@ -427,7 +427,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsAllowToEditSpecialPrice = ss.BooleanValue.isSelected();
 		System.out.println("IsAllowToEditSpecialPrice :" + IsAllowToEditSpecialPrice);
@@ -441,7 +441,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		String DecimalCalculationForSalesString = driver.findElement(By.id("DecimalValue"))
 				.getAttribute("value");
@@ -457,7 +457,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsOpenItemManagementInsales = ss.BooleanValue.isSelected();
 		System.out.println("IsOpenItemManagementInsales :" + IsOpenItemManagementInsales);
@@ -471,7 +471,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsHeaderManagementInSO = ss.BooleanValue.isSelected();
 		System.out.println("IsHeaderManagementInSO :" + IsHeaderManagementInSO);
@@ -485,7 +485,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
 		Thread.sleep(2000);
-		click(ss.EditSystemSetting);
+		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
 		Thread.sleep(1000);
 		IsReturnManagementInSI = ss.BooleanValue.isSelected();
 		System.out.println("IsReturnManagementInSI :" + IsReturnManagementInSI);

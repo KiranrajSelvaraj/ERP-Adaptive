@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Purchase.PurchaseGRNTest">
+      <class name="com.InventoryandServices.StockAdjustmentV1Test">
         <methods>
+          <include name="Exception"/>
+          <include name="StockAdjustmentV1"/>
           <include name="ERPLoginPage"/>
-          <include name="GoodReceivingNote"/>
         </methods>
-      </class> <!-- com.Purchase.PurchaseGRNTest -->
+      </class> <!-- com.InventoryandServices.StockAdjustmentV1Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

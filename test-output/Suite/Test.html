@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>15/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>32/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Feb 12 14:53:25 IST 2026</td>
+<td>Started on:</td><td>Mon Feb 16 17:57:26 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>745 seconds (745194 ms)</td>
+<tr><td>Total time:</td><td>745 seconds (745012 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,47 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.Exception()'><b>Exception</b><br>Test class: com.Sales.DirectCreditNotes</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	Actual and Expected SubTotal Mismatched expected [127.0] but found [3075.0]
+	at com.Sales.DirectCreditNotes.Exception(DirectCreditNotes.java:1753)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace759196440", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace759196440'><pre>java.lang.AssertionError: The following asserts failed:
+	Actual and Expected SubTotal Mismatched expected [127.0] but found [3075.0]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at com.Sales.DirectCreditNotes.Exception(DirectCreditNotes.java:1753)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,80 +117,165 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0394, Paper Water Cup, PCS, 2, , 5, , , , , 130, TRUE, 100, , , , , , TRUE, 1</td>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0326, Boost, 1X1KG, 1, , , , , , , 62, , , , , , , , TRUE, </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
 <tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.UomPage()'><b>UomPage</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
-<td></td>
-<td>32</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.ExpectedProduct()'><b>ExpectedProduct</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
-<td></td>
-<td>82</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: C0002, SGD, 1, Inclusive, Product, P0323, Green Tea, 1X10KG, 2, , 5, , TRUE, 5, 25, 59, TRUE, 100, %, 10, 10, 9, , TRUE, 1</td>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0341, Vatika Shampoo, 1X1KG, 1, , , , , , , 77, , , , , , , , FALSE, </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
 <tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0364, Almond Flour, 25X1GM, 1, , 5, , , , , 100, TRUE, 100, , , , , , TRUE, 0</td>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0406, Frozen Sweet Corn, PCS, 1, , , , , , , 142, , , , , , , TRUE, FALSE, </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
 <tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0342, Sensodyne Toothpaste, 1X1KG, 2, , 5, , , , , 78, TRUE, 100, , , , , , FALSE, 1</td>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0359, Ice Cream (Family Pack), 25X1GM, 1, , , , , , , 95, , , , , , , TRUE, TRUE, </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
 <tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0381, Margarine, 25X1GM, 1, , 5, , , , , 117, TRUE, 100, , , , , , FALSE, 0</td>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0324, Lemon Tea, 1X1KG, 1, , , , , , , 60, , , , , , , TRUE, TRUE, </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
 <tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.SystemSettings()'><b>SystemSettings</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
-<td></td>
-<td>126</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.ProductMovementPage()'><b>ProductMovementPage</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
-<td></td>
-<td>56</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.StockCalculation()'><b>StockCalculation</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0408, Sweet & Sour Sauce, PCS, 1, , , , , , , 144, , , , , , , , FALSE, </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
 <tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
-<td></td>
-<td>6</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0416, A4 Sheets, Packets, 1, , 5, , , , , 152, TRUE, 100, , , , , TRUE, FALSE, 0</td>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0407, Chilli Sauce, PCS, 1, , , , , , , 143, , , , , , , , FALSE, </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
 <tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.SalesToInvoice()'><b>SalesToInvoice</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
-<td></td>
-<td>206</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.ProductPage()'><b>ProductPage</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
-<td></td>
-<td>230</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.Exception()'><b>Exception</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0390, Food Color – Gel, PCS, 1, , , , , , , 126, , , , , , , , TRUE, </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@3a7442c7</td></tr>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0393, Cashew Pieces, PCS, 1, , , , , , , 129, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: C0001, SGD, 1, Zero, Product, P0323, Green Tea, 1X10KG, 1, , , , TRUE, 5, 25, 59, , , %, 10, 10, 0, , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0391, Nuts Mix, PCS, 1, , , , , , , 127, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0339, Dettol Soap, 1X1KG, 1, , , , , , , 75, , , , , , , TRUE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0340, Patanjali Shampoo, 1X1KG, 1, , , , , , , 76, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0374, Maple Syrup, 25X1GM, 1, , , , , , , 110, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0375, Baking Soda, 25X1GM, 1, , , , , , , 111, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0325, Milo, 1X1KG, 1, , , , , , , 61, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0376, Baking Powder, 25X1GM, 1, , , , , , , 112, , , , , , , TRUE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0392, Walnut, PCS, 1, , , , , , , 128, , , , , , , TRUE, TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0409, Rice Vinegar, PCS, 1, , , , , , , 145, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0358, Flavoured Milk, 25X1GM, 1, , , , , , , 94, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0343, Dabur Red Paste, 1X1KG, 1, , , , , , , 79, , , , , , , TRUE, FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0357, Fresh Butter, 25X1GM, 1, , , , , , , 93, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.Sales.DirectCreditNotes</td>
+<td></td>
+<td>14</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0372, Castor Sugar, 25X1GM, 1, , , , , , , 108, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0373, Honey, 25X1GM, 1, , , , , , , 109, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.DirecteCreditNote()'><b>DirecteCreditNote</b><br>Test class: com.Sales.DirectCreditNotes</td>
+<td></td>
+<td>728</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0361, Bread Flour, 25X1GM, 1, , , , , , , 97, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0342, Sensodyne Toothpaste, 1X1KG, 1, , , , , , , 78, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0394, Paper Water Cup, PCS, 1, , , , , , , 130, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0410, Szechuan Pepper, PCS, 1, , , , , , , 146, , , , , , , , FALSE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0360, Milkshake Bottle, 25X1GM, 1, , , , , , , 96, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
+<tr>
+<td title='com.Sales.DirectCreditNotes.GetData()'><b>GetData</b><br>Test class: com.Sales.DirectCreditNotes<br>Parameters: , , , , Product, P0327, Horlicks, 1X1KG, 1, , , , , , , 63, , , , , , , , TRUE, </td>
+<td></td>
+<td>0</td>
+<td>com.Sales.DirectCreditNotes@63376bed</td></tr>
 </table><p>
 </body>
 </html>

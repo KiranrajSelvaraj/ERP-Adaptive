@@ -117,7 +117,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 	}
 
-
 	@SuppressWarnings("unused")
 	class ExcelData {
 		private String Customer;

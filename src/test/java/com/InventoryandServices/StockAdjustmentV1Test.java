@@ -516,13 +516,14 @@ public class StockAdjustmentV1Test extends BaseClass {
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
-		//	JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		//	Actions action = new Actions(driver);
 		StockAdjustment sa = new StockAdjustment(driver);
+		System.out.println("** Stock AdjustmentV1 **");
 
 		WebElement addStock = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='Create' and @value='[+] Add Stock']")));
-		addStock.click();
+		js.executeScript("arguments[0].click();", addStock);
 		Thread.sleep(3000);
 
 		int ExcelDataListSize = excelDataList.size();
@@ -704,8 +705,8 @@ public class StockAdjustmentV1Test extends BaseClass {
 							} else if (stockAdjustmentType.equals("Opening")) {
 
 								double additionBoxandLooseStock = multipleBoxStock + doubleLooseCurrentStock;
-								additionBoxandLooseStock = 0;
-								calculateStockDouble = additionBoxandLooseStock + multipleQty;
+								multipleBoxStock = 0;
+								calculateStockDouble = doubleLooseCurrentStock + multipleQty;
 
 							}
 						}		
@@ -735,7 +736,7 @@ public class StockAdjustmentV1Test extends BaseClass {
 
 					if (productData.IsCarton) {						
 
-						double diviedStock = calculateStockDouble / 10;
+						double diviedStock = calculateStockDouble / 18;
 						String stringCalculateStock = String.valueOf(diviedStock);						
 						String[] split = stringCalculateStock.split("\\.");
 						String boxQty = split[0];
@@ -745,7 +746,7 @@ public class StockAdjustmentV1Test extends BaseClass {
 							looseQty = split[1];
 						}
 
-						calculateStock = boxQty +" B/"+ looseQty +" L";					
+						calculateStock = boxQty +" BULK/"+ looseQty +" LOOSE";					
 
 						System.out.println("Product Name: "+productName);
 						System.out.println("calculateCartonStock is: "+calculateStock);
@@ -864,24 +865,6 @@ public class StockAdjustmentV1Test extends BaseClass {
 			productcode.sendKeys(product + Keys.ENTER);
 			Thread.sleep(1000);
 
-			/*	WebElement uomField = driver.findElement(By.id("UOM"));
-			if (uomField.isEnabled()) {
-
-				click(pm.UOM);
-				List<WebElement> subUomOption = driver.findElements(By.xpath(
-						"//span[@id='select2-UOM-container']//following::input[@type='search']//following::ul//li"));
-				for (WebElement option : subUomOption) {
-					if (option.getText().trim().equals(excelData.Uom)) {
-						option.click();
-						break;
-					}
-
-				}
-
-			} else {
-			    System.out.println("UOM field is NON-EDITABLE");
-			} */
-
 			js.executeScript("arguments[0].click();", pm.Fetch);
 			Thread.sleep(3000);
 
@@ -896,40 +879,62 @@ public class StockAdjustmentV1Test extends BaseClass {
 			System.out.println("balanceQty: "+balanceQty);
 
 			for (StockCalculation stock : StockCalculationList) {
+				
+				for (product prod : ProductDetailsList) {
 
-				if (stock.productName.equalsIgnoreCase(trimProductName)) {
+				if (prod.productName.equalsIgnoreCase(trimProductName)) {
 
-					if (stock.calculateStock.contains("/0 L")) {
+						if (prod.IsCarton == true) {
 
-						String replaceProductStock = stock.calculateStock.replaceAll("/0 L", "");
+							String stringCalculateStock = String.valueOf(stock.calculateStock);						
+							String[] split1 = stringCalculateStock.split("\\.");
+							String boxQty = split1[0];
+							String looseQty = "0";
 
-						System.out.println("Product Movement Name: "+ trimProductName);
-						System.out.println("Actual Product Movement Stock: "+ balanceQty);
-						System.out.println("Expected Product Movement Stock: "+ replaceProductStock);
+							if (split1.length > 1) {
+								looseQty = split1[1];
+							}
+
+							String calculateStock = boxQty +" B/"+ looseQty +" L";					
+
+							if (calculateStock.contains("/0 L")) {
+
+								String replaceProductStock = calculateStock.replaceAll("/0 L", "");
+
+								System.out.println("Product Movement Name: "+ trimProductName);
+								System.out.println("Actual Product Movement Stock: "+ balanceQty);
+								System.out.println("Expected Product Movement Stock: "+ replaceProductStock);
+								System.out.println();
 
 
-						soft.assertEquals(balanceQty, replaceProductStock,
-								"Actual and Expected Product Movement Stock Mismatched for Product "
-										+ trimProductName);
+								soft.assertEquals(balanceQty, replaceProductStock,
+										"Actual and Expected Product Movement Stock Mismatched for Product "
+												+ trimProductName);
 
-					} else {
+							}
 
-						System.out.println("Product Movement Name: "+ trimProductName);
-						System.out.println("Actual Product Movement Stock: "+ balanceQty);
-						System.out.println("Expected Product Movement Stock: "+stock.calculateStock.replaceAll("\\.0$", ""));
+						} else {
+
+							System.out.println("Product Movement Name: "+ trimProductName);
+							System.out.println("Actual Product Movement Stock: "+ balanceQty);
+							System.out.println("Expected Product Movement Stock: "+stock.calculateStock.replaceAll("\\.0$", ""));
+							System.out.println();
 
 
-						soft.assertEquals(balanceQty, stock.calculateStock.replaceAll("\\.0$", ""),
-								"Actual and Expected Product Movement Stock Mismatched for Product "
-										+ trimProductName);
+							soft.assertEquals(balanceQty, stock.calculateStock.replaceAll("\\.0$", ""),
+									"Actual and Expected Product Movement Stock Mismatched for Product "
+											+ trimProductName);
 
+						}
 					}
-					break;
+					
 				}
-
+				
+				
 			} // Stock calculation list loop
-
+			
 		}
+		
 		System.out.println();
 	}
 

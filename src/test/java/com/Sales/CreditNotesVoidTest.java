@@ -847,19 +847,19 @@ public class CreditNotesVoidTest extends BaseClass {
 
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void DirecteCreditNote() throws InterruptedException, IOException {
-
+		
+		driver.navigate().to(url + "SalesPurchases/CreditNotes");
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		// Actions action = new Actions(driver);
 		CreditNotes cn = new CreditNotes(driver);
-
-		driver.navigate().to(url + "SalesPurchases/CreditNotes");
+		
 		Thread.sleep(5000);
 		System.out.println("*** Credit Notes Page ***");
 
-		click(cn.AddCreditNote);
+		js.executeScript("arguments[0].click();", cn.AddCreditNote);
 		Thread.sleep(3000);
 
 		String getExcelGstType = "";

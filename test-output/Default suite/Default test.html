@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>11/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>9/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Jan 09 12:47:40 IST 2026</td>
+<td>Started on:</td><td>Fri Feb 13 17:01:20 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>268 seconds (268530 ms)</td>
+<tr><td>Total time:</td><td>672 seconds (672724 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,9 +76,13 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.GoodReceivingNote()'><b>GoodReceivingNote</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;String.equalsIgnoreCase(String)&quot; because &quot;getActualPrice&quot; is null
-	at com.Purchase.PurchaseGRNTest.GoodReceivingNote(PurchaseGRNTest.java:1622)
+<td title='com.InventoryandServices.StockAdjustmentV1Test.Exception()'><b>Exception</b><br>Test class: com.InventoryandServices.StockAdjustmentV1Test</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	Actual and Expected Product Stock Mismatched for Product Chunkies Biscuit expected [100 BULK/0 LOOSE] but found [100 BULK/10 LOOSE],
+	Actual and Expected Product Movement Stock Mismatched for Product Chunkies Biscuit expected [100 BULKOOSE] but found [100 B/10 L]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at com.InventoryandServices.StockAdjustmentV1Test.Exception(StockAdjustmentV1Test.java:940)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -107,9 +111,13 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1380137286", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1380137286'><pre>java.lang.NullPointerException: Cannot invoke &quot;String.equalsIgnoreCase(String)&quot; because &quot;getActualPrice&quot; is null
-	at com.Purchase.PurchaseGRNTest.GoodReceivingNote(PurchaseGRNTest.java:1622)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1047854468", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1047854468'><pre>java.lang.AssertionError: The following asserts failed:
+	Actual and Expected Product Stock Mismatched for Product Chunkies Biscuit expected [100 BULK/0 LOOSE] but found [100 BULK/10 LOOSE],
+	Actual and Expected Product Movement Stock Mismatched for Product Chunkies Biscuit expected [100 BULKOOSE] but found [100 B/10 L]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at com.InventoryandServices.StockAdjustmentV1Test.Exception(StockAdjustmentV1Test.java:940)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -139,8 +147,112 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>8</td>
-<td>com.Purchase.PurchaseGRNTest@4145bad8</td></tr>
+<td>0</td>
+<td>com.InventoryandServices.StockAdjustmentV1Test@71ba6d4e</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV1Test.StockAdjustmentV1()'><b>StockAdjustmentV1</b><br>Test class: com.InventoryandServices.StockAdjustmentV1Test</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;submit&quot; value=&quot;[+] Add Stock&quot; id=&quot;Create&quot; class=&quot;btn btn-primary&quot;&gt; is not clickable at point (286, 126). Other element would receive the click: &lt;div class=&quot;modal&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=144.0.7559.133)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.44&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56290}, goog:processID: 15716, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 05c4c998e63e096ced3ff51f35f0068a
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at com.InventoryandServices.StockAdjustmentV1Test.StockAdjustmentV1(StockAdjustmentV1Test.java:525)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1018618094", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1018618094'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;submit&quot; value=&quot;[+] Add Stock&quot; id=&quot;Create&quot; class=&quot;btn btn-primary&quot;&gt; is not clickable at point (286, 126). Other element would receive the click: &lt;div class=&quot;modal&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=144.0.7559.133)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.44&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56290}, goog:processID: 15716, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 05c4c998e63e096ced3ff51f35f0068a
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at com.InventoryandServices.StockAdjustmentV1Test.StockAdjustmentV1(StockAdjustmentV1Test.java:525)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>1</td>
+<td>com.InventoryandServices.StockAdjustmentV1Test@71ba6d4e</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -151,60 +263,50 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.UomPage()'><b>UomPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td title='com.InventoryandServices.StockAdjustmentV1Test.ProductPage()'><b>ProductPage</b><br>Test class: com.InventoryandServices.StockAdjustmentV1Test</td>
+<td></td>
+<td>114</td>
+<td>com.InventoryandServices.StockAdjustmentV1Test@71ba6d4e</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV1Test.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.InventoryandServices.StockAdjustmentV1Test</td>
 <td></td>
 <td>11</td>
-<td>com.Purchase.PurchaseGRNTest@4145bad8</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV1Test@71ba6d4e</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.ProductPage()'><b>ProductPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
-<td></td>
-<td>60</td>
-<td>com.Purchase.PurchaseGRNTest@4145bad8</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.PurchaseOrderToInvoice()'><b>PurchaseOrderToInvoice</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
-<td></td>
-<td>22</td>
-<td>com.Purchase.PurchaseGRNTest@4145bad8</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.StockCalculation()'><b>StockCalculation</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td title='com.InventoryandServices.StockAdjustmentV1Test.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV1Test<br>Parameters: Opening, 000001, Base - Amazing Questions Kids Ask About God, PCS, 100, FALSE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseGRNTest@4145bad8</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV1Test@71ba6d4e</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.VendorPage()'><b>VendorPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
-<td></td>
-<td>13</td>
-<td>com.Purchase.PurchaseGRNTest@4145bad8</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.ExpectedProduct()'><b>ExpectedProduct</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
-<td></td>
-<td>17</td>
-<td>com.Purchase.PurchaseGRNTest@4145bad8</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.ProductMovementPage()'><b>ProductMovementPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
-<td></td>
-<td>8</td>
-<td>com.Purchase.PurchaseGRNTest@4145bad8</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
-<td></td>
-<td>12</td>
-<td>com.Purchase.PurchaseGRNTest@4145bad8</td></tr>
-<tr>
-<td title='com.Purchase.PurchaseGRNTest.Exception()'><b>Exception</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td title='com.InventoryandServices.StockAdjustmentV1Test.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV1Test<br>Parameters: , P0043, Chunkies Biscuit, 18X1GM, 100, FALSE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseGRNTest@4145bad8</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV1Test@71ba6d4e</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.GetData()'><b>GetData</b><br>Test class: com.Purchase.PurchaseGRNTest<br>Parameters: V0001, SGD, 1, Zero, Product, P0004, Butterbeer Cupcakes, Packets, 1, , , 5, , , , 112, , , %, 10, 10, 0, FALSE, FALSE, </td>
+<td title='com.InventoryandServices.StockAdjustmentV1Test.StockCalculation()'><b>StockCalculation</b><br>Test class: com.InventoryandServices.StockAdjustmentV1Test</td>
+<td></td>
+<td>192</td>
+<td>com.InventoryandServices.StockAdjustmentV1Test@71ba6d4e</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV1Test.GetData()'><b>GetData</b><br>Test class: com.InventoryandServices.StockAdjustmentV1Test<br>Parameters: , P0050, Chocolate Ice Cream, 30X1GM, 100, FALSE</td>
 <td></td>
 <td>0</td>
-<td>com.Purchase.PurchaseGRNTest@4145bad8</td></tr>
+<td>com.InventoryandServices.StockAdjustmentV1Test@71ba6d4e</td></tr>
 <tr>
-<td title='com.Purchase.PurchaseGRNTest.SystemSettingsPage()'><b>SystemSettingsPage</b><br>Test class: com.Purchase.PurchaseGRNTest</td>
+<td title='com.InventoryandServices.StockAdjustmentV1Test.ProductMovementPage()'><b>ProductMovementPage</b><br>Test class: com.InventoryandServices.StockAdjustmentV1Test</td>
 <td></td>
-<td>113</td>
-<td>com.Purchase.PurchaseGRNTest@4145bad8</td></tr>
+<td>30</td>
+<td>com.InventoryandServices.StockAdjustmentV1Test@71ba6d4e</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV1Test.ExpectedProduct()'><b>ExpectedProduct</b><br>Test class: com.InventoryandServices.StockAdjustmentV1Test</td>
+<td></td>
+<td>50</td>
+<td>com.InventoryandServices.StockAdjustmentV1Test@71ba6d4e</td></tr>
+<tr>
+<td title='com.InventoryandServices.StockAdjustmentV1Test.UomPage()'><b>UomPage</b><br>Test class: com.InventoryandServices.StockAdjustmentV1Test</td>
+<td></td>
+<td>19</td>
+<td>com.InventoryandServices.StockAdjustmentV1Test@71ba6d4e</td></tr>
 </table><p>
 </body>
 </html>

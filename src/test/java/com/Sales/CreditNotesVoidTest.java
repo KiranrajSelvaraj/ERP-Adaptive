@@ -859,7 +859,8 @@ public class CreditNotesVoidTest extends BaseClass {
 		Thread.sleep(5000);
 		System.out.println("*** Credit Notes Page ***");
 
-		js.executeScript("arguments[0].click();", cn.AddCreditNote);
+		WebElement create = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='Create' and @value='[+] Add CreditNote']")));
+		js.executeScript("arguments[0].click();", create);
 		Thread.sleep(3000);
 
 		String getExcelGstType = "";

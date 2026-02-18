@@ -4,12 +4,13 @@
   <test thread-count="1" parallel="classes" name="Test(failed)">
     <parameter name="env" value="Dev"/>
     <classes>
-      <class name="com.Sales.DirectCreditNotes">
+      <class name="com.Sales.CreditNotesVoidTest">
         <methods>
-          <include name="Exception"/>
           <include name="ERPLoginPage"/>
+          <include name="SystemSettings"/>
+          <include name="DirecteCreditNote"/>
         </methods>
-      </class> <!-- com.Sales.DirectCreditNotes -->
+      </class> <!-- com.Sales.CreditNotesVoidTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

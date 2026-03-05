@@ -47,7 +47,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 	private String url;
-
 	SoftAssert soft = new SoftAssert();
 
 	@Parameters({ "env" })
@@ -62,7 +61,6 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 			url = "https://erpauto.dev1.adaptivebizapp.com/ERP/";
 
 		}
-
 	}
 
 	@Test(priority = 1)
@@ -105,10 +103,8 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		}
 
 		System.out.println("*ERP Login Page*");
-
-
-
 	}
+	
 	@DataProvider
 	public Object[][] Util1() {
 
@@ -1325,7 +1321,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 			if (unitDiscCheckboxBoolean == true) {
 
-				if (excelData.DiscountPercentage.isBlank() == false) {
+				if (excelData.DiscountPercentage.isEmpty() == false) {
 					double discountPercentDouble = Double.parseDouble(excelData.DiscountPercentage);
 
 					double discountPercentPrice = (discountPercentDouble / 100) * priceDouble;
@@ -1335,7 +1331,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 					Total = (priceDouble - discAmountforPercent) * qtyDouble;
 					System.out.println("Discount Percent Total: " + Total);
 
-				} else if (excelData.DiscountAmount.isBlank() == false) {
+				} else if (excelData.DiscountAmount.isEmpty() == false) {
 					double discAmtDouble = Double.parseDouble(excelData.DiscountAmount);
 
 					Total = (priceDouble - discAmtDouble) * qtyDouble;
@@ -1344,7 +1340,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 			} else {
 
-				if (excelData.DiscountPercentage.isBlank() == false) {
+				if (excelData.DiscountPercentage.isEmpty() == false) {
 
 					double discPercentDouble = Double.parseDouble(excelData.DiscountPercentage);
 					double discountPerAmt = (discPercentDouble / 100) * Total;
@@ -1353,7 +1349,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 					Total = Total - discAmtforPer;
 
-				} else if (excelData.DiscountAmount.isBlank() == false) {
+				} else if (excelData.DiscountAmount.isEmpty() == false) {
 
 					double discAmtDouble1 = Double.parseDouble(excelData.DiscountAmount);
 

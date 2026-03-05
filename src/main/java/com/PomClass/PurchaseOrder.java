@@ -13,6 +13,9 @@ public class PurchaseOrder {
 	@FindBy(id="Create")
 	public WebElement AddPurchaseOrder;
 	
+	@FindBy(id = "searchstring")
+	public WebElement Fetch;
+	
 	@FindBy(id = "clear")
 	public WebElement Clear;
 	

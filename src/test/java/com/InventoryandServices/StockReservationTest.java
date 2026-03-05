@@ -246,7 +246,6 @@ public class StockReservationTest extends BaseClass {
 			ServiceSet.add(ProductCode);
 
 		}
-
 	}
 
 	private boolean IsStockReservation;
@@ -1366,7 +1365,7 @@ public class StockReservationTest extends BaseClass {
 
 			if (unitDiscCheckboxBoolean == true) {
 
-				if (excelData.DiscountPercentage.isBlank() == false) {
+				if (excelData.DiscountPercentage.isEmpty() == false) {
 					double discountPercentDouble = Double.parseDouble(excelData.DiscountPercentage);
 
 					double discountPercentPrice = (discountPercentDouble / 100) * priceDouble;
@@ -1376,7 +1375,7 @@ public class StockReservationTest extends BaseClass {
 					Total = (priceDouble - discAmountforPercent) * qtyDouble;
 					System.out.println("Discount Percent Total: " + Total);
 
-				} else if (excelData.DiscountAmount.isBlank() == false) {
+				} else if (excelData.DiscountAmount.isEmpty() == false) {
 					double discAmtDouble = Double.parseDouble(excelData.DiscountAmount);
 
 					Total = (priceDouble - discAmtDouble) * qtyDouble;
@@ -1385,7 +1384,7 @@ public class StockReservationTest extends BaseClass {
 
 			} else {
 
-				if (excelData.DiscountPercentage.isBlank() == false) {
+				if (excelData.DiscountPercentage.isEmpty() == false) {
 
 					double discPercentDouble = Double.parseDouble(excelData.DiscountPercentage);
 					double discountPerAmt = (discPercentDouble / 100) * Total;
@@ -1394,7 +1393,7 @@ public class StockReservationTest extends BaseClass {
 
 					Total = Total - discAmtforPer;
 
-				} else if (excelData.DiscountAmount.isBlank() == false) {
+				} else if (excelData.DiscountAmount.isEmpty() == false) {
 
 					double discAmtDouble1 = Double.parseDouble(excelData.DiscountAmount);
 

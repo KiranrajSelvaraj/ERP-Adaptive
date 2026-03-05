@@ -462,10 +462,7 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 		private String departmentValue;
 		private String categoryValue;
 		private String brandValue;
-	//	private String profitMarginValue;
-	//	private String marginToleranceValue;
 		private String vendorNameValue;
-	//	private String batch;
 		private String purchaseCOAValue;
 		private String salesCOAValue;
 		private String currentStockValue;
@@ -491,10 +488,7 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 			this.departmentValue = departmentValue;
 			this.categoryValue = categoryValue;
 			this.brandValue = brandValue;
-		//	this.profitMarginValue = profitMarginValue;
-		//	this.marginToleranceValue = marginToleranceValue;
 			this.vendorNameValue = vendorNameValue;
-		//	this.batch = batch;
 			this.purchaseCOAValue = purchaseCOAValue;
 			this.salesCOAValue = salesCOAValue;
 			this.currentStockValue = currentStockValue;
@@ -1134,7 +1128,7 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 
 			if (unitDiscCheckboxBoolean == true) {
 
-				if (excelData.DiscountPercentage.isBlank() == false) {
+				if (excelData.DiscountPercentage.isEmpty() == false) {
 					double discountPercentDouble = Double.parseDouble(excelData.DiscountPercentage);
 
 					double discountPercentPrice = (discountPercentDouble / 100) * priceDouble;
@@ -1144,7 +1138,7 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 					Total = (priceDouble - discAmountforPercent) * qtyDouble;
 					System.out.println("Discount Percent Total: " + Total);
 
-				} else if (excelData.DiscountAmount.isBlank() == false) {
+				} else if (excelData.DiscountAmount.isEmpty() == false) {
 					double discAmtDouble = Double.parseDouble(excelData.DiscountAmount);
 
 					Total = (priceDouble - discAmtDouble) * qtyDouble;
@@ -1153,7 +1147,7 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 
 			} else {
 
-				if (excelData.DiscountPercentage.isBlank() == false) {
+				if (excelData.DiscountPercentage.isEmpty() == false) {
 
 					double discPercentDouble = Double.parseDouble(excelData.DiscountPercentage);
 					double discountPerAmt = (discPercentDouble / 100) * Total;
@@ -1162,7 +1156,7 @@ public class InvoiceDeliveryAssignTest extends BaseClass {
 
 					Total = Total - discAmtforPer;
 
-				} else if (excelData.DiscountAmount.isBlank() == false) {
+				} else if (excelData.DiscountAmount.isEmpty() == false) {
 
 					double discAmtDouble1 = Double.parseDouble(excelData.DiscountAmount);
 

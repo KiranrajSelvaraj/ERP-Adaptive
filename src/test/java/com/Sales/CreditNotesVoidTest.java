@@ -1160,7 +1160,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 			if (unitDiscCheckboxBoolean == true) {
 
-				if (excelData.DiscountPercentage.isBlank() == false) {
+				if (excelData.DiscountPercentage.isEmpty() == false) {
 					double discountPercentDouble = Double.parseDouble(excelData.DiscountPercentage);
 
 					double discountPercentPrice = (discountPercentDouble / 100) * priceDouble;
@@ -1170,7 +1170,7 @@ public class CreditNotesVoidTest extends BaseClass {
 					Total = (priceDouble - discAmountforPercent) * excelQtyDouble;
 					System.out.println("Item Level Discount Percentage Total: " + Total);
 
-				} else if (excelData.DiscountAmount.isBlank() == false) {
+				} else if (excelData.DiscountAmount.isEmpty() == false) {
 					double discAmtDouble = Double.parseDouble(excelData.DiscountAmount);
 
 					Total = (priceDouble - discAmtDouble) * excelQtyDouble;
@@ -1179,7 +1179,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 			} else {
 
-				if (excelData.DiscountPercentage.isBlank() == false) {
+				if (excelData.DiscountPercentage.isEmpty() == false) {
 
 					double discPercentDouble = Double.parseDouble(excelData.DiscountPercentage);
 					double discountPerAmt = (discPercentDouble / 100) * Total;
@@ -1189,7 +1189,7 @@ public class CreditNotesVoidTest extends BaseClass {
 					Total = Total - discAmtforPer;
 					System.out.println("Discount Percentage Amount Total: " + Total);
 
-				} else if (excelData.DiscountAmount.isBlank() == false) {
+				} else if (excelData.DiscountAmount.isEmpty() == false) {
 
 					double discAmtDouble1 = Double.parseDouble(excelData.DiscountAmount);
 					double excelPriceDouble = Double.parseDouble(excelData.Price);

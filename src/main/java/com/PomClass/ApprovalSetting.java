@@ -12,7 +12,7 @@ public class ApprovalSetting {
 	@FindBy(id = "select2-Model-container")
 	public WebElement SelectModel;
 	
-	@FindBy(id = "select2-9c7z-container")
+	@FindBy(xpath = "//span[@title='Choose Attribute']")
 	public WebElement ChooseAttribute;
 	
 	@FindBy(id = "select2-Stat-container")

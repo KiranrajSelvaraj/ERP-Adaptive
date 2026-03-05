@@ -4,11 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.collections4.map.HashedMap;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -1175,7 +1173,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 			if (unitDiscCheckboxBoolean == true) {
 
-				if (excelData.DiscountPercentage.isBlank() == false) {
+				if (excelData.DiscountPercentage.isEmpty() == false) {
 					double discountPercentDouble = Double.parseDouble(excelData.DiscountPercentage);
 
 					double discountPercentPrice = priceDouble * discountPercentDouble / 100;
@@ -1185,7 +1183,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 					Total = (priceDouble - discAmountforPercent) * excelQtyDouble;
 					System.out.println("Item Level Discount Percentage Total: " + Total);
 
-				} else if (excelData.DiscountAmount.isBlank() == false) {
+				} else if (excelData.DiscountAmount.isEmpty() == false) {
 					double discAmtDouble = Double.parseDouble(excelData.DiscountAmount);
 
 					Total = (priceDouble - discAmtDouble) * excelQtyDouble;
@@ -1194,7 +1192,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 			} else {
 
-				if (excelData.DiscountPercentage.isBlank() == false) {
+				if (excelData.DiscountPercentage.isEmpty() == false) {
 
 					double discPercentDouble = Double.parseDouble(excelData.DiscountPercentage);
 					double expectedProductAmount = priceDouble * excelQtyDouble;
@@ -1203,7 +1201,7 @@ public class PurchaseReturnVoidTest extends BaseClass {
 					Total = expectedDiscountPercentage - Total;
 					System.out.println("Discount Percentage Amount Total: " + Total);
 
-				} else if (excelData.DiscountAmount.isBlank() == false) {
+				} else if (excelData.DiscountAmount.isEmpty() == false) {
 
 					double discAmtDouble1 = Double.parseDouble(excelData.DiscountAmount);
 					double excelPriceDouble = Double.parseDouble(excelData.Price);

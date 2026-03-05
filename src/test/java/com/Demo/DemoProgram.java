@@ -876,7 +876,7 @@ public class DemoProgram extends BaseClass {
 			if (excelData.UnitDisc.equalsIgnoreCase("True")) {
 
 
-				if (excelData.DiscPercent.isBlank() == false) {
+				if (excelData.DiscPercent.isEmpty() == false) {
 					double discountPercentDouble = Double.parseDouble(excelData.DiscPercent);
 
 					double discountPercentPrice = (discountPercentDouble / 100) * priceDouble;
@@ -886,7 +886,7 @@ public class DemoProgram extends BaseClass {
 					Total = (priceDouble - discAmountforPercent) * qtyDouble;					
 					System.out.println("Discount Percent Total: "+Total);
 
-				} else if (excelData.DiscAmt.isBlank() == false) {
+				} else if (excelData.DiscAmt.isEmpty() == false) {
 					double discAmtDouble = Double.parseDouble(excelData.DiscAmt);
 
 					Total = (priceDouble - discAmtDouble) * qtyDouble;
@@ -895,7 +895,7 @@ public class DemoProgram extends BaseClass {
 
 			} else {
 
-				if (excelData.DiscPercent.isBlank() == false) {
+				if (excelData.DiscPercent.isEmpty() == false) {
 
 					double discPercentDouble = Double.parseDouble(excelData.DiscPercent);
 					double discountPerAmt = (discPercentDouble / 100) * Total;
@@ -904,7 +904,7 @@ public class DemoProgram extends BaseClass {
 
 					Total = Total - discAmtforPer;		
 
-				} else if (excelData.DiscAmt.isBlank() == false) {
+				} else if (excelData.DiscAmt.isEmpty() == false) {
 
 					double discAmtDouble1 = Double.parseDouble(excelData.DiscAmt);
 
@@ -1400,7 +1400,7 @@ public class DemoProgram extends BaseClass {
 			if (excelData.UnitDisc.equalsIgnoreCase("True")) {
 
 
-				if (excelData.DiscPercent.isBlank() == false) {
+				if (excelData.DiscPercent.isEmpty() == false) {
 					double discountPercentDouble = Double.parseDouble(excelData.DiscPercent);
 
 					double discountPercentPrice = (discountPercentDouble / 100) * priceDouble;
@@ -1410,7 +1410,7 @@ public class DemoProgram extends BaseClass {
 					Total = (priceDouble - discAmountforPercent) * qtyDouble;					
 					System.out.println("Discount Percent Total: "+Total);
 
-				} else if (excelData.DiscAmt.isBlank() == false) {
+				} else if (excelData.DiscAmt.isEmpty() == false) {
 					double discAmtDouble = Double.parseDouble(excelData.DiscAmt);
 
 					Total = (priceDouble - discAmtDouble) * qtyDouble;
@@ -1419,7 +1419,7 @@ public class DemoProgram extends BaseClass {
 
 			} else {
 
-				if (excelData.DiscPercent.isBlank() == false) {
+				if (excelData.DiscPercent.isEmpty() == false) {
 
 					double discPercentDouble = Double.parseDouble(excelData.DiscPercent);
 					double discountPerAmt = (discPercentDouble / 100) * Total;
@@ -1428,7 +1428,7 @@ public class DemoProgram extends BaseClass {
 
 					Total = Total - discAmtforPer;		
 
-				} else if (excelData.DiscAmt.isBlank() == false) {
+				} else if (excelData.DiscAmt.isEmpty() == false) {
 
 					double discAmtDouble1 = Double.parseDouble(excelData.DiscAmt);
 

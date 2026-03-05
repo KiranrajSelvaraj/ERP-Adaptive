@@ -30,7 +30,28 @@ public class DeliveryOrder {
 	@FindBy(xpath = "//a[text()='Copy Order']")
 	public WebElement CopyOrder;
 	
+	@FindBy(id = "select2-CustomerId-container")
+	public WebElement Customer;
+	
+	@FindBy(id = "select2-ProductId-container")
+	public WebElement Product;
+	
+	@FindBy(id = "select2-UOMId-container")
+	public WebElement Uom;
+	
+	@FindBy(id = "ItemQty")
+	public WebElement Qty;
+	
+	@FindBy(id = "btn_add")
+	public WebElement Add;
+	
 	@FindBy(id = "Create")
+	public WebElement SaveandClose;
+	
+	@FindBy(xpath = "//button[@class='btn btn-primary btn-sm dropdown-toggle']")
+	public WebElement DropDown;
+	
+	@FindBy(id = "Save3")
 	public WebElement Save;
 	
 	

@@ -17,7 +17,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -1140,7 +1139,7 @@ public class SalesInvoiceVoidTest extends BaseClass {
 
 			if (unitDiscCheckboxBoolean == true) {
 
-				if (excelData.DiscountPercentage.isBlank() == false) {
+				if (excelData.DiscountPercentage.isEmpty() == false) {
 					double discountPercentDouble = Double.parseDouble(excelData.DiscountPercentage);
 
 					double discountPercentPrice = (discountPercentDouble / 100) * priceDouble;
@@ -1150,7 +1149,7 @@ public class SalesInvoiceVoidTest extends BaseClass {
 					Total = (priceDouble - discAmountforPercent) * qtyDouble;
 					System.out.println("Discount Percent Total: " + Total);
 
-				} else if (excelData.DiscountAmount.isBlank() == false) {
+				} else if (excelData.DiscountAmount.isEmpty() == false) {
 					double discAmtDouble = Double.parseDouble(excelData.DiscountAmount);
 
 					Total = (priceDouble - discAmtDouble) * qtyDouble;
@@ -1159,7 +1158,7 @@ public class SalesInvoiceVoidTest extends BaseClass {
 
 			} else {
 
-				if (excelData.DiscountPercentage.isBlank() == false) {
+				if (excelData.DiscountPercentage.isEmpty() == false) {
 
 					double discPercentDouble = Double.parseDouble(excelData.DiscountPercentage);
 					double discountPerAmt = (discPercentDouble / 100) * Total;
@@ -1168,7 +1167,7 @@ public class SalesInvoiceVoidTest extends BaseClass {
 
 					Total = Total - discAmtforPer;
 
-				} else if (excelData.DiscountAmount.isBlank() == false) {
+				} else if (excelData.DiscountAmount.isEmpty() == false) {
 
 					double discAmtDouble1 = Double.parseDouble(excelData.DiscountAmount);
 
@@ -1624,9 +1623,8 @@ public class SalesInvoiceVoidTest extends BaseClass {
 			click(prod.Fetch);
 			Thread.sleep(3000);
 
-			WebElement DetailsIcon = driver
-					.findElement(By.xpath("//table[@id='producttable']//tbody//tr//td[1][normalize-space()='" + product
-							+ "']//following::td[9]//a[@title='Details'][1]"));
+			WebElement DetailsIcon = driver.findElement(By.xpath
+					("//table[@id='producttable']//tbody//tr//td//p[text()='"+product+"']//following::td//a[@title='Details']"));
 			js.executeScript("arguments[0].click();", DetailsIcon);
 			Thread.sleep(3000);
 

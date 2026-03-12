@@ -17,6 +17,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
@@ -53,6 +54,7 @@ public class DirectPurchaseInvoiceTest extends BaseClass {
 		Sendkeys(lo.CompanyCode, "UITDEMO1");
 		Sendkeys(lo.UserName, "Kiran01");
 		Sendkeys(lo.Password, "Adaptive*123");
+		Thread.sleep(3000);
 		click(lo.LoginButton);
 		Thread.sleep(2000);
 
@@ -90,7 +92,7 @@ public class DirectPurchaseInvoiceTest extends BaseClass {
 
 	@DataProvider
 	public Object[][] Util2() {
-		Object[][] data = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\DirectPurchaseInvoice.xlsx", "Sheet1");
+		Object[][] data = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\Demoexcelfile3.xlsx", "Sheet1");
 		return data;
 
 	}
@@ -856,9 +858,18 @@ public class DirectPurchaseInvoiceTest extends BaseClass {
 		for (String uom : UOMSet) {
 
 			driver.findElement(By.id("select2-DropDown-container")).click();
-			WebElement UOMSearchField = driver.findElement(
+			/*	WebElement UOMSearchField = driver.findElement(
 					By.xpath("//span[@id='select2-DropDown-container']//following::input[@type='search']"));
-			UOMSearchField.sendKeys(uom + Keys.ENTER);
+			UOMSearchField.sendKeys(uom + Keys.ENTER);*/
+
+			List<WebElement> uomOption = driver.findElements(By.xpath(
+					"//span[@id='select2-DropDown-container']//following::input[@type='search']/following::ul//li"));
+			for (WebElement option : uomOption) {
+				if (option.getText().trim().equals(uom)) {
+					option.click();
+					break;
+				}
+			}
 
 			Thread.sleep(1000);
 			WebElement fetchBtn = driver.findElement(By.xpath("//input[@id='searchstring' and @value='Fetch']"));
@@ -905,7 +916,7 @@ public class DirectPurchaseInvoiceTest extends BaseClass {
 	}
 
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
-	public void PurchaseInvoicetoVoid() throws InterruptedException {
+	public void PurchaseInvoice() throws InterruptedException {
 
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -996,9 +1007,9 @@ public class DirectPurchaseInvoiceTest extends BaseClass {
 
 			}
 			Thread.sleep(1000);
-			WebElement qty = driver.findElement(By.xpath("(//input[@id='Qty'])[1]"));
-			js.executeScript("arguments[0].click();", qty);
-			Thread.sleep(1000);
+			//	WebElement qty = driver.findElement(By.xpath("(//input[@id='Qty'])[1]"));
+			//	js.executeScript("arguments[0].click();", qty);
+			//	Thread.sleep(1000);
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 				click(pi.Qty);
 				click(pi.Uom);
@@ -1009,9 +1020,7 @@ public class DirectPurchaseInvoiceTest extends BaseClass {
 						option.click();
 						break;
 					}
-
 				}
-
 			}
 
 			// Qoh Calculation:-
@@ -1120,6 +1129,7 @@ public class DirectPurchaseInvoiceTest extends BaseClass {
 			System.out.println();
 
 			//Qty:-
+			Thread.sleep(2000);
 			Sendkeys(pi.Qty, excelData.Qty);
 
 			// Foc:-
@@ -1210,7 +1220,6 @@ public class DirectPurchaseInvoiceTest extends BaseClass {
 					System.out.println("Discount Amount Total: "+Total);
 
 				}
-
 			}
 
 			//Add Button:-
@@ -1234,7 +1243,7 @@ public class DirectPurchaseInvoiceTest extends BaseClass {
 				batchNo.sendKeys(excelData.BatchNumber +Keys.ENTER);
 				Thread.sleep(1000);
 
-				/*	WebElement mfgDate = driver.findElement(By.xpath
+				WebElement mfgDate = driver.findElement(By.xpath
 						("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@class='ManufactureDate datepick form-control hasDatepicker'])[1]"));
 				mfgDate.click();
 				mfgDate.sendKeys(excelData.MfgDate +Keys.ENTER);
@@ -1244,7 +1253,7 @@ public class DirectPurchaseInvoiceTest extends BaseClass {
 						("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@id='ValidPeriod'])[1]"));
 				valPeriod.click();
 				valPeriod.sendKeys(excelData.ValPeriod +Keys.ENTER);
-				Thread.sleep(1000); */
+				Thread.sleep(1000); 
 
 				WebElement totalQtyField = driver.findElement(By.xpath
 						("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@id='Qty'])[1]"));
@@ -1572,7 +1581,7 @@ public class DirectPurchaseInvoiceTest extends BaseClass {
 								String replaceAllBoxCurrentStock = currentStock.replaceAll("[A-Za-z]", "");
 								double doubleBoxCurrentStock = Double.parseDouble(replaceAllBoxCurrentStock);
 
-								multipleBoxStock = doubleBoxCurrentStock * 10;
+								multipleBoxStock = doubleBoxCurrentStock * doubleUomUnit;
 								//	System.out.println("multipleBoxStock is: "+multipleBoxStock);
 
 
@@ -1601,7 +1610,7 @@ public class DirectPurchaseInvoiceTest extends BaseClass {
 					//	calculateStock = String.valueOf(calculateStockDouble);
 					if (productData.IsCarton) {						
 
-						double diviedStock = calculateStockDouble / 10;
+						double diviedStock = calculateStockDouble / doubleUomUnit;
 						String stringCalculateStock = String.valueOf(diviedStock);						
 						String[] split = stringCalculateStock.split("\\.");
 						String boxQty = split[0];

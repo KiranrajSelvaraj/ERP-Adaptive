@@ -996,16 +996,14 @@ public class PurchaseReturnVoidTest extends BaseClass {
 			System.out.println(i);
 			Thread.sleep(3000);
 
-			WebElement findElement = driver.findElement(By.xpath("//select[@id='ProductId']"));
-			Select select=new Select(findElement);
-			for (WebElement option : select.getOptions()) {
-
-				if (option.getText().contains(excelData.ProductCode)) {
-					System.out.println("%");
+			List<WebElement> productOption = driver.findElements(By.xpath(
+					"//span[@id='select2-ProductId-container']//following::input[@type='search']//following::ul//li"));
+			for (WebElement option : productOption) {
+				if (option.getText().trim().equals(excelData.ProductCode)) {
 					option.click();
 					break;
 				}
-			}			
+			}	
 
 			if (excelData.Type.equalsIgnoreCase("Product")) {
 				click(pr.Qty);
@@ -1580,8 +1578,8 @@ public class PurchaseReturnVoidTest extends BaseClass {
 
 		PurchaseReturns pr = new PurchaseReturns(driver);
 
-		WebElement delete = driver.findElement(By.xpath("//table[@id='PRtable']//tbody//tr[1]//td[contains(text(),'"
-				+ transNo + "')][1]//following::td[8]//a[@title='Delete']"));
+		WebElement delete = driver.findElement(By.xpath("//table[@id='PRtable']//tbody//tr//td[contains(text(),'"
+				+ transNo + "')]//following-sibling::td//a[@title='Delete']"));
 		js.executeScript("arguments[0].click();", delete);
 		// Thread.sleep(2000);
 		click(pr.Delete);

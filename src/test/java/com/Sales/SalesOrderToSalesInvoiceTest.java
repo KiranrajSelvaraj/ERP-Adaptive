@@ -104,7 +104,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 		System.out.println("*ERP Login Page*");
 	}
-	
+
 	@DataProvider
 	public Object[][] Util1() {
 

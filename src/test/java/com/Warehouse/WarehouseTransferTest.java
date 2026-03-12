@@ -535,7 +535,8 @@ public class WarehouseTransferTest extends BaseClass{
 
 
 		//	click(wt.CreateNew);
-		WebElement create = wait.until(ExpectedConditions.elementToBeClickable(wt.CreateNew));
+		WebElement create = wait.until(ExpectedConditions.elementToBeClickable
+				(By.xpath("//input[@id='Create']")));
 		create.click();
 
 		int excelDataListSize = excelDataList.size();

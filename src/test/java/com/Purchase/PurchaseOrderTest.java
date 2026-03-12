@@ -40,7 +40,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class PurchaseOrderTest extends BaseClass {
 
 	private String url;
-
 	SoftAssert soft = new SoftAssert();
 
 	@Test(priority = 1)

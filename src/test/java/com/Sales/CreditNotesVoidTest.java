@@ -1486,8 +1486,8 @@ public class CreditNotesVoidTest extends BaseClass {
 		System.out.println();
 
 		Thread.sleep(3000);
-		WebElement delete = driver.findElement(By.xpath("//table[@id='credittable']//tbody//tr//td"
-				+ "[normalize-space()='" + getCreditNotesNo + "']//following::td[7]//a[@title='Delete']"));
+		WebElement delete = driver.findElement(By.xpath("(//table[@id='credittable']//tbody//tr//td"
+				+ "[normalize-space()='" + getCreditNotesNo + "']//following::td//a[@title='Delete'])[1]"));
 		delete.click();
 		Thread.sleep(2000);
 		click(cn.Delete);

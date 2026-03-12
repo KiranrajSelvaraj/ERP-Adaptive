@@ -2,9 +2,10 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="classes" thread-count="1">
   <test name="Test">
-        <parameter name="env" value="Dev"/>
+        <parameter name="env" value="demo"/>
+         <parameter name="Company" value="sdc"/>
         <classes>
-            <class name="com.Sales.SalesInvoiceVoidTest"/>
+            <class name="com.Sales.CreditNotesVoidTest"/>
         </classes>
     </test>
 </suite> 

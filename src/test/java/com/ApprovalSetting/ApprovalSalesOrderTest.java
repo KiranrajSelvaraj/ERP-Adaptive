@@ -883,7 +883,7 @@ public class ApprovalSalesOrderTest extends BaseClass {
 		}
 	}
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
 	public void ApprovalSetting() {
 
@@ -1620,7 +1620,7 @@ public class ApprovalSalesOrderTest extends BaseClass {
 		System.out.println("** Sales Order Save Successfully **");
 
 		Thread.sleep(2000);
-		String orderNo = driver.findElement(By.xpath
+		orderNo = driver.findElement(By.xpath
 				("//table[@id='ordertable']//tbody//tr[1]//td[@class='sorting_2']")).getText();
 		System.out.println("orderNo: "+orderNo);
 
@@ -1634,6 +1634,50 @@ public class ApprovalSalesOrderTest extends BaseClass {
 	}
 
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
+	public void ApprovalReject() throws InterruptedException {
+
+		driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");	
+		Login lo = new Login(driver);
+
+		Sendkeys(lo.CompanyCode, "UITDEMO1");
+		Sendkeys(lo.UserName, "Kiran04");
+		Sendkeys(lo.Password, "Adaptive*123");
+		click(lo.LoginButton);
+		Thread.sleep(3000);
+
+		driver.navigate().to(url+"SalesPurchases/Approvals/Create");
+		driver.manage().timeouts().pageLoadTimeout(300, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		System.out.println("** Approval Page **");
+
+		String text = driver.findElement(By.xpath("(//div[@class='card'])[1]//following-sibling::p")).getText();
+		String replaceCreditNo = text.replaceAll("[^0-9]", "");
+		System.out.println("replaceCreditNo: "+replaceCreditNo);
+
+		driver.findElement(By.id("Reject")).click();
+		try {
+
+			String alertText = driver.findElement(By.id("popup_message")).getText();
+			System.out.println("Alert Text: "+alertText);
+
+		} catch (Exception e) {
+
+			System.out.println("No alert appeared after save.");
+		}
+		driver.findElement(By.id("popup_ok")).click();
+		System.out.println("** Purchase Order Approval Recommended Successfull **");
+		System.out.println();
+
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//i[@class='fa fa-user']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("logoutForm")).click();
+		System.out.println("** Logout Successfully **");
+		System.out.println();
+
+	}
+
+	@Test(priority = 20, dependsOnMethods = "ERPLoginPage")
 	public void ApprovalRecommended() throws InterruptedException {
 
 		driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");	
@@ -1672,7 +1716,7 @@ public class ApprovalSalesOrderTest extends BaseClass {
 		System.out.println();
 	}
 
-	@Test(priority = 20, dependsOnMethods = "ERPLoginPage")
+	@Test(priority = 22, dependsOnMethods = "ERPLoginPage")
 	public void ApprovalApprove() throws InterruptedException {
 
 		driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");	
@@ -1712,7 +1756,7 @@ public class ApprovalSalesOrderTest extends BaseClass {
 
 	}
 
-	@Test(priority = 22, dependsOnMethods = "ERPLoginPage")
+	@Test(priority = 24, dependsOnMethods = "ERPLoginPage")
 	public void SalesOrderToInvoice() throws InterruptedException {
 
 		driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");	
@@ -1725,13 +1769,18 @@ public class ApprovalSalesOrderTest extends BaseClass {
 		Sendkeys(lo.Password, "Adaptive*123");
 		click(lo.LoginButton);
 		Thread.sleep(3000);
-		
+
+		driver.navigate().to(url+"SalesPurchases/SalesOrderIndex/Index");
+		driver.manage().timeouts().pageLoadTimeout(300, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		System.out.println("** Sales Order Page **");
+
+		Thread.sleep(2000);
 		WebElement edit = driver.findElement(By.xpath
 				("//table[@id='ordertable']//tbody//tr//td[normalize-space()='"+orderNo+"']//following-sibling::td//a[@title='Edit']"));
-		edit.click();
+		js.executeScript("arguments[0].click();", edit);
 		Thread.sleep(2000);
 		click(so.ConvertInvoice);
-		click(so.PopupOk);
 		Thread.sleep(3000);		
 		System.out.println("** Sales Invoice Page **");
 		for (ExcelData excelData : excelDataList) {
@@ -1901,7 +1950,7 @@ public class ApprovalSalesOrderTest extends BaseClass {
 
 	ArrayList<StockCalculation> StockCalculationList = new ArrayList<>();
 	//@Ignore
-	@Test(priority = 24, dependsOnMethods = "ERPLoginPage")
+	@Test(priority = 26, dependsOnMethods = "ERPLoginPage")
 	public void StockCalculation() {
 
 		System.out.println("* Stock Calculation *");
@@ -1973,7 +2022,7 @@ public class ApprovalSalesOrderTest extends BaseClass {
 
 							double additionBoxandLooseStock = multipleBoxStock + doubleLooseCurrentStock;
 							calculateStockDouble = additionBoxandLooseStock - multipleQty;
-						//	calculateStockDouble = calculateStockDouble + returnMultipleQty;
+							//	calculateStockDouble = calculateStockDouble + returnMultipleQty;
 
 						}		
 
@@ -1981,7 +2030,7 @@ public class ApprovalSalesOrderTest extends BaseClass {
 
 						double doubleCurrentStock = Double.parseDouble(productData.currentStockValue);
 						calculateStockDouble = doubleCurrentStock - multipleQty;
-					//	calculateStockDouble = calculateStockDouble + returnMultipleQty;
+						//	calculateStockDouble = calculateStockDouble + returnMultipleQty;
 						int intcalculateStock = (int) calculateStockDouble;
 						calculateStock = String.valueOf(intcalculateStock);
 
@@ -2032,7 +2081,7 @@ public class ApprovalSalesOrderTest extends BaseClass {
 
 
 	//@Ignore
-	@Test(priority = 26, dependsOnMethods = "ERPLoginPage")
+	@Test(priority = 28, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
 
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
@@ -2097,7 +2146,7 @@ public class ApprovalSalesOrderTest extends BaseClass {
 	}
 
 	//@Ignore
-	@Test(priority = 28, dependsOnMethods = "ERPLoginPage")
+	@Test(priority = 30, dependsOnMethods = "ERPLoginPage")
 	public void ProductMovementPage() throws InterruptedException {
 
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
@@ -2168,14 +2217,13 @@ public class ApprovalSalesOrderTest extends BaseClass {
 		System.out.println();
 	}
 
-
-	@Test(priority = 30, dependsOnMethods = "ERPLoginPage")
+	@Test(priority = 38, dependsOnMethods = "ERPLoginPage")
 	private void Exception() throws InterruptedException {
 		soft.assertAll();
 
 	}
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 40, dependsOnMethods = "ERPLoginPage")
 	private void close() throws InterruptedException {
 		driver.close();

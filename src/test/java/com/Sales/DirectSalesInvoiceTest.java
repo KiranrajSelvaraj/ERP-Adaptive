@@ -841,7 +841,7 @@ public class DirectSalesInvoiceTest extends BaseClass {
 	}
 
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
-	public void SalesInvoicetoVoidProcess() throws InterruptedException, IOException {
+	public void SalesInvoice() throws InterruptedException, IOException {
 
 		driver.navigate().to(url + "Sales/SalesInvoiceIndex");
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
@@ -1499,7 +1499,7 @@ public class DirectSalesInvoiceTest extends BaseClass {
 
 							double additionBoxandLooseStock = multipleBoxStock + doubleLooseCurrentStock;
 							calculateStockDouble = additionBoxandLooseStock - multipleQty;
-						//	calculateStockDouble = calculateStockDouble + multipleQty;
+							//	calculateStockDouble = calculateStockDouble + multipleQty;
 
 						}
 
@@ -1507,7 +1507,7 @@ public class DirectSalesInvoiceTest extends BaseClass {
 
 						double doubleCurrentStock = Double.parseDouble(productData.currentStockValue);
 						calculateStockDouble = doubleCurrentStock - multipleQty;
-					//	calculateStockDouble = calculateStockDouble + multipleQty;
+						//	calculateStockDouble = calculateStockDouble + multipleQty;
 						int intcalculateStock = (int) calculateStockDouble;
 						calculateStock = String.valueOf(intcalculateStock);
 

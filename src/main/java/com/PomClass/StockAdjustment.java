@@ -106,6 +106,9 @@ public class StockAdjustment {
 	
 	@FindBy(xpath = "//input[@value='Back']")
 	public WebElement Back;
+	
+	@FindBy(id = "btnhold")
+	public WebElement HoldV1;
 		
 	
 	public StockAdjustment(WebDriver driver) {

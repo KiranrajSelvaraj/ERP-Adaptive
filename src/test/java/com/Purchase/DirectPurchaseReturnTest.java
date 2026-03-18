@@ -1538,7 +1538,7 @@ public class DirectPurchaseReturnTest extends BaseClass {
 			for (int j = 0; j < UomDetailsListSize; j++) {
 				UOM uomData = UomDetailsList.get(j);
 
-				if (excelData.Uom.equals(uomData.UomCodeValue)) {
+				if (excelData.Uom.equals(uomData.UomNameValue)) {
 
 					doubleExcelQty = Double.parseDouble(excelData.Qty);
 					doubleUomUnit = Double.parseDouble(uomData.UomUnits);
@@ -1572,7 +1572,7 @@ public class DirectPurchaseReturnTest extends BaseClass {
 								String replaceAllBoxCurrentStock = currentStock.replaceAll("[A-Za-z]", "");
 								double doubleBoxCurrentStock = Double.parseDouble(replaceAllBoxCurrentStock);
 
-								multipleBoxStock = doubleBoxCurrentStock * 10;
+								multipleBoxStock = doubleBoxCurrentStock * doubleUomUnit;
 								// System.out.println("multipleBoxStock is: "+multipleBoxStock);
 
 							} else if (currentStock.contains("L")) {
@@ -1602,7 +1602,7 @@ public class DirectPurchaseReturnTest extends BaseClass {
 
 					if (productData.IsCarton) {
 
-						double diviedStock = calculateStockDouble / 10;
+						double diviedStock = calculateStockDouble / doubleUomUnit;
 						String stringCalculateStock = String.valueOf(diviedStock);
 						String[] split = stringCalculateStock.split("\\.");
 						String boxQty = split[0];

@@ -45,7 +45,7 @@ public class DeliveryOrder {
 	@FindBy(id = "btn_add")
 	public WebElement Add;
 	
-	@FindBy(id = "Create")
+	@FindBy(xpath = "//button[@id='Create' and @value='Save & Close']")
 	public WebElement SaveandClose;
 	
 	@FindBy(xpath = "//button[@class='btn btn-primary btn-sm dropdown-toggle']")
@@ -53,6 +53,9 @@ public class DeliveryOrder {
 	
 	@FindBy(id = "Save3")
 	public WebElement Save;
+	
+	@FindBy(id = "popup_ok")
+	public WebElement PopupOk;
 	
 	
 	

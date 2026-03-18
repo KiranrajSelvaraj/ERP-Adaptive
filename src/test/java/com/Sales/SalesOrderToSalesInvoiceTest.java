@@ -1424,12 +1424,24 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 				System.out.println("Special Price is Not Displayed");
 
 			}
+			
+			if (IsAllowToEditSpecialPrice == true) {
+				
+				double expSubtotal = Double.parseDouble(excelData.SpecialPrice) * qtyDouble;
+				ExpSubTotal = ExpSubTotal + expSubtotal;
 
-			double expSubtotal = Double.parseDouble(excelData.SpecialPrice) * qtyDouble;
-			ExpSubTotal = ExpSubTotal + expSubtotal;
+				if (excelData.ZeroGst.equals("TRUE")) {
+					ExpZeroGstProductamount = Double.parseDouble(excelData.SpecialPrice) + ExpZeroGstProductamount;
+				}
+				
+			} else {
+				
+				double expSubtotal = Double.parseDouble(excelData.Price) * qtyDouble;
+				ExpSubTotal = ExpSubTotal + expSubtotal;
 
-			if (excelData.ZeroGst.equals("TRUE")) {
-				ExpZeroGstProductamount = Double.parseDouble(excelData.SpecialPrice) + ExpZeroGstProductamount;
+				if (excelData.ZeroGst.equals("TRUE")) {
+					ExpZeroGstProductamount = Double.parseDouble(excelData.Price) + ExpZeroGstProductamount;
+				}
 			}
 
 			String ActSplPriceProductAmount = driver
@@ -1438,15 +1450,28 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 					.getText();
 			ActDiscountProductPriceDouble = Double.parseDouble(ActSplPriceProductAmount);
 			String ActDiscountProductPriceFormat = String.format("%.2f", ActDiscountProductPriceDouble);
-
 			System.out.println("Actual Discount Product Price is: " + ActDiscountProductPriceFormat);
-			double specialPriceDouble = Double.parseDouble(excelData.SpecialPrice);
-			double ExpDiscountProductPrice = (qtyDouble * specialPriceDouble);
-			ExpDiscountProductPriceFormat = String.format("%.2f", ExpDiscountProductPrice);
-			System.out.println("Expected Discount Product Price is: " + ExpDiscountProductPriceFormat);
+			
+			if (IsAllowToEditSpecialPrice == true) {
+				
+				double specialPriceDouble = Double.parseDouble(excelData.SpecialPrice);
+				double ExpDiscountProductPrice = (qtyDouble * specialPriceDouble);
+				ExpDiscountProductPriceFormat = String.format("%.2f", ExpDiscountProductPrice);
+				System.out.println("Expected Discount Product Price is: " + ExpDiscountProductPriceFormat);
 
-			soft.assertEquals(ActDiscountProductPriceFormat, ExpDiscountProductPriceFormat,
-					"Actual and Expected Special Price Discount Mismatched for Product " + excelData.ProductName);
+				soft.assertEquals(ActDiscountProductPriceFormat, ExpDiscountProductPriceFormat,
+						"Actual and Expected Special Price Discount Mismatched for Product " + excelData.ProductName);
+				
+			} else {
+				
+				double PriceDouble = Double.parseDouble(excelData.Price);
+				double ExpDiscountProductPrice = (qtyDouble * PriceDouble);
+				ExpDiscountProductPriceFormat = String.format("%.2f", ExpDiscountProductPrice);
+				System.out.println("Expected Discount Product Price is: " + ExpDiscountProductPriceFormat);
+
+				soft.assertEquals(ActDiscountProductPriceFormat, ExpDiscountProductPriceFormat,
+						"Actual and Expected Special Price Discount Mismatched for Product " + excelData.ProductName);
+			}		
 		}
 
 		// Over All Discount:-
@@ -2312,8 +2337,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 		System.out.println();
 
 	} // Method loop
-
-
+	
 	//@Ignore
 	@Test(priority = 18, dependsOnMethods = "ERPLoginPage")
 	public void ExpectedProduct() throws InterruptedException {
@@ -2460,7 +2484,7 @@ public class SalesOrderToSalesInvoiceTest extends BaseClass {
 
 	}
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 40, dependsOnMethods = "ERPLoginPage")
 	private void close() throws InterruptedException {
 		driver.close();

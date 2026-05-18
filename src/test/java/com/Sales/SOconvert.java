@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 
 import com.BaseClass.BaseClass;
 import com.PomClass.Customer;
+import com.PomClass.Login;
 import com.PomClass.SmmPI;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -33,14 +34,15 @@ public class SOconvert extends BaseClass {
 		boolean equals = URL.equalsIgnoreCase(ActURL);
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
+		Login lo = new Login(driver);
 		Customer cu = new Customer(driver);
 		SmmPI spi = new SmmPI(driver);
 
-		Sendkeys(cu.companyname, "SMM01");
-		Sendkeys(cu.username, "Kiran01");
-		Sendkeys(cu.password, "Adaptive*123");
+		Sendkeys(lo.CompanyCode, "UITDEMO1");  
+		Sendkeys(lo.UserName, "Kiran02");
+		Sendkeys(lo.Password, "Adaptive*123");
 		Thread.sleep(1000);
-		click(cu.login);
+		click(lo.LoginButton);
 		Thread.sleep(1000);
 		Thread.sleep(2000);
 		driver.navigate().to(URL + "SalesPurchases/SalesInvoice");
@@ -51,8 +53,9 @@ public class SOconvert extends BaseClass {
 		js.executeScript("arguments[0].click();", soedit);
 		Thread.sleep(1000);
 		
-		click(cu.Copyinvoice);
-		Thread.sleep(2000);
+		/*
+		 * click(cu.Copyinvoice); Thread.sleep(2000);
+		 */
 		
 	/*	WebElement convertinvoice = driver.findElement(By.id("ConvertInvoice"));
 		convertinvoice.click();  
@@ -108,14 +111,15 @@ public class SOconvert extends BaseClass {
 		boolean equals = URL.equalsIgnoreCase(ActURL);
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
+		Login lo = new Login(driver);
 		Customer cu = new Customer(driver);
 		SmmPI spi = new SmmPI(driver);
 
-		Sendkeys(cu.companyname, "SMM01");
-		Sendkeys(cu.username, "Kiran02");
-		Sendkeys(cu.password, "Adaptive*123");
+		Sendkeys(lo.CompanyCode, "UITDEMO1");  
+		Sendkeys(lo.UserName, "Kiran02");
+		Sendkeys(lo.Password, "Adaptive*123");
 		Thread.sleep(1000);
-		click(cu.login);
+		click(lo.LoginButton);
 		Thread.sleep(1000);
 		Thread.sleep(2000);
 		
@@ -129,8 +133,9 @@ public class SOconvert extends BaseClass {
 		js.executeScript("arguments[0].click();", soedit);
 		Thread.sleep(1000);
 		
-		click(cu.Copyinvoice);
-		Thread.sleep(2000);
+		/*
+		 * click(cu.Copyinvoice); Thread.sleep(2000);
+		 */
 		
 	/*	WebElement convertinvoice = driver.findElement(By.id("ConvertInvoice"));
 		convertinvoice.click();  	

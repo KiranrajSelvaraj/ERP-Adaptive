@@ -59,16 +59,16 @@ public class DemoSitePurchaseOrderToInvoiceTest extends BaseClass{
 			driver.get("https://demo.adaptivebizapp.com/Account/Login");
 			url = "https://demo.adaptivebizapp.com/ERP/";
 
-		} else if (env.equals("dev") && Company.equals("uitdemo1")) {
-			Environment = "dev";
-			CompanyCode = "uitdemo1";
-			CompanyName = "uitdemo1";
+		} else if (env.equals("demo") && Company.equals("amc")) {
+			Environment = "demo";
+			CompanyCode = "amc";
+			CompanyName = "amc";
 			System.out.println("Login into " + Environment + " Site for " + CompanyName + " Company");
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
-			driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");
-			url = "https://erpauto.dev1.adaptivebizapp.com/ERP/";
+			driver.get("https://demo.adaptivebizapp.com/Account/Login");
+			url = "https://demo.adaptivebizapp.com/ERP/";
 
 		}
 
@@ -76,13 +76,6 @@ public class DemoSitePurchaseOrderToInvoiceTest extends BaseClass{
 
 	@Test(priority = 1)
 	public void ERPLoginPage() throws InterruptedException {
-
-		//	WebDriverManager.chromedriver().setup();
-		//	driver = new ChromeDriver();
-		//	driver.manage().window().maximize();
-
-		//	driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");
-		//	url = "https://erpauto.dev1.adaptivebizapp.com/ERP/";
 
 		Login lo = new Login(driver);
 
@@ -126,7 +119,7 @@ public class DemoSitePurchaseOrderToInvoiceTest extends BaseClass{
 
 
 	@DataProvider
-	public Object[][] Util2() {
+	public Object[][] Util1() {
 		Object[][] data = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\Demoexcelfile3.xlsx", "Sheet1");
 		return data;
 
@@ -215,7 +208,7 @@ public class DemoSitePurchaseOrderToInvoiceTest extends BaseClass{
 	List<String> VendorList = new ArrayList<String>();
 	Set<String> VendorSet = new LinkedHashSet<String>();
 
-	@Test(priority = 4, dataProvider = "Util2", dependsOnMethods = "ERPLoginPage")
+	@Test(priority = 4, dataProvider = "Util1", dependsOnMethods = "ERPLoginPage")
 	public void GetData(String Vendor, String CurrencyCode, String CurrancyRate, String GstType, String Type,
 			String ProductCode, String ProductName, String Uom, String Qty, String Foc, String DiscountPercentage,
 			String DiscountAmount, String UnitDiscCheckbox, String UnitDiscPercentage, String UnitDiscAmount,
@@ -1000,16 +993,16 @@ public class DemoSitePurchaseOrderToInvoiceTest extends BaseClass{
 				click(po.Vendor);
 				click(po.VendorSearch);
 				Sendkeys(po.VendorSearch, excelData.Vendor +Keys.ENTER);
-				Thread.sleep(2000);
-
+				Thread.sleep(2000);				
+				
 			}
 
-			click(po.GSTType);
-			WebElement GstSearchInput = driver.findElement(
-					By.xpath("//span[@id='select2-GSTTypeId-container']//following::input[@type='search']"));
-			GstSearchInput.sendKeys(excelData.GstType + Keys.ENTER);
-
 			if (i == 0) {
+				
+				click(po.GSTType);
+				WebElement GstSearchInput = driver.findElement(
+						By.xpath("//span[@id='select2-GSTTypeId-container']//following::input[@type='search']"));
+				GstSearchInput.sendKeys(excelData.GstType + Keys.ENTER);
 
 				getExcelGstType = excelData.GstType;
 				getexcelOverAllDiscountType = excelData.OverAllDiscountType;
@@ -1325,6 +1318,33 @@ public class DemoSitePurchaseOrderToInvoiceTest extends BaseClass{
 			//Add Button:-
 			click(po.AddButton);
 			Thread.sleep(2000);
+			
+			if (CompanyCode.equalsIgnoreCase("amc")) {
+				
+				String totalQty = driver.findElement(By.xpath
+						("//div//strong[contains(text(),'"+excelData.ProductName+"')]//following::div[text()='Total Qty : ']//child::b//input[@id='batchHead']"))
+						.getAttribute("value");
+				System.out.println("totalQty: "+totalQty);
+				
+				driver.findElement(By.id("select2-ijgx-container")).click();
+				driver.findElement(By.xpath("//input[@role='textbox']")).sendKeys(excelData.ProductName +Keys.ENTER);
+				
+				driver.findElement(By.xpath
+						("(//strong[contains(text(),'"+excelData.ProductName+"')]//following::table[@class='table table-bordered Mytable']//tbody//tr//td//input[@type='number'])[2]"))
+				.sendKeys(totalQty);
+				
+				String leftInStock = driver.findElement(By.xpath
+						("(//p[text()='Left In Stock ']//child::b[@id='leftInStock'])[2]"))
+						.getText();
+				System.out.println("leftInStock: "+leftInStock);
+				
+				soft.assertEquals(totalQty, leftInStock, "Total Qty and Left In Stock Qty Mismatched for "+excelData.ProductName);
+				
+				driver.findElement(By.xpath("(//strong[text()='"+excelData.ProductName+"']//following::div[@class='modal-footer']//child::button[text()='Add'])[2]"))
+				.click();
+				
+			}
+			
 			js.executeScript("arguments[0].click();", po.Quantity);
 			System.out.println();
 

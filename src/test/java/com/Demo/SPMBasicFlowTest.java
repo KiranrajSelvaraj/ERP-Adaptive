@@ -65,16 +65,14 @@ public class SPMBasicFlowTest extends BaseClass{
 
 		driver.findElement(By.id("Create")).click();
 		Thread.sleep(2000);
-		click(cu.code);
-		Sendkeys(cu.code, "CUS-1209");
-		click(cu.Name);
-		Sendkeys(cu.Name, "Sona Malligai");
+		click(cu.CustomerName);
+		Sendkeys(cu.CustomerName, "Sona Malligai");
 		Thread.sleep(1000);
-		click(cu.salesman);
+		click(cu.EditSalesman);
 		driver.findElement(By.xpath("//span[@id='select2-SalesManId-container']//following::input[@type='search']"))
 		.sendKeys("HARI" +Keys.ENTER);
 		Thread.sleep(3000);
-		click(cu.save);
+		click(cu.Save);
 
 	}
 

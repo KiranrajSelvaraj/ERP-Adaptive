@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">10 methods,   10 passed</span>
+                    <span class="method-stats">12 methods, 1 failed,   11 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.Customer.CustomerPaymentTest" class="method navigator-link" hash-for-method="Customer">Customer</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,52 +117,57 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.Purchase.PurchaseOrderTest" class="method navigator-link" hash-for-method="ERPLoginPage">ERPLoginPage</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.Customer.CustomerPaymentTest" class="method navigator-link" hash-for-method="ERPLoginPage">ERPLoginPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.Purchase.PurchaseOrderTest" class="method navigator-link" hash-for-method="GetData(VEN-00361, , , , , , , PRO/0616/PRO, 1x1, 5, 450.5, , 2, 10, , , , , , , , , )">GetData(VEN-00361, , , , , , , PRO/0616/PRO, 1x1, 5, 450.5, , 2, 10, , , , , , , , , )</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.Customer.CustomerPaymentTest" class="method navigator-link" hash-for-method="GetData(, , , , Product, P0388, Strawberry Essence, 25X1GM, 1, , , , , 5, , 139, , , , , , , TRUE, FALSE, )">GetData(, , , , Product, P0388, Strawberry Essence, 25X1GM, 1, , , , , 5, , 139, , , , , , , TRUE, FALSE, )</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.Purchase.PurchaseOrderTest" class="method navigator-link" hash-for-method="GetData(, , , , , , , PRO/0622/PRO, , 2, 1250.35, , 4, 25, , , , , , , , , )">GetData(, , , , , , , PRO/0622/PRO, , 2, 1250.35, , 4, 25, , , , , , , , , )</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.Customer.CustomerPaymentTest" class="method navigator-link" hash-for-method="GetData(, , , , Product, P0405, Frozen Green Peas, PCS, 1, , , , , 5, , 146, , , , , , , , TRUE, )">GetData(, , , , Product, P0405, Frozen Green Peas, PCS, 1, , , , , 5, , 146, , , , , , , , TRUE, )</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.Purchase.PurchaseOrderTest" class="method navigator-link" hash-for-method="GetData(, , , , , , , PRO/0619/PRO, 1X500ML, 10, 3500, , , , , , , , , , , , )">GetData(, , , , , , , PRO/0619/PRO, 1X500ML, 10, 3500, , , , , , , , , , , , )</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.Customer.CustomerPaymentTest" class="method navigator-link" hash-for-method="GetData(, , , , Product, P0356, Cream, 1X1KG, 1, , , , , 5, , 130, , , , , , , TRUE, FALSE, )">GetData(, , , , Product, P0356, Cream, 1X1KG, 1, , , , , 5, , 130, , , , , , , TRUE, FALSE, )</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.Purchase.PurchaseOrderTest" class="method navigator-link" hash-for-method="GetData(, , , , , , , PRO/0621/PRO, , 3, 15000.8, , 10, , , , , , , , , , )">GetData(, , , , , , , PRO/0621/PRO, , 3, 15000.8, , 10, , , , , , , , , , )</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.Customer.CustomerPaymentTest" class="method navigator-link" hash-for-method="GetData(C0002, SGD, 1, Zero, Product, P0334, Rice Bran Oil, 1X1KG, 1, , , , TRUE, 5, 25, 121, , , %, 10, 10,...)">GetData(C0002, SGD, 1, Zero, Product, P0334, Rice Bran Oil, 1X1KG, 1, , , , TRUE, 5, 25, 121, , , %, 10, 10,...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.Purchase.PurchaseOrderTest" class="method navigator-link" hash-for-method="GetData(, , , , , , , PRO/0623/PRO, 1X10, 9, 950.6, , , 80, , , , , , , , , )">GetData(, , , , , , , PRO/0623/PRO, 1X10, 9, 950.6, , , 80, , , , , , , , , )</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.Customer.CustomerPaymentTest" class="method navigator-link" hash-for-method="GetData(, , , , Product, P0370, Powdered Sugar, 25X1GM, 1, , , , , 5, , 134, , , , , , , , TRUE, )">GetData(, , , , Product, P0370, Powdered Sugar, 25X1GM, 1, , , , , 5, , 134, , , , , , , , TRUE, )</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.Purchase.PurchaseOrderTest" class="method navigator-link" hash-for-method="GetData(, , , , , , , PRO/0617/PRO, , 4, 325.75, , 1, 30, , , , , , , , , )">GetData(, , , , , , , PRO/0617/PRO, , 4, 325.75, , 1, 30, , , , , , , , , )</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.Customer.CustomerPaymentTest" class="method navigator-link" hash-for-method="GetData(, , , , Product, P0417, Graph Notebook, Packets, 1, , , , , 5, , 147, , , , , , , TRUE, FALSE, )">GetData(, , , , Product, P0417, Graph Notebook, Packets, 1, , , , , 5, , 147, , , , , , , TRUE, FALSE, )</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.Purchase.PurchaseOrderTest" class="method navigator-link" hash-for-method="GetData(, , , , , , , PRO/0618/PRO, 1X500ML, 8, 600, , 5, 56, , , , , , , , , )">GetData(, , , , , , , PRO/0618/PRO, 1X500ML, 8, 600, , 5, 56, , , , , , , , , )</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.Customer.CustomerPaymentTest" class="method navigator-link" hash-for-method="ProductPage">ProductPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.Purchase.PurchaseOrderTest" class="method navigator-link" hash-for-method="GetData(VEN-00354, , , , , , , PRO/0620/PRO, 1X6, 6, 755.25, , 6, 42, , , , , , , , , )">GetData(VEN-00354, , , , , , , PRO/0620/PRO, 1X6, 6, 755.25, , 6, 42, , , , , , , , , )</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.Customer.CustomerPaymentTest" class="method navigator-link" hash-for-method="SalesInvoice">SalesInvoice</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.Purchase.PurchaseOrderTest" class="method navigator-link" hash-for-method="PurchaseForms">PurchaseForms</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.Customer.CustomerPaymentTest" class="method navigator-link" hash-for-method="SystemSettings">SystemSettings</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.Customer.CustomerPaymentTest" class="method navigator-link" hash-for-method="UomPage">UomPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -163,10 +182,47 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.Customer.CustomerPaymentTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Customer">
+                  </a> <!-- Customer -->
+                  <span class="method-name">Customer</span>
+                  <div class="stack-trace">org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=146.0.7680.165)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.60&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64262}, goog:processID: 2396, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 055a1ecd77da830ca7f0245ab5848c70
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at com.Customer.CustomerPaymentTest.Customer(CustomerPaymentTest.java:864)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+... Removed 17 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.Purchase.PurchaseOrderTest</span>
+              <span class="class-name">com.Customer.CustomerPaymentTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -178,73 +234,78 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="GetData(VEN-00361, , , , , , , PRO/0616/PRO, 1x1, 5, 450.5, , 2, 10, , , , , , , , , )">
-                  </a> <!-- GetData(VEN-00361, , , , , , , PRO/0616/PRO, 1x1, 5, 450.5, , 2, 10, , , , , , , , , ) -->
+                  <a name="GetData(, , , , Product, P0388, Strawberry Essence, 25X1GM, 1, , , , , 5, , 139, , , , , , , TRUE, FALSE, )">
+                  </a> <!-- GetData(, , , , Product, P0388, Strawberry Essence, 25X1GM, 1, , , , , 5, , 139, , , , , , , TRUE, FALSE, ) -->
                   <span class="method-name">GetData</span>
-                  <span class="parameters">(VEN-00361,,,,,,,PRO/0616/PRO,1x1,5,450.5,,2,10,,,,,,,,,)</span>
+                  <span class="parameters">(,,,,Product,P0388,Strawberry Essence,25X1GM,1,,,,,5,,139,,,,,,,TRUE,FALSE,)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="GetData(, , , , , , , PRO/0622/PRO, , 2, 1250.35, , 4, 25, , , , , , , , , )">
-                  </a> <!-- GetData(, , , , , , , PRO/0622/PRO, , 2, 1250.35, , 4, 25, , , , , , , , , ) -->
+                  <a name="GetData(, , , , Product, P0405, Frozen Green Peas, PCS, 1, , , , , 5, , 146, , , , , , , , TRUE, )">
+                  </a> <!-- GetData(, , , , Product, P0405, Frozen Green Peas, PCS, 1, , , , , 5, , 146, , , , , , , , TRUE, ) -->
                   <span class="method-name">GetData</span>
-                  <span class="parameters">(,,,,,,,PRO/0622/PRO,,2,1250.35,,4,25,,,,,,,,,)</span>
+                  <span class="parameters">(,,,,Product,P0405,Frozen Green Peas,PCS,1,,,,,5,,146,,,,,,,,TRUE,)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="GetData(, , , , , , , PRO/0619/PRO, 1X500ML, 10, 3500, , , , , , , , , , , , )">
-                  </a> <!-- GetData(, , , , , , , PRO/0619/PRO, 1X500ML, 10, 3500, , , , , , , , , , , , ) -->
+                  <a name="GetData(, , , , Product, P0356, Cream, 1X1KG, 1, , , , , 5, , 130, , , , , , , TRUE, FALSE, )">
+                  </a> <!-- GetData(, , , , Product, P0356, Cream, 1X1KG, 1, , , , , 5, , 130, , , , , , , TRUE, FALSE, ) -->
                   <span class="method-name">GetData</span>
-                  <span class="parameters">(,,,,,,,PRO/0619/PRO,1X500ML,10,3500,,,,,,,,,,,,)</span>
+                  <span class="parameters">(,,,,Product,P0356,Cream,1X1KG,1,,,,,5,,130,,,,,,,TRUE,FALSE,)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="GetData(, , , , , , , PRO/0621/PRO, , 3, 15000.8, , 10, , , , , , , , , , )">
-                  </a> <!-- GetData(, , , , , , , PRO/0621/PRO, , 3, 15000.8, , 10, , , , , , , , , , ) -->
+                  <a name="GetData(C0002, SGD, 1, Zero, Product, P0334, Rice Bran Oil, 1X1KG, 1, , , , TRUE, 5, 25, 121, , , %, 10, 10,...)">
+                  </a> <!-- GetData(C0002, SGD, 1, Zero, Product, P0334, Rice Bran Oil, 1X1KG, 1, , , , TRUE, 5, 25, 121, , , %, 10, 10,...) -->
                   <span class="method-name">GetData</span>
-                  <span class="parameters">(,,,,,,,PRO/0621/PRO,,3,15000.8,,10,,,,,,,,,,)</span>
+                  <span class="parameters">(C0002,SGD,1,Zero,Product,P0334,Rice Bran Oil,1X1KG,1,,,,TRUE,5,25,121,,,%,10,10,0,,TRUE,)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="GetData(, , , , , , , PRO/0623/PRO, 1X10, 9, 950.6, , , 80, , , , , , , , , )">
-                  </a> <!-- GetData(, , , , , , , PRO/0623/PRO, 1X10, 9, 950.6, , , 80, , , , , , , , , ) -->
+                  <a name="GetData(, , , , Product, P0370, Powdered Sugar, 25X1GM, 1, , , , , 5, , 134, , , , , , , , TRUE, )">
+                  </a> <!-- GetData(, , , , Product, P0370, Powdered Sugar, 25X1GM, 1, , , , , 5, , 134, , , , , , , , TRUE, ) -->
                   <span class="method-name">GetData</span>
-                  <span class="parameters">(,,,,,,,PRO/0623/PRO,1X10,9,950.6,,,80,,,,,,,,,)</span>
+                  <span class="parameters">(,,,,Product,P0370,Powdered Sugar,25X1GM,1,,,,,5,,134,,,,,,,,TRUE,)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="GetData(, , , , , , , PRO/0617/PRO, , 4, 325.75, , 1, 30, , , , , , , , , )">
-                  </a> <!-- GetData(, , , , , , , PRO/0617/PRO, , 4, 325.75, , 1, 30, , , , , , , , , ) -->
+                  <a name="GetData(, , , , Product, P0417, Graph Notebook, Packets, 1, , , , , 5, , 147, , , , , , , TRUE, FALSE, )">
+                  </a> <!-- GetData(, , , , Product, P0417, Graph Notebook, Packets, 1, , , , , 5, , 147, , , , , , , TRUE, FALSE, ) -->
                   <span class="method-name">GetData</span>
-                  <span class="parameters">(,,,,,,,PRO/0617/PRO,,4,325.75,,1,30,,,,,,,,,)</span>
+                  <span class="parameters">(,,,,Product,P0417,Graph Notebook,Packets,1,,,,,5,,147,,,,,,,TRUE,FALSE,)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="GetData(, , , , , , , PRO/0618/PRO, 1X500ML, 8, 600, , 5, 56, , , , , , , , , )">
-                  </a> <!-- GetData(, , , , , , , PRO/0618/PRO, 1X500ML, 8, 600, , 5, 56, , , , , , , , , ) -->
-                  <span class="method-name">GetData</span>
-                  <span class="parameters">(,,,,,,,PRO/0618/PRO,1X500ML,8,600,,5,56,,,,,,,,,)</span>
+                  <a name="ProductPage">
+                  </a> <!-- ProductPage -->
+                  <span class="method-name">ProductPage</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="GetData(VEN-00354, , , , , , , PRO/0620/PRO, 1X6, 6, 755.25, , 6, 42, , , , , , , , , )">
-                  </a> <!-- GetData(VEN-00354, , , , , , , PRO/0620/PRO, 1X6, 6, 755.25, , 6, 42, , , , , , , , , ) -->
-                  <span class="method-name">GetData</span>
-                  <span class="parameters">(VEN-00354,,,,,,,PRO/0620/PRO,1X6,6,755.25,,6,42,,,,,,,,,)</span>
+                  <a name="SalesInvoice">
+                  </a> <!-- SalesInvoice -->
+                  <span class="method-name">SalesInvoice</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="PurchaseForms">
-                  </a> <!-- PurchaseForms -->
-                  <span class="method-name">PurchaseForms</span>
+                  <a name="SystemSettings">
+                  </a> <!-- SystemSettings -->
+                  <span class="method-name">SystemSettings</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="UomPage">
+                  </a> <!-- UomPage -->
+                  <span class="method-name">UomPage</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -258,11 +319,11 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
+&lt;suite thread-count=&quot;1&quot; parallel=&quot;classes&quot; name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;1&quot; parallel=&quot;classes&quot; name=&quot;Test&quot;&gt;
     &lt;parameter name=&quot;env&quot; value=&quot;Dev&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.Purchase.PurchaseOrderTest&quot;/&gt;
+      &lt;class name=&quot;com.Customer.CustomerPaymentTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -302,52 +363,60 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(10);
+data.addRows(12);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'PurchaseForms')
-data.setCell(0, 2, 'com.Purchase.PurchaseOrderTest')
-data.setCell(0, 3, 40375);
+data.setCell(0, 1, 'ProductPage')
+data.setCell(0, 2, 'com.Customer.CustomerPaymentTest')
+data.setCell(0, 3, 194048);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'ERPLoginPage')
-data.setCell(1, 2, 'com.Purchase.PurchaseOrderTest')
-data.setCell(1, 3, 9138);
+data.setCell(1, 1, 'SalesInvoice')
+data.setCell(1, 2, 'com.Customer.CustomerPaymentTest')
+data.setCell(1, 3, 131904);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'GetData')
-data.setCell(2, 2, 'com.Purchase.PurchaseOrderTest')
-data.setCell(2, 3, 11);
+data.setCell(2, 1, 'SystemSettings')
+data.setCell(2, 2, 'com.Customer.CustomerPaymentTest')
+data.setCell(2, 3, 130360);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'GetData')
-data.setCell(3, 2, 'com.Purchase.PurchaseOrderTest')
-data.setCell(3, 3, 5);
+data.setCell(3, 1, 'UomPage')
+data.setCell(3, 2, 'com.Customer.CustomerPaymentTest')
+data.setCell(3, 3, 34955);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'GetData')
-data.setCell(4, 2, 'com.Purchase.PurchaseOrderTest')
-data.setCell(4, 3, 5);
+data.setCell(4, 1, 'ERPLoginPage')
+data.setCell(4, 2, 'com.Customer.CustomerPaymentTest')
+data.setCell(4, 3, 27259);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'GetData')
-data.setCell(5, 2, 'com.Purchase.PurchaseOrderTest')
-data.setCell(5, 3, 4);
+data.setCell(5, 1, 'Customer')
+data.setCell(5, 2, 'com.Customer.CustomerPaymentTest')
+data.setCell(5, 3, 3154);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'GetData')
-data.setCell(6, 2, 'com.Purchase.PurchaseOrderTest')
+data.setCell(6, 2, 'com.Customer.CustomerPaymentTest')
 data.setCell(6, 3, 4);
 data.setCell(7, 0, 7)
 data.setCell(7, 1, 'GetData')
-data.setCell(7, 2, 'com.Purchase.PurchaseOrderTest')
-data.setCell(7, 3, 1);
+data.setCell(7, 2, 'com.Customer.CustomerPaymentTest')
+data.setCell(7, 3, 3);
 data.setCell(8, 0, 8)
 data.setCell(8, 1, 'GetData')
-data.setCell(8, 2, 'com.Purchase.PurchaseOrderTest')
-data.setCell(8, 3, 1);
+data.setCell(8, 2, 'com.Customer.CustomerPaymentTest')
+data.setCell(8, 3, 3);
 data.setCell(9, 0, 9)
 data.setCell(9, 1, 'GetData')
-data.setCell(9, 2, 'com.Purchase.PurchaseOrderTest')
-data.setCell(9, 3, 1);
+data.setCell(9, 2, 'com.Customer.CustomerPaymentTest')
+data.setCell(9, 3, 3);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'GetData')
+data.setCell(10, 2, 'com.Customer.CustomerPaymentTest')
+data.setCell(10, 3, 2);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'GetData')
+data.setCell(11, 2, 'com.Customer.CustomerPaymentTest')
+data.setCell(11, 3, 1);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 49 seconds</span>
+              <span class="suite-total-time">Total running time: 8 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -362,20 +431,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">3 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.Purchase.PurchaseOrderTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">UOMPAGE</span>
-                <br/>
-                <span class="ignored-method-name">ProductDetails</span>
-                <br/>
-                <span class="ignored-method-name">VendorPage</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -384,46 +442,56 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.Purchase.PurchaseOrderTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.Customer.CustomerPaymentTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">ERPLoginPage</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">GetData(VEN-00361, , , , , , , PRO/0616/PRO, 1x1, 5, 450.5, , 2, 10, , , , , , , , , )</span>
-                <span class="method-start">10372 ms</span>
+                <span class="method-name">GetData(C0002, SGD, 1, Zero, Product, P0334, Rice Bran Oil, 1X1KG, 1, , , , TRUE, 5, 25, 121, , , %, 10, 10,...)</span>
+                <span class="method-start">28196 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">GetData(, , , , , , , PRO/0617/PRO, , 4, 325.75, , 1, 30, , , , , , , , , )</span>
-                <span class="method-start">10402 ms</span>
+                <span class="method-name">GetData(, , , , Product, P0356, Cream, 1X1KG, 1, , , , , 5, , 130, , , , , , , TRUE, FALSE, )</span>
+                <span class="method-start">28205 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">GetData(, , , , , , , PRO/0618/PRO, 1X500ML, 8, 600, , 5, 56, , , , , , , , , )</span>
-                <span class="method-start">10413 ms</span>
+                <span class="method-name">GetData(, , , , Product, P0370, Powdered Sugar, 25X1GM, 1, , , , , 5, , 134, , , , , , , , TRUE, )</span>
+                <span class="method-start">28215 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">GetData(, , , , , , , PRO/0619/PRO, 1X500ML, 10, 3500, , , , , , , , , , , , )</span>
-                <span class="method-start">10424 ms</span>
+                <span class="method-name">GetData(, , , , Product, P0388, Strawberry Essence, 25X1GM, 1, , , , , 5, , 139, , , , , , , TRUE, FALSE, )</span>
+                <span class="method-start">28225 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">GetData(VEN-00354, , , , , , , PRO/0620/PRO, 1X6, 6, 755.25, , 6, 42, , , , , , , , , )</span>
-                <span class="method-start">10430 ms</span>
+                <span class="method-name">GetData(, , , , Product, P0405, Frozen Green Peas, PCS, 1, , , , , 5, , 146, , , , , , , , TRUE, )</span>
+                <span class="method-start">28231 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">GetData(, , , , , , , PRO/0621/PRO, , 3, 15000.8, , 10, , , , , , , , , , )</span>
-                <span class="method-start">10433 ms</span>
+                <span class="method-name">GetData(, , , , Product, P0417, Graph Notebook, Packets, 1, , , , , 5, , 147, , , , , , , TRUE, FALSE, )</span>
+                <span class="method-start">28234 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">GetData(, , , , , , , PRO/0622/PRO, , 2, 1250.35, , 4, 25, , , , , , , , , )</span>
-                <span class="method-start">10447 ms</span>
+                <span class="method-name">SystemSettings</span>
+                <span class="method-start">28240 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">GetData(, , , , , , , PRO/0623/PRO, 1X10, 9, 950.6, , , 80, , , , , , , , , )</span>
-                <span class="method-start">10455 ms</span>
+                <span class="method-name">ProductPage</span>
+                <span class="method-start">158603 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">PurchaseForms</span>
-                <span class="method-start">10462 ms</span>
+                <span class="method-name">UomPage</span>
+                <span class="method-start">352654 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Customer</span>
+                <span class="method-start">387611 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">SalesInvoice</span>
+                <span class="method-start">390770 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

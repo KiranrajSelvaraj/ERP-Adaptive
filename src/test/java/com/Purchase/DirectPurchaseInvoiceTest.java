@@ -17,7 +17,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
@@ -1231,10 +1230,15 @@ public class DirectPurchaseInvoiceTest extends BaseClass {
 			if (excelData.BatchProduct.equalsIgnoreCase("true")) {
 
 				Thread.sleep(2000);
-				String totalQty = driver.findElement(By.xpath
-						("(//div//strong[contains(normalize-space(),'"+excelData.ProductName.trim()+"')]//following::input[@id='TotalQty'])[1]"))
+				String totalBQty = driver.findElement(By.xpath
+						("(//div//strong[contains(normalize-space(),'"+excelData.ProductName.trim()+"')]//following::input[@id='TotalBQty'])[1]"))
 						.getAttribute("value");
-				System.out.println("Total Qty: "+totalQty);
+				System.out.println("Total BQty: "+totalBQty);
+				
+				String totalLQty = driver.findElement(By.xpath
+						("(//div//strong[contains(normalize-space(),'"+excelData.ProductName.trim()+"')]//following::input[@id='TotalLQty'])[1]"))
+						.getAttribute("value");
+				System.out.println("Total BQty: "+totalLQty);
 
 				Thread.sleep(1000);
 				WebElement batchNo = driver.findElement(By.xpath
@@ -1243,7 +1247,7 @@ public class DirectPurchaseInvoiceTest extends BaseClass {
 				batchNo.sendKeys(excelData.BatchNumber +Keys.ENTER);
 				Thread.sleep(1000);
 
-				WebElement mfgDate = driver.findElement(By.xpath
+			/*	WebElement mfgDate = driver.findElement(By.xpath
 						("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@class='ManufactureDate datepick form-control hasDatepicker'])[1]"));
 				mfgDate.click();
 				mfgDate.sendKeys(excelData.MfgDate +Keys.ENTER);
@@ -1253,13 +1257,20 @@ public class DirectPurchaseInvoiceTest extends BaseClass {
 						("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@id='ValidPeriod'])[1]"));
 				valPeriod.click();
 				valPeriod.sendKeys(excelData.ValPeriod +Keys.ENTER);
-				Thread.sleep(1000); 
+				Thread.sleep(1000); */
 
-				WebElement totalQtyField = driver.findElement(By.xpath
-						("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@id='Qty'])[1]"));
-				totalQtyField.click();
-				totalQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-				totalQtyField.sendKeys(totalQty);
+				WebElement totalBQtyField = driver.findElement(By.xpath
+						("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@id='BQty'])[1]"));
+				totalBQtyField.click();
+				totalBQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+				totalBQtyField.sendKeys(totalBQty);
+				Thread.sleep(1000);
+				
+				WebElement totalLQtyField = driver.findElement(By.xpath
+						("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@id='LQty'])[1]"));
+				totalLQtyField.click();
+				totalLQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+				totalLQtyField.sendKeys(totalLQty);
 				Thread.sleep(1000);
 
 				WebElement batchAdd = driver.findElement(By.xpath

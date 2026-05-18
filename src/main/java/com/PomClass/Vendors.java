@@ -16,7 +16,7 @@ public class Vendors {
 	public WebElement ImportExcel;
 	
 	@FindBy(id="SearchString")
-	public WebElement FindProductorCode;
+	public WebElement FindVendorCode;
 	
 	@FindBy(id="searchstring")
 	public WebElement Fetch;
@@ -24,8 +24,7 @@ public class Vendors {
 	@FindBy(id="clear")
 	public WebElement Clear;
 	
-	
-	
+		
 	@FindBy(id="Create")
 	public WebElement Create;
 	
@@ -41,8 +40,7 @@ public class Vendors {
 	@FindBy(id="popup_cancel")
 	public WebElement AlertCancel;
 	
-	// Vendor Create
-	
+	// Vendor Create	
 	@FindBy(id="Code")
 	public WebElement Code;
 	
@@ -132,9 +130,54 @@ public class Vendors {
 	
 	@FindBy(id="DebitLimit")
 	public WebElement DebitLimit;
-
-
-
+	
+	//Details
+	@FindBy(id = "GeneralLedger")
+	public WebElement GeneralLedger;
+	
+	@FindBy(xpath = "//input[@value='Edit']")
+	public WebElement Edit;
+	
+	@FindBy(xpath = "//a[text()='Info']")
+	public WebElement InfoTab;
+	
+	@FindBy(xpath = "//a[@class='ProductTab']")
+	public WebElement ProductTab;
+	
+	@FindBy(xpath = "//a[@class='ServiceTab']")
+	public WebElement ServiceTab;
+	
+	@FindBy(xpath = "//a[@class='PriceTab']")
+	public WebElement PriceGroupTab;
+	
+	@FindBy(xpath = "//a[@class='PurchaseOrderTab']")
+	public WebElement PurchaseOrderTab;
+	
+	@FindBy(xpath = "//a[@class='PurchaseInvoiceTab']")
+	public WebElement PurchaseInvoiceTab;
+	
+	@FindBy(xpath = "//a[@class='PurchaseReturnTab']")
+	public WebElement PuchaseReturnTab;
+	
+	@FindBy(xpath = "//a[text()='Transaction Details']")
+	public WebElement TransactionDetailsTab;
+	
+	@FindBy(xpath = "Add Purchase")
+	public WebElement AddPurchase;
+	
+	@FindBy(xpath = "//a[text()='Payment']")
+	public WebElement Payment;
+	
+	@FindBy(id = "from")
+	public WebElement FromDate;
+	
+	@FindBy(id = "to")
+	public WebElement ToDate;
+	
+	@FindBy(id = "invoiceFetch")
+	public WebElement DetailsInvoiceFetch;
+	
+	
 	public Vendors(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);

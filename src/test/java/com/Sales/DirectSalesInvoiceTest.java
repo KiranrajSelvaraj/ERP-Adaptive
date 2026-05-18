@@ -889,30 +889,6 @@ public class DirectSalesInvoiceTest extends BaseClass {
 				getExcelCurrencyRate = excelData.CurrencyRate;
 			}
 
-			/*
-			 * if (excelData.Type.equalsIgnoreCase("Product")) {
-			 * 
-			 * String productCheckbox =
-			 * driver.findElement(By.id("ProductCheck")).getAttribute("checked");
-			 * System.out.println("Product Check Box is: " + productCheckbox); if
-			 * (!productCheckbox.equalsIgnoreCase("true")) { click(si.ProductCheckBox);
-			 * 
-			 * }
-			 * 
-			 * } else if (excelData.Type.equals("Service")) {
-			 * 
-			 * if (!si.ServiceCheckBox.isSelected()) { click(si.ServiceCheckBox); }
-			 * 
-			 * } else if (excelData.Type.equals("Open")) {
-			 * 
-			 * if (!si.OpenCheckBox.isSelected()) { click(si.OpenCheckBox); }
-			 * 
-			 * } else if (excelData.Type.equals("Header")) {
-			 * 
-			 * if (!si.HeaderCheckBox.isSelected()) { click(si.HeaderCheckBox); }
-			 * 
-			 * }
-			 */
 			js.executeScript("window.scrollBy(0, 1000)", "");
 			System.out.println(i);
 
@@ -928,23 +904,6 @@ public class DirectSalesInvoiceTest extends BaseClass {
 			clear(productSearch);
 			Sendkeys(productSearch, excelData.ProductCode + Keys.ENTER);
 			Thread.sleep(2000);
-
-			/*	  if (excelData.Type.equalsIgnoreCase("Product")) {
-
-			  if (i == 0) { 
-				  click(si.ChooseProduct); 
-			  }
-
-			  } else if (excelData.Type.equalsIgnoreCase("Service")) {
-
-			  driver.findElement( By.xpath("//span[@id='select2-ServiceId-container']//following::input[@type='search']")) 
-			  .sendKeys(excelData.ProductCode + Keys.ENTER);
-
-			  } else if (excelData.Type.equalsIgnoreCase("Open")) {	
-
-			  si.OpenProduct.sendKeys(excelData.ProductCode + Keys.ENTER);	
-
-			  } */
 
 			click(si.Qty);
 			Thread.sleep(1000);
@@ -965,34 +924,6 @@ public class DirectSalesInvoiceTest extends BaseClass {
 				}
 
 			}
-
-			/*	else if (excelData.Type.equalsIgnoreCase("Service")) {
-
-				click(si.ChooseUom);
-				List<WebElement> subUomOption = driver.findElements(By.xpath(
-						"//span[@id='select2-UOMId-container']//following::input[@type='search']//following::ul//li"));
-				for (WebElement option : subUomOption) {
-					if (option.getText().trim().equals(excelData.Uom)) {
-						option.click();
-						break;
-					}
-
-				}
-
-			} else if (excelData.Type.equalsIgnoreCase("Open")) {
-
-				click(si.ChooseUom);
-				List<WebElement> subUomOption = driver.findElements(By.xpath(
-						"//span[@id='select2-UOMId-container']//following::input[@type='search']//following::ul//li"));
-				for (WebElement option : subUomOption) {
-					if (option.getText().trim().equals(excelData.Uom)) {
-						option.click();
-						break;
-					}
-
-				}
-
-			} */
 
 			System.out.println();
 

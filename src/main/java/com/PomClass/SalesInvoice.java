@@ -93,6 +93,12 @@ public class SalesInvoice {
 	@FindBy(xpath = "//input[@value='Back']")
 	public WebElement Back;
 	
+	@FindBy(id = "btnhold")
+	public WebElement Hold;
+	
+	@FindBy(id = "btnPopupPost")
+	public WebElement Post;
+	
 	@FindBy(id = "btnDotMatrix")
 	public WebElement DotMatrix;
 	

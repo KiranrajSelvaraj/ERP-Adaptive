@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>10/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Mar 18 13:01:56 IST 2026</td>
+<td>Started on:</td><td>Thu Apr 16 17:57:57 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>394 seconds (394281 ms)</td>
+<tr><td>Total time:</td><td>586 seconds (586249 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,84 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.Demo.DemoProjSalesOrderToInvoiceTest.SalesOrderToInvoice()'><b>SalesOrderToInvoice</b><br>Test class: com.Demo.DemoProjSalesOrderToInvoiceTest</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//table[@id=&apos;SalesTable&apos;]//tbody//tr[1]//td[2]&quot;}
+  (Session info: chrome=147.0.7727.56)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.60&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56549}, goog:processID: 6148, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a6ea074d3247df33c580e236aeba3f1b
+*** Element info: {Using=xpath, value=//table[@id=&apos;SalesTable&apos;]//tbody//tr[1]//td[2]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at com.Demo.DemoProjSalesOrderToInvoiceTest.SalesOrderToInvoice(DemoProjSalesOrderToInvoiceTest.java:1462)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace429331809", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace429331809'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//table[@id=&apos;SalesTable&apos;]//tbody//tr[1]//td[2]&quot;}
+  (Session info: chrome=147.0.7727.56)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.60&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56549}, goog:processID: 6148, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a6ea074d3247df33c580e236aeba3f1b
+*** Element info: {Using=xpath, value=//table[@id=&apos;SalesTable&apos;]//tbody//tr[1]//td[2]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at com.Demo.DemoProjSalesOrderToInvoiceTest.SalesOrderToInvoice(DemoProjSalesOrderToInvoiceTest.java:1462)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+</pre></div></td>
+<td>432</td>
+<td>com.Demo.DemoProjSalesOrderToInvoiceTest@1573f9fc</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,55 +154,20 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.SystemSettings()'><b>SystemSettings</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
+<td title='com.Demo.DemoProjSalesOrderToInvoiceTest.SystemSettings()'><b>SystemSettings</b><br>Test class: com.Demo.DemoProjSalesOrderToInvoiceTest</td>
 <td></td>
-<td>130</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@45752059</td></tr>
+<td>131</td>
+<td>com.Demo.DemoProjSalesOrderToInvoiceTest@1573f9fc</td></tr>
 <tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0364, Almond Flour, 25X1GM, 1, , 5, , , , , 100, TRUE, 100, , , , , , TRUE, 0</td>
+<td title='com.Demo.DemoProjSalesOrderToInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Demo.DemoProjSalesOrderToInvoiceTest<br>Parameters: 0006, Sunrise Villas Construction, SGD, 1, Exclusive, Product, P001, P001 - 48-port Fiber Patch Panel c/w, mm, 1, , , , , , , 59, , , $, 10, 10, 9, , , </td>
 <td></td>
 <td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@45752059</td></tr>
+<td>com.Demo.DemoProjSalesOrderToInvoiceTest@1573f9fc</td></tr>
 <tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0342, Sensodyne Toothpaste, 1X1KG, 2, , 5, , , , , 78, TRUE, 100, , , , , , FALSE, 1</td>
+<td title='com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.Demo.DemoProjSalesOrderToInvoiceTest</td>
 <td></td>
-<td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@45752059</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0416, A4 Sheets, Packets, 1, , 5, , , , , 152, TRUE, 100, , , , , TRUE, FALSE, 0</td>
-<td></td>
-<td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@45752059</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.SalesToInvoice()'><b>SalesToInvoice</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
-<td></td>
-<td>249</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@45752059</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0381, Margarine, 25X1GM, 1, , 5, , , , , 117, TRUE, 100, , , , , , FALSE, 0</td>
-<td></td>
-<td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@45752059</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: C0002, SGD, 1, Inclusive, Product, P0323, Green Tea, 1X10KG, 2, , 5, , TRUE, 5, 25, 59, TRUE, 100, %, 10, 10, 9, , TRUE, 1</td>
-<td></td>
-<td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@45752059</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest<br>Parameters: , , , , Product, P0394, Paper Water Cup, PCS, 2, , 5, , , , , 130, TRUE, 100, , , , , , TRUE, 1</td>
-<td></td>
-<td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@45752059</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
-<td></td>
-<td>7</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@45752059</td></tr>
-<tr>
-<td title='com.Sales.SalesOrderToSalesInvoiceTest.Exception()'><b>Exception</b><br>Test class: com.Sales.SalesOrderToSalesInvoiceTest</td>
-<td></td>
-<td>0</td>
-<td>com.Sales.SalesOrderToSalesInvoiceTest@45752059</td></tr>
+<td>11</td>
+<td>com.Demo.DemoProjSalesOrderToInvoiceTest@1573f9fc</td></tr>
 </table><p>
 </body>
 </html>

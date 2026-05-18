@@ -75,13 +75,6 @@ public class DemoSiteSalesOrderToInvoiceTest extends BaseClass {
 	@Test(priority = 1)
 	public void ERPLoginPage() throws InterruptedException {
 
-		//	WebDriverManager.chromedriver().setup();
-		//	driver = new ChromeDriver();
-		//	driver.manage().window().maximize();
-
-		//	driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");
-		//	url = "https://erpauto.dev1.adaptivebizapp.com/ERP/";
-
 		Login lo = new Login(driver);
 
 		Sendkeys(lo.CompanyCode, CompanyCode);
@@ -1787,8 +1780,7 @@ public class DemoSiteSalesOrderToInvoiceTest extends BaseClass {
 							} // Current stock loop
 
 							double additionBoxandLooseStock = multipleBoxStock + doubleLooseCurrentStock;
-							calculateStockDouble = additionBoxandLooseStock - multipleQty;
-						
+							calculateStockDouble = additionBoxandLooseStock - multipleQty;	
 
 						}		
 

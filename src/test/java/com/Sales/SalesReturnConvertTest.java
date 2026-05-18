@@ -15,6 +15,7 @@ import org.testng.annotations.Test;
 import com.BaseClass.BaseClass;
 import com.PomClass.CreditNotes;
 import com.PomClass.Customer;
+import com.PomClass.Login;
 import com.PomClass.SalesReturn;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -37,15 +38,16 @@ public class SalesReturnConvertTest extends BaseClass {
 		boolean equals = URL.equalsIgnoreCase(ActURL);
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
+		Login lo = new Login(driver);
 		Customer cu = new Customer(driver);
 		SalesReturn sr = new SalesReturn(driver);
 		CreditNotes cn = new CreditNotes(driver);
 		
-		Sendkeys(cu.companyname, "SMM01");
-		Sendkeys(cu.username, "Kiran01");
-		Sendkeys(cu.password, "Adaptive*123");
+		Sendkeys(lo.CompanyCode, "UITDEMO1");  
+		Sendkeys(lo.UserName, "Kiran02");
+		Sendkeys(lo.Password, "Adaptive*123");
 		Thread.sleep(1000);
-		click(cu.login);
+		click(lo.LoginButton);
 		Thread.sleep(1000);
 		Thread.sleep(2000);
 		driver.navigate().to(URL + "SalesPurchases/SalesReturn");
@@ -105,15 +107,16 @@ public class SalesReturnConvertTest extends BaseClass {
 		boolean equals = URL.equalsIgnoreCase(ActURL);
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
+		Login lo = new Login(driver);
 		Customer cu = new Customer(driver);
 		SalesReturn sr = new SalesReturn(driver);
 		CreditNotes cn = new CreditNotes(driver);
 		
-		Sendkeys(cu.companyname, "SMM01");
-		Sendkeys(cu.username, "Kiran02");
-		Sendkeys(cu.password, "Adaptive*123");
+		Sendkeys(lo.CompanyCode, "UITDEMO1");  
+		Sendkeys(lo.UserName, "Kiran02");
+		Sendkeys(lo.Password, "Adaptive*123");
 		Thread.sleep(1000);
-		click(cu.login);
+		click(lo.LoginButton);
 		Thread.sleep(1000);
 		Thread.sleep(2000);
 		driver.navigate().to(URL + "SalesPurchases/SalesReturn");

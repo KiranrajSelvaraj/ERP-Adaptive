@@ -2,15 +2,16 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite thread-count="1" parallel="classes" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="1" parallel="classes" name="Test(failed)">
-    <parameter name="env" value="Dev"/>
+    <parameter name="Company" value="amc"/>
+    <parameter name="env" value="demo"/>
     <classes>
-      <class name="com.Sales.SalesOrderToSalesInvoiceTest">
+      <class name="com.Demo.DemoProjSalesOrderToInvoiceTest">
         <methods>
-          <include name="Exception"/>
-          <include name="Environment"/>
           <include name="ERPLoginPage"/>
+          <include name="Environment"/>
+          <include name="SalesOrderToInvoice"/>
         </methods>
-      </class> <!-- com.Sales.SalesOrderToSalesInvoiceTest -->
+      </class> <!-- com.Demo.DemoProjSalesOrderToInvoiceTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

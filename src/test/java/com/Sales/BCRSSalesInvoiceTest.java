@@ -208,7 +208,7 @@ public class BCRSSalesInvoiceTest extends BaseClass {
 	private boolean IsHeaderManagementInSO;
 	private boolean IsReturnManagementInSI;
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 6, dependsOnMethods = "ERPLoginPage")
 	public void SystemSettings() throws InterruptedException {
 
@@ -586,7 +586,7 @@ public class BCRSSalesInvoiceTest extends BaseClass {
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 8, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -821,7 +821,7 @@ public class BCRSSalesInvoiceTest extends BaseClass {
 
 	ArrayList<service> serviceDetailsList = new ArrayList<>();
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
 	public void ServicePage() throws InterruptedException {
 
@@ -909,7 +909,7 @@ public class BCRSSalesInvoiceTest extends BaseClass {
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 
@@ -1388,6 +1388,11 @@ public class BCRSSalesInvoiceTest extends BaseClass {
 		System.out.println("Actual Sub Total Amount: " + subTotalAmountDouble);		
 		System.out.println("Expected Sub Total Amount: " + bcrsExpSubTotal);
 		System.out.println();
+		
+		String deliveryCharge = driver.findElement(By.xpath
+				("//table[@id='SalesTable']//tbody//tr//td//label[text()='Z Delivery Charges']//following::td//input[@id='ActualTotal']"))
+				.getAttribute("value");
+		System.out.println("Delivery Charges: "+deliveryCharge);
 
 		// Over All Discount Calculation:-
 		System.out.println("*** Grand Total Calculation With Over All Discount and Percentage ***");

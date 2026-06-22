@@ -23,6 +23,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -57,6 +58,7 @@ public class StockReservationTest extends BaseClass {
 		Sendkeys(lo.CompanyCode, "ASLA");
 		Sendkeys(lo.UserName, "Kiran01");
 		Sendkeys(lo.Password, "Adaptive*123");
+		Thread.sleep(1000);
 		click(lo.LoginButton);
 		Thread.sleep(2000);
 
@@ -267,7 +269,7 @@ public class StockReservationTest extends BaseClass {
 	private boolean IsHeaderManagementInSO;
 	private boolean IsReturnManagementInSI;
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 8, dependsOnMethods = "ERPLoginPage")
 	public void SystemSettingsPage() throws InterruptedException {
 
@@ -536,7 +538,7 @@ public class StockReservationTest extends BaseClass {
 
 	String getReservationNumber = "";
 
-	//@Ignore
+	@Ignore
 	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
 	public void StockReservation() throws InterruptedException {
 

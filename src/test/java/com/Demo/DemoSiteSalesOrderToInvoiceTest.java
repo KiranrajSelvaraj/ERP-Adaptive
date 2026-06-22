@@ -1,6 +1,8 @@
 package com.Demo;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -600,7 +602,7 @@ public class DemoSiteSalesOrderToInvoiceTest extends BaseClass {
 	ArrayList<product> ProductDetailsList = new ArrayList<>();
 	ArrayList<ProductUOM> ProductUOMDetailsList = new ArrayList<>();
 
-	@Ignore
+	//@Ignore
 	@Test(priority = 12, dependsOnMethods = "ERPLoginPage")
 	public void ProductPage() throws InterruptedException {
 
@@ -824,7 +826,7 @@ public class DemoSiteSalesOrderToInvoiceTest extends BaseClass {
 	}
 
 	ArrayList<UOM> UomDetailsList = new ArrayList<>();
-	@Ignore
+	//@Ignore
 	@Test(priority = 14, dependsOnMethods = "ERPLoginPage")
 	public void UomPage() throws InterruptedException {
 		UOMList.addAll(UOMSet);
@@ -957,6 +959,13 @@ public class DemoSiteSalesOrderToInvoiceTest extends BaseClass {
 				getExcelOverAllDiscountAmount = excelData.OverAllDiscountAmount;
 				getExcelGstPercentage = excelData.GstPercentage;
 				getExcelCurrencyRate = excelData.CurrencyRate;
+				
+				LocalDateTime TimeStamp = LocalDateTime.now();
+				DateTimeFormatter DateTimeFormate = DateTimeFormatter.ofPattern("HHmmss");
+				String formatedTimestamp = TimeStamp.format(DateTimeFormate);
+				String invoiceNo = "SO"+formatedTimestamp;
+				
+				driver.findElement(By.xpath("//input[@id='OrderNumber']")).sendKeys(invoiceNo);
 			}
 
 			// Choose Product:-

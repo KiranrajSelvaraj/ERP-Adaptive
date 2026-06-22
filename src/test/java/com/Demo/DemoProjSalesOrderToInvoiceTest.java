@@ -855,7 +855,7 @@ public class DemoProjSalesOrderToInvoiceTest extends BaseClass {
 				driver.findElement(By.xpath("//input[@role='textbox']")).sendKeys(excelData.ProjectName +Keys.ENTER);
 			}	
 				Thread.sleep(2000);
-			driver.findElement(By.id("select2-GSTTypeId-container")).click();
+			driver.findElement(By.xpath("//span[@id='select2-GSTTypeId-container']")).click();
 			WebElement GstSearchInput = driver.findElement(By.xpath("//input[@role='textbox']"));					
 			GstSearchInput.sendKeys(excelData.GstType + Keys.ENTER);
 

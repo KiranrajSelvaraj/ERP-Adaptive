@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/3</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Apr 16 17:57:57 IST 2026</td>
+<td>Started on:</td><td>Mon Jun 08 17:40:35 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>586 seconds (586249 ms)</td>
+<tr><td>Total time:</td><td>12 seconds (12826 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,16 +76,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Demo.DemoProjSalesOrderToInvoiceTest.SalesOrderToInvoice()'><b>SalesOrderToInvoice</b><br>Test class: com.Demo.DemoProjSalesOrderToInvoiceTest</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//table[@id=&apos;SalesTable&apos;]//tbody//tr[1]//td[2]&quot;}
-  (Session info: chrome=147.0.7727.56)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+<td title='com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.Demo.DemoProjSalesOrderToInvoiceTest</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=148.0.7778.217)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.60&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.29.93&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56549}, goog:processID: 6148, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a6ea074d3247df33c580e236aeba3f1b
-*** Element info: {Using=xpath, value=//table[@id=&apos;SalesTable&apos;]//tbody//tr[1]//td[2]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.217, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60952}, goog:processID: 8884, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c3374059de578a78fa7d72a2c6335827
+*** Element info: {Using=id, value=CompanyName}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -93,23 +93,27 @@ Session ID: a6ea074d3247df33c580e236aeba3f1b
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.Demo.DemoProjSalesOrderToInvoiceTest.SalesOrderToInvoice(DemoProjSalesOrderToInvoiceTest.java:1462)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy13.sendKeys(Unknown Source)
+	at com.BaseClass.BaseClass.Sendkeys(BaseClass.java:98)
+	at com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage(DemoProjSalesOrderToInvoiceTest.java:88)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:842)
-... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace429331809", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace429331809'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//table[@id=&apos;SalesTable&apos;]//tbody//tr[1]//td[2]&quot;}
-  (Session info: chrome=147.0.7727.56)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1777082646", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1777082646'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=148.0.7778.217)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.1.60&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+System info: host: &apos;DESKTOP-7QA4B29&apos;, ip: &apos;192.168.29.93&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56549}, goog:processID: 6148, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a6ea074d3247df33c580e236aeba3f1b
-*** Element info: {Using=xpath, value=//table[@id=&apos;SalesTable&apos;]//tbody//tr[1]//td[2]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.217, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60952}, goog:processID: 8884, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c3374059de578a78fa7d72a2c6335827
+*** Element info: {Using=id, value=CompanyName}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -122,10 +126,14 @@ Session ID: a6ea074d3247df33c580e236aeba3f1b
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.Demo.DemoProjSalesOrderToInvoiceTest.SalesOrderToInvoice(DemoProjSalesOrderToInvoiceTest.java:1462)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy13.sendKeys(Unknown Source)
+	at com.BaseClass.BaseClass.Sendkeys(BaseClass.java:98)
+	at com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage(DemoProjSalesOrderToInvoiceTest.java:88)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -142,11 +150,11 @@ Session ID: a6ea074d3247df33c580e236aeba3f1b
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:842)
 </pre></div></td>
-<td>432</td>
-<td>com.Demo.DemoProjSalesOrderToInvoiceTest@1573f9fc</td></tr>
+<td>6</td>
+<td>com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed</td></tr>
 </table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -154,20 +162,62 @@ Session ID: a6ea074d3247df33c580e236aeba3f1b
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Demo.DemoProjSalesOrderToInvoiceTest.SystemSettings()'><b>SystemSettings</b><br>Test class: com.Demo.DemoProjSalesOrderToInvoiceTest</td>
-<td></td>
-<td>131</td>
-<td>com.Demo.DemoProjSalesOrderToInvoiceTest@1573f9fc</td></tr>
-<tr>
-<td title='com.Demo.DemoProjSalesOrderToInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Demo.DemoProjSalesOrderToInvoiceTest<br>Parameters: 0006, Sunrise Villas Construction, SGD, 1, Exclusive, Product, P001, P001 - 48-port Fiber Patch Panel c/w, mm, 1, , , , , , , 59, , , $, 10, 10, 9, , , </td>
-<td></td>
+<td title='com.Demo.DemoProjSalesOrderToInvoiceTest.GetData()'><b>GetData</b><br>Test class: com.Demo.DemoProjSalesOrderToInvoiceTest</td>
+<td><div><pre>java.lang.Throwable: Method com.Demo.DemoProjSalesOrderToInvoiceTest.GetData() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed depends on not successfully finished methods 
+[com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace536263591", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace536263591'><pre>java.lang.Throwable: Method com.Demo.DemoProjSalesOrderToInvoiceTest.GetData() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed depends on not successfully finished methods 
+[com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:150)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+</pre></div></td>
 <td>0</td>
-<td>com.Demo.DemoProjSalesOrderToInvoiceTest@1573f9fc</td></tr>
+<td>com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed</td></tr>
 <tr>
-<td title='com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage()'><b>ERPLoginPage</b><br>Test class: com.Demo.DemoProjSalesOrderToInvoiceTest</td>
-<td></td>
-<td>11</td>
-<td>com.Demo.DemoProjSalesOrderToInvoiceTest@1573f9fc</td></tr>
+<td title='com.Demo.DemoProjSalesOrderToInvoiceTest.SalesOrderToInvoice()'><b>SalesOrderToInvoice</b><br>Test class: com.Demo.DemoProjSalesOrderToInvoiceTest</td>
+<td><div><pre>java.lang.Throwable: Method com.Demo.DemoProjSalesOrderToInvoiceTest.SalesOrderToInvoice() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed depends on not successfully finished methods 
+[com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace384963413", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace384963413'><pre>java.lang.Throwable: Method com.Demo.DemoProjSalesOrderToInvoiceTest.SalesOrderToInvoice() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed depends on not successfully finished methods 
+[com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:150)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+</pre></div></td>
+<td>0</td>
+<td>com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed</td></tr>
+<tr>
+<td title='com.Demo.DemoProjSalesOrderToInvoiceTest.SystemSettings()'><b>SystemSettings</b><br>Test class: com.Demo.DemoProjSalesOrderToInvoiceTest</td>
+<td><div><pre>java.lang.Throwable: Method com.Demo.DemoProjSalesOrderToInvoiceTest.SystemSettings() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed depends on not successfully finished methods 
+[com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1817342494", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1817342494'><pre>java.lang.Throwable: Method com.Demo.DemoProjSalesOrderToInvoiceTest.SystemSettings() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed depends on not successfully finished methods 
+[com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:150)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+</pre></div></td>
+<td>0</td>
+<td>com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed</td></tr>
 </table><p>
 </body>
 </html>

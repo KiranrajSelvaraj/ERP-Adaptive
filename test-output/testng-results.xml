@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="6" passed="3" failed="1" skipped="0">
+<testng-results ignored="2" total="6" passed="0" failed="1" skipped="3">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-16T17:57:57 IST" name="Suite" finished-at="2026-04-16T18:07:43 IST" duration-ms="586249">
+  <suite started-at="2026-06-08T17:40:35 IST" name="Suite" finished-at="2026-06-08T17:40:48 IST" duration-ms="12826">
     <groups>
     </groups>
-    <test started-at="2026-04-16T17:57:57 IST" name="Test" finished-at="2026-04-16T18:07:43 IST" duration-ms="586249">
+    <test started-at="2026-06-08T17:40:35 IST" name="Test" finished-at="2026-06-08T17:40:48 IST" duration-ms="12826">
       <class name="com.Demo.DemoProjSalesOrderToInvoiceTest">
-        <test-method is-config="true" signature="Environment(java.lang.String,java.lang.String)[pri:0, instance:com.Demo.DemoProjSalesOrderToInvoiceTest@1573f9fc]" started-at="2026-04-16T17:57:57 IST" name="Environment" finished-at="2026-04-16T17:58:03 IST" duration-ms="6213" status="PASS">
+        <test-method is-config="true" signature="Environment(java.lang.String,java.lang.String)[pri:0, instance:com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed]" started-at="2026-06-08T17:40:35 IST" name="Environment" finished-at="2026-06-08T17:40:41 IST" duration-ms="5803" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,173 +23,29 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Environment -->
-        <test-method signature="ERPLoginPage()[pri:1, instance:com.Demo.DemoProjSalesOrderToInvoiceTest@1573f9fc]" started-at="2026-04-16T17:58:04 IST" name="ERPLoginPage" finished-at="2026-04-16T17:58:15 IST" duration-ms="11480" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ERPLoginPage -->
-        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Demo.DemoProjSalesOrderToInvoiceTest@1573f9fc]" started-at="2026-04-16T17:58:16 IST" name="GetData" data-provider="Util1" finished-at="2026-04-16T17:58:16 IST" depends-on-methods="com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage" duration-ms="6" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0006]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Sunrise Villas Construction]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[SGD]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Exclusive]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Product]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[P001]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[P001 - 48-port Fiber Patch Panel c/w]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[mm]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="15">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="16">
-              <value>
-                <![CDATA[59]]>
-              </value>
-            </param>
-            <param index="17">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="18">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="19">
-              <value>
-                <![CDATA[$]]>
-              </value>
-            </param>
-            <param index="20">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="21">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="22">
-              <value>
-                <![CDATA[9]]>
-              </value>
-            </param>
-            <param index="23">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="24">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="25">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetData -->
-        <test-method signature="SystemSettings()[pri:6, instance:com.Demo.DemoProjSalesOrderToInvoiceTest@1573f9fc]" started-at="2026-04-16T17:58:16 IST" name="SystemSettings" finished-at="2026-04-16T18:00:27 IST" depends-on-methods="com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage" duration-ms="131435" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SystemSettings -->
-        <test-method signature="SalesOrderToInvoice()[pri:12, instance:com.Demo.DemoProjSalesOrderToInvoiceTest@1573f9fc]" started-at="2026-04-16T18:00:27 IST" name="SalesOrderToInvoice" finished-at="2026-04-16T18:07:40 IST" depends-on-methods="com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage" duration-ms="432303" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method signature="ERPLoginPage()[pri:1, instance:com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed]" started-at="2026-06-08T17:40:41 IST" name="ERPLoginPage" finished-at="2026-06-08T17:40:48 IST" duration-ms="6880" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchWindowException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//table[@id='SalesTable']//tbody//tr[1]//td[2]"}
-  (Session info: chrome=147.0.7727.56)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=148.0.7778.217)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-7QA4B29', ip: '192.168.1.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+System info: host: 'DESKTOP-7QA4B29', ip: '192.168.29.93', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56549}, goog:processID: 6148, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a6ea074d3247df33c580e236aeba3f1b
-*** Element info: {Using=xpath, value=//table[@id='SalesTable']//tbody//tr[1]//td[2]}]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.217, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60952}, goog:processID: 8884, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c3374059de578a78fa7d72a2c6335827
+*** Element info: {Using=id, value=CompanyName}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//table[@id='SalesTable']//tbody//tr[1]//td[2]"}
-  (Session info: chrome=147.0.7727.56)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=148.0.7778.217)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-7QA4B29', ip: '192.168.1.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+System info: host: 'DESKTOP-7QA4B29', ip: '192.168.29.93', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56549}, goog:processID: 6148, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a6ea074d3247df33c580e236aeba3f1b
-*** Element info: {Using=xpath, value=//table[@id='SalesTable']//tbody//tr[1]//td[2]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.217, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\Hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60952}, goog:processID: 8884, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c3374059de578a78fa7d72a2c6335827
+*** Element info: {Using=id, value=CompanyName}
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -202,10 +58,14 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+at org.openqa.selenium.By$ById.findElement(By.java:188)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at com.Demo.DemoProjSalesOrderToInvoiceTest.SalesOrderToInvoice(DemoProjSalesOrderToInvoiceTest.java:1462)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy13.sendKeys(Unknown Source)
+at com.BaseClass.BaseClass.Sendkeys(BaseClass.java:98)
+at com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage(DemoProjSalesOrderToInvoiceTest.java:88)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -223,7 +83,70 @@ at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecut
 at java.base/java.lang.Thread.run(Thread.java:842)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ERPLoginPage -->
+        <test-method signature="GetData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed]" started-at="2026-06-08T17:40:48 IST" name="GetData" finished-at="2026-06-08T17:40:48 IST" depends-on-methods="com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage" duration-ms="1" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.Demo.DemoProjSalesOrderToInvoiceTest.GetData() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed depends on not successfully finished methods 
+[com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.Demo.DemoProjSalesOrderToInvoiceTest.GetData() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed depends on not successfully finished methods 
+[com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:150)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:842)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetData -->
+        <test-method signature="SystemSettings()[pri:6, instance:com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed]" started-at="2026-06-08T17:40:48 IST" name="SystemSettings" finished-at="2026-06-08T17:40:48 IST" depends-on-methods="com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage" duration-ms="1" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.Demo.DemoProjSalesOrderToInvoiceTest.SystemSettings() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed depends on not successfully finished methods 
+[com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.Demo.DemoProjSalesOrderToInvoiceTest.SystemSettings() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed depends on not successfully finished methods 
+[com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:150)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:842)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SystemSettings -->
+        <test-method signature="SalesOrderToInvoice()[pri:12, instance:com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed]" started-at="2026-06-08T17:40:48 IST" name="SalesOrderToInvoice" finished-at="2026-06-08T17:40:48 IST" depends-on-methods="com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.Demo.DemoProjSalesOrderToInvoiceTest.SalesOrderToInvoice() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed depends on not successfully finished methods 
+[com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.Demo.DemoProjSalesOrderToInvoiceTest.SalesOrderToInvoice() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed depends on not successfully finished methods 
+[com.Demo.DemoProjSalesOrderToInvoiceTest.ERPLoginPage() on instance com.Demo.DemoProjSalesOrderToInvoiceTest@5542c4ed]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:150)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:842)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SalesOrderToInvoice -->

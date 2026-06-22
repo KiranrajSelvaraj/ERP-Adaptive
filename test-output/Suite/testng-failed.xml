@@ -10,6 +10,8 @@
           <include name="ERPLoginPage"/>
           <include name="Environment"/>
           <include name="SalesOrderToInvoice"/>
+          <include name="SystemSettings"/>
+          <include name="GetData"/>
         </methods>
       </class> <!-- com.Demo.DemoProjSalesOrderToInvoiceTest -->
     </classes>

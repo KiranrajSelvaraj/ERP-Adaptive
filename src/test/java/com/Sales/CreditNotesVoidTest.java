@@ -1773,7 +1773,7 @@ public class CreditNotesVoidTest extends BaseClass {
 
 	}
 
-	// @Ignore
+	//@Ignore
 	@Test(priority = 40, dependsOnMethods = "ERPLoginPage")
 	private void quit() throws InterruptedException {
 		driver.quit();

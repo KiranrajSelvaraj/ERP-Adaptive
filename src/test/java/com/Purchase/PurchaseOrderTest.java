@@ -2283,7 +2283,7 @@ public class PurchaseOrderTest extends BaseClass {
 		}
 	}
 
-
+//@Ignore
 	@Test(priority = 45, dependsOnMethods = "ERPLoginPage")
 	private void Exception() throws InterruptedException {
 		soft.assertAll();

@@ -5,7 +5,7 @@
        <!-- <parameter name="env" value="demo"/>
         <parameter name="Company" value="amc"/> --> 
         <classes>   
-            <class name="com.Sales.CreditNotesVoidTest"/>
+            <class name="com.Purchase.PurchaseInvoiceVoidTest"/>
         </classes>
     </test>
 </suite> 

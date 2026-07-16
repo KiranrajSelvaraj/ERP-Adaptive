@@ -18,7 +18,7 @@ public class Login {
 	@FindBy(id="PasswordInput")
 	public WebElement Password;
 		
-	@FindBy(id="login")
+	@FindBy(xpath="//input[contains(@value,'Log In')]")
 	public WebElement LoginButton;
 	
 	

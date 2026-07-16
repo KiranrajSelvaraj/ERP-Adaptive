@@ -1,5 +1,6 @@
 package com.Purchase;
 
+import java.io.File;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -10,10 +11,12 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -28,7 +31,6 @@ import com.PomClass.Login;
 import com.PomClass.Product;
 import com.PomClass.ProductMovement;
 import com.PomClass.PurchaseInvoice;
-import com.PomClass.SystemSettings;
 import com.PomClass.Vendors;
 
 import com.Utility.Util1;
@@ -39,12 +41,30 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 
 	private String url;
 	SoftAssert soft = new SoftAssert();
+	String os = System.getProperty("os.name").toLowerCase();
+	ChromeOptions options = new ChromeOptions();
 
 	@Test(priority = 1)
 	public void ERPLoginPage() throws InterruptedException {
 
 		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+
+		System.out.println("OS: " + os);
+		if (os.contains("linux")) {
+
+			options.addArguments("--headless=new");
+			options.addArguments("--no-sandbox");
+			options.addArguments("--disable-dev-shm-usage");
+			options.addArguments("--disable-gpu");
+			options.addArguments("--window-size=1920,1080");
+			options.addArguments("--no-sandbox");
+			options.addArguments("--disable-dev-shm-usage");
+			options.addArguments("--start-maximized");
+
+		}
+
+		driver = new ChromeDriver(options);
+		driver.manage().window().setSize(new Dimension(1920, 1080));
 		driver.manage().window().maximize();
 
 		driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");
@@ -55,8 +75,9 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		Sendkeys(lo.CompanyCode, "UITDEMO1");
 		Sendkeys(lo.UserName, "Kiran01");
 		Sendkeys(lo.Password, "Adaptive*123");
-		click(lo.LoginButton);
 		Thread.sleep(2000);
+		click(lo.LoginButton);
+
 
 		String ActURL = driver.getCurrentUrl();
 		boolean equals = url.equalsIgnoreCase(ActURL);
@@ -92,7 +113,11 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 
 	@DataProvider
 	public Object[][] Util2() {
-		Object[][] data = Util1.getTestData("C:\\Adaptive\\Automation\\Bizapp\\PurchaseInvoiceVoid.xlsx", "Sheet1");
+
+		String filePath = System.getProperty("user.dir") + File.separator + "excel" + File.separator
+				+ "PurchaseInvoiceVoid.xlsx";
+
+		Object data[][] = Util1.getTestData(filePath, "Sheet1");
 		return data;
 
 	}
@@ -167,9 +192,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 			this.ValPeriod = ValPeriod;
 			this.ExpDate = ExpDate;
 
-
 		}
-
 	}
 
 
@@ -199,7 +222,15 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 
 	}
 
-	//System Settings:-
+
+	public boolean getBooleanSystemSetting(String dataId) {
+		return driver.findElement(By.xpath("//input[@data-id='" + dataId + "']")).isSelected();
+	}
+
+	public String getStringSystemSetting(String dataId) {
+		return driver.findElement(By.xpath("//input[@data-id='" + dataId + "']")).getAttribute("value");
+	}
+
 	private boolean IsZeroQtyPurchase;
 	private boolean IsZeroGSTManagement;
 	private boolean IsMultipleProductForPurchase;
@@ -209,236 +240,58 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 	private boolean IsWarehouseManagement;
 	private boolean IsBarcodeManagementInPurchase;
 	private boolean IsOpenItemManagementInPurchase;
-	private float DecimalCalculationForPurchase;
 	private boolean IsEnableDirectPOtoGRN;
 	private boolean IsEnableDirectPOtoSO;
 	private boolean IsEnableItemLevelDiscountInPurchase;
 	private boolean IsMultiWordSearchInProduct;
 	private boolean IsFOCManagementInPI;
 
+	private String DecimalCalculationForPurchase;
+
 	//@Ignore
 	@Test(priority = 10, dependsOnMethods = "ERPLoginPage")
 	public void SystemSettingsPage() throws InterruptedException {
 
-		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		System.out.println("***System Settings Value***");
+		driver.manage().timeouts().pageLoadTimeout(3, TimeUnit.MINUTES);
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.MINUTES);
 
-		SystemSettings ss = new SystemSettings(driver);
-
-		driver.navigate().to(url + "SystemSetting");
+		driver.navigate().to(url+"SystemSetting/CreateOrEditV2");
 		Thread.sleep(4000);
-		System.out.println("*System Settings Page*");
 
-		js.executeScript("arguments[0].click();", ss.SystemsSettingsParamCodeSearchField);
-		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsZeroQtyPurchase" + Keys.ENTER);
-		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
-		Thread.sleep(1000);
-		IsZeroQtyPurchase = ss.BooleanValue.isSelected();
-		System.out.println("IsZeroQtyPurchase: "+IsZeroQtyPurchase);
-		click(ss.Back);
+		IsZeroQtyPurchase = getBooleanSystemSetting("IsZeroQtyPurchase");
+		IsZeroGSTManagement = getBooleanSystemSetting("IsZeroGSTManagement");
+		IsMultipleProductForPurchase = getBooleanSystemSetting("IsMultipleProductForPurchase");
+		IsGSTManagement = getBooleanSystemSetting("IsGSTManagement");
+		IsMultipleServiceForPurchase = getBooleanSystemSetting("IsMultipleServiceForPurchase");
+		IsCurrencyEnabled = getBooleanSystemSetting("IsCurrencyEnabled");
+		IsWarehouseManagement = getBooleanSystemSetting("IsWarehouseManagement");
+		IsBarcodeManagementInPurchase = getBooleanSystemSetting("IsBarcodeManagementInPurchase");
+		IsOpenItemManagementInPurchase = getBooleanSystemSetting("IsOpenItemManagementInPurchase");
+		IsEnableDirectPOtoGRN = getBooleanSystemSetting("IsEnableDirectPOtoGRN");
+		IsEnableDirectPOtoSO = getBooleanSystemSetting("IsEnableDirectPOtoSO");
+		IsEnableItemLevelDiscountInPurchase = getBooleanSystemSetting("IsEnableItemLevelDiscountInPurchase");
+		IsMultiWordSearchInProduct = getBooleanSystemSetting("IsMultiWordSearchInProduct");
+		IsFOCManagementInPI = getBooleanSystemSetting("IsFOCManagementInPI");
 
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.Clear);
-		js.executeScript("arguments[0].click();", ss.SystemsSettingsParamCodeSearchField);
-		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsZeroGSTManagement" + Keys.ENTER);
-		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
-		Thread.sleep(1000);
-		IsZeroGSTManagement = ss.BooleanValue.isSelected();
-		System.out.println("IsZeroGSTManagement: "+IsZeroGSTManagement);
-		click(ss.Back);
+		System.out.println("IsZeroQtyPurchase: " + IsZeroQtyPurchase);
+		System.out.println("IsZeroGSTManagement: " + IsZeroGSTManagement);
+		System.out.println("IsMultipleProductForPurchase: " + IsMultipleProductForPurchase);
+		System.out.println("IsGSTManagement: " + IsGSTManagement);
+		System.out.println("IsMultipleServiceForPurchase: " + IsMultipleServiceForPurchase);
+		System.out.println("IsCurrencyEnabled: " + IsCurrencyEnabled);
+		System.out.println("IsWarehouseManagement: " + IsWarehouseManagement);
+		System.out.println("IsBarcodeManagementInPurchase: " + IsBarcodeManagementInPurchase);
+		System.out.println("IsOpenItemManagementInPurchase: " + IsOpenItemManagementInPurchase);
+		System.out.println("IsEnableDirectPOtoGRN: " + IsEnableDirectPOtoGRN);
+		System.out.println("IsEnableDirectPOtoSO: " + IsEnableDirectPOtoSO);
+		System.out.println("IsEnableItemLevelDiscountInPurchase: " + IsEnableItemLevelDiscountInPurchase);
+		System.out.println("IsMultiWordSearchInProduct: " + IsMultiWordSearchInProduct);
+		System.out.println("IsFOCManagementInPI: " + IsFOCManagementInPI);
 
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.Clear);
-		js.executeScript("arguments[0].click();", ss.SystemsSettingsParamCodeSearchField);
-		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsMultipleProductForPurchase" + Keys.ENTER);
-		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
-		Thread.sleep(1000);
-		IsMultipleProductForPurchase = ss.BooleanValue.isSelected();
-		System.out.println("IsMultipleProductForPurchase : "+IsMultipleProductForPurchase);
-		click(ss.Back);
+		DecimalCalculationForPurchase = getStringSystemSetting("DecimalCalculationForPurchase");
 
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.Clear);
-		js.executeScript("arguments[0].click();", ss.SystemsSettingsParamCodeSearchField);
-		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsGSTManagement" + Keys.ENTER);
-		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
-		Thread.sleep(1000);
-		IsGSTManagement = ss.BooleanValue.isSelected();
-		System.out.println("IsGSTManagement: "+IsGSTManagement);
-		click(ss.Back);
-
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.Clear);
-		js.executeScript("arguments[0].click();", ss.SystemsSettingsParamCodeSearchField);
-		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsMultipleServiceForPurchase" + Keys.ENTER);
-		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
-		Thread.sleep(1000);
-		IsGSTManagement = ss.BooleanValue.isSelected();
-		System.out.println("IsMultipleServiceForPurchase: "+IsMultipleServiceForPurchase);
-		click(ss.Back);
-
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.Clear);
-		js.executeScript("arguments[0].click();", ss.SystemsSettingsParamCodeSearchField);
-		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsCurrencyEnabled" + Keys.ENTER);
-		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
-		Thread.sleep(1000);
-		IsCurrencyEnabled = ss.BooleanValue.isSelected();
-		System.out.println("IsCurrencyEnabled: "+IsCurrencyEnabled);
-		click(ss.Back);
-
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.Clear);
-		js.executeScript("arguments[0].click();", ss.SystemsSettingsParamCodeSearchField);
-		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsWarehouseManagement" + Keys.ENTER);
-		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
-		Thread.sleep(1000);
-		IsWarehouseManagement = ss.BooleanValue.isSelected();
-		System.out.println("IsWarehouseManagement: "+IsWarehouseManagement);
-		click(ss.Back);
-
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.Clear);
-		js.executeScript("arguments[0].click();", ss.SystemsSettingsParamCodeSearchField);
-		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsBarcodeManagementInPurchase" + Keys.ENTER);
-		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
-		Thread.sleep(1000);
-		IsBarcodeManagementInPurchase = ss.BooleanValue.isSelected();
-		System.out.println("IsBarcodeManagementInPurchase: "+IsBarcodeManagementInPurchase);
-		click(ss.Back);
-
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.Clear);
-		js.executeScript("arguments[0].click();", ss.SystemsSettingsParamCodeSearchField);
-		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsOpenItemManagementInPurchase" + Keys.ENTER);
-		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
-		Thread.sleep(1000);
-		IsOpenItemManagementInPurchase = ss.BooleanValue.isSelected();
-		System.out.println("IsOpenItemManagementInPurchase: "+IsOpenItemManagementInPurchase);
-		click(ss.Back);
-
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.Clear);
-		js.executeScript("arguments[0].click();", ss.SystemsSettingsParamCodeSearchField);
-		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "DecimalCalculationForPurchase" + Keys.ENTER);
-		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
-		Thread.sleep(1000);
-		String DecimalCalculationForPurchaseString = driver
-				.findElement(By.xpath("//input[@id='DecimalValue']")).getAttribute("value");
-		DecimalCalculationForPurchase = Float.parseFloat(DecimalCalculationForPurchaseString);
-		System.out.println("DecimalCalculationForPurchase: "+DecimalCalculationForPurchase);
-		click(ss.Back);
-
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.Clear);
-		js.executeScript("arguments[0].click();", ss.SystemsSettingsParamCodeSearchField);
-		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsEnableDirectPOtoGRN" + Keys.ENTER);
-		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
-		Thread.sleep(1000);
-		IsEnableDirectPOtoGRN = ss.BooleanValue.isSelected();
-		System.out.println("IsEnableDirectPOtoGRN: "+IsEnableDirectPOtoGRN);
-		click(ss.Back);
-
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.Clear);
-		js.executeScript("arguments[0].click();", ss.SystemsSettingsParamCodeSearchField);
-		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsEnableDirectPOtoSO" + Keys.ENTER);
-		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
-		Thread.sleep(1000);
-		IsEnableDirectPOtoSO = ss.BooleanValue.isSelected();
-		System.out.println("IsEnableDirectPOtoSO: "+IsEnableDirectPOtoSO);
-		click(ss.Back);
-
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.Clear);
-		js.executeScript("arguments[0].click();", ss.SystemsSettingsParamCodeSearchField);
-		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsEnableItemLevelDiscountInPurchase" + Keys.ENTER);
-		Thread.sleep(1000);
-		click(ss.SystemSettingsFetch);
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
-		Thread.sleep(1000);
-		IsEnableItemLevelDiscountInPurchase = ss.BooleanValue.isSelected();
-		System.out.println("IsEnableItemLevelDiscountInPurchase:" +IsEnableItemLevelDiscountInPurchase);
-		click(ss.Back);
-
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.Clear);
-		js.executeScript("arguments[0].click();", ss.SystemsSettingsParamCodeSearchField);
-		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsMultiWordSearchInProduct");
-		Thread.sleep(1000);
-		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
-		Thread.sleep(1000);
-		IsMultiWordSearchInProduct = ss.BooleanValue.isSelected();
-		System.out.println("IsMultiWordSearchInProduct :" + IsMultiWordSearchInProduct);
-		click(ss.Back);
-
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.Clear);
-		js.executeScript("arguments[0].click();", ss.SystemsSettingsParamCodeSearchField);
-		ss.SystemsSettingsParamCodeSearchField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-		Sendkeys(ss.SystemsSettingsParamCodeSearchField, "IsFOCManagementInPI");
-		Thread.sleep(1000);
-		js.executeScript("arguments[0].click();", ss.SystemSettingsFetch);
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", ss.EditSystemSetting);
-		Thread.sleep(1000);
-		IsFOCManagementInPI = ss.BooleanValue.isSelected();
-		System.out.println("IsFOCManagementInPI:" +IsFOCManagementInPI);
-		click(ss.Back);
+		System.out.println("DecimalCalculationForPurchase: " + DecimalCalculationForPurchase);
 
 		System.out.println("***");
 
@@ -1224,10 +1077,15 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 			if (excelData.BatchProduct.equalsIgnoreCase("true")) {
 
 				Thread.sleep(2000);
-				String totalQty = driver.findElement(By.xpath
-						("(//div//strong[contains(normalize-space(),'"+excelData.ProductName.trim()+"')]//following::input[@id='TotalQty'])[1]"))
+				String totalBQty = driver.findElement(By.xpath
+						("(//div//strong[contains(normalize-space(),'"+excelData.ProductName.trim()+"')]//following::input[@id='TotalBQty'])[1]"))
 						.getAttribute("value");
-				System.out.println("Total Qty: "+totalQty);
+				System.out.println("Total BQty: "+totalBQty);
+
+				String totalLQty = driver.findElement(By.xpath
+						("(//div//strong[contains(normalize-space(),'"+excelData.ProductName.trim()+"')]//following::input[@id='TotalLQty'])[1]"))
+						.getAttribute("value");
+				System.out.println("Total LQty: "+totalLQty);
 
 				Thread.sleep(1000);
 				WebElement batchNo = driver.findElement(By.xpath
@@ -1248,11 +1106,22 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 				valPeriod.sendKeys(excelData.ValPeriod +Keys.ENTER);
 				Thread.sleep(1000); */
 
-				WebElement totalQtyField = driver.findElement(By.xpath
-						("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@id='Qty'])[1]"));
-				totalQtyField.click();
-				totalQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-				totalQtyField.sendKeys(totalQty);
+				if (!totalBQty.equals("0")) {
+					
+					WebElement totalBQtyField = driver.findElement(By.xpath
+							("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@id='BQty'])[1]"));
+					totalBQtyField.click();
+					totalBQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+					totalBQtyField.sendKeys(totalBQty);
+					Thread.sleep(1000);
+					
+				}
+
+				WebElement totalLQtyField = driver.findElement(By.xpath
+						("(//div//strong[contains(text(),'"+excelData.ProductName.trim()+"')]//following::input[@id='LQty'])[1]"));
+				totalLQtyField.click();
+				totalLQtyField.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+				totalLQtyField.sendKeys(totalLQty);
 				Thread.sleep(1000);
 
 				WebElement batchAdd = driver.findElement(By.xpath
@@ -1481,10 +1350,12 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		// DECIMAL PLACE (2 or 4)
 		System.out.println("*** Decimal Place ***");
 
-		if (DecimalCalculationForPurchase == 2) {
+		float DecimalCalculationForPurchaseInt = Float.parseFloat(DecimalCalculationForPurchase);
+
+		if (DecimalCalculationForPurchaseInt == 2) {
 			System.out.println("2 Decimal Place Amount is: " + finalTotalAmount);
 
-		} else if (DecimalCalculationForPurchase == 4) {
+		} else if (DecimalCalculationForPurchaseInt == 4) {
 			System.out.println("4 Decimal Place Amount is: " + finalTotalAmount);
 
 		} else {
@@ -1509,7 +1380,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		System.out.println("Purchace Invoice Number is: "+formatedTimestamp);
 		Thread.sleep(3000);
 		WebElement delete = driver.findElement(By.xpath
-				("//table[@id='purchasetable']//tbody//tr//td[contains(text(),'"+formatedTimestamp+"')]/following::td[4]//a[@title='Delete']"));
+				("(//table[@id='purchasetable']//tbody//tr//td[contains(text(),'"+formatedTimestamp+"')]/following::a[@title='Delete'])[1]"));
 		js.executeScript("arguments[0].click();", delete);
 		Thread.sleep(2000);
 		click(pi.Delete);

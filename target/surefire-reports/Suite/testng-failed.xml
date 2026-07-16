@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="1" parallel="methods" name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
-  <test thread-count="1" parallel="methods" name="Test(failed)" verbose="0">
-    <parameter name="env" value="Dev"/>
+<suite thread-count="1" parallel="classes" name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="1" parallel="classes" name="Test(failed)" verbose="0">
     <classes>
-      <class name="com.Sales.SalesOrderToSalesInvoiceTest">
+      <class name="com.Purchase.PurchaseInvoiceVoidTest">
         <methods>
-          <include name="ProductPage"/>
-          <include name="UomPage"/>
-          <include name="SystemSettings"/>
-          <include name="Environment"/>
-          <include name="ExpectedProduct"/>
           <include name="ProductMovementPage"/>
-          <include name="SalesToInvoice"/>
           <include name="ERPLoginPage"/>
+          <include name="Exception"/>
+          <include name="UomPage"/>
+          <include name="StockCalculation"/>
+          <include name="ExpectedProduct"/>
+          <include name="SystemSettingsPage"/>
+          <include name="PurchaseInvoicetoVoid"/>
+          <include name="ProductPage"/>
+          <include name="GetData"/>
+          <include name="VendorPage"/>
         </methods>
-      </class> <!-- com.Sales.SalesOrderToSalesInvoiceTest -->
+      </class> <!-- com.Purchase.PurchaseInvoiceVoidTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

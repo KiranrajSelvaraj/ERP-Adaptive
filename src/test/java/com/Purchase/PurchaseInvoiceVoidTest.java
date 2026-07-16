@@ -66,6 +66,7 @@ public class PurchaseInvoiceVoidTest extends BaseClass{
 		driver = new ChromeDriver(options);
 		driver.manage().window().setSize(new Dimension(1920, 1080));
 		driver.manage().window().maximize();
+		//////
 
 		driver.get("https://erpauto.dev1.adaptivebizapp.com/account/login");
 		url = "https://erpauto.dev1.adaptivebizapp.com/ERP/";
